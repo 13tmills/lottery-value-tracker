@@ -1,0 +1,15 @@
+{
+  "game": "powerball",
+  "source": "powerball.com",
+  "last_updated": "2026-06-19T22:30:00",
+  "complete": false,
+  "earliest_available": "2010-01-01",
+  "note": "Seeded with a few real draws. Full history (2010-01-01 onward) is backfilled by scraper/history_scraper.py in CI; the prize breakdowns fill in then.",
+  "draws": [
+    { "date": "2024-06-17", "jackpot": 45000000, "cash_value": 21800000, "numbers": [30, 48, 53, 58, 66], "powerball": 9, "power_play": 2 },
+    { "date": "2024-06-19", "jackpot": 57000000, "cash_value": 27300000, "numbers": [4, 27, 44, 50, 64], "powerball": 7, "power_play": 3 },
+    { "date": "2024-06-22", "jackpot": 73000000, "cash_value": 35200000, "numbers": [4, 5, 15, 32, 62], "powerball": 21, "power_play": 2 },
+    { "date": "2024-06-24", "jackpot": 84000000, "cash_value": 40400000, "numbers": [5, 6, 36, 53, 69], "powerball": 8, "power_play": 2 },
+    { "date": "2024-06-26", "jackpot": 96000000, "cash_value": 46200000, "numbers": [4, 9, 36, 47, 56], "powerball": 7, "power_play": 5 }
+  ]
+}

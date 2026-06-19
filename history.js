@@ -125,14 +125,52 @@ function apply() {
   renderTable(draws);
 }
 
+// Inline Chart.js plugin: dashed vertical lines for ticket-price changes.
+const priceMarkerPlugin = {
+  id: "priceMarkers",
+  afterDatasetsDraw(c) {
+    const events = c.config.options.plugins.priceMarkers?.events || [];
+    const { ctx, chartArea, scales } = c;
+    events.forEach((ev) => {
+      const x = scales.x.getPixelForValue(ev.at);
+      if (x == null || isNaN(x) || x < chartArea.left || x > chartArea.right) return;
+      ctx.save();
+      ctx.strokeStyle = ev.color;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath();
+      ctx.moveTo(x, chartArea.top);
+      ctx.lineTo(x, chartArea.bottom);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = ev.color;
+      ctx.font = "600 11px -apple-system, system-ui, sans-serif";
+      const right = x > chartArea.right - 90;
+      ctx.textAlign = right ? "right" : "left";
+      ctx.fillText(ev.text, x + (right ? -5 : 5), chartArea.top + 12);
+      ctx.restore();
+    });
+  },
+};
+
 function renderChart(draws) {
   const t = theme();
   const labels = draws.map((d) => d.date);
   const jackpot = draws.map((d) => d.jackpot ?? null);
   const cash = draws.map((d) => d.cash_value ?? null);
 
+  // Vertical markers for ticket-price changes within the visible range.
+  const first = draws.length ? draws[0].date : null;
+  const last = draws.length ? draws[draws.length - 1].date : null;
+  const events = (meta.priceChanges || []).flatMap((pc) => {
+    if (!first || pc.date < first || pc.date > last) return [];
+    const hit = draws.find((d) => d.date >= pc.date);
+    return hit ? [{ at: hit.date, text: pc.label, color: "#d29922" }] : [];
+  });
+
   els.chartNote.textContent = draws.length
     ? `${draws.length.toLocaleString()} draws shown. Jackpot climbs each draw until won, then resets — the saw-tooth is the accumulation.`
+      + (events.length ? " Dashed line marks a ticket-price change." : "")
     : "No draws in this range.";
 
   if (chart) chart.destroy();
@@ -150,6 +188,7 @@ function renderChart(draws) {
       maintainAspectRatio: false,
       interaction: { mode: "index", intersect: false },
       plugins: {
+        priceMarkers: { events },
         legend: { labels: { color: t.textDim, usePointStyle: true, pointStyle: "line" } },
         tooltip: {
           callbacks: {
@@ -166,6 +205,7 @@ function renderChart(draws) {
         },
       },
     },
+    plugins: [priceMarkerPlugin],
   });
 }
 
@@ -224,8 +264,9 @@ function updateSentinel() {
 }
 
 function rowHtml(d) {
+  const special = d[meta.specialKey];
   const balls = d.numbers.map((n) => `<span class="ball ball--sm">${n}</span>`).join("") +
-    (d.star_ball != null ? `<span class="ball ball--sm ball--special">${d.star_ball}</span>` : "");
+    (special != null ? `<span class="ball ball--sm ball--special">${special}</span>` : "");
   const winners = d.prizes
     ? `<button class="winners-toggle" data-id="${d.date}">${(d.total_winners ?? d.prizes.reduce((s, p) => s + p.winners, 0)).toLocaleString()} ▾</button>`
     : `<span class="muted">—</span>`;
@@ -242,7 +283,8 @@ function rowHtml(d) {
 }
 
 function prizeDetailRow(d) {
-  const bonus = d.all_star_bonus ? ` · All Star Bonus ${d.all_star_bonus}×` : "";
+  const bonusVal = d[meta.bonusKey];
+  const bonus = bonusVal ? ` · ${meta.bonusName} ${bonusVal}×` : "";
   const tiers = d.prizes
     .map(
       (p) => `<tr>

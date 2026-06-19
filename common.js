@@ -3,9 +3,21 @@
 // redeclare these names in the page scripts.
 
 const GAME_META = {
-  powerball:     { label: "Powerball",     specialKey: "powerball",  specialName: "Powerball", specialAbbr: "PB", draws: "Mon · Wed · Sat" },
-  mega_millions: { label: "Mega Millions", specialKey: "mega_ball",  specialName: "Mega Ball", specialAbbr: "MB", draws: "Tue · Fri" },
-  lotto_america: { label: "Lotto America", specialKey: "star_ball",  specialName: "Star Ball", specialAbbr: "SB", draws: "Mon · Wed · Sat" },
+  powerball: {
+    label: "Powerball", specialKey: "powerball", specialName: "Powerball", specialAbbr: "PB",
+    draws: "Mon · Wed · Sat", bonusKey: "power_play", bonusName: "Power Play",
+    priceChanges: [{ date: "2012-01-15", label: "Ticket $1 → $2" }],
+  },
+  mega_millions: {
+    label: "Mega Millions", specialKey: "mega_ball", specialName: "Mega Ball", specialAbbr: "MB",
+    draws: "Tue · Fri", bonusKey: "megaplier", bonusName: "Megaplier",
+    priceChanges: [{ date: "2025-04-08", label: "Ticket $2 → $5" }],
+  },
+  lotto_america: {
+    label: "Lotto America", specialKey: "star_ball", specialName: "Star Ball", specialAbbr: "SB",
+    draws: "Mon · Wed · Sat", bonusKey: "all_star_bonus", bonusName: "All Star Bonus",
+    priceChanges: [],
+  },
 };
 
 const fmtMoney = (n) =>

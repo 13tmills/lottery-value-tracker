@@ -86,15 +86,14 @@ function render(key, g, data) {
       <div class="stat"><div class="stat__label">Next draw</div><div class="stat__value">${fmtDate(g.next_draw)}</div></div>
     </section>
 
-    ${key === "lotto_america" ? `
     <a class="panel hist-cta" href="history.html?game=${key}">
       <div>
         <h2>View historical data</h2>
-        <p>Every Lotto America draw since 2017 — jackpot &amp; cash value over time,
-          winning numbers, and prize-tier winners.</p>
+        <p>${meta.label} jackpots &amp; cash values over time, every winning number,
+          and an adjustable date range.</p>
       </div>
       <span class="btn">Open history &rarr;</span>
-    </a>` : ""}
+    </a>
 
     <div class="detail-grid">
       <section class="panel">

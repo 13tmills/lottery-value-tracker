@@ -42,32 +42,37 @@ GitHub Actions (cron, after each draw)
     Dot size adapts to the count, and a "Find the winning dot" button scrolls
     to and rings the red one. Optional query params: `&tier=<match>` (or `any`)
     and `&lines=<n>`.
-  - `history.html` / `history.js` — historical data page
-    (`history.html?game=lotto_america`, linked from the Lotto America detail
-    page). Reads `history/<game>.json` and shows a jackpot &amp; cash-value
-    line chart over time with an **adjustable date range** (date pickers +
-    All/5Y/1Y/6M/90D presets), summary stats, and a per-draw table whose rows
-    expand to the full prize-tier winner breakdown. Currently wired for Lotto
-    America (the only game whose source archives cash value per draw).
+  - `history.html` / `history.js` — historical data page for **all three games**
+    (`history.html?game=<key>`, linked from each detail page). Reads
+    `history/<game>.json` and shows a jackpot &amp; cash-value line chart over
+    time with an **adjustable date range** (date pickers + All/5Y/1Y/6M/90D
+    presets), summary stats, and a lazy-loading per-draw table whose rows expand
+    to the prize-tier winner breakdown. An inline Chart.js plugin draws dashed
+    **ticket-price-change markers** (per-game `priceChanges` in `GAME_META`).
   - `common.js` — shared helpers/metadata used by all pages (no duplication).
 
 ### Historical data pipeline
 
-`scraper/history_scraper.py` walks every Mon/Wed/Sat draw date from launch
-(2017-11-15) to today and fetches each from **powerball.com**
-(`draw-result?gc=lotto-america&date=YYYY-MM-DD`) — chosen over lottoamerica.com
-because it archives the **cash value** per draw, plus the full prize-tier winner
-breakdown. It's incremental (keeps existing draws, fetches only missing dates),
-writing `history/lotto_america.json`.
+`scraper/history_scraper.py --game <key>` builds `history/<game>.json`,
+incrementally (keeps existing draws, fetches only missing dates):
 
-- **First-time backfill** (~1,090 draws): run the **Backfill Lotto America
-  history** workflow (`.github/workflows/backfill-history.yml`, manual dispatch).
-- **Stay current**: the main update workflow appends the newest draw after each
-  drawing. `history/lotto_america.json` ships seeded with a handful of real
-  draws so the page works before the backfill runs.
+- **Lotto America** (2017-11-15+) and **Powerball** (2010-01-01+) — powerball.com
+  draw pages (`draw-result?gc=<slug>&date=YYYY-MM-DD`), chosen over
+  lottoamerica.com because they archive the **cash value** plus the per-tier
+  winners table. Powerball's per-tier breakdown only aligns for the current
+  matrix (2015-10-07+); older draws are jackpot/cash/numbers only.
+- **Mega Millions** (2017-10-31+, the floor its data service serves) — the
+  megamillions.com JSON web service `GetDrawDataByTickWithMatrix` (the page is
+  JS-rendered). Gives numbers + jackpot + cash; no per-tier breakdown.
 
-> The per-draw page markup isn't validated against live HTML yet — confirm the
-> jackpot/cash parsing and `parse_prize_table` ordering on the first CI run.
+Price-change markers: Powerball $1→$2 (Jan 15 2012), Mega $2→$5 (Apr 8 2025).
+
+- **First-time backfill**: run the **Backfill draw history** workflow
+  (`.github/workflows/backfill-history.yml`, manual dispatch) — pick a `game`
+  (or `all`). Powerball ~1,900 draws, Mega ~900, Lotto ~1,345.
+- **Stay current**: `update-data.yml` appends the newest draw for all three
+  after each drawing. Each `history/<game>.json` ships seeded with a few real
+  draws so the pages work before the backfill runs.
 
 ## Expected value
 

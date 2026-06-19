@@ -1,0 +1,15 @@
+{
+  "game": "mega_millions",
+  "source": "megamillions.com",
+  "last_updated": "2026-06-19T22:30:00",
+  "complete": false,
+  "earliest_available": "2017-10-31",
+  "note": "Seeded with a few real draws. Full history (2017-10-31 onward, the earliest the data service serves) is backfilled by scraper/history_scraper.py in CI. Mega draws have no per-tier winner breakdown (the source structures prize data differently).",
+  "draws": [
+    { "date": "2024-06-18", "jackpot": 61000000, "cash_value": 29100000, "numbers": [21, 22, 50, 55, 67], "mega_ball": 20, "megaplier": 2 },
+    { "date": "2024-06-21", "jackpot": 80000000, "cash_value": 38300000, "numbers": [3, 18, 27, 40, 44], "mega_ball": 19, "megaplier": 4 },
+    { "date": "2024-06-25", "jackpot": 97000000, "cash_value": 46300000, "numbers": [3, 16, 27, 47, 62], "mega_ball": 8, "megaplier": 4 },
+    { "date": "2024-06-28", "jackpot": 116000000, "cash_value": 55200000, "numbers": [28, 31, 33, 42, 66], "mega_ball": 24, "megaplier": 3 },
+    { "date": "2024-07-02", "jackpot": 137000000, "cash_value": 63000000, "numbers": [4, 8, 19, 31, 45], "mega_ball": 11, "megaplier": 4 }
+  ]
+}
