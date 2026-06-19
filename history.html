@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historical data — Lottery Value Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="index.html">&larr; Back</a>
+    <h1 id="hist-title">Historical data</h1>
+    <p class="tagline" id="hist-sub"></p>
+  </header>
+
+  <main id="hist" class="detail">
+    <section class="panel hist-controls">
+      <div class="range-fields">
+        <label>From <input type="date" id="from" /></label>
+        <label>To <input type="date" id="to" /></label>
+      </div>
+      <div class="range-presets" id="presets">
+        <button class="chip" data-range="all">All</button>
+        <button class="chip" data-range="1825">5Y</button>
+        <button class="chip" data-range="365">1Y</button>
+        <button class="chip" data-range="180">6M</button>
+        <button class="chip" data-range="90">90D</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Jackpot &amp; cash value over time</h2>
+      <p class="section-note" id="chart-note"></p>
+      <div class="hist-chart"><canvas id="hist-chart"></canvas></div>
+    </section>
+
+    <div class="stat-strip" id="summary"></div>
+
+    <section class="panel">
+      <h2>Every draw</h2>
+      <div class="hist-table-wrap">
+        <table class="hist-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Numbers</th>
+              <th class="num">Jackpot</th>
+              <th class="num">Cash value</th>
+              <th class="num">Winners</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Historical data scraped from powerball.com. Updated automatically after each draw.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="history.js"></script>
+</body>
+</html>

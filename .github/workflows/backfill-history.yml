@@ -1,0 +1,46 @@
+name: Backfill Lotto America history
+
+# One-time (and on-demand) backfill of the full Lotto America draw archive from
+# powerball.com. The incremental "Update lottery data" workflow keeps it current
+# after each draw; run this manually to fill the ~1,090-draw history the first
+# time, or to repair gaps.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max draws to fetch this run (0 = no cap)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scraper/requirements.txt
+
+      - name: Backfill history
+        run: python scraper/history_scraper.py --limit ${{ inputs.limit }}
+
+      - name: Commit history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add history/lotto_america.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Backfill Lotto America history [skip ci]"
+            git push
+          fi

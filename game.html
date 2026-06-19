@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lottery Value Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="index.html">&larr; All lotteries</a>
+    <h1 id="game-title">Loading&hellip;</h1>
+    <p class="tagline" id="game-sub"></p>
+  </header>
+
+  <main id="detail" class="detail"></main>
+
+  <footer class="site-footer">
+    <p>Data scraped from official lottery sites. Updated automatically after each draw.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

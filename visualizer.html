@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odds visualizer — Lottery Value Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="index.html">&larr; Back</a>
+    <h1 id="viz-title">Odds visualizer</h1>
+    <p class="tagline" id="viz-sub"></p>
+  </header>
+
+  <main class="viz">
+    <section class="panel viz-controls">
+      <label>
+        Prize
+        <select id="tier"></select>
+      </label>
+      <label>
+        Lines purchased
+        <input type="number" id="lines" min="1" value="1" inputmode="numeric" />
+      </label>
+      <div class="viz-stats" id="stats"></div>
+      <button id="locate" class="btn" type="button">Find the winning dot</button>
+    </section>
+
+    <div class="dot-legend">
+      <span class="key"><span class="swatch swatch--red"></span> Your winning chance</span>
+      <span class="key"><span class="swatch swatch--white"></span> A losing outcome</span>
+      <span class="key" id="scroll-hint"></span>
+    </div>
+
+    <div id="dotarea" class="dot-area" aria-label="A field of dots; one red dot is your chance to win"></div>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="visualizer.js"></script>
+</body>
+</html>

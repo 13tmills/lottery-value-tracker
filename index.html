@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lottery Value Tracker</title>
+  <meta name="description" content="Live jackpots and value-per-dollar for Powerball, Mega Millions, and Lotto America." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Lottery Value Tracker</h1>
+    <p class="tagline">Live jackpots &amp; how much value each dollar actually buys.</p>
+    <p class="updated" id="last-updated">Loading&hellip;</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="cards-heading">
+      <h2 id="cards-heading" class="section-heading">Current jackpots</h2>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <p class="disclaimer">
+      Expected value sums the advertised cash-option jackpot and every fixed
+      lower-tier prize, each divided by its odds, after an assumed 63% post-tax
+      take. Mega Millions figures include its always-on 2&times;&ndash;10&times;
+      multiplier (~3&times; on average). For entertainment and comparison only
+      &mdash; not financial advice.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Data scraped from official lottery sites. Updated automatically after each draw.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
