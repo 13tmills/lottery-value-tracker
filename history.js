@@ -7,6 +7,12 @@ let chart = null;
 let all = [];          // every draw, ascending by date
 let meta = null;
 
+// Lazy table rendering
+const TABLE_BATCH = 60;
+let tableRows = [];    // current filtered draws, most-recent-first
+let tableRendered = 0;
+let rowObserver = null;
+
 function param(name) {
   return new URLSearchParams(location.search).get(name);
 }
@@ -23,7 +29,23 @@ async function init() {
   els.chartNote = document.getElementById("chart-note");
   els.summary = document.getElementById("summary");
   els.rows = document.getElementById("rows");
+  els.sentinel = document.getElementById("rows-sentinel");
   els.main = document.getElementById("hist");
+
+  // Toggle prize breakdowns via delegation (survives lazy row appends).
+  els.rows.addEventListener("click", (e) => {
+    const btn = e.target.closest(".winners-toggle");
+    if (!btn) return;
+    const row = document.getElementById(`detail-${btn.dataset.id}`);
+    if (row) row.hidden = !row.hidden;
+  });
+
+  // Append the next batch of rows when the sentinel scrolls into view.
+  rowObserver = new IntersectionObserver(
+    (entries) => { if (entries.some((en) => en.isIntersecting)) appendRows(); },
+    { rootMargin: "800px 0px" }
+  );
+  rowObserver.observe(els.sentinel);
 
   const key = param("game") || "lotto_america";
   meta = GAME_META[key];
@@ -171,37 +193,55 @@ function prizeLabel(match) {
 }
 
 function renderTable(draws) {
-  // Most recent first.
-  const rows = draws.slice().reverse();
-  els.rows.innerHTML = rows
-    .map((d, i) => {
-      const balls = d.numbers.map((n) => `<span class="ball ball--sm">${n}</span>`).join("") +
-        (d.star_ball != null ? `<span class="ball ball--sm ball--special">${d.star_ball}</span>` : "");
-      const winners = d.prizes
-        ? `<button class="winners-toggle" data-i="${i}">${(d.total_winners ?? d.prizes.reduce((s, p) => s + p.winners, 0)).toLocaleString()} ▾</button>`
-        : `<span class="muted">—</span>`;
-      const detail = d.prizes ? prizeDetailRow(d, i) : "";
-      return `
-        <tr>
-          <td>${fmtDate(d.date)}</td>
-          <td><div class="numbers numbers--row">${balls}</div></td>
-          <td class="num">${fmtMoney(d.jackpot)}</td>
-          <td class="num">${d.cash_value != null ? fmtMoney(d.cash_value) : "<span class='muted'>—</span>"}</td>
-          <td class="num">${winners}</td>
-        </tr>
-        ${detail}`;
-    })
-    .join("");
-
-  els.rows.querySelectorAll(".winners-toggle").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const row = document.getElementById(`detail-${btn.dataset.i}`);
-      if (row) row.hidden = !row.hidden;
-    });
-  });
+  // Most recent first; rendered lazily in batches as you scroll.
+  tableRows = draws.slice().reverse();
+  tableRendered = 0;
+  els.rows.innerHTML = "";
+  appendRows();
 }
 
-function prizeDetailRow(d, i) {
+function appendRows() {
+  if (tableRendered >= tableRows.length) {
+    updateSentinel();
+    return;
+  }
+  const next = tableRows.slice(tableRendered, tableRendered + TABLE_BATCH);
+  els.rows.insertAdjacentHTML("beforeend", next.map(rowHtml).join(""));
+  tableRendered += next.length;
+  updateSentinel();
+}
+
+function updateSentinel() {
+  if (!els.sentinel) return;
+  if (!tableRows.length) {
+    els.sentinel.textContent = "";
+  } else if (tableRendered >= tableRows.length) {
+    els.sentinel.textContent = `All ${tableRows.length.toLocaleString()} draws shown`;
+  } else {
+    els.sentinel.textContent =
+      `Showing ${tableRendered.toLocaleString()} of ${tableRows.length.toLocaleString()} — scroll for more`;
+  }
+}
+
+function rowHtml(d) {
+  const balls = d.numbers.map((n) => `<span class="ball ball--sm">${n}</span>`).join("") +
+    (d.star_ball != null ? `<span class="ball ball--sm ball--special">${d.star_ball}</span>` : "");
+  const winners = d.prizes
+    ? `<button class="winners-toggle" data-id="${d.date}">${(d.total_winners ?? d.prizes.reduce((s, p) => s + p.winners, 0)).toLocaleString()} ▾</button>`
+    : `<span class="muted">—</span>`;
+  const detail = d.prizes ? prizeDetailRow(d) : "";
+  return `
+    <tr>
+      <td>${fmtDate(d.date)}</td>
+      <td><div class="numbers numbers--row">${balls}</div></td>
+      <td class="num">${fmtMoney(d.jackpot)}</td>
+      <td class="num">${d.cash_value != null ? fmtMoney(d.cash_value) : "<span class='muted'>—</span>"}</td>
+      <td class="num">${winners}</td>
+    </tr>
+    ${detail}`;
+}
+
+function prizeDetailRow(d) {
   const bonus = d.all_star_bonus ? ` · All Star Bonus ${d.all_star_bonus}×` : "";
   const tiers = d.prizes
     .map(
@@ -213,7 +253,7 @@ function prizeDetailRow(d, i) {
     )
     .join("");
   return `
-    <tr id="detail-${i}" class="detail-row" hidden>
+    <tr id="detail-${d.date}" class="detail-row" hidden>
       <td colspan="5">
         <div class="prize-breakdown">
           <p class="muted">Winners by tier${bonus}</p>

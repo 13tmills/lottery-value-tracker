@@ -476,6 +476,13 @@ main {
   padding: 0;
 }
 
+.rows-sentinel {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+
 .detail-row > td { background: var(--surface-2); }
 .prize-breakdown { padding: 0.5rem 0.25rem; }
 .prize-breakdown .tier-table { max-width: 420px; }
