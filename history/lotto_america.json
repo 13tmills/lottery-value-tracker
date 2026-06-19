@@ -63940,7 +63940,55 @@
         35
       ],
       "star_ball": 3,
-      "all_star_bonus": 3
+      "all_star_bonus": 3,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 3190000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 8
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 78
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 702
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1206
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 6192
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 10252
+        }
+      ],
+      "total_winners": 18440
     },
     {
       "date": "2024-06-19",
@@ -63954,7 +64002,55 @@
         51
       ],
       "star_ball": 8,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 3330000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 0
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 12
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 72
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 685
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1219
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 6927
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 12133
+        }
+      ],
+      "total_winners": 21048
     },
     {
       "date": "2024-06-22",
@@ -63968,7 +64064,55 @@
         44
       ],
       "star_ball": 1,
-      "all_star_bonus": 3
+      "all_star_bonus": 3,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 3510000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 1
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 14
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 104
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 954
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1535
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 8701
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 14681
+        }
+      ],
+      "total_winners": 25990
     },
     {
       "date": "2024-06-24",
@@ -63982,7 +64126,55 @@
         35
       ],
       "star_ball": 1,
-      "all_star_bonus": 5
+      "all_star_bonus": 5,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 3630000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 1
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 18
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 73
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 721
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1057
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 5476
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 9698
+        }
+      ],
+      "total_winners": 17044
     },
     {
       "date": "2024-06-26",
@@ -63996,7 +64188,55 @@
         48
       ],
       "star_ball": 6,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 3760000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 3
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 24
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 74
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 722
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1315
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 7221
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 12394
+        }
+      ],
+      "total_winners": 21753
     },
     {
       "date": "2024-06-29",
