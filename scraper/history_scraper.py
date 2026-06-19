@@ -184,10 +184,15 @@ def main() -> int:
     by_date = {dr["date"]: dr for dr in data.get("draws", [])}
 
     today = date.today()
-    missing = [d for d in draw_dates(START, today) if d.isoformat() not in by_date]
+    # Fetch dates we don't have yet, AND existing draws missing their prize-tier
+    # breakdown (e.g. hand-seeded rows) so incomplete records self-heal on re-run.
+    missing = [
+        d for d in draw_dates(START, today)
+        if d.isoformat() not in by_date or not by_date[d.isoformat()].get("prizes")
+    ]
     if args.limit:
         missing = missing[:args.limit]
-    print(f"{len(by_date)} draws on file; {len(missing)} missing date(s) to fetch.")
+    print(f"{len(by_date)} draws on file; {len(missing)} date(s) to (re)fetch.")
 
     fetched = 0
     for d in missing:
