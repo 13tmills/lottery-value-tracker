@@ -39,6 +39,15 @@ USER_AGENT = (
 HIST_DIR = os.path.join(os.path.dirname(__file__), "..", "history")
 DRAW_URL = "https://www.powerball.com/draw-result?gc={gc}&date={d}"
 MEGA_API = "https://www.megamillions.com/cmspages/utilservice.asmx/GetDrawDataByTickWithMatrix"
+# megamillions.com is Cloudflare-fronted; send the headers a real XHR would so the
+# request looks legitimate (helps, though datacenter IPs may still be blocked).
+MEGA_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Referer": "https://www.megamillions.com/Winning-Numbers/Previous-Drawings.aspx",
+    "Origin": "https://www.megamillions.com",
+    "X-Requested-With": "XMLHttpRequest",
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+}
 
 GAMES = {
     "lotto_america": {
@@ -198,8 +207,7 @@ def scrape_powerball_site(d, cfg):
 
 def scrape_megamillions(d, cfg):
     ticks = (d - date(1, 1, 1)).days * TICKS_PER_DAY
-    resp = requests.post(MEGA_API, json={"PlayDateTicks": str(ticks)},
-                         headers={"User-Agent": USER_AGENT}, timeout=20)
+    resp = requests.post(MEGA_API, json={"PlayDateTicks": str(ticks)}, headers=MEGA_HEADERS, timeout=20)
     resp.raise_for_status()
     payload = json.loads(resp.json()["d"])
     drawing = payload.get("Drawing") or {}

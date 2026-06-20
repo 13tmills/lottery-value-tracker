@@ -246,6 +246,13 @@ def scrape_powerball_site(cfg: dict) -> dict:
 
 
 MEGA_API = "https://www.megamillions.com/cmspages/utilservice.asmx/GetLatestDrawData"
+MEGA_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Referer": "https://www.megamillions.com/Winning-Numbers.aspx",
+    "Origin": "https://www.megamillions.com",
+    "X-Requested-With": "XMLHttpRequest",
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+}
 
 
 def scrape_megamillions(cfg: dict) -> dict:
@@ -254,7 +261,7 @@ def scrape_megamillions(cfg: dict) -> dict:
     web service the page itself calls. A POST returns {"d": "<json string>"}.
     Verified live 2026-06-19: returns Drawing.N1-5/MBall + Jackpot.CurrentPrizePool
     / CurrentCashValue."""
-    resp = requests.post(MEGA_API, json={}, headers={"User-Agent": USER_AGENT}, timeout=20)
+    resp = requests.post(MEGA_API, json={}, headers=MEGA_HEADERS, timeout=20)
     resp.raise_for_status()
     payload = json.loads(resp.json()["d"])
 

@@ -71,8 +71,9 @@ async function init() {
     if (!all.length) throw new Error("no draws yet");
 
     const span = `${fmtDate(all[0].date)} – ${fmtDate(all.at(-1).date)}`;
+    const isSeed = all.length < 30; // real backfills are hundreds+; seed files ship ~5 draws
     els.sub.textContent = `${all.length.toLocaleString()} draws · ${span}` +
-      (data.complete ? "" : " · seed sample (full history backfilled in CI)");
+      (isSeed ? " · seed sample (full history backfilled in CI)" : "");
 
     els.from.min = els.to.min = all[0].date;
     els.from.max = els.to.max = all.at(-1).date;
