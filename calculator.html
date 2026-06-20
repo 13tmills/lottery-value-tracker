@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="analytics.js"></script>
+  <title>Lottery Annuity vs. Cash Calculator — Lump Sum or Payments? | NumbersIntel</title>
+  <meta name="description" id="meta-desc" content="Should you take the lottery lump sum or the 30-year annuity? Compare the after-tax, present-value math at any discount rate — and find the break-even rate." />
+  <link rel="canonical" id="meta-canonical" href="https://13tmills.github.io/lottery-value-tracker/calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:title" id="og-title" content="Lottery Annuity vs. Cash Calculator | NumbersIntel" />
+  <meta property="og:description" id="og-desc" content="Lump sum or 30-year annuity? The after-tax, present-value math — with the break-even discount rate." />
+  <meta property="og:url" id="og-url" content="https://13tmills.github.io/lottery-value-tracker/calculator.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content="Lottery Annuity vs. Cash Calculator | NumbersIntel" />
+  <meta name="twitter:description" id="tw-desc" content="Lump sum or 30-year annuity? The after-tax, present-value math." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="index.html">&larr; Home</a>
+    <h1>Annuity vs. cash calculator</h1>
+    <p class="tagline">Lump sum now, or 30 years of payments? The after-tax, today's-dollars math.</p>
+  </header>
+
+  <main class="detail">
+    <section class="panel calc-inputs">
+      <label>Advertised jackpot (annuity)
+        <input type="text" inputmode="numeric" id="jackpot" />
+      </label>
+      <label>Cash value (lump sum)
+        <input type="text" inputmode="numeric" id="cash" />
+      </label>
+      <label>Federal tax %
+        <input type="number" id="fed" min="0" max="50" step="0.5" value="37" />
+      </label>
+      <label>State tax %
+        <input type="number" id="state" min="0" max="15" step="0.1" value="0" />
+      </label>
+      <label>Discount rate %
+        <input type="number" id="discount" min="0" max="12" step="0.1" value="4" />
+      </label>
+    </section>
+
+    <p class="verdict" id="verdict"></p>
+
+    <div class="detail-grid">
+      <section class="panel result" id="cash-card"></section>
+      <section class="panel result" id="annuity-card"></section>
+    </div>
+
+    <section class="panel">
+      <h2>Present value vs. discount rate</h2>
+      <p class="section-note">The annuity's value falls as your discount rate rises. Where it crosses the cash line is the break-even rate.</p>
+      <div class="hist-chart"><canvas id="calc-chart"></canvas></div>
+    </section>
+
+    <p class="disclaimer">
+      Powerball &amp; Mega Millions pay the annuity as 30 graduated payments (the first now, then 29
+      annual payments each 5% larger). We tax every payment at the combined rate and discount future
+      payments to today's dollars. Estimates only — not financial or tax advice; real tax brackets,
+      state rules, and investment returns vary.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>For information and entertainment only — not financial advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="calculator.js"></script>
+</body>
+</html>

@@ -157,6 +157,15 @@ function render(key, g, data) {
       </div>
       <a class="btn" href="visualizer.html?game=${key}">Open the odds visualizer &rarr;</a>
     </section>
+
+    <section class="panel viz-cta">
+      <div>
+        <h2>Lump sum or annuity?</h2>
+        <p>If you won the ${meta.label} jackpot, would the cash or the 30-year annuity be worth
+          more? Run the after-tax, present-value math.</p>
+      </div>
+      <a class="btn" href="calculator.html?game=${key}">Annuity vs. cash &rarr;</a>
+    </section>
   `;
 
   renderCharts(items, jackpotCents, secondaryCents);
