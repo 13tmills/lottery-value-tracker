@@ -27,6 +27,8 @@
   <url><loc>https://13tmills.github.io/lottery-value-tracker/state.html?state=NY</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://13tmills.github.io/lottery-value-tracker/numbers.html?game=ny_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://13tmills.github.io/lottery-value-tracker/history.html?game=ny_lotto</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/numbers.html?game=ny_take5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/numbers.html?game=ny_pick10</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
 
   <url><loc>https://13tmills.github.io/lottery-value-tracker/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://13tmills.github.io/lottery-value-tracker/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>

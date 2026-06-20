@@ -23,6 +23,12 @@ const GAME_META = {
     label: "New York Lotto", specialKey: "bonus", specialName: "Bonus", specialAbbr: "B",
     draws: "Wed · Sat", priceChanges: [],
   },
+  ny_take5: {
+    label: "Take 5", specialKey: null, specialName: "", draws: "Daily (evening)", priceChanges: [],
+  },
+  ny_pick10: {
+    label: "Pick 10", specialKey: null, specialName: "", draws: "Daily", priceChanges: [],
+  },
 };
 
 const fmtMoney = (n) =>

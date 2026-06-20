@@ -67,7 +67,11 @@ const STATE_GAMES = {
         links: [["Hot &amp; cold numbers", "numbers.html?game=ny_lotto"], ["All past results", "history.html?game=ny_lotto"]] },
       { name: "Powerball", meta: "National jackpot game", links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
       { name: "Mega Millions", meta: "National jackpot game", links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
-      { name: "Take 5 · Numbers · Win 4 · Pick 10 · Cash4Life", meta: "Coming soon", links: [] },
+      { name: "Take 5", meta: "5 of 39 · daily",
+        links: [["Hot &amp; cold numbers", "numbers.html?game=ny_take5"], ["All past results", "history.html?game=ny_take5"]] },
+      { name: "Pick 10", meta: "20 of 80 keno · daily",
+        links: [["Hot &amp; cold numbers", "numbers.html?game=ny_pick10"], ["All past results", "history.html?game=ny_pick10"]] },
+      { name: "Numbers · Win 4 · Cash4Life · Quick Draw", meta: "Coming soon", links: [] },
     ],
   },
 };

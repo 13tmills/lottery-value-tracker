@@ -14,6 +14,9 @@ on:
           - powerball
           - mega_millions
           - lotto_america
+          - ny_lotto
+          - ny_take5
+          - ny_pick10
           - all
         default: powerball
       limit:
@@ -43,7 +46,7 @@ jobs:
       - name: Backfill
         run: |
           if [ "${{ inputs.game }}" = "all" ]; then
-            for g in lotto_america powerball mega_millions; do
+            for g in lotto_america powerball mega_millions ny_lotto ny_take5 ny_pick10; do
               python scraper/history_scraper.py --game "$g" --limit ${{ inputs.limit }}
             done
           else

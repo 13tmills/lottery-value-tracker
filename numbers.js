@@ -91,7 +91,11 @@ function render(key, draws) {
 
   els.whiteNote.textContent = `How many times each ball (1–${white.max}) has been drawn across ${white.total.toLocaleString()} draws.`;
   renderBars("white-chart", white, hottest.n);
-  renderBars("special-chart", special, [...special.rows].sort((a, b) => b.count - a.count)[0]?.n);
+  if (special.max > 0) {
+    renderBars("special-chart", special, [...special.rows].sort((a, b) => b.count - a.count)[0]?.n);
+  } else {
+    document.getElementById("special-chart")?.closest(".panel")?.remove();
+  }
 
   els.caveat.textContent =
     "Past frequency is just history. Lottery draws are independent, so every number is equally likely on the next draw — this is for curiosity, not strategy.";

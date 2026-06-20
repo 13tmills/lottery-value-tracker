@@ -84,6 +84,20 @@ GAMES = {
         "draw_weekdays": {TUE, FRI},
         "special_key": "mega_ball", "bonus_key": "megaplier",
     },
+    # State games via data.ny.gov Socrata API (reachable from CI; one bulk call).
+    "ny_lotto": {
+        "kind": "ny_socrata", "dataset": "6nbc-h7bj",
+        "numbers_field": "winning_numbers", "num_count": 6,
+        "special_field": "bonus", "special_key": "bonus",
+    },
+    "ny_take5": {
+        "kind": "ny_socrata", "dataset": "dg63-4siq",
+        "numbers_field": "evening_winning_numbers", "num_count": 5,
+    },
+    "ny_pick10": {
+        "kind": "ny_socrata", "dataset": "bycu-cw7c",
+        "numbers_field": "winning_numbers", "num_count": 20,
+    },
 }
 
 
@@ -233,6 +247,33 @@ def scrape_megamillions(d, cfg):
 
 SCRAPERS = {"powerball_site": scrape_powerball_site, "megamillions_api": scrape_megamillions}
 
+SODA_BASE = "https://data.ny.gov/resource/{ds}.json"
+
+
+def scrape_socrata(cfg, by_date):
+    """Bulk-fetch a data.ny.gov dataset in one request (reachable from CI).
+    Incremental: only rows newer than the latest date already held. Mutates
+    by_date and returns how many draws were added."""
+    params = {"$order": "draw_date ASC", "$limit": 60000}
+    if by_date:
+        params["$where"] = f"draw_date > '{max(by_date)}T23:59:59'"
+    resp = requests.get(SODA_BASE.format(ds=cfg["dataset"]), params=params,
+                        headers={"User-Agent": USER_AGENT}, timeout=60)
+    resp.raise_for_status()
+    added = 0
+    for r in resp.json():
+        date_str = (r.get("draw_date") or "")[:10]
+        nums = [int(x) for x in (r.get(cfg["numbers_field"]) or "").split() if x.isdigit()]
+        if not date_str or len(nums) < cfg["num_count"]:
+            continue
+        draw = {"date": date_str, "numbers": nums[:cfg["num_count"]]}
+        sf = cfg.get("special_field")
+        if sf and str(r.get(sf, "")).strip().isdigit():
+            draw[cfg["special_key"]] = int(r[sf])
+        by_date[date_str] = draw
+        added += 1
+    return added
+
 
 # --------------------------------------------------------------------------- #
 # Orchestration
@@ -247,7 +288,8 @@ def load_existing(game, cfg):
         with open(out_path(game), encoding="utf-8") as fh:
             return json.load(fh)
     except (FileNotFoundError, json.JSONDecodeError):
-        return {"game": game, "earliest_available": cfg["start"].isoformat(), "draws": []}
+        start = cfg.get("start")
+        return {"game": game, "earliest_available": start.isoformat() if start else "", "draws": []}
 
 
 def main():
@@ -258,48 +300,52 @@ def main():
     args = ap.parse_args()
 
     cfg = GAMES[args.game]
-    scrape = SCRAPERS[cfg["kind"]]
-    has_prizes = cfg["kind"] == "powerball_site"
-
     data = load_existing(args.game, cfg)
     by_date = {dr["date"]: dr for dr in data.get("draws", [])}
 
-    today = date.today()
-    missing = []
-    for d in draw_dates(cfg["start"], today, cfg["draw_weekdays"]):
-        key = d.isoformat()
-        if key not in by_date:
-            missing.append(d)
-        elif has_prizes and d >= cfg["prizes_from"] and not by_date[key].get("prizes"):
-            missing.append(d)  # should carry a prize breakdown but doesn't — self-heal
-    if args.limit:
-        missing = missing[:args.limit]
-    print(f"[{args.game}] {len(by_date)} on file; {len(missing)} date(s) to (re)fetch.")
-
-    fetched = 0
-    for d in missing:
-        try:
-            draw = scrape(d, cfg)
-        except Exception as exc:
-            print(f"  ! {d}: failed ({exc})")
-            continue
-        if draw:
-            by_date[draw["date"]] = draw
-            fetched += 1
-            print(f"  + {d}: jackpot=${draw.get('jackpot') or 0:,} cash=${draw.get('cash_value') or 0:,}")
-        time.sleep(args.sleep)
+    if cfg["kind"] == "ny_socrata":
+        added = scrape_socrata(cfg, by_date)
+        print(f"[{args.game}] +{added} draw(s) from data.ny.gov; total {len(by_date)}.")
+        source = "data.ny.gov"
+        complete = True
+    else:
+        scrape = SCRAPERS[cfg["kind"]]
+        has_prizes = cfg["kind"] == "powerball_site"
+        today = date.today()
+        missing = []
+        for d in draw_dates(cfg["start"], today, cfg["draw_weekdays"]):
+            key = d.isoformat()
+            if key not in by_date:
+                missing.append(d)
+            elif has_prizes and d >= cfg["prizes_from"] and not by_date[key].get("prizes"):
+                missing.append(d)  # should carry a prize breakdown but doesn't — self-heal
+        if args.limit:
+            missing = missing[:args.limit]
+        print(f"[{args.game}] {len(by_date)} on file; {len(missing)} date(s) to (re)fetch.")
+        for d in missing:
+            try:
+                draw = scrape(d, cfg)
+            except Exception as exc:
+                print(f"  ! {d}: failed ({exc})")
+                continue
+            if draw:
+                by_date[draw["date"]] = draw
+                print(f"  + {d}: jackpot=${draw.get('jackpot') or 0:,} cash=${draw.get('cash_value') or 0:,}")
+            time.sleep(args.sleep)
+        source = "megamillions.com" if cfg["kind"] == "megamillions_api" else "powerball.com"
+        last = max(by_date) if by_date else None
+        complete = bool(by_date) and last is not None and not any(
+            dd.isoformat() not in by_date
+            for dd in draw_dates(cfg["start"], date.fromisoformat(last), cfg["draw_weekdays"])
+        )
 
     draws = sorted(by_date.values(), key=lambda x: x["date"])
-    last = draws[-1]["date"] if draws else None
-    complete = bool(draws) and not any(
-        dd.isoformat() not in by_date
-        for dd in draw_dates(cfg["start"], date.fromisoformat(last), cfg["draw_weekdays"])
-    ) if last else False
+    earliest = draws[0]["date"] if draws else (cfg["start"].isoformat() if cfg.get("start") else "")
 
     data.update({
         "game": args.game,
-        "source": "megamillions.com" if cfg["kind"] == "megamillions_api" else "powerball.com",
-        "earliest_available": cfg["start"].isoformat(),
+        "source": source,
+        "earliest_available": earliest,
         "last_updated": date.today().isoformat(),
         "complete": complete,
         "draws": draws,
@@ -310,7 +356,7 @@ def main():
         json.dump(data, fh, indent=2)
         fh.write("\n")
 
-    print(f"[{args.game}] fetched {fetched}; total {len(draws)}; wrote {os.path.abspath(out_path(args.game))}")
+    print(f"[{args.game}] total {len(draws)}; wrote {os.path.abspath(out_path(args.game))}")
     return 0
 
 

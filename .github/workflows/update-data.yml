@@ -33,6 +33,9 @@ jobs:
           python scraper/history_scraper.py --game lotto_america
           python scraper/history_scraper.py --game powerball
           python scraper/history_scraper.py --game mega_millions
+          python scraper/history_scraper.py --game ny_lotto
+          python scraper/history_scraper.py --game ny_take5
+          python scraper/history_scraper.py --game ny_pick10
 
       - name: Commit updated data
         run: |
