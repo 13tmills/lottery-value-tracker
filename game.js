@@ -41,6 +41,14 @@ function render(key, g, data) {
   const meta = GAME_META[key];
   const taxFactor = data.assumptions?.tax_factor ?? 0.63;
 
+  // Break-even jackpot: the cash value at which EV per $1 reaches 1.0 (positive
+  // expected value), holding secondary-prize value constant.
+  const secPerDollar = g.ev_breakdown?.secondary ?? 0;
+  const cashBreakeven = g.odds_jackpot * (g.ticket_price / taxFactor) * (1 - secPerDollar);
+  const cashRatio = g.jackpot ? g.cash_value / g.jackpot : 0.5;
+  const advBreakeven = cashRatio ? cashBreakeven / cashRatio : cashBreakeven;
+  const timesBigger = g.jackpot ? advBreakeven / g.jackpot : 0;
+
   setMeta({
     title: `Is ${meta.label} Worth Playing? EV & Odds | NumbersIntel`,
     description: `${meta.label}: live jackpot, cash value, and the real expected value per $1 across every prize tier — plus odds and the latest winning numbers.`,
@@ -147,6 +155,20 @@ function render(key, g, data) {
         <em>Value / $1</em> column reflects that average. Jackpot prize shown is the cash option.</p>`
       : `<p class="table-note">Jackpot prize shown is the cash option. Values are after an assumed
         ${Math.round((1 - taxFactor) * 100)}% tax, per $1 of ticket cost.</p>`}
+    </section>
+
+    <section class="panel">
+      <h2>When does the math break even?</h2>
+      <p>A ${meta.label} ticket only crosses into positive expected value — more than $1 of value
+        back for every $1 spent — at a staggering jackpot:</p>
+      <div class="stat-strip">
+        <div class="stat"><div class="stat__label">Break-even jackpot</div><div class="stat__value">${fmtMoney(advBreakeven)}</div></div>
+        <div class="stat"><div class="stat__label">Break-even cash value</div><div class="stat__value">${fmtMoney(cashBreakeven)}</div></div>
+        <div class="stat"><div class="stat__label">vs. today's jackpot</div><div class="stat__value">${timesBigger.toFixed(1)}× bigger</div></div>
+      </div>
+      <p class="table-note">And even then this ignores the risk of splitting the jackpot with another
+        winner, which rises as jackpots grow. In practice, no lottery ticket is ever a
+        positive-value bet.</p>
     </section>
 
     <section class="panel viz-cta">
