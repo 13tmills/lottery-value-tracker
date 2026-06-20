@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="analytics.js"></script>
+  <title>Hot &amp; Cold Numbers — NumbersIntel</title>
+  <meta name="description" id="meta-desc" content="The most and least drawn lottery numbers, with full frequency charts. From NumbersIntel." />
+  <link rel="canonical" id="meta-canonical" href="https://13tmills.github.io/lottery-value-tracker/numbers.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:title" id="og-title" content="NumbersIntel" />
+  <meta property="og:description" id="og-desc" content="The most and least drawn lottery numbers, with full frequency charts." />
+  <meta property="og:url" id="og-url" content="https://13tmills.github.io/lottery-value-tracker/numbers.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content="NumbersIntel" />
+  <meta name="twitter:description" id="tw-desc" content="The most and least drawn lottery numbers, with full frequency charts." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="index.html">&larr; Back</a>
+    <h1 id="nums-title">Hot &amp; cold numbers</h1>
+    <p class="tagline" id="nums-sub"></p>
+  </header>
+
+  <main id="nums" class="detail">
+    <div class="stat-strip" id="summary"></div>
+
+    <div class="detail-grid">
+      <section class="panel">
+        <h2>Hottest numbers</h2>
+        <p class="section-note">Drawn most often.</p>
+        <div class="freq-list" id="hot"></div>
+      </section>
+      <section class="panel">
+        <h2>Most overdue</h2>
+        <p class="section-note">Longest since last drawn.</p>
+        <div class="freq-list" id="overdue"></div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>White ball frequency</h2>
+      <p class="section-note" id="white-note"></p>
+      <div class="freq-chart"><canvas id="white-chart"></canvas></div>
+    </section>
+
+    <section class="panel">
+      <h2 id="special-h2">Special ball frequency</h2>
+      <div class="freq-chart freq-chart--sm"><canvas id="special-chart"></canvas></div>
+    </section>
+
+    <p class="disclaimer" id="caveat"></p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>Frequency is historical, not predictive — lottery draws are independent.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="numbers.js"></script>
+</body>
+</html>

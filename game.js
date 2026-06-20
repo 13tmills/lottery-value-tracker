@@ -99,6 +99,15 @@ function render(key, g, data) {
       <span class="btn">Open history &rarr;</span>
     </a>
 
+    <a class="panel hist-cta" href="numbers.html?game=${key}">
+      <div>
+        <h2>Hot &amp; cold numbers</h2>
+        <p>Which ${meta.label} numbers come up most, which are overdue, and the full
+          frequency chart across every past draw.</p>
+      </div>
+      <span class="btn">See the numbers &rarr;</span>
+    </a>
+
     <div class="detail-grid">
       <section class="panel">
         <h2>Where your value comes from</h2>
