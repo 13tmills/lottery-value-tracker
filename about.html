@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="analytics.js"></script>
+  <title>About NumbersIntel — How We Calculate Lottery Value</title>
+  <meta name="description" content="NumbersIntel publishes the real expected value of every major US lottery, updated automatically after each draw. Here's who we are and how the math works." />
+  <link rel="canonical" href="https://13tmills.github.io/lottery-value-tracker/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:title" content="About NumbersIntel" />
+  <meta property="og:description" content="How NumbersIntel calculates lottery expected value, where the data comes from, and what we cover." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="index.html">&larr; Home</a>
+    <h1>About NumbersIntel</h1>
+    <p class="tagline">The expected value of every game, not just the results.</p>
+  </header>
+
+  <main class="prose">
+    <p class="lead">NumbersIntel is a data-forward gambling-analytics platform. Most lottery
+      sites show you the winning numbers; we show you what those numbers <em>mean for your
+      wallet</em> — the real expected value of each game, ranked side by side.</p>
+
+    <h2>What we do</h2>
+    <p>For every major US lottery we publish the live jackpot, the cash value, the odds, and —
+      the part nobody else makes clear — the <strong>expected value per dollar spent</strong>:
+      how many cents of value a $1 ticket actually returns once you account for every prize
+      tier and taxes. It's the single number that tells you which game is "best" on any given
+      night (they're all negative, but some are far less bad than others).</p>
+
+    <h2>How the data works</h2>
+    <p>Our numbers come straight from official sources — powerball.com for Powerball and Lotto
+      America, and megamillions.com's own data service for Mega Millions. An automated pipeline
+      (a scraper run by GitHub Actions) refreshes the figures after every drawing, so the site
+      stays current with zero manual work. We also maintain a full historical archive of past
+      draws, jackpots, and cash values.</p>
+
+    <h2>How we calculate expected value</h2>
+    <p>For each game we sum the cash-option jackpot and every fixed lower-tier prize, each divided
+      by its odds, then apply an assumed 63% post-tax take (37% federal + roughly 26% blended
+      state) and divide by the ticket price. The result is cents of value returned per $1. We use
+      published prize tables and odds; secondary-prize multipliers (Power Play, All Star Bonus,
+      Mega Millions' built-in multiplier) are noted where they apply.</p>
+
+    <h2>What we cover</h2>
+    <ul>
+      <li><strong>Now:</strong> Powerball, Mega Millions, and Lotto America — jackpots, EV,
+        odds visualizer, and a full historical archive.</li>
+      <li><strong>Next:</strong> state lotteries, scratch-ticket EV rankings, and eventually
+        house-edge data across casino games and sports betting.</li>
+    </ul>
+
+    <h2>A word on responsible play</h2>
+    <p>Everything here is for information and entertainment only — it is not financial, legal, or
+      gambling advice. The lottery is a negative-expected-value game by design; never spend money
+      you can't afford to lose. If gambling is a problem for you or someone you know, call
+      <strong>1-800-GAMBLER</strong>.</p>
+
+    <p class="note">Questions or corrections? Reach us at
+      <a href="mailto:contact@numbersintel.com">contact@numbersintel.com</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>NumbersIntel — for information and entertainment only. Not affiliated with any lottery.</p>
+  </footer>
+</body>
+</html>
