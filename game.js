@@ -26,8 +26,13 @@ async function init() {
   try {
     const data = await loadData();
     const g = data.games[key];
-    if (!g) throw new Error(`no data for ${key}`);
-    render(key, g, data);
+    if (g) {
+      render(key, g, data); // national game: full EV treatment
+    } else {
+      // State game (no jackpot/EV): build modules from its draw history.
+      const hist = await fetch(`./history/${key}.json`, { cache: "no-store" }).then((r) => r.json());
+      renderStateGame(key, meta, hist);
+    }
   } catch (err) {
     titleEl.textContent = meta.label;
     document.getElementById("detail").innerHTML =
@@ -247,6 +252,114 @@ function renderCharts(items, jackpotCents, secondaryCents) {
       scales: {
         x: { beginAtZero: true, ticks: { color: t.textDim, callback: (v) => `${v}¢` }, grid: { color: t.border } },
         y: { ticks: { color: t.textDim, font: { size: 11 } }, grid: { display: false } },
+      },
+    },
+  }));
+}
+
+// State-game detail page (no jackpot/EV): stat strip, latest numbers, hottest
+// list, and a number-frequency chart, built from the game's draw history.
+function renderStateGame(key, meta, data) {
+  const draws = (data.draws || []).slice().sort((a, b) => a.date.localeCompare(b.date));
+  const titleEl = document.getElementById("game-title");
+  if (!draws.length) {
+    titleEl.textContent = meta.label;
+    document.getElementById("detail").innerHTML = `<div class="error">No data yet for ${meta.label}.</div>`;
+    return;
+  }
+  const total = draws.length;
+  const sinceYear = draws[0].date.slice(0, 4);
+  setMeta({
+    title: `${meta.label} Results & Number Frequency | NumbersIntel`,
+    description: `${meta.label} (New York): latest winning numbers, the most and least drawn numbers, and ${total.toLocaleString()} past draws since ${sinceYear}.`,
+    url: `${SITE}/game.html?game=${key}`,
+  });
+  titleEl.textContent = meta.label;
+  document.getElementById("game-sub").textContent =
+    `New York · draws ${meta.draws} · ${total.toLocaleString()} draws since ${sinceYear}`;
+
+  let max = 0;
+  draws.forEach((d) => d.numbers.forEach((n) => { if (n > max) max = n; }));
+  const count = Array(max + 1).fill(0);
+  const lastSeen = Array(max + 1).fill(-1);
+  draws.forEach((d, i) => d.numbers.forEach((n) => { count[n]++; lastSeen[n] = i; }));
+  const rows = [];
+  for (let n = 1; n <= max; n++) rows.push({ n, count: count[n], overdue: lastSeen[n] < 0 ? total : total - 1 - lastSeen[n] });
+  const byCount = [...rows].sort((a, b) => b.count - a.count);
+  const byOverdue = [...rows].sort((a, b) => b.overdue - a.overdue);
+
+  const latest = draws[draws.length - 1];
+  const special = meta.specialKey ? latest[meta.specialKey] : null;
+  const balls = latest.numbers.map((n) => `<span class="ball">${n}</span>`).join("") +
+    (special != null ? `<span class="ball ball--special">${special}</span>` : "");
+  const freqRow = (r) => `
+    <div class="freq-row">
+      <span class="ball ball--sm">${r.n}</span>
+      <span class="freq-bar"><span class="freq-bar__fill" style="width:${(r.count / byCount[0].count) * 100}%"></span></span>
+      <span class="freq-val">${r.count}&times;</span>
+    </div>`;
+
+  document.getElementById("detail").innerHTML = `
+    <section class="stat-strip">
+      <div class="stat"><div class="stat__label">Draws on record</div><div class="stat__value">${total.toLocaleString()}</div></div>
+      <div class="stat"><div class="stat__label">Hottest number</div><div class="stat__value">${byCount[0].n}</div></div>
+      <div class="stat"><div class="stat__label">Most overdue</div><div class="stat__value">${byOverdue[0].n}</div></div>
+      <div class="stat"><div class="stat__label">Latest draw</div><div class="stat__value">${fmtDate(latest.date)}</div></div>
+    </section>
+
+    <div class="detail-grid">
+      <section class="panel">
+        <h2>Latest numbers</h2>
+        <div class="numbers numbers--lg">${balls}</div>
+        <ul class="meta">
+          <li><span class="k">Draw days</span><span class="v">${meta.draws}</span></li>
+          <li><span class="k">Records since</span><span class="v">${fmtDate(draws[0].date)}</span></li>
+          <li><span class="k">Total draws</span><span class="v">${total.toLocaleString()}</span></li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h2>Hottest numbers</h2>
+        <div class="freq-list">${byCount.slice(0, 6).map(freqRow).join("")}</div>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Number frequency</h2>
+      <p class="section-note">How often each number (1&ndash;${max}) has come up across ${total.toLocaleString()} draws. Frequency is descriptive — draws are independent.</p>
+      <div class="mini-chart mini-chart--bar-lg"><canvas id="sg-freq"></canvas></div>
+    </section>
+
+    <a class="panel hist-cta" href="numbers.html?game=${key}">
+      <div><h2>Hot &amp; cold numbers</h2><p>Full frequency and most-overdue analysis for every ${meta.label} number.</p></div>
+      <span class="btn">See the numbers &rarr;</span>
+    </a>
+    <a class="panel hist-cta" href="history.html?game=${key}">
+      <div><h2>All past results</h2><p>Every ${meta.label} draw, searchable by date.</p></div>
+      <span class="btn">Open results &rarr;</span>
+    </a>`;
+
+  const t = theme();
+  charts.push(new Chart(document.getElementById("sg-freq"), {
+    type: "bar",
+    data: {
+      labels: rows.map((r) => r.n),
+      datasets: [{
+        data: rows.map((r) => r.count),
+        backgroundColor: rows.map((r) => (r.n === byCount[0].n ? t.accent : t.accent2)),
+        borderRadius: 2,
+        maxBarThickness: 22,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { title: (i) => `Number ${i[0].label}`, label: (c) => `Drawn ${c.parsed.y}× of ${total}` } },
+      },
+      scales: {
+        x: { ticks: { color: t.textDim, autoSkip: true, maxTicksLimit: 20, maxRotation: 0 }, grid: { display: false } },
+        y: { beginAtZero: true, ticks: { color: t.textDim, precision: 0 }, grid: { color: t.border } },
       },
     },
   }));
