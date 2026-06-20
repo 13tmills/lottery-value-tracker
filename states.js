@@ -58,6 +58,20 @@ const STATES = [
   { abbr: "USVI", name: "U.S. Virgin Islands", lottery: true },
 ];
 
+// Per-state game listings for jurisdictions we've started covering.
+const STATE_GAMES = {
+  NY: {
+    intro: "New York runs one of the largest US state lotteries. We've started with NY Lotto — full results and number frequency below — with more games rolling out.",
+    games: [
+      { name: "New York Lotto", meta: "6 of 59 + Bonus · Wed &amp; Sat · since 2001",
+        links: [["Hot &amp; cold numbers", "numbers.html?game=ny_lotto"], ["All past results", "history.html?game=ny_lotto"]] },
+      { name: "Powerball", meta: "National jackpot game", links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "National jackpot game", links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+      { name: "Take 5 · Numbers · Win 4 · Pick 10 · Cash4Life", meta: "Coming soon", links: [] },
+    ],
+  },
+};
+
 function stateParam() {
   return (new URLSearchParams(location.search).get("state") || "").toUpperCase();
 }
@@ -103,12 +117,30 @@ function renderState() {
   }
 
   titleEl.textContent = `${s.name} Lottery`;
-  subEl.textContent = "Results, odds, expected value & number frequency — coming soon.";
   setMeta({
-    title: `${s.name} Lottery — Results, Odds & Expected Value | NumbersIntel`,
-    description: `${s.name} lottery results, odds, expected value, and hot & cold number frequency — the NumbersIntel analytics treatment, coming soon for ${s.name}'s games.`,
+    title: `${s.name} Lottery — Results, Numbers & Frequency | NumbersIntel`,
+    description: `${s.name} lottery results and hot & cold number frequency — plus the national games. The NumbersIntel analytics treatment for ${s.name}.`,
     url: `${SITE}/state.html?state=${s.abbr}`,
   });
+
+  const cfg = STATE_GAMES[s.abbr];
+  if (cfg) {
+    subEl.textContent = "Pick a game for results and number frequency.";
+    host.innerHTML =
+      `<p class="lead">${cfg.intro}</p>` +
+      cfg.games.map((g) => `
+        <section class="panel hist-cta">
+          <div><h2>${g.name}</h2><p>${g.meta}</p></div>
+          <div class="game-links">${
+            g.links.length
+              ? g.links.map(([t, h]) => `<a class="btn" href="${h}">${t}</a>`).join("")
+              : '<span class="muted">Coming soon</span>'
+          }</div>
+        </section>`).join("");
+    return;
+  }
+
+  subEl.textContent = "Results, odds, expected value & number frequency — coming soon.";
   host.innerHTML = `
     <p class="lead">Full ${s.name} lottery coverage is on the way to NumbersIntel.</p>
     <section class="panel">

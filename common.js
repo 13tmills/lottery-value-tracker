@@ -18,6 +18,11 @@ const GAME_META = {
     draws: "Mon · Wed · Sat", bonusKey: "all_star_bonus", bonusName: "All Star Bonus",
     priceChanges: [],
   },
+  // State games (data via data.ny.gov; no jackpot/EV — results & frequency only).
+  ny_lotto: {
+    label: "New York Lotto", specialKey: "bonus", specialName: "Bonus", specialAbbr: "B",
+    draws: "Wed · Sat", priceChanges: [],
+  },
 };
 
 const fmtMoney = (n) =>

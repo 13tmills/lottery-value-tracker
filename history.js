@@ -6,6 +6,7 @@ const els = {};
 let chart = null;
 let all = [];          // every draw, ascending by date
 let meta = null;
+let hasJackpot = true; // some games (state games) have no jackpot/cash — chart hidden
 
 // Lazy table rendering
 const TABLE_BATCH = 60;
@@ -70,6 +71,12 @@ async function init() {
     all = (data.draws || []).slice().sort((a, b) => a.date.localeCompare(b.date));
     if (!all.length) throw new Error("no draws yet");
 
+    hasJackpot = all.some((d) => d.jackpot != null);
+    if (!hasJackpot) {
+      document.getElementById("hist-chart")?.closest(".panel")?.remove();
+      document.querySelector(".hist-table")?.classList.add("hist-table--simple");
+    }
+
     const span = `${fmtDate(all[0].date)} – ${fmtDate(all.at(-1).date)}`;
     const isSeed = all.length < 30; // real backfills are hundreds+; seed files ship ~5 draws
     els.sub.textContent = `${all.length.toLocaleString()} draws · ${span}` +
@@ -126,7 +133,7 @@ function filtered() {
 
 function apply() {
   const draws = filtered();
-  renderChart(draws);
+  if (hasJackpot) renderChart(draws);
   renderSummary(draws);
   renderTable(draws);
 }
@@ -220,14 +227,16 @@ function renderSummary(draws) {
     els.summary.innerHTML = `<div class="stat"><div class="stat__label">No draws</div><div class="stat__value">—</div></div>`;
     return;
   }
-  const peak = draws.reduce((m, d) => (d.jackpot > m.jackpot ? d : m), draws[0]);
-  const withWinners = draws.filter((d) => d.prizes);
   const stats = [
     ["Draws shown", draws.length.toLocaleString()],
     ["Date range", `${fmtDate(draws[0].date)} – ${fmtDate(draws.at(-1).date)}`],
-    ["Peak jackpot", `${fmtMoney(peak.jackpot)}`],
-    ["On", fmtDate(peak.date)],
   ];
+  if (hasJackpot) {
+    const peak = draws.reduce((m, d) => (d.jackpot > m.jackpot ? d : m), draws[0]);
+    stats.push(["Peak jackpot", fmtMoney(peak.jackpot)], ["On", fmtDate(peak.date)]);
+  } else {
+    stats.push(["Latest draw", fmtDate(draws.at(-1).date)]);
+  }
   els.summary.innerHTML = stats
     .map(([label, value]) => `<div class="stat"><div class="stat__label">${label}</div><div class="stat__value">${value}</div></div>`)
     .join("");
@@ -281,7 +290,7 @@ function rowHtml(d) {
     <tr>
       <td>${fmtDate(d.date)}</td>
       <td><div class="numbers numbers--row">${balls}</div></td>
-      <td class="num">${fmtMoney(d.jackpot)}</td>
+      <td class="num">${d.jackpot != null ? fmtMoney(d.jackpot) : "<span class='muted'>—</span>"}</td>
       <td class="num">${d.cash_value != null ? fmtMoney(d.cash_value) : "<span class='muted'>—</span>"}</td>
       <td class="num">${winners}</td>
     </tr>
