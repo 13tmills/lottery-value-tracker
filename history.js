@@ -57,6 +57,11 @@ async function init() {
   els.back.href = `game.html?game=${key}`;
   els.back.textContent = `← Back to ${meta.label}`;
   els.title.textContent = `${meta.label} — historical data`;
+  setMeta({
+    title: `${meta.label} Jackpot History & Past Numbers | NumbersIntel`,
+    description: `Every ${meta.label} draw: jackpot and cash value over time, winning numbers, and prize-tier winners — with an adjustable date range.`,
+    url: `${SITE}/history.html?game=${key}`,
+  });
 
   try {
     const res = await fetch(`./history/${key}.json`, { cache: "no-store" });

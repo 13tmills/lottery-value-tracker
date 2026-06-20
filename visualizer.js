@@ -76,6 +76,11 @@ function init() {
         odds: g.odds_jackpot, tierLabel: tiers[1].label,
       };
       els.title.textContent = `${meta.label} — odds visualizer`;
+      setMeta({
+        title: `${meta.label} Odds, Visualized | NumbersIntel`,
+        description: `See ${meta.label} odds as a field of dots — one red winning dot among millions. Pick a prize tier and how many lines you buy.`,
+        url: `${SITE}/visualizer.html?game=${key}`,
+      });
       els.sub.textContent = `${meta.draws} · $${g.ticket_price} per line`;
 
       const tierParam = param("tier");

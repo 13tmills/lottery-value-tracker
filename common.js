@@ -30,6 +30,25 @@ const fmtDate = (iso) => {
   return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" });
 };
 
+const SITE = "https://13tmills.github.io/lottery-value-tracker";
+
+// Update title + description + canonical + OG/Twitter tags (by id) for SEO.
+// (Googlebot runs JS, so these reflect the specific game on each templated page.)
+function setMeta({ title, description, url }) {
+  if (title) document.title = title;
+  const set = (id, attr, val) => {
+    const el = document.getElementById(id);
+    if (el && val != null) el.setAttribute(attr, val);
+  };
+  set("meta-desc", "content", description);
+  set("meta-canonical", "href", url);
+  set("og-title", "content", title);
+  set("og-desc", "content", description);
+  set("og-url", "content", url);
+  set("tw-title", "content", title);
+  set("tw-desc", "content", description);
+}
+
 function theme() {
   const css = getComputedStyle(document.documentElement);
   const v = (name, fb) => css.getPropertyValue(name).trim() || fb;

@@ -41,7 +41,11 @@ function render(key, g, data) {
   const meta = GAME_META[key];
   const taxFactor = data.assumptions?.tax_factor ?? 0.63;
 
-  document.title = `${meta.label} — NumbersIntel`;
+  setMeta({
+    title: `Is ${meta.label} Worth Playing? EV & Odds | NumbersIntel`,
+    description: `${meta.label}: live jackpot, cash value, and the real expected value per $1 across every prize tier — plus odds and the latest winning numbers.`,
+    url: `${SITE}/game.html?game=${key}`,
+  });
   document.getElementById("game-title").textContent = meta.label;
   document.getElementById("game-sub").textContent =
     `Draws ${meta.draws} · $${g.ticket_price} per play`;

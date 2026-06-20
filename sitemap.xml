@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://13tmills.github.io/lottery-value-tracker/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/game.html?game=powerball</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/game.html?game=mega_millions</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/game.html?game=lotto_america</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/history.html?game=powerball</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/history.html?game=mega_millions</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/history.html?game=lotto_america</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/visualizer.html?game=powerball</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/visualizer.html?game=mega_millions</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://13tmills.github.io/lottery-value-tracker/visualizer.html?game=lotto_america</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+</urlset>
