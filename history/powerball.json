@@ -3,7 +3,7 @@
   "source": "powerball.com",
   "last_updated": "2026-06-20",
   "complete": false,
-  "earliest_available": "2010-01-01",
+  "earliest_available": "2010-01-09",
   "note": "Seeded with a few real draws. Full history (2010-01-01 onward) is backfilled by scraper/history_scraper.py in CI; the prize breakdowns fill in then.",
   "draws": [
     {
@@ -99121,6 +99121,68 @@
       "total_winners": 191693
     },
     {
+      "date": "2025-01-29",
+      "jackpot": 71000000,
+      "cash_value": 31700000,
+      "numbers": [
+        8,
+        12,
+        31,
+        33,
+        38
+      ],
+      "powerball": 18,
+      "power_play": 3,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 71000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 0
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 6
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 185
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 484
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 12427
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 9618
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 68626
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 154549
+        }
+      ],
+      "total_winners": 245895
+    },
+    {
       "date": "2025-02-01",
       "jackpot": 88000000,
       "cash_value": 40000000,
@@ -107181,6 +107243,68 @@
       "total_winners": 729820
     },
     {
+      "date": "2025-12-01",
+      "jackpot": 745000000,
+      "cash_value": 348300000,
+      "numbers": [
+        5,
+        18,
+        26,
+        47,
+        59
+      ],
+      "powerball": 1,
+      "power_play": 3,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 745000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 3
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 20
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 411
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 1042
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 28321
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 21588
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 166327
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 391810
+        }
+      ],
+      "total_winners": 609522
+    },
+    {
       "date": "2025-12-03",
       "jackpot": 779000000,
       "cash_value": 364300000,
@@ -110715,6 +110839,68 @@
       "total_winners": 192871
     },
     {
+      "date": "2026-04-15",
+      "jackpot": 59000000,
+      "cash_value": 26700000,
+      "numbers": [
+        13,
+        21,
+        27,
+        43,
+        45
+      ],
+      "powerball": 26,
+      "power_play": 5,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 59000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 1
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 6
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 213
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 391
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 10860
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 8119
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 61293
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 144146
+        }
+      ],
+      "total_winners": 225029
+    },
+    {
       "date": "2026-04-18",
       "jackpot": 76000000,
       "cash_value": 34600000,
@@ -111645,6 +111831,68 @@
       "total_winners": 242123
     },
     {
+      "date": "2026-05-23",
+      "jackpot": 132000000,
+      "cash_value": 58100000,
+      "numbers": [
+        4,
+        16,
+        41,
+        48,
+        66
+      ],
+      "powerball": 26,
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 132000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 0
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 9
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 226
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 591
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 14745
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 12295
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 97624
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 235740
+        }
+      ],
+      "total_winners": 361230
+    },
+    {
       "date": "2026-05-25",
       "jackpot": 142000000,
       "cash_value": 62600000,
@@ -112017,6 +112265,68 @@
       "total_winners": 424113
     },
     {
+      "date": "2026-06-08",
+      "jackpot": 225000000,
+      "cash_value": 100400000,
+      "numbers": [
+        3,
+        24,
+        34,
+        43,
+        49
+      ],
+      "powerball": 20,
+      "power_play": 3,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 225000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 0
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 4
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 188
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 414
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 11257
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 8846
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 69027
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 165359
+        }
+      ],
+      "total_winners": 255095
+    },
+    {
       "date": "2026-06-10",
       "jackpot": 239000000,
       "cash_value": 106500000,
@@ -112201,6 +112511,68 @@
         }
       ],
       "total_winners": 265980
+    },
+    {
+      "date": "2026-06-17",
+      "jackpot": 283000000,
+      "cash_value": 126700000,
+      "numbers": [
+        3,
+        26,
+        49,
+        53,
+        61
+      ],
+      "powerball": 12,
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 283000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 1
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 10
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 199
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 602
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 12473
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 10966
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 87789
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 209962
+        }
+      ],
+      "total_winners": 322002
     },
     {
       "date": "2026-06-20",

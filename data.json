@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-19T22:30:00",
+  "last_updated": "2026-06-20T11:33:46",
   "assumptions": {
     "tax_factor": 0.63
   },
@@ -7,10 +7,16 @@
     "powerball": {
       "ticket_price": 2,
       "odds_jackpot": 292201338,
-      "next_draw": "2026-06-20",
+      "next_draw": "2026-06-22",
       "jackpot": 283000000,
       "cash_value": 126700000,
-      "winning_numbers": [3, 26, 49, 53, 61],
+      "winning_numbers": [
+        3,
+        26,
+        49,
+        53,
+        61
+      ],
       "powerball": 12,
       "expected_value": 0.2374,
       "ev_breakdown": {
@@ -19,85 +25,210 @@
       },
       "prize_multiplier": 1.0,
       "prize_tiers": [
-        { "match": "5", "prize": 1000000, "odds": 11688053.52 },
-        { "match": "4+PB", "prize": 50000, "odds": 913129.18 },
-        { "match": "4", "prize": 100, "odds": 36525.17 },
-        { "match": "3+PB", "prize": 100, "odds": 14494.11 },
-        { "match": "3", "prize": 7, "odds": 579.76 },
-        { "match": "2+PB", "prize": 7, "odds": 701.33 },
-        { "match": "1+PB", "prize": 4, "odds": 91.98 },
-        { "match": "PB", "prize": 4, "odds": 38.32 }
+        {
+          "match": "5",
+          "prize": 1000000,
+          "odds": 11688053.52
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "odds": 913129.18
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "odds": 36525.17
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "odds": 14494.11
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "odds": 579.76
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "odds": 701.33
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "odds": 91.98
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "odds": 38.32
+        }
       ],
       "multiplier": {
         "name": "Power Play",
-        "values": [2, 3, 4, 5, 10],
+        "values": [
+          2,
+          3,
+          4,
+          5,
+          10
+        ],
         "always_on": false,
         "cost": 1,
         "note": "Optional +$1/line. Match 5 pays a flat $2M with Power Play; 10x only when the jackpot is under $150M."
+      }
+    },
+    "lotto_america": {
+      "ticket_price": 1,
+      "odds_jackpot": 25989600,
+      "next_draw": "2026-06-22",
+      "jackpot": 29910000,
+      "cash_value": 13400000,
+      "winning_numbers": [
+        11,
+        16,
+        18,
+        33,
+        51
+      ],
+      "star_ball": 9,
+      "expected_value": 0.4943,
+      "ev_breakdown": {
+        "jackpot": 0.3248,
+        "secondary": 0.1695
+      },
+      "prize_multiplier": 1.0,
+      "prize_tiers": [
+        {
+          "match": "5",
+          "prize": 20000,
+          "odds": 2887733
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "odds": 110594
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "odds": 12288
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "odds": 2404
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "odds": 267
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "odds": 160
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "odds": 29
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "odds": 17
+        }
+      ],
+      "multiplier": {
+        "name": "All Star Bonus",
+        "values": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "always_on": false,
+        "cost": 1,
+        "note": "Optional +$1/line multiplier on every non-jackpot prize."
       }
     },
     "mega_millions": {
       "ticket_price": 5,
       "odds_jackpot": 290472336,
       "next_draw": "2026-06-23",
-      "jackpot": 430000000,
-      "cash_value": 191200000,
-      "winning_numbers": [12, 20, 53, 67, 70],
+      "jackpot": 452000000,
+      "cash_value": 201000000,
+      "winning_numbers": [
+        13,
+        16,
+        21,
+        26,
+        50
+      ],
       "mega_ball": 12,
-      "expected_value": 0.2240,
+      "expected_value": 0.2283,
       "ev_breakdown": {
-        "jackpot": 0.0829,
+        "jackpot": 0.0872,
         "secondary": 0.1411
       },
       "prize_multiplier": 3.0,
       "prize_tiers": [
-        { "match": "5", "prize": 1000000, "odds": 12629232 },
-        { "match": "4+MB", "prize": 10000, "odds": 893761 },
-        { "match": "4", "prize": 500, "odds": 38859 },
-        { "match": "3+MB", "prize": 200, "odds": 13965 },
-        { "match": "3", "prize": 10, "odds": 607 },
-        { "match": "2+MB", "prize": 10, "odds": 665 },
-        { "match": "1+MB", "prize": 7, "odds": 86 },
-        { "match": "MB", "prize": 5, "odds": 35 }
+        {
+          "match": "5",
+          "prize": 1000000,
+          "odds": 12629232
+        },
+        {
+          "match": "4+MB",
+          "prize": 10000,
+          "odds": 893761
+        },
+        {
+          "match": "4",
+          "prize": 500,
+          "odds": 38859
+        },
+        {
+          "match": "3+MB",
+          "prize": 200,
+          "odds": 13965
+        },
+        {
+          "match": "3",
+          "prize": 10,
+          "odds": 607
+        },
+        {
+          "match": "2+MB",
+          "prize": 10,
+          "odds": 665
+        },
+        {
+          "match": "1+MB",
+          "prize": 7,
+          "odds": 86
+        },
+        {
+          "match": "MB",
+          "prize": 5,
+          "odds": 35
+        }
       ],
       "multiplier": {
         "name": "built-in multiplier",
-        "values": [2, 3, 4, 5, 10],
+        "values": [
+          2,
+          3,
+          4,
+          5,
+          10
+        ],
         "always_on": true,
         "cost": 0,
         "note": "Every $5 ticket includes a random 2x-10x multiplier on non-jackpot prizes."
-      }
-    },
-    "lotto_america": {
-      "ticket_price": 1,
-      "odds_jackpot": 25989600,
-      "next_draw": "2026-06-20",
-      "jackpot": 30230000,
-      "cash_value": 13680000,
-      "winning_numbers": [11, 16, 18, 33, 51],
-      "star_ball": 9,
-      "expected_value": 0.5011,
-      "ev_breakdown": {
-        "jackpot": 0.3316,
-        "secondary": 0.1695
-      },
-      "prize_multiplier": 1.0,
-      "prize_tiers": [
-        { "match": "5", "prize": 20000, "odds": 2887733 },
-        { "match": "4+SB", "prize": 1000, "odds": 110594 },
-        { "match": "4", "prize": 100, "odds": 12288 },
-        { "match": "3+SB", "prize": 20, "odds": 2404 },
-        { "match": "3", "prize": 5, "odds": 267 },
-        { "match": "2+SB", "prize": 5, "odds": 160 },
-        { "match": "1+SB", "prize": 2, "odds": 29 },
-        { "match": "SB", "prize": 2, "odds": 17 }
-      ],
-      "multiplier": {
-        "name": "All Star Bonus",
-        "values": [2, 3, 4, 5],
-        "always_on": false,
-        "cost": 1,
-        "note": "Optional +$1/line multiplier on every non-jackpot prize."
       }
     }
   }
