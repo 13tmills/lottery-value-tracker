@@ -41,7 +41,7 @@ function render(key, g, data) {
   const meta = GAME_META[key];
   const taxFactor = data.assumptions?.tax_factor ?? 0.63;
 
-  document.title = `${meta.label} — Lottery Value Tracker`;
+  document.title = `${meta.label} — NumbersIntel`;
   document.getElementById("game-title").textContent = meta.label;
   document.getElementById("game-sub").textContent =
     `Draws ${meta.draws} · $${g.ticket_price} per play`;

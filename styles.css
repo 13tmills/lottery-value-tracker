@@ -1,15 +1,16 @@
 :root {
-  --bg: #0d1117;
-  --surface: #161b22;
-  --surface-2: #1c2330;
-  --border: #2a3340;
-  --text: #e6edf3;
-  --text-dim: #8b97a6;
-  --accent: #2f81f7;
-  --accent-2: #a371f7;
+  --bg: #0a1424;
+  --surface: #0f1d33;
+  --surface-2: #16273f;
+  --border: #243b57;
+  --text: #eaf0f7;
+  --text-dim: #93a3b8;
+  --accent: #e0b950;
+  --accent-2: #4f9cf9;
+  --on-accent: #0a1424;
   --good: #3fb950;
-  --warn: #d29922;
-  --bad: #f85149;
+  --warn: #e0a73a;
+  --bad: #f0795b;
   --radius: 12px;
   --maxw: 960px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -205,7 +206,7 @@ main {
 
 .ball--special {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* ---- "More details" link on cards ---- */
@@ -347,7 +348,7 @@ main {
   align-items: center;
   gap: 0.4rem;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   border: none;
   border-radius: 8px;
   padding: 0.6rem 1.05rem;
@@ -430,7 +431,7 @@ main {
 }
 
 .chip:hover { color: var(--text); }
-.chip--on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip--on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 
 .hist-chart { position: relative; width: 100%; height: 360px; }
 

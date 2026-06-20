@@ -165,7 +165,7 @@ function renderChart(draws) {
   const events = (meta.priceChanges || []).flatMap((pc) => {
     if (!first || pc.date < first || pc.date > last) return [];
     const hit = draws.find((d) => d.date >= pc.date);
-    return hit ? [{ at: hit.date, text: pc.label, color: "#d29922" }] : [];
+    return hit ? [{ at: hit.date, text: pc.label, color: "#f0795b" }] : [];
   });
 
   els.chartNote.textContent = draws.length
