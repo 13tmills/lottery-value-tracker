@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -39,7 +41,16 @@ jobs:
           git add data.json history/
           if git diff --staged --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "Update lottery data [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "Update lottery data [skip ci]"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push origin main; then
+              echo "pushed on attempt $i"
+              exit 0
+            fi
+            echo "push attempt $i failed; retrying in 5s..."
+            sleep 5
+          done
+          echo "push failed after 5 attempts"
+          exit 1
