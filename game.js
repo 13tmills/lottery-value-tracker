@@ -31,7 +31,10 @@ async function init() {
   const back = document.querySelector(".back-link");
   if (back) {
     const from = new URLSearchParams(location.search).get("back");
-    if (from === "national" || from === "home") {
+    if (from === "home") {
+      back.href = "index.html";
+      back.innerHTML = "&larr; Home";
+    } else if (from === "national") {
       back.href = "national.html";
       back.innerHTML = "&larr; National drawings";
     } else if (from) {
@@ -306,7 +309,9 @@ function nyValueSection(meta, items, prizeDate) {
   const winnersWord = meta.ev.winnersLabel || "NY winners";
   const twoPlays = meta.ev.ticket_price < 1 ? " (a $1 ticket buys two plays)" : "";
   const hasFree = Object.values(meta.ev.levels).some((l) => l.free);
-  const note = isStatic
+  const note = meta.ev.note // explicit override for games the auto-text can't describe (e.g. progressive jackpot + fixed lower tiers)
+    ? meta.ev.note
+    : isStatic
     ? `${meta.label}'s jackpot is paid in cash; the lower tiers pay fixed amounts${hasFree ? " (the lowest is a free play, valued at one ticket)" : ""}.
        <em>Value / $1</em> prices the jackpot at the current cash jackpot plus those fixed prizes, ${tax}. ${overall}`
     : isJackpotGame

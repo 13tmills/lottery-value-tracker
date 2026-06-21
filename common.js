@@ -1380,6 +1380,63 @@ const GAME_META = {
       },
     },
   },
+
+  // ---- Massachusetts (13th state) — masslottery.com public API ---------------------
+  // Megabucks Doubler — 6 of 44, progressive jackpot (cash option) + fixed lower tiers.
+  // Per-tier winner counts come from the /v3/game-payouts feed (latest draw).
+  ma_megabucks: {
+    label: "Megabucks Doubler", specialKey: null, specialName: "",
+    draws: "Mon · Wed · Sat", priceChanges: [], state: "MA", stateName: "Massachusetts", ticketPrice: "$2",
+    ev: {
+      ticket_price: 2,
+      odds_jackpot: 7059052, // 6 of 44
+      overall_odds: 39,
+      winnersLabel: "winners",
+      note: "Megabucks Doubler's jackpot is paid at the cash option shown; the lower tiers pay <em>fixed</em> amounts — $5,000, $200 and $4. The game's Doubler feature can double non-jackpot prizes; those doubled amounts aren't included here, so real value can run a little higher. Winner counts are the actual results of the latest draw. <em>Value / $1</em> prices the jackpot at the upcoming cash option plus the fixed lower tiers, after an assumed 37% tax. Overall odds of any prize: 1 in 39.",
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 6)", odds: 7059052 },
+        "Match 5": { label: "Match 5", odds: 30961, prize: 5000 },
+        "Match 4": { label: "Match 4", odds: 669, prize: 200 },
+        "Match 3": { label: "Match 3", odds: 42, prize: 4 },
+      },
+    },
+  },
+  // Mass Cash — 5 of 35, all prizes fixed (no rolling jackpot, no winner-count feed).
+  ma_masscash: {
+    label: "Mass Cash", specialKey: null, specialName: "",
+    draws: "Twice daily", priceChanges: [], state: "MA", stateName: "Massachusetts", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      overall_odds: 72,
+      staticPrizes: true, // fixed prizes; Massachusetts publishes no per-draw winner counts
+      note: "Mass Cash pays <em>fixed</em> prizes — $100,000 for matching all 5, $250 for 4, and $10 for 3 — drawn twice a day. <em>Value / $1</em> prices those fixed prizes after an assumed 37% tax. Overall odds of any prize: 1 in 72.",
+      levels: {
+        "Match 5": { label: "Match 5", odds: 324632, prize: 100000 },
+        "Match 4": { label: "Match 4", odds: 2164, prize: 250 },
+        "Match 3": { label: "Match 3", odds: 74.63, prize: 10 },
+      },
+    },
+  },
+  // The Numbers Game — Massachusetts's daily 4-digit game, pari-mutuel (prizes vary).
+  ma_numbers: {
+    label: "The Numbers Game", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "MA", stateName: "Massachusetts", ticketPrice: "$0.25 to $1",
+    prizes: {
+      note: "The Numbers Game is Massachusetts's daily 4-digit game (0000–9999), drawn twice a day (midday and evening) — we track the evening draw. Payouts are <em>pari-mutuel</em>: each pool is split among that draw's winners, so prize amounts change every day rather than being fixed. The odds below are for each bet type.",
+      topPrize: "Pari-mutuel", topPrizeLabel: "Top prize (Exact, all 4)",
+      reference: {
+        title: "The Numbers Game — bet types & odds",
+        columns: ["Bet type", "Prize", "Odds"],
+        rows: [
+          { cells: ["Exact — all 4 digits in order", "Pari-mutuel", "1 in 10,000"] },
+          { cells: ["Any 3 (first or last 3, in order)", "Pari-mutuel", "1 in 1,000"] },
+          { cells: ["Any 2 (first or last 2, in order)", "Pari-mutuel", "1 in 100"] },
+          { cells: ["Any 1 (first or last digit)", "Pari-mutuel", "1 in 10"] },
+        ],
+        note: "Prizes are pari-mutuel, so the amount depends on ticket sales and how many players win each draw. Box and other wagers carry their own odds.",
+      },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
@@ -1525,7 +1582,9 @@ async function valuePer1Cents(key, meta, data) {
   }
   if (!meta.ev) return null;
   try {
-    const h = await fetch(`history/${key}.json`, { cache: "force-cache" }).then((r) => r.json());
+    // Normal HTTP caching: fast on repeat visits, but (unlike force-cache) never pins a
+    // stale 404 for a game whose history file was added after an earlier failed fetch.
+    const h = await fetch(`history/${key}.json`, { cache: "default" }).then((r) => r.json());
     const lastPrized = [...(h.draws || [])].reverse().find((d) => d.prizes && d.prizes.length);
     // Fixed-prize games (Idaho Cash) have no per-draw prizes — synthesize from config.
     const evSource = lastPrized || (meta.ev.staticPrizes && (h.draws || []).length
@@ -1539,6 +1598,66 @@ async function valuePer1Cents(key, meta, data) {
   } catch (e) {
     return null;
   }
+}
+
+// "Best value tickets in America right now" — the hero hook on the NumbersIntel home
+// page. Ranks EVERY game on the site (all states + the multi-state jackpots) by value
+// per $1 via the shared valuePer1Cents, and renders the top 12 into #national-best-value.
+// Async so it never blocks the page; the EV games it fetches are force-cached and shared
+// with the rest of the site, so navigating onward stays instant.
+async function renderNationalBestValue(data) {
+  const slot = document.getElementById("national-best-value");
+  if (!slot) return;
+  slot.innerHTML = `<div class="best-natl best-natl--loading">
+      <span class="best-natl__spark">&#9733;</span> Crunching every game in the country for the best value per dollar&hellip;
+    </div>`;
+
+  const isNatl = (key) => !!(data && data.games && data.games[key]);
+  const keys = Object.keys(GAME_META).filter((k) => {
+    const m = GAME_META[k];
+    return !(m.retired || (m.prizes && m.prizes.retired));
+  });
+
+  const scored = await Promise.all(keys.map(async (key) => {
+    const cents = await valuePer1Cents(key, GAME_META[key], data);
+    return cents != null && isFinite(cents) && cents > 0 ? { key, cents } : null;
+  }));
+  const ranked = scored.filter(Boolean).sort((a, b) => b.cents - a.cents);
+  if (ranked.length < 3) { slot.innerHTML = ""; return; }
+
+  const stateCount = new Set(Object.values(GAME_META).map((m) => m.state).filter(Boolean)).size;
+  const top = ranked.slice(0, 12);
+  const best = GAME_META[top[0].key];
+
+  const rows = top.map((r, i) => {
+    const m = GAME_META[r.key];
+    const badge = isNatl(r.key) ? "Multi-state" : (m.state || "");
+    const tag = m.digits ? `<span class="best-row__tag">straight play</span>` : "";
+    return `<a class="best-row${i === 0 ? " best-row--top" : ""}" href="game.html?game=${r.key}&back=home">
+        <span class="best-row__rank">${i + 1}</span>
+        <span class="best-row__name">${m.label}
+          <span class="best-natl__badge">${badge}</span>${tag}</span>
+        <span class="best-row__cents">${r.cents.toFixed(1)}&cent;<span class="best-row__per">/$1</span></span>
+      </a>`;
+  }).join("");
+
+  slot.innerHTML = `
+    <section class="best-natl" aria-labelledby="best-natl-heading">
+      <span class="best-natl__eyebrow">&#9733; Best value tickets in America right now</span>
+      <h2 id="best-natl-heading" class="best-natl__title">
+        <a href="game.html?game=${top[0].key}&back=home">${best.label}</a>
+        <span class="best-natl__where">${best.stateName || "Multi-state"}</span>
+      </h2>
+      <p class="best-natl__lead">Out of every game we track — <b>${stateCount} states</b> plus the national
+        jackpots — <b>${best.label}</b> returns the most per dollar right now:
+        <b>${top[0].cents.toFixed(1)}&cent; on every $1</b>. They're all a losing bet long-term; these are
+        simply the least-bad ones in the country today.</p>
+      <div class="best-natl__rank">${rows}</div>
+      <p class="best-natl__note">Ranked by value per $1 after an assumed 37% tax, across all
+        ${ranked.length} games with a comparable value: jackpot games summed over every prize tier
+        (live cash jackpots for the multi-state games), digit games at a $1 straight play. Keno and
+        pari-mutuel games whose lower-tier payouts aren't published aren't ranked. Not financial advice.</p>
+    </section>`;
 }
 
 // Tiers for the odds visualizer: [{label, odds}] from whatever a state game's

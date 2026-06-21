@@ -2,6 +2,7 @@
 // National Drawings widget. More to come.
 loadData()
   .then((data) => {
+    renderNationalBestValue(data); // hero hook: best value across every game on the site
     const entries = Object.entries(data.games)
       .filter(([key]) => GAME_META[key])
       .sort((a, b) => b[1].expected_value - a[1].expected_value);

@@ -332,6 +332,23 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  MA: {
+    intro: "Massachusetts plays harder than anyone — the highest lottery spend per capita in the country. Here are its draw games with live jackpots, real per-tier prizes and number frequency, straight from the Mass Lottery's own API.",
+    games: [
+      { name: "Megabucks Doubler", meta: "6 of 44 · Mon · Wed · Sat · progressive jackpot",
+        links: [["Jackpot, EV &amp; per-tier prizes", "game.html?game=ma_megabucks"]] },
+      { name: "Mass Cash", meta: "5 of 35 · twice daily · $100K fixed top",
+        links: [["Prizes, odds &amp; value", "game.html?game=ma_masscash"]] },
+      { name: "The Numbers Game", meta: "4-digit · twice daily · pari-mutuel",
+        links: [["Results, odds &amp; frequency", "game.html?game=ma_numbers"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
 };
 
 function stateParam() {

@@ -294,6 +294,16 @@ GAMES = {
     "va_pick4":    {"kind": "va_page", "va_path": "pick4", "va_card": "Pick4", "num_count": 4, "digits": True, "evening": True},
     "va_cash5":    {"kind": "va_page", "va_path": "cash5", "va_card": "Cash5", "num_count": 5, "sort": True},
     "va_bank":     {"kind": "va_page", "va_path": "bankamillion", "va_card": "BankAMillion", "num_count": 6, "sort": True, "special_key": "bonus"},
+
+    # --- Massachusetts (13th state) — masslottery.com public API (date-window history +
+    # /v3/game-payouts per-tier prizes). Megabucks Doubler 6/44 progressive; Mass Cash 5/35
+    # fixed-prize, twice daily; The Numbers Game 4-digit pari-mutuel, twice daily. ----------
+    "ma_megabucks": {"kind": "masslottery_api", "ma_game": "megabucks", "ma_product_id": 11,
+                     "num_count": 6, "sort": True, "prizes": True, "jackpot": True, "start_year": 1994},
+    "ma_masscash":  {"kind": "masslottery_api", "ma_game": "mass_cash", "ma_product_id": 12,
+                     "num_count": 5, "sort": True, "start_year": 2006},  # fixed prizes; no v3 payout feed
+    "ma_numbers":   {"kind": "masslottery_api", "ma_game": "the_numbers_game", "ma_product_id": 17,
+                     "num_count": 4, "digits": True, "start_year": 2012},
 }
 
 
@@ -1460,6 +1470,104 @@ def scrape_nc(cfg, by_date):
     return None
 
 
+MA_BASE = "https://www.masslottery.com/api"
+
+
+def _ma_get(path, params=None):
+    r = requests.get(f"{MA_BASE}{path}", params=params, timeout=45,
+                     headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+    r.raise_for_status()
+    return r.json()
+
+
+def scrape_massachusetts(cfg, by_date):
+    """masslottery.com public API (reverse-engineered from the SPA bundle).
+    /v1/draw-results/{game}?draw_date_min&max returns history by date window — the
+    server 500s on large spans, so we chunk (~90 days) with one retry. /v3/game-payouts
+    /{game}?draw_number gives per-tier prizes (dollars) + winner counts for jackpot games.
+    /v1/draw-results estimatedJackpot carries the live jackpot + cash option. Twice-daily
+    games (Mass Cash, Numbers) keep the later (higher drawNumber) draw per date. CI pulls
+    the recent window; retention keeps the deep backfill."""
+    g, n = cfg["ma_game"], cfg["num_count"]
+    today = date.today()
+    start = date(cfg.get("start_year", today.year - 1), 1, 1)
+    win = timedelta(days=cfg.get("ma_window_days", 90))
+    seen = {}  # date -> drawNumber kept, so the evening draw wins for twice-daily games
+
+    def fetch_window(a, b):
+        try:
+            return _ma_get(f"/v1/draw-results/{g}",
+                           {"draw_date_min": a.strftime("%m/%d/%Y"),
+                            "draw_date_max": b.strftime("%m/%d/%Y")}).get("winningNumbers") or []
+        except Exception:
+            if (b - a).days > 20:  # flaky 500 on a span — split once and retry the halves
+                mid = a + (b - a) // 2
+                return fetch_window(a, mid) + fetch_window(mid + timedelta(days=1), b)
+            return []
+
+    cur = start
+    while cur <= today:
+        end = min(cur + win, today)
+        for dr in fetch_window(cur, end):
+            if dr.get("gameIdentifier") != g:
+                continue
+            d = (dr.get("drawDate") or "")[:10]
+            nums = dr.get("winningNumbers") or []
+            if not d or len(nums) < n:
+                continue
+            dn = _int(dr.get("drawNumber"))
+            if d in seen and seen[d] >= dn:
+                continue  # already have the later draw of this date
+            seen[d] = dn
+            by_date[d] = {"date": d, "draw_number": dn,
+                          "numbers": sorted(nums[:n]) if cfg.get("sort") else nums[:n]}
+        cur = end + timedelta(days=1)
+
+    # Per-tier prizes + winners for the most recent draws (jackpot games only).
+    if cfg.get("prizes"):
+        recent = sorted((d for d in by_date if not by_date[d].get("prizes")), reverse=True)
+        for d in recent[:cfg.get("prizes_cap", 30)]:
+            dn = by_date[d].get("draw_number")
+            if not dn:
+                continue
+            try:
+                rows = _ma_get(f"/v3/game-payouts/{g}", {"draw_number": dn}).get("payouts") or []
+            except Exception:
+                continue
+            prizes = []
+            for r in rows:
+                desc = (r.get("prizeDescription") or r.get("prizeLevel") or "").strip()
+                # The value engine keys the top tier on the literal "Jackpot" so it uses the
+                # cash option, not the annuity amount in this row. Keep the label for display.
+                level = "Jackpot" if (r.get("prizeLevel") or "").strip().lower() == "jackpot" else desc
+                w = r.get("winners")
+                prizes.append({"level": level, "label": desc or level,
+                               "amount": _int(r.get("prizeAmount")),  # already in dollars
+                               "winners": _int(w) if w is not None else None})
+            if prizes:
+                by_date[d]["prizes"] = prizes
+                if all(p["winners"] is not None for p in prizes):
+                    by_date[d]["total_winners"] = sum(p["winners"] for p in prizes)
+            time.sleep(0.2)
+
+    # Live jackpot + cash option (progressive games).
+    cur_jp = None
+    if cfg.get("jackpot"):
+        try:
+            snap = _ma_get("/v1/draw-results", {"product_ids": cfg["ma_product_id"]})
+            for ej in (snap.get("estimatedJackpot") or []):
+                if ej.get("gameIdentifier") == g:
+                    jp = _int(ej.get("estimatedJackpotUSD"))
+                    cash = _int(ej.get("estimatedCashOptionUSD"))
+                    nd = (ej.get("drawDateFor") or "")[:10] or None
+                    if jp:
+                        cur_jp = {"date": nd, "jackpot": jp, "cash": cash or None}
+                    break
+        except Exception:
+            pass
+    return cur_jp
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1594,6 +1702,14 @@ def main():
         source = "valottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from valottery.com.")
         complete = True
+    elif cfg["kind"] == "masslottery_api":
+        cur = scrape_massachusetts(cfg, by_date)
+        source = "masslottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from masslottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,} cash ${cur.get('cash') or 0:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"
