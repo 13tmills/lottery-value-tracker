@@ -332,6 +332,27 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  MD: {
+    intro: "Maryland's draw games — Multi-Match's rolling jackpot, Bonus Match 5's fixed prizes, and the Pick 3/4/5 dailies — with odds, payouts and number frequency from the Maryland Lottery's own winning-numbers feed.",
+    games: [
+      { name: "Multi-Match", meta: "6 of 43 · Mon · Thu · jackpot from $500K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=md_multimatch"]] },
+      { name: "Bonus Match 5", meta: "5 of 39 + Bonus · nightly · $50K top",
+        links: [["Prizes, odds &amp; value", "game.html?game=md_bonus5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=md_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=md_pick4"]] },
+      { name: "Pick 5", meta: "5-digit · twice daily · $50K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=md_pick5"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   MA: {
     intro: "Massachusetts plays harder than anyone — the highest lottery spend per capita in the country. Here are its draw games with live jackpots, real per-tier prizes and number frequency, straight from the Mass Lottery's own API.",
     games: [

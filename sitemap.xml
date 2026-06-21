@@ -147,6 +147,15 @@
   <url><loc>https://numbersintel.com/numbers.html?game=ma_masscash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=ma_numbers</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ma_numbers</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/state.html?state=MD</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=md_multimatch</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=md_multimatch</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=md_multimatch</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=md_bonus5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=md_bonus5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=md_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=md_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=md_pick5</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

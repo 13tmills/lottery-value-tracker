@@ -1437,6 +1437,92 @@ const GAME_META = {
       },
     },
   },
+
+  // ===== Maryland (14th state) — mdlottery.com Winning Numbers tables =====
+  // Multi-Match — 6 of 43, $2 (three lines). Two prize paths: best single line + the 18
+  // numbers combined. Jackpot (6 on a line) starts at $500k and rolls. oddsJackpot per ticket.
+  md_multimatch: {
+    label: "Multi-Match", specialKey: null, specialName: "", draws: "Mon · Thu",
+    priceChanges: [], state: "MD", stateName: "Maryland", ticketPrice: "$2",
+    oddsJackpot: 2032152, // 6 of 6 on a line, per $2 ticket (3 lines)
+    prizes: {
+      note: "Multi-Match is 6 of 43. A $2 ticket gives you three lines, and you can win two ways at once: on your best single line, and on all 18 of your numbers combined. The jackpot (all 6 on one line) starts at $500,000 and grows until won. Odds are per $2 ticket.",
+      topPrize: "Jackpot (min $500k)", topPrizeLabel: "6 of 6 (one line)",
+      reference: {
+        title: "Multi-Match prizes & odds (per $2 ticket)",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["6 of 6 — one line", "Jackpot (min $500k)", "1 in 2,032,152"] },
+          { cells: ["5 of 6 — one line", "$1,000", "1 in 9,154"] },
+          { cells: ["4 of 6 — one line", "$20", "1 in 204"] },
+          { cells: ["3 of 6 — one line", "$2", "1 in 13.4"] },
+          { cells: ["10+ of 18 — combined", "$2,000", "1 in 168,240"] },
+          { cells: ["9 of 18 — combined", "$500", "1 in 15,098"] },
+          { cells: ["8 of 18 — combined", "$100", "1 in 1,740"] },
+          { cells: ["7 of 18 — combined", "$20", "1 in 273"] },
+          { cells: ["6 of 18 — combined", "$7", "1 in 58"] },
+          { cells: ["5 of 18 — combined", "$2", "1 in 16.9"] },
+        ],
+        note: "Two prize paths on the same ticket — your best single-line match and your total across all three lines. Approximate overall odds of any prize: 1 in 8.5.",
+      },
+    },
+    viz: { tiers: [ {label:"6 of 6 (jackpot)",odds:2032152},{label:"5 of 6",odds:9154},{label:"4 of 6",odds:204},{label:"3 of 6",odds:13.4} ] },
+  },
+  // Bonus Match 5 — 5 of 39 + a Bonus Ball from the remaining 34. All prizes fixed
+  // ($50,000 top), so value/$1 is computable. Nightly.
+  md_bonus5: {
+    label: "Bonus Match 5", specialKey: "bonus", specialName: "Bonus Ball", specialAbbr: "B",
+    draws: "Nightly", priceChanges: [], state: "MD", stateName: "Maryland", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      overall_odds: 52,
+      staticPrizes: true, // fixed prizes; no per-draw winner feed
+      note: "Bonus Match 5 draws five numbers from 1–39 plus a Bonus Ball from the remaining 34. Match the Bonus Ball and you need one fewer of your own numbers to win. All prizes are <em>fixed</em> — $50,000 for matching all 5. <em>Value / $1</em> prices those fixed prizes after an assumed 37% tax. Overall odds of any prize: 1 in 52.",
+      levels: {
+        "Match 5": { label: "Match 5", odds: 575757, prize: 50000 },
+        "Match 4 + Bonus": { label: "Match 4 + Bonus", odds: 115151, prize: 600 },
+        "Match 4": { label: "Match 4", odds: 3489, prize: 400 },
+        "Match 3 + Bonus": { label: "Match 3 + Bonus", odds: 1745, prize: 30 },
+        "Match 3": { label: "Match 3", odds: 109, prize: 15 },
+        "Match 2 + Bonus": { label: "Match 2 + Bonus", odds: 109, prize: 2 },
+      },
+    },
+  },
+  // Pick 3 / 4 / 5 — digit games drawn twice daily (we track the evening draw). Fixed
+  // paytables from the MD Lottery prize-structure pages (shown for a $1 straight).
+  md_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "MD", stateName: "Maryland", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Maryland Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. Fixed payouts by bet type (shown for a $1 play; 50¢ plays pay half).",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 3 pays (per $1)", columns: ["Bet type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] }, { cells: ["3-Way Box", "$160", "1 in 333"] }, { cells: ["6-Way Box", "$80", "1 in 167"] }, { cells: ["Front / Back Pair", "$50", "1 in 100"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
+  md_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "MD", stateName: "Maryland", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Maryland Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. Fixed payouts by bet type (shown for a $1 play; 50¢ plays pay half).",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 4 pays (per $1)", columns: ["Bet type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] }, { cells: ["4-Way Box", "$1,200", "1 in 2,500"] }, { cells: ["6-Way Box", "$800", "1 in 1,667"] }, { cells: ["12-Way Box", "$400", "1 in 833"] }, { cells: ["24-Way Box", "$200", "1 in 417"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
+  md_pick5: {
+    label: "Pick 5", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "MD", stateName: "Maryland", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Maryland Pick 5 is a 5-digit game (00000–99999) drawn twice a day; we track the evening draw. Fixed payouts by bet type (shown for a $1 play; 50¢ plays pay half).",
+      topPrize: "$50,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 5 pays (per $1)", columns: ["Bet type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$50,000", "1 in 100,000"] }, { cells: ["5-Way Box", "$10,000", "1 in 20,000"] }, { cells: ["10-Way Box", "$5,000", "1 in 10,000"] }, { cells: ["20-Way Box", "$2,500", "1 in 5,000"] }, { cells: ["30-Way Box", "$1,650", "1 in 3,333"] }, { cells: ["60-Way Box", "$800", "1 in 1,667"] }, { cells: ["120-Way Box", "$400", "1 in 833"] }, { cells: ["Front / Back 3", "$500", "1 in 1,000"] }, { cells: ["Front / Back Pair", "$50", "1 in 100"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

@@ -304,6 +304,16 @@ GAMES = {
                      "num_count": 5, "sort": True, "start_year": 2006},  # fixed prizes; no v3 payout feed
     "ma_numbers":   {"kind": "masslottery_api", "ma_game": "the_numbers_game", "ma_product_id": 17,
                      "num_count": 4, "digits": True, "start_year": 2012},
+
+    # --- Maryland (14th state) — mdlottery.com "Winning Numbers" tables (recent window;
+    # retention accumulates). Pick 3/4/5 share one Midday/Evening table; keep evening. ----
+    "md_multimatch": {"kind": "mdlottery_html", "md_table": "multi-match", "md_kind": "balls",
+                      "num_count": 6, "sort": True, "md_jackpot_path": "multi-match"},
+    "md_bonus5":     {"kind": "mdlottery_html", "md_table": "bonus-match-5", "md_kind": "bonus",
+                      "num_count": 5, "sort": True, "special_key": "bonus"},
+    "md_pick3":      {"kind": "mdlottery_html", "md_table": "pick-3-4-5", "md_kind": "pick", "md_pick_class": "pick-3", "num_count": 3, "digits": True},
+    "md_pick4":      {"kind": "mdlottery_html", "md_table": "pick-3-4-5", "md_kind": "pick", "md_pick_class": "pick-4", "num_count": 4, "digits": True},
+    "md_pick5":      {"kind": "mdlottery_html", "md_table": "pick-3-4-5", "md_kind": "pick", "md_pick_class": "pick-5", "num_count": 5, "digits": True},
 }
 
 
@@ -1578,6 +1588,87 @@ def scrape_massachusetts(cfg, by_date):
     return cur_jp
 
 
+MD_WN = "https://www.mdlottery.com/player-tools/winning-numbers/"
+
+
+def scrape_maryland(cfg, by_date):
+    """Maryland — the mdlottery.com "Winning Numbers" page server-renders a condensed
+    table per game (Date + balls; Pick 3/4/5 share one Midday/Evening table). It exposes
+    only a recent window (Multi-Match ~50, Bonus Match 5 ~180, …), so retention accumulates
+    the deeper history. Multi-Match's live jackpot comes from its own game page.
+    Mutates by_date; returns the upcoming jackpot for jackpot games."""
+    page = requests.get(MD_WN, headers={"User-Agent": USER_AGENT}, timeout=45).text
+    m = re.search(rf'winning-numbers table-condensed {re.escape(cfg["md_table"])}\b', page)
+    if not m:
+        return None
+    tbl = page[m.start():page.index("</table>", m.start())]
+    n, kind = cfg["num_count"], cfg["md_kind"]
+
+    def iso_from(row):
+        dm = re.search(r'class="date">(\d\d)/(\d\d)/(\d\d)', row)
+        return f"20{dm.group(3)}-{dm.group(1)}-{dm.group(2)}" if dm else None
+
+    if kind == "pick":
+        # Combined Pick 3/4/5 table: one row per Midday/Evening; keep the evening draw,
+        # read this game's own <ul class="pick-N"> (skip the "-" placeholder rows).
+        pcls = cfg["md_pick_class"]
+        for rm in re.finditer(r'(?s)<tr class="(mid|eve)">(.*?)</tr>', tbl):
+            if rm.group(1) != "eve":
+                continue
+            row = rm.group(2)
+            iso = iso_from(row)
+            um = re.search(rf'(?s)<ul class="{pcls}">(.*?)</ul>', row)
+            if not iso or not um:
+                continue
+            digits = re.findall(r"<li>(\d+)</li>", um.group(1))  # plain <li> = a digit; hidden are " + "
+            if len(digits) < n:
+                continue
+            by_date[iso] = {"date": iso, "numbers": [int(x) for x in digits[:n]]}
+    elif kind == "cashpop":
+        for rm in re.finditer(r"(?s)<tr>(.*?)</tr>", tbl):
+            row = rm.group(1)
+            dr = re.search(r'class="drawing">#?(\d+)', row)
+            nm = re.search(r'<ul class="balls"><li>(\d+)</li>', row)
+            iso = iso_from(row)
+            if not (dr and nm and iso):
+                continue
+            dn = int(dr.group(1))
+            if iso in by_date and by_date[iso].get("draw_number", 0) >= dn:
+                continue  # keep the latest drawing of the day
+            by_date[iso] = {"date": iso, "draw_number": dn, "numbers": [int(nm.group(1))]}
+    else:  # "balls" (Multi-Match) / "bonus" (Bonus Match 5)
+        for rm in re.finditer(r"(?s)<tr>(.*?)</tr>", tbl):
+            row = rm.group(1)
+            iso = iso_from(row)
+            um = re.search(r'(?s)<td class="numbers"><ul class="balls">(.*?)</ul>', row)
+            if not iso or not um:
+                continue
+            nums = [int(x) for x in re.findall(r"<li>(\d+)</li>", um.group(1))]
+            if len(nums) < n:
+                continue
+            draw = {"date": iso, "numbers": sorted(nums[:n]) if cfg.get("sort") else nums[:n]}
+            if cfg.get("special_key"):
+                bm = re.search(r'(?s)<td class="bonus">.*?<li[^>]*>(\d+)</li>', row)
+                if bm:
+                    draw[cfg["special_key"]] = int(bm.group(1))
+            by_date[iso] = draw
+
+    # Multi-Match jackpot from its game page ("$700 THOUSAND … Estimated Jackpot").
+    if cfg.get("md_jackpot_path"):
+        try:
+            gp = requests.get(f"https://www.mdlottery.com/games/{cfg['md_jackpot_path']}/",
+                              headers={"User-Agent": USER_AGENT}, timeout=30).text
+            jm = re.search(r"\$\s*([\d.,]+)\s*(THOUSAND|MILLION|BILLION)?[\s\S]{0,80}?Estimated Jackpot", gp, re.I)
+            if jm:
+                mult = {"thousand": 1e3, "million": 1e6, "billion": 1e9}.get((jm.group(2) or "").lower(), 1)
+                amt = int(float(jm.group(1).replace(",", "")) * mult)
+                if amt:
+                    return {"date": None, "jackpot": amt}
+        except Exception:
+            pass
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1721,6 +1812,14 @@ def main():
         if cur:
             data["current_jackpot"] = cur
             print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,} cash ${cur.get('cash') or 0:,}")
+    elif cfg["kind"] == "mdlottery_html":
+        cur = scrape_maryland(cfg, by_date)
+        source = "mdlottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from mdlottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot: ${cur['jackpot']:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"
