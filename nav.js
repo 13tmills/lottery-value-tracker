@@ -13,4 +13,15 @@
       link("State Drawings", "states.html") +
     `</div>`;
   document.body.insertBefore(nav, document.body.firstChild);
+
+  // Responsible-gambling notice — appended to the footer on every page.
+  const rg = document.createElement("p");
+  rg.className = "rg-note";
+  rg.innerHTML =
+    "You must be <strong>18+</strong> to play the lottery (21+ in some states). The lottery is a " +
+    "negative-expected-value game — play for entertainment, and never spend more than you can " +
+    "afford to lose. If you or someone you know has a gambling problem, call " +
+    "<strong>1-800-GAMBLER</strong> (<a href=\"tel:18004262537\">1-800-426-2537</a>).";
+  const foot = document.querySelector(".site-footer");
+  (foot || document.body).appendChild(rg);
 })();

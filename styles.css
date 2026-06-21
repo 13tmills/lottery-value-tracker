@@ -963,6 +963,18 @@ a.state-cell:hover { border-color: var(--accent); }
   text-align: center;
   padding: 1.5rem 1.25rem 2.5rem;
 }
+.rg-note {
+  max-width: 720px;
+  margin: 1.1rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+.rg-note strong { color: var(--text); }
+.rg-note a { color: var(--accent); text-decoration: none; }
+.rg-note a:hover { text-decoration: underline; }
 
 .footer-nav {
   display: flex;
