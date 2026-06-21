@@ -122,6 +122,12 @@
   <url><loc>https://numbersintel.com/game.html?game=nh_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=nh_m4l</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=nh_lucky</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://numbersintel.com/state.html?state=NC</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=nc_cash5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=nc_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=nc_pick3</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=nc_pick3</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=nc_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

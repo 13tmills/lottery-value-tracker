@@ -1247,6 +1247,54 @@ const GAME_META = {
     },
     viz: { tiers: [ {label:"5 + Bonus",odds:22910580},{label:"Match 5",odds:5727645},{label:"4 + Bonus",odds:86455},{label:"Match 4",odds:21614},{label:"3 + Bonus",odds:1663},{label:"Match 3",odds:416},{label:"2 + Bonus",odds:98},{label:"Match 2",odds:24},{label:"1 + Bonus",odds:16} ] },
   },
+
+  // ===== North Carolina =====
+  // Pick 3 / Pick 4 — digit games drawn twice daily; we track the evening draw.
+  // Full history from the NC Education Lottery's CSV exports (Pick 3 since 2006).
+  nc_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "NC", stateName: "North Carolina", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "North Carolina Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight); an optional Fireball add-on adds ways to win.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 3 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] }, { cells: ["3-Way Box", "$160", "1 in 333"] }, { cells: ["6-Way Box", "$80", "1 in 167"] }, { cells: ["Front / Back Pair", "$50", "1 in 100"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
+  nc_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "NC", stateName: "North Carolina", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "North Carolina Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight); an optional Fireball add-on adds ways to win.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 4 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] }, { cells: ["4-Way Box", "$1,200", "1 in 2,500"] }, { cells: ["6-Way Box", "$800", "1 in 1,667"] }, { cells: ["12-Way Box", "$400", "1 in 833"] }, { cells: ["24-Way Box", "$200", "1 in 417"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
+  // Cash 5 — 5 of 41, nightly, rolling cash jackpot from $100k (pari-mutuel). History since 2006.
+  nc_cash5: {
+    label: "Cash 5", specialKey: null, specialName: "", draws: "Nightly",
+    priceChanges: [], state: "NC", stateName: "North Carolina", ticketPrice: "$1",
+    oddsJackpot: 749398, // 5 of 41
+    prizes: {
+      note: "Carolina Cash 5 is 5 of 41 with a cash jackpot that starts at $100,000 and grows until won (split among winners). All prizes are pari-mutuel, so amounts vary with sales and winners. Odds shown per $1 play.",
+      topPrize: "Jackpot (min $100k)", topPrizeLabel: "Match 5",
+      reference: {
+        title: "Cash 5 odds by match",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["5 of 5", "Jackpot (min $100k)", "1 in 749,398"] },
+          { cells: ["4 of 5", "Pari-mutuel", "1 in 4,164"] },
+          { cells: ["3 of 5", "Pari-mutuel", "1 in 119"] },
+          { cells: ["2 of 5", "Pari-mutuel", "1 in 11"] },
+        ],
+        note: "All prizes are pari-mutuel (amounts move with sales/winners). Frequency chart below covers recent draws.",
+      },
+    },
+    viz: { tiers: [ {label:"Match 5 (jackpot)",odds:749398},{label:"Match 4",odds:4164},{label:"Match 3",odds:119},{label:"Match 2",odds:11} ] },
+  },
 };
 
 const fmtMoney = (n) =>

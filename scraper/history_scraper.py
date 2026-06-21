@@ -283,6 +283,10 @@ GAMES = {
     "nh_pick3":     {"kind": "gambyt", "gambyt_key": "1c4c69db-274c-4f59-95c5-3211cd74e9d8", "gambyt_id": "b9e5389c-bb72-4faf-99b1-f2e85df6a738", "num_count": 3, "digits": True, "evening": True},
     "nh_pick4":     {"kind": "gambyt", "gambyt_key": "1c4c69db-274c-4f59-95c5-3211cd74e9d8", "gambyt_id": "9ee26a0f-4545-4fc7-b922-fdb0486b9269", "num_count": 4, "digits": True, "evening": True},
     "nh_m4l":       {"kind": "gambyt", "gambyt_key": "1c4c69db-274c-4f59-95c5-3211cd74e9d8", "gambyt_id": "2680baf8-c106-4c5c-9e65-c4a6a22f94d0", "num_count": 5, "sort": True, "special_key": "bonus"},
+    # ----- North Carolina (nclottery.com per-game CSV exports) -----
+    "nc_pick3":    {"kind": "nc_csv", "nc_url": "pick3", "num_count": 3, "digits": True, "evening": True, "ball_start": 2},
+    "nc_pick4":    {"kind": "nc_csv", "nc_url": "pick4", "num_count": 4, "digits": True, "evening": True, "ball_start": 2},
+    "nc_cash5":    {"kind": "nc_csv", "nc_url": "cash5", "num_count": 5, "sort": True, "ball_start": 1},
 }
 
 
@@ -1394,6 +1398,28 @@ def scrape_gambyt(cfg, by_date):
     return None
 
 
+def scrape_nc(cfg, by_date):
+    """North Carolina Education Lottery — per-game CSV exports (nclottery.com/<game>-download).
+    Server-fetchable, full history. Pick 3/4 are twice daily (Day/Eve); we track the evening."""
+    txt = requests.get(f"https://nclottery.com/{cfg['nc_url']}-download",
+                       headers={"User-Agent": USER_AGENT}, timeout=45).text
+    n, bs = cfg["num_count"], cfg.get("ball_start", 1)
+    for line in txt.splitlines():
+        if not re.match(r'^"\d{2}/\d{2}/\d{4}"', line):
+            continue
+        cells = re.findall(r'"([^"]*)"', line)
+        mo, dy, yr = cells[0].split("/")
+        iso = f"{yr}-{mo}-{dy}"
+        if cfg.get("evening") and (len(cells) < 2 or cells[1] != "E"):
+            continue
+        nums = [int(cells[bs + k]) for k in range(n)
+                if bs + k < len(cells) and cells[bs + k].isdigit()]
+        if len(nums) < n:
+            continue
+        by_date[iso] = {"date": iso, "numbers": sorted(nums) if cfg.get("sort") else nums}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1517,6 +1543,11 @@ def main():
         scrape_gambyt(cfg, by_date)
         source = cfg.get("gambyt_source", "nhlottery.com")
         print(f"[{args.game}] {len(by_date)} draw(s) from {source}.")
+        complete = True
+    elif cfg["kind"] == "nc_csv":
+        scrape_nc(cfg, by_date)
+        source = "nclottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from nclottery.com.")
         complete = True
     else:
         scrape = SCRAPERS[cfg["kind"]]

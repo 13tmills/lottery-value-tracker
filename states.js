@@ -294,6 +294,23 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  NC: {
+    intro: "North Carolina's draw games with results, odds and number frequency from the NC Education Lottery's own CSV exports — Pick 3 and Cash 5 history goes all the way back to 2006.",
+    games: [
+      { name: "Cash 5", meta: "5 of 41 · nightly · cash jackpot",
+        links: [["Jackpot, odds &amp; frequency", "game.html?game=nc_cash5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily · since 2006",
+        links: [["Results, odds &amp; payouts", "game.html?game=nc_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=nc_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
 };
 
 function stateParam() {
