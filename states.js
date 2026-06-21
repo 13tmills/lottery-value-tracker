@@ -311,6 +311,27 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  VA: {
+    intro: "Virginia's draw games with results, odds and number frequency from the VA Lottery's own past-numbers exports — Pick 3 history goes all the way back to 1989.",
+    games: [
+      { name: "Bank a Million", meta: "6 of 40 + Bonus · Wed · Sat · $1M top",
+        links: [["Prizes, odds &amp; results", "game.html?game=va_bank"]] },
+      { name: "Cash 5", meta: "5 of 45 · nightly · cash jackpot",
+        links: [["Jackpot, odds &amp; frequency", "game.html?game=va_cash5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily · since 1989",
+        links: [["Results, odds &amp; payouts", "game.html?game=va_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily · since 1991",
+        links: [["Results, odds &amp; payouts", "game.html?game=va_pick4"]] },
+      { name: "Cash Pop", meta: "1 of 15 · 5&times; daily",
+        links: [["Results &amp; frequency", "game.html?game=va_cashpop"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
 };
 
 function stateParam() {

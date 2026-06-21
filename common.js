@@ -1295,6 +1295,91 @@ const GAME_META = {
     },
     viz: { tiers: [ {label:"Match 5 (jackpot)",odds:749398},{label:"Match 4",odds:4164},{label:"Match 3",odds:119},{label:"Match 2",odds:11} ] },
   },
+
+  // ===== Virginia =====
+  // Pick 3 / Pick 4 — digit games, twice daily (Day/Night); we track the night draw.
+  // Deep history from the VA Lottery's "All Past Numbers" exports (Pick 3 since 1989!).
+  va_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "VA", stateName: "Virginia", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Virginia Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the night draw. Fixed payouts by play type (shown for a $1 straight); an optional FIREBALL add-on adds ways to win. History goes back to 1989.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 3 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] }, { cells: ["3-Way Box", "$160", "1 in 333"] }, { cells: ["6-Way Box", "$80", "1 in 167"] }, { cells: ["Front / Back Pair", "$50", "1 in 100"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
+  va_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "VA", stateName: "Virginia", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Virginia Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the night draw. Fixed payouts by play type (shown for a $1 straight); an optional FIREBALL add-on adds ways to win. History goes back to 1991.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 4 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] }, { cells: ["4-Way Box", "$1,200", "1 in 2,500"] }, { cells: ["6-Way Box", "$800", "1 in 1,667"] }, { cells: ["12-Way Box", "$400", "1 in 833"] }, { cells: ["24-Way Box", "$200", "1 in 417"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
+  // Cash 5 with EZ Match — 5 of 45, nightly, rolling cash jackpot from $200k (pari-mutuel).
+  va_cash5: {
+    label: "Cash 5", specialKey: null, specialName: "", draws: "Nightly",
+    priceChanges: [], state: "VA", stateName: "Virginia", ticketPrice: "$1",
+    oddsJackpot: 1221759, // 5 of 45
+    prizes: {
+      note: "Virginia Cash 5 is 5 of 45 with a cash jackpot that starts at $200,000 and grows until won. All prizes are pari-mutuel (amounts vary with sales and winners). An optional EZ Match add-on wins instant prizes. Odds shown per $1 play.",
+      topPrize: "Jackpot (min $200k)", topPrizeLabel: "Match 5",
+      reference: {
+        title: "Cash 5 odds by match",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["5 of 5", "Jackpot (min $200k)", "1 in 1,221,759"] },
+          { cells: ["4 of 5", "Pari-mutuel", "1 in 6,109"] },
+          { cells: ["3 of 5", "Pari-mutuel", "1 in 157"] },
+          { cells: ["2 of 5", "Pari-mutuel", "1 in 12.4"] },
+        ],
+        note: "All prizes are pari-mutuel. Overall odds of winning any prize: 1 in 11.44.",
+      },
+    },
+    viz: { tiers: [ {label:"Match 5 (jackpot)",odds:1221759},{label:"Match 4",odds:6109},{label:"Match 3",odds:157},{label:"Match 2",odds:12} ] },
+  },
+  // Bank a Million — 6 of 40 + Bonus Ball; guaranteed $1,000,000 top prize (8 tiers).
+  va_bank: {
+    label: "Bank a Million", specialKey: "bonus", specialName: "Bonus Ball", specialAbbr: "B",
+    draws: "Wed · Sat", priceChanges: [], state: "VA", stateName: "Virginia", ticketPrice: "$2",
+    oddsJackpot: 3838380, // 6 of 40
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Bank a Million is 6 of 40 with a 7th Bonus Ball you don't pick. The top prize is a guaranteed $1,000,000. There are 8 prize tiers; matching the Bonus Ball doubles your non-jackpot prize. Overall odds of any prize: 1 in 18.3.",
+      topPrize: "$1,000,000", topPrizeLabel: "Match 6",
+      reference: {
+        title: "Bank a Million top tiers & odds",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["6 of 6", "$1,000,000", "1 in 3,838,380"] },
+          { cells: ["5 of 6", "Fixed prize", "1 in 18,815"] },
+          { cells: ["4 of 6", "Fixed prize", "1 in 602"] },
+          { cells: ["3 of 6", "Fixed prize", "1 in 49"] },
+        ],
+        note: "Matching the Bonus Ball doubles any non-jackpot prize, for 8 tiers total. Overall odds of any prize: 1 in 18.3.",
+      },
+    },
+  },
+  // Cash Pop — pick 1 of 15, five draws a day; the prize is preprinted on your ticket.
+  va_cashpop: {
+    label: "Cash Pop", specialKey: null, specialName: "",
+    draws: "5× daily", priceChanges: [], state: "VA", stateName: "Virginia", ticketPrice: "$1 to $10",
+    prizes: {
+      note: "Virginia Cash Pop: pick a number from 1 to 15, with five draws a day. Each number carries a randomly assigned, preprinted prize; if your number is drawn, you win it. The frequency chart covers numbers 1–15 over recent draws.",
+      topPrize: "1 in 15", topPrizeLabel: "Odds your number is drawn",
+      reference: {
+        title: "How Cash Pop pays",
+        columns: ["Outcome", "Prize", "Odds"],
+        rows: [ { cells: ["Your number is drawn", "Your ticket's preprinted prize", "1 in 15"] } ],
+        note: "The prize is randomly assigned and printed on your ticket; the amount scales with how much you bet.",
+      },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
