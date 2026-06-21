@@ -5,6 +5,10 @@ on:
     # Times are UTC. ET draws happen late evening -> next morning UTC.
     - cron: '30 4 * * 3,6'   # Mega Millions: Tue/Fri 11pm ET -> Wed/Sat 04:30 UTC
     - cron: '30 4 * * 2,4,0' # Powerball + Lotto America: Mon/Wed/Sat -> Tue/Thu/Sun 04:30 UTC
+    # Safety-net re-runs ~3h later, in case the official jackpot posts late or the
+    # 04:30 run is delayed. The scraper is idempotent (retention only adds/updates).
+    - cron: '30 7 * * 3,6'   # Mega Millions catch-up: Wed/Sat 07:30 UTC
+    - cron: '30 7 * * 2,4,0' # Powerball + Lotto America catch-up: Tue/Thu/Sun 07:30 UTC
   workflow_dispatch:          # allow manual runs from the Actions tab
 
 permissions:
