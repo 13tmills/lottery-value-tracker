@@ -270,8 +270,8 @@ GAMES = {
     "mi_fantasy5": {"kind": "michigan_graphql", "mi_code": "5", "num_count": 5, "sort": True, "mi_seq": 1, "jackpot": True, "jackpot_is_cash": True, "start_year": 2010},
     "mi_lucky":    {"kind": "michigan_graphql", "mi_code": "W", "num_count": 5, "sort": True, "special_key": "lucky", "mi_special_field": "luckyball", "start_year": 2015},
     "mi_m4l":      {"kind": "michigan_graphql", "mi_code": "U", "num_count": 5, "sort": True, "special_key": "bonus", "mi_special_field": "millionaireball", "start_year": 2026},
-    "mi_daily3":   {"kind": "michigan_graphql", "mi_code": "3", "num_count": 3, "digits": True, "start_year": 2010},
-    "mi_daily4":   {"kind": "michigan_graphql", "mi_code": "4", "num_count": 4, "digits": True, "start_year": 2010},
+    "mi_daily3":   {"kind": "michigan_graphql", "mi_code": "3", "num_count": 3, "digits": True, "prizes": True, "mi_payout": "eve", "prizes_cap": 45, "start_year": 2010},
+    "mi_daily4":   {"kind": "michigan_graphql", "mi_code": "4", "num_count": 4, "digits": True, "prizes": True, "mi_payout": "eve", "prizes_cap": 45, "start_year": 2010},
     "mi_keno":     {"kind": "michigan_graphql", "mi_code": "K", "num_count": 22, "sort": True, "start_year": 2010},
     # Club Keno (Q) & Cash Pop (H): drawResultsBetweenDates unsupported (no history feed).
     # Poker Lotto (C): returns 1-52 card codes; card-art mapping not decodable. Not built.
@@ -1316,11 +1316,17 @@ def scrape_michigan(cfg, by_date):
                 rows = ((pdata.get("payout") or {}).get(slot)) or []
             except Exception:
                 continue
-            prizes = [{"level": r.get("description") or f"Level {r.get('prizeLevel')}",
-                       "label": r.get("description") or f"Level {r.get('prizeLevel')}",
-                       "amount": _int(r.get("prizeAmount")) // 100,  # API amounts are in cents
-                       "winners": _int(r.get("winnerCount"))}
-                      for r in rows if r.get("prizeLevel") is not None]
+            prizes = []
+            for r in rows:
+                if r.get("prizeLevel") is None:
+                    continue
+                desc = (r.get("description") or "").strip()
+                if re.search(r"\(\$0\.50?\)", desc):
+                    continue  # keep the $1 plays only (some games list $0.50 + $1.00 rows)
+                label = re.sub(r"\s*\(\$[\d.]+\)\s*", "", desc) or f"Level {r['prizeLevel']}"
+                prizes.append({"level": label, "label": label,
+                               "amount": _int(r.get("prizeAmount")) // 100,  # cents
+                               "winners": _int(r.get("winnerCount"))})
             if prizes:
                 by_date[d]["prizes"] = prizes
                 by_date[d]["total_winners"] = sum(p["winners"] for p in prizes)

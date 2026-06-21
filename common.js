@@ -1067,7 +1067,8 @@ const GAME_META = {
     label: "Daily 3", specialKey: null, specialName: "", digits: true,
     draws: "Twice daily", priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$0.50 or $1",
     prizes: {
-      note: "Michigan Daily 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
+      tierLabel: "Bet type", winnersTitle: "Winners by bet type", winnersLabel: "MI winners",
+      note: "Michigan Daily 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. MI winner counts by play type for the latest draw, plus the full payout guide below (shown for a $1 straight).",
       topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
       reference: { title: "How Daily 3 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
         rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] }, { cells: ["3-Way Box", "$160", "1 in 333"] }, { cells: ["6-Way Box", "$80", "1 in 167"] }, { cells: ["Wheel / Front / Back Pair", "$50", "1 in 100"] } ],
@@ -1078,7 +1079,8 @@ const GAME_META = {
     label: "Daily 4", specialKey: null, specialName: "", digits: true,
     draws: "Twice daily", priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$0.50 or $1",
     prizes: {
-      note: "Michigan Daily 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
+      tierLabel: "Bet type", winnersTitle: "Winners by bet type", winnersLabel: "MI winners",
+      note: "Michigan Daily 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. MI winner counts by play type for the latest draw, plus the full payout guide below (shown for a $1 straight).",
       topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
       reference: { title: "How Daily 4 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
         rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] }, { cells: ["4-Way Box", "$1,200", "1 in 2,500"] }, { cells: ["6-Way Box", "$800", "1 in 1,667"] }, { cells: ["12-Way Box", "$400", "1 in 833"] }, { cells: ["24-Way Box", "$200", "1 in 417"] } ],
