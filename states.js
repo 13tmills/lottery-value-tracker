@@ -271,6 +271,29 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  NH: {
+    intro: "New Hampshire's draw games — including the Tri-State games shared with Maine and Vermont — with results, odds, jackpots and frequency from the lottery's own data service (history since 2021).",
+    games: [
+      { name: "Tri-State Megabucks", meta: "5 of 41 + Megaball · Wed · Sat",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=nh_megabucks"]] },
+      { name: "Gimme 5", meta: "5 of 39 · Mon–Fri · $100k top",
+        links: [["Odds &amp; frequency", "game.html?game=nh_gimme5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=nh_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=nh_pick4"]] },
+      { name: "Millionaire for Life", meta: "5 of 58 + Bonus · since Feb 2026",
+        links: [["Prizes &amp; odds", "game.html?game=nh_m4l"]] },
+      { name: "Lucky for Life", meta: "5 of 48 + Lucky Ball · ended Feb 2026", retired: true,
+        links: [["Final results &amp; prizes", "game.html?game=nh_lucky"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
 };
 
 function stateParam() {

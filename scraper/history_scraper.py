@@ -275,6 +275,14 @@ GAMES = {
     "mi_keno":     {"kind": "michigan_graphql", "mi_code": "K", "num_count": 22, "sort": True, "start_year": 2010},
     # Club Keno (Q) & Cash Pop (H): drawResultsBetweenDates unsupported (no history feed).
     # Poker Lotto (C): returns 1-52 card codes; card-art mapping not decodable. Not built.
+    # ----- New Hampshire (NeoPollard/Gambyt game-data-service; public per-state X-API-Key) -
+    # Tri-State Megabucks & Gimme 5 are shared with VT/ME. Pick 3/4 twice daily (eve tracked).
+    # (nh_lucky = Lucky for Life, retired Feb 2026 -> static archive, no CI config.)
+    "nh_megabucks": {"kind": "gambyt", "gambyt_key": "1c4c69db-274c-4f59-95c5-3211cd74e9d8", "gambyt_id": "2eb53665-0981-4de7-97be-64419e0909ac", "num_count": 5, "sort": True, "special_key": "megaball", "jackpot": True},
+    "nh_gimme5":    {"kind": "gambyt", "gambyt_key": "1c4c69db-274c-4f59-95c5-3211cd74e9d8", "gambyt_id": "28c27816-01bb-45be-95d4-057b30ae69e4", "num_count": 5, "sort": True},
+    "nh_pick3":     {"kind": "gambyt", "gambyt_key": "1c4c69db-274c-4f59-95c5-3211cd74e9d8", "gambyt_id": "b9e5389c-bb72-4faf-99b1-f2e85df6a738", "num_count": 3, "digits": True, "evening": True},
+    "nh_pick4":     {"kind": "gambyt", "gambyt_key": "1c4c69db-274c-4f59-95c5-3211cd74e9d8", "gambyt_id": "9ee26a0f-4545-4fc7-b922-fdb0486b9269", "num_count": 4, "digits": True, "evening": True},
+    "nh_m4l":       {"kind": "gambyt", "gambyt_key": "1c4c69db-274c-4f59-95c5-3211cd74e9d8", "gambyt_id": "2680baf8-c106-4c5c-9e65-c4a6a22f94d0", "num_count": 5, "sort": True, "special_key": "bonus"},
 }
 
 
@@ -1333,6 +1341,53 @@ def scrape_michigan(cfg, by_date):
     return cur
 
 
+GAMBYT_BASE = "https://prod.game-data.gambytservices.com"
+
+
+def scrape_gambyt(cfg, by_date):
+    """NeoPollard / Gambyt game-data-service (used by NH, MI, VA, NC, … ilotteries).
+    Each state exposes a public X-API-Key in its web bundle. list-drawings returns the
+    winning numbers, bonus ball, and progressive jackpot (in cents) in 90-day windows.
+    CI pulls the recent window; the committed backfill + retention keep deeper history."""
+    n = cfg["num_count"]
+    gid = cfg["gambyt_id"]
+    headers = {"X-API-Key": cfg["gambyt_key"], "X-Client-ID": cfg.get("gambyt_client", "nh-portal-server"),
+               "User-Agent": USER_AGENT}
+    today = date.today()
+    cur = date(today.year - 1, 1, 1)  # CI: the recent ~1.5 years
+    while cur <= today:
+        end = min(cur + timedelta(days=90), today + timedelta(days=1))
+        try:
+            rows = requests.get(f"{GAMBYT_BASE}/v1/draw-games/{gid}/list-drawings",
+                                params={"startDate": cur.isoformat(), "endDate": end.isoformat()},
+                                headers=headers, timeout=40).json()
+        except Exception as exc:
+            print(f"  ! {cfg['gambyt_id'][:8]} {cur}: {exc}")
+            rows = []
+        for dr in rows or []:
+            when = dr.get("when") or {}
+            if cfg.get("evening") and when.get("label") != "Evening":
+                continue
+            dt = (when.get("drawTime") or "")[:10]
+            res = (((dr.get("results") or {}).get("drawResult") or {}).get("primary")) or {}
+            nums = res.get("winningNumbers") or []
+            if not dt or len(nums) < n:
+                continue
+            draw = {"date": dt, "numbers": sorted(nums[:n]) if cfg.get("sort") else nums[:n]}
+            sp = cfg.get("special_key")
+            if sp and res.get("bonusNumbers"):
+                draw[sp] = res["bonusNumbers"][0]
+            if cfg.get("jackpot"):
+                pj = dr.get("progressiveJackpot") or {}
+                if pj.get("status") == "ACTIVE":
+                    jp = _int((pj.get("jackpot") or {}).get("jackpotAmountInCents")) // 100
+                    if jp:
+                        draw["jackpot"] = jp
+            by_date[dt] = draw
+        cur = end
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1452,6 +1507,11 @@ def main():
         if cur:
             data["current_jackpot"] = cur
             print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "gambyt":
+        scrape_gambyt(cfg, by_date)
+        source = cfg.get("gambyt_source", "nhlottery.com")
+        print(f"[{args.game}] {len(by_date)} draw(s) from {source}.")
+        complete = True
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"
