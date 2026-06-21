@@ -898,6 +898,48 @@ const GAME_META = {
         note: "Shown for a $1 play; 50¢ plays pay half." },
     },
   },
+  // Lucky for Life — multi-state 5 of 48 + Lucky Ball (1 of 18). Ohio played it 2015–
+  // Feb 21, 2026, when Millionaire for Life replaced it. Retired archive.
+  oh_luckylife: {
+    label: "Lucky for Life", specialKey: "lucky", specialName: "Lucky Ball", specialAbbr: "LB",
+    draws: "Daily · ended Feb 2026", priceChanges: [], state: "OH", stateName: "Ohio", ticketPrice: "$2",
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Lucky for Life was a multi-state game — 5 of 48 plus a Lucky Ball (1 of 18) — with for-life top prizes. Ohio ended Lucky for Life on Feb 21, 2026, when the multi-state Millionaire for Life launched. This is the final archive and prize structure.",
+      topPrize: "$1,000 / day for life", topPrizeLabel: "Top prize", retired: true,
+      reference: {
+        title: "Lucky for Life prize tiers & odds",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["5 + Lucky Ball", "$1,000 / day for life", "1 in 30,821,472"] },
+          { cells: ["5", "$25,000 / year for life", "1 in 1,813,028"] },
+          { cells: ["4 + Lucky Ball", "$5,000", "1 in 143,356"] },
+          { cells: ["4", "$200", "1 in 8,433"] },
+          { cells: ["3 + Lucky Ball", "$150", "1 in 3,413"] },
+          { cells: ["3", "$20", "1 in 201"] },
+          { cells: ["2 + Lucky Ball", "$25", "1 in 250"] },
+          { cells: ["2", "$3", "1 in 14.7"] },
+          { cells: ["1 + Lucky Ball", "$6", "1 in 50"] },
+          { cells: ["0 + Lucky Ball", "$4", "1 in 32"] },
+        ],
+        note: "Top two prizes were paid for life (minimum 20 years). Overall odds of any prize: 1 in 7.8.",
+      },
+    },
+  },
+  // Millionaire for Life — multi-state 5 of 58 + Bonus Ball (1 of 5), launched Feb 2026
+  // (replaced Lucky for Life). Live per-tier prizes + Ohio winner counts from the lottery's
+  // results feed; odds computed from the 5/58 + 1/5 matrix (top tier 1 in 22,910,580).
+  oh_m4l: {
+    label: "Millionaire for Life", specialKey: "bonus", specialName: "Bonus Ball", specialAbbr: "B",
+    draws: "Daily", priceChanges: [], state: "OH", stateName: "Ohio", ticketPrice: "$2",
+    oddsJackpot: 22910580, // 5 of 58 + Bonus 1 of 5
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & winners", winnersLabel: "OH winners",
+      note: "Millionaire for Life is a multi-state 5-of-58 + Bonus Ball (1 of 5) game that launched Feb 2026, replacing Lucky for Life. The top two prizes pay for life (shown here as their lump-sum values, $20M and $2M); the rest are fixed. Amounts and Ohio winner counts are the latest draw's actual results.",
+      odds: { "5/5 + Bonus Ball": 22910580, "5/5": 5727645, "4/5 + Bonus Ball": 86455, "4/5": 21614, "3/5 + Bonus Ball": 1663, "3/5": 416, "2/5 + Bonus Ball": 98, "2/5": 24, "1/5 + Bonus Ball": 16 },
+    },
+    viz: { tiers: [ {label:"5/5 + Bonus",odds:22910580},{label:"5/5",odds:5727645},{label:"4/5 + Bonus",odds:86455},{label:"4/5",odds:21614},{label:"3/5 + Bonus",odds:1663},{label:"3/5",odds:416},{label:"2/5 + Bonus",odds:98},{label:"2/5",odds:24},{label:"1/5 + Bonus",odds:16} ] },
+  },
 };
 
 const fmtMoney = (n) =>

@@ -232,6 +232,10 @@ const STATE_GAMES = {
         links: [["Results, odds &amp; payouts", "game.html?game=oh_pick4"]] },
       { name: "Pick 5", meta: "5-digit · twice daily",
         links: [["Results, odds &amp; payouts", "game.html?game=oh_pick5"]] },
+      { name: "Millionaire for Life", meta: "5 of 58 + Bonus · daily · since Feb 2026",
+        links: [["Prizes, winners &amp; odds", "game.html?game=oh_m4l"]] },
+      { name: "Lucky for Life", meta: "5 of 48 + Lucky Ball · ended Feb 2026", retired: true,
+        links: [["Final results &amp; prizes", "game.html?game=oh_luckylife"]] },
     ],
     national: [
       { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",

@@ -257,6 +257,9 @@ GAMES = {
     "oh_pick3":   {"kind": "ohio_cms", "oh_path": "Pick-3", "num_count": 3, "digits": True},
     "oh_pick4":   {"kind": "ohio_cms", "oh_path": "Pick-4", "num_count": 4, "digits": True},
     "oh_pick5":   {"kind": "ohio_cms", "oh_path": "Pick-5", "num_count": 5, "digits": True},
+    # Millionaire for Life — multi-state 5 + Bonus Ball; replaced Lucky for Life Feb 2026.
+    "oh_m4l":     {"kind": "ohio_cms", "oh_path": "Millionaire-For-Life", "num_count": 5, "sort": True, "special_key": "bonus"},
+    # (oh_luckylife is a retired static archive — no scraper config; JSON is committed.)
 }
 
 
@@ -1178,13 +1181,16 @@ def scrape_ohio_cms(cfg, by_date):
         d = (dr.get("DrawDate") or "")[:10]
         if not d:
             continue
-        nums = [x["Value"] for x in sorted(dr.get("Numbers") or [], key=lambda z: z.get("Position", 0))]
-        if cfg.get("sort"):
-            nums = sorted(nums)
-        if len(nums) < n:
+        nums_all = [x["Value"] for x in sorted(dr.get("Numbers") or [], key=lambda z: z.get("Position", 0))]
+        if len(nums_all) < n:
             continue
-        draw = {"date": d, "numbers": nums[:n]}
-        prizes = [{"level": p.get("Description"), "label": p.get("Description"),
+        main = sorted(nums_all[:n]) if cfg.get("sort") else nums_all[:n]
+        draw = {"date": d, "numbers": main}
+        sp = cfg.get("special_key")
+        if sp and len(nums_all) > n:
+            draw[sp] = nums_all[n]  # the ball after the n main numbers (Bonus/Lucky)
+        prizes = [{"level": re.sub(r"\s+", " ", p["Description"]).strip(),
+                   "label": re.sub(r"\s+", " ", p["Description"]).strip(),
                    "amount": num(p.get("Payout")), "winners": num(p.get("WinnersNumber"))}
                   for p in (dr.get("Prizes") or []) if p.get("Description")]
         if prizes:
