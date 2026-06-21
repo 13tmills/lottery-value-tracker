@@ -23,7 +23,7 @@ import os
 import re
 import sys
 import time
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from html import unescape
 from zoneinfo import ZoneInfo
 
@@ -915,7 +915,7 @@ def scrape_pa(cfg, by_date):
         dm = re.search(r'"drawingNumberDate":"[^"]*?(\d{10,})', rec)
         if not dm:
             continue
-        d = datetime.utcfromtimestamp(int(dm.group(1)) / 1000).date().isoformat()
+        d = datetime.fromtimestamp(int(dm.group(1)) / 1000, timezone.utc).date().isoformat()
         nums = []
         for i in range(1, n + 1):
             m = re.search(rf'"drawingNumber{i}":(\d+)', rec)
