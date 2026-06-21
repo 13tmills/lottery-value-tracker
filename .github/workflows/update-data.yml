@@ -89,6 +89,7 @@ jobs:
           python scraper/history_scraper.py --game mi_m4l
           python scraper/history_scraper.py --game mi_daily3
           python scraper/history_scraper.py --game mi_daily4
+          python scraper/history_scraper.py --game mi_keno
 
       - name: Commit updated data
         run: |

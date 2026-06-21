@@ -272,6 +272,9 @@ GAMES = {
     "mi_m4l":      {"kind": "michigan_graphql", "mi_code": "U", "num_count": 5, "sort": True, "special_key": "bonus", "mi_special_field": "millionaireball", "start_year": 2026},
     "mi_daily3":   {"kind": "michigan_graphql", "mi_code": "3", "num_count": 3, "digits": True, "start_year": 2010},
     "mi_daily4":   {"kind": "michigan_graphql", "mi_code": "4", "num_count": 4, "digits": True, "start_year": 2010},
+    "mi_keno":     {"kind": "michigan_graphql", "mi_code": "K", "num_count": 22, "sort": True, "start_year": 2010},
+    # Club Keno (Q) & Cash Pop (H): drawResultsBetweenDates unsupported (no history feed).
+    # Poker Lotto (C): returns 1-52 card codes; card-art mapping not decodable. Not built.
 }
 
 

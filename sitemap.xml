@@ -109,6 +109,8 @@
   <url><loc>https://numbersintel.com/game.html?game=mi_daily4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=mi_m4l</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=mi_lucky</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=mi_keno</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=mi_keno</loc><changefreq>weekly</changefreq><priority>0.4</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

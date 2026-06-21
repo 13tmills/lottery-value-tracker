@@ -1085,6 +1085,34 @@ const GAME_META = {
         note: "Shown for a $1 play; 50¢ plays pay half. Wheel and 1-Off bets also offered." },
     },
   },
+  // Daily Keno — 22 numbers drawn from 1–80 nightly; pick 1–10 spots. We don't have MI's
+  // exact prize amounts, so we publish the (computed) odds of matching all your spots and
+  // the number frequency — no invented dollar figures.
+  mi_keno: {
+    label: "Daily Keno", specialKey: null, specialName: "",
+    draws: "Nightly", priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$1 to $10",
+    prizes: {
+      note: "Michigan Daily Keno draws 22 numbers from 1–80 once a night. You pick 1–10 “spots”; prizes grow the more of your spots match and scale with your wager. Below: the odds of matching ALL your spots, by how many you play — plus number frequency over recent draws.",
+      topPrize: "22 of 80", topPrizeLabel: "Drawn nightly",
+      reference: {
+        title: "Odds of matching all your spots (22 of 80 drawn)",
+        columns: ["Spots played", "Odds (match all)"],
+        rows: [
+          { cells: ["10 spots", "1 in 2,546,500"] },
+          { cells: ["9 spots", "1 in 466,201"] },
+          { cells: ["8 spots", "1 in 90,651"] },
+          { cells: ["7 spots", "1 in 18,627"] },
+          { cells: ["6 spots", "1 in 4,028"] },
+          { cells: ["5 spots", "1 in 913"] },
+          { cells: ["4 spots", "1 in 216"] },
+          { cells: ["3 spots", "1 in 53"] },
+          { cells: ["2 spots", "1 in 13.7"] },
+          { cells: ["1 spot", "1 in 3.6"] },
+        ],
+        note: "Odds computed for 22 numbers drawn from 1–80. Most spot games also pay smaller prizes for partial matches; amounts scale with your wager. Frequency chart below covers recent draws.",
+      },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

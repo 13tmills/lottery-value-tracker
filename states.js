@@ -257,6 +257,8 @@ const STATE_GAMES = {
         links: [["Results, odds &amp; payouts", "game.html?game=mi_daily3"]] },
       { name: "Daily 4", meta: "4-digit · twice daily",
         links: [["Results, odds &amp; payouts", "game.html?game=mi_daily4"]] },
+      { name: "Daily Keno", meta: "22 of 80 · nightly",
+        links: [["Odds &amp; frequency", "game.html?game=mi_keno"]] },
       { name: "Millionaire for Life", meta: "5 of 58 + Bonus · daily · since Feb 2026",
         links: [["Prizes &amp; odds", "game.html?game=mi_m4l"]] },
       { name: "Lucky for Life", meta: "5 of 48 + Lucky Ball · ended Feb 2026", retired: true,
