@@ -16,3 +16,6 @@ Thumbs.db
 
 # Scratch files
 _scratch*
+
+# Planning docs (keep out of the public Pages repo)
+*.pdf

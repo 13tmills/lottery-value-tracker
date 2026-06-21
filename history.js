@@ -6,7 +6,8 @@ const els = {};
 let chart = null;
 let all = [];          // every draw, ascending by date
 let meta = null;
-let hasJackpot = true; // some games (state games) have no jackpot/cash — chart hidden
+let hasJackpot = true; // any draw has jackpot/cash → show those columns
+let showChart = true;  // jackpot-over-time chart — only when most draws have a jackpot
 
 // Lazy table rendering
 const TABLE_BATCH = 60;
@@ -71,10 +72,21 @@ async function init() {
     all = (data.draws || []).slice().sort((a, b) => a.date.localeCompare(b.date));
     if (!all.length) throw new Error("no draws yet");
 
-    hasJackpot = all.some((d) => d.jackpot != null);
+    // NY games carry jackpot/prizes on only a recent slice of their long history,
+    // so decide columns and chart from coverage, not just presence.
+    const jackpotCount = all.filter((d) => typeof d.jackpot === "number").length;
+    const hasPrizes = all.some((d) => d.prizes && d.prizes.length);
+    hasJackpot = jackpotCount > 0;
+    // Show the jackpot saw-tooth whenever there are enough jackpot draws to plot —
+    // even if they're only a recent slice of a long history (Lotto Texas / Two Step
+    // pre-date the jackpot data we collect). renderChart windows to the jackpot-
+    // bearing draws so the line stays tight instead of stranded at the right edge.
+    showChart = jackpotCount >= 8;
+    if (!showChart) document.getElementById("hist-chart")?.closest(".panel")?.remove();
     if (!hasJackpot) {
-      document.getElementById("hist-chart")?.closest(".panel")?.remove();
-      document.querySelector(".hist-table")?.classList.add("hist-table--simple");
+      // Hide the (empty) jackpot/cash columns; keep the winners column if we have prizes.
+      document.querySelector(".hist-table")?.classList.add(
+        hasPrizes ? "hist-table--no-jackpot" : "hist-table--simple");
     }
 
     const span = `${fmtDate(all[0].date)} – ${fmtDate(all.at(-1).date)}`;
@@ -133,7 +145,7 @@ function filtered() {
 
 function apply() {
   const draws = filtered();
-  if (hasJackpot) renderChart(draws);
+  if (showChart) renderChart(draws);
   renderSummary(draws);
   renderTable(draws);
 }
@@ -168,23 +180,29 @@ const priceMarkerPlugin = {
 
 function renderChart(draws) {
   const t = theme();
-  const labels = draws.map((d) => d.date);
-  const jackpot = draws.map((d) => d.jackpot ?? null);
-  const cash = draws.map((d) => d.cash_value ?? null);
+  // Only plot draws that actually carry a jackpot. For games whose jackpot data is a
+  // recent window (Lotto Texas / Two Step), this keeps the saw-tooth tight instead of
+  // stranding it at the right edge of decades of empty x-axis. For national games
+  // (jackpot on every draw) it's a no-op.
+  const pts = draws.filter((d) => typeof d.jackpot === "number");
+  const hasCash = pts.some((d) => drawCash(d) != null);
+  const labels = pts.map((d) => d.date);
+  const jackpot = pts.map((d) => d.jackpot);
+  const cash = pts.map((d) => drawCash(d) ?? null);
 
   // Vertical markers for ticket-price changes within the visible range.
-  const first = draws.length ? draws[0].date : null;
-  const last = draws.length ? draws[draws.length - 1].date : null;
+  const first = pts.length ? pts[0].date : null;
+  const last = pts.length ? pts[pts.length - 1].date : null;
   const events = (meta.priceChanges || []).flatMap((pc) => {
     if (!first || pc.date < first || pc.date > last) return [];
-    const hit = draws.find((d) => d.date >= pc.date);
+    const hit = pts.find((d) => d.date >= pc.date);
     return hit ? [{ at: hit.date, text: pc.label, color: "#f0795b" }] : [];
   });
 
-  els.chartNote.textContent = draws.length
-    ? `${draws.length.toLocaleString()} draws shown. Jackpot climbs each draw until won, then resets — the saw-tooth is the accumulation.`
+  els.chartNote.textContent = pts.length
+    ? `${pts.length.toLocaleString()} ${pts.length === draws.length ? "draws" : "jackpot draws"} shown. Jackpot climbs each draw until won, then resets — the saw-tooth is the accumulation.`
       + (events.length ? " Dashed line marks a ticket-price change." : "")
-    : "No draws in this range.";
+    : "No jackpot data in this range.";
 
   if (chart) chart.destroy();
   chart = new Chart(document.getElementById("hist-chart"), {
@@ -193,7 +211,7 @@ function renderChart(draws) {
       labels,
       datasets: [
         { label: "Jackpot", data: jackpot, borderColor: t.accent, backgroundColor: "transparent", borderWidth: 2, pointRadius: 0, tension: 0.1, spanGaps: true },
-        { label: "Cash value", data: cash, borderColor: t.accent2, backgroundColor: "transparent", borderWidth: 2, pointRadius: 0, tension: 0.1, spanGaps: true },
+        ...(hasCash ? [{ label: "Cash value", data: cash, borderColor: t.accent2, backgroundColor: "transparent", borderWidth: 2, pointRadius: 0, tension: 0.1, spanGaps: true }] : []),
       ],
     },
     options: {
@@ -231,8 +249,9 @@ function renderSummary(draws) {
     ["Draws shown", draws.length.toLocaleString()],
     ["Date range", `${fmtDate(draws[0].date)} – ${fmtDate(draws.at(-1).date)}`],
   ];
-  if (hasJackpot) {
-    const peak = draws.reduce((m, d) => (d.jackpot > m.jackpot ? d : m), draws[0]);
+  const withJackpot = draws.filter((d) => typeof d.jackpot === "number");
+  if (withJackpot.length) {
+    const peak = withJackpot.reduce((m, d) => (d.jackpot > m.jackpot ? d : m));
     stats.push(["Peak jackpot", fmtMoney(peak.jackpot)], ["On", fmtDate(peak.date)]);
   } else {
     stats.push(["Latest draw", fmtDate(draws.at(-1).date)]);
@@ -240,6 +259,22 @@ function renderSummary(draws) {
   els.summary.innerHTML = stats
     .map(([label, value]) => `<div class="stat"><div class="stat__label">${label}</div><div class="stat__value">${value}</div></div>`)
     .join("");
+}
+
+// Draws come in two shapes: national games use {cash_value, prizes:[{match, prize}]};
+// NY games use {cash, prizes:[{level, amount}]} (amount may be a label or omitted for
+// fixed-prize games). These helpers read either.
+const drawCash = (d) => (d.cash_value ?? d.cash) || null; // 0 = not reported → treat as missing
+
+const prizeAmount = (p) => {
+  const a = p.prize != null ? p.prize : p.amount;
+  if (a != null) return a;
+  return meta.ev?.levels?.[p.level]?.prize ?? null; // fixed prize (e.g. Pick 10)
+};
+
+function prizeTierLabel(p) {
+  if (p.match != null) return prizeLabel(p.match);
+  return p.label || meta.ev?.levels?.[p.level]?.label || p.level || "";
 }
 
 function prizeLabel(match) {
@@ -291,7 +326,7 @@ function rowHtml(d) {
       <td>${fmtDate(d.date)}</td>
       <td><div class="numbers numbers--row">${balls}</div></td>
       <td class="num">${d.jackpot != null ? fmtMoney(d.jackpot) : "<span class='muted'>—</span>"}</td>
-      <td class="num">${d.cash_value != null ? fmtMoney(d.cash_value) : "<span class='muted'>—</span>"}</td>
+      <td class="num">${drawCash(d) != null ? fmtMoney(drawCash(d)) : "<span class='muted'>—</span>"}</td>
       <td class="num">${winners}</td>
     </tr>
     ${detail}`;
@@ -301,13 +336,17 @@ function prizeDetailRow(d) {
   const bonusVal = d[meta.bonusKey];
   const bonus = bonusVal ? ` · ${meta.bonusName} ${bonusVal}×` : "";
   const tiers = d.prizes
-    .map(
-      (p) => `<tr>
-        <td>${prizeLabel(p.match)}</td>
-        <td class="num">$${p.prize.toLocaleString()}</td>
-        <td class="num">${p.winners.toLocaleString()}</td>
-      </tr>`
-    )
+    .map((p) => {
+      const amt = prizeAmount(p);
+      const amtTxt = amt == null ? "<span class='muted'>—</span>"
+        : typeof amt === "string" ? amt
+        : `$${amt.toLocaleString()}`;
+      return `<tr>
+        <td>${prizeTierLabel(p)}</td>
+        <td class="num">${amtTxt}</td>
+        <td class="num">${(p.winners ?? 0).toLocaleString()}</td>
+      </tr>`;
+    })
     .join("");
   return `
     <tr id="detail-${d.date}" class="detail-row" hidden>

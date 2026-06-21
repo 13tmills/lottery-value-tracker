@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <title>National Lottery Drawings — Powerball, Mega Millions, Lotto America &amp; More | NumbersIntel</title>
+  <meta name="description" content="The national lottery drawings ranked by real expected value per dollar — Powerball, Mega Millions, Lotto America, and Millionaire For Life, with live jackpots and odds." />
+  <link rel="canonical" href="https://numbersintel.com/national.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="National Lottery Drawings, Ranked by Expected Value | NumbersIntel" />
+  <meta property="og:description" content="Powerball, Mega Millions, Lotto America &amp; Millionaire For Life — ranked by expected value per dollar. We ran the math." />
+  <meta property="og:url" content="https://numbersintel.com/national.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="National Lottery Drawings, Ranked by Expected Value | NumbersIntel" />
+  <meta name="twitter:description" content="Powerball, Mega Millions, Lotto America &amp; Millionaire For Life — ranked by expected value per dollar." />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>National Drawings</h1>
+    <p class="tagline">Live jackpots &amp; how much value each dollar actually buys.</p>
+    <p class="updated" id="last-updated">Loading&hellip;</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="cards-heading">
+      <h2 id="cards-heading" class="section-heading">Current jackpots</h2>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <p class="disclaimer">
+      Expected value sums the advertised cash-option jackpot and every fixed
+      lower-tier prize, each divided by its odds, after an assumed 63% post-tax
+      take. Mega Millions figures include its always-on 2&times;&ndash;10&times;
+      multiplier (~3&times; on average). For entertainment and comparison only
+      &mdash; not financial advice.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="states.html">State Drawings</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>Data scraped from official lottery sites. Updated automatically after each draw.
+      For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

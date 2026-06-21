@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <title>"A Year for Life" vs. Cash Calculator — Millionaire For Life | NumbersIntel</title>
+  <meta name="description" id="meta-desc" content="Should you take $1,000,000 a year for life or the $18M lump sum? Compare the after-tax, present-value math by your age, life expectancy, and discount rate — and find the break-even." />
+  <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/lifecalc.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" id="og-title" content="&quot;A Year for Life&quot; vs. Cash Calculator | NumbersIntel" />
+  <meta property="og:description" id="og-desc" content="Annual payments for life, or the lump sum? The after-tax, present-value math — by age, life expectancy, and discount rate." />
+  <meta property="og:url" id="og-url" content="https://numbersintel.com/lifecalc.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content="&quot;A Year for Life&quot; vs. Cash Calculator | NumbersIntel" />
+  <meta name="twitter:description" id="tw-desc" content="Payments for life or the lump sum? The after-tax, present-value math." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="index.html">&larr; Home</a>
+    <h1 id="page-title">&ldquo;A year for life&rdquo; vs. cash</h1>
+    <p class="tagline" id="page-tagline">A million a year for life, or the lump sum now? The after-tax, today's-dollars math.</p>
+  </header>
+
+  <main class="detail">
+    <section class="panel calc-inputs">
+      <label>Current age
+        <input type="number" id="age" min="18" max="100" step="1" value="40" />
+      </label>
+      <label>Life expectancy
+        <input type="number" id="life" min="19" max="110" step="1" value="83" />
+      </label>
+      <label>Discount rate %
+        <input type="number" id="discount" min="0" max="12" step="0.1" value="4" />
+      </label>
+      <label>Federal tax %
+        <input type="number" id="fed" min="0" max="50" step="0.5" value="37" />
+      </label>
+      <label>State tax %
+        <input type="number" id="state" min="0" max="15" step="0.1" value="0" />
+      </label>
+    </section>
+
+    <p class="verdict" id="verdict"></p>
+
+    <div class="detail-grid">
+      <section class="panel result" id="cash-card"></section>
+      <section class="panel result" id="annuity-card"></section>
+    </div>
+
+    <section class="panel">
+      <h2>Present value vs. discount rate</h2>
+      <p class="section-note">The lifetime payments are worth less as your discount rate rises. Where they cross the cash line is the break-even rate.</p>
+      <div class="hist-chart"><canvas id="calc-chart"></canvas></div>
+    </section>
+
+    <p class="disclaimer" id="disclaimer">
+      Millionaire For Life pays the top prize as <b>$1,000,000 a year for life</b> &mdash; here we model
+      that as one payment now plus one each year until your life expectancy. We tax every payment and the
+      lump sum at the combined rate and discount future payments to today's dollars. Estimates only &mdash;
+      not financial or tax advice; real tax brackets, state rules, longevity, and investment returns vary.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>For information and entertainment only — not financial advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="lifecalc.js"></script>
+</body>
+</html>

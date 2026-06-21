@@ -22,6 +22,7 @@ $contentTypes = @{
     '.ico'  = 'image/x-icon'
     '.png'  = 'image/png'
     '.jpg'  = 'image/jpeg'
+    '.csv'  = 'text/csv; charset=utf-8'
 }
 
 $listener = [System.Net.Sockets.TcpListener]::new([System.Net.IPAddress]::Loopback, $Port)
@@ -42,7 +43,11 @@ function Send-Response($stream, [int]$code, [string]$status, [byte[]]$body, [str
 while ($true) {
     $client = $listener.AcceptTcpClient()
     try {
+        # Browsers open speculative connections they may not immediately use. A
+        # blocking ReadLine on an idle one would wedge this single-threaded server,
+        # so give the stream a read timeout and just drop connections that go quiet.
         $stream = $client.GetStream()
+        $stream.ReadTimeout = 4000
         $reader = [System.IO.StreamReader]::new($stream, [System.Text.Encoding]::ASCII)
         $requestLine = $reader.ReadLine()
         if (-not $requestLine) { $client.Close(); continue }

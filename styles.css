@@ -57,6 +57,43 @@ main {
   padding: 0 1.25rem 3rem;
 }
 
+/* ---- Landing page widgets ---- */
+.landing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.widget {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.widget:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.widget__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.widget__title { margin: 0; font-size: 1.4rem; letter-spacing: -0.01em; }
+.widget__go { color: var(--accent); font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+.widget__desc { color: var(--text-dim); margin: 0.6rem 0 0; }
+.widget__stat {
+  margin: 1rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
 .section-heading {
   font-size: 1.25rem;
   margin: 2.5rem 0 0.5rem;
@@ -442,6 +479,12 @@ main {
 .hist-table--simple th:nth-child(n + 3),
 .hist-table--simple td:nth-child(n + 3) { display: none; }
 
+/* No jackpot/cash, but keep the winners column (NY Take 5 / Pick 10). */
+.hist-table--no-jackpot th:nth-child(3),
+.hist-table--no-jackpot td:nth-child(3),
+.hist-table--no-jackpot th:nth-child(4),
+.hist-table--no-jackpot td:nth-child(4) { display: none; }
+
 .hist-table {
   width: 100%;
   border-collapse: collapse;
@@ -592,24 +635,169 @@ main {
 
 .topnav__links {
   display: flex;
+  align-items: center;
   gap: 1.25rem;
-  overflow-x: auto;
-  scrollbar-width: none;
 }
 
-.topnav__links::-webkit-scrollbar { display: none; }
-
-.topnav__links a {
+.topnav__links > a {
   color: var(--text-dim);
   text-decoration: none;
   font-size: 0.9rem;
   white-space: nowrap;
 }
 
-.topnav__links a:hover { color: var(--text); }
-.topnav__links a.is-active { color: var(--accent); }
+.topnav__links > a:hover { color: var(--text); }
+.topnav__links > a.is-active { color: var(--accent); }
+
+/* ---- "National Drawings" dropdown ---- */
+.topnav__group { position: relative; }
+
+.topnav__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.topnav__group:hover .topnav__trigger,
+.topnav__group:focus-within .topnav__trigger { color: var(--text); }
+.topnav__trigger.is-active { color: var(--accent); }
+
+.topnav__caret { font-size: 0.7em; transition: transform 0.15s ease; }
+.topnav__group:hover .topnav__caret,
+.topnav__group:focus-within .topnav__caret,
+.topnav__group.is-open .topnav__caret { transform: rotate(180deg); }
+
+.topnav__menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  display: none;
+  flex-direction: column;
+  min-width: 12rem;
+  padding: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+  z-index: 60;
+}
+/* Invisible bridge so the menu stays open while the cursor crosses the gap. */
+.topnav__menu::before {
+  content: "";
+  position: absolute;
+  top: -0.4rem;
+  left: 0;
+  right: 0;
+  height: 0.4rem;
+}
+.topnav__group:hover .topnav__menu,
+.topnav__group:focus-within .topnav__menu,
+.topnav__group.is-open .topnav__menu { display: flex; }
+
+.topnav__menu a {
+  padding: 0.5rem 0.65rem;
+  border-radius: 6px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.topnav__menu a:hover { background: rgba(255, 255, 255, 0.06); color: var(--text); }
+.topnav__menu a.is-active { color: var(--accent); }
 
 /* ---- States hub ---- */
+.us-map-wrap {
+  max-width: 760px;
+  margin: 0 auto 1.75rem;
+}
+
+.us-map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.us-state {
+  stroke: var(--bg);
+  stroke-width: 1;
+  transition: fill-opacity 0.15s ease, filter 0.15s ease;
+}
+.us-state--off { fill: var(--surface-2); fill-opacity: 0.5; }
+.us-state--on { fill: var(--accent-2); fill-opacity: 0.32; cursor: pointer; }
+.us-state--on:hover,
+.us-state--on:focus-visible { fill-opacity: 0.85; }
+.us-state--covered { fill: var(--accent); fill-opacity: 0.9; cursor: pointer; }
+.us-state--covered:hover,
+.us-state--covered:focus-visible { fill-opacity: 1; filter: brightness(1.12); }
+.us-state:focus { outline: none; }
+.us-state:focus-visible { outline: 2px solid var(--text); outline-offset: 1px; }
+
+.us-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+}
+.us-map-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.us-dot { width: 0.8rem; height: 0.8rem; border-radius: 3px; }
+.us-dot--covered { background: var(--accent); }
+.us-dot--on { background: var(--accent-2); opacity: 0.5; }
+.us-dot--off { background: var(--surface-2); }
+
+/* Section subheaders on the per-state page (draw games vs national games). */
+.state-section {
+  margin: 1.75rem 0 0.4rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  font-weight: 700;
+}
+.state-section:first-of-type { margin-top: 1rem; }
+
+/* Retired game (Cash4Life) — stand out with a red accent. */
+.hist-cta--retired {
+  border-left: 3px solid var(--bad);
+  background: linear-gradient(90deg, rgba(240, 121, 91, 0.08), transparent 40%);
+}
+.badge-retired {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  padding: 0.12rem 0.45rem;
+  background: var(--bad);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+/* Ticket price chip on game cards. */
+.ticket-chip {
+  display: inline-block;
+  margin-left: 0.25rem;
+  padding: 0.06rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
 .states-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -823,3 +1011,28 @@ a.state-cell:hover { border-color: var(--accent); }
   padding: 1rem 1.25rem;
   color: var(--text);
 }
+
+/* Daily Derby — placed-horse race panel */
+.derby-race { display: flex; gap: 1rem; flex-wrap: wrap; margin: 0.5rem 0 0.25rem; }
+.derby-horse { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; min-width: 4.5rem; }
+.derby-pos { font-size: 0.72rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+.derby-name { font-size: 0.85rem; color: var(--text); text-align: center; }
+
+/* "Best value in <state>" module (top of each state page) */
+.best-game { border-color: var(--accent); }
+.best-game__eyebrow { display: inline-block; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.72rem; }
+.best-game__title { margin: 0.25rem 0 0.5rem; font-size: 1.5rem; }
+.best-game__title a { color: var(--text); text-decoration: none; }
+.best-game__title a:hover { text-decoration: underline; }
+.best-game__lead { color: var(--text-dim); margin: 0 0 0.5rem; }
+.best-game__rank { display: flex; flex-direction: column; gap: 0.4rem; margin: 0.8rem 0 0.6rem; }
+.best-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 0.8rem; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--border); text-decoration: none; color: var(--text); }
+.best-row:hover { border-color: var(--accent-2); }
+.best-row--top { border-color: var(--accent); background: rgba(224, 185, 80, 0.08); }
+.best-row__rank { width: 1.4rem; height: 1.4rem; flex: 0 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--border); color: var(--text); font-size: 0.78rem; font-weight: 700; }
+.best-row--top .best-row__rank { background: var(--accent); color: var(--on-accent); }
+.best-row__name { flex: 1; font-weight: 600; }
+.best-row__tag { font-weight: 500; font-size: 0.7rem; color: var(--text-dim); border: 1px solid var(--border); border-radius: 6px; padding: 0.05rem 0.3rem; margin-left: 0.35rem; }
+.best-row__cents { font-weight: 700; color: var(--accent); }
+.best-row__per { color: var(--text-dim); font-weight: 400; font-size: 0.8em; }
+.best-game__note { color: var(--text-dim); font-size: 0.8rem; margin: 0.2rem 0 0; }

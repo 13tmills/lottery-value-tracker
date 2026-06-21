@@ -3,56 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <script src="analytics.js"></script>
   <script defer src="nav.js"></script>
   <title>NumbersIntel — Lottery Expected Value, Jackpots &amp; Odds</title>
-  <meta name="description" content="See which lottery is actually worth playing. Live Powerball, Mega Millions &amp; Lotto America jackpots ranked by real expected value per dollar — the math nobody else shows you." />
-  <link rel="canonical" href="https://13tmills.github.io/lottery-value-tracker/" />
+  <meta name="description" content="NumbersIntel runs the real expected-value math on US lotteries. Explore the national drawings ranked by value per dollar, or dive into any state's games, payouts and odds." />
+  <link rel="canonical" href="https://numbersintel.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NumbersIntel" />
-  <meta property="og:title" content="Which Lottery Is Actually Worth Playing? | NumbersIntel" />
-  <meta property="og:description" content="Powerball, Mega Millions &amp; Lotto America jackpots ranked by expected value per dollar. We ran the math." />
-  <meta property="og:url" content="https://13tmills.github.io/lottery-value-tracker/" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="NumbersIntel — The Real Expected Value of Every Lottery" />
+  <meta property="og:description" content="National drawings ranked by value per dollar, plus payouts, odds and number frequency state by state." />
+  <meta property="og:url" content="https://numbersintel.com/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Which Lottery Is Actually Worth Playing? | NumbersIntel" />
-  <meta name="twitter:description" content="Powerball, Mega Millions &amp; Lotto America jackpots ranked by expected value per dollar." />
+  <meta name="twitter:title" content="NumbersIntel — The Real Expected Value of Every Lottery" />
+  <meta name="twitter:description" content="National drawings ranked by value per dollar, plus payouts, odds and number frequency state by state." />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <h1>NumbersIntel</h1>
-    <p class="tagline">Live jackpots &amp; how much value each dollar actually buys.</p>
-    <p class="updated" id="last-updated">Loading&hellip;</p>
+    <p class="tagline">The real expected value of every lottery — and a lot more to come.</p>
   </header>
 
   <main>
-    <section aria-labelledby="cards-heading">
-      <h2 id="cards-heading" class="section-heading">Current jackpots</h2>
-      <div class="cards" id="cards"></div>
-    </section>
+    <div class="landing-grid">
+      <a class="widget" href="national.html">
+        <div class="widget__head">
+          <h2 class="widget__title">National Drawings</h2>
+          <span class="widget__go">Open &rarr;</span>
+        </div>
+        <p class="widget__desc">Powerball, Mega Millions, Lotto America &amp; Millionaire For Life —
+          ranked by real expected value per $1, with live jackpots and odds.</p>
+        <p class="widget__stat" id="nat-stat">Loading live values&hellip;</p>
+      </a>
 
-    <p class="disclaimer">
-      Expected value sums the advertised cash-option jackpot and every fixed
-      lower-tier prize, each divided by its odds, after an assumed 63% post-tax
-      take. Mega Millions figures include its always-on 2&times;&ndash;10&times;
-      multiplier (~3&times; on average). For entertainment and comparison only
-      &mdash; not financial advice.
-    </p>
+      <a class="widget" href="states.html">
+        <div class="widget__head">
+          <h2 class="widget__title">State Drawings</h2>
+          <span class="widget__go">Open &rarr;</span>
+        </div>
+        <p class="widget__desc">Every state's lottery games — results, payouts, per-tier winners,
+          odds and number frequency. Pick your state on the map or from the list.</p>
+        <p class="widget__stat" id="state-stat">New York is live &mdash; more states rolling out.</p>
+      </a>
+    </div>
   </main>
 
   <footer class="site-footer">
     <nav class="footer-nav">
+      <a href="national.html">National Drawings</a>
+      <a href="states.html">State Drawings</a>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
     </nav>
-    <p>Data scraped from official lottery sites. Updated automatically after each draw.
-      For information and entertainment only — not financial or gambling advice.</p>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
   </footer>
 
   <script src="common.js"></script>
-  <script src="app.js"></script>
+  <script src="landing.js"></script>
 </body>
 </html>

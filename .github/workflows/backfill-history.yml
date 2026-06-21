@@ -17,6 +17,17 @@ on:
           - ny_lotto
           - ny_take5
           - ny_pick10
+          - ny_win4
+          - ny_numbers
+          - ny_m4l
+          - ny_cash4life
+          - ny_quickdraw
+          - tx_lotto
+          - tx_twostep
+          - tx_cashfive
+          - tx_pick3
+          - tx_daily4
+          - tx_allornothing
           - all
         default: powerball
       limit:
@@ -46,7 +57,7 @@ jobs:
       - name: Backfill
         run: |
           if [ "${{ inputs.game }}" = "all" ]; then
-            for g in lotto_america powerball mega_millions ny_lotto ny_take5 ny_pick10; do
+            for g in lotto_america powerball mega_millions ny_lotto ny_take5 ny_pick10 ny_win4 ny_numbers ny_m4l ny_cash4life ny_quickdraw tx_lotto tx_twostep tx_cashfive tx_pick3 tx_daily4 tx_allornothing; do
               python scraper/history_scraper.py --game "$g" --limit ${{ inputs.limit }}
             done
           else

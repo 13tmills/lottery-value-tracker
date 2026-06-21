@@ -61,17 +61,139 @@ const STATES = [
 // Per-state game listings for jurisdictions we've started covering.
 const STATE_GAMES = {
   NY: {
-    intro: "New York runs one of the largest US state lotteries. We've started with NY Lotto — full results and number frequency below — with more games rolling out.",
+    intro: "New York runs one of the largest US state lotteries. Every draw game below has live payouts, per-tier winner counts, odds, and number frequency — plus the odds visualizer where it applies.",
     games: [
       { name: "New York Lotto", meta: "6 of 59 + Bonus · Wed &amp; Sat · since 2001",
-        links: [["Numbers &amp; results", "game.html?game=ny_lotto"]] },
-      { name: "Powerball", meta: "National jackpot game", links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
-      { name: "Mega Millions", meta: "National jackpot game", links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+        links: [["Jackpot, payouts &amp; value", "game.html?game=ny_lotto"]] },
       { name: "Take 5", meta: "5 of 39 · daily",
-        links: [["Numbers &amp; results", "game.html?game=ny_take5"]] },
+        links: [["Payouts, winners &amp; value", "game.html?game=ny_take5"]] },
+      { name: "Win 4", meta: "4-digit · twice daily",
+        links: [["Payouts, winners &amp; results", "game.html?game=ny_win4"]] },
       { name: "Pick 10", meta: "20 of 80 keno · daily",
-        links: [["Numbers &amp; results", "game.html?game=ny_pick10"]] },
-      { name: "Numbers · Win 4 · Cash4Life · Quick Draw", meta: "Coming soon", links: [] },
+        links: [["Payouts, winners &amp; value", "game.html?game=ny_pick10"]] },
+      { name: "Numbers", meta: "3-digit · twice daily",
+        links: [["Payouts, winners &amp; results", "game.html?game=ny_numbers"]] },
+      { name: "Quick Draw", meta: "20 of 80 keno · every ~4 min",
+        links: [["Results, odds &amp; payouts", "game.html?game=ny_quickdraw"]] },
+      { name: "Cash4Life", meta: "5 + Cash Ball · retired Feb 2026", retired: true,
+        links: [["Results &amp; final payouts", "game.html?game=ny_cash4life"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+      { name: "Millionaire For Life", meta: "5 + Mill Ball · daily · $1M/yr for life",
+        links: [["Payouts &amp; winners", "game.html?game=ny_m4l"]] },
+    ],
+  },
+  TX: {
+    intro: "Texas runs one of the largest US state lotteries. We've started with Lotto Texas — results, jackpot history, number frequency and the odds visualizer — with the rest of the lineup rolling out.",
+    games: [
+      { name: "Lotto Texas", meta: "6 of 54 · Mon · Wed · Sat · since 1992",
+        links: [["Results, jackpot &amp; odds", "game.html?game=tx_lotto"]] },
+      { name: "Texas Two Step", meta: "4 of 35 + Bonus · Mon &amp; Thu",
+        links: [["Results, jackpot &amp; odds", "game.html?game=tx_twostep"]] },
+      { name: "Cash Five", meta: "5 of 35 · Mon&ndash;Sat",
+        links: [["Results, odds &amp; frequency", "game.html?game=tx_cashfive"]] },
+      { name: "All or Nothing", meta: "12 of 24 keno · 4&times; daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=tx_allornothing"]] },
+      { name: "Pick 3", meta: "3-digit · 4&times; daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=tx_pick3"]] },
+      { name: "Daily 4", meta: "4-digit · 4&times; daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=tx_daily4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  CA: {
+    intro: "California runs the largest US state lottery. Its draw games come straight from the California Lottery's own data — live jackpots and cash values, per-tier payouts and winner counts, value per $1, odds, jackpot history and number frequency.",
+    games: [
+      { name: "SuperLotto Plus", meta: "5 of 47 + Mega · Wed &amp; Sat",
+        links: [["Jackpot, payouts &amp; value", "game.html?game=ca_superlotto"]] },
+      { name: "Fantasy 5", meta: "5 of 39 · daily",
+        links: [["Payouts, winners &amp; value", "game.html?game=ca_fantasy5"]] },
+      { name: "Daily 4", meta: "4-digit · daily",
+        links: [["Payouts, winners &amp; results", "game.html?game=ca_daily4"]] },
+      { name: "Daily 3", meta: "3-digit · twice daily",
+        links: [["Payouts, winners &amp; results", "game.html?game=ca_daily3"]] },
+      { name: "Daily Derby", meta: "horse race · daily",
+        links: [["Race results, bets &amp; payouts", "game.html?game=ca_derby"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  ID: {
+    intro: "Idaho's draw games come straight from the Idaho Lottery's own results. We've started with Idaho Cash — its rolling cash jackpot, value per $1, odds, jackpot history and number frequency — with more of the lineup to follow.",
+    games: [
+      { name: "Idaho Cash", meta: "5 of 45 · daily",
+        links: [["Jackpot, value &amp; odds", "game.html?game=id_cash"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=id_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=id_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+      { name: "Lotto America", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=lotto_america"]] },
+    ],
+  },
+  PA: {
+    intro: "Pennsylvania's Pick games come straight from the PA Lottery's own results — with the deepest history on the site: every Pick 3/4/5 draw back to 2015 for hot & cold number analysis. (Match 6 and the other in-state games are on the way.)",
+    games: [
+      { name: "PA Pick 3", meta: "3-digit · twice daily · since 2015",
+        links: [["Results, frequency &amp; payouts", "game.html?game=pa_pick3"]] },
+      { name: "PA Pick 4", meta: "4-digit · twice daily · since 2015",
+        links: [["Results, frequency &amp; payouts", "game.html?game=pa_pick4"]] },
+      { name: "PA Pick 5", meta: "5-digit · twice daily · since 2015",
+        links: [["Results, frequency &amp; payouts", "game.html?game=pa_pick5"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  FL: {
+    intro: "Florida runs one of the largest US state lotteries — and its games carry the deepest history on the site, straight from the FL Lottery's own API. Florida Lotto goes all the way back to 1988.",
+    games: [
+      { name: "Florida Lotto", meta: "6 of 53 · Wed &amp; Sat · since 1988",
+        links: [["Jackpot, odds &amp; results", "game.html?game=fl_lotto"]] },
+      { name: "Jackpot Triple Play", meta: "6 of 46 · Tue · Fri · Sun",
+        links: [["Jackpot, odds &amp; results", "game.html?game=fl_triple"]] },
+      { name: "Fantasy 5", meta: "5 of 36 · twice daily",
+        links: [["Results, odds &amp; frequency", "game.html?game=fl_fantasy5"]] },
+      { name: "Pick 2", meta: "2-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=fl_pick2"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=fl_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=fl_pick4"]] },
+      { name: "Pick 5", meta: "5-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=fl_pick5"]] },
+      { name: "Cash Pop", meta: "1 of 15 · 5&times; daily",
+        links: [["Results &amp; frequency", "game.html?game=fl_cashpop"]] },
+      { name: "Cash4Life", meta: "5 + Cash Ball · ended Feb 2026", retired: true,
+        links: [["Final results &amp; prizes", "game.html?game=fl_cash4life"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
 };
@@ -96,6 +218,140 @@ function renderHub() {
       ? `<a class="state-cell" href="state.html?state=${s.abbr}"><span class="state-cell__abbr">${s.abbr}</span><span>${s.name}</span></a>`
       : `<div class="state-cell state-cell--off"><span class="state-cell__abbr">${s.abbr}</span><span>${s.name}</span><span class="state-cell__note">No lottery</span></div>`
   ).join("");
+
+  renderMap();
+}
+
+// Interactive US map (selectable states), rendered above the grid. States with a
+// lottery are clickable; the ones we already cover are highlighted; the rest are dim.
+function renderMap() {
+  const host = document.getElementById("us-map");
+  if (!host || typeof US_MAP === "undefined") return;
+  const byAbbr = Object.fromEntries(STATES.map((s) => [s.abbr, s]));
+
+  const paths = US_MAP.locations.map((loc) => {
+    const abbr = loc.id.toUpperCase();
+    const lottery = byAbbr[abbr] ? byAbbr[abbr].lottery : false;
+    const covered = !!STATE_GAMES[abbr];
+    const cls = covered ? "us-state us-state--covered"
+      : lottery ? "us-state us-state--on"
+      : "us-state us-state--off";
+    const attrs = lottery
+      ? ` role="link" tabindex="0" data-abbr="${abbr}" aria-label="${loc.name} lottery"`
+      : ` aria-hidden="true"`;
+    const note = lottery ? "" : " — no state lottery";
+    return `<path d="${loc.path}" class="${cls}"${attrs}><title>${loc.name}${note}</title></path>`;
+  }).join("");
+
+  host.innerHTML =
+    `<svg class="us-map" viewBox="${US_MAP.viewBox}" role="img" aria-label="Map of US state lotteries — select a state" preserveAspectRatio="xMidYMid meet">${paths}</svg>` +
+    `<div class="us-map-legend">` +
+      `<span><i class="us-dot us-dot--covered"></i>Live coverage</span>` +
+      `<span><i class="us-dot us-dot--on"></i>Has a lottery</span>` +
+      `<span><i class="us-dot us-dot--off"></i>No lottery</span>` +
+    `</div>`;
+
+  const go = (p) => { const a = p.getAttribute("data-abbr"); if (a) location.href = `state.html?state=${a}`; };
+  const svg = host.querySelector(".us-map");
+  svg.addEventListener("click", (e) => {
+    const p = e.target.closest("path[data-abbr]");
+    if (p) go(p);
+  });
+  svg.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const p = e.target.closest("path[data-abbr]");
+    if (p) { e.preventDefault(); go(p); }
+  });
+}
+
+// ----- "Best value in <state>" module --------------------------------------
+// Ranks the games playable in a state by value per $1 (after an assumed 37% tax) —
+// the same metric the game pages show. State games with an EV config are computed
+// from their latest prized draw; national games use the value precomputed in
+// data.json (same tax basis). Games with no single value/$1 (digit/keno) drop out.
+const BEST_TAX = 0.63;
+
+function gameKeyFromLinks(g) {
+  const href = g.links && g.links[0] && g.links[0][1];
+  return href ? new URLSearchParams(href.split("?")[1] || "").get("game") : null;
+}
+
+async function valuePer1Cents(key, meta, data) {
+  if (data && data.games && data.games[key] && data.games[key].expected_value != null) {
+    return data.games[key].expected_value * 100; // national: precomputed
+  }
+  if (!meta) return null;
+  // Fixed-prize digit games (Pick 2-5, Numbers, Win 4 …): value of a $1 STRAIGHT play —
+  // exact from the paytable. Pari-mutuel ball/jackpot games (no meta.digits) fall through
+  // and stay out, since their lower-tier amounts aren't in the data.
+  if (!meta.ev && meta.digits && meta.prizes && meta.prizes.reference && typeof parseOdds === "function") {
+    const row = meta.prizes.reference.rows.find((r) => /straight|exact order/i.test(r.cells[0]));
+    if (row) {
+      const prize = Number(String(row.cells[1]).replace(/[^0-9.]/g, ""));
+      const odds = parseOdds(row.cells[2]);
+      if (prize && odds) return (prize * BEST_TAX) / odds * 100; // per $1 straight
+    }
+    return null;
+  }
+  if (!meta.ev || typeof nyEvItems !== "function") return null;
+  try {
+    const h = await fetch(`history/${key}.json`, { cache: "no-store" }).then((r) => r.json());
+    const lastPrized = [...(h.draws || [])].reverse().find((d) => d.prizes && d.prizes.length);
+    // Fixed-prize games (Idaho Cash) have no per-draw prizes — synthesize from config.
+    const evSource = lastPrized || (meta.ev.staticPrizes && (h.draws || []).length
+      ? { prizes: Object.keys(meta.ev.levels).map((level) => ({ level })) }
+      : null);
+    if (!evSource) return null;
+    const cur = h.current_jackpot;
+    const hasJackpot = meta.ev.odds_jackpot && cur && cur.cash;
+    const items = nyEvItems(meta.ev, evSource, hasJackpot ? cur.cash : null, BEST_TAX);
+    return items.reduce((s, it) => s + it.cents, 0);
+  } catch (e) {
+    return null;
+  }
+}
+
+async function fillBestGame(s, cfg) {
+  const slot = document.getElementById("best-game-slot");
+  if (!slot) return;
+  let data = null;
+  try { data = await fetch("data.json", { cache: "no-store" }).then((r) => r.json()); } catch (e) { /* national games drop out */ }
+
+  const candidates = [...(cfg.games || []), ...(cfg.national || [])]
+    .filter((g) => !g.retired)
+    .map((g) => ({ key: gameKeyFromLinks(g), name: g.name }))
+    .filter((c) => c.key);
+
+  const ranked = [];
+  for (const c of candidates) {
+    const cents = await valuePer1Cents(c.key, GAME_META[c.key], data);
+    if (cents != null && isFinite(cents)) {
+      ranked.push({ ...c, cents, national: !!(data && data.games && data.games[c.key]), digit: !!(GAME_META[c.key] && GAME_META[c.key].digits) });
+    }
+  }
+  ranked.sort((a, b) => b.cents - a.cents);
+  if (!ranked.length) return;
+
+  const best = ranked[0];
+  slot.innerHTML = `
+    <section class="panel best-game">
+      <span class="best-game__eyebrow">&#9733; Best value in ${s.name}</span>
+      <h2 class="best-game__title"><a href="game.html?game=${best.key}&back=${s.abbr}">${best.name}</a></h2>
+      <p class="best-game__lead">Of the games you can play in ${s.name}, <b>${best.name}</b> gives back the most per
+        $1 right now — <b>${best.cents.toFixed(1)}&cent;</b> for every dollar spent${best.digit ? " on a straight play" : ""} (after an assumed 37% tax).
+        Every lottery ticket is still worth less than it costs; this is just the least-bad bet today.</p>
+      <div class="best-game__rank">
+        ${ranked.map((r, i) => `
+          <a class="best-row${i === 0 ? " best-row--top" : ""}" href="game.html?game=${r.key}&back=${s.abbr}">
+            <span class="best-row__rank">${i + 1}</span>
+            <span class="best-row__name">${r.name}${r.national ? ' <span class="best-row__tag">multi-state</span>' : r.digit ? ' <span class="best-row__tag">straight play</span>' : ""}</span>
+            <span class="best-row__cents">${r.cents.toFixed(1)}&cent;<span class="best-row__per"> / $1</span></span>
+          </a>`).join("")}
+      </div>
+      <p class="best-game__note">Ranked by value per $1 across ${s.name}'s draw games and the national games sold here —
+        jackpot games across every prize tier, digit games for a $1 straight play. Pari-mutuel games whose lower-tier
+        payouts aren't published (e.g. ${s.abbr === "FL" ? "Florida Lotto" : "Fantasy 5"}) and keno aren't ranked.</p>
+    </section>`;
 }
 
 function renderState() {
@@ -129,18 +385,32 @@ function renderState() {
 
   const cfg = STATE_GAMES[s.abbr];
   if (cfg) {
-    subEl.textContent = "Pick a game for results and number frequency.";
+    subEl.textContent = "Pick a game for results, payouts and number frequency.";
+    const card = (g) => {
+      const href = g.links[0] && g.links[0][1];
+      const gkey = href ? new URLSearchParams(href.split("?")[1] || "").get("game") : null;
+      const price = gkey && typeof GAME_META !== "undefined" && GAME_META[gkey] ? GAME_META[gkey].ticketPrice : null;
+      return `
+      <section class="panel hist-cta${g.retired ? " hist-cta--retired" : ""}">
+        <div><h2>${g.name}${g.retired ? ' <span class="badge-retired">Retired</span>' : ""}</h2>
+          <p>${g.meta}${price ? ` <span class="ticket-chip">${price}</span>` : ""}</p></div>
+        <div class="game-links">${
+          g.links.length
+            ? g.links.map(([t, h]) => `<a class="btn" href="${h}${h.startsWith("game.html") ? `&back=${s.abbr}` : ""}">${t}</a>`).join("")
+            : '<span class="muted">Coming soon</span>'
+        }</div>
+      </section>`;
+    };
     host.innerHTML =
+      `<div id="best-game-slot"></div>` +
       `<p class="lead">${cfg.intro}</p>` +
-      cfg.games.map((g) => `
-        <section class="panel hist-cta">
-          <div><h2>${g.name}</h2><p>${g.meta}</p></div>
-          <div class="game-links">${
-            g.links.length
-              ? g.links.map(([t, h]) => `<a class="btn" href="${h}">${t}</a>`).join("")
-              : '<span class="muted">Coming soon</span>'
-          }</div>
-        </section>`).join("");
+      `<h2 class="state-section">${s.name} draw games</h2>` +
+      cfg.games.map(card).join("") +
+      (cfg.national && cfg.national.length
+        ? `<h2 class="state-section">National games played in ${s.name}</h2>` +
+          cfg.national.map(card).join("")
+        : "");
+    fillBestGame(s, cfg);
     return;
   }
 

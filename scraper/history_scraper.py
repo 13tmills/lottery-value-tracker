@@ -23,7 +23,9 @@ import os
 import re
 import sys
 import time
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
+from html import unescape
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
@@ -39,6 +41,20 @@ USER_AGENT = (
 HIST_DIR = os.path.join(os.path.dirname(__file__), "..", "history")
 DRAW_URL = "https://www.powerball.com/draw-result?gc={gc}&date={d}"
 MEGA_API = "https://www.megamillions.com/cmspages/utilservice.asmx/GetDrawDataByTickWithMatrix"
+# nylottery.ny.gov internal feed. Returns the last ~10 draws per NY game; only the
+# *upcoming* draw carries a jackpot/cash value, so we capture it each run to build a
+# per-draw jackpot history over time. The GET works from a plain residential request
+# (no Cloudflare challenge); whether CI datacenter IPs are allowed is verified in CI.
+NYL_API = "https://nylottery.ny.gov/nyl-api/games/all/draws"
+# Drupal feed behind the "Past Winning Numbers" page: a rolling ~1 year of draws
+# with realized per-tier prize amounts + winner counts and the per-draw jackpot/cash.
+# We merge it in each run and keep aged-out draws, so the enriched archive grows.
+NYL_DRUPAL_API = "https://nylottery.ny.gov/drupal-api/api/v2/winning_numbers"
+NYL_HEADERS = {"User-Agent": USER_AGENT, "Accept": "application/json"}
+ET = ZoneInfo("America/New_York")
+# texaslottery.com publishes plain CSV winning-number histories (numbers only) plus
+# an estimated-jackpot-per-draw results table — static files, no bot protection.
+TX_GAMES_BASE = "https://www.texaslottery.com/export/sites/lottery/Games"
 # megamillions.com is Cloudflare-fronted; send the headers a real XHR would so the
 # request looks legitimate (helps, though datacenter IPs may still be blocked).
 MEGA_HEADERS = {
@@ -89,15 +105,139 @@ GAMES = {
         "kind": "ny_socrata", "dataset": "6nbc-h7bj",
         "numbers_field": "winning_numbers", "num_count": 6,
         "special_field": "bonus", "special_key": "bonus",
+        "nyl_key": "lotto",  # /nyl-api feed key — upcoming estimated jackpot + cash
+        "nyl_nid": 26,       # Drupal node id — realized prizes, winners, jackpot/cash
     },
     "ny_take5": {
         "kind": "ny_socrata", "dataset": "dg63-4siq",
         "numbers_field": "evening_winning_numbers", "num_count": 5,
+        "nyl_nid": 36, "nyl_draw_time": "Evening",  # twice daily — keep evening
     },
     "ny_pick10": {
         "kind": "ny_socrata", "dataset": "bycu-cw7c",
         "numbers_field": "winning_numbers", "num_count": 20,
+        "nyl_nid": 56,  # realized winner counts (prize amounts are fixed, set in UI)
     },
+    "ny_win4": {  # 4-digit game; winner counts by bet type
+        "kind": "ny_socrata", "dataset": "hsys-3def",
+        "numbers_field": "evening_win_4", "num_count": 4, "digits": True,
+        "nyl_nid": 46, "nyl_draw_time": "Evening",
+    },
+    "ny_numbers": {  # 3-digit game (sibling of Win 4, same dataset)
+        "kind": "ny_socrata", "dataset": "hsys-3def",
+        "numbers_field": "evening_daily", "num_count": 3, "digits": True,
+        "nyl_nid": 41, "nyl_draw_time": "Evening",
+    },
+    "ny_m4l": {  # Millionaire For Life — 5 + Mill Ball, fixed/for-life prizes
+        "kind": "ny_socrata", "dataset": "a4w9-a3tp",
+        "numbers_field": "winning_numbers", "num_count": 5,
+        "special_field": "mill_ball", "special_key": "mill_ball",
+        "nyl_nid": 374901,
+    },
+    "ny_cash4life": {  # retired Feb 2026 (replaced by Millionaire For Life)
+        "kind": "ny_socrata", "dataset": "kwxv-fwze",
+        "numbers_field": "winning_numbers", "num_count": 5,
+        "special_field": "cash_ball", "special_key": "cash_ball",
+        "nyl_nid": 31, "retired": True,
+    },
+    "ny_quickdraw": {  # keno every ~4 min — keep a recent window only (no per-draw prizes)
+        "kind": "ny_socrata", "dataset": "7sqk-ycpk",
+        "numbers_field": "winning_numbers", "num_count": 20, "cap": 600,
+    },
+    # ----- Texas (texaslottery.com CSV exports) -----
+    "tx_lotto": {  # Lotto Texas — 6 of 54 jackpot game (+ per-tier prizes/winners + cash)
+        "kind": "texas_csv", "game_path": "Lotto_Texas",
+        "csv": "lottotexas.csv", "num_count": 6, "sort": True, "jackpot": True,
+        "details": True, "details_cap": 50,
+    },
+    "tx_twostep": {  # Texas Two Step — 4 of 35 + Bonus, jackpot game
+        "kind": "texas_csv", "game_path": "Texas_Two_Step",
+        "csv": "texastwostep.csv", "num_count": 4, "sort": True, "special_key": "bonus", "jackpot": True,
+        "details": True, "details_cap": 50,  # per-tier prizes/winners (no cash option)
+    },
+    "tx_cashfive": {  # Cash Five — 5 of 35 (no jackpot)
+        "kind": "texas_csv", "game_path": "Cash_Five",
+        "csv": "cashfive.csv", "num_count": 5, "sort": True,
+        "details": True, "details_cap": 50,  # per-tier prizes/winners (no jackpot)
+    },
+    # Texas games with no CSV export — parsed from the results HTML table.
+    "tx_pick3": {  # 3-digit, 4x/day; keep the latest draw per date
+        "kind": "texas_html", "game_path": "Pick_3", "num_count": 3,
+    },
+    "tx_daily4": {  # 4-digit, 4x/day
+        "kind": "texas_html", "game_path": "Daily_4", "num_count": 4,
+    },
+    "tx_allornothing": {  # 12 of 24 keno, 4x/day — recent window
+        "kind": "texas_html", "game_path": "All_or_Nothing", "num_count": 12,
+        "keno": True, "cap": 600,
+    },
+    # ----- California (calottery.com JSON API) ----------------------------- #
+    "ca_superlotto": {  # SuperLotto Plus — 5 of 47 + Mega 1 of 27 (jackpot game)
+        "kind": "calottery_api", "calottery_id": 8, "num_count": 5,
+        "special_key": "mega", "max_pages": 6,  # API exposes ~1yr (~106 draws)
+        # PrizeTypeDescription (API) -> our level name (matches GAME_META ev.levels).
+        "tiers": {
+            "5 + Mega": "Jackpot", "5": "Match 5",
+            "4 + Mega": "Match 4 + Mega", "4": "Match 4",
+            "3 + Mega": "Match 3 + Mega", "3": "Match 3",
+            "2 + Mega": "Match 2 + Mega", "1 + Mega": "Match 1 + Mega",
+            "Mega": "Mega only",
+        },
+    },
+    "ca_fantasy5": {  # Fantasy 5 — 5 of 39, pari-mutuel (rolling top prize, no cash)
+        "kind": "calottery_api", "calottery_id": 10, "num_count": 5,
+        "max_pages": 12, "jackpot_tier": "Match 5",  # top tier rolls -> saw-tooth
+        "tiers": {
+            "Matched 5 of 5 numbers": "Match 5",
+            "Matched 4 of 5 numbers": "Match 4",
+            "Matched 3 of 5 numbers": "Match 3",
+            "Matched 2 of 5 numbers": "Match 2",  # free Quick Pick
+        },
+    },
+    "ca_daily4": {  # Daily 4 — 4 digits, once daily, pari-mutuel bet-type prizes
+        "kind": "calottery_api", "calottery_id": 14, "num_count": 4,
+        "digits": True, "max_pages": 12,
+    },
+    "ca_daily3": {  # Daily 3 — 3 digits, twice daily (keep evening), bet-type prizes
+        "kind": "calottery_api", "calottery_id": 9, "num_count": 3,
+        "digits": True, "one_per_date": True, "max_pages": 20,
+    },
+    "ca_derby": {  # Daily Derby — 3 placed horses + race time, exotic bets
+        "kind": "calottery_api", "calottery_id": 11, "num_count": 3,
+        "derby": True, "max_pages": 12, "jackpot_tier": "Grand Prize",
+    },
+    # ----- Idaho (idaholottery.com Drupal Views AJAX) ---------------------- #
+    "id_cash": {  # Idaho Cash — 5 of 45, daily, rolling cash jackpot (fixed lower prizes)
+        "kind": "idaho_views_ajax", "idaho_label": "Idaho Cash", "num_count": 5,
+    },
+    "id_pick3": {  # Idaho Pick 3 — 3 digits, twice daily (keep Night), fixed paytable
+        "kind": "idaho_views_ajax", "idaho_label": "Pick 3", "num_count": 3, "digits": True,
+    },
+    "id_pick4": {  # Idaho Pick 4 — 4 digits, twice daily (keep Night), fixed paytable
+        "kind": "idaho_views_ajax", "idaho_label": "Pick 4", "num_count": 4, "digits": True,
+    },
+    # ----- Pennsylvania (palottery.pa.gov Drawings.ashx JSON) -------------- #
+    # Full draw history per game via a date-range JSON handler. We keep the Pick
+    # digits (dropping the Wild Ball add-on). pa_game = the handler's drawingGameID.
+    "pa_pick3": {"kind": "pa_drawings", "pa_game": 32, "num_count": 3, "digits": True},
+    "pa_pick4": {"kind": "pa_drawings", "pa_game": 33, "num_count": 4, "digits": True},
+    "pa_pick5": {"kind": "pa_drawings", "pa_game": 34, "num_count": 5, "digits": True},
+    # ----- Florida (floridalottery.com Azure API) ------------------------- #
+    # The drawgamesapp/searchgames API returns a game's FULL history for a date
+    # range (numbers + the upcoming jackpot). No key — just Origin/x-partner headers.
+    "fl_lotto": {"kind": "florida_api", "fl_id": 3, "num_count": 6, "fl_tiers": True},  # 6/53 since 1988 + per-tier prizes
+    "fl_triple": {"kind": "florida_api", "fl_id": 23, "num_count": 6, "fl_tiers": True},  # Triple Play 6/46 + tiers
+    "fl_fantasy5": {"kind": "florida_api", "fl_id": 113, "num_count": 5, "fl_draw_type": "EVENING",  # 5/36, 2x daily
+                    "fl_tiers": True, "fl_top_jackpot": False},  # pari-mutuel top, no fixed jackpot
+    "fl_cashpop": {"kind": "florida_api", "fl_id": 24, "num_count": 1, "fl_draw_type": "EVE", "single_wn": True},  # 1 of 15, 5x daily
+    "fl_cash4life": {"kind": "florida_api", "fl_id": 138, "num_count": 5,  # 5/60 + Cash Ball — retired Feb 2026
+                     "special_key": "cash_ball", "special_type": "cb", "retired": True},
+    # Pick games carry big per-draw records -> the API 500s on long ranges; fetch a
+    # recent window each run (retention keeps the deeper backfilled history).
+    "fl_pick2": {"kind": "florida_api", "fl_id": 127, "num_count": 2, "digits": True, "fl_draw_type": "EVENING", "fl_window_years": 4},
+    "fl_pick3": {"kind": "florida_api", "fl_id": 104, "num_count": 3, "digits": True, "fl_draw_type": "EVENING", "fl_window_years": 4},
+    "fl_pick4": {"kind": "florida_api", "fl_id": 108, "num_count": 4, "digits": True, "fl_draw_type": "EVENING", "fl_window_years": 4},
+    "fl_pick5": {"kind": "florida_api", "fl_id": 128, "num_count": 5, "digits": True, "fl_draw_type": "EVENING", "fl_window_years": 4},
 }
 
 
@@ -254,25 +394,662 @@ def scrape_socrata(cfg, by_date):
     """Bulk-fetch a data.ny.gov dataset in one request (reachable from CI).
     Incremental: only rows newer than the latest date already held. Mutates
     by_date and returns how many draws were added."""
-    params = {"$order": "draw_date ASC", "$limit": 60000}
-    if by_date:
-        params["$where"] = f"draw_date > '{max(by_date)}T23:59:59'"
+    cap = cfg.get("cap")
+    if cap:
+        # Recent window (Quick Draw draws every ~4 min) — replace, don't accumulate.
+        params = {"$order": "draw_date DESC, draw_number DESC", "$limit": cap}
+        by_date.clear()
+    else:
+        params = {"$order": "draw_date ASC", "$limit": 60000}
+        if by_date:
+            params["$where"] = f"draw_date > '{max(by_date)}T23:59:59'"
     resp = requests.get(SODA_BASE.format(ds=cfg["dataset"]), params=params,
                         headers={"User-Agent": USER_AGENT}, timeout=60)
     resp.raise_for_status()
     added = 0
     for r in resp.json():
         date_str = (r.get("draw_date") or "")[:10]
-        nums = [int(x) for x in (r.get(cfg["numbers_field"]) or "").split() if x.isdigit()]
+        raw = str(r.get(cfg["numbers_field"]) or "").strip()
+        if cfg.get("digits"):
+            # Digit games (Win 4): one string like "599" → [0,5,9,9] (zero-padded).
+            digs = "".join(ch for ch in raw if ch.isdigit()).zfill(cfg["num_count"])
+            nums = [int(c) for c in digs[-cfg["num_count"]:]]
+        else:
+            nums = [int(x) for x in raw.split() if x.isdigit()]
         if not date_str or len(nums) < cfg["num_count"]:
             continue
         draw = {"date": date_str, "numbers": nums[:cfg["num_count"]]}
         sf = cfg.get("special_field")
         if sf and str(r.get(sf, "")).strip().isdigit():
             draw[cfg["special_key"]] = int(r[sf])
-        by_date[date_str] = draw
+        if cap:
+            dn = str(r.get("draw_number", "")).strip()
+            draw["draw_number"] = int(dn) if dn.isdigit() else 0
+            by_date[dn or date_str] = draw  # key by draw_number (many per date)
+        else:
+            by_date[date_str] = draw
         added += 1
     return added
+
+
+def fetch_nyl_current(nyl_key):
+    """Fetch the upcoming draw's jackpot + cash value from nylottery.ny.gov.
+
+    NY's feed only attaches a jackpot to the *upcoming* draw, so this returns the
+    current estimated jackpot for the next draw — captured each run to accumulate a
+    per-draw jackpot history. Returns {"date","jackpot","cash"} or None.
+    """
+    resp = requests.get(NYL_API, headers=NYL_HEADERS, timeout=30)
+    resp.raise_for_status()
+    game = (resp.json().get("data") or {}).get(nyl_key) or {}
+    best = None
+    for dr in game.get("draws", []):
+        jk = dr.get("jackpots") or []
+        amt = jk[0].get("amount") if jk else None
+        if not amt or not dr.get("drawTime"):
+            continue
+        d = datetime.fromtimestamp(dr["drawTime"] / 1000, tz=ET).date()
+        cash = jk[0].get("cashAmount")
+        num = dr.get("drawNumber", 0)
+        if best is None or num > best[0]:
+            best = (num, {"date": d.isoformat(), "jackpot": int(amt),
+                          "cash": int(cash) if cash else None})
+    return best[1] if best else None
+
+
+def fetch_nyl_prizes(nid, draw_time=None):
+    """Paginate the Drupal winning-numbers feed (rolling ~1yr) and return a map
+    date -> {prizes:[{level,amount,winners}], total_winners, [jackpot, cash]} with
+    realized per-tier prize amounts and winner counts.
+
+    Some games (Take 5, Numbers, Win4) draw twice a day; the feed carries both,
+    tagged by draw_time ("Evening"/"Midday"). Pass draw_time to keep just one so it
+    aligns with the single-draw-per-date number history. Prize amounts can be
+    pari-mutuel decimals or labels like "FREE PLAY"; jackpot/cash apply to LOTTO only.
+    """
+    out = {}
+    page = 0
+    pages = 1
+    while page < pages:
+        params = {"_format": "json", "nid": nid, "page": page}
+        resp = requests.get(NYL_DRUPAL_API, params=params, headers=NYL_HEADERS, timeout=30)
+        resp.raise_for_status()
+        body = resp.json()
+        pages = int((body.get("pager") or {}).get("total_pages") or 1)
+        for row in body.get("rows", []):
+            if draw_time and (row.get("draw_time") or "") != draw_time:
+                continue
+            d = (row.get("date") or "")[:10]
+            if not d:
+                continue
+            prizes = [{
+                "level": w.get("prize_levels"),
+                # Display label: the tier name, or the bet type for games (Win 4)
+                # whose tiers are by wager rather than match count.
+                "label": (w.get("prize_levels") if w.get("prize_levels") and w.get("prize_levels") != "N/A"
+                          else w.get("wager_type")) or w.get("prize_levels"),
+                "amount": _amount(w.get("prize_amount")),
+                "winners": _int(w.get("prize_winners")),
+            } for w in row.get("local_winners") or []]
+            rec = {"prizes": prizes, "total_winners": sum(p["winners"] for p in prizes)}
+            jackpot = _amount(row.get("jackpot"))
+            cash = _amount(row.get("estimated_cash_option"))
+            if isinstance(jackpot, (int, float)) and jackpot:
+                rec["jackpot"] = int(jackpot)
+            if isinstance(cash, (int, float)) and cash:
+                rec["cash"] = int(cash)
+            out[d] = rec
+        page += 1
+    return out
+
+
+def _int(v):
+    try:
+        return int(float(v))
+    except (TypeError, ValueError):
+        return 0
+
+
+def _amount(v):
+    """Prize amount: a number when numeric (keeping pari-mutuel decimals), else the
+    original label (e.g. "$1,000 a Year for Life", "FREE PLAY"), or None when blank."""
+    if v is None:
+        return None
+    s = str(v).strip()
+    if not s:
+        return None
+    try:
+        f = float(s.replace(",", ""))
+        return int(f) if f.is_integer() else f
+    except ValueError:
+        return s  # keep commas/words intact for display
+
+
+def scrape_texas(cfg, by_date):
+    """Texas: winning numbers from the CSV export, estimated jackpot per draw from
+    the results table. Mutates by_date; returns the current (latest) jackpot."""
+    base = f"{TX_GAMES_BASE}/{cfg['game_path']}/Winning_Numbers"
+    n = cfg["num_count"]
+    csv = requests.get(f"{base}/{cfg['csv']}", headers={"User-Agent": USER_AGENT}, timeout=60).text
+    for line in csv.splitlines():
+        cols = [x.strip() for x in line.split(",")]
+        if len(cols) < 4 + n:
+            continue
+        try:
+            mo, dy, yr = int(cols[1]), int(cols[2]), int(cols[3])
+            nums = [int(x) for x in cols[4:4 + n]]
+        except ValueError:
+            continue
+        date_str = f"{yr:04d}-{mo:02d}-{dy:02d}"
+        draw = {"date": date_str, "numbers": sorted(nums) if cfg.get("sort") else nums}
+        sk = cfg.get("special_key")  # e.g. Texas Two Step bonus ball (column after the numbers)
+        if sk and len(cols) > 4 + n and cols[4 + n].lstrip("-").isdigit():
+            draw[sk] = int(cols[4 + n])
+        # Preserve enrichment captured on earlier runs. The texaslottery.com results
+        # index + detail pages only cover ~1yr, so once a draw's jackpot, per-tier
+        # prizes and winner counts age off the source we keep our own copy forever —
+        # the depth accumulates on NumbersIntel instead of sliding with the window.
+        # (A settled draw's payouts/winners are final, so preserving is always correct.)
+        prev = by_date.get(date_str)
+        if prev:
+            for field in ("jackpot", "prizes", "total_winners"):
+                if prev.get(field) is not None:
+                    draw[field] = prev[field]
+        by_date[date_str] = draw
+    # The results index (static HTML) gives the estimated jackpot per draw (jackpot
+    # games) and links to per-draw detail pages (per-tier prizes/winners). Fetch it
+    # once if we need either.
+    if not (cfg.get("jackpot") or cfg.get("details")):
+        return None
+    page = ""
+    try:
+        page = requests.get(f"{base}/index.html", headers={"User-Agent": USER_AGENT}, timeout=30).text
+        if cfg.get("jackpot"):
+            text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", page))
+            for m in re.finditer(r"(\d{2})/(\d{2})/(\d{4}).+?\$([\d,.]+)(?:\s*(Million|Billion))?", text):
+                d = f"{m.group(3)}-{m.group(1)}-{m.group(2)}"
+                if d in by_date:
+                    amt = float(m.group(4).replace(",", ""))
+                    unit = m.group(5)
+                    by_date[d]["jackpot"] = int(amt * (1e9 if unit == "Billion" else 1e6 if unit == "Million" else 1))
+    except Exception as exc:
+        print(f"  ! texas results index fetch failed ({exc})")
+    cash = None
+    if cfg.get("details") and page:
+        try:
+            cash = enrich_texas_details(cfg, by_date, page)
+        except Exception as exc:
+            print(f"  ! texas detail enrichment failed ({exc})")
+    if not cfg.get("jackpot"):
+        return None  # non-jackpot game (e.g. Cash Five): enrichment done, no current jackpot
+    for d in sorted(by_date, reverse=True):
+        if by_date[d].get("jackpot"):
+            cur = {"date": d, "jackpot": by_date[d]["jackpot"]}
+            if cash:
+                cur["cash"] = cash
+            return cur
+    return None
+
+
+def enrich_texas_details(cfg, by_date, index_html):
+    """Fetch per-draw detail pages (linked from the results index) for recent draws
+    missing a prize breakdown; parse per-tier prize amounts + winner counts. Returns
+    the current cash value. Bounded per run by details_cap (incremental/self-healing)."""
+    base = f"{TX_GAMES_BASE}/{cfg['game_path']}/Winning_Numbers"
+    pairs = {}
+    for rm in re.finditer(r"(?s)<tr[^>]*>(.*?)</tr>", index_html):
+        row = rm.group(1)
+        dm = re.search(r"(\d{2})/(\d{2})/(\d{4})", row)
+        lm = re.search(r"(details\.html_\d+\.html)", row)
+        if dm and lm:
+            d = f"{dm.group(3)}-{dm.group(1)}-{dm.group(2)}"
+            pairs.setdefault(d, lm.group(1))
+    cash = None
+    fetched = 0
+    cap = cfg.get("details_cap", 50)
+    for d in sorted(pairs, reverse=True):
+        draw = by_date.get(d)
+        if not draw:
+            continue
+        if draw.get("prizes") and cash is not None:
+            continue
+        if fetched >= cap and cash is not None:
+            break
+        try:
+            html = requests.get(f"{base}/{pairs[d]}", headers={"User-Agent": USER_AGENT}, timeout=20).text
+        except Exception:
+            continue
+        t = re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", html)))
+        if not draw.get("prizes") and fetched < cap:
+            prizes, tw = [], 0
+            has_bonus = bool(cfg.get("special_key"))  # Two Step's "w/Bonus" tiers
+            is_jackpot_game = bool(cfg.get("jackpot"))  # Cash Five's top tier isn't a jackpot
+            # A tier row is "<m> of <n> [w/Bonus] <prize> <winners>", where prize is a
+            # dollar amount (optionally "$X Million") or a free-play label (Cash Five's
+            # "2 of 5" pays a free quick pick), and winners is a count or "Roll".
+            for m in re.finditer(
+                r"(\d) of \d( w/Bonus)? (\$[\d.,]+(?:\s*Million)?|Free[\w /]+?)\s+(Roll|[\d,]+)", t):
+                mc = int(m.group(1))
+                bonus = bool(m.group(2))
+                prize_raw = m.group(3)
+                if prize_raw.startswith("$"):
+                    body = prize_raw[1:]
+                    amt = (int(float(re.sub(r"[^\d.]", "", body)) * 1e6) if "Million" in body
+                           else int(body.replace(",", "")))
+                else:
+                    amt = prize_raw.strip()  # free play, e.g. "Free Cash Five QP"
+                w = 0 if m.group(4) == "Roll" else int(m.group(4).replace(",", ""))
+                tw += w
+                if is_jackpot_game and mc == cfg["num_count"] and (bonus or not has_bonus):
+                    level = "Jackpot"
+                elif mc == 0 and bonus:
+                    level = "Bonus Ball only"
+                else:
+                    level = f"Match {mc}" + (" + Bonus" if bonus else "")
+                prizes.append({"level": level, "amount": amt, "winners": w})
+            if len(prizes) >= 4:
+                draw["prizes"] = prizes
+                draw["total_winners"] = tw
+                fetched += 1
+        if cash is None:
+            min_ann = float("inf")
+            for m in re.finditer(
+                r"Annuitized Jackpot for \d{2}/\d{2}/\d{4}: \$([\d.]+) Million Est\. Cash Value: \$([\d.]+) Million", t):
+                ann = float(m.group(1))
+                if ann < min_ann:
+                    min_ann = ann
+                    cash = int(float(m.group(2)) * 1e6)
+    return cash
+
+
+CA_API = "https://www.calottery.com/api/DrawGameApi/DrawGamePastDrawResults"
+
+
+def _parse_calottery_draw(d, cfg):
+    """One calottery draw object -> our schema. Handles ball games (optional special
+    ball), digit games (Daily 3/4 — pari-mutuel bet-type prizes), and Daily Derby
+    (three placed horses + a race time). Per-tier prizes + winner counts throughout."""
+    if not d.get("DrawDate"):
+        return None
+    n = cfg["num_count"]
+    tiers = cfg.get("tiers") or {}
+    jackpot_tier = cfg.get("jackpot_tier", "Jackpot")
+    wn = d.get("WinningNumbers") or {}
+    cells = [wn[k] for k in sorted(wn, key=lambda k: int(k))]
+    draw = {"date": d["DrawDate"][:10]}
+
+    if cfg.get("derby"):  # 1st/2nd/3rd placed horses (with names) + a race time
+        horses = []
+        for c in cells[:3]:
+            try:
+                horses.append({"num": int(c["Number"]), "name": c.get("Name")})
+            except (ValueError, TypeError, KeyError):
+                pass
+        if len(horses) < 3:
+            return None
+        draw["numbers"] = [h["num"] for h in horses]
+        draw["horses"] = horses
+        if d.get("RaceTime"):
+            draw["race_time"] = d["RaceTime"]
+    else:
+        nums, special = [], None
+        for c in cells:
+            try:
+                val = int(c["Number"])
+            except (ValueError, TypeError, KeyError):
+                continue
+            if c.get("IsSpecial"):
+                special = val
+            else:
+                nums.append(val)
+        if len(nums) < n:
+            return None
+        draw["numbers"] = nums[:n]  # digit games keep draw order (Straight matters)
+        sk = cfg.get("special_key")
+        if sk and special is not None:
+            draw[sk] = special
+
+    prizes, tw, jackpot = [], 0, None
+    for key in sorted((d.get("Prizes") or {}), key=lambda k: int(k)):
+        p = d["Prizes"][key]
+        level = tiers.get(p.get("PrizeTypeDescription", ""), p.get("PrizeTypeDescription", ""))
+        amt = int(p["Amount"]) if p.get("Amount") is not None else None
+        w = int(p.get("Count") or 0)
+        tw += w
+        if level == jackpot_tier:
+            jackpot = amt  # rolling top prize -> per-draw jackpot (saw-tooth)
+        prizes.append({"level": level, "amount": amt, "winners": w})
+    if prizes:
+        draw["prizes"] = prizes
+        draw["total_winners"] = tw
+    if jackpot:
+        draw["jackpot"] = jackpot
+    return draw
+
+
+def scrape_calottery(cfg, by_date):
+    """California: the calottery.com draw-game API returns numbers, the rolling
+    jackpot, and every prize tier's payout + winner count per draw in one JSON call.
+    Paginates the recent window the API exposes (~1yr). Mutates by_date; returns the
+    upcoming jackpot/cash value."""
+    gid = cfg["calottery_id"]
+    one_per_date = cfg.get("one_per_date")  # twice-daily games (Daily 3) -> keep evening
+    kept = {}  # date -> highest DrawNumber kept this run
+    current, page = None, 1
+    while page <= cfg.get("max_pages", 6):
+        try:
+            payload = requests.get(f"{CA_API}/{gid}/{page}/50",
+                                   headers={"User-Agent": USER_AGENT}, timeout=30).json()
+        except Exception as exc:
+            print(f"  ! calottery page {page} failed ({exc})")
+            break
+        if page == 1:
+            nd = payload.get("NextDraw") or {}
+            if nd.get("JackpotAmount") and str(nd.get("DrawDate", "")).startswith("20"):
+                current = {
+                    "date": nd["DrawDate"][:10],
+                    "jackpot": int(nd["JackpotAmount"]),
+                    "cash": int(nd["EstimatedCashValue"]) if nd.get("EstimatedCashValue") else 0,
+                }
+        prev = payload.get("PreviousDraws") or []
+        if not prev:
+            break
+        for d in prev:
+            draw = _parse_calottery_draw(d, cfg)
+            if not draw:
+                continue
+            date = draw["date"]
+            dn = d.get("DrawNumber") or 0
+            if one_per_date:
+                # API is newest-first, so the first row for a date is the later draw.
+                if date in kept and dn <= kept[date]:
+                    continue
+                kept[date] = dn
+            # Don't let a transient/changed response that omits the prize breakdown
+            # clobber depth we already captured for this draw.
+            old = by_date.get(date)
+            if old and old.get("prizes") and not draw.get("prizes"):
+                for field in ("prizes", "total_winners", "jackpot"):
+                    if old.get(field) is not None and draw.get(field) is None:
+                        draw[field] = old[field]
+            by_date[date] = draw
+        page += 1
+        time.sleep(cfg.get("sleep", 0.4))
+    return current
+
+
+IDAHO_BASE = "https://www.idaholottery.com"
+
+
+def scrape_idaho(cfg, by_date):
+    """Idaho: winning numbers + per-draw rolling jackpot from the idaholottery.com
+    Drupal Views AJAX endpoint (one call returns each game's last ~10 draws as a
+    Date / Winning Numbers / Jackpot table). No per-tier winner data is published.
+    Only ~10 draws are exposed, so history accumulates across runs (retention).
+    Mutates by_date; returns the upcoming jackpot/cash."""
+    label, n = cfg["idaho_label"], cfg["num_count"]
+    # The Views AJAX needs the page's current view_dom_id — read it live so we don't
+    # depend on a hash that can change between site builds.
+    page = requests.get(f"{IDAHO_BASE}/games/winning-numbers",
+                        headers={"User-Agent": USER_AGENT}, timeout=30).text
+    dm = re.search(r'"view_dom_id":"([0-9a-f]+)"', page)
+    params = {
+        "view_name": "games", "view_display_id": "winning_numbers", "view_args": "",
+        "view_path": "/games/winning-numbers", "view_dom_id": dm.group(1) if dm else "",
+        "pager_element": "0", "page": "0",
+    }
+    cmds = requests.get(f"{IDAHO_BASE}/views/ajax", params=params, timeout=30,
+                        headers={"User-Agent": USER_AGENT, "X-Requested-With": "XMLHttpRequest"}).json()
+    html = " ".join(c.get("data", "") for c in cmds if isinstance(c, dict) and c.get("data"))
+    newest = None
+    for rm in re.finditer(r"(?s)<tr[^>]*>(.*?)</tr>", html):
+        row = rm.group(1)
+        if label not in row:
+            continue
+        cells = {cm.group(1): cm.group(2)
+                 for cm in re.finditer(r'(?s)<td[^>]*data-title="([^"]+)"[^>]*>(.*?)</td>', row)}
+        dmatch = re.search(r"(\d\d)/(\d\d)/(\d\d)", re.sub(r"<[^>]+>", " ", cells.get("Date", "")))
+        if not dmatch:
+            continue  # the undated "latest" row is captured on the next run, once dated
+        date = f"20{dmatch.group(3)}-{dmatch.group(1)}-{dmatch.group(2)}"
+        wn = cells.get("Winning Numbers", "")
+        if cfg.get("digits"):
+            # twice-daily digit game (Pick 3/4): each row has a Day and a Night
+            # <ul> — keep the night draw (the latest of the day).
+            night = re.search(r'(?s)<ul[^>]*\bnight"[^>]*>(.*?)</ul>', wn)
+            wn = night.group(1) if night else wn
+        nums = [int(x) for x in re.findall(r"<li>\s*(\d{1,2})\s*</li>", wn)]
+        if len(nums) < n:
+            continue
+        draw = {"date": date, "numbers": nums[:n]}
+        if not cfg.get("digits"):  # digit games' "$500/$5,000" is a fixed prize, not a jackpot
+            jm = re.search(r"\$([\d,]+)", cells.get("Jackpot", ""))
+            if jm:
+                draw["jackpot"] = int(jm.group(1).replace(",", ""))
+        prev = by_date.get(date)
+        if prev and prev.get("jackpot") and not draw.get("jackpot"):
+            draw["jackpot"] = prev["jackpot"]
+        by_date[date] = draw
+        if newest is None or date > newest["date"]:
+            newest = draw
+    if not newest or not newest.get("jackpot"):
+        return None
+    nxt = (datetime.fromisoformat(newest["date"]) + timedelta(days=1)).date().isoformat()
+    return {"date": nxt, "jackpot": newest["jackpot"], "cash": newest["jackpot"]}
+
+
+PA_DRAWINGS = "https://www.palottery.pa.gov/Custom/uploadedfiles/hmnew/Drawings.ashx"
+
+
+def scrape_pa(cfg, by_date):
+    """Pennsylvania: the palottery.pa.gov Drawings.ashx JSON handler returns a game's
+    full draw history for a date range in one call. We keep the Pick digits (dropping
+    the optional Wild Ball add-on, which is the trailing number). Dates are .NET
+    /Date(ms)/. Mutates by_date; only adds/updates (aged-out draws are retained)."""
+    g, n = cfg["pa_game"], cfg["num_count"]
+    today = date.today()
+    params = {"mode": "search", "d1": "01/01/2000",
+              "d2": today.strftime("%m/%d/%Y"), "nums": "", "g": str(g)}
+    txt = requests.get(PA_DRAWINGS, params=params, timeout=90,
+                       headers={"User-Agent": USER_AGENT, "X-Requested-With": "XMLHttpRequest"}).text
+    for rec in txt.split("},{"):
+        dm = re.search(r'"drawingNumberDate":"[^"]*?(\d{10,})', rec)
+        if not dm:
+            continue
+        d = datetime.utcfromtimestamp(int(dm.group(1)) / 1000).date().isoformat()
+        nums = []
+        for i in range(1, n + 1):
+            m = re.search(rf'"drawingNumber{i}":(\d+)', rec)
+            if m:
+                nums.append(int(m.group(1)))
+        if len(nums) >= n:
+            by_date[d] = {"date": d, "numbers": nums}
+    return None
+
+
+FL_API = "https://apim-website-prod-eastus.azure-api.net/drawgamesapp/searchgames"
+FL_HEADERS = {"Origin": "https://floridalottery.com", "Referer": "https://floridalottery.com/",
+              "x-partner": "web", "accept": "application/json", "User-Agent": USER_AGENT}
+
+
+def scrape_florida(cfg, by_date):
+    """Florida: the floridalottery.com Azure API (drawgamesapp/searchgames) returns a
+    game's full history for a date range — numbers + the upcoming jackpot — in one
+    JSON call. No subscription key; just the Origin/x-partner headers a browser sends.
+    Mutates by_date (add/update only — aged-out draws retained); returns the jackpot."""
+    n = cfg["num_count"]
+    keep_type = cfg.get("fl_draw_type")     # multi-draw/day games -> keep this DrawType (Picks "EVENING", Cash Pop "EVE")
+    digits = cfg.get("digits")              # digit games keep draw order; ball games sort
+    sk, st = cfg.get("special_key"), cfg.get("special_type")  # e.g. Cash4Life cash ball ("cb")
+    # The API 500s on huge ranges (Pick 3/4 have big records). Such games fetch a
+    # recent window each run; retention keeps the deeper backfilled history.
+    win = cfg.get("fl_window_years")
+    start = ((date.today() - timedelta(days=365 * win + 30)).strftime("%d-%b-%Y").upper()
+             if win else "1-JAN-1988")
+    params = {"id": cfg["fl_id"], "startDate": start,
+              "endDate": date.today().strftime("%d-%b-%Y").upper()}
+    # The Pick games emit invalid JSON when the Fireball is empty ("NumberPick": ,) —
+    # sanitize before parsing. We only read wn1..wnN, so a null Fireball is harmless.
+    txt = requests.get(FL_API, params=params, headers=FL_HEADERS, timeout=120).text
+    data = json.loads(re.sub(r'"NumberPick":\s*,', '"NumberPick": null,', txt))
+    jackpot = None
+    for r in data:
+        if keep_type and r.get("DrawType") not in (None, "", keep_type):
+            continue
+        try:
+            d = datetime.strptime(r["DrawDate"].split(" ")[0], "%m/%d/%Y").date().isoformat()
+        except (KeyError, ValueError):
+            continue
+        nums = []
+        for t in range(1, n + 1):
+            nt = "wn" if cfg.get("single_wn") else f"wn{t}"  # Cash Pop's lone number is "wn"
+            cell = next((x for x in r.get("DrawNumbers", []) if x.get("NumberType") == nt), None)
+            if cell is not None:
+                nums.append(int(cell["NumberPick"]))
+        if len(nums) < n:
+            continue
+        draw = {"date": d, "numbers": nums if digits else sorted(nums)}
+        if sk and st:
+            sc = next((x for x in r.get("DrawNumbers", []) if x.get("NumberType") == st), None)
+            if sc is not None:
+                draw[sk] = int(sc["NumberPick"])
+        by_date[d] = draw
+        if jackpot is None:
+            m = re.search(r"\$\s*([0-9.]+)\s*(Million|Billion)?", r.get("NextJackpotAmount", ""))
+            if m:
+                amt = float(m.group(1)) * (1e9 if m.group(2) == "Billion"
+                                           else 1e6 if m.group(2) == "Million" else 1)
+                try:
+                    jd = datetime.strptime(r.get("NextJackpotDate", "").split(" ")[0], "%m/%d/%Y").date().isoformat()
+                except ValueError:
+                    jd = None
+                jackpot = {"date": jd, "jackpot": int(amt)}
+                if cfg.get("fl_tiers"):
+                    jackpot["cash"] = int(amt)  # FL doesn't publish a cash option
+    if cfg.get("fl_tiers"):
+        enrich_florida_tiers(cfg, by_date)
+    return jackpot
+
+
+FL_TIERS = "https://apim-website-prod-eastus.azure-api.net/drawgamesapp/getDrawGameTiersHistory"
+
+
+def _fl_amt(s):
+    # amounts come as "$6,000.00", "$3.50 Million", or bare "555"/"18.5" (Fantasy 5)
+    m = re.search(r"([0-9.,]+)\s*Million", s)
+    if m:
+        return int(float(m.group(1).replace(",", "")) * 1e6)
+    m = re.search(r"([0-9.,]+)", s)
+    return int(float(m.group(1).replace(",", ""))) if m else None
+
+
+def enrich_florida_tiers(cfg, by_date):
+    """Merge per-tier prizes + winner counts (FL getDrawGameTiersHistory) into draws.
+    PrizeLevels look like "5-of-6_2x" — the 2x-10x multiplier sub-tiers are aggregated to
+    Match N (winner-weighted average prize). The full match is "Jackpot" for jackpot games
+    or "Match N" otherwise (Fantasy 5); a "Free Ticket" tier stays free. Recent window."""
+    n = cfg["num_count"]
+    top_jp = cfg.get("fl_top_jackpot", True)
+    keep_type = cfg.get("fl_draw_type")  # twice-daily (Fantasy 5) -> match the evening tiers
+    win = cfg.get("fl_tiers_years", 2)
+    start = (date.today() - timedelta(days=365 * win + 30)).strftime("%d-%b-%Y").upper()
+    params = {"id": cfg["fl_id"], "startDate": start,
+              "endDate": date.today().strftime("%d-%b-%Y").upper()}
+    try:
+        data = requests.get(FL_TIERS, params=params, headers=FL_HEADERS, timeout=90).json()
+    except Exception as exc:
+        print(f"  ! FL tiers fetch failed ({exc})")
+        return
+    enriched = 0
+    for r in data:
+        if keep_type and r.get("DrawType") not in (None, "", keep_type):
+            continue
+        try:
+            d = datetime.strptime(r["DrawDate"].split(" ")[0], "%m/%d/%Y").date().isoformat()
+        except (KeyError, ValueError):
+            continue
+        if d not in by_date:
+            continue
+        agg = {}
+        for tier in r.get("Tiers", []):
+            mm = re.match(r"(\d+)-of-\d+", str(tier.get("PrizeLevel", "")).split("_")[0])
+            if not mm:
+                continue
+            matched = int(mm.group(1))
+            lvl = "Jackpot" if (top_jp and matched == n) else f"Match {matched}"
+            a = agg.setdefault(lvl, {"matched": matched, "winners": 0, "sum": 0.0, "free": False, "jp": None})
+            w = int(tier.get("Winners") or 0)
+            a["winners"] += w
+            amt_s = str(tier.get("PrizeAmount", ""))
+            if "free" in amt_s.lower():
+                a["free"] = True
+            elif lvl == "Jackpot":
+                a["jp"] = _fl_amt(amt_s)
+            else:
+                v = _fl_amt(amt_s)
+                if v:
+                    a["sum"] += v * w
+        prizes, tot = [], 0
+        for lvl, a in sorted(agg.items(), key=lambda kv: -kv[1]["matched"]):
+            tot += a["winners"]
+            if a["free"]:
+                prizes.append({"level": lvl, "amount": "Free Ticket", "winners": a["winners"]})
+            elif lvl == "Jackpot":
+                prizes.append({"level": lvl, "amount": a["jp"], "winners": a["winners"]})
+            else:
+                avg = int(a["sum"] / a["winners"]) if a["winners"] else 0
+                prizes.append({"level": lvl, "amount": avg, "winners": a["winners"]})
+        if prizes:
+            by_date[d]["prizes"] = prizes
+            by_date[d]["total_winners"] = tot
+            enriched += 1
+    print(f"  enriched {enriched} draw(s) with per-tier prizes (FL tiers API)")
+
+
+def scrape_texas_html(cfg, by_date):
+    """Texas games with no CSV — parse the results HTML table. Digit games (Pick 3,
+    Daily 4) have all four daily draws in one row; we keep the latest non-empty one
+    per date. Keno (All or Nothing) has one row per draw; we keep a recent window."""
+    base = f"{TX_GAMES_BASE}/{cfg['game_path']}/Winning_Numbers"
+    page = requests.get(f"{base}/index.html", headers={"User-Agent": USER_AGENT}, timeout=40).text
+    rows = re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", page)
+    n = cfg["num_count"]
+
+    def cells_of(row):
+        return [re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", c))).strip()
+                for c in re.findall(r"(?s)<td[^>]*>(.*?)</td>", row)]
+
+    if cfg.get("keno"):
+        rank = {"Morning": 1, "Day": 2, "Evening": 3, "Night": 4}
+        recs = []
+        for row in rows:
+            cells = cells_of(row)
+            if len(cells) < 4 or not re.match(r"^\d{2}/\d{2}/\d{4}$", cells[0]):
+                continue
+            mo, dy, yr = cells[0].split("/")
+            nums = [int(x) for x in re.findall(r"\d+", cells[2])][:n]
+            if len(nums) < n:
+                continue
+            w = re.sub(r"\D", "", cells[3])
+            recs.append((f"{yr}-{mo}-{dy}", rank.get(cells[1], 0), cells[1],
+                         sorted(nums), int(w) if w else 0))
+        recs.sort(key=lambda x: (x[0], x[1]))
+        by_date.clear()
+        for i, (d, _, time, nums, w) in enumerate(recs[-cfg.get("cap", 600):]):
+            by_date[f"{d}#{i}"] = {"date": d, "numbers": nums, "draw_time": time,
+                                   "top_prize_winners": w, "draw_number": i}
+    else:
+        for row in rows:
+            cells = cells_of(row)
+            if len(cells) < 9 or not re.match(r"^\d{2}/\d{2}/\d{4}$", cells[0]):
+                continue
+            mo, dy, yr = cells[0].split("/")
+            nums_cell = next((cells[i] for i in (7, 5, 3, 1) if re.search(r"\d", cells[i])), "")
+            digits = [int(x) for x in re.findall(r"\d", nums_cell)]
+            if len(digits) < n:
+                continue
+            by_date[f"{yr}-{mo}-{dy}"] = {"date": f"{yr}-{mo}-{dy}", "numbers": digits[:n]}
+    return None
 
 
 # --------------------------------------------------------------------------- #
@@ -306,8 +1083,73 @@ def main():
     if cfg["kind"] == "ny_socrata":
         added = scrape_socrata(cfg, by_date)
         print(f"[{args.game}] +{added} draw(s) from data.ny.gov; total {len(by_date)}.")
-        source = "data.ny.gov"
+        source = "data.ny.gov + nylottery.ny.gov" if cfg.get("nyl_nid") else "data.ny.gov"
         complete = True
+        if cfg.get("nyl_nid"):
+            try:
+                prizes = fetch_nyl_prizes(cfg["nyl_nid"], cfg.get("nyl_draw_time"))
+            except Exception as exc:
+                prizes = {}
+                print(f"  ! nylottery prize feed failed ({exc})")
+            enriched = 0
+            for d in by_date.values():
+                e = prizes.get(d["date"])
+                if e:
+                    d.update(e)
+                    enriched += 1
+            if enriched:
+                print(f"  enriched {enriched} draw(s) with prizes/winners from nylottery.ny.gov")
+        if cfg.get("nyl_key"):
+            try:
+                cur = fetch_nyl_current(cfg["nyl_key"])
+            except Exception as exc:
+                cur = None
+                print(f"  ! nylottery jackpot fetch failed ({exc})")
+            if cur:
+                data["current_jackpot"] = cur
+                print(f"  current jackpot {cur['date']}: ${cur['jackpot']:,} cash ${cur['cash'] or 0:,}")
+    elif cfg["kind"] == "texas_csv":
+        cur = scrape_texas(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from texaslottery.com.")
+        source = "texaslottery.com"
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur['date']}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "texas_html":
+        scrape_texas_html(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from texaslottery.com (HTML).")
+        source = "texaslottery.com"
+        complete = True
+    elif cfg["kind"] == "calottery_api":
+        cur = scrape_calottery(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from calottery.com.")
+        source = "calottery.com"
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur['date']}: ${cur['jackpot']:,} cash ${cur.get('cash') or 0:,}")
+    elif cfg["kind"] == "idaho_views_ajax":
+        cur = scrape_idaho(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from idaholottery.com.")
+        source = "idaholottery.com"
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur['date']}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "pa_drawings":
+        scrape_pa(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from palottery.pa.gov.")
+        source = "palottery.pa.gov"
+        complete = True
+    elif cfg["kind"] == "florida_api":
+        cur = scrape_florida(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from floridalottery.com.")
+        source = "floridalottery.com"
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur['date']}: ${cur['jackpot']:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"
@@ -339,7 +1181,8 @@ def main():
             for dd in draw_dates(cfg["start"], date.fromisoformat(last), cfg["draw_weekdays"])
         )
 
-    draws = sorted(by_date.values(), key=lambda x: x["date"])
+    # draw_number disambiguates multiple draws on the same date (Quick Draw).
+    draws = sorted(by_date.values(), key=lambda x: (x["date"], x.get("draw_number", 0)))
     earliest = draws[0]["date"] if draws else (cfg["start"].isoformat() if cfg.get("start") else "")
 
     data.update({
@@ -350,6 +1193,10 @@ def main():
         "complete": complete,
         "draws": draws,
     })
+    if cfg.get("retired"):
+        data["retired"] = True
+    if cfg.get("cap"):
+        data["recent_window"] = True
 
     os.makedirs(HIST_DIR, exist_ok=True)
     with open(out_path(args.game), "w", encoding="utf-8") as fh:

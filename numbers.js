@@ -12,7 +12,7 @@ function param(name) {
 }
 
 // Tally counts and "draws since last seen" for a pool of numbers.
-function analyze(draws, pick) {
+function analyze(draws, pick, minN = 1) {
   let max = 0;
   draws.forEach((d) => pick(d).forEach((n) => { if (n > max) max = n; }));
   const count = Array(max + 1).fill(0);
@@ -21,7 +21,7 @@ function analyze(draws, pick) {
 
   const total = draws.length;
   const rows = [];
-  for (let n = 1; n <= max; n++) {
+  for (let n = minN; n <= max; n++) {
     rows.push({ n, count: count[n], overdue: lastSeen[n] < 0 ? total : total - 1 - lastSeen[n] });
   }
   return { max, total, rows };
@@ -72,7 +72,7 @@ async function init() {
 }
 
 function render(key, draws) {
-  const white = analyze(draws, (d) => d.numbers || []);
+  const white = analyze(draws, (d) => d.numbers || [], meta.digits ? 0 : 1);
   const special = analyze(draws, (d) => (d[meta.specialKey] != null ? [d[meta.specialKey]] : []));
 
   els.sub.textContent = `Based on ${white.total.toLocaleString()} draws · ${fmtDate(draws[0].date)} – ${fmtDate(draws.at(-1).date)}`;
@@ -89,7 +89,9 @@ function render(key, draws) {
   renderList(els.hot, [...white.rows].sort((a, b) => b.count - a.count).slice(0, 8), white.rows, "count", (r) => `${r.count}×`);
   renderList(els.overdue, [...white.rows].sort((a, b) => b.overdue - a.overdue).slice(0, 8), white.rows, "overdue", (r) => `${r.overdue} draws`);
 
-  els.whiteNote.textContent = `How many times each ball (1–${white.max}) has been drawn across ${white.total.toLocaleString()} draws.`;
+  els.whiteNote.textContent = meta.digits
+    ? `How many times each digit (0–9) has been drawn across ${white.total.toLocaleString()} draws.`
+    : `How many times each ball (1–${white.max}) has been drawn across ${white.total.toLocaleString()} draws.`;
   renderBars("white-chart", white, hottest.n);
   if (special.max > 0) {
     renderBars("special-chart", special, [...special.rows].sort((a, b) => b.count - a.count)[0]?.n);

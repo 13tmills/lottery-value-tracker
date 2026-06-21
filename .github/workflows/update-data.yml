@@ -36,6 +36,36 @@ jobs:
           python scraper/history_scraper.py --game ny_lotto
           python scraper/history_scraper.py --game ny_take5
           python scraper/history_scraper.py --game ny_pick10
+          python scraper/history_scraper.py --game ny_win4
+          python scraper/history_scraper.py --game ny_numbers
+          python scraper/history_scraper.py --game ny_m4l
+          python scraper/history_scraper.py --game ny_cash4life
+          python scraper/history_scraper.py --game ny_quickdraw
+          python scraper/history_scraper.py --game tx_lotto
+          python scraper/history_scraper.py --game tx_twostep
+          python scraper/history_scraper.py --game tx_cashfive
+          python scraper/history_scraper.py --game tx_pick3
+          python scraper/history_scraper.py --game tx_daily4
+          python scraper/history_scraper.py --game tx_allornothing
+          python scraper/history_scraper.py --game ca_superlotto
+          python scraper/history_scraper.py --game ca_fantasy5
+          python scraper/history_scraper.py --game ca_daily4
+          python scraper/history_scraper.py --game ca_daily3
+          python scraper/history_scraper.py --game ca_derby
+          python scraper/history_scraper.py --game id_cash
+          python scraper/history_scraper.py --game id_pick3
+          python scraper/history_scraper.py --game id_pick4
+          python scraper/history_scraper.py --game pa_pick3
+          python scraper/history_scraper.py --game pa_pick4
+          python scraper/history_scraper.py --game pa_pick5
+          python scraper/history_scraper.py --game fl_lotto
+          python scraper/history_scraper.py --game fl_triple
+          python scraper/history_scraper.py --game fl_fantasy5
+          python scraper/history_scraper.py --game fl_pick2
+          python scraper/history_scraper.py --game fl_pick3
+          python scraper/history_scraper.py --game fl_pick4
+          python scraper/history_scraper.py --game fl_pick5
+          python scraper/history_scraper.py --game fl_cashpop
 
       - name: Commit updated data
         run: |

@@ -53,38 +53,49 @@ function init() {
   loadData()
     .then((data) => {
       const g = data.games[key];
-      if (!g) throw new Error(`no data for ${key}`);
+      let tiers, ticket, base;
 
-      // Prize tiers to choose from: "Any prize" (overall odds, derived from the
-      // per-tier odds), the jackpot, then each fixed lower tier.
-      const pt = g.prize_tiers || [];
-      const overallOdds = 1 / [g.odds_jackpot, ...pt.map((t) => t.odds)].reduce((s, o) => s + 1 / o, 0);
-      const minPrize = pt.length ? Math.min(...pt.map((t) => t.prize)) : 0;
+      if (g) {
+        // National game: full prize/jackpot data from data.json.
+        const pt = g.prize_tiers || [];
+        const overallOdds = 1 / [g.odds_jackpot, ...pt.map((t) => t.odds)].reduce((s, o) => s + 1 / o, 0);
+        const minPrize = pt.length ? Math.min(...pt.map((t) => t.prize)) : 0;
+        tiers = [
+          { value: "any", label: "Any prize", odds: overallOdds, kind: "any" },
+          { value: "jackpot", label: `Jackpot (5 + ${meta.specialName})`, odds: g.odds_jackpot, kind: "jackpot" },
+          ...pt.map((t) => ({ value: t.match, label: tierLabel(t.match, meta), odds: t.odds, prize: t.prize, kind: "secondary" })),
+        ];
+        ticket = g.ticket_price;
+        base = { mult: g.multiplier, jackpot: g.jackpot, cash: g.cash_value, minPrize, odds: g.odds_jackpot };
+      } else {
+        // State game: tiers (label + odds) derived from GAME_META.
+        const vt = vizTiers(meta);
+        if (!vt) throw new Error(`no odds to visualize for ${key}`);
+        tiers = vt.map((t, i) => ({
+          value: String(i), label: t.label, odds: t.odds,
+          kind: /any prize/i.test(t.label) ? "any" : "secondary",
+        }));
+        ticket = (meta.ev && meta.ev.ticket_price) || 1;
+        base = { minPrize: 0, odds: tiers[0].odds };
+      }
 
-      const tiers = [
-        { value: "any", label: "Any prize", odds: overallOdds, kind: "any" },
-        { value: "jackpot", label: `Jackpot (5 + ${meta.specialName})`, odds: g.odds_jackpot, kind: "jackpot" },
-        ...pt.map((t) => ({ value: t.match, label: tierLabel(t.match, meta), odds: t.odds, prize: t.prize, kind: "secondary" })),
-      ];
       els.tier.innerHTML = tiers
         .map((t) => `<option value="${t.value}">${t.label} — 1 in ${Math.round(t.odds).toLocaleString()}</option>`)
         .join("");
 
-      st = {
-        key, meta, ticket: g.ticket_price, tiers,
-        mult: g.multiplier, jackpot: g.jackpot, cash: g.cash_value, minPrize,
-        odds: g.odds_jackpot, tierLabel: tiers[1].label,
-      };
+      st = { key, meta, ticket, tiers, ...base, tierLabel: tiers[0].label };
       els.title.textContent = `${meta.label} — odds visualizer`;
       setMeta({
         title: `${meta.label} Odds, Visualized | NumbersIntel`,
         description: `See ${meta.label} odds as a field of dots — one red winning dot among millions. Pick a prize tier and how many lines you buy.`,
         url: `${SITE}/visualizer.html?game=${key}`,
       });
-      els.sub.textContent = `${meta.draws} · $${g.ticket_price} per line`;
+      els.sub.textContent = `${meta.draws} · $${ticket} per line`;
 
       const tierParam = param("tier");
-      els.tier.value = tierParam && tiers.some((t) => t.value === tierParam) ? tierParam : "jackpot";
+      // Default to the jackpot (national) or the longest-odds tier (state games).
+      const defaultTier = g ? "jackpot" : tiers.reduce((a, b) => (b.odds > a.odds ? b : a)).value;
+      els.tier.value = tierParam && tiers.some((t) => t.value === tierParam) ? tierParam : defaultTier;
       const fromUrl = parseInt(param("lines"), 10);
       if (fromUrl > 0) els.lines.value = fromUrl;
 
@@ -280,6 +291,8 @@ function renderStats() {
 function prizeBits() {
   const { tierObj: t, mult, jackpot, cash, minPrize, meta } = st;
   if (!t) return { prizeLine: "", note: "" };
+  // State games carry odds only (no prize/jackpot $ here) — show the dots, no $ line.
+  if (jackpot == null) return { prizeLine: "", note: "" };
 
   if (t.kind === "jackpot") {
     return {

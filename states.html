@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <script src="analytics.js"></script>
   <script defer src="nav.js"></script>
   <title>US State Lotteries — Results, Odds &amp; Expected Value | NumbersIntel</title>
   <meta name="description" id="meta-desc" content="Explore every US state lottery: results, odds, expected value, and number frequency, state by state." />
-  <link rel="canonical" id="meta-canonical" href="https://13tmills.github.io/lottery-value-tracker/states.html" />
+  <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/states.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
   <meta property="og:title" id="og-title" content="US State Lotteries | NumbersIntel" />
   <meta property="og:description" id="og-desc" content="Lottery results, odds, and expected value, state by state." />
-  <meta property="og:url" id="og-url" content="https://13tmills.github.io/lottery-value-tracker/states.html" />
+  <meta property="og:url" id="og-url" content="https://numbersintel.com/states.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" id="tw-title" content="US State Lotteries | NumbersIntel" />
   <meta name="twitter:description" id="tw-desc" content="Lottery results, odds, and expected value, state by state." />
@@ -25,9 +30,10 @@
   </header>
 
   <main class="detail">
-    <p class="section-note">Pick a state to explore its lottery games, results, and expected-value
-      analytics. State coverage is rolling out — the national games (Powerball, Mega Millions,
-      Lotto America) are live now.</p>
+    <p class="section-note">Pick your state on the map, or scroll down and choose from the list.
+      State coverage is rolling out — the national games (Powerball, Mega Millions, Lotto America)
+      are live now.</p>
+    <div class="us-map-wrap" id="us-map"></div>
     <div class="states-grid" id="states-grid"></div>
   </main>
 
@@ -42,6 +48,7 @@
   </footer>
 
   <script src="common.js"></script>
+  <script src="usmap.js"></script>
   <script src="states.js"></script>
 </body>
 </html>

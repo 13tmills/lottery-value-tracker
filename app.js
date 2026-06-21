@@ -26,6 +26,42 @@ function render(data) {
     .sort((a, b) => b[1].expected_value - a[1].expected_value);
 
   renderCards(entries);
+  renderM4L(); // Millionaire For Life — a national for-life game (no rolling jackpot/EV)
+}
+
+// Appends a Millionaire For Life card. It has fixed/for-life prizes rather than a
+// rolling jackpot, so it's shown after the EV-ranked games with its top prize.
+async function renderM4L() {
+  const meta = GAME_META.ny_m4l;
+  if (!meta) return;
+  let latest = null;
+  try {
+    const hist = await fetch("./history/ny_m4l.json", { cache: "no-store" }).then((r) => r.json());
+    latest = (hist.draws || []).slice(-1)[0];
+  } catch (e) { /* card still renders without the latest numbers */ }
+
+  const balls = latest
+    ? latest.numbers.map((n) => `<span class="ball">${n}</span>`).join("") +
+      (latest.mill_ball != null ? `<span class="ball ball--special" title="Mill Ball">${latest.mill_ball}</span>` : "")
+    : "";
+
+  const card = document.createElement("article");
+  card.className = "card card--flat";
+  card.innerHTML = `
+    <div class="card__top">
+      <h3 class="card__name">${meta.label}</h3>
+      <span class="rank">For life</span>
+    </div>
+    <div class="jackpot"><span class="jackpot__label">Top prize</span>${meta.prizes.topPrize}</div>
+    <ul class="meta">
+      ${meta.cashValue ? `<li><span class="k">Cash value</span><span class="v">${meta.cashValue}</span></li>` : ""}
+      <li><span class="k">Ticket price</span><span class="v">${meta.ticketPrice}</span></li>
+      <li><span class="k">Draws</span><span class="v">${meta.draws}</span></li>
+      ${latest ? `<li><span class="k">Latest draw</span><span class="v">${fmtDate(latest.date)}</span></li>` : ""}
+    </ul>
+    ${balls ? `<div class="numbers" title="Most recent winning numbers">${balls}</div>` : ""}
+    <a class="card__link" href="game.html?game=ny_m4l&back=national">More details &rarr;</a>`;
+  document.getElementById("cards").appendChild(card);
 }
 
 function renderCards(entries) {
@@ -89,7 +125,7 @@ function renderCards(entries) {
         ${balls}${specialBall}
       </div>
 
-      <a class="card__link" href="game.html?game=${key}">More details &rarr;</a>
+      <a class="card__link" href="game.html?game=${key}&back=national">More details &rarr;</a>
     `;
     cards.appendChild(card);
   });

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://13tmills.github.io/lottery-value-tracker/sitemap.xml
+Sitemap: https://numbersintel.com/sitemap.xml
