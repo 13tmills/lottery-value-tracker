@@ -856,7 +856,10 @@ def scrape_idaho(cfg, by_date):
     }
     cmds = requests.get(f"{IDAHO_BASE}/views/ajax", params=params, timeout=30,
                         headers={"User-Agent": USER_AGENT, "X-Requested-With": "XMLHttpRequest"}).json()
-    html = " ".join(c.get("data", "") for c in cmds if isinstance(c, dict) and c.get("data"))
+    # Most Drupal AJAX commands carry HTML in a string `data`; some (e.g. settings)
+    # carry a list/dict instead — keep only the string ones so the join can't blow up.
+    html = " ".join(c["data"] for c in cmds
+                    if isinstance(c, dict) and isinstance(c.get("data"), str))
     newest = None
     for rm in re.finditer(r"(?s)<tr[^>]*>(.*?)</tr>", html):
         row = rm.group(1)
