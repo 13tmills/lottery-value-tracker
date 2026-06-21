@@ -196,6 +196,29 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  WA: {
+    intro: "Washington's Lottery posts every draw's per-tier prizes and in-state winner counts — so Lotto, Hit 5, and Match 4 carry real payout depth, with history back to 2010.",
+    games: [
+      { name: "Lotto", meta: "6 of 49 · Mon · Wed · Sat · since 2010",
+        links: [["Prizes, winners &amp; odds", "game.html?game=wa_lotto"]] },
+      { name: "Hit 5", meta: "5 of 42 · nightly · cash jackpot",
+        links: [["Cashpot, winners &amp; odds", "game.html?game=wa_hit5"]] },
+      { name: "Match 4", meta: "4 of 24 · nightly",
+        links: [["Value, odds &amp; results", "game.html?game=wa_match4"]] },
+      { name: "Pick 3", meta: "3-digit · nightly",
+        links: [["Results, odds &amp; payouts", "game.html?game=wa_pick3"]] },
+      { name: "Cash Pop", meta: "1 of 15 · several daily",
+        links: [["Results &amp; frequency", "game.html?game=wa_cashpop"]] },
+      { name: "Daily Keno", meta: "20 of 80 · nightly",
+        links: [["Payouts, odds &amp; frequency", "game.html?game=wa_keno"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
 };
 
 function stateParam() {

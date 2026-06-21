@@ -726,6 +726,116 @@ const GAME_META = {
       ],
     },
   },
+
+  // ===== Washington =====
+  // Lotto — 6 of 49, Mon/Wed/Sat. A $1 ticket buys TWO plays, so the official odds
+  // below are per dollar (half the raw 6-of-49 combinatorics). Lower tiers are fixed
+  // ($1,000 / $30 / $3); the jackpot grows from $1M with an annuity-or-cash option.
+  // Live per-tier prizes + WA winner counts from walottery.com (keys match the scraper).
+  wa_lotto: {
+    label: "Lotto", specialKey: null, specialName: "", draws: "Mon · Wed · Sat",
+    priceChanges: [], state: "WA", stateName: "Washington", ticketPrice: "$1 (2 plays)",
+    oddsJackpot: 6991908, // Match 6, per $1 (two plays)
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & winners", winnersLabel: "WA winners",
+      note: "Washington Lotto is 6 of 49. A $1 ticket buys two plays, so the odds shown are per dollar. The jackpot (minimum $1M) grows until won and is paid as an annuity or cash; the lower tiers are fixed. Amounts and WA winner counts are the latest draw's actual results.",
+      odds: { "6 of 6": 6991908, "5 of 6": 27100, "4 of 6": 516, "3 of 6": 28 },
+    },
+    viz: { tiers: [ { label: "Match 6 (jackpot)", odds: 6991908 }, { label: "Match 5", odds: 27100 }, { label: "Match 4", odds: 516 }, { label: "Match 3", odds: 28 } ] },
+  },
+  // Hit 5 — 5 of 42, nightly. Cash "Cashpot" top prize that starts at $100k and grows
+  // with sales until won (split among winners). Lower tiers fixed; 2-of-5 wins a free ticket.
+  wa_hit5: {
+    label: "Hit 5", specialKey: null, specialName: "", draws: "Nightly",
+    priceChanges: [], state: "WA", stateName: "Washington", ticketPrice: "$1",
+    oddsJackpot: 850668, // 5 of 42
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & winners", winnersLabel: "WA winners",
+      note: "Hit 5 is 5 of 42 with a CASH top prize (the “Cashpot”) that starts at $100,000 and grows with sales until someone matches all five — paid as a lump sum and split among winners. Lower tiers are fixed; matching 2 of 5 wins a free ticket. Amounts and WA winner counts are the latest draw's actual results.",
+      odds: { "5 of 5": 850668, "4 of 5": 4598, "3 of 5": 128, "2 of 5": 11 },
+    },
+    viz: { tiers: [ { label: "5 of 5 (Cashpot)", odds: 850668 }, { label: "4 of 5", odds: 4598 }, { label: "3 of 5", odds: 128 }, { label: "2 of 5 (free)", odds: 11 } ] },
+  },
+  // Match 4 — pick 4 of 24, nightly, $2 per play. All prizes fixed (top $10,000 does not
+  // roll), so we publish a real value/$1.
+  wa_match4: {
+    label: "Match 4", specialKey: null, specialName: "", draws: "Nightly",
+    priceChanges: [], state: "WA", stateName: "Washington", ticketPrice: "$2",
+    ev: {
+      ticket_price: 2,
+      overall_odds: 9,
+      winnersLabel: "WA winners",
+      levels: {
+        "4 of 4": { label: "Match 4", odds: 10626, prize: 10000 },
+        "3 of 4": { label: "Match 3", odds: 133, prize: 20 },
+        "2 of 4": { label: "Match 2", odds: 9, prize: 2 },
+      },
+    },
+  },
+  // Pick 3 — 3-digit game drawn nightly at 8 p.m. Fixed payouts by play type.
+  wa_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", draws: "Nightly",
+    priceChanges: [], state: "WA", stateName: "Washington", digits: true, ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Washington Pick 3 is a 3-digit game (000–999) drawn nightly at 8 p.m.; what you win depends on your play type. Payouts shown for a $1 play.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: {
+        title: "How Pick 3 pays (per $1)",
+        columns: ["Play type", "Prize", "Odds"],
+        rows: [
+          { cells: ["Straight — exact order", "$500", "1 in 1,000"] },
+          { cells: ["3-Way Box (2 alike)", "$160", "1 in 333"] },
+          { cells: ["6-Way Box (all unique)", "$80", "1 in 167"] },
+          { cells: ["Front Pair / Back Pair", "$50", "1 in 100"] },
+        ],
+        note: "Shown for a $1 play; 50¢ plays pay half. Straight/Box and Superbox combo plays are also offered.",
+      },
+    },
+  },
+  // Cash Pop — pick 1 of 15; each number carries a randomly assigned, preprinted prize.
+  // Frequency over 1–15 is the feature (the prize you win is on your ticket, not a table).
+  wa_cashpop: {
+    label: "Cash Pop", specialKey: null, specialName: "",
+    draws: "Several daily", priceChanges: [], state: "WA", stateName: "Washington", ticketPrice: "$1+",
+    prizes: {
+      note: "Cash Pop: pick a number from 1 to 15. Each number carries a randomly assigned, preprinted prize; if your number is drawn, you win that prize. Drawn several times a day — the frequency chart covers numbers 1–15 over recent draws.",
+      topPrize: "1 in 15", topPrizeLabel: "Odds your number is drawn",
+      reference: {
+        title: "How Cash Pop pays",
+        columns: ["Outcome", "Prize", "Odds"],
+        rows: [
+          { cells: ["Your number is drawn", "Your ticket's preprinted prize", "1 in 15"] },
+        ],
+        note: "The prize is randomly assigned and printed on your ticket; the amount scales with how much you bet.",
+      },
+    },
+  },
+  // Daily Keno — pick 1–10 spots, 20 of 80 drawn nightly. Standard 20/80 match-all odds;
+  // prize amounts are Washington's. Recent-window results power the frequency chart.
+  wa_keno: {
+    label: "Daily Keno", specialKey: null, specialName: "",
+    draws: "Nightly", priceChanges: [], state: "WA", stateName: "Washington", recentWindow: true, ticketPrice: "$1 to $10 per draw",
+    prizes: {
+      topPrize: "$100,000", topPrizeLabel: "Top prize (10-spot $1)",
+      reference: {
+        title: "Top prize & odds by spot",
+        columns: ["Spots played", "Top prize (match all, $1)", "Odds (match all)"],
+        rows: [
+          { cells: ["10 spots", "$100,000", "1 in 8,911,711"] },
+          { cells: ["9 spots", "$25,000", "1 in 1,380,688"] },
+          { cells: ["8 spots", "$10,000", "1 in 230,115"] },
+          { cells: ["7 spots", "$2,500", "1 in 40,979"] },
+          { cells: ["6 spots", "$1,000", "1 in 7,753"] },
+          { cells: ["5 spots", "$200", "1 in 1,551"] },
+          { cells: ["4 spots", "$24", "1 in 326"] },
+          { cells: ["3 spots", "$16", "1 in 72"] },
+          { cells: ["2 spots", "$8", "1 in 16.6"] },
+          { cells: ["1 spot", "$2", "1 in 4"] },
+        ],
+        note: "You choose 1–10 “spots”; 20 numbers are drawn from 1–80 nightly. Shown is the top prize (matching all your spots) on a $1 play — partial-match prizes also apply. The overall top prize per drawing is capped at $500,000. Number frequency below covers only the most recent draws.",
+      },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

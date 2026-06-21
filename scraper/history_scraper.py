@@ -238,6 +238,16 @@ GAMES = {
     "fl_pick3": {"kind": "florida_api", "fl_id": 104, "num_count": 3, "digits": True, "fl_draw_type": "EVENING", "fl_window_years": 4},
     "fl_pick4": {"kind": "florida_api", "fl_id": 108, "num_count": 4, "digits": True, "fl_draw_type": "EVENING", "fl_window_years": 4},
     "fl_pick5": {"kind": "florida_api", "fl_id": 128, "num_count": 5, "digits": True, "fl_draw_type": "EVENING", "fl_window_years": 4},
+    # ----- Washington (walottery.com PastDrawings.aspx — server-rendered HTML) - #
+    # Each draw renders twice (mobile + desktop viewport); keying by date dedupes.
+    # CI fetches the recent 2 years each run; the committed backfill + retention
+    # keep the deeper history (Lotto/Hit 5/Match 4 carry per-tier prizes + WA winners).
+    "wa_lotto":   {"kind": "walottery_html", "wa_name": "lotto",     "num_count": 6,  "prizes": True},
+    "wa_hit5":    {"kind": "walottery_html", "wa_name": "hit5",      "num_count": 5,  "prizes": True},
+    "wa_match4":  {"kind": "walottery_html", "wa_name": "match4",    "num_count": 4,  "prizes": True},
+    "wa_pick3":   {"kind": "walottery_html", "wa_name": "pick3",     "num_count": 3},
+    "wa_cashpop": {"kind": "walottery_html", "wa_name": "cashpop",   "num_count": 1},  # prize table layout differs; frequency-only + reference paytable
+    "wa_keno":    {"kind": "walottery_html", "wa_name": "dailykeno", "num_count": 20, "cap": 600},
 }
 
 
@@ -1052,6 +1062,80 @@ def scrape_texas_html(cfg, by_date):
     return None
 
 
+WA_DRAWINGS = "https://www.walottery.com/WinningNumbers/PastDrawings.aspx"
+
+
+def _wa_date(s):
+    try:
+        return datetime.strptime(s.strip(), "%a, %b %d, %Y").strftime("%Y-%m-%d")
+    except ValueError:
+        return None
+
+
+def scrape_walottery(cfg, by_date):
+    """Washington's Lottery PastDrawings.aspx — server-rendered HTML tables.
+
+    Each draw block: date in <p class="h2-like">, balls in <li>, and (for Lotto,
+    Hit 5, Match 4, Cash Pop) a per-tier prize table with columns Prize Level /
+    Prize Amount / WA Winners / Total. The page renders every draw twice (mobile +
+    desktop viewport), so keying by date dedupes. One page per year via
+    ?gamename=&unittype=year&unitcount=YYYY. CI fetches the recent two years; the
+    committed backfill + retention keep the deeper history."""
+    name = cfg["wa_name"]
+    n = cfg["num_count"]
+    this_year = date.today().year
+    years = cfg.get("years") or range(this_year - 1, this_year + 1)
+    date_rx = re.compile(r'<p class="h2-like">\s*([^<]+?)\s*</p>')
+    li_rx = re.compile(r"<li>\s*(\d+)\s*</li>")
+    cell_rx = re.compile(r"(?s)<td>\s*(.*?)\s*</td>")
+    body_rx = re.compile(r"(?s)WA Winners.*?<tbody>(.*?)</tbody>")
+    for yr in years:
+        url = f"{WA_DRAWINGS}?gamename={name}&unittype=year&unitcount={yr}"
+        try:
+            page = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=40).text
+        except Exception as exc:
+            print(f"  ! {name} {yr}: {exc}")
+            continue
+        marks = list(date_rx.finditer(page))
+        for i, m in enumerate(marks):
+            iso = _wa_date(m.group(1))
+            if not iso:
+                continue
+            end = marks[i + 1].start() if i + 1 < len(marks) else len(page)
+            seg = page[m.start():end]
+            balls = [int(x) for x in li_rx.findall(seg)]
+            if len(balls) < n:
+                continue
+            draw = {"date": iso, "numbers": balls[:n]}
+            if cfg.get("prizes"):
+                bm = body_rx.search(seg)
+                if bm:
+                    cells = [re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", c))).strip()
+                             for c in cell_rx.findall(bm.group(1))]
+                    prizes = []
+                    for j in range(0, len(cells) - 3, 4):
+                        lvl = cells[j]
+                        if not lvl or "Total" in lvl:
+                            continue
+                        amt_txt = cells[j + 1]
+                        am = re.search(r"\$([\d,]+)", amt_txt)
+                        row = {"level": lvl, "label": lvl,
+                               "amount": int(am.group(1).replace(",", "")) if am else 0,
+                               "winners": int(re.sub(r"\D", "", cells[j + 2]) or 0)}
+                        if re.search(r"free|ticket", amt_txt, re.IGNORECASE):
+                            row["free"] = True
+                        prizes.append(row)
+                    if prizes:
+                        draw["prizes"] = prizes
+                        draw["total_winners"] = sum(p["winners"] for p in prizes)
+            by_date[iso] = draw
+    cap = cfg.get("cap")
+    if cap and len(by_date) > cap:
+        for k in sorted(by_date)[:-cap]:
+            del by_date[k]
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1150,6 +1234,11 @@ def main():
         if cur:
             data["current_jackpot"] = cur
             print(f"  current jackpot {cur['date']}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "walottery_html":
+        scrape_walottery(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from walottery.com.")
+        source = "walottery.com"
+        complete = True
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"
