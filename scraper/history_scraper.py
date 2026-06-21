@@ -259,6 +259,8 @@ GAMES = {
     "oh_pick5":   {"kind": "ohio_cms", "oh_path": "Pick-5", "num_count": 5, "digits": True},
     # Millionaire for Life — multi-state 5 + Bonus Ball; replaced Lucky for Life Feb 2026.
     "oh_m4l":     {"kind": "ohio_cms", "oh_path": "Millionaire-For-Life", "num_count": 5, "sort": True, "special_key": "bonus"},
+    # Kicker — 6-digit add-on carried as ExtendedNumbers on Classic Lotto draws.
+    "oh_kicker":  {"kind": "ohio_cms", "oh_path": "Classic-Lotto", "num_count": 6, "digits": True, "extended": True},
     # (oh_luckylife is a retired static archive — no scraper config; JSON is committed.)
 }
 
@@ -1181,7 +1183,9 @@ def scrape_ohio_cms(cfg, by_date):
         d = (dr.get("DrawDate") or "")[:10]
         if not d:
             continue
-        nums_all = [x["Value"] for x in sorted(dr.get("Numbers") or [], key=lambda z: z.get("Position", 0))]
+        # Kicker is the 6-digit add-on carried as ExtendedNumbers on Classic Lotto draws.
+        src = "ExtendedNumbers" if cfg.get("extended") else "Numbers"
+        nums_all = [x["Value"] for x in sorted(dr.get(src) or [], key=lambda z: z.get("Position", 0))]
         if len(nums_all) < n:
             continue
         main = sorted(nums_all[:n]) if cfg.get("sort") else nums_all[:n]
@@ -1189,7 +1193,9 @@ def scrape_ohio_cms(cfg, by_date):
         sp = cfg.get("special_key")
         if sp and len(nums_all) > n:
             draw[sp] = nums_all[n]  # the ball after the n main numbers (Bonus/Lucky)
-        prizes = [{"level": re.sub(r"\s+", " ", p["Description"]).strip(),
+        # ExtendedNumbers games (Kicker) don't carry their own prize table here.
+        prizes = [] if cfg.get("extended") else [
+                  {"level": re.sub(r"\s+", " ", p["Description"]).strip(),
                    "label": re.sub(r"\s+", " ", p["Description"]).strip(),
                    "amount": num(p.get("Payout")), "winners": num(p.get("WinnersNumber"))}
                   for p in (dr.get("Prizes") or []) if p.get("Description")]

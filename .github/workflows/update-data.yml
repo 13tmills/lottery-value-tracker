@@ -82,6 +82,7 @@ jobs:
           python scraper/history_scraper.py --game oh_pick4
           python scraper/history_scraper.py --game oh_pick5
           python scraper/history_scraper.py --game oh_m4l
+          python scraper/history_scraper.py --game oh_kicker
 
       - name: Commit updated data
         run: |

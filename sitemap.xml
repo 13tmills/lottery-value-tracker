@@ -96,6 +96,8 @@
   <url><loc>https://numbersintel.com/game.html?game=oh_m4l</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=oh_m4l</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=oh_luckylife</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=oh_kicker</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=oh_kicker</loc><changefreq>weekly</changefreq><priority>0.4</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

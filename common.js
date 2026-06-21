@@ -940,6 +940,28 @@ const GAME_META = {
     },
     viz: { tiers: [ {label:"5/5 + Bonus",odds:22910580},{label:"5/5",odds:5727645},{label:"4/5 + Bonus",odds:86455},{label:"4/5",odds:21614},{label:"3/5 + Bonus",odds:1663},{label:"3/5",odds:416},{label:"2/5 + Bonus",odds:98},{label:"2/5",odds:24},{label:"1/5 + Bonus",odds:16} ] },
   },
+  // Kicker — $1 add-on to a Classic Lotto ticket: a random 6-digit number. Match the
+  // digits in exact order from the left; five tiers up to $100,000. Drawn with Classic Lotto.
+  oh_kicker: {
+    label: "Kicker", specialKey: null, specialName: "", digits: true,
+    draws: "Mon · Wed · Sat", priceChanges: [], state: "OH", stateName: "Ohio", ticketPrice: "$1 (add-on)",
+    prizes: {
+      note: "Kicker is a $1 add-on to a Classic Lotto ticket — a randomly assigned 6-digit number. You win by matching the Kicker digits in exact order from the left; the more leading digits you match, the bigger the prize. Drawn with Classic Lotto (Mon/Wed/Sat).",
+      topPrize: "$100,000", topPrizeLabel: "Top prize (match all 6)",
+      reference: {
+        title: "How Kicker pays",
+        columns: ["Match (from left)", "Prize", "Odds"],
+        rows: [
+          { cells: ["All 6 digits", "$100,000", "1 in 1,000,000"] },
+          { cells: ["First 5 digits", "$5,000", "1 in 111,111"] },
+          { cells: ["First 4 digits", "$1,000", "1 in 11,111"] },
+          { cells: ["First 3 digits", "$100", "1 in 1,111"] },
+          { cells: ["First 2 digits", "$10", "1 in 111"] },
+        ],
+        note: "Digits must match in exact position from the left. Overall odds of any prize: 1 in 100. Frequency below covers recent draws.",
+      },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
