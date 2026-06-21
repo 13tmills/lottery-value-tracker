@@ -242,8 +242,8 @@ GAMES = {
     # Each draw renders twice (mobile + desktop viewport); keying by date dedupes.
     # CI fetches the recent 2 years each run; the committed backfill + retention
     # keep the deeper history (Lotto/Hit 5/Match 4 carry per-tier prizes + WA winners).
-    "wa_lotto":   {"kind": "walottery_html", "wa_name": "lotto",     "num_count": 6,  "prizes": True},
-    "wa_hit5":    {"kind": "walottery_html", "wa_name": "hit5",      "num_count": 5,  "prizes": True},
+    "wa_lotto":   {"kind": "walottery_html", "wa_name": "lotto",     "num_count": 6,  "prizes": True, "jackpot_top": True},
+    "wa_hit5":    {"kind": "walottery_html", "wa_name": "hit5",      "num_count": 5,  "prizes": True, "jackpot_top": True},
     "wa_match4":  {"kind": "walottery_html", "wa_name": "match4",    "num_count": 4,  "prizes": True},
     "wa_pick3":   {"kind": "walottery_html", "wa_name": "pick3",     "num_count": 3},
     "wa_cashpop": {"kind": "walottery_html", "wa_name": "cashpop",   "num_count": 1},  # prize table layout differs; frequency-only + reference paytable
@@ -1128,6 +1128,10 @@ def scrape_walottery(cfg, by_date):
                     if prizes:
                         draw["prizes"] = prizes
                         draw["total_winners"] = sum(p["winners"] for p in prizes)
+                        # Top tier is the (rolling) jackpot/cashpot — surface it as a
+                        # per-draw jackpot so the history page plots the saw-tooth.
+                        if cfg.get("jackpot_top") and prizes[0]["amount"]:
+                            draw["jackpot"] = prizes[0]["amount"]
             by_date[iso] = draw
     cap = cfg.get("cap")
     if cap and len(by_date) > cap:
