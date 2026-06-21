@@ -1605,6 +1605,7 @@ def main():
     cfg = GAMES[args.game]
     data = load_existing(args.game, cfg)
     by_date = {dr["date"]: dr for dr in data.get("draws", [])}
+    prev_cur = data.get("current_jackpot")  # last run's upcoming-draw jackpot (for the saw-tooth forward-fill)
 
     if cfg["kind"] == "ny_socrata":
         added = scrape_socrata(cfg, by_date)
@@ -1750,6 +1751,15 @@ def main():
             dd.isoformat() not in by_date
             for dd in draw_dates(cfg["start"], date.fromisoformat(last), cfg["draw_weekdays"])
         )
+
+    # Saw-tooth forward-fill: sources that expose only the upcoming jackpot (Michigan,
+    # Ohio Rolling Cash 5, …) don't carry historical per-draw jackpots. Once the draw the
+    # prior run advertised actually lands, stamp that (official) amount onto it, so the
+    # jackpot-over-time chart keeps accruing real points without a third-party feed.
+    if prev_cur and prev_cur.get("date") in by_date and prev_cur.get("jackpot"):
+        dd = by_date[prev_cur["date"]]
+        if "jackpot" not in dd:
+            dd["jackpot"] = prev_cur["jackpot"]
 
     # draw_number disambiguates multiple draws on the same date (Quick Draw).
     draws = sorted(by_date.values(), key=lambda x: (x["date"], x.get("draw_number", 0)))
