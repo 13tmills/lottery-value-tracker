@@ -1058,12 +1058,13 @@ def enrich_florida_tiers(cfg, by_date):
                 v = _fl_amt(amt_s)
                 if v:
                     a["sum"] += v * w
-        prizes, tot = [], 0
+        prizes, tot, jp_amt = [], 0, None
         for lvl, a in sorted(agg.items(), key=lambda kv: -kv[1]["matched"]):
             tot += a["winners"]
             if a["free"]:
                 prizes.append({"level": lvl, "amount": "Free Ticket", "winners": a["winners"]})
             elif lvl == "Jackpot":
+                jp_amt = a["jp"]
                 prizes.append({"level": lvl, "amount": a["jp"], "winners": a["winners"]})
             else:
                 avg = int(a["sum"] / a["winners"]) if a["winners"] else 0
@@ -1071,6 +1072,10 @@ def enrich_florida_tiers(cfg, by_date):
         if prizes:
             by_date[d]["prizes"] = prizes
             by_date[d]["total_winners"] = tot
+            # The 6-of-6 tier carries the advertised jackpot for that draw (even with 0
+            # winners) -> expose it as the per-draw jackpot so the history saw-tooth renders.
+            if jp_amt:
+                by_date[d]["jackpot"] = jp_amt
             enriched += 1
     print(f"  enriched {enriched} draw(s) with per-tier prizes (FL tiers API)")
 
@@ -1534,18 +1539,23 @@ def scrape_massachusetts(cfg, by_date):
                 rows = _ma_get(f"/v3/game-payouts/{g}", {"draw_number": dn}).get("payouts") or []
             except Exception:
                 continue
-            prizes = []
+            prizes, jp_amt = [], None
             for r in rows:
                 desc = (r.get("prizeDescription") or r.get("prizeLevel") or "").strip()
                 # The value engine keys the top tier on the literal "Jackpot" so it uses the
                 # cash option, not the annuity amount in this row. Keep the label for display.
-                level = "Jackpot" if (r.get("prizeLevel") or "").strip().lower() == "jackpot" else desc
+                is_jp = (r.get("prizeLevel") or "").strip().lower() == "jackpot"
+                level = "Jackpot" if is_jp else desc
+                amt = _int(r.get("prizeAmount"))  # already in dollars
+                if is_jp:
+                    jp_amt = amt  # advertised annuity jackpot for this draw -> saw-tooth chart
                 w = r.get("winners")
                 prizes.append({"level": level, "label": desc or level,
-                               "amount": _int(r.get("prizeAmount")),  # already in dollars
-                               "winners": _int(w) if w is not None else None})
+                               "amount": amt, "winners": _int(w) if w is not None else None})
             if prizes:
                 by_date[d]["prizes"] = prizes
+                if jp_amt:
+                    by_date[d]["jackpot"] = jp_amt
                 if all(p["winners"] is not None for p in prizes):
                     by_date[d]["total_winners"] = sum(p["winners"] for p in prizes)
             time.sleep(0.2)
