@@ -836,6 +836,68 @@ const GAME_META = {
       },
     },
   },
+
+  // ===== Ohio =====
+  // Classic Lotto — 6 of 49, Mon/Wed/Sat. Annuity jackpot (min $1M) with a cash option;
+  // lower tiers fixed. Live per-tier prizes + Ohio winner counts from the lottery's own
+  // embedded results feed (keys match the scraper's prize descriptions).
+  oh_classic: {
+    label: "Classic Lotto", specialKey: null, specialName: "", draws: "Mon · Wed · Sat",
+    priceChanges: [], state: "OH", stateName: "Ohio", ticketPrice: "$1",
+    oddsJackpot: 13983816, // 6 of 49
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & winners", winnersLabel: "OH winners",
+      note: "Classic Lotto is 6 of 49. The jackpot (minimum $1M) grows until won and is paid as an annuity or cash; the lower tiers are fixed. Amounts and Ohio winner counts are the latest draw's actual results.",
+      odds: { "Match 6 of 6": 13983816, "Match 5 of 6": 54201, "Match 4 of 6": 1032, "Match 3 of 6": 57 },
+    },
+    viz: { tiers: [ { label: "Match 6 (jackpot)", odds: 13983816 }, { label: "Match 5", odds: 54201 }, { label: "Match 4", odds: 1032 }, { label: "Match 3", odds: 57 } ] },
+  },
+  // Rolling Cash 5 — 5 of 39, nightly. Cash jackpot from $100k, grows until won (split).
+  oh_cash5: {
+    label: "Rolling Cash 5", specialKey: null, specialName: "", draws: "Nightly",
+    priceChanges: [], state: "OH", stateName: "Ohio", ticketPrice: "$1",
+    oddsJackpot: 575757, // 5 of 39
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & winners", winnersLabel: "OH winners",
+      note: "Rolling Cash 5 is 5 of 39 with a CASH jackpot that starts at $100,000 and grows with sales until someone matches all five — paid as a lump sum, split among winners. Lower tiers are fixed. Amounts and Ohio winner counts are the latest draw's actual results.",
+      odds: { "Match 5 of 5": 575757, "Match 4 of 5": 3387, "Match 3 of 5": 103, "Match 2 of 5": 10 },
+    },
+    viz: { tiers: [ { label: "Match 5 (jackpot)", odds: 575757 }, { label: "Match 4", odds: 3387 }, { label: "Match 3", odds: 103 }, { label: "Match 2", odds: 10 } ] },
+  },
+  // Pick 3/4/5 — digit games drawn twice daily (we track the evening draw). Fixed payouts.
+  oh_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "OH", stateName: "Ohio", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Ohio Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 3 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] }, { cells: ["3-Way Box (2 alike)", "$160", "1 in 333"] }, { cells: ["6-Way Box (all unique)", "$80", "1 in 167"] }, { cells: ["Front / Back Pair", "$50", "1 in 100"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half. Ohio also offers Wheel and back-up bets." },
+    },
+  },
+  oh_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "OH", stateName: "Ohio", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Ohio Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 4 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] }, { cells: ["4-Way Box (3 alike)", "$1,200", "1 in 2,500"] }, { cells: ["6-Way Box (2 pairs)", "$800", "1 in 1,667"] }, { cells: ["12-Way Box (1 pair)", "$400", "1 in 833"] }, { cells: ["24-Way Box (all unique)", "$200", "1 in 417"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
+  oh_pick5: {
+    label: "Pick 5", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "OH", stateName: "Ohio", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Ohio Pick 5 is a 5-digit game (00000–99999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
+      topPrize: "$50,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Pick 5 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$50,000", "1 in 100,000"] }, { cells: ["5-Way Box (4 alike)", "$10,000", "1 in 20,000"] }, { cells: ["10-Way Box", "$5,000", "1 in 10,000"] }, { cells: ["20-Way Box", "$2,500", "1 in 5,000"] }, { cells: ["30-Way Box", "$1,650", "1 in 3,333"] }, { cells: ["60-Way Box", "$800", "1 in 1,667"] }, { cells: ["120-Way Box (all unique)", "$400", "1 in 833"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

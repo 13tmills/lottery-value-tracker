@@ -219,6 +219,27 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  OH: {
+    intro: "Ohio publishes each draw's per-tier prizes and winner counts in its own results feed — so Classic Lotto and Rolling Cash 5 carry real payout depth, including the live jackpot and cash value.",
+    games: [
+      { name: "Classic Lotto", meta: "6 of 49 · Mon · Wed · Sat",
+        links: [["Jackpot, prizes &amp; winners", "game.html?game=oh_classic"]] },
+      { name: "Rolling Cash 5", meta: "5 of 39 · nightly · cash jackpot",
+        links: [["Jackpot, prizes &amp; winners", "game.html?game=oh_cash5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=oh_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=oh_pick4"]] },
+      { name: "Pick 5", meta: "5-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=oh_pick5"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
 };
 
 function stateParam() {

@@ -248,6 +248,15 @@ GAMES = {
     "wa_pick3":   {"kind": "walottery_html", "wa_name": "pick3",     "num_count": 3},
     "wa_cashpop": {"kind": "walottery_html", "wa_name": "cashpop",   "num_count": 1},  # prize table layout differs; frequency-only + reference paytable
     "wa_keno":    {"kind": "walottery_html", "wa_name": "dailykeno", "num_count": 20, "cap": 600},
+    # ----- Ohio (ohiolottery.com archive — recent draws embedded server-side as
+    # a JSON blob id="cmsNumbers": numbers, per-tier prizes + winner counts, the
+    # prize pool, and the NEXT jackpot/cash). Only latest draw(s) per game; retention
+    # accumulates history (deeper history backfilled from the per-year CSV export).
+    "oh_classic": {"kind": "ohio_cms", "oh_path": "Classic-Lotto",  "num_count": 6, "sort": True, "jackpot": True},
+    "oh_cash5":   {"kind": "ohio_cms", "oh_path": "Rolling-Cash-5", "num_count": 5, "sort": True, "jackpot": True},
+    "oh_pick3":   {"kind": "ohio_cms", "oh_path": "Pick-3", "num_count": 3, "digits": True},
+    "oh_pick4":   {"kind": "ohio_cms", "oh_path": "Pick-4", "num_count": 4, "digits": True},
+    "oh_pick5":   {"kind": "ohio_cms", "oh_path": "Pick-5", "num_count": 5, "digits": True},
 }
 
 
@@ -1140,6 +1149,71 @@ def scrape_walottery(cfg, by_date):
     return None
 
 
+OHIO_ARCHIVE = "https://www.ohiolottery.com/winning-numbers/check-your-numbers/winning-numbers-archive"
+
+
+def scrape_ohio_cms(cfg, by_date):
+    """Ohio Lottery — the archive page embeds recent draws server-side as a JSON blob
+    (id="cmsNumbers"): winning numbers, per-tier prizes + WA-style winner counts, the
+    prize pool (jackpot), and the NEXT jackpot/cash value. Only the latest draw(s) per
+    game are present, so retention accumulates the history; the per-year CSV export
+    seeds the deeper backfill."""
+    def num(v):
+        try:
+            return int(round(float(v)))
+        except (TypeError, ValueError):
+            return 0
+
+    page = requests.get(OHIO_ARCHIVE, headers={"User-Agent": USER_AGENT}, timeout=40).text
+    m = re.search(r"id=\"cmsNumbers\"\s+value='([^']*)'", page)
+    if not m:
+        return None
+    games = json.loads(unescape(m.group(1)))
+    game = next((g for g in games if g.get("NodeAliasPath") == cfg["oh_path"]), None)
+    if not game:
+        return None
+    n = cfg["num_count"]
+    draws = game.get("Draws") or []
+    for dr in draws:
+        d = (dr.get("DrawDate") or "")[:10]
+        if not d:
+            continue
+        nums = [x["Value"] for x in sorted(dr.get("Numbers") or [], key=lambda z: z.get("Position", 0))]
+        if cfg.get("sort"):
+            nums = sorted(nums)
+        if len(nums) < n:
+            continue
+        draw = {"date": d, "numbers": nums[:n]}
+        prizes = [{"level": p.get("Description"), "label": p.get("Description"),
+                   "amount": num(p.get("Payout")), "winners": num(p.get("WinnersNumber"))}
+                  for p in (dr.get("Prizes") or []) if p.get("Description")]
+        if prizes:
+            draw["prizes"] = prizes
+            draw["total_winners"] = sum(p["winners"] for p in prizes)
+        if cfg.get("jackpot"):
+            jp = num(dr.get("PrizePool"))
+            if jp:
+                draw["jackpot"] = jp
+            cash = num(dr.get("PDCV"))
+            if cash:
+                draw["cash"] = cash
+        by_date[d] = draw
+    # Current/next jackpot from the newest draw's Next* fields. The per-draw
+    # NextDrawDate is sometimes the .NET epoch (0001-…) before the site schedules it;
+    # fall back to the game-level NextDrawDate, else leave it unset.
+    if cfg.get("jackpot") and draws:
+        newest = max(draws, key=lambda z: z.get("DrawDate", ""))
+        nj = num(newest.get("NextPrizePool"))
+        if nj:
+            nd = None
+            for cand in (newest.get("NextDrawDate"), game.get("NextDrawDate")):
+                if cand and not str(cand).startswith("0001"):
+                    nd = str(cand)[:10]
+                    break
+            return {"date": nd, "jackpot": nj, "cash": num(newest.get("NextPDCV")) or None}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1243,6 +1317,14 @@ def main():
         print(f"[{args.game}] {len(by_date)} draw(s) from walottery.com.")
         source = "walottery.com"
         complete = True
+    elif cfg["kind"] == "ohio_cms":
+        cur = scrape_ohio_cms(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from ohiolottery.com.")
+        source = "ohiolottery.com"
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur['date']}: ${cur['jackpot']:,} cash ${cur.get('cash') or 0:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"

@@ -82,6 +82,17 @@
   <url><loc>https://numbersintel.com/game.html?game=wa_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=wa_cashpop</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=wa_keno</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/state.html?state=OH</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=oh_classic</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=oh_classic</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=oh_classic</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/visualizer.html?game=oh_classic</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=oh_cash5</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=oh_cash5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=oh_cash5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=oh_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=oh_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=oh_pick5</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
