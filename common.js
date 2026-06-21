@@ -1502,6 +1502,45 @@ function parseOdds(s) {
   return m ? parseInt(m[1].replace(/,/g, ""), 10) : null;
 }
 
+// Value per $1 (in cents, after ~37% tax) for a game — the shared metric behind the
+// per-state and national "best value" modules. National games use the value precomputed
+// in data.json; fixed-prize digit games use their $1 straight play (from the paytable);
+// EV games are computed from their latest prized draw (fetched). Games with no single
+// value/$1 (pari-mutuel ball / keno / fixed-jackpot-only) return null and drop out.
+const BEST_TAX = 0.63;
+
+async function valuePer1Cents(key, meta, data) {
+  if (data && data.games && data.games[key] && data.games[key].expected_value != null) {
+    return data.games[key].expected_value * 100; // national: precomputed in data.json
+  }
+  if (!meta) return null;
+  if (!meta.ev && meta.digits && meta.prizes && meta.prizes.reference) {
+    const row = meta.prizes.reference.rows.find((r) => /straight|exact order/i.test(r.cells[0]));
+    if (row) {
+      const prize = Number(String(row.cells[1]).replace(/[^0-9.]/g, ""));
+      const odds = parseOdds(row.cells[2]);
+      if (prize && odds) return (prize * BEST_TAX) / odds * 100; // per $1 straight
+    }
+    return null;
+  }
+  if (!meta.ev) return null;
+  try {
+    const h = await fetch(`history/${key}.json`, { cache: "force-cache" }).then((r) => r.json());
+    const lastPrized = [...(h.draws || [])].reverse().find((d) => d.prizes && d.prizes.length);
+    // Fixed-prize games (Idaho Cash) have no per-draw prizes — synthesize from config.
+    const evSource = lastPrized || (meta.ev.staticPrizes && (h.draws || []).length
+      ? { prizes: Object.keys(meta.ev.levels).map((level) => ({ level })) }
+      : null);
+    if (!evSource) return null;
+    const cur = h.current_jackpot;
+    const hasJackpot = meta.ev.odds_jackpot && cur && cur.cash;
+    const items = nyEvItems(meta.ev, evSource, hasJackpot ? cur.cash : null, BEST_TAX);
+    return items.reduce((s, it) => s + it.cents, 0);
+  } catch (e) {
+    return null;
+  }
+}
+
 // Tiers for the odds visualizer: [{label, odds}] from whatever a state game's
 // config provides (EV levels, an explicit viz config, or a reference paytable),
 // or null when there's nothing meaningful to visualize. National games come from

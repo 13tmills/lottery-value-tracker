@@ -405,46 +405,12 @@ function renderMap() {
 // the same metric the game pages show. State games with an EV config are computed
 // from their latest prized draw; national games use the value precomputed in
 // data.json (same tax basis). Games with no single value/$1 (digit/keno) drop out.
-const BEST_TAX = 0.63;
-
+// BEST_TAX + valuePer1Cents now live in common.js (shared with the national
+// "Best value tickets in America" widget on national.html). gameKeyFromLinks stays
+// here since it's specific to the state module's STATE_GAMES link shape.
 function gameKeyFromLinks(g) {
   const href = g.links && g.links[0] && g.links[0][1];
   return href ? new URLSearchParams(href.split("?")[1] || "").get("game") : null;
-}
-
-async function valuePer1Cents(key, meta, data) {
-  if (data && data.games && data.games[key] && data.games[key].expected_value != null) {
-    return data.games[key].expected_value * 100; // national: precomputed
-  }
-  if (!meta) return null;
-  // Fixed-prize digit games (Pick 2-5, Numbers, Win 4 …): value of a $1 STRAIGHT play —
-  // exact from the paytable. Pari-mutuel ball/jackpot games (no meta.digits) fall through
-  // and stay out, since their lower-tier amounts aren't in the data.
-  if (!meta.ev && meta.digits && meta.prizes && meta.prizes.reference && typeof parseOdds === "function") {
-    const row = meta.prizes.reference.rows.find((r) => /straight|exact order/i.test(r.cells[0]));
-    if (row) {
-      const prize = Number(String(row.cells[1]).replace(/[^0-9.]/g, ""));
-      const odds = parseOdds(row.cells[2]);
-      if (prize && odds) return (prize * BEST_TAX) / odds * 100; // per $1 straight
-    }
-    return null;
-  }
-  if (!meta.ev || typeof nyEvItems !== "function") return null;
-  try {
-    const h = await fetch(`history/${key}.json`, { cache: "no-store" }).then((r) => r.json());
-    const lastPrized = [...(h.draws || [])].reverse().find((d) => d.prizes && d.prizes.length);
-    // Fixed-prize games (Idaho Cash) have no per-draw prizes — synthesize from config.
-    const evSource = lastPrized || (meta.ev.staticPrizes && (h.draws || []).length
-      ? { prizes: Object.keys(meta.ev.levels).map((level) => ({ level })) }
-      : null);
-    if (!evSource) return null;
-    const cur = h.current_jackpot;
-    const hasJackpot = meta.ev.odds_jackpot && cur && cur.cash;
-    const items = nyEvItems(meta.ev, evSource, hasJackpot ? cur.cash : null, BEST_TAX);
-    return items.reduce((s, it) => s + it.cents, 0);
-  } catch (e) {
-    return null;
-  }
 }
 
 async function fillBestGame(s, cfg) {

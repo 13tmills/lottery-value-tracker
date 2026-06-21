@@ -1048,3 +1048,27 @@ a.state-cell:hover { border-color: var(--accent); }
 .best-row__cents { font-weight: 700; color: var(--accent); }
 .best-row__per { color: var(--text-dim); font-weight: 400; font-size: 0.8em; }
 .best-game__note { color: var(--text-dim); font-size: 0.8rem; margin: 0.2rem 0 0; }
+
+/* National "Best value tickets in America" hero (top of national.html). Reuses the
+   .best-row* list styles above; the wrapper is its own accent-lit panel. */
+#national-best-value { margin: 0 0 1.75rem; }
+.best-natl {
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(224, 185, 80, 0.10), transparent 60%),
+    var(--surface);
+  padding: 1.2rem 1.3rem 1.1rem;
+  box-shadow: 0 1px 0 rgba(224, 185, 80, 0.12) inset;
+}
+.best-natl__eyebrow { display: inline-block; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; font-size: 0.74rem; }
+.best-natl__title { margin: 0.3rem 0 0.4rem; font-size: 1.7rem; line-height: 1.15; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
+.best-natl__title a { color: var(--text); text-decoration: none; }
+.best-natl__title a:hover { text-decoration: underline; }
+.best-natl__where { font-size: 0.82rem; font-weight: 600; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 0.1rem 0.55rem; white-space: nowrap; }
+.best-natl__lead { color: var(--text-dim); margin: 0 0 0.6rem; max-width: 62ch; }
+.best-natl__rank { display: flex; flex-direction: column; gap: 0.4rem; margin: 0.9rem 0 0.7rem; }
+.best-natl__badge { font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--accent-2); border: 1px solid var(--border); border-radius: 6px; padding: 0.05rem 0.35rem; margin-left: 0.4rem; }
+.best-natl__note { color: var(--text-dim); font-size: 0.78rem; margin: 0.3rem 0 0; max-width: 78ch; }
+.best-natl--loading { color: var(--text-dim); border: 1px dashed var(--border); border-radius: var(--radius); background: var(--surface); padding: 1.1rem 1.3rem; }
+.best-natl__spark { color: var(--accent); }
