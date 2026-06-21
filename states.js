@@ -246,6 +246,29 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  MI: {
+    intro: "Michigan's Lottery serves results, odds, jackpots and full multi-year history straight from its own data service — Lotto 47 and Fantasy 5 go back to 2010.",
+    games: [
+      { name: "Lotto 47", meta: "6 of 47 · Wed · Sat · since 2010",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=mi_lotto47"]] },
+      { name: "Fantasy 5", meta: "5 of 39 · nightly · cash jackpot",
+        links: [["Value, odds &amp; results", "game.html?game=mi_fantasy5"]] },
+      { name: "Daily 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=mi_daily3"]] },
+      { name: "Daily 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=mi_daily4"]] },
+      { name: "Millionaire for Life", meta: "5 of 58 + Bonus · daily · since Feb 2026",
+        links: [["Prizes &amp; odds", "game.html?game=mi_m4l"]] },
+      { name: "Lucky for Life", meta: "5 of 48 + Lucky Ball · ended Feb 2026", retired: true,
+        links: [["Final results &amp; prizes", "game.html?game=mi_lucky"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
 };
 
 function stateParam() {

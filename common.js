@@ -962,6 +962,129 @@ const GAME_META = {
       },
     },
   },
+
+  // ===== Michigan =====
+  // Lotto 47 — 6 of 47, Wed/Sat. Fixed lower tiers; annuity jackpot (min $1M). Live
+  // jackpot from the MI Lottery API; full history since 2010.
+  mi_lotto47: {
+    label: "Lotto 47", specialKey: null, specialName: "", draws: "Wed · Sat",
+    priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$1",
+    oddsJackpot: 10737573, // 6 of 47
+    prizes: {
+      note: "Lotto 47 is 6 of 47. The jackpot starts at $1M and grows until won (annuity or cash); the lower tiers are fixed. Odds shown per $1 play.",
+      topPrize: "Jackpot", topPrizeLabel: "Match 6 of 6",
+      reference: {
+        title: "Lotto 47 prize tiers & odds",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["6 of 6", "Jackpot (min $1M)", "1 in 10,737,573"] },
+          { cells: ["5 of 6", "$2,500", "1 in 43,649"] },
+          { cells: ["4 of 6", "$100", "1 in 873"] },
+          { cells: ["3 of 6", "$5", "1 in 50"] },
+        ],
+        note: "Lower tiers are fixed. Overall odds of winning any prize: 1 in 47.",
+      },
+    },
+    viz: { tiers: [ {label:"Match 6 (jackpot)",odds:10737573},{label:"Match 5",odds:43649},{label:"Match 4",odds:873},{label:"Match 3",odds:50} ] },
+  },
+  // Fantasy 5 — 5 of 39, nightly. Cash jackpot from $100k; fixed lower tiers. Value/$1
+  // from the fixed tiers priced against the live cash jackpot.
+  mi_fantasy5: {
+    label: "Fantasy 5", specialKey: null, specialName: "", draws: "Nightly",
+    priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 575757, // 5 of 39
+      overall_odds: 9,
+      staticPrizes: true,
+      winnersLabel: "MI winners",
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 575757 },
+        "Match 4": { label: "Match 4", odds: 3387, prize: 100 },
+        "Match 3": { label: "Match 3", odds: 103, prize: 10 },
+        "Match 2": { label: "Match 2", odds: 10, prize: 1 },
+      },
+    },
+  },
+  // Lucky for Life — multi-state 5 of 48 + Lucky Ball (1 of 18). Michigan played it
+  // 2015 until it was replaced by Millionaire for Life in Feb 2026. Retired archive.
+  mi_lucky: {
+    label: "Lucky for Life", specialKey: "lucky", specialName: "Lucky Ball", specialAbbr: "LB",
+    draws: "Daily · ended Feb 2026", priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$2",
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Lucky for Life was a multi-state game — 5 of 48 plus a Lucky Ball (1 of 18) — with for-life top prizes. It was replaced by the multi-state Millionaire for Life in February 2026. This is the final archive and prize structure.",
+      topPrize: "$1,000 / day for life", topPrizeLabel: "Top prize", retired: true,
+      reference: {
+        title: "Lucky for Life prize tiers & odds",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["5 + Lucky Ball", "$1,000 / day for life", "1 in 30,821,472"] },
+          { cells: ["5", "$25,000 / year for life", "1 in 1,813,028"] },
+          { cells: ["4 + Lucky Ball", "$5,000", "1 in 143,356"] },
+          { cells: ["4", "$200", "1 in 8,433"] },
+          { cells: ["3 + Lucky Ball", "$150", "1 in 3,413"] },
+          { cells: ["3", "$20", "1 in 201"] },
+          { cells: ["2 + Lucky Ball", "$25", "1 in 250"] },
+          { cells: ["2", "$3", "1 in 14.7"] },
+          { cells: ["1 + Lucky Ball", "$6", "1 in 50"] },
+          { cells: ["0 + Lucky Ball", "$4", "1 in 32"] },
+        ],
+        note: "Top two prizes were paid for life (minimum 20 years). Overall odds of any prize: 1 in 7.8.",
+      },
+    },
+  },
+  // Millionaire for Life — multi-state 5 of 58 + Bonus Ball (1 of 5), launched Feb 2026.
+  mi_m4l: {
+    label: "Millionaire for Life", specialKey: "bonus", specialName: "Bonus Ball", specialAbbr: "B",
+    draws: "Daily", priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$2",
+    oddsJackpot: 22910580, // 5 of 58 + Bonus 1 of 5
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Millionaire for Life is a multi-state 5-of-58 + Bonus Ball (1 of 5) game that launched Feb 2026, replacing Lucky for Life. The top two prizes pay for life; the rest are fixed. Odds computed from the 5/58 + 1/5 matrix.",
+      topPrize: "$1,000,000 / year for life", topPrizeLabel: "Top prize",
+      reference: {
+        title: "Millionaire for Life prize tiers & odds",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["5 + Bonus Ball", "$1,000,000 / year for life", "1 in 22,910,580"] },
+          { cells: ["5", "$100,000 / year for life", "1 in 5,727,645"] },
+          { cells: ["4 + Bonus Ball", "$7,500", "1 in 86,455"] },
+          { cells: ["4", "$500", "1 in 21,614"] },
+          { cells: ["3 + Bonus Ball", "$250", "1 in 1,663"] },
+          { cells: ["3", "$50", "1 in 416"] },
+          { cells: ["2 + Bonus Ball", "$25", "1 in 98"] },
+          { cells: ["2", "$8", "1 in 24"] },
+          { cells: ["1 + Bonus Ball", "$8", "1 in 16"] },
+        ],
+        note: "Overall odds of winning any prize: 1 in 8.46.",
+      },
+    },
+    viz: { tiers: [ {label:"5 + Bonus",odds:22910580},{label:"Match 5",odds:5727645},{label:"4 + Bonus",odds:86455},{label:"Match 4",odds:21614},{label:"3 + Bonus",odds:1663},{label:"Match 3",odds:416},{label:"2 + Bonus",odds:98},{label:"Match 2",odds:24},{label:"1 + Bonus",odds:16} ] },
+  },
+  // Daily 3 / Daily 4 — digit games drawn twice daily; we track the evening draw.
+  mi_daily3: {
+    label: "Daily 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Michigan Daily 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Daily 3 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] }, { cells: ["3-Way Box", "$160", "1 in 333"] }, { cells: ["6-Way Box", "$80", "1 in 167"] }, { cells: ["Wheel / Front / Back Pair", "$50", "1 in 100"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half. 2-Way, Wheel and 1-Off bets also offered." },
+    },
+  },
+  mi_daily4: {
+    label: "Daily 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "MI", stateName: "Michigan", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Michigan Daily 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Daily 4 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] }, { cells: ["4-Way Box", "$1,200", "1 in 2,500"] }, { cells: ["6-Way Box", "$800", "1 in 1,667"] }, { cells: ["12-Way Box", "$400", "1 in 833"] }, { cells: ["24-Way Box", "$200", "1 in 417"] } ],
+        note: "Shown for a $1 play; 50¢ plays pay half. Wheel and 1-Off bets also offered." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

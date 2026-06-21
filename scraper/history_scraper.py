@@ -262,6 +262,16 @@ GAMES = {
     # Kicker — 6-digit add-on carried as ExtendedNumbers on Classic Lotto draws.
     "oh_kicker":  {"kind": "ohio_cms", "oh_path": "Classic-Lotto", "num_count": 6, "digits": True, "extended": True},
     # (oh_luckylife is a retired static archive — no scraper config; JSON is committed.)
+    # ----- Michigan (michiganlottery.com Apollo GraphQL API — gameCode -> draws,
+    # payout query -> per-tier prizes, currentEstimatedJackpotForGame -> jackpot) ----- #
+    # Jackpot/draw games expose numbers + current jackpot (the payout query returns
+    # null for them); the daily digit games carry rich per-tier prizes (phase 2).
+    "mi_lotto47":  {"kind": "michigan_graphql", "mi_code": "6", "num_count": 6, "sort": True, "mi_seq": 1, "jackpot": True, "start_year": 2010},
+    "mi_fantasy5": {"kind": "michigan_graphql", "mi_code": "5", "num_count": 5, "sort": True, "mi_seq": 1, "jackpot": True, "jackpot_is_cash": True, "start_year": 2010},
+    "mi_lucky":    {"kind": "michigan_graphql", "mi_code": "W", "num_count": 5, "sort": True, "special_key": "lucky", "mi_special_field": "luckyball", "start_year": 2015},
+    "mi_m4l":      {"kind": "michigan_graphql", "mi_code": "U", "num_count": 5, "sort": True, "special_key": "bonus", "mi_special_field": "millionaireball", "start_year": 2026},
+    "mi_daily3":   {"kind": "michigan_graphql", "mi_code": "3", "num_count": 3, "digits": True, "start_year": 2010},
+    "mi_daily4":   {"kind": "michigan_graphql", "mi_code": "4", "num_count": 4, "digits": True, "start_year": 2010},
 }
 
 
@@ -1226,6 +1236,100 @@ def scrape_ohio_cms(cfg, by_date):
     return None
 
 
+MI_API = "https://www.michiganlottery.com/api/v1/draw-games"
+MI_GAME_QUERY = (
+    "query Game($gameCode: String!, $startDateString: String!, $endDateString: String!) {"
+    " gameByCode(code: $gameCode) { logicalGameIdentifier"
+    " drawResultsBetweenDates(startDateString: $startDateString, endDateString: $endDateString) {"
+    " drawDate drawSequence isBonusDraw hasPayoutData"
+    " winningNumbers { drawNumbers luckyball millionaireball } } } }"
+)
+MI_PAYOUT_QUERY = (
+    "query Payout($logicalGameIdentifier: String, $drawDate: String) {"
+    " payout(logicalGameIdentifier: $logicalGameIdentifier, drawDate: $drawDate) {"
+    " payoutMid { prizeLevel winnerCount prizeAmount description }"
+    " payoutEve { prizeLevel winnerCount prizeAmount description } } }"
+)
+MI_JACKPOT_QUERY = (
+    "query J($logicalGameIdentifier: String) {"
+    " jackpot: currentEstimatedJackpotForGame(logicalGameIdentifier: $logicalGameIdentifier) { jackpot }"
+    " next: nextDrawTimeForLogicalGame(logicalGameIdentifier: $logicalGameIdentifier) { date } }"
+)
+
+
+def _mi_post(query, variables):
+    """Michigan's Apollo GraphQL gateway. The apollo-require-preflight header clears
+    its CSRF block; queries are sent as plain POST bodies (no persisted-query hash)."""
+    r = requests.post(MI_API, json={"query": query, "variables": variables},
+                      headers={"User-Agent": USER_AGENT, "apollo-require-preflight": "true",
+                               "content-type": "application/json"}, timeout=45)
+    return (r.json() or {}).get("data") or {}
+
+
+def scrape_michigan(cfg, by_date):
+    """michiganlottery.com GraphQL API (reverse-engineered from the app bundle).
+    drawResultsBetweenDates gives full history by date range; the payout query gives
+    per-tier prizes + winner counts; currentEstimatedJackpotForGame gives the live
+    jackpot. CI pulls the recent year(s); local backfill widens start_year."""
+    code, n = cfg["mi_code"], cfg["num_count"]
+    sp, sp_field = cfg.get("special_key"), cfg.get("mi_special_field")
+    seq = cfg.get("mi_seq")  # keep only this drawSequence (Lotto 47 main = 1, Double Play = 2)
+    this_year = date.today().year
+    start_year = cfg.get("start_year", this_year - 1)
+    logical = None
+    for yr in range(start_year, this_year + 1):
+        data = _mi_post(MI_GAME_QUERY, {"gameCode": code,
+                        "startDateString": f"{yr}-01-01T00:00:00.000Z",
+                        "endDateString": f"{yr + 1}-01-01T00:00:00.000Z"})
+        gbc = data.get("gameByCode") or {}
+        logical = gbc.get("logicalGameIdentifier") or logical
+        for dr in gbc.get("drawResultsBetweenDates") or []:
+            if seq and dr.get("drawSequence") != seq:
+                continue
+            d = (dr.get("drawDate") or "")[:10]
+            wn = dr.get("winningNumbers") or {}
+            nums = wn.get("drawNumbers") or []
+            if not d or len(nums) < n:
+                continue
+            draw = {"date": d, "numbers": sorted(nums[:n]) if cfg.get("sort") else nums[:n]}
+            if sp and wn.get(sp_field) is not None:
+                draw[sp] = wn[sp_field]
+            by_date[d] = draw
+    # Per-tier prizes for the most recent draws that should carry them.
+    if cfg.get("prizes") and logical:
+        slot = "payoutEve" if cfg.get("mi_payout", "eve") == "eve" else "payoutMid"
+        recent = sorted((d for d in by_date if not by_date[d].get("prizes")), reverse=True)
+        for d in recent[:cfg.get("prizes_cap", 30)]:
+            try:
+                pdata = _mi_post(MI_PAYOUT_QUERY, {"logicalGameIdentifier": logical, "drawDate": d})
+                rows = ((pdata.get("payout") or {}).get(slot)) or []
+            except Exception:
+                continue
+            prizes = [{"level": r.get("description") or f"Level {r.get('prizeLevel')}",
+                       "label": r.get("description") or f"Level {r.get('prizeLevel')}",
+                       "amount": _int(r.get("prizeAmount")) // 100,  # API amounts are in cents
+                       "winners": _int(r.get("winnerCount"))}
+                      for r in rows if r.get("prizeLevel") is not None]
+            if prizes:
+                by_date[d]["prizes"] = prizes
+                by_date[d]["total_winners"] = sum(p["winners"] for p in prizes)
+            time.sleep(0.2)
+    # Current/next jackpot.
+    cur = None
+    if cfg.get("jackpot") and logical:
+        try:
+            jd = _mi_post(MI_JACKPOT_QUERY, {"logicalGameIdentifier": logical})
+            jp = _int((jd.get("jackpot") or {}).get("jackpot")) // 100  # API amount is in cents
+            nd = ((jd.get("next") or {}).get("date") or "")[:10] or None
+            if jp:
+                cur = {"date": nd, "jackpot": jp}
+                if cfg.get("jackpot_is_cash"):
+                    cur["cash"] = jp  # Fantasy 5 jackpot is a cash prize
+        except Exception:
+            pass
+    return cur
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1337,6 +1441,14 @@ def main():
         if cur:
             data["current_jackpot"] = cur
             print(f"  current jackpot {cur['date']}: ${cur['jackpot']:,} cash ${cur.get('cash') or 0:,}")
+    elif cfg["kind"] == "michigan_graphql":
+        cur = scrape_michigan(cfg, by_date)
+        print(f"[{args.game}] {len(by_date)} draw(s) from michiganlottery.com.")
+        source = "michiganlottery.com"
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"

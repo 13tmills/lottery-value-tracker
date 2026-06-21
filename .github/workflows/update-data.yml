@@ -83,6 +83,12 @@ jobs:
           python scraper/history_scraper.py --game oh_pick5
           python scraper/history_scraper.py --game oh_m4l
           python scraper/history_scraper.py --game oh_kicker
+          python scraper/history_scraper.py --game mi_lotto47
+          python scraper/history_scraper.py --game mi_fantasy5
+          python scraper/history_scraper.py --game mi_lucky
+          python scraper/history_scraper.py --game mi_m4l
+          python scraper/history_scraper.py --game mi_daily3
+          python scraper/history_scraper.py --game mi_daily4
 
       - name: Commit updated data
         run: |
