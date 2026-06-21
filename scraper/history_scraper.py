@@ -287,6 +287,13 @@ GAMES = {
     "nc_pick3":    {"kind": "nc_csv", "nc_url": "pick3", "num_count": 3, "digits": True, "evening": True, "ball_start": 2},
     "nc_pick4":    {"kind": "nc_csv", "nc_url": "pick4", "num_count": 4, "digits": True, "evening": True, "ball_start": 2},
     "nc_cash5":    {"kind": "nc_csv", "nc_url": "cash5", "num_count": 5, "sort": True, "ball_start": 1},
+    # ----- Virginia (valottery.com game-page card band keeps the latest draw current;
+    # deep history was seeded from the "All Past Numbers" TXT exports). va_cashpop has no
+    # parseable card -> manual-only (no config). Pick 3/4 track the Night draw. -----
+    "va_pick3":    {"kind": "va_page", "va_path": "pick3", "va_card": "Pick3", "num_count": 3, "digits": True, "evening": True},
+    "va_pick4":    {"kind": "va_page", "va_path": "pick4", "va_card": "Pick4", "num_count": 4, "digits": True, "evening": True},
+    "va_cash5":    {"kind": "va_page", "va_path": "cash5", "va_card": "Cash5", "num_count": 5, "sort": True},
+    "va_bank":     {"kind": "va_page", "va_path": "bankamillion", "va_card": "BankAMillion", "num_count": 6, "sort": True, "special_key": "bonus"},
 }
 
 
@@ -1398,6 +1405,36 @@ def scrape_gambyt(cfg, by_date):
     return None
 
 
+def scrape_va(cfg, by_date):
+    """Virginia Lottery — game pages (valottery.com/Data/Draw-Games/<game>) server-render
+    the latest draw in a card band. Deep history comes from the manual "All Past Numbers"
+    TXT exports; this keeps the latest draw current. Pick 3/4 show Day + Night — we track
+    Night (the 'evening' list); the trailing li in a Pick list is the FIREBALL (dropped)."""
+    page = requests.get(f"https://www.valottery.com/Data/Draw-Games/{cfg['va_path']}",
+                        headers={"User-Agent": USER_AGENT}, timeout=40).text
+    m = re.search(rf'href="/Data/Draw-Games/{cfg["va_card"]}"', page)
+    if not m:
+        return None
+    seg = page[m.start():m.start() + 3800]
+    dm = re.search(r"Latest Drawing:\s*[A-Za-z]{3}\s*(\d{1,2})/(\d{1,2})/(\d{4})", seg)
+    if not dm:
+        return None
+    iso = f"{dm.group(3)}-{int(dm.group(1)):02d}-{int(dm.group(2)):02d}"
+    n = cfg["num_count"]
+    sm = (re.search(r'(?s)ul class="evening".*?</ul>', seg) if cfg.get("evening")
+          else re.search(r'(?s)selected-numbers".*?</ul>', seg))
+    if not sm:
+        return None
+    nums = [int(x) for x in re.findall(r"<li>(\d+)</li>", sm.group(0))]
+    if len(nums) < n:
+        return None
+    draw = {"date": iso, "numbers": sorted(nums[:n]) if cfg.get("sort") else nums[:n]}
+    if cfg.get("special_key") and len(nums) > n:
+        draw[cfg["special_key"]] = nums[n]  # Bank a Million: the 7th li is the Bonus Ball
+    by_date[iso] = draw
+    return None
+
+
 def scrape_nc(cfg, by_date):
     """North Carolina Education Lottery — per-game CSV exports (nclottery.com/<game>-download).
     Server-fetchable, full history. Pick 3/4 are twice daily (Day/Eve); we track the evening."""
@@ -1548,6 +1585,11 @@ def main():
         scrape_nc(cfg, by_date)
         source = "nclottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from nclottery.com.")
+        complete = True
+    elif cfg["kind"] == "va_page":
+        scrape_va(cfg, by_date)
+        source = "valottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from valottery.com.")
         complete = True
     else:
         scrape = SCRAPERS[cfg["kind"]]
