@@ -740,6 +740,10 @@ main {
 .us-state:focus { outline: none; }
 .us-state:focus-visible { outline: 2px solid var(--text); outline-offset: 1px; }
 
+/* Heat-map states (state-tax page): fill is set inline by rate. */
+.tax-state { stroke: var(--bg); stroke-width: 1; transition: filter 0.15s ease; }
+.tax-state:hover { filter: brightness(1.15); }
+
 .us-map-legend {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <title>Lottery Tax by State — How Much of a Jackpot You Keep | NumbersIntel</title>
+  <meta name="description" id="meta-desc" content="A heat map and calculator of state tax on lottery winnings. See which states don't tax the lottery at all, and how much of a Powerball or Mega Millions jackpot you take home in each state." />
+  <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/statetax.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" id="og-title" content="Lottery Tax by State — How Much You Keep | NumbersIntel" />
+  <meta property="og:description" id="og-desc" content="Which states don't tax the lottery, and how much of a jackpot you keep in each — mapped and ranked." />
+  <meta property="og:url" id="og-url" content="https://numbersintel.com/statetax.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content="Lottery Tax by State — How Much You Keep | NumbersIntel" />
+  <meta name="twitter:description" id="tw-desc" content="Which states don't tax the lottery, and how much of a jackpot you keep in each." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="tools.html">&larr; Tools</a>
+    <h1>Lottery tax by state</h1>
+    <p class="tagline">How much of a jackpot you keep depends on where you bought the ticket.</p>
+  </header>
+
+  <main class="detail">
+    <p class="calc-notice">
+      <span class="calc-notice__icon" aria-hidden="true">&#9888;</span>
+      <span><strong>Not financial, tax, investment, or legal advice.</strong> Rates are the top marginal or
+      flat <em>state</em> income-tax rate that applies to a large jackpot in 2026 (0% means the state doesn't
+      tax lottery winnings). Federal tax applies everywhere and is set separately; some cities (e.g. New York
+      City) add a local tax, and your actual liability depends on your full return. Estimates only — consult
+      a licensed tax professional.</span>
+    </p>
+
+    <section class="panel calc-inputs">
+      <label>Cash jackpot
+        <input type="text" inputmode="numeric" id="cash" />
+      </label>
+      <label>Federal tax %
+        <input type="number" id="fed" min="0" max="50" step="0.5" value="37" />
+      </label>
+    </section>
+
+    <p class="verdict" id="verdict"></p>
+
+    <section class="panel">
+      <h2>State tax on lottery winnings</h2>
+      <p class="section-note">Green states don't tax lottery winnings at all. Redder states tax them more.
+        Hover a state for its rate.</p>
+      <div id="map" class="us-map-wrap"></div>
+    </section>
+
+    <section class="panel">
+      <h2>What you'd take home, by state</h2>
+      <div id="table" class="tax-table-wrap"></div>
+    </section>
+
+    <p class="disclaimer">
+      <strong>These are estimates for general information only and are not financial, tax, investment, or
+      legal advice.</strong> We apply the federal rate you set plus each state's top marginal or flat income
+      tax rate to the cash jackpot; real liability depends on filing status, deductions, local taxes (e.g.
+      New York City), and changing law, and the figures may be inaccurate or out of date. Nine places don't
+      tax lottery winnings (California, Delaware, Florida, New Hampshire, South Dakota, Tennessee, Texas,
+      Washington, Wyoming); Alabama, Alaska, Hawaii, Nevada and Utah have no state lottery. Don't rely on
+      this tool to make any decision — consult a licensed tax professional.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>For information and entertainment only — not financial advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="usmap.js"></script>
+  <script src="statetax.js"></script>
+</body>
+</html>
