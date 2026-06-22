@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <title>Check My Lottery Numbers — Have They Ever Won? | NumbersIntel</title>
+  <meta name="description" id="meta-desc" content="Enter your lottery numbers and see how they would have done across every past draw on record: best match ever, how often each tier hit, and whether they ever struck the jackpot." />
+  <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/check.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" id="og-title" content="Check My Lottery Numbers | NumbersIntel" />
+  <meta property="og:description" id="og-desc" content="How would your numbers have done across every past draw? Best match, tier frequency, and jackpot check." />
+  <meta property="og:url" id="og-url" content="https://numbersintel.com/check.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content="Check My Lottery Numbers | NumbersIntel" />
+  <meta name="twitter:description" id="tw-desc" content="How would your numbers have done across every past draw?" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="tools.html">&larr; Tools</a>
+    <h1>Check my numbers</h1>
+    <p class="tagline">How would your numbers have done across every draw on record?</p>
+  </header>
+
+  <main class="detail">
+    <p class="calc-notice">
+      <span class="calc-notice__icon" aria-hidden="true">&#9888;</span>
+      <span><strong>Just for fun — not gambling or financial advice.</strong> Past draws don't predict future
+      ones; every combination is equally unlikely on any given draw. The lottery is a negative-expected-value
+      bet — play for entertainment only.</span>
+    </p>
+
+    <section class="panel calc-inputs">
+      <label>Game
+        <select id="game"></select>
+      </label>
+      <label>Your numbers
+        <input type="text" inputmode="numeric" id="nums" placeholder="e.g. 4 8 15 16 23" />
+      </label>
+      <label id="special-wrap" style="display:none">
+        <span id="special-label">Bonus ball</span>
+        <input type="number" id="special" min="0" />
+      </label>
+      <button class="btn" id="go">Check my numbers</button>
+    </section>
+
+    <p class="section-note" id="hint"></p>
+
+    <div id="out"></div>
+
+    <p class="disclaimer">
+      We scan the full draw history we hold for the game you pick and count how many of your numbers appear
+      in each past draw (plus the bonus ball, where there is one). Digit games are checked for an exact
+      "straight" match and an any-order "box" match. Depth varies by game, and recent-window games keep only
+      a rolling history, so older draws may not be included.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>For information and entertainment only — not financial advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="check.js"></script>
+</body>
+</html>

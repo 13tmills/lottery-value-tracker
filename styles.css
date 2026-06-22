@@ -974,6 +974,10 @@ a.state-cell:hover { border-color: var(--accent); }
 .calc-notice strong { color: var(--text); }
 .calc-notice__icon { flex: 0 0 auto; color: var(--accent); font-size: 1.05rem; line-height: 1.4; }
 
+.check-head { color: var(--text-dim); margin: 0.5rem 0 1rem; }
+.check-head b { color: var(--text); }
+.check-empty { color: var(--text-dim); padding: 0.5rem 0; }
+
 .site-footer {
   border-top: 1px solid var(--border);
   color: var(--text-dim);

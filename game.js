@@ -210,6 +210,15 @@ function render(key, g, data) {
 
     <section class="panel viz-cta">
       <div>
+        <h2>Have your numbers ever won?</h2>
+        <p>Enter your ${meta.label} numbers and see how they would have done across every draw on
+          record — best match ever, and whether they ever hit the jackpot.</p>
+      </div>
+      <a class="btn" href="check.html?game=${key}">Check my numbers &rarr;</a>
+    </section>
+
+    <section class="panel viz-cta">
+      <div>
         <h2>Lump sum or annuity?</h2>
         <p>If you won the ${meta.label} jackpot, would the cash or the 30-year annuity be worth
           more? Run the after-tax, present-value math.</p>
