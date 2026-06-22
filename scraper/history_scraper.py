@@ -1808,7 +1808,9 @@ def scrape_georgia(cfg, by_date):
         draw["jackpot"] = jp
         draw["cash"] = jp  # Fantasy 5 jackpot is a cash prize
     by_date[dt] = draw
-    cur = {"date": dt, "jackpot": jp, "cash": jp} if (cfg.get("jackpot") and jp) else None
+    # estimatedJackpot is the upcoming-draw estimate; the snapshot doesn't carry the next
+    # draw date, so leave it null rather than mislabel the just-completed draw's date.
+    cur = {"date": None, "jackpot": jp, "cash": jp} if (cfg.get("jackpot") and jp) else None
     return cur
 
 
