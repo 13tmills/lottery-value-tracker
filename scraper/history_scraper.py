@@ -335,6 +335,15 @@ GAMES = {
     "ga_cash4":    {"kind": "galottery_api", "ga_game": "CASH 4", "num_count": 4, "digits": True},
     "ga_five":     {"kind": "galottery_api", "ga_game": "GEORGIA FIVE", "num_count": 5, "digits": True},
     "ga_cashpop":  {"kind": "galottery_api", "ga_game": "CASH POP", "num_count": 1},
+
+    # --- Louisiana (17th state) — louisianalottery.com/winning-numbers "win-summary"
+    # blocks (latest draw + jackpot + next-draw date per game). Latest-only; deep numbers
+    # history is seeded from a validated archive, then retention accumulates. ---------------
+    "la_lotto": {"kind": "louisiana_html", "la_slug": "lotto", "num_count": 6, "sort": True, "jackpot": True},
+    "la_easy5": {"kind": "louisiana_html", "la_slug": "easy-5", "num_count": 5, "sort": True, "jackpot": True},
+    "la_pick3": {"kind": "louisiana_html", "la_slug": "pick-3", "num_count": 3, "digits": True},
+    "la_pick4": {"kind": "louisiana_html", "la_slug": "pick-4", "num_count": 4, "digits": True},
+    "la_pick5": {"kind": "louisiana_html", "la_slug": "pick-5", "num_count": 5, "digits": True},
 }
 
 
@@ -1814,6 +1823,58 @@ def scrape_georgia(cfg, by_date):
     return cur
 
 
+LA_WIN = "https://louisianalottery.com/winning-numbers"
+_LA_MONTHS = {m: i for i, m in enumerate(
+    ["January", "February", "March", "April", "May", "June", "July",
+     "August", "September", "October", "November", "December"], 1)}
+
+
+def _la_date(text):
+    """'Wednesday June 24, 2026' or 'June 24, 2026' -> '2026-06-24'."""
+    m = re.search(r"([A-Z][a-z]+)\s+(\d{1,2}),\s+(\d{4})", text or "")
+    if not m or m.group(1) not in _LA_MONTHS:
+        return None
+    return f"{int(m.group(3)):04d}-{_LA_MONTHS[m.group(1)]:02d}-{int(m.group(2)):02d}"
+
+
+def scrape_louisiana(cfg, by_date):
+    """Louisiana — louisianalottery.com/winning-numbers server-renders a "win-summary"
+    article per game with the latest draw (ISO date in the <time datetime> attr), the
+    winning balls (jackpot-sequence__number list), the advertised jackpot, and the next
+    draw date. It's latest-only, so the deep numbers history is seeded from a validated
+    archive and retention accumulates from here. Mutates by_date; returns the upcoming
+    jackpot (dated to the next draw) for jackpot games so the saw-tooth fills forward."""
+    page = requests.get(LA_WIN, headers={"User-Agent": USER_AGENT}, timeout=45).text
+    n = cfg["num_count"]
+    for am in re.finditer(r"(?s)<article class=\"win-summary.*?</article>", page):
+        blk = am.group(0)
+        sm = re.search(r"draw-games/([a-z0-9-]+)/", blk)
+        if not sm or sm.group(1) != cfg["la_slug"]:
+            continue
+        dm = re.search(r'datetime="(\d{4}-\d{2}-\d{2})"', blk)
+        if not dm:
+            return None
+        iso = dm.group(1)
+        nums = [int(x) for x in re.findall(r"jackpot-sequence__number[^>]*>(\d+)<", blk)][:n]
+        if len(nums) < n:
+            return None
+        draw = {"date": iso, "numbers": sorted(nums) if cfg.get("sort") else nums}
+        jp = None
+        if cfg.get("jackpot"):
+            jm = re.search(r"win-summary__amount[^>]*>\s*\$?([\d,]+)", blk)
+            jp = int(jm.group(1).replace(",", "")) if jm else None
+            if jp:
+                draw["jackpot"] = jp
+                draw["cash"] = jp  # LA Lotto / Easy 5 jackpots are paid in cash
+        by_date[iso] = draw
+        if cfg.get("jackpot") and jp:
+            nm = re.search(r"(?i)Next Draw:\s*([A-Za-z]+\s+[A-Za-z]+\s+\d{1,2},\s+\d{4})", blk)
+            nxt = _la_date(nm.group(1)) if nm else None
+            return {"date": nxt, "jackpot": jp, "cash": jp}
+        return None
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1977,6 +2038,14 @@ def main():
         cur = scrape_georgia(cfg, by_date)
         source = "galottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from galottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "louisiana_html":
+        cur = scrape_louisiana(cfg, by_date)
+        source = "louisianalottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from louisianalottery.com.")
         complete = True
         if cur:
             data["current_jackpot"] = cur

@@ -353,6 +353,27 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  LA: {
+    intro: "Louisiana's draw games — the Lotto and Easy 5 rolling cash jackpots plus the Pick 3/4/5 dailies — with live jackpots, official odds, fixed payouts and deep number-frequency history pulled from the Louisiana Lottery.",
+    games: [
+      { name: "Louisiana Lotto", meta: "6 of 42 · Wed · Sat · cash jackpot from $500K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=la_lotto"]] },
+      { name: "Easy 5", meta: "5 of 37 · Wed · Sat · cash jackpot from $50K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=la_easy5"]] },
+      { name: "Pick 3", meta: "3-digit · daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=la_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=la_pick4"]] },
+      { name: "Pick 5", meta: "5-digit · daily · $50K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=la_pick5"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

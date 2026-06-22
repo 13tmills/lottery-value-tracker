@@ -1647,6 +1647,79 @@ const GAME_META = {
         note: "The prize is preprinted on your ticket and scales with how much you bet." },
     },
   },
+  // ----- Louisiana (17th state) ------------------------------------------- #
+  // Louisiana Lotto — 6 of 42, drawn Wed & Sat, rolling pari-mutuel CASH jackpot. Lower
+  // tiers are pari-mutuel too (no fixed amounts, no published per-draw winner counts), so
+  // this shows the official odds + the live jackpot rather than an invented value/$1.
+  la_lotto: {
+    label: "Louisiana Lotto", specialKey: null, specialName: "",
+    draws: "Wed & Sat", priceChanges: [], state: "LA", stateName: "Louisiana", ticketPrice: "$1",
+    oddsJackpot: 5245786, // 6 of 42
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Louisiana Lotto is 6 of 42, drawn Wednesday and Saturday. The advertised jackpot is a rolling, pari-mutuel cash prize (it starts at $500,000 and grows until won). Match-5, -4 and -3 prizes are pari-mutuel as well, so they move with ticket sales and the number of winners. The figures below are the official published odds.",
+      odds: { "Jackpot": 5245786, "Match 5": 24286, "Match 4": 555, "Match 3": 37 },
+    },
+  },
+  // Easy 5 — 5 of 37, drawn Wed & Sat, rolling pari-mutuel cash jackpot (starts $50K).
+  la_easy5: {
+    label: "Easy 5", specialKey: null, specialName: "",
+    draws: "Wed & Sat", priceChanges: [], state: "LA", stateName: "Louisiana", ticketPrice: "$1",
+    oddsJackpot: 435897, // 5 of 37
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Easy 5 is 5 of 37, drawn Wednesday and Saturday. The jackpot is a rolling, pari-mutuel cash prize that starts at $50,000 and grows until won; the Match-4, -3 and -2 prizes are pari-mutuel too. The figures below are the official published odds.",
+      odds: { "Jackpot": 435897, "Match 4": 2724, "Match 3": 88, "Match 2": 9 },
+    },
+  },
+  // Pick 3 / 4 / 5 — daily digit games with FIXED payouts by play type (official LA
+  // Lottery prize charts, shown per $1 wager). No published winner counts → static paytable.
+  la_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "LA", stateName: "Louisiana", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Louisiana Pick 3 is a 3-digit game (000–999) drawn daily. What you win depends on your play type — prizes are fixed (shown for a $1 wager).",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Louisiana Pick 3 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [
+          { cells: ["Straight — exact order", "$500", "1 in 1,000"] },
+          { cells: ["3-Way Box", "$160", "1 in 333"] },
+          { cells: ["6-Way Box", "$80", "1 in 167"] },
+        ],
+        note: "Official Louisiana Lottery Pick 3 prize chart. Combo and other play types pay differently." },
+    },
+  },
+  la_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "LA", stateName: "Louisiana", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Louisiana Pick 4 is a 4-digit game (0000–9999) drawn daily. What you win depends on your play type — prizes are fixed (shown for a $1 wager).",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Louisiana Pick 4 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [
+          { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] },
+          { cells: ["4-Way Box", "$1,200", "1 in 2,500"] },
+          { cells: ["6-Way Box", "$800", "1 in 1,667"] },
+          { cells: ["12-Way Box", "$400", "1 in 833"] },
+        ],
+        note: "Official Louisiana Lottery Pick 4 prize chart. Combo and other play types pay differently." },
+    },
+  },
+  la_pick5: {
+    label: "Pick 5", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "LA", stateName: "Louisiana", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Louisiana Pick 5 is a 5-digit game (00000–99999) drawn daily; it launched in August 2021. What you win depends on your play type — prizes are fixed (shown for a $1 wager).",
+      topPrize: "$50,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Louisiana Pick 5 pays (per $1)", columns: ["Play type", "Prize", "Odds"],
+        rows: [
+          { cells: ["Straight — exact order", "$50,000", "1 in 100,000"] },
+          { cells: ["5-Way Box", "$10,000", "1 in 20,000"] },
+          { cells: ["10-Way Box", "$5,000", "1 in 10,000"] },
+        ],
+        note: "Official Louisiana Lottery Pick 5 prize chart. Higher-multiplicity Box plays and Combo pay differently." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
