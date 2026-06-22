@@ -1605,7 +1605,7 @@ const GAME_META = {
     label: "Cash 3", specialKey: null, specialName: "", digits: true,
     draws: "3× daily", priceChanges: [], state: "GA", stateName: "Georgia", ticketPrice: "$0.50 or $1",
     prizes: {
-      note: "Georgia Cash 3 is a 3-digit game (000–999) drawn three times a day; we track the latest draw. The top prize is a $500 Straight on a $1 play; Box and Straight/Box bets pay less and carry their own odds.",
+      note: "Georgia Cash 3 is a 3-digit game (000–999) drawn three times a day; we track the night draw. The top prize is a $500 Straight on a $1 play; Box and Straight/Box bets pay less and carry their own odds.",
       topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
       reference: { title: "How Cash 3 pays (per $1)", columns: ["Bet type", "Prize", "Odds"],
         rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] }, { cells: ["3-Way Box", "$166", "1 in 333"] }, { cells: ["6-Way Box", "$83", "1 in 167"] } ],
@@ -1616,7 +1616,7 @@ const GAME_META = {
     label: "Cash 4", specialKey: null, specialName: "", digits: true,
     draws: "3× daily", priceChanges: [], state: "GA", stateName: "Georgia", ticketPrice: "$0.50 or $1",
     prizes: {
-      note: "Georgia Cash 4 is a 4-digit game (0000–9999) drawn three times a day; we track the latest draw. The top prize is a $5,000 Straight on a $1 play; Box and Straight/Box bets pay less and carry their own odds.",
+      note: "Georgia Cash 4 is a 4-digit game (0000–9999) drawn three times a day; we track the night draw. The top prize is a $5,000 Straight on a $1 play; Box and Straight/Box bets pay less and carry their own odds.",
       topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
       reference: { title: "How Cash 4 pays (per $1)", columns: ["Bet type", "Prize", "Odds"],
         rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] }, { cells: ["24-Way Box", "$200", "1 in 417"] }, { cells: ["12-Way Box", "$400", "1 in 833"] } ],
@@ -1628,7 +1628,7 @@ const GAME_META = {
     label: "Georgia FIVE", specialKey: null, specialName: "", digits: true,
     draws: "Twice daily", priceChanges: [], state: "GA", stateName: "Georgia", ticketPrice: "$1",
     prizes: {
-      note: "Georgia FIVE is a 5-digit game (00000–99999) drawn twice a day; we track the latest draw. Prizes are fixed; partial-match (front/back) bets pay smaller fixed amounts.",
+      note: "Georgia FIVE is a 5-digit game (00000–99999) drawn twice a day; we track the evening draw. Prizes are fixed; partial-match (front/back) bets pay smaller fixed amounts.",
       topPrize: "$10,000", topPrizeLabel: "Top prize (all 5 in order)",
       reference: { title: "How Georgia FIVE pays", columns: ["Match", "Prize", "Odds"],
         rows: [ { cells: ["All 5 in exact order", "$10,000", "1 in 100,000"] }, { cells: ["First 4 / Last 4 exact", "$225", "1 in 10,000"] }, { cells: ["First 3 / Last 3 exact", "$21", "1 in 1,000"] } ],
