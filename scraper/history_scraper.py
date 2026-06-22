@@ -325,6 +325,16 @@ GAMES = {
                                ("Match 3 Prize", "Match 3 CO Winners", "Match 3"),
                                ("Match 2 Prize", "Match 2 CO Winners", "Match 2")]},
     "co_pick3":  {"kind": "coloradolottery_html", "co_game": "pick3", "num_count": 3, "digits": True, "co_evening": True},
+
+    # --- Georgia (16th state) — galottery.com JSON API. Exposes only the latest closed
+    # draw per game (full per-tier depth); deep numbers history is seeded from a validated
+    # archive, then retention accumulates rich draws. (Jumbo Lotto retired Nov 2024.) -------
+    "ga_fantasy5": {"kind": "galottery_api", "ga_game": "FANTASY 5", "num_count": 5, "sort": True,
+                    "prizes": True, "jackpot": True, "ga_jackpot_tier": "5/5"},
+    "ga_cash3":    {"kind": "galottery_api", "ga_game": "CASH 3", "num_count": 3, "digits": True},
+    "ga_cash4":    {"kind": "galottery_api", "ga_game": "CASH 4", "num_count": 4, "digits": True},
+    "ga_five":     {"kind": "galottery_api", "ga_game": "GEORGIA FIVE", "num_count": 5, "digits": True},
+    "ga_cashpop":  {"kind": "galottery_api", "ga_game": "CASH POP", "num_count": 1},
 }
 
 
@@ -1756,6 +1766,52 @@ def scrape_colorado(cfg, by_date):
     return None
 
 
+GA_API = "https://www.galottery.com/api/v2/draw-games/draws"
+GA_TZ = ZoneInfo("America/New_York")
+
+
+def scrape_georgia(cfg, by_date):
+    """Georgia — galottery.com's public JSON API exposes only the LATEST closed draw per
+    game, but with full depth: winning numbers, per-tier prizes (shareAmount in cents) +
+    Georgia winner counts (shareCount), and the estimated jackpot (cents). One snapshot
+    call returns every game; we filter by name. Retention accumulates the rich per-draw
+    history over time; the deep numbers backfill is seeded separately. drawTime is epoch
+    ms — convert in America/New_York so late-evening draws keep the right date."""
+    snap = requests.get(GA_API, params={"status": "CLOSED", "number-of-draws": 1},
+                        headers={"User-Agent": USER_AGENT, "Accept": "application/json"}, timeout=40).json()
+    dr = next((d for d in (snap.get("draws") or []) if d.get("gameName") == cfg["ga_game"]), None)
+    if not dr:
+        return None
+    res = (dr.get("results") or [{}])[0]
+    nums = [int(x) for x in (res.get("primary") or [])]
+    n = cfg["num_count"]
+    if len(nums) < n:
+        return None
+    dt = datetime.fromtimestamp((dr.get("drawTime") or 0) / 1000, GA_TZ).date().isoformat()
+    draw = {"date": dt, "numbers": sorted(nums[:n]) if cfg.get("sort") else nums[:n]}
+    if cfg.get("prizes"):
+        prizes = []
+        for t in dr.get("prizeTiers") or []:
+            name = (t.get("name") or "").strip()
+            # The top tier (e.g. "5/5") is the pari-mutuel jackpot — key it "Jackpot" so
+            # the value engine prices it at the cash jackpot, not this draw's $0/realized.
+            level = "Jackpot" if name == cfg.get("ga_jackpot_tier") else name
+            free = t.get("prizeType") == "FREE_TICKET"
+            prizes.append({"level": level, "label": name,
+                           "amount": "Free play" if free else _int(t.get("shareAmount")) // 100,
+                           "winners": _int(t.get("shareCount")), "free": free})
+        if prizes:
+            draw["prizes"] = prizes
+            draw["total_winners"] = sum(p["winners"] for p in prizes)
+    jp = _int(dr.get("estimatedJackpot")) // 100
+    if cfg.get("jackpot") and jp:
+        draw["jackpot"] = jp
+        draw["cash"] = jp  # Fantasy 5 jackpot is a cash prize
+    by_date[dt] = draw
+    cur = {"date": dt, "jackpot": jp, "cash": jp} if (cfg.get("jackpot") and jp) else None
+    return cur
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1915,6 +1971,14 @@ def main():
         if cur:
             data["current_jackpot"] = cur
             print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,} cash ${cur.get('cash') or 0:,}")
+    elif cfg["kind"] == "galottery_api":
+        cur = scrape_georgia(cfg, by_date)
+        source = "galottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from galottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"

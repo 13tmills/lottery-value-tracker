@@ -1579,6 +1579,74 @@ const GAME_META = {
         note: "Shown for a $1 play; other bet amounts scale proportionally." },
     },
   },
+
+  // ===== Georgia (16th state) — galottery.com JSON API =====
+  // Fantasy 5 — 5 of 42, cash jackpot (from $250K). Per-tier prizes + Georgia winner
+  // counts come live from the API; deep numbers history seeded from a validated archive.
+  ga_fantasy5: {
+    label: "Fantasy 5", specialKey: null, specialName: "", draws: "Daily",
+    priceChanges: [], state: "GA", stateName: "Georgia", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 850668, // 5 of 42
+      overall_odds: 10,
+      winnersLabel: "GA winners",
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 850668 },
+        "4/5": { label: "Match 4", odds: 4598 },
+        "3/5": { label: "Match 3", odds: 128 },
+        "2/5": { label: "Match 2 (free play)", odds: 11, free: true },
+      },
+    },
+  },
+  // Cash 3 / Cash 4 — digit games drawn three times a day. Verified straight prizes
+  // from the GA Lottery; box and other bet types pay less and carry their own odds.
+  ga_cash3: {
+    label: "Cash 3", specialKey: null, specialName: "", digits: true,
+    draws: "3× daily", priceChanges: [], state: "GA", stateName: "Georgia", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Georgia Cash 3 is a 3-digit game (000–999) drawn three times a day; we track the latest draw. The top prize is a $500 Straight on a $1 play; Box and Straight/Box bets pay less and carry their own odds.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Cash 3 pays (per $1)", columns: ["Bet type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] }, { cells: ["3-Way Box", "$166", "1 in 333"] }, { cells: ["6-Way Box", "$83", "1 in 167"] } ],
+        note: "Top-prize Straight is GA-verified; box payouts are the standard Georgia amounts." },
+    },
+  },
+  ga_cash4: {
+    label: "Cash 4", specialKey: null, specialName: "", digits: true,
+    draws: "3× daily", priceChanges: [], state: "GA", stateName: "Georgia", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Georgia Cash 4 is a 4-digit game (0000–9999) drawn three times a day; we track the latest draw. The top prize is a $5,000 Straight on a $1 play; Box and Straight/Box bets pay less and carry their own odds.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "How Cash 4 pays (per $1)", columns: ["Bet type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] }, { cells: ["24-Way Box", "$200", "1 in 417"] }, { cells: ["12-Way Box", "$400", "1 in 833"] } ],
+        note: "Top-prize Straight is GA-verified; box payouts are the standard Georgia amounts." },
+    },
+  },
+  // Georgia FIVE — 5-digit game drawn twice daily; $10,000 top (API-verified).
+  ga_five: {
+    label: "Georgia FIVE", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "GA", stateName: "Georgia", ticketPrice: "$1",
+    prizes: {
+      note: "Georgia FIVE is a 5-digit game (00000–99999) drawn twice a day; we track the latest draw. Prizes are fixed; partial-match (front/back) bets pay smaller fixed amounts.",
+      topPrize: "$10,000", topPrizeLabel: "Top prize (all 5 in order)",
+      reference: { title: "How Georgia FIVE pays", columns: ["Match", "Prize", "Odds"],
+        rows: [ { cells: ["All 5 in exact order", "$10,000", "1 in 100,000"] }, { cells: ["First 4 / Last 4 exact", "$225", "1 in 10,000"] }, { cells: ["First 3 / Last 3 exact", "$21", "1 in 1,000"] } ],
+        note: "Top tiers from the Georgia Lottery's published payouts." },
+    },
+  },
+  // Cash Pop — pick 1 of 15; each number carries a preprinted prize. Multiple draws daily.
+  ga_cashpop: {
+    label: "Cash Pop", specialKey: null, specialName: "",
+    draws: "Multiple daily", priceChanges: [], state: "GA", stateName: "Georgia", ticketPrice: "$1 to $10",
+    prizes: {
+      note: "Georgia Cash Pop: pick a number from 1 to 15, with several draws a day. Each number carries a randomly assigned, preprinted prize; if your number is drawn you win it. The frequency chart covers numbers 1–15 over recent draws.",
+      topPrize: "1 in 15", topPrizeLabel: "Odds your number is drawn",
+      reference: { title: "How Cash Pop pays", columns: ["Outcome", "Prize", "Odds"],
+        rows: [ { cells: ["Your number is drawn", "Your ticket's preprinted prize", "1 in 15"] } ],
+        note: "The prize is preprinted on your ticket and scales with how much you bet." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

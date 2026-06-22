@@ -332,6 +332,27 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  GA: {
+    intro: "Georgia's draw games — Fantasy 5's cash jackpot plus the Cash 3/4, Georgia FIVE and Cash Pop dailies — with live jackpots, real per-tier prizes and Georgia winner counts straight from the Georgia Lottery's API.",
+    games: [
+      { name: "Fantasy 5", meta: "5 of 42 · daily · cash jackpot from $250K",
+        links: [["Jackpot, EV &amp; per-tier prizes", "game.html?game=ga_fantasy5"]] },
+      { name: "Cash 3", meta: "3-digit · 3× daily · $500 top",
+        links: [["Results, odds &amp; payouts", "game.html?game=ga_cash3"]] },
+      { name: "Cash 4", meta: "4-digit · 3× daily · $5K top",
+        links: [["Results, odds &amp; payouts", "game.html?game=ga_cash4"]] },
+      { name: "Georgia FIVE", meta: "5-digit · twice daily · $10K top",
+        links: [["Results, odds &amp; payouts", "game.html?game=ga_five"]] },
+      { name: "Cash Pop", meta: "1 of 15 · several draws daily",
+        links: [["Results &amp; frequency", "game.html?game=ga_cashpop"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

@@ -164,6 +164,14 @@
   <url><loc>https://numbersintel.com/history.html?game=co_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=co_cash5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=co_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/state.html?state=GA</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=ga_fantasy5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=ga_fantasy5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=ga_fantasy5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=ga_cash3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=ga_cash4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=ga_five</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=ga_cashpop</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

@@ -1,0 +1,18 @@
+﻿{
+    "game":  "ga_cash4",
+    "source":  "galottery.com",
+    "earliest_available":  "2026-06-21",
+    "last_updated":  "2026-06-21",
+    "complete":  true,
+    "draws":  [
+                  {
+                      "date":  "2026-06-21",
+                      "numbers":  [
+                                      2,
+                                      9,
+                                      8,
+                                      7
+                                  ]
+                  }
+              ]
+}
