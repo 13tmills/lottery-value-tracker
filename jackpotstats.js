@@ -3,8 +3,14 @@
 // usually climb and how long / how often they reach each level. Uses the advertised
 // (annuity) jackpot — what people mean by "a $500M jackpot."
 
-const GAMES = ["powerball", "mega_millions", "lotto_america", "ny_lotto", "ca_superlotto",
-  "fl_lotto", "fl_triple", "wa_lotto", "oh_classic", "mi_lotto47"];
+// Games auto-qualify once they have >= 15 completed jackpot cycles (counts in the generated
+// tools-index.json, refreshed by scraper/build_index.py each CI run). FALLBACK is used only if
+// that file can't be loaded. Nationals are listed first, then the rest by cycle count.
+const MIN_CYCLES = 15;
+const NATIONAL = ["powerball", "mega_millions", "lotto_america"];
+const BIG_DOGS = ["powerball", "mega_millions"]; // quick-pick chips
+const FALLBACK = ["powerball", "mega_millions", "lotto_america", "wa_hit5", "wa_lotto",
+  "fl_lotto", "fl_triple", "oh_classic", "ca_fantasy5", "nh_megabucks"];
 const NICE = [1e6, 2e6, 3e6, 5e6, 1e7, 1.5e7, 2e7, 3e7, 5e7, 7e7, 1e8, 1.5e8, 2e8, 3e8, 4e8, 5e8, 7e8, 1e9, 1.5e9, 2e9];
 
 const els = {};
@@ -37,16 +43,34 @@ function milestones(peaks) {
 }
 
 async function init() {
-  ["game", "summary", "curve-wrap", "table", "note"].forEach((id) => (els[id.replace(/-/g, "_")] = document.getElementById(id)));
+  ["game", "quicklinks", "summary", "curve-wrap", "table", "note"].forEach((id) => (els[id.replace(/-/g, "_")] = document.getElementById(id)));
   setMeta({
     title: "Lottery Jackpot Growth Statistics — How Big & How Often | NumbersIntel",
     description: "How high do lottery jackpots actually get, and how long does it take? Probability curves and average time-to-reach for Powerball, Mega Millions and more, from real jackpot history.",
     url: `${SITE}/jackpotstats.html`,
   });
-  els.game.innerHTML = GAMES.filter((k) => GAME_META[k]).map((k) =>
+
+  let cyc = {};
+  try { cyc = (await fetch("tools-index.json", { cache: "no-store" }).then((r) => r.json())).jackpot_cycles || {}; } catch (_) { /* fall back */ }
+  let list = Object.keys(cyc).filter((k) => cyc[k] >= MIN_CYCLES && GAME_META[k]);
+  if (!list.length) list = FALLBACK.filter((k) => GAME_META[k]);
+  list.sort((a, b) => {
+    const na = NATIONAL.indexOf(a), nb = NATIONAL.indexOf(b);
+    if (na >= 0 || nb >= 0) return (na < 0 ? 99 : na) - (nb < 0 ? 99 : nb);
+    return (cyc[b] || 0) - (cyc[a] || 0);
+  });
+  els.game.innerHTML = list.map((k) =>
     `<option value="${k}">${GAME_META[k].label}${GAME_META[k].stateName ? ` (${GAME_META[k].stateName})` : ""}</option>`).join("");
+
+  const dogs = BIG_DOGS.filter((k) => list.includes(k));
+  if (els.quicklinks && dogs.length > 1) {
+    els.quicklinks.innerHTML = "Quick picks: " + dogs.map((k) => `<button class="chip" data-g="${k}">${GAME_META[k].label}</button>`).join("");
+    els.quicklinks.querySelectorAll(".chip").forEach((b) =>
+      b.addEventListener("click", () => { els.game.value = b.dataset.g; load(); }));
+  }
+
   const pre = new URLSearchParams(location.search).get("game");
-  if (pre && GAMES.includes(pre)) els.game.value = pre;
+  if (pre && list.includes(pre)) els.game.value = pre;
   els.game.addEventListener("change", load);
   load();
 }

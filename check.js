@@ -9,7 +9,7 @@ const parseNums = (s) => String(s).split(/[^\d]+/).filter(Boolean).map(Number);
 const ord = (a) => [...a].sort((x, y) => x - y).join(",");
 
 function init() {
-  ["game", "nums", "special", "special-wrap", "special-label", "go", "out", "hint"].forEach(
+  ["game", "nums", "special", "special-wrap", "special-label", "go", "out", "hint", "quicklinks"].forEach(
     (id) => (els[id.replace(/-/g, "_")] = document.getElementById(id)));
   setMeta({
     title: "Check My Lottery Numbers — Have They Ever Won? | NumbersIntel",
@@ -18,6 +18,12 @@ function init() {
   });
 
   populateGames();
+  if (els.quicklinks) {
+    const dogs = ["powerball", "mega_millions", "lotto_america"].filter((k) => GAME_META[k]);
+    els.quicklinks.innerHTML = "Quick picks: " + dogs.map((k) => `<button class="chip" data-g="${k}">${GAME_META[k].label}</button>`).join("");
+    els.quicklinks.querySelectorAll(".chip").forEach((b) =>
+      b.addEventListener("click", () => { els.game.value = b.dataset.g; onGameChange(); els.nums.focus(); }));
+  }
   const pre = new URLSearchParams(location.search).get("game");
   if (pre && GAME_META[pre]) els.game.value = pre;
 

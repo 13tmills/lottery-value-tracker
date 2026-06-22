@@ -979,6 +979,15 @@ a.state-cell:hover { border-color: var(--accent); }
 .calc-notice__icon { flex: 0 0 auto; color: var(--accent); font-size: 1.05rem; line-height: 1.4; }
 
 .mc-fields { display: contents; }
+
+/* Quick-pick chips for tools with large game dropdowns. */
+.quick-links { margin: 0 0 1rem; color: var(--text-dim); font-size: 0.85rem; }
+.quick-links .chip {
+  display: inline-block; margin: 0 0.35rem 0.35rem 0; padding: 0.25rem 0.7rem;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface);
+  color: var(--text); font: inherit; font-size: 0.82rem; cursor: pointer;
+}
+.quick-links .chip:hover { border-color: var(--accent); color: var(--accent); }
 .check-head { color: var(--text-dim); margin: 0.5rem 0 1rem; }
 .check-head b { color: var(--text); }
 .check-empty { color: var(--text-dim); padding: 0.5rem 0; }

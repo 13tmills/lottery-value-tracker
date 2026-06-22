@@ -119,6 +119,7 @@ jobs:
           python scraper/history_scraper.py --game ga_cash4
           python scraper/history_scraper.py --game ga_five
           python scraper/history_scraper.py --game ga_cashpop
+          python scraper/build_index.py || echo "::warning::build_index failed (continuing)"
           exit 0   # always succeed so the commit step runs with whatever updated
 
       - name: Commit updated data
@@ -126,7 +127,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json history/
+          git add data.json history/ tools-index.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0
