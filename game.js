@@ -241,6 +241,14 @@ function render(key, g, data) {
           for years — and watch what actually happens to your money.</p>
       </div>
       <a class="btn" href="montecarlo.html?game=${key}">Monte Carlo simulator &rarr;</a>
+    </section>
+    <section class="panel viz-cta">
+      <div>
+        <h2>How big do these jackpots get?</h2>
+        <p>See how high ${meta.label} jackpots usually climb before they're won, and how long it takes to
+          reach each level — from real jackpot history.</p>
+      </div>
+      <a class="btn" href="jackpotstats.html?game=${key}">Jackpot growth stats &rarr;</a>
     </section>` : ""}
   `;
 

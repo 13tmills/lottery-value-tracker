@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <title>Lottery Jackpot Growth Statistics — How Big & How Often | NumbersIntel</title>
+  <meta name="description" id="meta-desc" content="How high do lottery jackpots actually get, and how long does it take? Probability curves and average time-to-reach for Powerball, Mega Millions and more, from real jackpot history." />
+  <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/jackpotstats.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" id="og-title" content="Lottery Jackpot Growth Statistics | NumbersIntel" />
+  <meta property="og:description" id="og-desc" content="How high lottery jackpots get and how long it takes — probability curves from real jackpot history." />
+  <meta property="og:url" id="og-url" content="https://numbersintel.com/jackpotstats.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content="Lottery Jackpot Growth Statistics | NumbersIntel" />
+  <meta name="twitter:description" id="tw-desc" content="How high lottery jackpots get and how long it takes." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="tools.html">&larr; Tools</a>
+    <h1>Jackpot growth statistics</h1>
+    <p class="tagline">How high do jackpots really get — and how long does it take to get there?</p>
+  </header>
+
+  <main class="detail">
+    <p class="calc-notice">
+      <span class="calc-notice__icon" aria-hidden="true">&#9888;</span>
+      <span><strong>For information only — not financial or gambling advice.</strong> These statistics describe
+      past jackpot cycles on record; they don't predict the future, and a jackpot can be won at any size on any
+      draw. Depth varies by game (some have years of history, others only recent draws).</span>
+    </p>
+
+    <section class="panel calc-inputs">
+      <label>Game
+        <select id="game"></select>
+      </label>
+    </section>
+
+    <p class="section-note" id="note"></p>
+
+    <div id="summary"></div>
+
+    <section class="panel">
+      <h2>How high do jackpots get?</h2>
+      <p class="section-note">The share of jackpot cycles that climb to at least each size before someone wins.
+        It falls off fast — most jackpots are won well before the headline-grabbing levels.</p>
+      <div id="curve-wrap"></div>
+    </section>
+
+    <section class="panel">
+      <h2>How often, and how long, to reach each level</h2>
+      <div id="table"></div>
+    </section>
+
+    <p class="disclaimer">
+      We reconstruct each jackpot "cycle" from the advertised (annuity) jackpot's saw-tooth in our draw
+      history — a run from a reset up to the draw it was won (a sharp drop marks a win and reset). The curve
+      and table summarize completed cycles only; the one in progress is excluded. Figures are descriptive
+      statistics of past draws, not predictions, and depend on how much jackpot history we hold for each game.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>For information and entertainment only — not financial advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="jackpotstats.js"></script>
+</body>
+</html>
