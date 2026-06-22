@@ -956,6 +956,24 @@ a.state-cell:hover { border-color: var(--accent); }
   max-width: 70ch;
 }
 
+/* Prominent "not advice" callout shown at the top of every calculator. */
+.calc-notice {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin: 0 0 1.4rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.calc-notice strong { color: var(--text); }
+.calc-notice__icon { flex: 0 0 auto; color: var(--accent); font-size: 1.05rem; line-height: 1.4; }
+
 .site-footer {
   border-top: 1px solid var(--border);
   color: var(--text-dim);
