@@ -1720,6 +1720,56 @@ const GAME_META = {
         note: "Official Louisiana Lottery Pick 5 prize chart. Higher-multiplicity Box plays and Combo pay differently." },
     },
   },
+  // ----- Missouri (18th state) ------------------------------------------- #
+  // Show Me Cash — 5 of 39, daily, rolling CASH jackpot from $50K (rolls ≥$5K/draw).
+  // Lower tiers shown as official odds (combinatorially verified); no per-draw winner
+  // counts published, so this is the honest odds-only treatment + the live jackpot.
+  mo_showmecash: {
+    label: "Show Me Cash", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "MO", stateName: "Missouri", ticketPrice: "$1",
+    oddsJackpot: 575757, // 5 of 39
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Show Me Cash is 5 of 39, drawn daily. The jackpot is paid in cash, starts at $50,000 and rolls by at least $5,000 each draw until someone wins. The optional EZ Match add-on ($1) prints instant-win numbers and pays separately. The figures below are the official published odds.",
+      odds: { "Jackpot": 575757, "Match 4": 3387, "Match 3": 103, "Match 2": 10 },
+    },
+  },
+  // Missouri Lotto — 6 of 44, ended Oct 18, 2025. Kept as a retired archive.
+  mo_lotto: {
+    label: "Missouri Lotto", specialKey: null, specialName: "",
+    draws: "Wed & Sat (ended 2025)", priceChanges: [], state: "MO", stateName: "Missouri", ticketPrice: "$1 / 2 plays",
+    oddsJackpot: 7059052, // 6 of 44
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Missouri Lotto was a 6 of 44 jackpot game — two plays for $1 — drawn Wednesday and Saturday, with a jackpot that started at $1,000,000 and rolled until won. The Missouri Lottery ended Lotto on October 18, 2025; this is the final archive of past draws and the published odds.",
+      topPrize: "Jackpot (6 of 44)", topPrizeLabel: "Top prize", retired: true,
+      odds: { "Jackpot": 7059052, "Match 5": 30962, "Match 4": 669, "Match 3": 42 },
+    },
+  },
+  // Pick 3 / 4 — twice daily (we track the evening draw). MO pays a $600 / $6,000
+  // Straight on $1 (official); box and add-on plays pay different amounts.
+  mo_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "MO", stateName: "Missouri", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Missouri Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. The top prize is a $600 Straight on a $1 play. Box plays (any order) pay less, and the EZ Match and Wild Ball add-ons cost extra and pay separately.",
+      topPrize: "$600", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Missouri Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$600", "1 in 1,000"] } ],
+        note: "Official Missouri Lottery top prize. Box (any-order) plays and the Wild Ball / EZ Match add-ons pay different amounts." },
+    },
+  },
+  mo_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "MO", stateName: "Missouri", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Missouri Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. The top prize is a $6,000 Straight on a $1 play. Box plays (any order) pay less, and the EZ Match and Wild Ball add-ons cost extra and pay separately.",
+      topPrize: "$6,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Missouri Pick 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$6,000", "1 in 10,000"] } ],
+        note: "Official Missouri Lottery top prize. Box (any-order) plays and the Wild Ball / EZ Match add-ons pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

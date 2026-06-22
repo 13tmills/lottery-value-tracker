@@ -344,6 +344,13 @@ GAMES = {
     "la_pick3": {"kind": "louisiana_html", "la_slug": "pick-3", "num_count": 3, "digits": True},
     "la_pick4": {"kind": "louisiana_html", "la_slug": "pick-4", "num_count": 4, "digits": True},
     "la_pick5": {"kind": "louisiana_html", "la_slug": "pick-5", "num_count": 5, "digits": True},
+
+    # --- Missouri (18th state) — molottery.com winning-numbers.do tables (server-rendered
+    # recent draws + per-draw jackpot; retention deepens). Deep numbers seeded separately.
+    # (MO Lotto ended Oct 18, 2025 — kept as a retired 6/44 archive.) -----------------------
+    "mo_showmecash": {"kind": "molottery_html", "mo_path": "show-me-cash", "num_count": 5, "sort": True, "jackpot": True},
+    "mo_pick3":      {"kind": "molottery_html", "mo_path": "pick3", "num_count": 3, "digits": True, "mo_evening": True},
+    "mo_pick4":      {"kind": "molottery_html", "mo_path": "pick4", "num_count": 4, "digits": True, "mo_evening": True},
 }
 
 
@@ -1875,6 +1882,52 @@ def scrape_louisiana(cfg, by_date):
     return None
 
 
+MO_GAME = "https://www.molottery.com/{path}/winning-numbers.do"
+
+
+def scrape_missouri(cfg, by_date):
+    """Missouri — molottery.com serves a per-game winning-numbers.do page with a
+    server-rendered results table: each <tr> is an ISO draw date, the winning numbers
+    (num num_small divs), and — for the jackpot games — that draw's jackpot ($amount).
+    Pick 3/4 are twice daily with a Midday/Evening column (we keep Evening). A rolling
+    window of recent draws is shown, so retention accumulates; the deep numbers history
+    is seeded separately. Mutates by_date; returns the upcoming jackpot for jackpot games."""
+    page = requests.get(MO_GAME.format(path=cfg["mo_path"]),
+                        headers={"User-Agent": USER_AGENT}, timeout=45).text
+    n = cfg["num_count"]
+    for rm in re.finditer(r"(?s)<tr>(.*?)</tr>", page):
+        row = rm.group(1)
+        dm = re.search(r"(\d{4}-\d{2}-\d{2})", row)
+        if not dm:
+            continue
+        iso = dm.group(1)
+        if cfg.get("mo_evening") and "Evening" not in row:
+            continue  # twice-daily digit game: keep the evening draw
+        nums = [int(x) for x in re.findall(r'class="num num_small">(\d+)</div>', row)][:n]
+        if len(nums) < n:
+            continue
+        draw = {"date": iso, "numbers": sorted(nums) if cfg.get("sort") else nums}
+        if cfg.get("jackpot"):
+            jm = re.search(r"\$(\d[\d,]*)", row)
+            if jm:
+                jp = int(jm.group(1).replace(",", ""))
+                draw["jackpot"] = jp
+                draw["cash"] = jp  # Show Me Cash jackpot is paid in cash
+        by_date[iso] = draw
+    # Upcoming jackpot from the "Next Estimated Jackpot: $X Next Drawing: Weekday, Mon D" line.
+    if cfg.get("jackpot"):
+        jm = re.search(r"(?i)Next Estimated Jackpot:\s*\$([\d,]+)", page)
+        dm = re.search(r"(?i)Next Drawing:\s*[A-Za-z]+,\s*([A-Za-z]+)\s+(\d{1,2})", page)
+        if jm:
+            jp = int(jm.group(1).replace(",", ""))
+            nxt = None
+            if dm and dm.group(1) in _LA_MONTHS:
+                yr = int(max(by_date)[:4]) if by_date else date.today().year
+                nxt = f"{yr:04d}-{_LA_MONTHS[dm.group(1)]:02d}-{int(dm.group(2)):02d}"
+            return {"date": nxt, "jackpot": jp, "cash": jp}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -2046,6 +2099,14 @@ def main():
         cur = scrape_louisiana(cfg, by_date)
         source = "louisianalottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from louisianalottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "molottery_html":
+        cur = scrape_missouri(cfg, by_date)
+        source = "molottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from molottery.com.")
         complete = True
         if cur:
             data["current_jackpot"] = cur
