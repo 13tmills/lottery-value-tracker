@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <title>Lottery Break-Even Jackpot Calculator — When Is a Ticket Worth It? | NumbersIntel</title>
+  <meta name="description" id="meta-desc" content="How big does the Powerball or Mega Millions jackpot have to be before a ticket is a fair bet? The real expected-value math — after taxes and jackpot splitting." />
+  <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/breakeven.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" id="og-title" content="Lottery Break-Even Jackpot Calculator | NumbersIntel" />
+  <meta property="og:description" id="og-desc" content="How big does the jackpot have to be before a ticket is a fair bet? The real EV math — after taxes and splitting." />
+  <meta property="og:url" id="og-url" content="https://numbersintel.com/breakeven.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content="Lottery Break-Even Jackpot Calculator | NumbersIntel" />
+  <meta name="twitter:description" id="tw-desc" content="How big does the jackpot have to be before a ticket is a fair bet?" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="tools.html">&larr; Tools</a>
+    <h1>Break-even jackpot calculator</h1>
+    <p class="tagline">How big does the jackpot have to be before a ticket is actually a fair bet?</p>
+  </header>
+
+  <main class="detail">
+    <section class="panel calc-inputs">
+      <label>Game
+        <select id="game">
+          <option value="powerball">Powerball ($2)</option>
+          <option value="mega_millions">Mega Millions ($5)</option>
+          <option value="lotto_america">Lotto America ($1)</option>
+        </select>
+      </label>
+      <label>Tax on winnings %
+        <input type="number" id="tax" min="0" max="60" step="0.5" value="37" />
+      </label>
+      <label>Tickets sold (millions) — for splitting
+        <input type="number" id="tickets" min="0" max="1000" step="10" value="0" />
+      </label>
+    </section>
+
+    <p class="verdict" id="verdict"></p>
+
+    <div class="detail-grid" id="cards"></div>
+
+    <section class="panel">
+      <h2>Value per $1 as the jackpot grows</h2>
+      <p class="section-note">A ticket's value climbs with the cash jackpot but flattens once you account for
+        sharing. Where the line crosses 100&cent; is the break-even jackpot — beyond that a ticket is, on
+        average, a winning bet.</p>
+      <div class="hist-chart"><canvas id="be-chart"></canvas></div>
+    </section>
+
+    <p class="disclaimer">
+      Expected value is the fixed lower-tier prizes plus the cash jackpot divided by the jackpot odds, taxed
+      at the rate you set. "Tickets sold" models jackpot <em>splitting</em>: with more tickets in play you're
+      more likely to share the top prize, which caps a ticket's value no matter how high the jackpot climbs —
+      which is why a lottery ticket is essentially never a good bet in practice. Estimates only, not financial
+      advice; odds and prize tiers are the published game rules.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>For information and entertainment only — not financial advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="breakeven.js"></script>
+</body>
+</html>

@@ -11,6 +11,7 @@
     `<div class="topnav__links">` +
       link("National Drawings", "national.html") +
       link("State Drawings", "states.html") +
+      link("Tools", "tools.html") +
     `</div>`;
   document.body.insertBefore(nav, document.body.firstChild);
 

@@ -216,6 +216,15 @@ function render(key, g, data) {
       </div>
       <a class="btn" href="calculator.html?game=${key}">Annuity vs. cash &rarr;</a>
     </section>
+    ${["powerball", "mega_millions", "lotto_america"].includes(key) ? `
+    <section class="panel viz-cta">
+      <div>
+        <h2>When is a ticket actually worth it?</h2>
+        <p>How big does the ${meta.label} jackpot have to be before a ticket is a fair bet?
+          See where taxes and jackpot splitting move the break-even line.</p>
+      </div>
+      <a class="btn" href="breakeven.html?game=${key}">Break-even calculator &rarr;</a>
+    </section>` : ""}
   `;
 
   renderCharts(items, jackpotCents, secondaryCents);
