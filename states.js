@@ -332,6 +332,23 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  CO: {
+    intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
+    games: [
+      { name: "Colorado Lotto+", meta: "6 of 40 · Mon · Wed · Sat · jackpot from $1M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=co_lotto"]] },
+      { name: "Cash 5", meta: "5 of 32 · daily · rolling cash jackpot",
+        links: [["Jackpot, EV &amp; per-tier prizes", "game.html?game=co_cash5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=co_pick3"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   MD: {
     intro: "Maryland's draw games — Multi-Match's rolling jackpot, Bonus Match 5's fixed prizes, and the Pick 3/4/5 dailies — with odds, payouts and number frequency from the Maryland Lottery's own winning-numbers feed.",
     games: [

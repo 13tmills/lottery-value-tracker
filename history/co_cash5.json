@@ -1,0 +1,3524 @@
+﻿{
+    "game":  "co_cash5",
+    "source":  "coloradolottery.com",
+    "earliest_available":  "2026-03-23",
+    "last_updated":  "2026-06-21",
+    "complete":  true,
+    "current_jackpot":  {
+                            "date":  "2026-06-20",
+                            "jackpot":  20000,
+                            "cash":  20000
+                        },
+    "draws":  [
+                  {
+                      "date":  "2026-03-23",
+                      "numbers":  [
+                                      5,
+                                      8,
+                                      11,
+                                      22,
+                                      29
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  34
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  585
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4524
+                                     }
+                                 ],
+                      "total_winners":  5143
+                  },
+                  {
+                      "date":  "2026-03-24",
+                      "numbers":  [
+                                      11,
+                                      12,
+                                      18,
+                                      25,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  18
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  501
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4333
+                                     }
+                                 ],
+                      "total_winners":  4852
+                  },
+                  {
+                      "date":  "2026-03-25",
+                      "numbers":  [
+                                      5,
+                                      12,
+                                      16,
+                                      22,
+                                      28
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  1
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  22
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  552
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4519
+                                     }
+                                 ],
+                      "total_winners":  5094
+                  },
+                  {
+                      "date":  "2026-03-26",
+                      "numbers":  [
+                                      8,
+                                      14,
+                                      24,
+                                      27,
+                                      28
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  22
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  496
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4532
+                                     }
+                                 ],
+                      "total_winners":  5050
+                  },
+                  {
+                      "date":  "2026-03-27",
+                      "numbers":  [
+                                      3,
+                                      4,
+                                      29,
+                                      30,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  32
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  570
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5008
+                                     }
+                                 ],
+                      "total_winners":  5610
+                  },
+                  {
+                      "date":  "2026-03-28",
+                      "numbers":  [
+                                      1,
+                                      3,
+                                      11,
+                                      25,
+                                      27
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  21
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  633
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5661
+                                     }
+                                 ],
+                      "total_winners":  6315
+                  },
+                  {
+                      "date":  "2026-03-29",
+                      "numbers":  [
+                                      6,
+                                      8,
+                                      9,
+                                      20,
+                                      29
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  17
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  537
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4255
+                                     }
+                                 ],
+                      "total_winners":  4809
+                  },
+                  {
+                      "date":  "2026-03-30",
+                      "numbers":  [
+                                      3,
+                                      5,
+                                      7,
+                                      8,
+                                      24
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  20
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  662
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5131
+                                     }
+                                 ],
+                      "total_winners":  5813
+                  },
+                  {
+                      "date":  "2026-03-31",
+                      "numbers":  [
+                                      3,
+                                      10,
+                                      13,
+                                      17,
+                                      28
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  1
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  27
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  636
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4943
+                                     }
+                                 ],
+                      "total_winners":  5607
+                  },
+                  {
+                      "date":  "2026-04-01",
+                      "numbers":  [
+                                      3,
+                                      8,
+                                      9,
+                                      14,
+                                      18
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  18
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  592
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5381
+                                     }
+                                 ],
+                      "total_winners":  5991
+                  },
+                  {
+                      "date":  "2026-04-02",
+                      "numbers":  [
+                                      1,
+                                      3,
+                                      4,
+                                      8,
+                                      18
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  20
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  951
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5604
+                                     }
+                                 ],
+                      "total_winners":  6575
+                  },
+                  {
+                      "date":  "2026-04-03",
+                      "numbers":  [
+                                      2,
+                                      6,
+                                      19,
+                                      24,
+                                      25
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  1
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  20
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  582
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4892
+                                     }
+                                 ],
+                      "total_winners":  5495
+                  },
+                  {
+                      "date":  "2026-04-04",
+                      "numbers":  [
+                                      9,
+                                      19,
+                                      27,
+                                      30,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  24
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  645
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5500
+                                     }
+                                 ],
+                      "total_winners":  6169
+                  },
+                  {
+                      "date":  "2026-04-05",
+                      "numbers":  [
+                                      10,
+                                      11,
+                                      19,
+                                      28,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  22
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  571
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4551
+                                     }
+                                 ],
+                      "total_winners":  5144
+                  },
+                  {
+                      "date":  "2026-04-06",
+                      "numbers":  [
+                                      9,
+                                      11,
+                                      14,
+                                      15,
+                                      22
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  18
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  617
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4903
+                                     }
+                                 ],
+                      "total_winners":  5538
+                  },
+                  {
+                      "date":  "2026-04-07",
+                      "numbers":  [
+                                      3,
+                                      11,
+                                      14,
+                                      19,
+                                      21
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  39
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  785
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5436
+                                     }
+                                 ],
+                      "total_winners":  6260
+                  },
+                  {
+                      "date":  "2026-04-08",
+                      "numbers":  [
+                                      1,
+                                      5,
+                                      8,
+                                      15,
+                                      21
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  17
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  711
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5556
+                                     }
+                                 ],
+                      "total_winners":  6284
+                  },
+                  {
+                      "date":  "2026-04-09",
+                      "numbers":  [
+                                      1,
+                                      9,
+                                      15,
+                                      18,
+                                      23
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  32
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  752
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5504
+                                     }
+                                 ],
+                      "total_winners":  6288
+                  },
+                  {
+                      "date":  "2026-04-10",
+                      "numbers":  [
+                                      3,
+                                      17,
+                                      28,
+                                      29,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  19
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  576
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5195
+                                     }
+                                 ],
+                      "total_winners":  5790
+                  },
+                  {
+                      "date":  "2026-04-11",
+                      "numbers":  [
+                                      9,
+                                      17,
+                                      21,
+                                      27,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  30
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  699
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5397
+                                     }
+                                 ],
+                      "total_winners":  6126
+                  },
+                  {
+                      "date":  "2026-04-12",
+                      "numbers":  [
+                                      4,
+                                      12,
+                                      15,
+                                      19,
+                                      22
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  55
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  561
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4745
+                                     }
+                                 ],
+                      "total_winners":  5361
+                  },
+                  {
+                      "date":  "2026-04-13",
+                      "numbers":  [
+                                      1,
+                                      15,
+                                      16,
+                                      19,
+                                      26
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  36
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  515
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4596
+                                     }
+                                 ],
+                      "total_winners":  5147
+                  },
+                  {
+                      "date":  "2026-04-14",
+                      "numbers":  [
+                                      10,
+                                      11,
+                                      21,
+                                      26,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  34
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  570
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4563
+                                     }
+                                 ],
+                      "total_winners":  5167
+                  },
+                  {
+                      "date":  "2026-04-15",
+                      "numbers":  [
+                                      5,
+                                      9,
+                                      15,
+                                      21,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  22
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  661
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5481
+                                     }
+                                 ],
+                      "total_winners":  6164
+                  },
+                  {
+                      "date":  "2026-04-16",
+                      "numbers":  [
+                                      12,
+                                      13,
+                                      17,
+                                      25,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  23
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  496
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4838
+                                     }
+                                 ],
+                      "total_winners":  5357
+                  },
+                  {
+                      "date":  "2026-04-17",
+                      "numbers":  [
+                                      7,
+                                      22,
+                                      24,
+                                      31,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  24
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  539
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4959
+                                     }
+                                 ],
+                      "total_winners":  5522
+                  },
+                  {
+                      "date":  "2026-04-18",
+                      "numbers":  [
+                                      1,
+                                      7,
+                                      18,
+                                      21,
+                                      22
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  21
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  688
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5766
+                                     }
+                                 ],
+                      "total_winners":  6475
+                  },
+                  {
+                      "date":  "2026-04-19",
+                      "numbers":  [
+                                      3,
+                                      6,
+                                      8,
+                                      15,
+                                      25
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  18
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  608
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4631
+                                     }
+                                 ],
+                      "total_winners":  5257
+                  },
+                  {
+                      "date":  "2026-04-20",
+                      "numbers":  [
+                                      2,
+                                      15,
+                                      17,
+                                      25,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  23
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  465
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4708
+                                     }
+                                 ],
+                      "total_winners":  5196
+                  },
+                  {
+                      "date":  "2026-04-21",
+                      "numbers":  [
+                                      1,
+                                      23,
+                                      24,
+                                      28,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  5
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  479
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4349
+                                     }
+                                 ],
+                      "total_winners":  4833
+                  },
+                  {
+                      "date":  "2026-04-22",
+                      "numbers":  [
+                                      11,
+                                      12,
+                                      14,
+                                      16,
+                                      17
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  27
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  543
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4883
+                                     }
+                                 ],
+                      "total_winners":  5453
+                  },
+                  {
+                      "date":  "2026-04-23",
+                      "numbers":  [
+                                      1,
+                                      11,
+                                      14,
+                                      24,
+                                      27
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  31
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  609
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5001
+                                     }
+                                 ],
+                      "total_winners":  5641
+                  },
+                  {
+                      "date":  "2026-04-24",
+                      "numbers":  [
+                                      15,
+                                      25,
+                                      27,
+                                      28,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  19
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  560
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4759
+                                     }
+                                 ],
+                      "total_winners":  5338
+                  },
+                  {
+                      "date":  "2026-04-25",
+                      "numbers":  [
+                                      1,
+                                      2,
+                                      5,
+                                      13,
+                                      17
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  17
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  719
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5481
+                                     }
+                                 ],
+                      "total_winners":  6217
+                  },
+                  {
+                      "date":  "2026-04-26",
+                      "numbers":  [
+                                      3,
+                                      7,
+                                      9,
+                                      11,
+                                      21
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  2
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  72
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  975
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5176
+                                     }
+                                 ],
+                      "total_winners":  6225
+                  },
+                  {
+                      "date":  "2026-04-27",
+                      "numbers":  [
+                                      8,
+                                      9,
+                                      17,
+                                      27,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  1
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  24
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  592
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4948
+                                     }
+                                 ],
+                      "total_winners":  5565
+                  },
+                  {
+                      "date":  "2026-04-28",
+                      "numbers":  [
+                                      2,
+                                      14,
+                                      20,
+                                      30,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  17
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  529
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4327
+                                     }
+                                 ],
+                      "total_winners":  4873
+                  },
+                  {
+                      "date":  "2026-04-29",
+                      "numbers":  [
+                                      8,
+                                      10,
+                                      12,
+                                      16,
+                                      28
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  28
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  602
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4721
+                                     }
+                                 ],
+                      "total_winners":  5351
+                  },
+                  {
+                      "date":  "2026-04-30",
+                      "numbers":  [
+                                      17,
+                                      20,
+                                      21,
+                                      25,
+                                      27
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  13
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  588
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5071
+                                     }
+                                 ],
+                      "total_winners":  5672
+                  },
+                  {
+                      "date":  "2026-05-01",
+                      "numbers":  [
+                                      9,
+                                      12,
+                                      13,
+                                      21,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  16
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  577
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5258
+                                     }
+                                 ],
+                      "total_winners":  5851
+                  },
+                  {
+                      "date":  "2026-05-02",
+                      "numbers":  [
+                                      12,
+                                      22,
+                                      26,
+                                      28,
+                                      29
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  15
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  527
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4685
+                                     }
+                                 ],
+                      "total_winners":  5227
+                  },
+                  {
+                      "date":  "2026-05-03",
+                      "numbers":  [
+                                      4,
+                                      8,
+                                      20,
+                                      26,
+                                      27
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  17
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  439
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4289
+                                     }
+                                 ],
+                      "total_winners":  4745
+                  },
+                  {
+                      "date":  "2026-05-04",
+                      "numbers":  [
+                                      7,
+                                      10,
+                                      15,
+                                      20,
+                                      22
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  22
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  603
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4961
+                                     }
+                                 ],
+                      "total_winners":  5586
+                  },
+                  {
+                      "date":  "2026-05-05",
+                      "numbers":  [
+                                      11,
+                                      13,
+                                      22,
+                                      28,
+                                      29
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  17
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  502
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4489
+                                     }
+                                 ],
+                      "total_winners":  5008
+                  },
+                  {
+                      "date":  "2026-05-06",
+                      "numbers":  [
+                                      6,
+                                      8,
+                                      12,
+                                      17,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  24
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  520
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4477
+                                     }
+                                 ],
+                      "total_winners":  5021
+                  },
+                  {
+                      "date":  "2026-05-07",
+                      "numbers":  [
+                                      10,
+                                      24,
+                                      27,
+                                      28,
+                                      29
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  10
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  613
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4706
+                                     }
+                                 ],
+                      "total_winners":  5329
+                  },
+                  {
+                      "date":  "2026-05-08",
+                      "numbers":  [
+                                      2,
+                                      7,
+                                      9,
+                                      17,
+                                      20
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  48
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  769
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5481
+                                     }
+                                 ],
+                      "total_winners":  6298
+                  },
+                  {
+                      "date":  "2026-05-09",
+                      "numbers":  [
+                                      3,
+                                      8,
+                                      20,
+                                      26,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  26
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  552
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4890
+                                     }
+                                 ],
+                      "total_winners":  5468
+                  },
+                  {
+                      "date":  "2026-05-10",
+                      "numbers":  [
+                                      1,
+                                      5,
+                                      6,
+                                      20,
+                                      29
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  13
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  445
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4288
+                                     }
+                                 ],
+                      "total_winners":  4746
+                  },
+                  {
+                      "date":  "2026-05-11",
+                      "numbers":  [
+                                      3,
+                                      12,
+                                      15,
+                                      22,
+                                      26
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  26
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  513
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4452
+                                     }
+                                 ],
+                      "total_winners":  4991
+                  },
+                  {
+                      "date":  "2026-05-12",
+                      "numbers":  [
+                                      3,
+                                      22,
+                                      23,
+                                      30,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  18
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  518
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4509
+                                     }
+                                 ],
+                      "total_winners":  5045
+                  },
+                  {
+                      "date":  "2026-05-13",
+                      "numbers":  [
+                                      9,
+                                      22,
+                                      24,
+                                      25,
+                                      26
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  14
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  546
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4311
+                                     }
+                                 ],
+                      "total_winners":  4871
+                  },
+                  {
+                      "date":  "2026-05-14",
+                      "numbers":  [
+                                      5,
+                                      11,
+                                      17,
+                                      19,
+                                      25
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  21
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  645
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4898
+                                     }
+                                 ],
+                      "total_winners":  5564
+                  },
+                  {
+                      "date":  "2026-05-15",
+                      "numbers":  [
+                                      5,
+                                      6,
+                                      10,
+                                      12,
+                                      23
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  31
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  586
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5158
+                                     }
+                                 ],
+                      "total_winners":  5775
+                  },
+                  {
+                      "date":  "2026-05-16",
+                      "numbers":  [
+                                      4,
+                                      12,
+                                      18,
+                                      20,
+                                      28
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  13
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  503
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4619
+                                     }
+                                 ],
+                      "total_winners":  5135
+                  },
+                  {
+                      "date":  "2026-05-17",
+                      "numbers":  [
+                                      1,
+                                      5,
+                                      22,
+                                      23,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  25
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  580
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4564
+                                     }
+                                 ],
+                      "total_winners":  5169
+                  },
+                  {
+                      "date":  "2026-05-18",
+                      "numbers":  [
+                                      3,
+                                      4,
+                                      8,
+                                      26,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  21
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  432
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4224
+                                     }
+                                 ],
+                      "total_winners":  4677
+                  },
+                  {
+                      "date":  "2026-05-19",
+                      "numbers":  [
+                                      14,
+                                      22,
+                                      25,
+                                      28,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  23
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  438
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4204
+                                     }
+                                 ],
+                      "total_winners":  4665
+                  },
+                  {
+                      "date":  "2026-05-20",
+                      "numbers":  [
+                                      7,
+                                      9,
+                                      12,
+                                      23,
+                                      28
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  19
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  611
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5045
+                                     }
+                                 ],
+                      "total_winners":  5675
+                  },
+                  {
+                      "date":  "2026-05-21",
+                      "numbers":  [
+                                      8,
+                                      17,
+                                      21,
+                                      27,
+                                      28
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  22
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  597
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4901
+                                     }
+                                 ],
+                      "total_winners":  5520
+                  },
+                  {
+                      "date":  "2026-05-22",
+                      "numbers":  [
+                                      4,
+                                      13,
+                                      14,
+                                      23,
+                                      24
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  1
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  20
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  538
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4506
+                                     }
+                                 ],
+                      "total_winners":  5065
+                  },
+                  {
+                      "date":  "2026-05-23",
+                      "numbers":  [
+                                      5,
+                                      6,
+                                      7,
+                                      8,
+                                      25
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  32
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  690
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5369
+                                     }
+                                 ],
+                      "total_winners":  6091
+                  },
+                  {
+                      "date":  "2026-05-24",
+                      "numbers":  [
+                                      2,
+                                      5,
+                                      6,
+                                      8,
+                                      9
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  47
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  709
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4775
+                                     }
+                                 ],
+                      "total_winners":  5531
+                  },
+                  {
+                      "date":  "2026-05-25",
+                      "numbers":  [
+                                      8,
+                                      19,
+                                      23,
+                                      26,
+                                      27
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  14
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  432
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4235
+                                     }
+                                 ],
+                      "total_winners":  4681
+                  },
+                  {
+                      "date":  "2026-05-26",
+                      "numbers":  [
+                                      1,
+                                      12,
+                                      14,
+                                      15,
+                                      22
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  18
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  515
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4520
+                                     }
+                                 ],
+                      "total_winners":  5053
+                  },
+                  {
+                      "date":  "2026-05-27",
+                      "numbers":  [
+                                      3,
+                                      4,
+                                      14,
+                                      25,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  27
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  555
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4622
+                                     }
+                                 ],
+                      "total_winners":  5204
+                  },
+                  {
+                      "date":  "2026-05-28",
+                      "numbers":  [
+                                      3,
+                                      11,
+                                      14,
+                                      22,
+                                      26
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  21
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  620
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4701
+                                     }
+                                 ],
+                      "total_winners":  5342
+                  },
+                  {
+                      "date":  "2026-05-29",
+                      "numbers":  [
+                                      6,
+                                      14,
+                                      30,
+                                      31,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  22
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  628
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4355
+                                     }
+                                 ],
+                      "total_winners":  5005
+                  },
+                  {
+                      "date":  "2026-05-30",
+                      "numbers":  [
+                                      2,
+                                      6,
+                                      14,
+                                      17,
+                                      20
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  25
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  516
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5158
+                                     }
+                                 ],
+                      "total_winners":  5699
+                  },
+                  {
+                      "date":  "2026-05-31",
+                      "numbers":  [
+                                      2,
+                                      3,
+                                      7,
+                                      19,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  16
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  577
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5021
+                                     }
+                                 ],
+                      "total_winners":  5614
+                  },
+                  {
+                      "date":  "2026-06-01",
+                      "numbers":  [
+                                      6,
+                                      10,
+                                      11,
+                                      19,
+                                      22
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  24
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  545
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4772
+                                     }
+                                 ],
+                      "total_winners":  5341
+                  },
+                  {
+                      "date":  "2026-06-02",
+                      "numbers":  [
+                                      8,
+                                      9,
+                                      12,
+                                      23,
+                                      26
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  19
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  557
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4781
+                                     }
+                                 ],
+                      "total_winners":  5357
+                  },
+                  {
+                      "date":  "2026-06-03",
+                      "numbers":  [
+                                      7,
+                                      11,
+                                      21,
+                                      22,
+                                      23
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  2
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  47
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  780
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5486
+                                     }
+                                 ],
+                      "total_winners":  6315
+                  },
+                  {
+                      "date":  "2026-06-04",
+                      "numbers":  [
+                                      2,
+                                      10,
+                                      13,
+                                      15,
+                                      21
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  24
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  641
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4929
+                                     }
+                                 ],
+                      "total_winners":  5594
+                  },
+                  {
+                      "date":  "2026-06-05",
+                      "numbers":  [
+                                      8,
+                                      20,
+                                      23,
+                                      24,
+                                      27
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  23
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  545
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4366
+                                     }
+                                 ],
+                      "total_winners":  4934
+                  },
+                  {
+                      "date":  "2026-06-06",
+                      "numbers":  [
+                                      4,
+                                      9,
+                                      16,
+                                      19,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  24
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  671
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5015
+                                     }
+                                 ],
+                      "total_winners":  5710
+                  },
+                  {
+                      "date":  "2026-06-07",
+                      "numbers":  [
+                                      5,
+                                      13,
+                                      17,
+                                      23,
+                                      25
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  1
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  32
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  530
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4237
+                                     }
+                                 ],
+                      "total_winners":  4800
+                  },
+                  {
+                      "date":  "2026-06-08",
+                      "numbers":  [
+                                      7,
+                                      20,
+                                      24,
+                                      29,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  18
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  451
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4139
+                                     }
+                                 ],
+                      "total_winners":  4608
+                  },
+                  {
+                      "date":  "2026-06-09",
+                      "numbers":  [
+                                      2,
+                                      5,
+                                      9,
+                                      10,
+                                      14
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  22
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  642
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4950
+                                     }
+                                 ],
+                      "total_winners":  5614
+                  },
+                  {
+                      "date":  "2026-06-10",
+                      "numbers":  [
+                                      2,
+                                      7,
+                                      12,
+                                      23,
+                                      30
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  1
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  20
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  616
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4886
+                                     }
+                                 ],
+                      "total_winners":  5523
+                  },
+                  {
+                      "date":  "2026-06-11",
+                      "numbers":  [
+                                      12,
+                                      14,
+                                      29,
+                                      30,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  1
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  10
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  531
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4049
+                                     }
+                                 ],
+                      "total_winners":  4591
+                  },
+                  {
+                      "date":  "2026-06-12",
+                      "numbers":  [
+                                      20,
+                                      22,
+                                      26,
+                                      27,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  11
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  484
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4169
+                                     }
+                                 ],
+                      "total_winners":  4664
+                  },
+                  {
+                      "date":  "2026-06-13",
+                      "numbers":  [
+                                      5,
+                                      8,
+                                      23,
+                                      25,
+                                      27
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  19
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  663
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4780
+                                     }
+                                 ],
+                      "total_winners":  5462
+                  },
+                  {
+                      "date":  "2026-06-14",
+                      "numbers":  [
+                                      2,
+                                      10,
+                                      26,
+                                      27,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  14
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  459
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4148
+                                     }
+                                 ],
+                      "total_winners":  4621
+                  },
+                  {
+                      "date":  "2026-06-15",
+                      "numbers":  [
+                                      1,
+                                      2,
+                                      5,
+                                      7,
+                                      32
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  31
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  804
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4742
+                                     }
+                                 ],
+                      "total_winners":  5577
+                  },
+                  {
+                      "date":  "2026-06-16",
+                      "numbers":  [
+                                      1,
+                                      9,
+                                      16,
+                                      27,
+                                      31
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  12
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  468
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4724
+                                     }
+                                 ],
+                      "total_winners":  5204
+                  },
+                  {
+                      "date":  "2026-06-17",
+                      "numbers":  [
+                                      4,
+                                      7,
+                                      11,
+                                      23,
+                                      28
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  49
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  712
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5056
+                                     }
+                                 ],
+                      "total_winners":  5817
+                  },
+                  {
+                      "date":  "2026-06-18",
+                      "numbers":  [
+                                      13,
+                                      15,
+                                      19,
+                                      24,
+                                      26
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  28
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  538
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4282
+                                     }
+                                 ],
+                      "total_winners":  4848
+                  },
+                  {
+                      "date":  "2026-06-19",
+                      "numbers":  [
+                                      1,
+                                      7,
+                                      9,
+                                      19,
+                                      27
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  45
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  767
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  5254
+                                     }
+                                 ],
+                      "total_winners":  6066
+                  },
+                  {
+                      "date":  "2026-06-20",
+                      "numbers":  [
+                                      5,
+                                      6,
+                                      10,
+                                      12,
+                                      26
+                                  ],
+                      "jackpot":  20000,
+                      "cash":  20000,
+                      "prizes":  [
+                                     {
+                                         "level":  "Jackpot",
+                                         "label":  "Jackpot",
+                                         "amount":  20000,
+                                         "winners":  0
+                                     },
+                                     {
+                                         "level":  "Match 4",
+                                         "label":  "Match 4",
+                                         "amount":  200,
+                                         "winners":  33
+                                     },
+                                     {
+                                         "level":  "Match 3",
+                                         "label":  "Match 3",
+                                         "amount":  10,
+                                         "winners":  627
+                                     },
+                                     {
+                                         "level":  "Match 2",
+                                         "label":  "Match 2",
+                                         "amount":  1,
+                                         "winners":  4955
+                                     }
+                                 ],
+                      "total_winners":  5615
+                  }
+              ]
+}

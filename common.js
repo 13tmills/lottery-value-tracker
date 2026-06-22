@@ -1523,6 +1523,62 @@ const GAME_META = {
         note: "Shown for a $1 play; 50¢ plays pay half." },
     },
   },
+
+  // ===== Colorado (15th state) — coloradolottery.com Winning History =====
+  // Colorado Lotto+ — 6 of 40, cash-value jackpot from $1M; non-jackpot prizes are
+  // pari-mutuel × a random 2–5× multiplier. oddsJackpot + computed-odds reference.
+  co_lotto: {
+    label: "Colorado Lotto+", specialKey: null, specialName: "", draws: "Mon · Wed · Sat",
+    priceChanges: [], state: "CO", stateName: "Colorado", ticketPrice: "$2",
+    oddsJackpot: 3838380, // 6 of 40
+    prizes: {
+      note: "Colorado Lotto+ is 6 of 40 with a cash-value jackpot that starts at $1,000,000 and grows until won. Non-jackpot prizes are pari-mutuel and multiplied by a randomly drawn 2×–5× multiplier; the optional Plus add-on runs a second draw against your numbers. Odds shown per $2 play.",
+      topPrize: "Jackpot (min $1M)", topPrizeLabel: "Match 6",
+      reference: {
+        title: "Colorado Lotto+ odds by match",
+        columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["6 of 6", "Jackpot (min $1M)", "1 in 3,838,380"] },
+          { cells: ["5 of 6", "Pari-mutuel ×2–5", "1 in 18,816"] },
+          { cells: ["4 of 6", "Pari-mutuel ×2–5", "1 in 456"] },
+          { cells: ["3 of 6", "Pari-mutuel ×2–5", "1 in 32"] },
+        ],
+        note: "Non-jackpot prizes are pari-mutuel and multiplied by each draw's 2×–5× multiplier. Frequency chart below covers recent draws.",
+      },
+    },
+    viz: { tiers: [ {label:"6 of 6 (jackpot)",odds:3838380},{label:"5 of 6",odds:18816},{label:"4 of 6",odds:456},{label:"3 of 6",odds:32} ] },
+  },
+  // Cash 5 — 5 of 32, rolling cash jackpot (from $20,000) + fixed lower tiers. Per-draw
+  // prizes & CO winner counts drive a value/$1 treatment.
+  co_cash5: {
+    label: "Cash 5", specialKey: null, specialName: "", draws: "Daily",
+    priceChanges: [], state: "CO", stateName: "Colorado", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 201376, // 5 of 32
+      overall_odds: 6,
+      winnersLabel: "CO winners",
+      note: "Colorado Cash 5's jackpot is a rolling cash prize that starts at $20,000; the lower tiers pay fixed amounts ($200 / $10 / $1). Winner counts are the Colorado winners of the latest draw. <em>Value / $1</em> prices the jackpot at the current cash jackpot plus the fixed tiers, after an assumed 37% tax. Overall odds of any prize: 1 in 6.",
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 201376 },
+        "Match 4": { label: "Match 4", odds: 1492, prize: 200 },
+        "Match 3": { label: "Match 3", odds: 57, prize: 10 },
+        "Match 2": { label: "Match 2", odds: 7, prize: 1 },
+      },
+    },
+  },
+  // Pick 3 — 3-digit, twice daily (we track the evening draw). Verified CO paytable.
+  co_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "CO", stateName: "Colorado", ticketPrice: "$0.50 to $5",
+    prizes: {
+      note: "Colorado Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. Fixed payouts by bet type (shown for a $1 play).",
+      topPrize: "$500", topPrizeLabel: "Top prize (Exact Order $1)",
+      reference: { title: "How Pick 3 pays (per $1)", columns: ["Bet type", "Prize", "Odds"],
+        rows: [ { cells: ["Exact Order (straight)", "$500", "1 in 1,000"] }, { cells: ["Any Order — 3-way box", "$160", "1 in 333"] }, { cells: ["Any Order — 6-way box", "$80", "1 in 167"] }, { cells: ["Front / Back Pair", "$60", "1 in 100"] } ],
+        note: "Shown for a $1 play; other bet amounts scale proportionally." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

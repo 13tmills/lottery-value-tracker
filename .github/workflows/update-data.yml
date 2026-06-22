@@ -111,6 +111,9 @@ jobs:
           python scraper/history_scraper.py --game md_pick3
           python scraper/history_scraper.py --game md_pick4
           python scraper/history_scraper.py --game md_pick5
+          python scraper/history_scraper.py --game co_lotto
+          python scraper/history_scraper.py --game co_cash5
+          python scraper/history_scraper.py --game co_pick3
           exit 0   # always succeed so the commit step runs with whatever updated
 
       - name: Commit updated data

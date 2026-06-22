@@ -314,6 +314,17 @@ GAMES = {
     "md_pick3":      {"kind": "mdlottery_html", "md_table": "pick-3-4-5", "md_kind": "pick", "md_pick_class": "pick-3", "num_count": 3, "digits": True},
     "md_pick4":      {"kind": "mdlottery_html", "md_table": "pick-3-4-5", "md_kind": "pick", "md_pick_class": "pick-4", "num_count": 4, "digits": True},
     "md_pick5":      {"kind": "mdlottery_html", "md_table": "pick-3-4-5", "md_kind": "pick", "md_pick_class": "pick-5", "num_count": 5, "digits": True},
+
+    # --- Colorado (15th state) — coloradolottery.com Winning History tables (≈90-day
+    # window + per-tier prizes & CO winner counts; retention deepens). --------------------
+    "co_lotto":  {"kind": "coloradolottery_html", "co_game": "lotto", "num_count": 6, "sort": True, "jackpot": True},
+    "co_cash5":  {"kind": "coloradolottery_html", "co_game": "cash5", "num_count": 5, "sort": True, "jackpot": True,
+                  "co_jackpot_is_cash": True,
+                  "co_tiers": [("Jackpot", "Jackpot CO Winners", "Jackpot"),
+                               ("Match 4 Prize", "Match 4 CO Winners", "Match 4"),
+                               ("Match 3 Prize", "Match 3 CO Winners", "Match 3"),
+                               ("Match 2 Prize", "Match 2 CO Winners", "Match 2")]},
+    "co_pick3":  {"kind": "coloradolottery_html", "co_game": "pick3", "num_count": 3, "digits": True, "co_evening": True},
 }
 
 
@@ -1669,6 +1680,82 @@ def scrape_maryland(cfg, by_date):
     return None
 
 
+CO_HIST = "https://www.coloradolottery.com/player-tools/winning-history/"
+
+
+def _co_money(s):
+    m = re.search(r"\$\s*([\d,]+)", s or "")
+    return int(m.group(1).replace(",", "")) if m else None
+
+
+def _co_int(s):
+    m = re.search(r"[\d,]+", s or "")
+    return int(m.group(0).replace(",", "")) if m else None
+
+
+def scrape_colorado(cfg, by_date):
+    """Colorado — the coloradolottery.com "Winning History" tool server-renders a table
+    per game (?game=X&timeframe=90): draw date (ISO in the <time datetime> attr), winning
+    numbers, the jackpot (+ cash value for Lotto+), and per-tier prize + CO winner-count
+    columns. ~90 days exposed, so retention accumulates the deeper history. Header-driven
+    so it survives column shuffles. Mutates by_date; returns the latest jackpot."""
+    p = requests.get(CO_HIST, params={"game": cfg["co_game"], "timeframe": cfg.get("co_timeframe", 90), "submit": ""},
+                     headers={"User-Agent": USER_AGENT}, timeout=45).text
+    thead = re.search(r"(?s)<thead>(.*?)</thead>", p)
+    headers = [re.sub(r"<[^>]+>", "", h).replace("&nbsp;", " ").strip()
+               for h in re.findall(r"(?s)<th[^>]*>(.*?)</th>", thead.group(1))] if thead else []
+    idx = {h: i for i, h in enumerate(headers)}
+    body = re.search(r"(?s)<tbody>(.*?)</tbody>", p)
+    if not body:
+        return None
+    n = cfg["num_count"]
+
+    def text(cells, i):
+        return re.sub(r"<[^>]+>", " ", cells[i]).replace("&nbsp;", " ").strip() if i is not None and i < len(cells) else ""
+
+    newest = None
+    for rm in re.finditer(r"(?s)<tr>(.*?)</tr>", body.group(1)):
+        cells = re.findall(r"(?s)<td[^>]*>(.*?)</td>", rm.group(1))
+        if len(cells) < 3:
+            continue
+        dm = re.search(r'datetime="(\d{4}-\d{2}-\d{2})"(?:\s+type="(\d+)")?', cells[0])
+        if not dm:
+            continue
+        iso = dm.group(1)
+        if cfg.get("co_evening") and dm.group(2) and dm.group(2) != "20":
+            continue  # twice-daily (Pick 3): keep the evening draw
+        raw = text(cells, idx.get("Winning Numbers"))
+        nums = [int(x) for x in re.findall(r"\d+", raw)][:n]
+        if len(nums) < n:
+            continue
+        draw = {"date": iso, "numbers": sorted(nums) if cfg.get("sort") else nums}
+        jp = _co_money(text(cells, idx.get("Jackpot")))
+        if jp:
+            draw["jackpot"] = jp
+        cash = _co_money(text(cells, idx.get("Jackpot Cash Value")))
+        if cash:
+            draw["cash"] = cash
+        elif jp and cfg.get("co_jackpot_is_cash"):
+            draw["cash"] = jp  # Cash 5 jackpot is paid in cash
+        prizes = []
+        for ph, wh, lvl in cfg.get("co_tiers", []):
+            if ph in idx:
+                amt = _co_money(text(cells, idx[ph]))
+                w = _co_int(text(cells, idx.get(wh)))
+                prizes.append({"level": lvl, "label": lvl, "amount": amt, "winners": w})
+        if prizes:
+            draw["prizes"] = prizes
+            if all(p["winners"] is not None for p in prizes):
+                draw["total_winners"] = sum(p["winners"] for p in prizes)
+        by_date[iso] = draw
+        if newest is None or iso > newest["date"]:
+            newest = draw
+    # Latest jackpot for the stat (the most recent draw's advertised jackpot).
+    if newest and cfg.get("jackpot") and newest.get("jackpot"):
+        return {"date": newest["date"], "jackpot": newest["jackpot"], "cash": newest.get("cash")}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -1820,6 +1907,14 @@ def main():
         if cur:
             data["current_jackpot"] = cur
             print(f"  current jackpot: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "coloradolottery_html":
+        cur = scrape_colorado(cfg, by_date)
+        source = "coloradolottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from coloradolottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,} cash ${cur.get('cash') or 0:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"
