@@ -1663,6 +1663,27 @@ const fmtDate = (iso) => {
 
 const SITE = "https://numbersintel.com";
 
+// National-game prize structure (ticket price, jackpot odds, and fixed non-jackpot tiers as
+// [prize, 1-in-N odds]) — the published game rules. Shared by the break-even and Monte Carlo
+// tools. KEEP IN SYNC with scraper/scrape.py CONFIG if odds/prizes change.
+const LOTTO_TIERS = {
+  powerball: {
+    label: "Powerball", price: 2, J: 292201338,
+    tiers: [[1000000, 11688053.52], [50000, 913129.18], [100, 36525.17], [100, 14494.11],
+            [7, 579.76], [7, 701.33], [4, 91.98], [4, 38.32]],
+  },
+  mega_millions: {
+    label: "Mega Millions", price: 5, J: 290472336,
+    tiers: [[1000000, 12629232], [10000, 893761], [500, 38859], [200, 13965],
+            [10, 607], [10, 665], [7, 86], [5, 35]],
+  },
+  lotto_america: {
+    label: "Lotto America", price: 1, J: 25989600,
+    tiers: [[20000, 2887733], [1000, 110594], [100, 12288], [20, 2404],
+            [5, 267], [5, 160], [2, 29], [2, 17]],
+  },
+};
+
 // Update title + description + canonical + OG/Twitter tags (by id) for SEO.
 // (Googlebot runs JS, so these reflect the specific game on each templated page.)
 function setMeta({ title, description, url }) {

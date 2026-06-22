@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <title>Lottery Monte Carlo Simulator — What If You Played for Years? | NumbersIntel</title>
+  <meta name="description" id="meta-desc" content="Simulate thousands of real lottery tickets with a game's actual odds and prizes. See what buying 10 lines 10,000 times — or three lines a week for years — would really do to your wallet." />
+  <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/montecarlo.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" id="og-title" content="Lottery Monte Carlo Simulator | NumbersIntel" />
+  <meta property="og:description" id="og-desc" content="Play out thousands of real lottery tickets and watch your balance slide. A big one-time buy, or a habit over years." />
+  <meta property="og:url" id="og-url" content="https://numbersintel.com/montecarlo.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="tw-title" content="Lottery Monte Carlo Simulator | NumbersIntel" />
+  <meta name="twitter:description" id="tw-desc" content="Play out thousands of real lottery tickets and watch your balance slide." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" id="back" href="tools.html">&larr; Tools</a>
+    <h1>Monte Carlo simulator</h1>
+    <p class="tagline">Play out thousands of real tickets — and watch what actually happens to your money.</p>
+  </header>
+
+  <main class="detail">
+    <p class="calc-notice">
+      <span class="calc-notice__icon" aria-hidden="true">&#9888;</span>
+      <span><strong>For entertainment only — not financial or gambling advice.</strong> This is a random
+      simulation using each game's published odds and prize tiers; results vary every run, and real play also
+      involves taxes and occasional jackpot-sharing. The lottery is a negative-expected-value bet — only play
+      with money you can afford to lose.</span>
+    </p>
+
+    <section class="panel calc-inputs">
+      <label>Game
+        <select id="game">
+          <option value="powerball">Powerball ($2)</option>
+          <option value="mega_millions">Mega Millions ($5)</option>
+          <option value="lotto_america">Lotto America ($1)</option>
+        </select>
+      </label>
+      <label>Scenario
+        <select id="scenario">
+          <option value="bulk">Buy a big batch at once</option>
+          <option value="habit">Play regularly for years</option>
+        </select>
+      </label>
+      <span id="bulk" class="mc-fields">
+        <label>Lines per buy
+          <input type="number" id="lines-b" min="1" max="100" step="1" value="10" />
+        </label>
+        <label>Number of buys
+          <input type="number" id="buys" min="1" max="500000" step="100" value="10000" />
+        </label>
+      </span>
+      <span id="habit" class="mc-fields" style="display:none">
+        <label>Lines each time
+          <input type="number" id="lines-h" min="1" max="100" step="1" value="3" />
+        </label>
+        <label>How often
+          <select id="freq">
+            <option value="draw">Every draw</option>
+            <option value="week">Once a week</option>
+            <option value="month">Once a month</option>
+          </select>
+        </label>
+        <label>For how many years
+          <input type="number" id="years" min="1" max="60" step="1" value="10" />
+        </label>
+      </span>
+      <button class="btn" id="go">Run the simulation</button>
+    </section>
+
+    <div id="out"></div>
+
+    <p class="disclaimer">
+      Each ticket is drawn against the game's real odds: a 1-in-jackpot-odds chance of the top prize (paid at
+      a randomly sampled historical cash value), then the published fixed odds for each lower tier. We don't
+      model taxes or jackpot splitting — both of which would only make a real-world result worse. Estimates
+      and a random simulation for general information only; not financial or gambling advice.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>For information and entertainment only — not financial advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="montecarlo.js"></script>
+</body>
+</html>

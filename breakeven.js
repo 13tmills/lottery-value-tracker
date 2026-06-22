@@ -2,23 +2,7 @@
 // ticket's expected value reaches the ticket price — and how taxes and jackpot splitting
 // push that break-even point out of reach. Tier odds/prizes mirror scraper/scrape.py.
 
-const GAMES = {
-  powerball: {
-    label: "Powerball", price: 2, J: 292201338,
-    tiers: [[1000000, 11688053.52], [50000, 913129.18], [100, 36525.17], [100, 14494.11],
-            [7, 579.76], [7, 701.33], [4, 91.98], [4, 38.32]],
-  },
-  mega_millions: {
-    label: "Mega Millions", price: 5, J: 290472336,
-    tiers: [[1000000, 12629232], [10000, 893761], [500, 38859], [200, 13965],
-            [10, 607], [10, 665], [7, 86], [5, 35]],
-  },
-  lotto_america: {
-    label: "Lotto America", price: 1, J: 25989600,
-    tiers: [[20000, 2887733], [1000, 110594], [100, 12288], [20, 2404],
-            [5, 267], [5, 160], [2, 29], [2, 17]],
-  },
-};
+const GAMES = LOTTO_TIERS; // shared prize-tier data (defined in common.js)
 
 const els = {};
 let chart = null;

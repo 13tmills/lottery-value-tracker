@@ -233,6 +233,14 @@ function render(key, g, data) {
           See where taxes and jackpot splitting move the break-even line.</p>
       </div>
       <a class="btn" href="breakeven.html?game=${key}">Break-even calculator &rarr;</a>
+    </section>
+    <section class="panel viz-cta">
+      <div>
+        <h2>What if you played for years?</h2>
+        <p>Simulate thousands of real ${meta.label} tickets — a big batch at once, or a few lines a week
+          for years — and watch what actually happens to your money.</p>
+      </div>
+      <a class="btn" href="montecarlo.html?game=${key}">Monte Carlo simulator &rarr;</a>
     </section>` : ""}
   `;
 
