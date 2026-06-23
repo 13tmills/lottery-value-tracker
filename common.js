@@ -1875,7 +1875,7 @@ const fmtMoney = (n) =>
 
 const fmtDate = (iso) => {
   const d = new Date(iso + "T00:00:00");
-  return d.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" });
+  return d.toLocaleDateString(undefined, { weekday: "short", year: "numeric", month: "short", day: "numeric" });
 };
 
 const SITE = "https://numbersintel.com";

@@ -96,11 +96,20 @@ async function init() {
 
     els.from.min = els.to.min = all[0].date;
     els.from.max = els.to.max = all.at(-1).date;
-    els.from.value = all[0].date;
     els.to.value = all.at(-1).date;
+    // Open on the most recent year instead of dumping the whole history (thousands of
+    // rows). The inputs and presets expand it; falls back to the full span if shorter.
+    const yAgo = new Date(all.at(-1).date + "T00:00:00");
+    yAgo.setFullYear(yAgo.getFullYear() - 1);
+    const defFrom = yAgo.toISOString().slice(0, 10);
+    const useAll = defFrom <= all[0].date;
+    els.from.value = useAll ? all[0].date : defFrom;
+    const activeBtn = els.presets.querySelector(useAll ? '[data-range="all"]' : '[data-range="365"]');
+    if (activeBtn) setActivePreset(activeBtn);
 
-    els.from.addEventListener("change", apply);
-    els.to.addEventListener("change", apply);
+    const onManual = () => { setActivePreset(null); apply(); };
+    els.from.addEventListener("change", onManual);
+    els.to.addEventListener("change", onManual);
     els.presets.addEventListener("click", onPreset);
 
     apply();
