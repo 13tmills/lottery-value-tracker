@@ -2412,6 +2412,53 @@ const GAME_META = {
         note: "Official Tennessee Lottery top prize on a $1 play (50¢ plays pay half). Any-order and Wild Ball plays pay different amounts." },
     },
   },
+  // ── Arizona (state #33) ────────────────────────────────────────────────
+  // The Pick — 6 of 44, drawn Mon/Wed/Sat (Monday added in 2023), annuity from $1M.
+  az_thepick: {
+    label: "The Pick", specialKey: null, specialName: "",
+    draws: "Mon · Wed · Sat", priceChanges: [], state: "AZ", stateName: "Arizona", ticketPrice: "$1",
+    oddsJackpot: 7059052, // 6 of 44
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Arizona's The Pick is 6 of 44, drawn Monday, Wednesday and Saturday for $1. The jackpot starts at $1,000,000 and rolls until won (paid as an annuity or cash option). The figures below are the odds of matching each tier (jackpot 1 in 7,059,052).",
+      odds: { "Jackpot (6 of 44)": 7059052, "Match 5": 30961, "Match 4": 669, "Match 3": 42 },
+    },
+  },
+  // Fantasy 5 — 5 of 41, daily, rolling cash jackpot from $50K.
+  az_fantasy5: {
+    label: "Fantasy 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "AZ", stateName: "Arizona", ticketPrice: "$1",
+    oddsJackpot: 749398, // 5 of 41
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Arizona Fantasy 5 is 5 of 41, drawn every day for $1. The cash jackpot starts at $50,000 and rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 749,398).",
+      odds: { "Jackpot (5 of 41)": 749398, "Match 4": 4163, "Match 3": 119 },
+    },
+  },
+  // Triple Twist — 6 of 42, daily, rolling jackpot. Three "twists" (ways to win);
+  // the top prize matches all six. Lower tiers follow the twist rules → odds-only.
+  az_tripletwist: {
+    label: "Triple Twist", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "AZ", stateName: "Arizona", ticketPrice: "$1",
+    oddsJackpot: 5245786, // 6 of 42
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Jackpot odds",
+      note: "Arizona Triple Twist is 6 of 42, drawn every day for $1, with three \"twists\" (ways to win). The rolling top prize is won by matching all six numbers — odds 1 in 5,245,786. Lower-tier prizes follow the twist rules; the figure below is the published jackpot odds.",
+      odds: { "Jackpot (6 of 42)": 5245786 },
+    },
+  },
+  // Pick 3 — 3-digit, daily.
+  az_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "AZ", stateName: "Arizona", ticketPrice: "$1",
+    prizes: {
+      note: "Arizona Pick 3 is a 3-digit game (000–999) drawn every day. A $1 Exact (straight) play pays $500. Box and other play styles pay different amounts.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Exact $1)",
+      reference: { title: "Arizona Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Exact — exact order ($1)", "$500", "1 in 1,000"] } ],
+        note: "Official Arizona Lottery top prize on a $1 Exact play. Box and other play styles pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

@@ -178,6 +178,10 @@ jobs:
           python scraper/history_scraper.py --game tn_dailyjp
           python scraper/history_scraper.py --game tn_cash3
           python scraper/history_scraper.py --game tn_cash4
+          python scraper/history_scraper.py --game az_thepick
+          python scraper/history_scraper.py --game az_fantasy5
+          python scraper/history_scraper.py --game az_tripletwist
+          python scraper/history_scraper.py --game az_pick3
           python scraper/build_index.py || echo "::warning::build_index failed (continuing)"
           exit 0   # always succeed so the commit step runs with whatever updated
 

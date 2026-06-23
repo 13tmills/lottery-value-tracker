@@ -649,6 +649,25 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  AZ: {
+    intro: "Arizona's draw games — The Pick's rolling jackpot, the daily Fantasy 5 and Triple Twist, and Pick 3 — with live jackpots, official odds and deep number-frequency history from the Arizona Lottery.",
+    games: [
+      { name: "The Pick", meta: "6 of 44 · Mon · Wed · Sat · jackpot from $1M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=az_thepick"]] },
+      { name: "Fantasy 5", meta: "5 of 41 · daily · cash jackpot from $50K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=az_fantasy5"]] },
+      { name: "Triple Twist", meta: "6 of 42 · daily · rolling jackpot",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=az_tripletwist"]] },
+      { name: "Pick 3", meta: "3-digit · daily · $500 exact",
+        links: [["Results, odds &amp; payouts", "game.html?game=az_pick3"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

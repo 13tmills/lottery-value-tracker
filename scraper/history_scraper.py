@@ -441,6 +441,12 @@ GAMES = {
     "tn_dailyjp":  {"kind": "lotterycorner", "lc_path": "tn/daily-tennessee-jackpot", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 38, "lc_jp_cap": 100000000},
     "tn_cash3":    {"kind": "lotterycorner", "lc_path": "tn/cash-3-evening", "num_count": 3, "digits": True},
     "tn_cash4":    {"kind": "lotterycorner", "lc_path": "tn/cash-4-evening", "num_count": 4, "digits": True},
+
+    # --- Arizona (33rd state) — arizonalottery.com is JS-walled; results via lotterycorner.
+    "az_thepick":     {"kind": "lotterycorner", "lc_path": "az/the-pick", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 44, "lc_jp_cap": 50000000},
+    "az_fantasy5":    {"kind": "lotterycorner", "lc_path": "az/fantasy-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 41, "lc_jp_cap": 5000000},
+    "az_tripletwist": {"kind": "lotterycorner", "lc_path": "az/triple-twist", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 42, "lc_jp_cap": 5000000},
+    "az_pick3":       {"kind": "lotterycorner", "lc_path": "az/pick-3", "num_count": 3, "digits": True},
 }
 
 
