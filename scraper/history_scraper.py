@@ -2330,8 +2330,13 @@ def out_path(game):
 
 
 def load_existing(game, cfg):
+    # utf-8-sig tolerates a leading BOM. Seed files written by PowerShell's
+    # `Out-File -Encoding utf8` (Windows PS 5.1) carry a UTF-8 BOM; a plain
+    # utf-8 read would raise JSONDecodeError, silently discard the existing
+    # deep history, and let the shallow re-scrape overwrite it. (Regression
+    # fixed 2026-06: this truncated several lotterycorner seeds to ~2 years.)
     try:
-        with open(out_path(game), encoding="utf-8") as fh:
+        with open(out_path(game), encoding="utf-8-sig") as fh:
             return json.load(fh)
     except (FileNotFoundError, json.JSONDecodeError):
         start = cfg.get("start")
