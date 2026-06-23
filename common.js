@@ -1960,6 +1960,43 @@ const GAME_META = {
         note: "Official Nebraska Lottery top prize. Box, Straight/Box and Combo plays pay different amounts." },
     },
   },
+  // ----- South Carolina (23rd state) ------------------------------------- #
+  // Palmetto Cash 5 — 5 of 38, daily, $2 play, rolling cash jackpot from $100K (+$10K/day
+  // minimum). A random Power-Up multiplier (x2/x3/x5/x10) is built into every play, so the
+  // non-jackpot prizes vary — odds-only treatment, no invented fixed value.
+  sc_palmetto5: {
+    label: "Palmetto Cash 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "SC", stateName: "South Carolina", ticketPrice: "$2",
+    oddsJackpot: 501942, // 5 of 38
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Palmetto Cash 5 is 5 of 38, drawn daily for $2. The cash jackpot starts at $100,000 and grows by at least $10,000 a day until won. A random Power-Up multiplier (×2, ×3, ×5 or ×10) is built into every play and multiplies the non-jackpot prizes, so those amounts vary. The figures below are the official published odds.",
+      odds: { "Jackpot": 501942, "Match 4": 3042, "Match 3": 95, "Match 2": 9 },
+    },
+  },
+  // Pick 3 / Pick 4 (Plus FIREBALL) — twice daily (we track the evening draw).
+  sc_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "SC", stateName: "South Carolina", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "South Carolina Pick 3 (Plus FIREBALL) is a 3-digit game (000–999) drawn twice a day; we track the evening draw. The top prize is a $500 Straight on a $1 play. Box plays and the optional FIREBALL add-on pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "South Carolina Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official SC Education Lottery top prize. Box and FIREBALL plays pay different amounts." },
+    },
+  },
+  sc_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "SC", stateName: "South Carolina", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "South Carolina Pick 4 (Plus FIREBALL) is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. The top prize is a $5,000 Straight on a $1 play. Box plays and the optional FIREBALL add-on pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "South Carolina Pick 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official SC Education Lottery top prize. Box and FIREBALL plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

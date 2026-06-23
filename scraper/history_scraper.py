@@ -379,6 +379,12 @@ GAMES = {
     "ne_pick5": {"kind": "nelottery_html", "ne_id": 31, "num_count": 5, "sort": True, "jackpot": True},
     "ne_pick3": {"kind": "nelottery_html", "ne_id": 32, "num_count": 3, "digits": True},
     "ne_pick4": {"kind": "nelottery_html", "ne_id": 41, "num_count": 4, "digits": True},
+
+    # --- South Carolina (23rd state) — sceducationlottery.com WinningNumbers dashboard
+    # cards (Pick 3/4 list the evening draw first). Deep history seeded separately. --------
+    "sc_palmetto5": {"kind": "sclottery_html", "sc_alt": "Palmetto Cash 5", "num_count": 5, "sort": True, "jackpot": True},
+    "sc_pick3":     {"kind": "sclottery_html", "sc_alt": "Pick 3", "num_count": 3, "digits": True},
+    "sc_pick4":     {"kind": "sclottery_html", "sc_alt": "Pick 4", "num_count": 4, "digits": True},
 }
 
 
@@ -2128,6 +2134,33 @@ def scrape_nebraska(cfg, by_date):
     return None
 
 
+SC_WIN = "https://www.sceducationlottery.com/Games/WinningNumbers"
+
+
+def scrape_sc(cfg, by_date):
+    """South Carolina — sceducationlottery.com/Games/WinningNumbers is a dashboard of
+    game cards, each headed by an <img alt="<game>"> and listing the latest numbers as
+    <li class="number">N</li> then a "<Month D, YYYY> [Evening]" date. The twice-daily
+    Pick games list the EVENING draw first, so the first num_count numbers are the draw
+    we keep. The Palmetto Cash 5 jackpot is JS-loaded (not in the HTML), so the deep
+    saw-tooth comes from the seed and current_jackpot persists between runs."""
+    page = requests.get(SC_WIN, headers={"User-Agent": USER_AGENT}, timeout=45).text
+    n = cfg["num_count"]
+    m = re.search(rf'(?s)alt="{re.escape(cfg["sc_alt"])}"(.*?)(?:col-sm-6 col-md-4 game|</main>)', page)
+    if not m:
+        return None
+    blk = m.group(1)
+    nums = [int(x) for x in re.findall(r'<li class="number">\s*(\d+)\s*</li>', blk)][:n]
+    if len(nums) < n:
+        return None
+    dm = re.search(r"<li[^>]*>\s*([A-Z][a-z]+ \d{1,2}, \d{4})", blk)
+    if not dm:
+        return None
+    iso = _la_date(dm.group(1))
+    by_date[iso] = {"date": iso, "numbers": sorted(nums) if cfg.get("sort") else nums}
+    return None  # jackpot saw-tooth comes from the seed; current_jackpot persists
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -2343,6 +2376,11 @@ def main():
         if cur:
             data["current_jackpot"] = cur
             print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "sclottery_html":
+        scrape_sc(cfg, by_date)
+        source = "sceducationlottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from sceducationlottery.com.")
+        complete = True
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"
