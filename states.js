@@ -431,6 +431,25 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  AR: {
+    intro: "Arkansas's draw games — the new Arkansas Lotto jackpot, Natural State Jackpot's daily rolling cash prize, and the twice-daily Cash 3/4 — with live jackpots, official odds and deep number-frequency history from the Arkansas Scholarship Lottery.",
+    games: [
+      { name: "Arkansas Lotto", meta: "6 of 40 · Wed · Sat · jackpot from $250K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=ar_lotto"]] },
+      { name: "Natural State Jackpot", meta: "5 of 39 · daily · cash jackpot from $50K",
+        links: [["Jackpot, EV &amp; prizes", "game.html?game=ar_nsj"]] },
+      { name: "Cash 3", meta: "3-digit · twice daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ar_cash3"]] },
+      { name: "Cash 4", meta: "4-digit · twice daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ar_cash4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

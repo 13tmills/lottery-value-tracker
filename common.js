@@ -1864,6 +1864,60 @@ const GAME_META = {
         note: "Official Minnesota Lottery top prize. Box (any-order) and straight/box plays pay different amounts." },
     },
   },
+  // ----- Arkansas (21st state) ------------------------------------------- #
+  // Arkansas Lotto — 6 of 40 (+ a free Bonus Number for non-jackpot tiers), Wed & Sat,
+  // rolling jackpot from $250K. Match 5 + Bonus = fixed $25K; other tiers pari-mutuel.
+  ar_lotto: {
+    label: "Arkansas Lotto", specialKey: null, specialName: "",
+    draws: "Wed & Sat", priceChanges: [], state: "AR", stateName: "Arkansas", ticketPrice: "$1",
+    oddsJackpot: 3838380, // 6 of 40
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Arkansas Lotto is 6 of 40, drawn Wednesday and Saturday — seven balls are drawn and the seventh is a free Bonus Number used only for non-jackpot prizes. The jackpot starts at $250,000 and rolls until won. Match 5 + Bonus pays a fixed $25,000; the other non-jackpot tiers are pari-mutuel. The figures below are the official published odds.",
+      odds: { "Jackpot (Match 6)": 3838380, "Match 5 + Bonus": 639730, "Match 5": 19386 },
+    },
+  },
+  // Natural State Jackpot — 5 of 39, daily, rolling cash jackpot from $50K. Lower tiers
+  // are FIXED (Match 4 $300, Match 3 $7, Match 2 $1) — full value treatment + Monte Carlo.
+  ar_nsj: {
+    label: "Natural State Jackpot", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "AR", stateName: "Arkansas", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 575757, // 5 of 39
+      overall_odds: 9,
+      staticPrizes: true,
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 575757 },
+        "Match 4": { label: "Match 4", odds: 3387, prize: 300 },
+        "Match 3": { label: "Match 3", odds: 103, prize: 7 },
+        "Match 2": { label: "Match 2", odds: 10, prize: 1 },
+      },
+    },
+  },
+  // Cash 3 / Cash 4 — twice daily (we track the evening draw). $500 / $5,000 Straight top.
+  ar_cash3: {
+    label: "Cash 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "AR", stateName: "Arkansas", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Arkansas Cash 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. The top prize is a $500 Straight on a $1 play. Box (any-order), Straight/Box and Combo plays pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Arkansas Cash 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official Arkansas Scholarship Lottery top prize. Box and Combo plays pay different amounts." },
+    },
+  },
+  ar_cash4: {
+    label: "Cash 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "AR", stateName: "Arkansas", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Arkansas Cash 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. The top prize is a $5,000 Straight on a $1 play. Box (any-order), Straight/Box and Combo plays pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Arkansas Cash 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official Arkansas Scholarship Lottery top prize. Box and Combo plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
@@ -1917,6 +1971,8 @@ const STATE_TIERS = {
     tiers: [[50, 1307], [2, 52.3], [1, 6.53]] }, // 5/31
   id_cash:    { label: "Idaho Cash", price: 1, J: 610880, dpw: 7,
     tiers: [[200, 3054], [5, 78]] }, // 5/45 (Match 2 is a free ticket — omitted)
+  ar_nsj:     { label: "Natural State Jackpot (AR)", price: 1, J: 575757, dpw: 7,
+    tiers: [[300, 3387], [7, 103], [1, 10]] }, // 5/39, official fixed lower tiers
 };
 
 // Update title + description + canonical + OG/Twitter tags (by id) for SEO.

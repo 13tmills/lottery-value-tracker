@@ -366,6 +366,13 @@ GAMES = {
     "mn_gopher5": {"kind": "mnlottery_html", "mn_name": "Gopher 5", "num_count": 5, "sort": True, "jackpot": True},
     "mn_north5":  {"kind": "mnlottery_html", "mn_name": "North 5", "num_count": 5, "sort": True, "jackpot": True},
     "mn_pick3":   {"kind": "mnlottery_html", "mn_name": "Pick 3", "num_count": 3, "digits": True},
+
+    # --- Arkansas (21st state) — myarkansaslottery.com/winning-numbers cards (one per
+    # game; Cash 3/4 first numbers = the evening draw). Deep history seeded separately. ------
+    "ar_lotto": {"kind": "arlottery_html", "ar_slug": "lotto", "num_count": 6, "sort": True, "jackpot": True, "cash": True, "ar_special": "bonus"},
+    "ar_nsj":   {"kind": "arlottery_html", "ar_slug": "natural-state-jackpot", "num_count": 5, "sort": True, "jackpot": True, "cash": True},
+    "ar_cash3": {"kind": "arlottery_html", "ar_slug": "cash-3", "num_count": 3, "digits": True},
+    "ar_cash4": {"kind": "arlottery_html", "ar_slug": "cash-4", "num_count": 4, "digits": True},
 }
 
 
@@ -2039,6 +2046,47 @@ def scrape_minnesota(cfg, by_date):
     return None
 
 
+AR_WIN = "https://www.myarkansaslottery.com/winning-numbers"
+
+
+def scrape_arkansas(cfg, by_date):
+    """Arkansas — myarkansaslottery.com/winning-numbers renders one card per game wrapped
+    in <a href="/games/<slug>">: a draw-date, the winning numbers (draw-game__number divs,
+    with a draw-game__number-special bonus on Lotto), and the jackpot (<p class="jackpot">
+    ... <strong>$X</strong>). The Cash 3/4 card shows two recent draws; the first
+    draw-game__number divs are the latest (evening). Latest-only; deep history is seeded."""
+    page = requests.get(AR_WIN, headers={"User-Agent": USER_AGENT}, timeout=45).text
+    slug = cfg["ar_slug"]
+    m = re.search(rf'(?s)<a href="/games/{re.escape(slug)}">(.*?)<a href="/games/{re.escape(slug)}#', page)
+    if not m:
+        return None
+    blk = m.group(1)
+    dm = re.search(r'draw-date">([A-Z][a-z]+ \d{1,2}, \d{4})', blk)
+    if not dm:
+        return None
+    iso = _la_date(dm.group(1))
+    n = cfg["num_count"]
+    nums = [int(x) for x in re.findall(r'draw-game__number">\s*(\d+)\s*<', blk)][:n]
+    if len(nums) < n:
+        return None
+    draw = {"date": iso, "numbers": sorted(nums) if cfg.get("sort") else nums}
+    if cfg.get("ar_special"):
+        sm = re.search(r'draw-game__number-special">\s*(\d+)\s*<', blk)
+        if sm:
+            draw[cfg["ar_special"]] = int(sm.group(1))
+    if cfg.get("jackpot"):
+        jm = re.search(r'jackpot">[^<]*<strong>\s*\$?([\d,]+)', blk)
+        if jm:
+            jp = int(jm.group(1).replace(",", ""))
+            draw["jackpot"] = jp
+            if cfg.get("cash"):
+                draw["cash"] = jp
+    by_date[iso] = draw
+    if cfg.get("jackpot") and draw.get("jackpot"):
+        return {"date": iso, "jackpot": draw["jackpot"], "cash": draw.get("cash")}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -2234,6 +2282,14 @@ def main():
         cur = scrape_minnesota(cfg, by_date)
         source = "mnlottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from mnlottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "arlottery_html":
+        cur = scrape_arkansas(cfg, by_date)
+        source = "myarkansaslottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from myarkansaslottery.com.")
         complete = True
         if cur:
             data["current_jackpot"] = cur

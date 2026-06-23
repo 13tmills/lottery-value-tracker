@@ -1,6 +1,8 @@
 ﻿{
     "generated":  "2026-06-22",
     "jackpot_cycles":  {
+                           "ar_lotto":  3,
+                           "ar_nsj":  148,
                            "ca_derby":  7,
                            "ca_fantasy5":  55,
                            "ca_superlotto":  4,
