@@ -393,6 +393,27 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  WI: {
+    intro: "Wisconsin's draw games — Megabucks' rolling jackpot, the fixed-prize SuperCash!, Badger 5's rolling cash jackpot, and the twice-daily Pick 3/4 — with live jackpots, official odds and deep number-frequency history from the Wisconsin Lottery.",
+    games: [
+      { name: "Megabucks", meta: "6 of 49 · Wed · Sat · jackpot from $1M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=wi_megabucks"]] },
+      { name: "SuperCash!", meta: "6 of 39 · daily · fixed $350K top",
+        links: [["Prizes, odds &amp; value", "game.html?game=wi_supercash"]] },
+      { name: "Badger 5", meta: "5 of 31 · daily · cash jackpot from $10K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=wi_badger5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=wi_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=wi_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

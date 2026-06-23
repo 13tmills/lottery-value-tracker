@@ -1770,6 +1770,64 @@ const GAME_META = {
         note: "Official Missouri Lottery top prize. Box (any-order) plays and the Wild Ball / EZ Match add-ons pay different amounts." },
     },
   },
+  // ----- Wisconsin (19th state) ------------------------------------------ #
+  // Megabucks — 6 of 49, Wed & Sat, rolling jackpot from $1M (two plays for $1). Lower
+  // tiers shown as official odds (combinatorially verified) + the live jackpot.
+  wi_megabucks: {
+    label: "Megabucks", specialKey: null, specialName: "",
+    draws: "Wed & Sat", priceChanges: [], state: "WI", stateName: "Wisconsin", ticketPrice: "$1 / 2 plays",
+    oddsJackpot: 13983816, // 6 of 49
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Wisconsin Megabucks is 6 of 49 — two plays for $1 — drawn Wednesday and Saturday. The jackpot starts at $1,000,000 and rolls until won (annuity, with a cash option). The lower tiers are pari-mutuel; the figures below are the official published odds.",
+      odds: { "Jackpot": 13983816, "Match 5": 54201, "Match 4": 1032, "Match 3": 57 },
+    },
+  },
+  // SuperCash! — 6 of 39, daily, FIXED $350K top (two plays for $1); optional Doubler.
+  wi_supercash: {
+    label: "SuperCash!", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "WI", stateName: "Wisconsin", ticketPrice: "$1 / 2 plays",
+    oddsJackpot: 3262623, // 6 of 39
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Wisconsin SuperCash! is 6 of 39 — two plays for $1 — drawn daily. The top prize is a FIXED $350,000 (shared if there are multiple winners), not a rolling jackpot; the optional Doubler add-on doubles non-jackpot prizes and can make the top prize $700,000. The figures below are the official published odds.",
+      odds: { "Jackpot": 3262623, "Match 5": 16478, "Match 4": 412, "Match 3": 30 },
+    },
+  },
+  // Badger 5 — 5 of 31, daily, rolling CASH jackpot from $10K. Match 2 wins a free ticket.
+  wi_badger5: {
+    label: "Badger 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "WI", stateName: "Wisconsin", ticketPrice: "$1",
+    oddsJackpot: 169911, // 5 of 31
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Wisconsin Badger 5 is 5 of 31, drawn daily. The jackpot is paid in cash, starts at $10,000 and rolls until won. Match 2 of 5 wins a free ticket. The figures below are the official published odds.",
+      odds: { "Jackpot": 169911, "Match 4": 1307, "Match 3": 52, "Match 2 (free ticket)": 7 },
+    },
+  },
+  // Pick 3 / 4 — twice daily (we track the evening draw). $500 / $5,000 Straight top.
+  wi_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "WI", stateName: "Wisconsin", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Wisconsin Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. The top prize is a $500 Straight on a $1 play. Box (any-order) plays pay less.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Wisconsin Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official Wisconsin Lottery top prize. Box (any-order) and combination plays pay different amounts." },
+    },
+  },
+  wi_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "WI", stateName: "Wisconsin", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Wisconsin Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. The top prize is a $5,000 Straight on a $1 play. Box (any-order) plays pay less.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Wisconsin Pick 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official Wisconsin Lottery top prize. Box (any-order) and combination plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

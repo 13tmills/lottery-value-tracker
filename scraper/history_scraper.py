@@ -351,6 +351,15 @@ GAMES = {
     "mo_showmecash": {"kind": "molottery_html", "mo_path": "show-me-cash", "num_count": 5, "sort": True, "jackpot": True},
     "mo_pick3":      {"kind": "molottery_html", "mo_path": "pick3", "num_count": 3, "digits": True, "mo_evening": True},
     "mo_pick4":      {"kind": "molottery_html", "mo_path": "pick4", "num_count": 4, "digits": True, "mo_evening": True},
+
+    # --- Wisconsin (19th state) — wilottery.com/winners/draw-history renders recent draws
+    # for every game as "winning-numbers-line" cards; we filter by game name (Pick keep
+    # Evening). Rolling window; deep numbers + jackpot saw-tooth seeded separately. ----------
+    "wi_megabucks": {"kind": "wilottery_html", "wi_game": "Megabucks", "num_count": 6, "sort": True, "jackpot": True},
+    "wi_supercash": {"kind": "wilottery_html", "wi_game": "SuperCash!", "num_count": 6, "sort": True, "jackpot": True, "cash": True},
+    "wi_badger5":   {"kind": "wilottery_html", "wi_game": "Badger 5", "num_count": 5, "sort": True, "jackpot": True, "cash": True},
+    "wi_pick3":     {"kind": "wilottery_html", "wi_game": "Pick 3", "num_count": 3, "digits": True, "wi_evening": True},
+    "wi_pick4":     {"kind": "wilottery_html", "wi_game": "Pick 4", "num_count": 4, "digits": True, "wi_evening": True},
 }
 
 
@@ -1928,6 +1937,61 @@ def scrape_missouri(cfg, by_date):
     return None
 
 
+WI_HIST = "https://www.wilottery.com/winners/draw-history"
+
+
+def _wi_money(s):
+    """'$3.60 Million' / '$350,000' / '$10,000' -> int dollars."""
+    s = re.sub(r"<[^>]+>", " ", s or "")
+    m = re.search(r"\$\s*([\d.,]+)\s*[Mm]illion", s)
+    if m:
+        return int(round(float(m.group(1).replace(",", "")) * 1_000_000))
+    m = re.search(r"\$\s*([\d,]+)", s)
+    return int(m.group(1).replace(",", "")) if m else None
+
+
+def scrape_wisconsin(cfg, by_date):
+    """Wisconsin — wilottery.com/winners/draw-history server-renders the recent draws for
+    every game in one page as "winning-numbers-line" cards: a game name, the draw date
+    (MM/DD/YYYY) with a Midday/Evening label for the twice-daily Pick games, the balls
+    (winning-number w1..wN spans), and the estimated jackpot. We filter to one game; Pick
+    3/4 keep the Evening draw. Rolling window, so retention accumulates; deep numbers and
+    the jackpot saw-tooth are seeded separately. Returns the latest advertised jackpot."""
+    page = requests.get(WI_HIST, headers={"User-Agent": USER_AGENT}, timeout=45).text
+    n = cfg["num_count"]
+    newest = None
+    for card in re.split(r'(?=<div class="winning-numbers-line )', page):
+        gm = re.search(r'col-lg-2 game">\s*([^<]+?)\s*<', card)
+        if not gm or gm.group(1).strip() != cfg["wi_game"]:
+            continue
+        dm = re.search(r"<strong>(\d{2})/(\d{2})/(\d{4})</strong>", card)
+        if not dm:
+            continue
+        iso = f"{dm.group(3)}-{dm.group(1)}-{dm.group(2)}"
+        if cfg.get("wi_evening"):
+            wm = re.search(r'col-lg-2 date">\s*<div>([^<]*)</div>', card)
+            if not wm or "Evening" not in wm.group(1):
+                continue
+        balls = [int(x) for x in re.findall(
+            r'winning-number w\d+[^>]*>\s*<span class="prefix[^"]*">\s*(\d+)\s*</span>', card)][:n]
+        if len(balls) < n:
+            continue
+        draw = {"date": iso, "numbers": sorted(balls) if cfg.get("sort") else balls}
+        if cfg.get("jackpot"):
+            jm = re.search(r'estimated-jackpot">(.*?)</div>', card, re.S)
+            jp = _wi_money(jm.group(1)) if jm else None
+            if jp:
+                draw["jackpot"] = jp
+                if cfg.get("cash"):
+                    draw["cash"] = jp
+        by_date[iso] = draw
+        if cfg.get("jackpot") and draw.get("jackpot") and (newest is None or iso > newest["date"]):
+            newest = draw
+    if newest:
+        return {"date": newest["date"], "jackpot": newest["jackpot"], "cash": newest.get("cash")}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -2107,6 +2171,14 @@ def main():
         cur = scrape_missouri(cfg, by_date)
         source = "molottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from molottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "wilottery_html":
+        cur = scrape_wisconsin(cfg, by_date)
+        source = "wilottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from wilottery.com.")
         complete = True
         if cur:
             data["current_jackpot"] = cur
