@@ -2521,6 +2521,149 @@ const GAME_META = {
       odds: { "Jackpot (5 of 38)": 501942, "Match 4": 3042, "Match 3": 95 },
     },
   },
+  // ── Montana (state #37) ────────────────────────────────────────────────
+  // Montana Cash — 5 of 45, Wed/Sat, rolling cash jackpot from $20K.
+  mt_montanacash: {
+    label: "Montana Cash", specialKey: null, specialName: "",
+    draws: "Wed · Sat", priceChanges: [], state: "MT", stateName: "Montana", ticketPrice: "$1",
+    oddsJackpot: 1221759, // 5 of 45
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Montana Cash is 5 of 45, drawn Wednesday and Saturday for $1. The cash jackpot starts at $20,000 and rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 1,221,759).",
+      odds: { "Jackpot (5 of 45)": 1221759, "Match 4": 6109, "Match 3": 157 },
+    },
+  },
+  // Big Sky Bonus — pick 4 of 31 plus a Bonus ball (1 of 16). Top prize matches
+  // all four numbers + the Bonus: C(31,4)=31,465 × 16 = 503,440. Daily, pari-mutuel.
+  mt_bigsky: {
+    label: "Big Sky Bonus", specialKey: null, specialName: "Bonus",
+    draws: "Daily", priceChanges: [], state: "MT", stateName: "Montana", ticketPrice: "$2",
+    oddsJackpot: 503440, // 4 of 31 + Bonus (1 of 16)
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Jackpot odds",
+      note: "Montana Big Sky Bonus draws four numbers from 1–31 plus a separate Bonus ball (1 of 16), every day for $2. The top prize is won by matching all four numbers and the Bonus — odds 1 in 503,440 — and is pari-mutuel (it grows when not won). Lower tiers pay set amounts; the figure below is the published top-prize odds.",
+      odds: { "4 + Bonus (top prize)": 503440 },
+    },
+  },
+  // ── South Dakota (state #38) ───────────────────────────────────────────
+  // Dakota Cash — 5 of 35, Wed/Sat, rolling cash jackpot from $20K.
+  sd_dakotacash: {
+    label: "Dakota Cash", specialKey: null, specialName: "",
+    draws: "Wed · Sat", priceChanges: [], state: "SD", stateName: "South Dakota", ticketPrice: "$1",
+    oddsJackpot: 324632, // 5 of 35
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Dakota Cash is 5 of 35, drawn Wednesday and Saturday for $1. The cash jackpot starts at $20,000 and rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 324,632).",
+      odds: { "Jackpot (5 of 35)": 324632, "Match 4": 2164, "Match 3": 75 },
+    },
+  },
+  // ── Mississippi (state #39) ────────────────────────────────────────────
+  // Mississippi Match 5 — 5 of 35, daily, rolling cash jackpot from $50K.
+  ms_match5: {
+    label: "Mississippi Match 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "MS", stateName: "Mississippi", ticketPrice: "$2",
+    oddsJackpot: 324632, // 5 of 35
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Mississippi Match 5 is 5 of 35, drawn every day for $2. The cash jackpot starts at $50,000 and rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 324,632).",
+      odds: { "Jackpot (5 of 35)": 324632, "Match 4": 2164, "Match 3": 75 },
+    },
+  },
+  // ── Wyoming (state #40) ────────────────────────────────────────────────
+  // Cowboy Draw — 5 of 45, Mon/Thu, rolling cash jackpot from $250K.
+  wy_cowboydraw: {
+    label: "Cowboy Draw", specialKey: null, specialName: "",
+    draws: "Mon · Thu", priceChanges: [], state: "WY", stateName: "Wyoming", ticketPrice: "$1",
+    oddsJackpot: 1221759, // 5 of 45
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Wyoming Cowboy Draw is 5 of 45, drawn Monday and Thursday for $1. The cash jackpot starts at $250,000 and rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 1,221,759).",
+      odds: { "Jackpot (5 of 45)": 1221759, "Match 4": 6109, "Match 3": 157 },
+    },
+  },
+  // ── Iowa (state #41) ───────────────────────────────────────────────────
+  // Pick 3 / Pick 4 — twice daily (we track the evening draw).
+  ia_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "IA", stateName: "Iowa", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Iowa Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. A $1 Straight play pays $600 (a 50¢ play pays $300). Box and other play styles pay different amounts.",
+      topPrize: "$600", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Iowa Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$600", "1 in 1,000"] } ],
+        note: "Official Iowa Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
+  ia_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "IA", stateName: "Iowa", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Iowa Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. A $1 Straight play pays $6,000 (a 50¢ play pays $3,000). Box and other play styles pay different amounts.",
+      topPrize: "$6,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Iowa Pick 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$6,000", "1 in 10,000"] } ],
+        note: "Official Iowa Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
+  // ── Kentucky (state #42) ───────────────────────────────────────────────
+  // Cash Ball 225 — 4 of 35 plus a Cash Ball (1 of 25). The top prize (a fixed
+  // $225,000) needs all four numbers + the Cash Ball: C(35,4)=52,360 × 25 = 1,309,000.
+  ky_cashball: {
+    label: "Cash Ball 225", specialKey: null, specialName: "Cash Ball",
+    draws: "Daily", priceChanges: [], state: "KY", stateName: "Kentucky", ticketPrice: "$1",
+    oddsJackpot: 1309000, // 4 of 35 + Cash Ball (1 of 25)
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Top prize odds",
+      note: "Kentucky Cash Ball 225 draws four numbers from 1–35 plus a separate Cash Ball (1 of 25), every day for $1. The top prize is a fixed $225,000, won by matching all four numbers and the Cash Ball — odds 1 in 1,309,000. Lower tiers pay fixed amounts; the figure below is the published top-prize odds.",
+      odds: { "4 + Cash Ball (top prize)": 1309000 },
+    },
+  },
+  ky_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "KY", stateName: "Kentucky", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Kentucky Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. A $1 Straight play pays $600 (a 50¢ play pays $300). Box and other play styles pay different amounts.",
+      topPrize: "$600", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Kentucky Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$600", "1 in 1,000"] } ],
+        note: "Official Kentucky Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
+  // ── Washington, D.C. (jurisdiction #43) ────────────────────────────────
+  // DC-3 / DC-4 / DC-5 — digit games drawn twice daily (we track the evening draw).
+  dc_dc3: {
+    label: "DC-3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "DC", stateName: "Washington, D.C.", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "DC-3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. A $1 Straight play pays $500 (a 50¢ play pays $250). Box and other play styles pay different amounts.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "DC-3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$500", "1 in 1,000"] } ],
+        note: "Official DC Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
+  dc_dc4: {
+    label: "DC-4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "DC", stateName: "Washington, D.C.", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "DC-4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. A $1 Straight play pays $5,000 (a 50¢ play pays $2,500). Box and other play styles pay different amounts.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "DC-4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$5,000", "1 in 10,000"] } ],
+        note: "Official DC Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
+  dc_dc5: {
+    label: "DC-5", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "DC", stateName: "Washington, D.C.", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "DC-5 is a 5-digit game (00000–99999) drawn twice a day; we track the evening draw. A $1 Straight play pays $50,000 (a 50¢ play pays $25,000). Box and other play styles pay different amounts.",
+      topPrize: "$50,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "DC-5 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$50,000", "1 in 100,000"] } ],
+        note: "Official DC Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

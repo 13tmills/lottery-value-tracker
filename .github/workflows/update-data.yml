@@ -187,6 +187,18 @@ jobs:
           python scraper/history_scraper.py --game ok_cash5
           python scraper/history_scraper.py --game ok_pick3
           python scraper/history_scraper.py --game ri_wildmoney
+          python scraper/history_scraper.py --game mt_montanacash
+          python scraper/history_scraper.py --game mt_bigsky
+          python scraper/history_scraper.py --game sd_dakotacash
+          python scraper/history_scraper.py --game ms_match5
+          python scraper/history_scraper.py --game wy_cowboydraw
+          python scraper/history_scraper.py --game ia_pick3
+          python scraper/history_scraper.py --game ia_pick4
+          python scraper/history_scraper.py --game ky_cashball
+          python scraper/history_scraper.py --game ky_pick3
+          python scraper/history_scraper.py --game dc_dc3
+          python scraper/history_scraper.py --game dc_dc4
+          python scraper/history_scraper.py --game dc_dc5
           python scraper/build_index.py || echo "::warning::build_index failed (continuing)"
           exit 0   # always succeed so the commit step runs with whatever updated
 

@@ -461,6 +461,36 @@ GAMES = {
     # --- Rhode Island (36th state) — results via lotterycorner. Wild Money is
     # 5/38 + an "Extra" number; first 5 class="number" balls are the main draw.
     "ri_wildmoney": {"kind": "lotterycorner", "lc_path": "ri/wild-money", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 38, "lc_jp_cap": 5000000},
+
+    # --- Montana (37th state) — results via lotterycorner.
+    "mt_montanacash": {"kind": "lotterycorner", "lc_path": "mt/montana-cash", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 45, "lc_jp_cap": 5000000},
+    # Big Sky Bonus appends a Bonus ball after the 4 main numbers; max_ball:31 filters it.
+    # Top prize is pari-mutuel (mostly small) so no jackpot series tracked.
+    "mt_bigsky":      {"kind": "lotterycorner", "lc_path": "mt/big-sky-bonus", "num_count": 4, "sort": True, "max_ball": 31},
+
+    # --- South Dakota (38th state) — results via lotterycorner.
+    "sd_dakotacash": {"kind": "lotterycorner", "lc_path": "sd/dakota-cash", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 35, "lc_jp_cap": 2000000},
+
+    # --- Mississippi (39th state) — results via lotterycorner.
+    "ms_match5": {"kind": "lotterycorner", "lc_path": "ms/match-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 35, "lc_jp_cap": 2000000},
+
+    # --- Wyoming (40th state) — results via lotterycorner.
+    "wy_cowboydraw": {"kind": "lotterycorner", "lc_path": "wy/cowboy-draw", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 45, "lc_jp_cap": 9000000},
+
+    # --- Iowa (41st state) — results via lotterycorner.
+    "ia_pick3": {"kind": "lotterycorner", "lc_path": "ia/pick-3-evening", "num_count": 3, "digits": True},
+    "ia_pick4": {"kind": "lotterycorner", "lc_path": "ia/pick-4-evening", "num_count": 4, "digits": True},
+
+    # --- Kentucky (42nd state) — results via lotterycorner.
+    # Cash Ball 225 appends a Cash Ball after the 4 main numbers (max_ball:35 filters it);
+    # top prize is a fixed $225K so no jackpot series tracked.
+    "ky_cashball": {"kind": "lotterycorner", "lc_path": "ky/cash-ball", "num_count": 4, "sort": True, "max_ball": 35},
+    "ky_pick3":    {"kind": "lotterycorner", "lc_path": "ky/pick-3-evening", "num_count": 3, "digits": True},
+
+    # --- Washington, D.C. (43rd jurisdiction) — results via lotterycorner.
+    "dc_dc3": {"kind": "lotterycorner", "lc_path": "dc/dc-3-evening", "num_count": 3, "digits": True},
+    "dc_dc4": {"kind": "lotterycorner", "lc_path": "dc/dc-4-evening", "num_count": 4, "digits": True},
+    "dc_dc5": {"kind": "lotterycorner", "lc_path": "dc/dc-5-evening", "num_count": 5, "digits": True},
 }
 
 

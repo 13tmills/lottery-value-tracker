@@ -711,6 +711,107 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  MT: {
+    intro: "Montana's draw games — Montana Cash's rolling jackpot and the daily Big Sky Bonus — with live jackpots, official odds and deep number-frequency history from the Montana Lottery.",
+    games: [
+      { name: "Montana Cash", meta: "5 of 45 · Wed · Sat · jackpot from $20K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=mt_montanacash"]] },
+      { name: "Big Sky Bonus", meta: "4 of 31 + Bonus · daily · pari-mutuel top prize",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=mt_bigsky"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  SD: {
+    intro: "South Dakota's Dakota Cash — a 5-of-35 game with a rolling cash jackpot — with the live jackpot, official odds and deep number-frequency history from the South Dakota Lottery.",
+    games: [
+      { name: "Dakota Cash", meta: "5 of 35 · Wed · Sat · jackpot from $20K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=sd_dakotacash"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  MS: {
+    intro: "Mississippi's Match 5 — a daily 5-of-35 game with a rolling cash jackpot — with the live jackpot, official odds and deep number-frequency history from the Mississippi Lottery.",
+    games: [
+      { name: "Mississippi Match 5", meta: "5 of 35 · daily · jackpot from $50K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=ms_match5"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  WY: {
+    intro: "Wyoming's Cowboy Draw — a 5-of-45 game with a big rolling cash jackpot — with the live jackpot, official odds and deep number-frequency history from the Wyoming Lottery.",
+    games: [
+      { name: "Cowboy Draw", meta: "5 of 45 · Mon · Thu · jackpot from $250K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=wy_cowboydraw"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  IA: {
+    intro: "Iowa's twice-daily Pick 3 and Pick 4 — with official odds, top prizes and deep number-frequency history from the Iowa Lottery.",
+    games: [
+      { name: "Pick 3", meta: "3-digit · twice daily · $600 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ia_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily · $6K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ia_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  KY: {
+    intro: "Kentucky's draw games — the daily Cash Ball 225 with its fixed $225K top prize and the twice-daily Pick 3 — with official odds and deep number-frequency history from the Kentucky Lottery.",
+    games: [
+      { name: "Cash Ball 225", meta: "4 of 35 + Cash Ball · daily · fixed $225K top prize",
+        links: [["Odds, prizes &amp; results", "game.html?game=ky_cashball"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily · $600 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ky_pick3"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  DC: {
+    intro: "Washington, D.C.'s DC-3, DC-4 and DC-5 — twice-daily digit games — with official odds, top prizes and deep number-frequency history from the DC Lottery.",
+    games: [
+      { name: "DC-3", meta: "3-digit · twice daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=dc_dc3"]] },
+      { name: "DC-4", meta: "4-digit · twice daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=dc_dc4"]] },
+      { name: "DC-5", meta: "5-digit · twice daily · $50K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=dc_dc5"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [
