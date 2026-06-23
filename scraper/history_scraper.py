@@ -501,6 +501,9 @@ GAMES = {
     "uk_euromillions": {"kind": "lottery_uk", "uk_slug": "euromillions", "main_count": 5, "special_count": 2, "max_ball": 50, "uk_start": "2016-09-24", "jackpot": True},
     "uk_thunderball":  {"kind": "lottery_uk", "uk_slug": "thunderball",  "main_count": 5, "special_count": 1, "max_ball": 39, "uk_start": "2010-05-10"},
     "uk_setforlife":   {"kind": "lottery_uk", "uk_slug": "set-for-life", "main_count": 5, "special_count": 1, "max_ball": 47, "uk_start": "2019-03-15"},
+    # HotPicks — fixed-prize side bets on the main Lotto / EuroMillions balls (no special, no jackpot).
+    "uk_lotto_hotpicks": {"kind": "lottery_uk", "uk_slug": "lotto/hotpicks",        "main_count": 6, "special_count": 0, "max_ball": 59, "uk_start": "2015-10-10"},
+    "uk_em_hotpicks":    {"kind": "lottery_uk", "uk_slug": "euromillions/hot-picks", "main_count": 5, "special_count": 0, "max_ball": 50, "uk_start": "2016-09-24"},
 }
 
 

@@ -2740,6 +2740,43 @@ const GAME_META = {
       odds: { "5 + Life Ball (top prize)": 15339390, "Match 5": 1704377 },
     },
   },
+  // Lotto HotPicks — uses the 6 main Lotto balls; pick 1–5 numbers and match all
+  // for a FIXED cash prize (no jackpot). Odds = C(59-k,6-k)/C(59,6); prizes official.
+  uk_lotto_hotpicks: {
+    label: "Lotto HotPicks (UK)", specialKey: null, specialName: "", currency: "GBP",
+    draws: "Wed · Sat", priceChanges: [], state: "UK", stateName: "United Kingdom", ticketPrice: "£1",
+    prizes: {
+      note: "Lotto HotPicks uses the same six numbers as the main UK Lotto draw, but you choose 1 to 5 numbers and win a FIXED cash prize only by matching every number you pick — there is no jackpot. £1 per line.",
+      topPrize: "£350,000", topPrizeLabel: "Top prize (match 5)",
+      reference: { title: "Lotto HotPicks fixed prizes", columns: ["Numbers picked &amp; matched", "Prize", "Odds"],
+        rows: [
+          { cells: ["Match 5", "£350,000", "1 in 834,398"] },
+          { cells: ["Match 4", "£13,000", "1 in 30,342"] },
+          { cells: ["Match 3", "£800", "1 in 1,626"] },
+          { cells: ["Match 2", "£60", "1 in 115"] },
+          { cells: ["Match 1", "£6", "1 in 10.3"] },
+        ],
+        note: "Official UK National Lottery Lotto HotPicks fixed prizes. You decide how many numbers to play (1–5) and win only by matching them all." },
+    },
+  },
+  // EuroMillions HotPicks — uses the 5 main EuroMillions balls (not the Lucky Stars).
+  // Pick 2–5 and match all; match 5 wins £1,000,000. Lower-tier amounts not published here.
+  uk_em_hotpicks: {
+    label: "EuroMillions HotPicks (UK)", specialKey: null, specialName: "", currency: "GBP",
+    draws: "Tue · Fri", priceChanges: [], state: "UK", stateName: "United Kingdom", ticketPrice: "£1.50",
+    prizes: {
+      note: "EuroMillions HotPicks uses the five main numbers from the EuroMillions draw (not the Lucky Stars). You choose 2 to 5 numbers and win a FIXED cash prize only by matching every one — matching all 5 wins £1,000,000.",
+      topPrize: "£1,000,000", topPrizeLabel: "Top prize (match 5)",
+      reference: { title: "EuroMillions HotPicks", columns: ["Numbers picked &amp; matched", "Prize", "Odds"],
+        rows: [
+          { cells: ["Match 5", "£1,000,000", "1 in 2,118,760"] },
+          { cells: ["Match 4", "Fixed cash prize", "1 in 46,060"] },
+          { cells: ["Match 3", "Fixed cash prize", "1 in 1,960"] },
+          { cells: ["Match 2", "Fixed cash prize", "1 in 123"] },
+        ],
+        note: "Match all the numbers you pick (2–5). Matching 5 wins £1,000,000; the lower tiers pay fixed cash prizes — see the National Lottery for the current amounts." },
+    },
+  },
 };
 
 // Optional currency symbol (default "$") so non-US games (e.g. UK National Lottery)
