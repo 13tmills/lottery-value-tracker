@@ -427,6 +427,12 @@ GAMES = {
     "il_luckyday": {"kind": "lotterycorner", "lc_path": "il/lucky-day-lotto-evening", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 45},
     "il_pick3":    {"kind": "lotterycorner", "lc_path": "il/pick-3-evening", "num_count": 3, "digits": True},
     "il_pick4":    {"kind": "lotterycorner", "lc_path": "il/pick-4-evening", "num_count": 4, "digits": True},
+
+    # --- New Jersey (31st state) — njlottery.com is bot-walled; results via lotterycorner.
+    "nj_pick6":  {"kind": "lotterycorner", "lc_path": "nj/pick-6", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 46},
+    "nj_cash5":  {"kind": "lotterycorner", "lc_path": "nj/jersey-cash-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 45},
+    "nj_pick3":  {"kind": "lotterycorner", "lc_path": "nj/pick-3-evening", "num_count": 3, "digits": True},
+    "nj_pick4":  {"kind": "lotterycorner", "lc_path": "nj/pick-4-evening", "num_count": 4, "digits": True},
 }
 
 

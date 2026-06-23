@@ -611,6 +611,25 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  NJ: {
+    intro: "New Jersey's draw games — the Pick-6 and Jersey Cash 5 rolling jackpots plus the twice-daily Pick-3/4 — with live jackpots, official odds and deep number-frequency history from the New Jersey Lottery.",
+    games: [
+      { name: "Pick-6", meta: "6 of 46 · Mon · Thu · Sat · jackpot from $2M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=nj_pick6"]] },
+      { name: "Jersey Cash 5", meta: "5 of 45 · daily · cash jackpot from $150K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=nj_cash5"]] },
+      { name: "Pick-3", meta: "3-digit · twice daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=nj_pick3"]] },
+      { name: "Pick-4", meta: "4-digit · twice daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=nj_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

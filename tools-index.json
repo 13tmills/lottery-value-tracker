@@ -1,5 +1,5 @@
 ﻿{
-    "generated":  "2026-06-22",
+    "generated":  "2026-06-23",
     "jackpot_cycles":  {
                            "ar_lotto":  3,
                            "ar_nsj":  148,
@@ -29,6 +29,8 @@
                            "mo_showmecash":  403,
                            "ne_pick5":  231,
                            "nh_megabucks":  17,
+                           "nj_cash5":  548,
+                           "nj_pick6":  13,
                            "nm_roadrunner":  151,
                            "ny_lotto":  4,
                            "oh_cash5":  292,

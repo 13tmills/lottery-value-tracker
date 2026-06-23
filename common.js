@@ -2316,6 +2316,54 @@ const GAME_META = {
         note: "Official Illinois Lottery top prize. Box and Fire Ball plays pay different amounts." },
     },
   },
+  // ----- New Jersey (31st state) ----------------------------------------- #
+  // Pick-6 — 6 of 46, Mon/Thu/Sat, rolling annuity jackpot from $2M (matrix changed to
+  // 6/46 in April 2022; history here is the 6/46 game only). XTRA + Double Play add-ons.
+  nj_pick6: {
+    label: "Pick-6", specialKey: null, specialName: "",
+    draws: "Mon · Thu · Sat", priceChanges: [], state: "NJ", stateName: "New Jersey", ticketPrice: "$2", recentWindow: true,
+    oddsJackpot: 9366819, // 6 of 46
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "New Jersey Pick-6 is 6 of 46, drawn Monday, Thursday and Saturday for $2 (annuity or cash option). The jackpot starts at $2,000,000 and rolls until won. The game was reworked to a 6-of-46 matrix in April 2022 with a built-in XTRA multiplier and an optional Double Play ($250K top); history here is the 6/46 game. The figures below are the official published odds.",
+      odds: { "Jackpot": 9366819, "Match 5": 39028, "Match 4": 800, "Match 3": 47 },
+    },
+  },
+  // Jersey Cash 5 — 5 of 45, daily, rolling cash jackpot from $150K. Fixed lower tiers
+  // but with Bullseye and XTRA (up to x5) features that change payouts → odds-only.
+  nj_cash5: {
+    label: "Jersey Cash 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "NJ", stateName: "New Jersey", ticketPrice: "$2",
+    oddsJackpot: 1221759, // 5 of 45
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "New Jersey's Jersey Cash 5 is 5 of 45, drawn daily for $2. The cash jackpot starts at $150,000 and rolls until won. The lower tiers pay fixed amounts, but the Bullseye feature and the optional XTRA multiplier (up to ×5) change the payouts. The figures below are the official published odds.",
+      odds: { "Jackpot": 1221759, "Match 4": 6109, "Match 3": 157, "Match 2": 12 },
+    },
+  },
+  // Pick-3 / Pick-4 — twice daily (we track the evening draw). NJ's base play is 50c.
+  nj_pick3: {
+    label: "Pick-3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "NJ", stateName: "New Jersey", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "New Jersey Pick-3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. A $1 Straight pays $500 (a 50¢ play pays $250). Box plays and the optional Fire Ball add-on pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "New Jersey Pick-3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$500", "1 in 1,000"] } ],
+        note: "Official New Jersey Lottery top prize on a $1 play (50¢ plays pay half). Box and Fire Ball plays pay different amounts." },
+    },
+  },
+  nj_pick4: {
+    label: "Pick-4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "NJ", stateName: "New Jersey", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "New Jersey Pick-4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. A $1 Straight pays $5,000 (a 50¢ play pays $2,500). Box plays and the optional Fire Ball add-on pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "New Jersey Pick-4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$5,000", "1 in 10,000"] } ],
+        note: "Official New Jersey Lottery top prize on a $1 play (50¢ plays pay half). Box and Fire Ball plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
