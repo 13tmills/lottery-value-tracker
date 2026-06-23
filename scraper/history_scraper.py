@@ -420,6 +420,13 @@ GAMES = {
     "wv_cash25": {"kind": "lotterycorner", "lc_path": "wv/cash-25", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 25},
     "wv_daily3": {"kind": "lotterycorner", "lc_path": "wv/daily-3", "num_count": 3, "digits": True},
     "wv_daily4": {"kind": "lotterycorner", "lc_path": "wv/daily-4", "num_count": 4, "digits": True},
+
+    # --- Illinois (30th state) — illinoislottery.com is JS-walled; results via lotterycorner.
+    # (il/lotto lists the Main Draw + Extra Shot + two Lotto Million draws; first 6 = main.)
+    "il_lotto":    {"kind": "lotterycorner", "lc_path": "il/lotto", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 50},
+    "il_luckyday": {"kind": "lotterycorner", "lc_path": "il/lucky-day-lotto-evening", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 45},
+    "il_pick3":    {"kind": "lotterycorner", "lc_path": "il/pick-3-evening", "num_count": 3, "digits": True},
+    "il_pick4":    {"kind": "lotterycorner", "lc_path": "il/pick-4-evening", "num_count": 4, "digits": True},
 }
 
 

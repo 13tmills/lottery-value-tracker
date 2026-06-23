@@ -2268,6 +2268,54 @@ const GAME_META = {
         note: "Official West Virginia Lottery top prize. Box and other play types pay different amounts." },
     },
   },
+  // ----- Illinois (30th state) ------------------------------------------- #
+  // Illinois Lotto — 6 of 50, Mon/Thu/Sat, rolling annuity jackpot from $2M. The optional
+  // Extra Shot multiplies non-jackpot prizes up to x25 (so those vary) → odds-only.
+  il_lotto: {
+    label: "Illinois Lotto", specialKey: null, specialName: "",
+    draws: "Mon · Thu · Sat", priceChanges: [], state: "IL", stateName: "Illinois", ticketPrice: "$2",
+    oddsJackpot: 15890700, // 6 of 50
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Illinois Lotto is 6 of 50, drawn Monday, Thursday and Saturday for $2. The jackpot starts at $2,000,000 and rolls until won (annuity). Every play is also entered in two bonus 'Lotto Million' draws ($1M each). The optional Extra Shot add-on multiplies non-jackpot prizes by up to ×25, so those amounts vary; the figures below are the official published odds.",
+      odds: { "Jackpot": 15890700, "Match 5": 60192, "Match 4": 1120, "Match 3": 60, "Match 2": 8 },
+    },
+  },
+  // Lucky Day Lotto — 5 of 45, twice daily, rolling cash jackpot from $100K (best odds of
+  // any IL draw game). Optional EZmatch instant add-on.
+  il_luckyday: {
+    label: "Lucky Day Lotto", specialKey: null, specialName: "",
+    draws: "Twice daily", priceChanges: [], state: "IL", stateName: "Illinois", ticketPrice: "$1",
+    oddsJackpot: 1221759, // 5 of 45
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Illinois Lucky Day Lotto is 5 of 45, drawn twice a day; we track the evening draw. The cash jackpot starts at $100,000 and rolls until won — the best jackpot odds of any Illinois draw game. The optional EZmatch add-on prints instant-win numbers. The figures below are the official published odds.",
+      odds: { "Jackpot": 1221759, "Match 4": 6109, "Match 3": 157, "Match 2": 12 },
+    },
+  },
+  // Pick 3 / Pick 4 — twice daily (we track the evening draw). Fire Ball add-on.
+  il_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "IL", stateName: "Illinois", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Illinois Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. The top prize is a $500 Straight on a $1 play. Box plays and the optional Fire Ball add-on pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Illinois Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official Illinois Lottery top prize. Box and Fire Ball plays pay different amounts." },
+    },
+  },
+  il_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "IL", stateName: "Illinois", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Illinois Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. The top prize is a $5,000 Straight on a $1 play. Box plays and the optional Fire Ball add-on pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Illinois Pick 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official Illinois Lottery top prize. Box and Fire Ball plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
