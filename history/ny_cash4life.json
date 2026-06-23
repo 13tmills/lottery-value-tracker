@@ -2,7 +2,7 @@
   "game": "ny_cash4life",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "2014-06-16",
-  "last_updated": "2026-06-21",
+  "last_updated": "2026-06-23",
   "complete": true,
   "retired": true,
   "draws": [

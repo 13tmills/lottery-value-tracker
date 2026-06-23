@@ -2,7 +2,7 @@
   "game": "nh_megabucks",
   "source": "nhlottery.com",
   "earliest_available": "2021-01-03",
-  "last_updated": "2026-06-21",
+  "last_updated": "2026-06-23",
   "complete": true,
   "draws": [
     {
@@ -8556,6 +8556,18 @@
       ],
       "megaball": 3,
       "jackpot": 1650000
+    },
+    {
+      "date": "2026-06-22",
+      "numbers": [
+        12,
+        26,
+        29,
+        34,
+        38
+      ],
+      "megaball": 3,
+      "jackpot": 1700000
     }
   ]
 }

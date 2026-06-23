@@ -2,7 +2,7 @@
   "game": "tx_cashfive",
   "source": "texaslottery.com",
   "earliest_available": "1995-10-13",
-  "last_updated": "2026-06-21",
+  "last_updated": "2026-06-23",
   "complete": true,
   "draws": [
     {
@@ -86833,7 +86833,30 @@
         24,
         29,
         32
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 71
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2141
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 19852
+        }
+      ],
+      "total_winners": 22064
     },
     {
       "date": "2026-02-25",
@@ -86843,7 +86866,30 @@
         13,
         27,
         30
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 75
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2263
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21203
+        }
+      ],
+      "total_winners": 23543
     },
     {
       "date": "2026-02-26",
@@ -86853,7 +86899,30 @@
         14,
         18,
         19
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 100
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2518
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 23885
+        }
+      ],
+      "total_winners": 26503
     },
     {
       "date": "2026-02-27",
@@ -86863,7 +86932,30 @@
         10,
         18,
         25
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 91
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2640
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 24008
+        }
+      ],
+      "total_winners": 26740
     },
     {
       "date": "2026-02-28",
@@ -86873,7 +86965,30 @@
         25,
         32,
         34
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 86
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2227
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22666
+        }
+      ],
+      "total_winners": 24979
     },
     {
       "date": "2026-03-02",
@@ -86883,7 +86998,30 @@
         19,
         26,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 85
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2630
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 24963
+        }
+      ],
+      "total_winners": 27679
     },
     {
       "date": "2026-03-03",
@@ -86893,7 +87031,30 @@
         19,
         31,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 68
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2294
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21819
+        }
+      ],
+      "total_winners": 24181
     },
     {
       "date": "2026-03-04",
@@ -86903,7 +87064,30 @@
         23,
         25,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 118
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2740
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22793
+        }
+      ],
+      "total_winners": 25652
     },
     {
       "date": "2026-03-05",
@@ -86913,7 +87097,30 @@
         30,
         32,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 85
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2285
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21421
+        }
+      ],
+      "total_winners": 23791
     },
     {
       "date": "2026-03-06",
@@ -86923,7 +87130,30 @@
         20,
         32,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 3
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 65
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 1922
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20313
+        }
+      ],
+      "total_winners": 22303
     },
     {
       "date": "2026-03-07",
@@ -86933,7 +87163,30 @@
         26,
         27,
         32
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 52
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2069
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20190
+        }
+      ],
+      "total_winners": 22311
     },
     {
       "date": "2026-03-09",
@@ -86943,7 +87196,30 @@
         15,
         19,
         33
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 67
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2545
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 23430
+        }
+      ],
+      "total_winners": 26043
     },
     {
       "date": "2026-03-10",
@@ -86953,7 +87229,30 @@
         30,
         31,
         33
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 55
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2139
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 19906
+        }
+      ],
+      "total_winners": 22102
     },
     {
       "date": "2026-03-11",
@@ -86963,7 +87262,30 @@
         15,
         21,
         31
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 85
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2184
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20690
+        }
+      ],
+      "total_winners": 22961
     },
     {
       "date": "2026-03-12",
@@ -86973,7 +87295,30 @@
         21,
         26,
         34
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 71
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2016
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 19800
+        }
+      ],
+      "total_winners": 21887
     },
     {
       "date": "2026-03-13",
@@ -86983,7 +87328,30 @@
         11,
         27,
         33
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 85
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2747
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22811
+        }
+      ],
+      "total_winners": 25643
     },
     {
       "date": "2026-03-14",
@@ -86993,7 +87361,30 @@
         7,
         21,
         30
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 77
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2562
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22907
+        }
+      ],
+      "total_winners": 25546
     },
     {
       "date": "2026-03-16",
@@ -87003,7 +87394,30 @@
         17,
         19,
         34
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 76
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2659
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 24751
+        }
+      ],
+      "total_winners": 27488
     },
     {
       "date": "2026-03-17",
@@ -87013,7 +87427,30 @@
         17,
         23,
         31
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 68
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2185
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20040
+        }
+      ],
+      "total_winners": 22293
     },
     {
       "date": "2026-03-18",
@@ -87023,7 +87460,30 @@
         11,
         18,
         22
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 80
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2580
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22427
+        }
+      ],
+      "total_winners": 25087
     },
     {
       "date": "2026-03-19",
@@ -87033,7 +87493,30 @@
         20,
         23,
         33
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 68
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2164
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20746
+        }
+      ],
+      "total_winners": 22978
     },
     {
       "date": "2026-03-20",
@@ -87043,7 +87526,30 @@
         13,
         17,
         30
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 80
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2111
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20786
+        }
+      ],
+      "total_winners": 22978
     },
     {
       "date": "2026-03-21",
@@ -87053,7 +87559,30 @@
         22,
         28,
         30
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 67
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2070
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20943
+        }
+      ],
+      "total_winners": 23080
     },
     {
       "date": "2026-03-23",
@@ -87063,7 +87592,30 @@
         9,
         11,
         26
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 140
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 3332
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 26090
+        }
+      ],
+      "total_winners": 29564
     },
     {
       "date": "2026-03-24",
@@ -87073,7 +87625,30 @@
         20,
         21,
         31
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 56
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2048
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 19264
+        }
+      ],
+      "total_winners": 21369
     },
     {
       "date": "2026-03-25",
@@ -87083,7 +87658,30 @@
         16,
         19,
         20
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 52
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2163
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 19921
+        }
+      ],
+      "total_winners": 22136
     },
     {
       "date": "2026-03-26",
@@ -87093,7 +87691,30 @@
         23,
         24,
         31
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 54
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2275
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21542
+        }
+      ],
+      "total_winners": 23871
     },
     {
       "date": "2026-03-27",
@@ -87103,7 +87724,30 @@
         10,
         15,
         18
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 117
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2714
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22705
+        }
+      ],
+      "total_winners": 25537
     },
     {
       "date": "2026-03-28",
@@ -87113,7 +87757,30 @@
         27,
         29,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 68
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2285
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21449
+        }
+      ],
+      "total_winners": 23803
     },
     {
       "date": "2026-03-30",
@@ -87123,7 +87790,30 @@
         24,
         32,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 83
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2307
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 23281
+        }
+      ],
+      "total_winners": 25671
     },
     {
       "date": "2026-03-31",
@@ -87133,7 +87823,30 @@
         16,
         17,
         28
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 57
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2259
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20590
+        }
+      ],
+      "total_winners": 22906
     },
     {
       "date": "2026-04-01",
@@ -87143,7 +87856,30 @@
         12,
         25,
         32
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 91
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2400
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21983
+        }
+      ],
+      "total_winners": 24474
     },
     {
       "date": "2026-04-02",
@@ -87153,7 +87889,30 @@
         17,
         27,
         34
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 3
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 85
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2370
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 20970
+        }
+      ],
+      "total_winners": 23428
     },
     {
       "date": "2026-04-03",
@@ -87163,7 +87922,30 @@
         17,
         24,
         25
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 76
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2317
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22716
+        }
+      ],
+      "total_winners": 25109
     },
     {
       "date": "2026-04-04",
@@ -87173,7 +87955,30 @@
         25,
         30,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 80
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2448
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22409
+        }
+      ],
+      "total_winners": 24937
     },
     {
       "date": "2026-04-06",
@@ -87183,7 +87988,30 @@
         17,
         18,
         33
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 87
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2647
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 26323
+        }
+      ],
+      "total_winners": 29058
     },
     {
       "date": "2026-04-07",
@@ -87193,7 +88021,30 @@
         21,
         22,
         27
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 81
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2235
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21021
+        }
+      ],
+      "total_winners": 23337
     },
     {
       "date": "2026-04-08",
@@ -87203,7 +88054,30 @@
         11,
         26,
         27
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 83
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2525
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22710
+        }
+      ],
+      "total_winners": 25319
     },
     {
       "date": "2026-04-09",
@@ -87213,7 +88087,30 @@
         24,
         30,
         34
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 94
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2447
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22007
+        }
+      ],
+      "total_winners": 24548
     },
     {
       "date": "2026-04-10",
@@ -87223,7 +88120,30 @@
         13,
         15,
         31
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 80
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2219
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21813
+        }
+      ],
+      "total_winners": 24112
     },
     {
       "date": "2026-04-11",
@@ -87233,7 +88153,30 @@
         11,
         15,
         31
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 97
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2832
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 24068
+        }
+      ],
+      "total_winners": 26998
     },
     {
       "date": "2026-04-13",
@@ -87243,7 +88186,30 @@
         22,
         34,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 106
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2536
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 24189
+        }
+      ],
+      "total_winners": 26831
     },
     {
       "date": "2026-04-14",
@@ -87253,7 +88219,30 @@
         9,
         13,
         28
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 68
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2278
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21810
+        }
+      ],
+      "total_winners": 24156
     },
     {
       "date": "2026-04-15",
@@ -87263,7 +88252,30 @@
         15,
         19,
         23
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 101
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2682
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 23129
+        }
+      ],
+      "total_winners": 25913
     },
     {
       "date": "2026-04-16",
@@ -87273,7 +88285,30 @@
         28,
         29,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 66
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2347
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21246
+        }
+      ],
+      "total_winners": 23659
     },
     {
       "date": "2026-04-17",
@@ -87283,7 +88318,30 @@
         23,
         29,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 84
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2254
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21431
+        }
+      ],
+      "total_winners": 23769
     },
     {
       "date": "2026-04-18",
@@ -87293,7 +88351,30 @@
         17,
         28,
         35
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 105
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2512
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22575
+        }
+      ],
+      "total_winners": 25193
     },
     {
       "date": "2026-04-20",
@@ -87303,7 +88384,30 @@
         24,
         25,
         32
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 88
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2519
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 22833
+        }
+      ],
+      "total_winners": 25441
     },
     {
       "date": "2026-04-21",
@@ -87313,7 +88417,30 @@
         30,
         32,
         33
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 68
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2200
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 19681
+        }
+      ],
+      "total_winners": 21950
     },
     {
       "date": "2026-04-22",
@@ -89030,6 +90157,39 @@
         }
       ],
       "total_winners": 22055
+    },
+    {
+      "date": "2026-06-22",
+      "numbers": [
+        3,
+        11,
+        12,
+        13,
+        35
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 25000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 92
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2796
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 24585
+        }
+      ],
+      "total_winners": 27475
     }
   ]
 }

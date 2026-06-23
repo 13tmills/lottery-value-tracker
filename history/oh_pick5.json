@@ -2,7 +2,7 @@
   "game": "oh_pick5",
   "source": "ohiolottery.com",
   "earliest_available": "2012-08-12",
-  "last_updated": "2026-06-21",
+  "last_updated": "2026-06-23",
   "complete": true,
   "draws": [
     {
@@ -50757,6 +50757,169 @@
         }
       ],
       "total_winners": 62
+    },
+    {
+      "date": "2026-06-22",
+      "numbers": [
+        9,
+        0,
+        3,
+        1,
+        2
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "label": "Straight",
+          "amount": 25000,
+          "winners": 0
+        },
+        {
+          "level": "5 Way Box",
+          "label": "5 Way Box",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "5 Way Backup (STR)",
+          "label": "5 Way Backup (STR)",
+          "amount": 30000,
+          "winners": 0
+        },
+        {
+          "level": "5 Way Backup (BOX)",
+          "label": "5 Way Backup (BOX)",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "10 Way Box",
+          "label": "10 Way Box",
+          "amount": 2500,
+          "winners": 0
+        },
+        {
+          "level": "10 Way Backup (STR)",
+          "label": "10 Way Backup (STR)",
+          "amount": 27500,
+          "winners": 0
+        },
+        {
+          "level": "10 Way Backup (BOX)",
+          "label": "10 Way Backup (BOX)",
+          "amount": 2500,
+          "winners": 0
+        },
+        {
+          "level": "20 Way Box",
+          "label": "20 Way Box",
+          "amount": 1250,
+          "winners": 0
+        },
+        {
+          "level": "20 Way Backup (STR)",
+          "label": "20 Way Backup (STR)",
+          "amount": 26250,
+          "winners": 0
+        },
+        {
+          "level": "20 Way Backup (BOX)",
+          "label": "20 Way Backup (BOX)",
+          "amount": 1250,
+          "winners": 0
+        },
+        {
+          "level": "30 Way Box",
+          "label": "30 Way Box",
+          "amount": 834,
+          "winners": 0
+        },
+        {
+          "level": "30 Way Backup (STR)",
+          "label": "30 Way Backup (STR)",
+          "amount": 25834,
+          "winners": 0
+        },
+        {
+          "level": "30 Way Backup (BOX)",
+          "label": "30 Way Backup (BOX)",
+          "amount": 834,
+          "winners": 0
+        },
+        {
+          "level": "60 Way Box",
+          "label": "60 Way Box",
+          "amount": 417,
+          "winners": 0
+        },
+        {
+          "level": "60 Way Backup (STR)",
+          "label": "60 Way Backup (STR)",
+          "amount": 25417,
+          "winners": 0
+        },
+        {
+          "level": "60 Way Backup (BOX)",
+          "label": "60 Way Backup (BOX)",
+          "amount": 417,
+          "winners": 0
+        },
+        {
+          "level": "120 Way Box",
+          "label": "120 Way Box",
+          "amount": 208,
+          "winners": 79
+        },
+        {
+          "level": "120 Way Backup (STR)",
+          "label": "120 Way Backup (STR)",
+          "amount": 25208,
+          "winners": 0
+        },
+        {
+          "level": "120 Way Backup (BOX)",
+          "label": "120 Way Backup (BOX)",
+          "amount": 208,
+          "winners": 51
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": 25,
+          "winners": 1
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": 25,
+          "winners": 5
+        },
+        {
+          "level": "Front 3",
+          "label": "Front 3",
+          "amount": 250,
+          "winners": 0
+        },
+        {
+          "level": "Back 3",
+          "label": "Back 3",
+          "amount": 250,
+          "winners": 1
+        },
+        {
+          "level": "Front 4",
+          "label": "Front 4",
+          "amount": 2500,
+          "winners": 0
+        },
+        {
+          "level": "Back 4",
+          "label": "Back 4",
+          "amount": 2500,
+          "winners": 0
+        }
+      ],
+      "total_winners": 137
     }
   ]
 }

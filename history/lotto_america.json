@@ -1,7 +1,7 @@
 {
   "game": "lotto_america",
   "source": "powerball.com",
-  "last_updated": "2026-06-21",
+  "last_updated": "2026-06-23",
   "complete": true,
   "earliest_available": "2017-11-15",
   "note": "Seeded with a few real draws. Full history (~1,090 draws back to 2017-11-15) is backfilled by scraper/history_scraper.py in CI.",
@@ -83457,6 +83457,68 @@
         }
       ],
       "total_winners": 41401
+    },
+    {
+      "date": "2026-06-22",
+      "jackpot": 30280000,
+      "cash_value": 13700000,
+      "numbers": [
+        12,
+        13,
+        35,
+        41,
+        52
+      ],
+      "star_ball": 5,
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 30280000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 0
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 23
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 131
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1262
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 2147
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 12364
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 21364
+        }
+      ],
+      "total_winners": 37291
     }
   ]
 }

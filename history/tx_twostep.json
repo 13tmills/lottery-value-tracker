@@ -2,12 +2,12 @@
   "game": "tx_twostep",
   "source": "texaslottery.com",
   "earliest_available": "2001-05-18",
-  "last_updated": "2026-06-21",
+  "last_updated": "2026-06-23",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-18",
-    "jackpot": 325000,
-    "cash": 7380000
+    "date": "2026-06-22",
+    "jackpot": 475000,
+    "cash": 7640000
   },
   "draws": [
     {
@@ -28110,6 +28110,55 @@
         }
       ],
       "total_winners": 16190
+    },
+    {
+      "date": "2026-06-22",
+      "numbers": [
+        7,
+        14,
+        25,
+        31
+      ],
+      "bonus": 19,
+      "jackpot": 475000,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 475000,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 960,
+          "winners": 18
+        },
+        {
+          "level": "Match 3 + Bonus",
+          "amount": 51,
+          "winners": 41
+        },
+        {
+          "level": "Match 3",
+          "amount": 19,
+          "winners": 1490
+        },
+        {
+          "level": "Match 2 + Bonus",
+          "amount": 20,
+          "winners": 921
+        },
+        {
+          "level": "Match 1 + Bonus",
+          "amount": 7,
+          "winners": 6183
+        },
+        {
+          "level": "Bonus Ball only",
+          "amount": 5,
+          "winners": 11067
+        }
+      ],
+      "total_winners": 19720
     }
   ]
 }

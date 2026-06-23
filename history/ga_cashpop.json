@@ -1,15 +1,15 @@
-﻿{
-    "game":  "ga_cashpop",
-    "source":  "galottery.com",
-    "earliest_available":  "2026-06-21",
-    "last_updated":  "2026-06-21",
-    "complete":  true,
-    "draws":  [
-                  {
-                      "date":  "2026-06-21",
-                      "numbers":  [
-                                      5
-                                  ]
-                  }
-              ]
+{
+  "game": "ga_cashpop",
+  "earliest_available": "2026-06-23",
+  "draws": [
+    {
+      "date": "2026-06-23",
+      "numbers": [
+        7
+      ]
+    }
+  ],
+  "source": "galottery.com",
+  "last_updated": "2026-06-23",
+  "complete": true
 }
