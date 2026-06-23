@@ -447,6 +447,11 @@ GAMES = {
     "az_fantasy5":    {"kind": "lotterycorner", "lc_path": "az/fantasy-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 41, "lc_jp_cap": 5000000},
     "az_tripletwist": {"kind": "lotterycorner", "lc_path": "az/triple-twist", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 42, "lc_jp_cap": 5000000},
     "az_pick3":       {"kind": "lotterycorner", "lc_path": "az/pick-3", "num_count": 3, "digits": True},
+
+    # --- Kansas (34th state) — kslottery.com is JS-walled; results via lotterycorner.
+    # Super Kansas Cash appends a Cash Ball after the 5 main numbers; max_ball:32 filters it.
+    "ks_superkscash": {"kind": "lotterycorner", "lc_path": "ks/super-cash", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 32, "lc_jp_cap": 10000000},
+    "ks_pick3":       {"kind": "lotterycorner", "lc_path": "ks/pick-3-evening", "num_count": 3, "digits": True},
 }
 
 

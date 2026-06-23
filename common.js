@@ -2459,6 +2459,31 @@ const GAME_META = {
         note: "Official Arizona Lottery top prize on a $1 Exact play. Box and other play styles pay different amounts." },
     },
   },
+  // ── Kansas (state #34) ─────────────────────────────────────────────────
+  // Super Kansas Cash — 5 of 32 PLUS a Cash Ball (1 of 25). The jackpot needs
+  // all five numbers + the Cash Ball: C(32,5)=201,376 × 25 = 5,034,400.
+  ks_superkscash: {
+    label: "Super Kansas Cash", specialKey: null, specialName: "Cash Ball",
+    draws: "Mon · Wed · Sat", priceChanges: [], state: "KS", stateName: "Kansas", ticketPrice: "$1",
+    oddsJackpot: 5034400, // 5 of 32 + Cash Ball (1 of 25)
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Jackpot odds",
+      note: "Super Kansas Cash is 5 of 32 plus a separate Cash Ball (1 of 25), drawn Monday, Wednesday and Saturday for $1. The top prize is won by matching all five numbers and the Cash Ball — odds 1 in 5,034,400 — and rolls until won (it starts at $100,000, paid as a single cash lump sum). Lower tiers pay fixed amounts that vary with the Cash Ball; the figure below is the published jackpot odds.",
+      odds: { "5 + Cash Ball (jackpot)": 5034400 },
+    },
+  },
+  // Pick 3 — 3-digit, twice daily (we track the evening draw).
+  ks_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "KS", stateName: "Kansas", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Kansas Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. A $1 Exact (straight) play pays $500 (a 50¢ play pays $250). Box and other play styles pay different amounts.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Exact $1)",
+      reference: { title: "Kansas Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Exact — exact order ($1)", "$500", "1 in 1,000"] } ],
+        note: "Official Kansas Lottery top prize on a $1 Exact play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
