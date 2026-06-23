@@ -393,6 +393,11 @@ GAMES = {
     "ct_cash5":  {"kind": "lotterycorner", "lc_path": "ct/cash-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 35},
     "ct_play3":  {"kind": "lotterycorner", "lc_path": "ct/play3-night", "num_count": 3, "digits": True},
     "ct_play4":  {"kind": "lotterycorner", "lc_path": "ct/play4-night", "num_count": 4, "digits": True},
+
+    # --- New Mexico (25th state) — nmlottery.com is JS-walled; results via lotterycorner.
+    "nm_roadrunner": {"kind": "lotterycorner", "lc_path": "nm/road-runner-cash", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 37},
+    "nm_pick3":      {"kind": "lotterycorner", "lc_path": "nm/pick-3-plus-evening", "num_count": 3, "digits": True},
+    "nm_pick4":      {"kind": "lotterycorner", "lc_path": "nm/pick-4-plus-evening", "num_count": 4, "digits": True},
 }
 
 

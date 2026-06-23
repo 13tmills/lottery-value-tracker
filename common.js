@@ -2055,6 +2055,48 @@ const GAME_META = {
         note: "Official Connecticut Lottery top prize. Box and Wild Ball plays pay different amounts." },
     },
   },
+  // ----- New Mexico (25th state) ----------------------------------------- #
+  // Roadrunner Cash — 5 of 37, daily, rolling CASH jackpot from $25K. Lower tiers are
+  // FIXED (Match 4 $200, Match 3 $5, Match 2 $1) — full value treatment + Monte Carlo.
+  nm_roadrunner: {
+    label: "Roadrunner Cash", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "NM", stateName: "New Mexico", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 435897, // 5 of 37
+      overall_odds: 8,
+      staticPrizes: true,
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 435897 },
+        "Match 4": { label: "Match 4", odds: 2724, prize: 200 },
+        "Match 3": { label: "Match 3", odds: 88, prize: 5 },
+        "Match 2": { label: "Match 2", odds: 9, prize: 1 },
+      },
+    },
+  },
+  // Pick 3 Plus / Pick 4 Plus — NM-only digit games (we track the evening draw).
+  nm_pick3: {
+    label: "Pick 3 Plus", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "NM", stateName: "New Mexico", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "New Mexico Pick 3 Plus is a 3-digit game (000–999) drawn twice a day; we track the evening draw. The top prize is a $500 Straight on a $1 play. The optional Plus feature draws a second set of numbers for a chance at an extra prize; box plays pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "New Mexico Pick 3 Plus top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Top Straight prize on a $1 play. Box and the Plus feature pay different amounts — see the New Mexico Lottery for the full prize chart." },
+    },
+  },
+  nm_pick4: {
+    label: "Pick 4 Plus", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "NM", stateName: "New Mexico", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "New Mexico Pick 4 Plus is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. A $1 Straight pays a top prize in the $5,000 range. The optional Plus feature draws a second set of numbers for a chance at an extra prize; box plays pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "New Mexico Pick 4 Plus top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "~$5,000", "1 in 10,000"] } ],
+        note: "Top Straight prize on a $1 play. Box and the Plus feature pay different amounts — see the New Mexico Lottery for the full prize chart." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
@@ -2114,6 +2156,8 @@ const STATE_TIERS = {
     tiers: [[500, 3760], [9, 111]] }, // 5/40, official fixed lower tiers (Match 2 free — omitted)
   ct_cash5:   { label: "Cash5 (CT)", price: 1, J: 324632, dpw: 7,
     tiers: [[300, 2164], [10, 75]] }, // 5/35, all-fixed (top $100K from the cash pool)
+  nm_roadrunner: { label: "Roadrunner Cash (NM)", price: 1, J: 435897, dpw: 7,
+    tiers: [[200, 2724], [5, 88], [1, 9]] }, // 5/37, official fixed lower tiers
 };
 
 // Update title + description + canonical + OG/Twitter tags (by id) for SEO.

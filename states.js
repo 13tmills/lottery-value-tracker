@@ -503,6 +503,23 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  NM: {
+    intro: "New Mexico's draw games — Roadrunner Cash's daily rolling cash jackpot plus the twice-daily Pick 3/4 Plus — with live jackpots, official odds and deep number-frequency history from the New Mexico Lottery.",
+    games: [
+      { name: "Roadrunner Cash", meta: "5 of 37 · daily · cash jackpot from $25K",
+        links: [["Jackpot, EV &amp; prizes", "game.html?game=nm_roadrunner"]] },
+      { name: "Pick 3 Plus", meta: "3-digit · twice daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=nm_pick3"]] },
+      { name: "Pick 4 Plus", meta: "4-digit · twice daily · ~$5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=nm_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [
