@@ -698,6 +698,19 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  RI: {
+    intro: "Rhode Island's Wild Money — a daily 5-of-38 game with a rolling jackpot and an Extra number — with the live jackpot, official odds and deep number-frequency history from the Rhode Island Lottery.",
+    games: [
+      { name: "Wild Money", meta: "5 of 38 + Extra · daily · jackpot from $20K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=ri_wildmoney"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

@@ -2508,6 +2508,19 @@ const GAME_META = {
         note: "Official Oklahoma Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
     },
   },
+  // ── Rhode Island (state #36) ───────────────────────────────────────────
+  // Wild Money — 5 of 38 plus an "Extra" number (a separate $500 prize). The
+  // jackpot is the 5-of-38 match: C(38,5) = 501,942. Daily, rolling from $20K.
+  ri_wildmoney: {
+    label: "Wild Money", specialKey: null, specialName: "Extra",
+    draws: "Daily", priceChanges: [], state: "RI", stateName: "Rhode Island", ticketPrice: "$1",
+    oddsJackpot: 501942, // 5 of 38
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Rhode Island Wild Money is 5 of 38, drawn every day for $1, with an additional \"Extra\" number that pays a separate $500 prize. The jackpot starts at $20,000 and rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 501,942).",
+      odds: { "Jackpot (5 of 38)": 501942, "Match 4": 3042, "Match 3": 95 },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

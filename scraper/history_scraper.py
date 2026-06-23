@@ -457,6 +457,10 @@ GAMES = {
     # Cash 5 top prize is pari-mutuel (~$25K, mostly flat) so we don't track a jackpot series.
     "ok_cash5":  {"kind": "lotterycorner", "lc_path": "ok/cash-5", "num_count": 5, "sort": True, "max_ball": 36},
     "ok_pick3":  {"kind": "lotterycorner", "lc_path": "ok/pick-3", "num_count": 3, "digits": True},
+
+    # --- Rhode Island (36th state) — results via lotterycorner. Wild Money is
+    # 5/38 + an "Extra" number; first 5 class="number" balls are the main draw.
+    "ri_wildmoney": {"kind": "lotterycorner", "lc_path": "ri/wild-money", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 38, "lc_jp_cap": 5000000},
 }
 
 
