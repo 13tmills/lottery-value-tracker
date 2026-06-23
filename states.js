@@ -450,6 +450,23 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  NE: {
+    intro: "Nebraska's draw games — Pick 5's daily rolling cash jackpot (unique to Nebraska) plus the Pick 3/4 dailies — with live jackpots, official odds and deep number-frequency history from the Nebraska Lottery.",
+    games: [
+      { name: "Pick 5", meta: "5 of 40 · daily · cash jackpot from $50K",
+        links: [["Jackpot, EV &amp; prizes", "game.html?game=ne_pick5"]] },
+      { name: "Pick 3", meta: "3-digit · daily · $600 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ne_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · daily · $6K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ne_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

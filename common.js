@@ -1918,6 +1918,48 @@ const GAME_META = {
         note: "Official Arkansas Scholarship Lottery top prize. Box and Combo plays pay different amounts." },
     },
   },
+  // ----- Nebraska (22nd state) ------------------------------------------- #
+  // Pick 5 — 5 of 40, daily, growing CASH jackpot from $50K. Lower tiers are FIXED
+  // (Match 4 $500, Match 3 $9, Match 2 free) — full value treatment + Monte Carlo.
+  ne_pick5: {
+    label: "Pick 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "NE", stateName: "Nebraska", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 658008, // 5 of 40
+      overall_odds: 9.2,
+      staticPrizes: true,
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 658008 },
+        "Match 4": { label: "Match 4", odds: 3760, prize: 500 },
+        "Match 3": { label: "Match 3", odds: 111, prize: 9 },
+        "Match 2": { label: "Match 2 (free play)", odds: 10, free: true },
+      },
+    },
+  },
+  // Pick 3 / Pick 4 — daily digit games. Straight tops $600 / $6,000 (official).
+  ne_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "NE", stateName: "Nebraska", ticketPrice: "$0.50 to $5",
+    prizes: {
+      note: "Nebraska Pick 3 is a 3-digit game (000–999) drawn daily. The top prize is a $600 Straight on a $1 play. Box, Straight/Box and Combo plays pay differently.",
+      topPrize: "$600", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Nebraska Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$600", "1 in 1,000"] } ],
+        note: "Official Nebraska Lottery top prize. Box, Straight/Box and Combo plays pay different amounts." },
+    },
+  },
+  ne_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "NE", stateName: "Nebraska", ticketPrice: "$0.50 to $5", recentWindow: true,
+    prizes: {
+      note: "Nebraska Pick 4 is a 4-digit game (0000–9999) drawn daily. The top prize is a $6,000 Straight on a $1 play. Box, Straight/Box and Combo plays pay differently. (Deep history is filling in as draws accumulate.)",
+      topPrize: "$6,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Nebraska Pick 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$6,000", "1 in 10,000"] } ],
+        note: "Official Nebraska Lottery top prize. Box, Straight/Box and Combo plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
@@ -1973,6 +2015,8 @@ const STATE_TIERS = {
     tiers: [[200, 3054], [5, 78]] }, // 5/45 (Match 2 is a free ticket — omitted)
   ar_nsj:     { label: "Natural State Jackpot (AR)", price: 1, J: 575757, dpw: 7,
     tiers: [[300, 3387], [7, 103], [1, 10]] }, // 5/39, official fixed lower tiers
+  ne_pick5:   { label: "Pick 5 (NE)", price: 1, J: 658008, dpw: 7,
+    tiers: [[500, 3760], [9, 111]] }, // 5/40, official fixed lower tiers (Match 2 free — omitted)
 };
 
 // Update title + description + canonical + OG/Twitter tags (by id) for SEO.

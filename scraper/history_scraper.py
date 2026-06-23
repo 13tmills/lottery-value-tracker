@@ -373,6 +373,12 @@ GAMES = {
     "ar_nsj":   {"kind": "arlottery_html", "ar_slug": "natural-state-jackpot", "num_count": 5, "sort": True, "jackpot": True, "cash": True},
     "ar_cash3": {"kind": "arlottery_html", "ar_slug": "cash-3", "num_count": 3, "digits": True},
     "ar_cash4": {"kind": "arlottery_html", "ar_slug": "cash-4", "num_count": 4, "digits": True},
+
+    # --- Nebraska (22nd state) — nelottery.com/homeapp/lotto/<id>/gamedetail numbertable
+    # (recent draws + upcoming jackpot). Deep history seeded for Pick 5/3. -----------------
+    "ne_pick5": {"kind": "nelottery_html", "ne_id": 31, "num_count": 5, "sort": True, "jackpot": True},
+    "ne_pick3": {"kind": "nelottery_html", "ne_id": 32, "num_count": 3, "digits": True},
+    "ne_pick4": {"kind": "nelottery_html", "ne_id": 41, "num_count": 4, "digits": True},
 }
 
 
@@ -2087,6 +2093,41 @@ def scrape_arkansas(cfg, by_date):
     return None
 
 
+NE_GAME = "https://nelottery.com/homeapp/lotto/{id}/gamedetail"
+
+
+def scrape_nebraska(cfg, by_date):
+    """Nebraska — nelottery.com/homeapp/lotto/<id>/gamedetail renders a clean
+    <table class="numbertable"> of recent draws (date in <strong>MM/DD/YYYY</strong>,
+    numbers comma-separated in the next tableCell) plus the upcoming jackpot in
+    <span class="detail_jack_large">. Several recent draws per game, so retention
+    accumulates; deep history is seeded separately. Returns the upcoming jackpot."""
+    page = requests.get(NE_GAME.format(id=cfg["ne_id"]),
+                        headers={"User-Agent": USER_AGENT}, timeout=45).text
+    # The page has several "numbertable"s (bet types, results, prize tiers); the draw
+    # history is the one keyed to the game-numbers header.
+    tbl = re.search(r'(?s)<table class="numbertable" aria-describedby="detail_right_game_numbers".*?</table>', page)
+    if not tbl:
+        return None
+    n = cfg["num_count"]
+    for rm in re.finditer(
+            r'(?s)<strong>\s*(\d{2})/(\d{2})/(\d{4})\s*</strong>.*?tableCell"[^>]*>\s*([\d,\s]+?)\s*</td>',
+            tbl.group(0)):
+        iso = f"{rm.group(3)}-{rm.group(1)}-{rm.group(2)}"
+        nums = [int(x) for x in re.findall(r"\d+", rm.group(4))][:n]
+        if len(nums) < n:
+            continue
+        by_date[iso] = {"date": iso, "numbers": sorted(nums) if cfg.get("sort") else nums}
+    if cfg.get("jackpot"):
+        jm = re.search(r'detail_jack_large">\s*\$?([\d,]+)', page)
+        dm = re.search(r"Estimated Jackpot for (\d{2})/(\d{2})/(\d{4})", page)
+        if jm:
+            jp = int(jm.group(1).replace(",", ""))
+            nxt = f"{dm.group(3)}-{dm.group(1)}-{dm.group(2)}" if dm else None
+            return {"date": nxt, "jackpot": jp, "cash": jp}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -2290,6 +2331,14 @@ def main():
         cur = scrape_arkansas(cfg, by_date)
         source = "myarkansaslottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from myarkansaslottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "nelottery_html":
+        cur = scrape_nebraska(cfg, by_date)
+        source = "nelottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from nelottery.com.")
         complete = True
         if cur:
             data["current_jackpot"] = cur
