@@ -812,6 +812,69 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  ME: {
+    intro: "Maine's draw games are the Tri-State Lottery games it shares with New Hampshire and Vermont — Tri-State Megabucks, Gimme 5 and the twice-daily Pick 3 and Pick 4 — with live jackpots, official odds and deep number-frequency history.",
+    games: [
+      { name: "Tri-State Megabucks", meta: "6 of 41 + Megaball · Wed · Sat · jackpot from $1M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=nh_megabucks"]] },
+      { name: "Gimme 5", meta: "5 of 39 · Mon–Fri · fixed $100K top prize",
+        links: [["Odds, prizes &amp; results", "game.html?game=nh_gimme5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=nh_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=nh_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  VT: {
+    intro: "Vermont's draw games are the Tri-State Lottery games it shares with Maine and New Hampshire — Tri-State Megabucks, Gimme 5 and the twice-daily Pick 3 and Pick 4 — with live jackpots, official odds and deep number-frequency history.",
+    games: [
+      { name: "Tri-State Megabucks", meta: "6 of 41 + Megaball · Wed · Sat · jackpot from $1M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=nh_megabucks"]] },
+      { name: "Gimme 5", meta: "5 of 39 · Mon–Fri · fixed $100K top prize",
+        links: [["Odds, prizes &amp; results", "game.html?game=nh_gimme5"]] },
+      { name: "Pick 3", meta: "3-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=nh_pick3"]] },
+      { name: "Pick 4", meta: "4-digit · twice daily",
+        links: [["Results, odds &amp; payouts", "game.html?game=nh_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
+  ND: {
+    intro: "North Dakota runs only multi-state draw games — there is no in-state draw game — so the value and odds work here is on Powerball, Mega Millions and the other national jackpots North Dakotans play.",
+    games: [],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+      { name: "Lotto America", meta: "Multi-state jackpot · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=lotto_america"]] },
+    ],
+  },
+  PR: {
+    intro: "Puerto Rico's Loto — a 5-of-35 game with a rolling jackpot, drawn Monday, Wednesday and Friday — with the live jackpot, official odds and deep number-frequency history.",
+    games: [
+      { name: "Loto", meta: "5 of 35 · Mon · Wed · Fri · rolling jackpot",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=pr_loto"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

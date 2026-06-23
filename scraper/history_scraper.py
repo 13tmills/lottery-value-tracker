@@ -491,6 +491,9 @@ GAMES = {
     "dc_dc3": {"kind": "lotterycorner", "lc_path": "dc/dc-3-evening", "num_count": 3, "digits": True},
     "dc_dc4": {"kind": "lotterycorner", "lc_path": "dc/dc-4-evening", "num_count": 4, "digits": True},
     "dc_dc5": {"kind": "lotterycorner", "lc_path": "dc/dc-5-evening", "num_count": 5, "digits": True},
+
+    # --- Puerto Rico (44th jurisdiction) — results via lotterycorner. Loto is 5/35.
+    "pr_loto": {"kind": "lotterycorner", "lc_path": "pr/loto", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 35, "lc_jp_cap": 50000000},
 }
 
 

@@ -1121,7 +1121,7 @@ const GAME_META = {
   // fixed lower tiers. Live jackpot + saw-tooth from the NH data service.
   nh_megabucks: {
     label: "Tri-State Megabucks", specialKey: "megaball", specialName: "Megaball", specialAbbr: "MB",
-    draws: "Wed · Sat", priceChanges: [], state: "NH", stateName: "New Hampshire", ticketPrice: "$2",
+    draws: "Wed · Sat", priceChanges: [], state: "NH", stateName: "Maine, New Hampshire & Vermont", ticketPrice: "$2",
     oddsJackpot: 4496388, // 5 of 41 + Megaball
     prizes: {
       tierLabel: "Match", winnersTitle: "Prize tiers & odds",
@@ -1150,7 +1150,7 @@ const GAME_META = {
   // have the exact lower-tier amounts, so we publish the computed odds, not invented dollars.
   nh_gimme5: {
     label: "Gimme 5", specialKey: null, specialName: "", draws: "Mon – Fri",
-    priceChanges: [], state: "NH", stateName: "New Hampshire", ticketPrice: "$1",
+    priceChanges: [], state: "NH", stateName: "Maine, New Hampshire & Vermont", ticketPrice: "$1",
     oddsJackpot: 575757, // 5 of 39
     prizes: {
       note: "Gimme 5 is 5 of 39 (shared by NH, Maine and Vermont) with a fixed $100,000 top prize every draw. Matching 4, 3 or 2 wins smaller fixed prizes. Odds shown per play.",
@@ -1171,7 +1171,7 @@ const GAME_META = {
   // Pick 3 / Pick 4 — digit games, twice daily; we track the evening draw.
   nh_pick3: {
     label: "Pick 3", specialKey: null, specialName: "", digits: true,
-    draws: "Twice daily", priceChanges: [], state: "NH", stateName: "New Hampshire", ticketPrice: "$0.50 or $1",
+    draws: "Twice daily", priceChanges: [], state: "NH", stateName: "Maine, New Hampshire & Vermont", ticketPrice: "$0.50 or $1",
     prizes: {
       note: "New Hampshire Pick 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
       topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
@@ -1182,7 +1182,7 @@ const GAME_META = {
   },
   nh_pick4: {
     label: "Pick 4", specialKey: null, specialName: "", digits: true,
-    draws: "Twice daily", priceChanges: [], state: "NH", stateName: "New Hampshire", ticketPrice: "$0.50 or $1",
+    draws: "Twice daily", priceChanges: [], state: "NH", stateName: "Maine, New Hampshire & Vermont", ticketPrice: "$0.50 or $1",
     prizes: {
       note: "New Hampshire Pick 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. Fixed payouts by play type (shown for a $1 straight).",
       topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
@@ -2680,6 +2680,18 @@ const GAME_META = {
       reference: { title: "DC-5 top prize", columns: ["Play type", "Prize", "Odds"],
         rows: [ { cells: ["Straight — exact order ($1)", "$50,000", "1 in 100,000"] } ],
         note: "Official DC Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
+  // ── Puerto Rico (jurisdiction #44) ─────────────────────────────────────
+  // Loto — 5 of 35, drawn Mon/Wed/Fri, rolling jackpot. Puerto Rico uses USD.
+  pr_loto: {
+    label: "Loto", specialKey: null, specialName: "",
+    draws: "Mon · Wed · Fri", priceChanges: [], state: "PR", stateName: "Puerto Rico", ticketPrice: "$1",
+    oddsJackpot: 324632, // 5 of 35
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Puerto Rico's Loto is 5 of 35, drawn Monday, Wednesday and Friday. The jackpot rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 324,632).",
+      odds: { "Jackpot (5 of 35)": 324632, "Match 4": 2164, "Match 3": 75 },
     },
   },
 };
