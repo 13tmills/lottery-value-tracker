@@ -1,8 +1,8 @@
-﻿{
+{
     "game":  "la_pick5",
-    "source":  "louisianalottery.com",
+    "source":  "lotterycorner.com",
     "earliest_available":  "2021-08-01",
-    "last_updated":  "2026-06-21",
+    "last_updated":  "2026-06-23",
     "complete":  true,
     "draws":  [
                   {
