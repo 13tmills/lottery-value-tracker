@@ -449,6 +449,7 @@ function renderStateGame(key, meta, data) {
   }
   const total = draws.length;
   const sinceYear = draws[0].date.slice(0, 4);
+  const cur$ = CUR_SYM(meta); // "£" for UK games, "$" otherwise
 
   // Games with realized prize/winner data (nylottery.ny.gov) get a value treatment
   // over the frequency modules. NY Lotto also has a live jackpot + cash value;
@@ -501,11 +502,11 @@ function renderStateGame(key, meta, data) {
   });
   titleEl.textContent = meta.label;
   document.getElementById("game-sub").textContent = (hasJackpot
-    ? `${sn} · draws ${meta.draws} · jackpot ${fmtMoney(cur.jackpot)} · ${total.toLocaleString()} draws since ${sinceYear}`
+    ? `${sn} · draws ${meta.draws} · jackpot ${fmtMoney(cur.jackpot, cur$)} · ${total.toLocaleString()} draws since ${sinceYear}`
     : hasEv
     ? `${sn} · draws ${meta.draws} · value per $1 ${cents1(totalCents)} · ${total.toLocaleString()} draws since ${sinceYear}`
     : hasJackpotStat
-    ? `${sn} · draws ${meta.draws} · jackpot ${fmtMoney(cur.jackpot)} · ${total.toLocaleString()} draws since ${sinceYear}`
+    ? `${sn} · draws ${meta.draws} · jackpot ${fmtMoney(cur.jackpot, cur$)} · ${total.toLocaleString()} draws since ${sinceYear}`
     : meta.recentWindow
     ? `${sn} · draws ${meta.draws} · most recent ${total.toLocaleString()} draws`
     : `${sn} · draws ${meta.draws} · ${total.toLocaleString()} draws since ${sinceYear}`)
@@ -524,8 +525,11 @@ function renderStateGame(key, meta, data) {
 
   const latest = draws[draws.length - 1];
   const special = meta.specialKey ? latest[meta.specialKey] : null;
-  const balls = latest.numbers.map((n) => `<span class="ball">${n}</span>`).join("") +
-    (special != null ? `<span class="ball ball--special">${special}</span>` : "");
+  // special can be a scalar (cash ball) or an array (EuroMillions' 2 Lucky Stars).
+  const specialHtml = Array.isArray(special)
+    ? special.map((s) => `<span class="ball ball--special">${s}</span>`).join("")
+    : (special != null ? `<span class="ball ball--special">${special}</span>` : "");
+  const balls = latest.numbers.map((n) => `<span class="ball">${n}</span>`).join("") + specialHtml;
 
   // Daily Derby: a "latest race" panel — the three placed horses (with names) and
   // the race time — since its draw isn't a plain set of numbers.
@@ -553,8 +557,8 @@ function renderStateGame(key, meta, data) {
   document.getElementById("detail").innerHTML = `
     ${hasJackpot ? `
     <section class="stat-strip">
-      <div class="stat"><div class="stat__label">Estimated jackpot</div><div class="stat__value">${fmtMoney(cur.jackpot)}</div></div>
-      <div class="stat"><div class="stat__label">Cash value</div><div class="stat__value">${fmtMoney(cur.cash)}</div></div>
+      <div class="stat"><div class="stat__label">Estimated jackpot</div><div class="stat__value">${fmtMoney(cur.jackpot, cur$)}</div></div>
+      <div class="stat"><div class="stat__label">Cash value</div><div class="stat__value">${fmtMoney(cur.cash, cur$)}</div></div>
       <div class="stat"><div class="stat__label">Value per $1</div><div class="stat__value">${cents1(totalCents)}</div></div>
       <div class="stat"><div class="stat__label">Jackpot odds</div><div class="stat__value">1 in ${meta.ev.odds_jackpot.toLocaleString()}</div></div>
       <div class="stat"><div class="stat__label">Next draw</div><div class="stat__value">${fmtDate(cur.date)}</div></div>
@@ -574,7 +578,7 @@ function renderStateGame(key, meta, data) {
       <div class="stat"><div class="stat__label">Draw days</div><div class="stat__value">${meta.draws}</div></div>
     </section>` : hasJackpotStat ? `
     <section class="stat-strip">
-      <div class="stat"><div class="stat__label">Estimated jackpot</div><div class="stat__value">${fmtMoney(cur.jackpot)}</div></div>
+      <div class="stat"><div class="stat__label">Estimated jackpot</div><div class="stat__value">${fmtMoney(cur.jackpot, cur$)}</div></div>
       <div class="stat"><div class="stat__label">Jackpot odds</div><div class="stat__value">1 in ${meta.oddsJackpot.toLocaleString()}</div></div>
       <div class="stat"><div class="stat__label">Draws on record</div><div class="stat__value">${total.toLocaleString()}</div></div>
       <div class="stat"><div class="stat__label">Latest draw</div><div class="stat__value">${fmtDate(latest.date)}</div></div>
@@ -651,7 +655,7 @@ function renderStateGame(key, meta, data) {
       </div>
       <a class="btn" href="montecarlo.html?game=${key}">Monte Carlo simulator &rarr;</a>
     </section>` : ""}
-    ${((typeof STATE_TIERS !== "undefined" && STATE_TIERS[key]) || hasJackpot || hasJackpotStat) ? `
+    ${(((typeof STATE_TIERS !== "undefined" && STATE_TIERS[key]) || hasJackpot || hasJackpotStat) && meta.currency !== "GBP") ? `
     <section class="panel viz-cta">
       <div>
         <h2>How big do these jackpots get?</h2>

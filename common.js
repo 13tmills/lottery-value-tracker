@@ -2694,14 +2694,65 @@ const GAME_META = {
       odds: { "Jackpot (5 of 35)": 324632, "Match 4": 2164, "Match 3": 75 },
     },
   },
+  // ── United Kingdom — National Lottery (GBP) ────────────────────────────
+  // Lotto — 6 of 59 plus a Bonus Ball (drawn from the same pool, used only for the
+  // Match 5 + Bonus tier). Wed/Sat, rolling jackpot from £2M. Jackpot = C(59,6).
+  uk_lotto: {
+    label: "Lotto (UK)", specialKey: "special", specialName: "Bonus", currency: "GBP",
+    draws: "Wed · Sat", priceChanges: [], state: "UK", stateName: "United Kingdom", ticketPrice: "£2",
+    oddsJackpot: 45057474, // 6 of 59
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "The UK's Lotto is 6 of 59 (plus a Bonus Ball used only for the Match 5 + Bonus tier), drawn Wednesday and Saturday for £2. The jackpot starts at about £2 million and rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 45,057,474).",
+      odds: { "Jackpot (6 of 59)": 45057474, "Match 5 + Bonus": 7509579, "Match 5": 144415, "Match 4": 2180, "Match 3": 97 },
+    },
+  },
+  // EuroMillions — 5 of 50 plus 2 Lucky Stars (1–12). Tue/Fri, capped rolling jackpot.
+  uk_euromillions: {
+    label: "EuroMillions (UK)", specialKey: "special", specialName: "Lucky Stars", currency: "GBP",
+    draws: "Tue · Fri", priceChanges: [], state: "UK", stateName: "United Kingdom", ticketPrice: "£2.50",
+    oddsJackpot: 139838160, // C(50,5) × C(12,2)
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "EuroMillions is a pan-European game played in the UK in pounds: 5 of 50 plus 2 Lucky Stars (1–12), drawn Tuesday and Friday for £2.50. The jackpot rolls until won, up to a cap. The figures below are the odds of matching each tier (jackpot 1 in 139,838,160).",
+      odds: { "Jackpot (5 + 2 Stars)": 139838160, "5 + 1 Star": 6991908, "Match 5": 3107515, "4 + 2 Stars": 621503, "Match 4 + 1": 31077 },
+    },
+  },
+  // Thunderball — 5 of 39 plus a Thunderball (1–14). 4 draws/week, FIXED £500K top prize.
+  uk_thunderball: {
+    label: "Thunderball (UK)", specialKey: "special", specialName: "Thunderball", currency: "GBP",
+    draws: "Tue · Wed · Fri · Sat", priceChanges: [], state: "UK", stateName: "United Kingdom", ticketPrice: "£1",
+    oddsJackpot: 8060598, // C(39,5) × 14
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Top prize odds",
+      note: "Thunderball is 5 of 39 plus a Thunderball (1–14), drawn four times a week for £1. The top prize is a FIXED £500,000 (it never rolls), won by matching all five numbers and the Thunderball — odds 1 in 8,060,598. Every tier pays a fixed amount; the figure below is the published top-prize odds.",
+      odds: { "5 + Thunderball (£500,000)": 8060598 },
+    },
+  },
+  // Set For Life — 5 of 47 plus a Life Ball (1–10). Mon/Thu. Top prize is an annuity.
+  uk_setforlife: {
+    label: "Set For Life (UK)", specialKey: "special", specialName: "Life Ball", currency: "GBP",
+    draws: "Mon · Thu", priceChanges: [], state: "UK", stateName: "United Kingdom", ticketPrice: "£1.50",
+    oddsJackpot: 15339390, // C(47,5) × 10
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Top prize odds",
+      note: "Set For Life is 5 of 47 plus a Life Ball (1–10), drawn Monday and Thursday for £1.50. The top prize is an annuity — £10,000 a month for 30 years — won by matching all five numbers and the Life Ball, odds 1 in 15,339,390. The second tier pays £10,000 a month for one year. Lower tiers pay fixed cash amounts.",
+      odds: { "5 + Life Ball (top prize)": 15339390, "Match 5": 1704377 },
+    },
+  },
 };
 
-const fmtMoney = (n) =>
+// Optional currency symbol (default "$") so non-US games (e.g. UK National Lottery)
+// can render their jackpots in £. Callers pass CUR_SYM(meta) where it matters.
+const fmtMoney = (n, sym = "$") =>
   n >= 1e9
-    ? `$${(n / 1e9).toFixed(2)} B`
+    ? `${sym}${(n / 1e9).toFixed(2)} B`
     : n >= 1e6
-    ? `$${(n / 1e6).toFixed(1)} M`
-    : `$${Math.round(n).toLocaleString()}`;
+    ? `${sym}${(n / 1e6).toFixed(1)} M`
+    : `${sym}${Math.round(n).toLocaleString()}`;
+
+// Currency symbol for a game's GAME_META (UK games carry currency:"GBP").
+const CUR_SYM = (meta) => (meta && meta.currency === "GBP" ? "£" : "$");
 
 const fmtDate = (iso) => {
   const d = new Date(iso + "T00:00:00");

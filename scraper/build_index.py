@@ -31,13 +31,16 @@ def main():
                 data = json.load(fh)
         except (OSError, json.JSONDecodeError):
             continue
+        game_key = os.path.splitext(os.path.basename(path))[0]
+        if game_key.startswith("uk_"):
+            continue  # UK games are in £; the jackpot-stats tool renders $ — keep them out
         series = [d["jackpot"] for d in data.get("draws", [])
                   if isinstance(d.get("jackpot"), (int, float))]
         if len(series) < 2:
             continue
         cycles = count_cycles(series)
         if cycles > 0:
-            out[os.path.splitext(os.path.basename(path))[0]] = cycles
+            out[game_key] = cycles
 
     index = {"generated": date.today().isoformat(), "jackpot_cycles": out}
     dest = os.path.join(HIST, "..", "tools-index.json")

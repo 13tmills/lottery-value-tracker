@@ -494,6 +494,13 @@ GAMES = {
 
     # --- Puerto Rico (44th jurisdiction) — results via lotterycorner. Loto is 5/35.
     "pr_loto": {"kind": "lotterycorner", "lc_path": "pr/loto", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 35, "lc_jp_cap": 50000000},
+
+    # --- United Kingdom National Lottery (GBP) — results via lottery.co.uk archives.
+    # Matrix-aware uk_start: Lotto went 6/59 in Oct 2015; EuroMillions to 2/12 stars 2016.
+    "uk_lotto":        {"kind": "lottery_uk", "uk_slug": "lotto",        "main_count": 6, "special_count": 1, "max_ball": 59, "uk_start": "2015-10-10", "jackpot": True},
+    "uk_euromillions": {"kind": "lottery_uk", "uk_slug": "euromillions", "main_count": 5, "special_count": 2, "max_ball": 50, "uk_start": "2016-09-24", "jackpot": True},
+    "uk_thunderball":  {"kind": "lottery_uk", "uk_slug": "thunderball",  "main_count": 5, "special_count": 1, "max_ball": 39, "uk_start": "2010-05-10"},
+    "uk_setforlife":   {"kind": "lottery_uk", "uk_slug": "set-for-life", "main_count": 5, "special_count": 1, "max_ball": 47, "uk_start": "2019-03-15"},
 }
 
 
@@ -2324,6 +2331,54 @@ def scrape_lotterycorner(cfg, by_date):
     return None
 
 
+UK_BASE = "https://www.lottery.co.uk/{slug}/results/archive-{year}"
+
+
+def scrape_uk(cfg, by_date):
+    """UK National Lottery results from lottery.co.uk per-year archives. Each table
+    row carries a /results-DD-MM-YYYY date link, the drawn balls (main balls first,
+    then the special ball(s) as result divs), and a £ jackpot for the rolling games.
+    Stores main balls in `numbers` and the special ball(s) in `special`. Mutates
+    by_date (current + previous year — load_existing keeps the deep seed); returns
+    the latest jackpot for the rolling games."""
+    mainN = cfg["main_count"]
+    specN = cfg.get("special_count", 0)
+    today = date.today()
+    cur = None
+    for y in (today.year, today.year - 1):
+        try:
+            page = requests.get(UK_BASE.format(slug=cfg["uk_slug"], year=y),
+                                headers={"User-Agent": USER_AGENT}, timeout=45).text
+        except requests.RequestException:
+            continue
+        for row in re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", page):
+            dm = re.search(r"results-(\d{2})-(\d{2})-(\d{4})", row)
+            if not dm:
+                continue
+            iso = f"{dm.group(3)}-{dm.group(2)}-{dm.group(1)}"
+            if cfg.get("uk_start") and iso < cfg["uk_start"]:
+                continue  # before the current matrix
+            balls = [int(x) for x in re.findall(r'class="result[^"]*">\s*(\d+)\s*</div>', row)]
+            if len(balls) < mainN + specN:
+                continue
+            main = sorted(balls[:mainN])
+            if cfg.get("max_ball") and max(main) > cfg["max_ball"]:
+                continue
+            draw = {"date": iso, "numbers": main}
+            if specN:
+                draw["special"] = sorted(balls[mainN:mainN + specN])
+            if cfg.get("jackpot"):
+                jm = re.search(r"&pound;([\d,]+)", row)
+                if jm:
+                    jp = int(jm.group(1).replace(",", ""))
+                    draw["jackpot"] = jp
+                    draw["cash"] = jp
+            by_date[iso] = draw
+            if cfg.get("jackpot") and draw.get("jackpot") and (cur is None or iso > cur["date"]):
+                cur = {"date": iso, "jackpot": draw["jackpot"], "cash": draw["cash"]}
+    return cur
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -2557,6 +2612,15 @@ def main():
         if cur:
             data["current_jackpot"] = cur
             print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "lottery_uk":
+        cur = scrape_uk(cfg, by_date)
+        source = "lottery.co.uk"
+        data["currency"] = "GBP"
+        print(f"[{args.game}] {len(by_date)} draw(s) from lottery.co.uk.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: £{cur['jackpot']:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"

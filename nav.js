@@ -1,5 +1,5 @@
 // Global top navigation, injected on every page (defer-loaded so document.body exists).
-// Brand → landing; "National Drawings" → the national games page; "State Drawings" → states.
+// US National / US State drawings, the UK National Lottery, and the draw-game tools.
 (function () {
   const here = location.pathname.split("/").pop() || "index.html";
   const link = (t, h) => `<a href="${h}"${h === here ? ' class="is-active"' : ""}>${t}</a>`;
@@ -9,9 +9,10 @@
   nav.innerHTML =
     `<a class="topnav__brand" href="index.html">Numbers<span>Intel</span></a>` +
     `<div class="topnav__links">` +
-      link("National Drawings", "national.html") +
-      link("State Drawings", "states.html") +
-      link("Tools", "tools.html") +
+      link("US National Drawings", "national.html") +
+      link("US State Drawings", "states.html") +
+      link("UK Drawings", "uk.html") +
+      link("Draw Game Tools", "tools.html") +
     `</div>`;
   document.body.insertBefore(nav, document.body.firstChild);
 

@@ -356,6 +356,19 @@
   <url><loc>https://numbersintel.com/game.html?game=pr_loto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=pr_loto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=pr_loto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/uk.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=uk_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=uk_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=uk_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=uk_euromillions</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=uk_euromillions</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=uk_euromillions</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=uk_thunderball</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=uk_thunderball</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=uk_thunderball</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=uk_setforlife</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=uk_setforlife</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=uk_setforlife</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

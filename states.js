@@ -56,10 +56,25 @@ const STATES = [
   { abbr: "DC", name: "District of Columbia", lottery: true },
   { abbr: "PR", name: "Puerto Rico", lottery: true },
   { abbr: "USVI", name: "U.S. Virgin Islands", lottery: true },
+  { abbr: "UK", name: "United Kingdom", lottery: true }, // not a US state; surfaced via uk.html
 ];
 
 // Per-state game listings for jurisdictions we've started covering.
 const STATE_GAMES = {
+  UK: {
+    intro: "The UK's National Lottery games — Lotto, EuroMillions, Thunderball and Set For Life — with live jackpots in pounds, official odds and deep number-frequency history. Figures are shown in £; the US value-per-dollar tools don't apply here.",
+    games: [
+      { name: "Lotto", meta: "6 of 59 + Bonus · Wed · Sat · jackpot from £2M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=uk_lotto"]] },
+      { name: "EuroMillions", meta: "5 of 50 + 2 Lucky Stars · Tue · Fri · capped rolling jackpot",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=uk_euromillions"]] },
+      { name: "Thunderball", meta: "5 of 39 + Thunderball · 4×/week · fixed £500K top",
+        links: [["Odds, prizes &amp; results", "game.html?game=uk_thunderball"]] },
+      { name: "Set For Life", meta: "5 of 47 + Life Ball · Mon · Thu · £10K/month for 30 years",
+        links: [["Odds, prizes &amp; results", "game.html?game=uk_setforlife"]] },
+    ],
+    national: [],
+  },
   NY: {
     intro: "New York runs one of the largest US state lotteries. Every draw game below has live payouts, per-tier winner counts, odds, and number frequency — plus the odds visualizer where it applies.",
     games: [
@@ -1057,7 +1072,9 @@ async function fillBestGame(s, cfg) {
 function renderState() {
   const host = document.getElementById("state-detail");
   if (!host) return;
-  const abbr = stateParam();
+  // uk.html (and any future non-US jurisdiction page) sets body[data-jurisdiction];
+  // the normal state pages use ?state=XX.
+  const abbr = stateParam() || (document.body.dataset.jurisdiction || "").toUpperCase();
   const s = STATES.find((x) => x.abbr === abbr);
   const titleEl = document.getElementById("state-title");
   const subEl = document.getElementById("state-sub");
@@ -1080,7 +1097,7 @@ function renderState() {
   setMeta({
     title: `${s.name} Lottery — Results, Numbers & Frequency | NumbersIntel`,
     description: `${s.name} lottery results and hot & cold number frequency — plus the national games. The NumbersIntel analytics treatment for ${s.name}.`,
-    url: `${SITE}/state.html?state=${s.abbr}`,
+    url: s.abbr === "UK" ? `${SITE}/uk.html` : `${SITE}/state.html?state=${s.abbr}`,
   });
 
   const cfg = STATE_GAMES[s.abbr];
