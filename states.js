@@ -575,6 +575,23 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  WV: {
+    intro: "West Virginia's draw games — Cash 25 and the daily Daily 3/4 — with official odds, payouts and deep number-frequency history from the West Virginia Lottery.",
+    games: [
+      { name: "Cash 25", meta: "6 of 25 · Mon·Tue·Thu·Fri · $25K top",
+        links: [["Odds, prizes &amp; results", "game.html?game=wv_cash25"]] },
+      { name: "Daily 3", meta: "3-digit · daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=wv_daily3"]] },
+      { name: "Daily 4", meta: "4-digit · daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=wv_daily4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

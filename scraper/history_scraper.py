@@ -415,6 +415,11 @@ GAMES = {
     "de_play3":    {"kind": "lotterycorner", "lc_path": "de/play-3-night", "num_count": 3, "digits": True},
     "de_play4":    {"kind": "lotterycorner", "lc_path": "de/play-4-night", "num_count": 4, "digits": True},
     "de_play5":    {"kind": "lotterycorner", "lc_path": "de/play-5", "num_count": 5, "digits": True},
+
+    # --- West Virginia (29th state) — wvlottery.com is a Next.js SPA; results via lotterycorner.
+    "wv_cash25": {"kind": "lotterycorner", "lc_path": "wv/cash-25", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 25},
+    "wv_daily3": {"kind": "lotterycorner", "lc_path": "wv/daily-3", "num_count": 3, "digits": True},
+    "wv_daily4": {"kind": "lotterycorner", "lc_path": "wv/daily-4", "num_count": 4, "digits": True},
 }
 
 

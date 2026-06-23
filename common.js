@@ -2232,6 +2232,42 @@ const GAME_META = {
         note: "Official Delaware Lottery top prize. Box and other play types pay different amounts." },
     },
   },
+  // ----- West Virginia (29th state) -------------------------------------- #
+  // Cash 25 — 6 of 25, drawn Mon/Tue/Thu/Fri, FIXED $25,000 top prize (not a rolling
+  // jackpot). Lower-tier amounts aren't published cleanly, so odds-only.
+  wv_cash25: {
+    label: "Cash 25", specialKey: null, specialName: "",
+    draws: "Mon · Tue · Thu · Fri", priceChanges: [], state: "WV", stateName: "West Virginia", ticketPrice: "$1",
+    oddsJackpot: 177100, // 6 of 25
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "West Virginia Cash 25 is 6 of 25, drawn Monday, Tuesday, Thursday and Friday. The top prize is a fixed $25,000 (shared if there are multiple winners), not a rolling jackpot; the lower tiers pay smaller fixed amounts. The figures below are the official published odds.",
+      odds: { "Match 6 ($25,000)": 177100, "Match 5": 1553, "Match 4": 69, "Match 3": 9 },
+    },
+  },
+  // Daily 3 / Daily 4 — daily digit games. $500 / $5,000 Straight.
+  wv_daily3: {
+    label: "Daily 3", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "WV", stateName: "West Virginia", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "West Virginia Daily 3 is a 3-digit game (000–999) drawn daily. The top prize is a $500 Straight on a $1 play. Box and other play types pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "West Virginia Daily 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official West Virginia Lottery top prize. Box and other play types pay different amounts." },
+    },
+  },
+  wv_daily4: {
+    label: "Daily 4", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "WV", stateName: "West Virginia", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "West Virginia Daily 4 is a 4-digit game (0000–9999) drawn daily. The top prize is a $5,000 Straight on a $1 play. Box and other play types pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "West Virginia Daily 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official West Virginia Lottery top prize. Box and other play types pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
