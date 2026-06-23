@@ -1798,11 +1798,17 @@ const GAME_META = {
   wi_badger5: {
     label: "Badger 5", specialKey: null, specialName: "",
     draws: "Daily", priceChanges: [], state: "WI", stateName: "Wisconsin", ticketPrice: "$1",
-    oddsJackpot: 169911, // 5 of 31
-    prizes: {
-      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
-      note: "Wisconsin Badger 5 is 5 of 31, drawn daily. The jackpot is paid in cash, starts at $10,000 and rolls until won. Match 2 of 5 wins a free ticket. The figures below are the official published odds.",
-      odds: { "Jackpot": 169911, "Match 4": 1307, "Match 3": 52, "Match 2 (free ticket)": 7 },
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 169911, // 5 of 31
+      overall_odds: 5.8,
+      staticPrizes: true, // fixed lower tiers + a live cash jackpot from $10K (Match 2 = free play)
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 169911 },
+        "Match 4": { label: "Match 4", odds: 1307, prize: 50 },
+        "Match 3": { label: "Match 3", odds: 52, prize: 2 },
+        "Match 2": { label: "Match 2 (free play)", odds: 7, free: true },
+      },
     },
   },
   // Pick 3 / 4 — twice daily (we track the evening draw). $500 / $5,000 Straight top.
@@ -1833,11 +1839,17 @@ const GAME_META = {
   mn_gopher5: {
     label: "Gopher 5", specialKey: null, specialName: "",
     draws: "Mon · Wed · Fri", priceChanges: [], state: "MN", stateName: "Minnesota", ticketPrice: "$1",
-    oddsJackpot: 1533939, // 5 of 47
-    prizes: {
-      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
-      note: "Minnesota Gopher 5 is 5 of 47, drawn Monday, Wednesday and Friday. The jackpot is paid in cash, starts at $100,000 and rolls until won. The figures below are the official published odds.",
-      odds: { "Jackpot": 1533939, "Match 4": 7305, "Match 3": 178, "Match 2": 13 },
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 1533939, // 5 of 47
+      overall_odds: 12.4,
+      staticPrizes: true, // fixed lower tiers + a live cash jackpot from $100K
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 1533939 },
+        "Match 4": { label: "Match 4", odds: 7304, prize: 500 },
+        "Match 3": { label: "Match 3", odds: 178, prize: 15 },
+        "Match 2": { label: "Match 2", odds: 13, prize: 1 },
+      },
     },
   },
   // North 5 — 5 of 34, daily, rolling CASH jackpot from $25K; optional EZ Match.
@@ -1845,11 +1857,17 @@ const GAME_META = {
   mn_north5: {
     label: "North 5", specialKey: null, specialName: "",
     draws: "Daily", priceChanges: [], state: "MN", stateName: "Minnesota", ticketPrice: "$1",
-    oddsJackpot: 278256, // 5 of 34
-    prizes: {
-      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
-      note: "Minnesota North 5 is 5 of 34, drawn daily. The jackpot is paid in cash, starts at $25,000 and rolls until won. The optional EZ Match add-on ($1) pays $2–$500 instantly. The figures below are the official published odds.",
-      odds: { "Jackpot": 278256, "Match 4": 1919, "Match 3": 69, "Match 2": 8 },
+    ev: {
+      ticket_price: 1,
+      odds_jackpot: 278256, // 5 of 34
+      overall_odds: 6.8,
+      staticPrizes: true, // fixed lower tiers + a live cash jackpot from $25K
+      levels: {
+        "Jackpot": { label: "Jackpot (Match 5)", odds: 278256 },
+        "Match 4": { label: "Match 4", odds: 1919, prize: 50 },
+        "Match 3": { label: "Match 3", odds: 69, prize: 5 },
+        "Match 2": { label: "Match 2", odds: 8, prize: 1 },
+      },
     },
   },
   // Pick 3 — daily 3-digit; $500 Straight top.
