@@ -2781,12 +2781,14 @@ const GAME_META = {
 
 // Optional currency symbol (default "$") so non-US games (e.g. UK National Lottery)
 // can render their jackpots in £. Callers pass CUR_SYM(meta) where it matters.
+// Two decimal places throughout: B/M abbreviations show 2 dp; full amounts show
+// 2 dp only when the data actually carries cents/pence (whole numbers stay whole).
 const fmtMoney = (n, sym = "$") =>
   n >= 1e9
     ? `${sym}${(n / 1e9).toFixed(2)} B`
     : n >= 1e6
-    ? `${sym}${(n / 1e6).toFixed(1)} M`
-    : `${sym}${Math.round(n).toLocaleString()}`;
+    ? `${sym}${(n / 1e6).toFixed(2)} M`
+    : `${sym}${n.toLocaleString(undefined, { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
 
 // Currency symbol for a game's GAME_META (UK games carry currency:"GBP").
 const CUR_SYM = (meta) => (meta && meta.currency === "GBP" ? "£" : "$");

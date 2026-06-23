@@ -11,7 +11,7 @@ function gameKey() {
 }
 
 const fmtOdds = (n) => `1 in ${Math.round(n).toLocaleString()}`;
-const fmtPrize = (n) => (n >= 1e6 ? fmtMoney(n) : `$${n.toLocaleString()}`);
+const fmtPrize = (n) => (n >= 1e6 ? fmtMoney(n) : `$${n.toLocaleString(undefined, { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 })}`);
 const cents1 = (c) => `${c.toFixed(1)}¢`;
 
 async function init() {
@@ -328,7 +328,7 @@ function nyValueSection(meta, items, prizeDate) {
         it.prize == null ? "&mdash;"
         : typeof it.prize === "string" ? it.prize
         : it.prize >= 1e6 ? fmtMoney(it.prize)
-        : `$${it.prize.toLocaleString()}`;
+        : `$${it.prize.toLocaleString(undefined, { minimumFractionDigits: it.prize % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
       return `
       <tr class="${it.kind === "jackpot" ? "is-jackpot" : ""}">
         <td>${it.label}</td>
@@ -396,7 +396,7 @@ function renderPrizesSection(meta, lastPrized) {
       const amt = p.amount == null ? "&mdash;"
         : typeof p.amount === "string" ? p.amount
         : p.amount >= 1e6 ? fmtMoney(p.amount)
-        : `$${p.amount.toLocaleString()}`;
+        : `$${p.amount.toLocaleString(undefined, { minimumFractionDigits: p.amount % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
       const o = odds[lbl] != null ? fmtOdds(odds[lbl]) : "&mdash;";
       return `<tr>
         <td>${lbl}</td>

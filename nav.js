@@ -1,20 +1,43 @@
 // Global top navigation, injected on every page (defer-loaded so document.body exists).
-// US National / US State drawings, the UK National Lottery, and the draw-game tools.
+// A "Draw Games" dropdown gathers everything (US National / US State / UK drawings +
+// the draw-game tools), and a standalone "Tools" tab links straight to the tools.
 (function () {
   const here = location.pathname.split("/").pop() || "index.html";
   const link = (t, h) => `<a href="${h}"${h === here ? ' class="is-active"' : ""}>${t}</a>`;
+  const drawPages = ["national.html", "states.html", "uk.html", "tools.html", "state.html", "game.html"];
+  const groupActive = drawPages.includes(here);
 
   const nav = document.createElement("nav");
   nav.className = "topnav";
   nav.innerHTML =
     `<a class="topnav__brand" href="index.html">Numbers<span>Intel</span></a>` +
     `<div class="topnav__links">` +
-      link("US National Drawings", "national.html") +
-      link("US State Drawings", "states.html") +
-      link("UK Drawings", "uk.html") +
-      link("Draw Game Tools", "tools.html") +
+      `<div class="topnav__group">` +
+        `<button class="topnav__trigger${groupActive ? " is-active" : ""}" type="button" aria-haspopup="true" aria-expanded="false">` +
+          `Draw Games <span class="topnav__caret">&#9662;</span></button>` +
+        `<div class="topnav__menu">` +
+          link("US National Drawings", "national.html") +
+          link("US State Drawings", "states.html") +
+          link("UK Drawings", "uk.html") +
+          link("Draw Game Tools", "tools.html") +
+        `</div>` +
+      `</div>` +
+      link("Tools", "tools.html") +
     `</div>`;
   document.body.insertBefore(nav, document.body.firstChild);
+
+  // Click-to-toggle for touch / no-hover devices (desktop also gets the CSS :hover).
+  const group = nav.querySelector(".topnav__group");
+  const trigger = group.querySelector(".topnav__trigger");
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = group.classList.toggle("is-open");
+    trigger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.addEventListener("click", () => {
+    group.classList.remove("is-open");
+    trigger.setAttribute("aria-expanded", "false");
+  });
 
   // Responsible-gambling notice — appended to the footer on every page.
   const rg = document.createElement("p");
