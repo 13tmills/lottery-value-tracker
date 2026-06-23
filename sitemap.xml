@@ -286,6 +286,14 @@
   <url><loc>https://numbersintel.com/numbers.html?game=nj_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=nj_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=nj_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=tn_cash</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=tn_cash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=tn_cash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=tn_dailyjp</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=tn_dailyjp</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=tn_dailyjp</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=tn_cash3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=tn_cash4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

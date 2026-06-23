@@ -433,6 +433,14 @@ GAMES = {
     "nj_cash5":  {"kind": "lotterycorner", "lc_path": "nj/jersey-cash-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 45},
     "nj_pick3":  {"kind": "lotterycorner", "lc_path": "nj/pick-3-evening", "num_count": 3, "digits": True},
     "nj_pick4":  {"kind": "lotterycorner", "lc_path": "nj/pick-4-evening", "num_count": 4, "digits": True},
+
+    # --- Tennessee (32nd state) — tnlottery.com is JS-walled; results via lotterycorner.
+    # Tennessee Cash appends a Cash Ball after the 5 main numbers; first 5
+    # class="number" balls are the main draw (validated against the official site).
+    "tn_cash":     {"kind": "lotterycorner", "lc_path": "tn/tennessee-cash", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 35, "lc_jp_cap": 100000000},
+    "tn_dailyjp":  {"kind": "lotterycorner", "lc_path": "tn/daily-tennessee-jackpot", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 38, "lc_jp_cap": 100000000},
+    "tn_cash3":    {"kind": "lotterycorner", "lc_path": "tn/cash-3-evening", "num_count": 3, "digits": True},
+    "tn_cash4":    {"kind": "lotterycorner", "lc_path": "tn/cash-4-evening", "num_count": 4, "digits": True},
 }
 
 

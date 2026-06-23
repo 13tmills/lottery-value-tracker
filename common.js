@@ -2364,6 +2364,54 @@ const GAME_META = {
         note: "Official New Jersey Lottery top prize on a $1 play (50¢ plays pay half). Box and Fire Ball plays pay different amounts." },
     },
   },
+  // ── Tennessee (state #32) ──────────────────────────────────────────────
+  // Tennessee Cash — 5 of 35 PLUS a Cash Ball (1 of 5). The jackpot requires
+  // all five numbers + the Cash Ball: C(35,5)=324,632 × 5 = 1,623,160. Lower
+  // tiers are fixed but split across the Cash Ball, so we present odds-only.
+  tn_cash: {
+    label: "Tennessee Cash", specialKey: null, specialName: "Cash Ball",
+    draws: "Mon · Wed · Fri", priceChanges: [], state: "TN", stateName: "Tennessee", ticketPrice: "$1",
+    oddsJackpot: 1623160, // 5 of 35 + Cash Ball (1 of 5)
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Jackpot odds",
+      note: "Tennessee Cash is 5 of 35 plus a separate Cash Ball (1 of 5), drawn Monday, Wednesday and Friday for $1. The top prize is won by matching all five numbers and the Cash Ball — odds 1 in 1,623,160 — and rolls until won (it starts at $100,000, paid as an annuity or cash option). Lower tiers pay fixed amounts that vary with the Cash Ball; the figure below is the published jackpot odds.",
+      odds: { "5 + Cash Ball (jackpot)": 1623160 },
+    },
+  },
+  // Daily Tennessee Jackpot — 5 of 38, drawn every day, rolling cash from $30K.
+  tn_dailyjp: {
+    label: "Daily Tennessee Jackpot", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "TN", stateName: "Tennessee", ticketPrice: "$1",
+    oddsJackpot: 501942, // 5 of 38
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Daily Tennessee Jackpot is 5 of 38, drawn every day for $1. The cash jackpot starts at $30,000 and rolls until won. The figures below are the odds of matching each tier (jackpot 1 in 501,942).",
+      odds: { "Jackpot (5 of 38)": 501942, "Match 4": 3042, "Match 3": 95 },
+    },
+  },
+  // Cash 3 / Cash 4 — three draws a day (Morning/Midday/Evening); we track Evening.
+  tn_cash3: {
+    label: "Cash 3", specialKey: null, specialName: "", digits: true,
+    draws: "3× daily", priceChanges: [], state: "TN", stateName: "Tennessee", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Tennessee Cash 3 is a 3-digit game (000–999) drawn three times a day; we track the evening draw. A $1 Exact (straight) play pays $500 (a 50¢ play pays $250). Other play styles and the optional Wild Ball add-on pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Exact $1)",
+      reference: { title: "Tennessee Cash 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Exact — exact order ($1)", "$500", "1 in 1,000"] } ],
+        note: "Official Tennessee Lottery top prize on a $1 play (50¢ plays pay half). Any-order and Wild Ball plays pay different amounts." },
+    },
+  },
+  tn_cash4: {
+    label: "Cash 4", specialKey: null, specialName: "", digits: true,
+    draws: "3× daily", priceChanges: [], state: "TN", stateName: "Tennessee", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Tennessee Cash 4 is a 4-digit game (0000–9999) drawn three times a day; we track the evening draw. A $1 Exact (straight) play pays $5,000 (a 50¢ play pays $2,500). Other play styles and the optional Wild Ball add-on pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Exact $1)",
+      reference: { title: "Tennessee Cash 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Exact — exact order ($1)", "$5,000", "1 in 10,000"] } ],
+        note: "Official Tennessee Lottery top prize on a $1 play (50¢ plays pay half). Any-order and Wild Ball plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

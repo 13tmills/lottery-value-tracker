@@ -630,6 +630,25 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  TN: {
+    intro: "Tennessee's draw games — Tennessee Cash with its Cash Ball jackpot, the daily Daily Tennessee Jackpot, and the three-times-daily Cash 3/4 — with live jackpots, official odds and deep number-frequency history from the Tennessee Lottery.",
+    games: [
+      { name: "Tennessee Cash", meta: "5 of 35 + Cash Ball · Mon · Wed · Fri · jackpot from $100K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=tn_cash"]] },
+      { name: "Daily Tennessee Jackpot", meta: "5 of 38 · daily · cash jackpot from $30K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=tn_dailyjp"]] },
+      { name: "Cash 3", meta: "3-digit · three draws daily · $500 exact",
+        links: [["Results, odds &amp; payouts", "game.html?game=tn_cash3"]] },
+      { name: "Cash 4", meta: "4-digit · three draws daily · $5K exact",
+        links: [["Results, odds &amp; payouts", "game.html?game=tn_cash4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [
