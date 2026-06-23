@@ -414,6 +414,23 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  MN: {
+    intro: "Minnesota's draw games — Gopher 5's rolling jackpot, North 5's daily rolling cash prize, and Pick 3 — with live jackpots, official odds and deep number-frequency history from the Minnesota Lottery.",
+    games: [
+      { name: "Gopher 5", meta: "5 of 47 · Mon · Wed · Fri · jackpot from $100K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=mn_gopher5"]] },
+      { name: "North 5", meta: "5 of 34 · daily · cash jackpot from $25K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=mn_north5"]] },
+      { name: "Pick 3", meta: "3-digit · daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=mn_pick3"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

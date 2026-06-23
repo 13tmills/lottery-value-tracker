@@ -360,6 +360,12 @@ GAMES = {
     "wi_badger5":   {"kind": "wilottery_html", "wi_game": "Badger 5", "num_count": 5, "sort": True, "jackpot": True, "cash": True},
     "wi_pick3":     {"kind": "wilottery_html", "wi_game": "Pick 3", "num_count": 3, "digits": True, "wi_evening": True},
     "wi_pick4":     {"kind": "wilottery_html", "wi_game": "Pick 4", "num_count": 4, "digits": True, "wi_evening": True},
+
+    # --- Minnesota (20th state) — mnlottery.com/winning-numbers aria-label cards (game +
+    # date + numbers + jackpot). Several recent draws per game; deep history seeded. --------
+    "mn_gopher5": {"kind": "mnlottery_html", "mn_name": "Gopher 5", "num_count": 5, "sort": True, "jackpot": True},
+    "mn_north5":  {"kind": "mnlottery_html", "mn_name": "North 5", "num_count": 5, "sort": True, "jackpot": True},
+    "mn_pick3":   {"kind": "mnlottery_html", "mn_name": "Pick 3", "num_count": 3, "digits": True},
 }
 
 
@@ -1992,6 +1998,47 @@ def scrape_wisconsin(cfg, by_date):
     return None
 
 
+MN_WIN = "https://www.mnlottery.com/winning-numbers"
+MN_MON = {m: i for i, m in enumerate(
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
+
+
+def scrape_minnesota(cfg, by_date):
+    """Minnesota — mnlottery.com/winning-numbers renders each recent draw as a card whose
+    <a aria-label> packs everything: '<Game> Winning numbers for <Game> drawing on Jun
+    22nd, 2026. 1 13 19 38 46 Estimated jackpot is $550,000.' We match cards whose label
+    starts with the game name, and pull the date, numbers and jackpot from it. Several
+    recent draws per game; retention accumulates, deep history is seeded separately."""
+    page = requests.get(MN_WIN, headers={"User-Agent": USER_AGENT}, timeout=45).text
+    n = cfg["num_count"]
+    newest = None
+    for am in re.finditer(r'aria-label="([^"]*?Winning numbers for[^"]*?)"', page):
+        label = re.sub(r"\s+", " ", am.group(1)).strip()
+        if not label.startswith(cfg["mn_name"] + " "):
+            continue
+        dm = re.search(r"drawing on ([A-Z][a-z]{2})[a-z]* (\d{1,2})(?:st|nd|rd|th)?,?\s*(\d{4})\.\s*"
+                       r"([\d ]+?)\s*(?:Estimated|Click|$)", label)
+        if not dm or dm.group(1) not in MN_MON:
+            continue
+        iso = f"{int(dm.group(3)):04d}-{MN_MON[dm.group(1)]:02d}-{int(dm.group(2)):02d}"
+        balls = [int(x) for x in dm.group(4).split()][:n]
+        if len(balls) < n:
+            continue
+        draw = {"date": iso, "numbers": sorted(balls) if cfg.get("sort") else balls}
+        if cfg.get("jackpot"):
+            jm = re.search(r"Estimated jackpot is \$([\d,]+)", label)
+            if jm:
+                jp = int(jm.group(1).replace(",", ""))
+                draw["jackpot"] = jp
+                draw["cash"] = jp  # Gopher 5 / North 5 jackpots are paid in cash
+        by_date[iso] = draw
+        if cfg.get("jackpot") and draw.get("jackpot") and (newest is None or iso > newest["date"]):
+            newest = draw
+    if newest:
+        return {"date": newest["date"], "jackpot": newest["jackpot"], "cash": newest.get("cash")}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -2179,6 +2226,14 @@ def main():
         cur = scrape_wisconsin(cfg, by_date)
         source = "wilottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from wilottery.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
+    elif cfg["kind"] == "mnlottery_html":
+        cur = scrape_minnesota(cfg, by_date)
+        source = "mnlottery.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from mnlottery.com.")
         complete = True
         if cur:
             data["current_jackpot"] = cur

@@ -1828,6 +1828,42 @@ const GAME_META = {
         note: "Official Wisconsin Lottery top prize. Box (any-order) and combination plays pay different amounts." },
     },
   },
+  // ----- Minnesota (20th state) ------------------------------------------ #
+  // Gopher 5 — 5 of 47, Mon/Wed/Fri, rolling CASH jackpot from $100K.
+  mn_gopher5: {
+    label: "Gopher 5", specialKey: null, specialName: "",
+    draws: "Mon · Wed · Fri", priceChanges: [], state: "MN", stateName: "Minnesota", ticketPrice: "$1",
+    oddsJackpot: 1533939, // 5 of 47
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Minnesota Gopher 5 is 5 of 47, drawn Monday, Wednesday and Friday. The jackpot is paid in cash, starts at $100,000 and rolls until won. The figures below are the official published odds.",
+      odds: { "Jackpot": 1533939, "Match 4": 7305, "Match 3": 178, "Match 2": 13 },
+    },
+  },
+  // North 5 — 5 of 34, daily, rolling CASH jackpot from $25K; optional EZ Match.
+  // (Replaced the 5/31 Northstar Cash in 2025 — history here is the 5/34 game only.)
+  mn_north5: {
+    label: "North 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "MN", stateName: "Minnesota", ticketPrice: "$1",
+    oddsJackpot: 278256, // 5 of 34
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Minnesota North 5 is 5 of 34, drawn daily. The jackpot is paid in cash, starts at $25,000 and rolls until won. The optional EZ Match add-on ($1) pays $2–$500 instantly. The figures below are the official published odds.",
+      odds: { "Jackpot": 278256, "Match 4": 1919, "Match 3": 69, "Match 2": 8 },
+    },
+  },
+  // Pick 3 — daily 3-digit; $500 Straight top.
+  mn_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "MN", stateName: "Minnesota", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Minnesota Pick 3 is a 3-digit game (000–999) drawn daily. The top prize is a $500 Straight on a $1 play. Box (any-order) and straight/box plays pay less.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Minnesota Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official Minnesota Lottery top prize. Box (any-order) and straight/box plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
