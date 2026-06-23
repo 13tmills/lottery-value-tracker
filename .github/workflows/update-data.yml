@@ -159,6 +159,10 @@ jobs:
           python scraper/history_scraper.py --game in_cash5
           python scraper/history_scraper.py --game in_daily3
           python scraper/history_scraper.py --game in_daily4
+          python scraper/history_scraper.py --game de_multiwin
+          python scraper/history_scraper.py --game de_play3
+          python scraper/history_scraper.py --game de_play4
+          python scraper/history_scraper.py --game de_play5
           python scraper/build_index.py || echo "::warning::build_index failed (continuing)"
           exit 0   # always succeed so the commit step runs with whatever updated
 

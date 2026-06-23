@@ -2183,6 +2183,55 @@ const GAME_META = {
         note: "Official Hoosier Lottery top prize. Box, Combo and Superball plays pay different amounts." },
     },
   },
+  // ----- Delaware (28th state) ------------------------------------------- #
+  // Multi-Win Lotto — 6 of 35, daily, rolling cash jackpot from $50K. A $2 ticket has
+  // THREE lines; you can win per line or by combining matches across lines (and you even
+  // win $2 for matching nothing), so the prize structure is unusual → odds-only.
+  de_multiwin: {
+    label: "Multi-Win Lotto", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "DE", stateName: "Delaware", ticketPrice: "$2 / 3 lines",
+    oddsJackpot: 1623160, // 6 of 35 (per line)
+    prizes: {
+      tierLabel: "Match (one line)", winnersTitle: "Prize tiers & odds",
+      note: "Delaware Multi-Win Lotto is 6 of 35, drawn every evening. The cash jackpot starts at $50,000 and rolls until won. A $2 ticket gives you three lines — you can win on any single line, by combining matches across all three lines, or even by matching no numbers at all ($2). The odds below are per line; overall odds of any prize are about 1 in 5.7.",
+      odds: { "Jackpot (Match 6)": 1623160, "Match 5": 9329, "Match 4": 266, "Match 3": 22 },
+    },
+  },
+  // Play 3 / Play 4 — twice daily (we track the night draw). $500 / $5,000 Straight.
+  de_play3: {
+    label: "Play 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "DE", stateName: "Delaware", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Delaware Play 3 is a 3-digit game (000–999) drawn twice a day; we track the night draw. The top prize is a $500 Straight on a $1 play. Box and other play types pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Delaware Play 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official Delaware Lottery top prize. Box and other play types pay different amounts." },
+    },
+  },
+  de_play4: {
+    label: "Play 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "DE", stateName: "Delaware", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Delaware Play 4 is a 4-digit game (0000–9999) drawn twice a day; we track the night draw. The top prize is a $5,000 Straight on a $1 play. Box and other play types pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Delaware Play 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official Delaware Lottery top prize. Box and other play types pay different amounts." },
+    },
+  },
+  // Play 5 — 5-digit, daily (launched Sept 2024); $50,000 Straight.
+  de_play5: {
+    label: "Play 5", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "DE", stateName: "Delaware", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Delaware Play 5 is a 5-digit game (00000–99999) drawn daily; it launched in September 2024. The top prize is a $50,000 Straight on a $1 play. Box and other play types pay differently.",
+      topPrize: "$50,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Delaware Play 5 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$50,000", "1 in 100,000"] } ],
+        note: "Official Delaware Lottery top prize. Box and other play types pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

@@ -409,6 +409,12 @@ GAMES = {
     "in_cash5":   {"kind": "lotterycorner", "lc_path": "in/cash-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 45},
     "in_daily3":  {"kind": "lotterycorner", "lc_path": "in/daily3-evening", "num_count": 3, "digits": True},
     "in_daily4":  {"kind": "lotterycorner", "lc_path": "in/daily4-evening", "num_count": 4, "digits": True},
+
+    # --- Delaware (28th state) — delottery.com is JS-walled; results via lotterycorner.
+    "de_multiwin": {"kind": "lotterycorner", "lc_path": "de/multi-win-lotto", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 35},
+    "de_play3":    {"kind": "lotterycorner", "lc_path": "de/play-3-night", "num_count": 3, "digits": True},
+    "de_play4":    {"kind": "lotterycorner", "lc_path": "de/play-4-night", "num_count": 4, "digits": True},
+    "de_play5":    {"kind": "lotterycorner", "lc_path": "de/play-5", "num_count": 5, "digits": True},
 }
 
 

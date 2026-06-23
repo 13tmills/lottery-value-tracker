@@ -556,6 +556,25 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  DE: {
+    intro: "Delaware's draw games — Multi-Win Lotto's rolling cash jackpot plus the Play 3/4/5 dailies — with live jackpots, official odds and deep number-frequency history from the Delaware Lottery.",
+    games: [
+      { name: "Multi-Win Lotto", meta: "6 of 35 · daily · cash jackpot from $50K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=de_multiwin"]] },
+      { name: "Play 3", meta: "3-digit · twice daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=de_play3"]] },
+      { name: "Play 4", meta: "4-digit · twice daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=de_play4"]] },
+      { name: "Play 5", meta: "5-digit · daily · $50K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=de_play5"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [
