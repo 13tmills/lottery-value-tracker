@@ -484,6 +484,25 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  CT: {
+    intro: "Connecticut's draw games — the Lotto! rolling jackpot, Cash5's fixed prizes, and the twice-daily Play3/4 — with odds, payouts and deep number-frequency history from the Connecticut Lottery.",
+    games: [
+      { name: "Lotto!", meta: "6 of 44 · Tue · Fri · jackpot from $1M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=ct_lotto"]] },
+      { name: "Cash5", meta: "5 of 35 · daily · $100K top, fixed prizes",
+        links: [["Prizes, EV &amp; value", "game.html?game=ct_cash5"]] },
+      { name: "Play3", meta: "3-digit · twice daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ct_play3"]] },
+      { name: "Play4", meta: "4-digit · twice daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ct_play4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

@@ -385,6 +385,14 @@ GAMES = {
     "sc_palmetto5": {"kind": "sclottery_html", "sc_alt": "Palmetto Cash 5", "num_count": 5, "sort": True, "jackpot": True},
     "sc_pick3":     {"kind": "sclottery_html", "sc_alt": "Pick 3", "num_count": 3, "digits": True},
     "sc_pick4":     {"kind": "sclottery_html", "sc_alt": "Pick 4", "num_count": 4, "digits": True},
+
+    # --- Connecticut (24th state) — official ctlottery.org is ASP.NET-WebForms-walled, so
+    # results come via lotterycorner (cross-validated vs lotteryusa). Lotto!/Cash5 fixed
+    # lower tiers; Play 3/4 track the night draw. ------------------------------------------
+    "ct_lotto":  {"kind": "lotterycorner", "lc_path": "ct/classic-lotto", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 44},
+    "ct_cash5":  {"kind": "lotterycorner", "lc_path": "ct/cash-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 35},
+    "ct_play3":  {"kind": "lotterycorner", "lc_path": "ct/play3-night", "num_count": 3, "digits": True},
+    "ct_play4":  {"kind": "lotterycorner", "lc_path": "ct/play4-night", "num_count": 4, "digits": True},
 }
 
 
@@ -2161,6 +2169,60 @@ def scrape_sc(cfg, by_date):
     return None  # jackpot saw-tooth comes from the seed; current_jackpot persists
 
 
+LC_BASE = "https://www.lotterycorner.com/{path}/{year}"
+LC_MON = {m: i for i, m in enumerate(
+    ["January", "February", "March", "April", "May", "June", "July",
+     "August", "September", "October", "November", "December"], 1)}
+
+
+def _lc_money(s):
+    s = re.sub(r"<[^>]+>", " ", s or "")
+    m = re.search(r"\$\s*([\d.,]+)\s*[Mm]illion", s)
+    if m:
+        return int(round(float(m.group(1).replace(",", "")) * 1_000_000))
+    m = re.search(r"\$\s*([\d,]+)", s)
+    return int(m.group(1).replace(",", "")) if m else None
+
+
+def scrape_lotterycorner(cfg, by_date):
+    """Generic lotterycorner.com reader — for states whose official site is JS/auth-walled
+    (lotterycorner mirrors the official results, cross-validated against a second aggregator
+    when seeded). Pulls the current and previous year's table: a date <td>, a numbers <td>
+    (class="number" balls), and an optional jackpot <td>. Same shape used for the seeds."""
+    n = cfg["num_count"]
+    today = date.today()
+    newest = None
+    for y in (today.year, today.year - 1):
+        try:
+            page = requests.get(LC_BASE.format(path=cfg["lc_path"], year=y),
+                                headers={"User-Agent": USER_AGENT}, timeout=45).text
+        except requests.RequestException:
+            continue
+        for m in re.finditer(
+                r'(?s)<td>([A-Z][a-z]+) (\d{1,2}), (\d{4})</td>\s*<td>(.*?)</td>'
+                r'(?:\s*<td[^>]*>(.*?)</td>)?', page):
+            if m.group(1) not in LC_MON:
+                continue
+            iso = f"{int(m.group(3)):04d}-{LC_MON[m.group(1)]:02d}-{int(m.group(2)):02d}"
+            nums = [int(x) for x in re.findall(r'class="number">\s*(\d+)\s*<', m.group(4))][:n]
+            if len(nums) < n:
+                continue
+            if cfg.get("max_ball") and max(nums) > cfg["max_ball"]:
+                continue  # wrong-matrix era
+            draw = {"date": iso, "numbers": sorted(nums) if cfg.get("sort") else nums}
+            if cfg.get("jackpot") and m.group(5):
+                jp = _lc_money(m.group(5))
+                if jp and jp < cfg.get("lc_jp_cap", 50_000_000):
+                    draw["jackpot"] = jp
+                    draw["cash"] = jp
+            by_date[iso] = draw
+            if cfg.get("jackpot") and draw.get("jackpot") and (newest is None or iso > newest["date"]):
+                newest = draw
+    if newest:
+        return {"date": newest["date"], "jackpot": newest["jackpot"], "cash": newest.get("cash")}
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # Orchestration
 # --------------------------------------------------------------------------- #
@@ -2381,6 +2443,14 @@ def main():
         source = "sceducationlottery.com"
         print(f"[{args.game}] {len(by_date)} draw(s) from sceducationlottery.com.")
         complete = True
+    elif cfg["kind"] == "lotterycorner":
+        cur = scrape_lotterycorner(cfg, by_date)
+        source = "lotterycorner.com"
+        print(f"[{args.game}] {len(by_date)} draw(s) from lotterycorner.com.")
+        complete = True
+        if cur:
+            data["current_jackpot"] = cur
+            print(f"  current jackpot {cur.get('date')}: ${cur['jackpot']:,}")
     else:
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"

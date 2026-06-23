@@ -1997,6 +1997,64 @@ const GAME_META = {
         note: "Official SC Education Lottery top prize. Box and FIREBALL plays pay different amounts." },
     },
   },
+  // ----- Connecticut (24th state) ---------------------------------------- #
+  // Lotto! — 6 of 44, Tue & Fri, rolling annuity jackpot from $1M with three FIXED lower
+  // tiers ($2,000 / $50 / $2). Annuity (no published cash split) → odds + the fixed prizes.
+  ct_lotto: {
+    label: "Lotto!", specialKey: null, specialName: "",
+    draws: "Tue & Fri", priceChanges: [], state: "CT", stateName: "Connecticut", ticketPrice: "$1",
+    oddsJackpot: 7059052, // 6 of 44
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prizes & odds",
+      note: "Connecticut Lotto! is 6 of 44, drawn Tuesday and Friday. The jackpot starts at $1,000,000 and rolls until won (paid as an annuity). The three lower tiers pay fixed amounts. Figures are the official published odds.",
+      reference: { title: "Lotto! prizes & odds", columns: ["Match", "Prize", "Odds"],
+        rows: [
+          { cells: ["6 of 6", "Jackpot (rolls from $1M)", "1 in 7,059,052"] },
+          { cells: ["5 of 6", "$2,000", "1 in 30,961"] },
+          { cells: ["4 of 6", "$50", "1 in 669"] },
+          { cells: ["3 of 6", "$2", "1 in 42"] },
+        ],
+        note: "Official Connecticut Lottery prizes and odds. The jackpot is paid as an annuity." },
+    },
+  },
+  // Cash5 — 5 of 35, daily, all FIXED prizes ($100K / $300 / $10). Full value treatment.
+  ct_cash5: {
+    label: "Cash5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "CT", stateName: "Connecticut", ticketPrice: "$1",
+    ev: {
+      ticket_price: 1,
+      overall_odds: 72.1,
+      staticPrizes: true,
+      levels: {
+        "Match 5": { label: "Match 5", odds: 324632, prize: 100000 },
+        "Match 4": { label: "Match 4", odds: 2164, prize: 300 },
+        "Match 3": { label: "Match 3", odds: 75, prize: 10 },
+      },
+    },
+  },
+  // Play 3 / Play 4 — twice daily (we track the night draw). $500 / $5,000 Straight.
+  ct_play3: {
+    label: "Play3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "CT", stateName: "Connecticut", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Connecticut Play3 is a 3-digit game (000–999) drawn twice a day; we track the night draw. The top prize is a $500 Straight on a $1 play. Box plays and the optional Wild Ball add-on pay differently.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Connecticut Play3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official Connecticut Lottery top prize. Box and Wild Ball plays pay different amounts." },
+    },
+  },
+  ct_play4: {
+    label: "Play4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "CT", stateName: "Connecticut", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Connecticut Play4 is a 4-digit game (0000–9999) drawn twice a day; we track the night draw. The top prize is a $5,000 Straight on a $1 play. Box plays and the optional Wild Ball add-on pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Connecticut Play4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official Connecticut Lottery top prize. Box and Wild Ball plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
@@ -2054,6 +2112,8 @@ const STATE_TIERS = {
     tiers: [[300, 3387], [7, 103], [1, 10]] }, // 5/39, official fixed lower tiers
   ne_pick5:   { label: "Pick 5 (NE)", price: 1, J: 658008, dpw: 7,
     tiers: [[500, 3760], [9, 111]] }, // 5/40, official fixed lower tiers (Match 2 free — omitted)
+  ct_cash5:   { label: "Cash5 (CT)", price: 1, J: 324632, dpw: 7,
+    tiers: [[300, 2164], [10, 75]] }, // 5/35, all-fixed (top $100K from the cash pool)
 };
 
 // Update title + description + canonical + OG/Twitter tags (by id) for SEO.
