@@ -683,6 +683,21 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  OK: {
+    intro: "Oklahoma's draw games — the daily Cash 5 with its pari-mutuel top prize and Pick 3 — with official odds and deep number-frequency history from the Oklahoma Lottery.",
+    games: [
+      { name: "Cash 5", meta: "5 of 36 · daily · top prize from ~$25K",
+        links: [["Odds, prizes &amp; results", "game.html?game=ok_cash5"]] },
+      { name: "Pick 3", meta: "3-digit · daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=ok_pick3"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

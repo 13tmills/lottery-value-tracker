@@ -452,6 +452,11 @@ GAMES = {
     # Super Kansas Cash appends a Cash Ball after the 5 main numbers; max_ball:32 filters it.
     "ks_superkscash": {"kind": "lotterycorner", "lc_path": "ks/super-cash", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 32, "lc_jp_cap": 10000000},
     "ks_pick3":       {"kind": "lotterycorner", "lc_path": "ks/pick-3-evening", "num_count": 3, "digits": True},
+
+    # --- Oklahoma (35th state) — lottery.ok.gov is JS-walled; results via lotterycorner.
+    # Cash 5 top prize is pari-mutuel (~$25K, mostly flat) so we don't track a jackpot series.
+    "ok_cash5":  {"kind": "lotterycorner", "lc_path": "ok/cash-5", "num_count": 5, "sort": True, "max_ball": 36},
+    "ok_pick3":  {"kind": "lotterycorner", "lc_path": "ok/pick-3", "num_count": 3, "digits": True},
 }
 
 

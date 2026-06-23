@@ -2484,6 +2484,30 @@ const GAME_META = {
         note: "Official Kansas Lottery top prize on a $1 Exact play (50¢ plays pay half). Box and other play styles pay different amounts." },
     },
   },
+  // ── Oklahoma (state #35) ───────────────────────────────────────────────
+  // Cash 5 — 5 of 36, daily, pari-mutuel top prize starting around $25,000.
+  ok_cash5: {
+    label: "Cash 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "OK", stateName: "Oklahoma", ticketPrice: "$1",
+    oddsJackpot: 376992, // 5 of 36
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Oklahoma Cash 5 is 5 of 36, drawn every day for $1. The top prize is pari-mutuel, starting around $25,000 (it can grow when there is no top-prize winner). The figures below are the odds of matching each tier (top prize 1 in 376,992).",
+      odds: { "Match 5 (top prize)": 376992, "Match 4": 2432, "Match 3": 81 },
+    },
+  },
+  // Pick 3 — 3-digit, daily.
+  ok_pick3: {
+    label: "Pick 3", specialKey: null, specialName: "", digits: true,
+    draws: "Daily", priceChanges: [], state: "OK", stateName: "Oklahoma", ticketPrice: "$0.50 or $1",
+    prizes: {
+      note: "Oklahoma Pick 3 is a 3-digit game (000–999) drawn every day. A $1 Straight play pays $500 (a 50¢ play pays $250). Box and other play styles pay different amounts.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Oklahoma Pick 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order ($1)", "$500", "1 in 1,000"] } ],
+        note: "Official Oklahoma Lottery top prize on a $1 Straight play (50¢ plays pay half). Box and other play styles pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>
