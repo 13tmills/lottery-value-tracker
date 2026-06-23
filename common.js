@@ -1901,6 +1901,24 @@ const LOTTO_TIERS = {
   },
 };
 
+// Fixed prize-tier data for STATE jackpot games whose lower tiers are FIXED (not
+// pari-mutuel) — the daily "cash" games. Same shape as LOTTO_TIERS so the Monte Carlo
+// and break-even tools can run them; the jackpot itself is sampled from each game's
+// historical cash pool (history/<key>.json). dpw = draws per week (for the habit sim).
+// Tiers are the official published fixed prizes [prize, 1-in-N]. Pari-mutuel games
+// (Fantasy 5s, Hit 5, Cash 5 variants, lotto-style 6/N) are intentionally excluded —
+// their lower tiers vary per draw, so a fixed-tier simulation would be invented.
+const STATE_TIERS = {
+  mn_north5:  { label: "North 5 (MN)", price: 1, J: 278256, dpw: 7,
+    tiers: [[50, 1919.01], [5, 68.54], [1, 7.62]] }, // 5/34, official fixed prizes
+  mn_gopher5: { label: "Gopher 5 (MN)", price: 1, J: 1533939, dpw: 3,
+    tiers: [[500, 7304], [15, 178], [1, 13]] }, // 5/47
+  wi_badger5: { label: "Badger 5 (WI)", price: 1, J: 169911, dpw: 7,
+    tiers: [[50, 1307], [2, 52.3], [1, 6.53]] }, // 5/31
+  id_cash:    { label: "Idaho Cash", price: 1, J: 610880, dpw: 7,
+    tiers: [[200, 3054], [5, 78]] }, // 5/45 (Match 2 is a free ticket — omitted)
+};
+
 // Update title + description + canonical + OG/Twitter tags (by id) for SEO.
 // (Googlebot runs JS, so these reflect the specific game on each templated page.)
 function setMeta({ title, description, url }) {

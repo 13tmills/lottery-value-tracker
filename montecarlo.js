@@ -4,6 +4,8 @@
 // habit over years. The point it makes, viscerally: you bleed money slowly.
 
 const DRAWS_PER_WEEK = { powerball: 3, mega_millions: 2, lotto_america: 3 };
+const MC_GAMES = { ...LOTTO_TIERS, ...STATE_TIERS }; // national + fixed-tier state games
+const drawsPerWeek = (key) => MC_GAMES[key].dpw || DRAWS_PER_WEEK[key] || 3;
 const MAX_TICKETS = 5_000_000;
 
 const els = {};
@@ -58,14 +60,25 @@ async function init() {
     description: "Simulate thousands of real lottery tickets with a game's actual odds and prizes. See what buying 10 lines 10,000 times — or three lines a week for years — would really do to your wallet.",
     url: `${SITE}/montecarlo.html`,
   });
+  populateGames();
   const pre = new URLSearchParams(location.search).get("game");
-  if (pre && LOTTO_TIERS[pre]) els.game.value = pre;
+  if (pre && MC_GAMES[pre]) els.game.value = pre;
 
   await loadPool();
   els.game.addEventListener("change", loadPool);
   els.scenario.addEventListener("change", onScenario);
   els.go.addEventListener("click", run);
   onScenario();
+}
+
+// National games first, then the fixed-tier state games grouped under "State cash games".
+function populateGames() {
+  const natl = Object.keys(LOTTO_TIERS);
+  const state = Object.keys(STATE_TIERS);
+  const opt = (k) => `<option value="${k}">${MC_GAMES[k].label}${MC_GAMES[k].price ? ` ($${MC_GAMES[k].price})` : ""}</option>`;
+  els.game.innerHTML =
+    `<optgroup label="National">${natl.map(opt).join("")}</optgroup>` +
+    `<optgroup label="State cash games">${state.map(opt).join("")}</optgroup>`;
 }
 
 async function loadPool() {
@@ -84,7 +97,7 @@ function onScenario() {
 }
 
 function run() {
-  const g = LOTTO_TIERS[els.game.value];
+  const g = MC_GAMES[els.game.value];
   let linesPerDraw, draws, period;
   if (els.scenario.value === "bulk") {
     linesPerDraw = Math.max(1, Math.round(parseNum(els.lines_b.value)));
@@ -93,7 +106,7 @@ function run() {
   } else {
     linesPerDraw = Math.max(1, Math.round(parseNum(els.lines_h.value)));
     const years = Math.max(1, parseNum(els.years.value));
-    const perYear = els.freq.value === "draw" ? DRAWS_PER_WEEK[els.game.value] * 52
+    const perYear = els.freq.value === "draw" ? drawsPerWeek(els.game.value) * 52
       : els.freq.value === "week" ? 52 : 12;
     draws = Math.round(perYear * years);
     period = `${linesPerDraw} line${linesPerDraw > 1 ? "s" : ""} ${els.freq.value === "draw" ? "every draw" : els.freq.value === "week" ? "a week" : "a month"} for ${years} year${years > 1 ? "s" : ""}`;

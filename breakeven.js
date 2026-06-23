@@ -2,7 +2,7 @@
 // ticket's expected value reaches the ticket price — and how taxes and jackpot splitting
 // push that break-even point out of reach. Tier odds/prizes mirror scraper/scrape.py.
 
-const GAMES = LOTTO_TIERS; // shared prize-tier data (defined in common.js)
+const GAMES = { ...LOTTO_TIERS, ...STATE_TIERS }; // national + fixed-tier state games
 
 const els = {};
 let chart = null;
@@ -45,16 +45,32 @@ async function init() {
     url: `${SITE}/breakeven.html`,
   });
 
+  populateGames();
   try {
     const data = await (await fetch("./data.json", { cache: "no-store" })).json();
-    for (const k of Object.keys(GAMES)) liveCash[k] = (data.games[k] && data.games[k].cash_value) || 0;
+    for (const k of Object.keys(LOTTO_TIERS)) liveCash[k] = (data.games[k] && data.games[k].cash_value) || 0;
   } catch (_) { /* fall back to no live jackpot */ }
+  // State games aren't in data.json — pull each one's live cash from its history file.
+  await Promise.all(Object.keys(STATE_TIERS).map(async (k) => {
+    try {
+      const h = await fetch(`history/${k}.json`, { cache: "default" }).then((r) => r.json());
+      liveCash[k] = (h.current_jackpot && (h.current_jackpot.cash || h.current_jackpot.jackpot)) || 0;
+    } catch (_) { liveCash[k] = 0; }
+  }));
 
   const pre = new URLSearchParams(location.search).get("game");
   if (pre && GAMES[pre]) els.game.value = pre;
 
   ["game", "tax", "tickets"].forEach((id) => els[id].addEventListener("input", compute));
   compute();
+}
+
+// National games first, then the fixed-tier state cash games.
+function populateGames() {
+  const opt = (k) => `<option value="${k}">${GAMES[k].label}</option>`;
+  els.game.innerHTML =
+    `<optgroup label="National">${Object.keys(LOTTO_TIERS).map(opt).join("")}</optgroup>` +
+    `<optgroup label="State cash games">${Object.keys(STATE_TIERS).map(opt).join("")}</optgroup>`;
 }
 
 function compute() {

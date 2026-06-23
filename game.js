@@ -225,7 +225,7 @@ function render(key, g, data) {
       </div>
       <a class="btn" href="calculator.html?game=${key}">Annuity vs. cash &rarr;</a>
     </section>
-    ${["powerball", "mega_millions", "lotto_america"].includes(key) ? `
+    ${(typeof STATE_TIERS !== "undefined" && STATE_TIERS[key]) || ["powerball", "mega_millions", "lotto_america"].includes(key) ? `
     <section class="panel viz-cta">
       <div>
         <h2>When is a ticket actually worth it?</h2>
@@ -241,7 +241,8 @@ function render(key, g, data) {
           for years — and watch what actually happens to your money.</p>
       </div>
       <a class="btn" href="montecarlo.html?game=${key}">Monte Carlo simulator &rarr;</a>
-    </section>
+    </section>` : ""}
+    ${(typeof STATE_TIERS !== "undefined" && STATE_TIERS[key]) || ["powerball", "mega_millions", "lotto_america"].includes(key) || meta.oddsJackpot || (meta.ev && meta.ev.odds_jackpot) ? `
     <section class="panel viz-cta">
       <div>
         <h2>How big do these jackpots get?</h2>
@@ -632,6 +633,32 @@ function renderStateGame(key, meta, data) {
           Run the after-tax, present-value math for your age and life expectancy.</p>
       </div>
       <a class="btn" href="lifecalc.html?game=${key}">Payments vs. cash &rarr;</a>
+    </section>` : ""}
+    ${(typeof STATE_TIERS !== "undefined" && STATE_TIERS[key]) ? `
+    <section class="panel viz-cta">
+      <div>
+        <h2>When is a ticket actually worth it?</h2>
+        <p>How big does the ${meta.label} jackpot have to be before a ticket is a fair bet?
+          See where taxes and jackpot splitting move the break-even line.</p>
+      </div>
+      <a class="btn" href="breakeven.html?game=${key}">Break-even calculator &rarr;</a>
+    </section>
+    <section class="panel viz-cta">
+      <div>
+        <h2>What if you played for years?</h2>
+        <p>Simulate thousands of real ${meta.label} tickets — a big batch at once, or a few lines a week
+          for years — and watch what actually happens to your money.</p>
+      </div>
+      <a class="btn" href="montecarlo.html?game=${key}">Monte Carlo simulator &rarr;</a>
+    </section>` : ""}
+    ${((typeof STATE_TIERS !== "undefined" && STATE_TIERS[key]) || hasJackpot || hasJackpotStat) ? `
+    <section class="panel viz-cta">
+      <div>
+        <h2>How big do these jackpots get?</h2>
+        <p>See how high ${meta.label} jackpots usually climb before they're won, and how long it takes to
+          reach each level — from real jackpot history.</p>
+      </div>
+      <a class="btn" href="jackpotstats.html?game=${key}">Jackpot growth stats &rarr;</a>
     </section>` : ""}
     <a class="panel hist-cta" href="numbers.html?game=${key}">
       <div><h2>Hot &amp; cold numbers</h2><p>Full frequency and most-overdue analysis for every ${meta.label} number.</p></div>
