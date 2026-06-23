@@ -520,6 +520,23 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  OR: {
+    intro: "Oregon's draw games — Megabucks' rolling jackpot, Win for Life's pay-for-life prize, and the four-times-daily Pick 4 — with live jackpots, official odds and deep number-frequency history from the Oregon Lottery.",
+    games: [
+      { name: "Megabucks", meta: "6 of 48 · Mon · Wed · Sat · jackpot from $1M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=or_megabucks"]] },
+      { name: "Win for Life", meta: "4 of 77 · Mon · Wed · Sat · $1K/week for life",
+        links: [["Prizes, odds &amp; results", "game.html?game=or_winforlife"]] },
+      { name: "Pick 4", meta: "4-digit · 4× daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=or_pick4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

@@ -243,6 +243,12 @@
   <url><loc>https://numbersintel.com/numbers.html?game=nm_roadrunner</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=nm_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=nm_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/state.html?state=OR</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=or_megabucks</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/history.html?game=or_megabucks</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/numbers.html?game=or_megabucks</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=or_winforlife</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game.html?game=or_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

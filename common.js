@@ -2097,6 +2097,44 @@ const GAME_META = {
         note: "Top Straight prize on a $1 play. Box and the Plus feature pay different amounts — see the New Mexico Lottery for the full prize chart." },
     },
   },
+  // ----- Oregon (26th state) --------------------------------------------- #
+  // Megabucks — 6 of 48, Mon/Wed/Sat, rolling annuity jackpot from $1M. $1 buys two
+  // games (50c each), so the published odds are per $1. Match 3 pays a fixed $4; the
+  // Match 4/5 prizes are pari-mutuel → odds-only treatment.
+  or_megabucks: {
+    label: "Megabucks", specialKey: null, specialName: "",
+    draws: "Mon · Wed · Sat", priceChanges: [], state: "OR", stateName: "Oregon", ticketPrice: "$1 / 2 games",
+    oddsJackpot: 6135756, // 6 of 48, per $1 (two games)
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Oregon Megabucks is 6 of 48, drawn Monday, Wednesday and Saturday. A $1 ticket buys two games (50¢ each), so the odds below are per $1. The jackpot starts at $1,000,000 and rolls until won (annuity, or about half as a cash lump sum). Match 3 pays a fixed $4; the Match 4 and Match 5 prizes are pari-mutuel.",
+      odds: { "Jackpot": 6135756, "Match 5": 24348, "Match 4": 475, "Match 3 ($4)": 27 },
+    },
+  },
+  // Win for Life — 4 of 77, Mon/Wed/Sat; match all 4 for $1,000 a week for life.
+  or_winforlife: {
+    label: "Win for Life", specialKey: null, specialName: "",
+    draws: "Mon · Wed · Sat", priceChanges: [], state: "OR", stateName: "Oregon", ticketPrice: "$2",
+    prizes: {
+      note: "Oregon Win for Life is 4 of 77, drawn Monday, Wednesday and Saturday. Match all four numbers and you win $1,000 a week for life. There are 46 ways to win — you can even win a prize by matching no numbers. Lower tiers pay fixed cash amounts.",
+      topPrize: "$1,000 / week for life", topPrizeLabel: "Top prize (Match 4)",
+      reference: { title: "Win for Life top prize", columns: ["Match", "Prize", "Odds"],
+        rows: [ { cells: ["4 of 4", "$1,000 / week for life", "1 in 1,353,275"] } ],
+        note: "4 of 77. The lower tiers pay fixed cash prizes — see the Oregon Lottery for the full prize chart." },
+    },
+  },
+  // Pick 4 — 4-digit, four draws a day (we track the 7pm draw). $5,000 Straight.
+  or_pick4: {
+    label: "Pick 4", specialKey: null, specialName: "", digits: true,
+    draws: "4× daily", priceChanges: [], state: "OR", stateName: "Oregon", ticketPrice: "$0.50 to $5",
+    prizes: {
+      note: "Oregon Pick 4 is a 4-digit game (0000–9999) with four draws a day (1pm, 4pm, 7pm, 10pm); we track the 7pm draw. The top prize is a $5,000 Straight on a $1 play. Box and other play types pay differently.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Oregon Pick 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official Oregon Lottery top prize. Box and other play types pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

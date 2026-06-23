@@ -398,6 +398,11 @@ GAMES = {
     "nm_roadrunner": {"kind": "lotterycorner", "lc_path": "nm/road-runner-cash", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 37},
     "nm_pick3":      {"kind": "lotterycorner", "lc_path": "nm/pick-3-plus-evening", "num_count": 3, "digits": True},
     "nm_pick4":      {"kind": "lotterycorner", "lc_path": "nm/pick-4-plus-evening", "num_count": 4, "digits": True},
+
+    # --- Oregon (26th state) — oregonlottery.org is JS-walled; results via lotterycorner.
+    "or_megabucks":  {"kind": "lotterycorner", "lc_path": "or/mega-bucks", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 48},
+    "or_winforlife": {"kind": "lotterycorner", "lc_path": "or/win-for-life", "num_count": 4, "sort": True, "max_ball": 77},
+    "or_pick4":      {"kind": "lotterycorner", "lc_path": "or/pick-4-7pm", "num_count": 4, "digits": True},
 }
 
 
