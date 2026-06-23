@@ -537,6 +537,25 @@ const STATE_GAMES = {
         links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
     ],
   },
+  IN: {
+    intro: "Indiana's draw games — Hoosier Lotto's rolling jackpot, Cash 5's daily rolling cash prize, and the twice-daily Daily 3/4 — with live jackpots, official odds and deep number-frequency history from the Hoosier Lottery.",
+    games: [
+      { name: "Hoosier Lotto", meta: "6 of 46 · Wed · Sat · jackpot from $1M",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=in_hoosier"]] },
+      { name: "Cash 5", meta: "5 of 45 · daily · cash jackpot from $75K",
+        links: [["Jackpot, odds &amp; prizes", "game.html?game=in_cash5"]] },
+      { name: "Daily 3", meta: "3-digit · twice daily · $500 straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=in_daily3"]] },
+      { name: "Daily 4", meta: "4-digit · twice daily · $5K straight",
+        links: [["Results, odds &amp; payouts", "game.html?game=in_daily4"]] },
+    ],
+    national: [
+      { name: "Powerball", meta: "Multi-state jackpot · Mon · Wed · Sat",
+        links: [["Value, odds &amp; EV", "game.html?game=powerball"]] },
+      { name: "Mega Millions", meta: "Multi-state jackpot · Tue · Fri",
+        links: [["Value, odds &amp; EV", "game.html?game=mega_millions"]] },
+    ],
+  },
   CO: {
     intro: "Colorado's draw games — Lotto+'s cash jackpot, Cash 5's rolling prize, and Pick 3 — with live jackpots, real per-tier prizes and Colorado winner counts from the Colorado Lottery's own winning-history feed.",
     games: [

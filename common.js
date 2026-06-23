@@ -2135,6 +2135,54 @@ const GAME_META = {
         note: "Official Oregon Lottery top prize. Box and other play types pay different amounts." },
     },
   },
+  // ----- Indiana (27th state) -------------------------------------------- #
+  // Hoosier Lotto — 6 of 46, Wed & Sat, rolling annuity jackpot from $1M with a built-in
+  // x2/x3/x5/x10 multiplier on non-jackpot prizes (so those vary) → odds-only treatment.
+  in_hoosier: {
+    label: "Hoosier Lotto", specialKey: null, specialName: "",
+    draws: "Wed & Sat", priceChanges: [], state: "IN", stateName: "Indiana", ticketPrice: "$2",
+    oddsJackpot: 9366819, // 6 of 46
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Hoosier Lotto is 6 of 46, drawn Wednesday and Saturday for $2. The jackpot starts at $1,000,000 and rolls until won (annuity). A built-in multiplier (×2, ×3, ×5 or ×10) increases the non-jackpot prizes, so those amounts vary; the optional Plus add-on gives a second draw. The figures below are the official published odds.",
+      odds: { "Jackpot": 9366819, "Match 5": 39028, "Match 4": 800, "Match 3": 47 },
+    },
+  },
+  // Cash 5 — 5 of 45, daily, rolling cash jackpot from $75K (+$5K/day). Match 4 pays a
+  // fixed $200; lower-tier amounts aren't published cleanly, so odds-only.
+  in_cash5: {
+    label: "Cash 5", specialKey: null, specialName: "",
+    draws: "Daily", priceChanges: [], state: "IN", stateName: "Indiana", ticketPrice: "$1",
+    oddsJackpot: 1221759, // 5 of 45
+    prizes: {
+      tierLabel: "Match", winnersTitle: "Prize tiers & odds",
+      note: "Indiana Cash 5 is 5 of 45, drawn daily. The cash jackpot starts at $75,000 and grows by at least $5,000 a day until won. Match 4 pays a fixed $200; the optional EZmatch add-on prints instant-win numbers. The figures below are the official published odds.",
+      odds: { "Jackpot": 1221759, "Match 4 ($200)": 6109, "Match 3": 157, "Match 2": 12 },
+    },
+  },
+  // Daily 3 / Daily 4 — twice daily (we track the evening draw). Superball add-on.
+  in_daily3: {
+    label: "Daily 3", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "IN", stateName: "Indiana", ticketPrice: "$0.50 to $5",
+    prizes: {
+      note: "Indiana Daily 3 is a 3-digit game (000–999) drawn twice a day; we track the evening draw. The top prize is a $500 Straight on a $1 play. Box and other play types pay differently, and the optional Superball add-on adds more ways to win.",
+      topPrize: "$500", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Indiana Daily 3 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$500", "1 in 1,000"] } ],
+        note: "Official Hoosier Lottery top prize. Box, Combo and Superball plays pay different amounts." },
+    },
+  },
+  in_daily4: {
+    label: "Daily 4", specialKey: null, specialName: "", digits: true,
+    draws: "Twice daily", priceChanges: [], state: "IN", stateName: "Indiana", ticketPrice: "$0.50 to $5",
+    prizes: {
+      note: "Indiana Daily 4 is a 4-digit game (0000–9999) drawn twice a day; we track the evening draw. The top prize is a $5,000 Straight on a $1 play. Box and other play types pay differently, and the optional Superball add-on adds more ways to win.",
+      topPrize: "$5,000", topPrizeLabel: "Top prize (Straight $1)",
+      reference: { title: "Indiana Daily 4 top prize", columns: ["Play type", "Prize", "Odds"],
+        rows: [ { cells: ["Straight — exact order", "$5,000", "1 in 10,000"] } ],
+        note: "Official Hoosier Lottery top prize. Box, Combo and Superball plays pay different amounts." },
+    },
+  },
 };
 
 const fmtMoney = (n) =>

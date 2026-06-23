@@ -403,6 +403,12 @@ GAMES = {
     "or_megabucks":  {"kind": "lotterycorner", "lc_path": "or/mega-bucks", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 48},
     "or_winforlife": {"kind": "lotterycorner", "lc_path": "or/win-for-life", "num_count": 4, "sort": True, "max_ball": 77},
     "or_pick4":      {"kind": "lotterycorner", "lc_path": "or/pick-4-7pm", "num_count": 4, "digits": True},
+
+    # --- Indiana (27th state) — hoosierlottery.com is JS-walled; results via lotterycorner.
+    "in_hoosier": {"kind": "lotterycorner", "lc_path": "in/lotto", "num_count": 6, "sort": True, "jackpot": True, "max_ball": 46},
+    "in_cash5":   {"kind": "lotterycorner", "lc_path": "in/cash-5", "num_count": 5, "sort": True, "jackpot": True, "max_ball": 45},
+    "in_daily3":  {"kind": "lotterycorner", "lc_path": "in/daily3-evening", "num_count": 3, "digits": True},
+    "in_daily4":  {"kind": "lotterycorner", "lc_path": "in/daily4-evening", "num_count": 4, "digits": True},
 }
 
 
