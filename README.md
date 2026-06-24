@@ -155,3 +155,32 @@ overwritten with garbage.
       extraction on first run, and adjust selectors if the markup differs.
 - [ ] State-lottery comparison table (Phase 1 stretch goal).
 - [ ] Historical prize charts (Phase 2).
+
+## NFL Analytics tab
+
+A descriptive, historical NFL analytics section (matchup-driven: Team A vs Team B
++ week). **Not betting** — no odds, spreads, picks or "value" anywhere.
+
+### Data
+- Source: **nflverse** via the `nflreadpy` package, **CC-BY 4.0 only** (schedules,
+  weekly player stats, rosters, play-by-play). The FTN charting subset (CC-BY-SA)
+  is intentionally excluded. Attribution shows in the NFL tab footer:
+  *"Data via nflverse (CC-BY 4.0)."*
+- The site is static, so `scraper/nfl_ingest.py` pre-computes everything in CI and
+  writes compact JSON to `nfl/` (`schedule.json`, `teams.json`, `players_recent.json`,
+  `player_vs_opp.json`, `meta.json`). The frontend reads those — it never calls
+  nflverse. Play-by-play is loaded per season in CI to compute team yards / takeaways
+  / EPA aggregates, then discarded; raw PBP is never committed (far too large).
+
+### Running it
+- **One-time backfill (~6 seasons):** Actions → *Update NFL data* → *Run workflow*,
+  set **backfill = true**. Or locally: `pip install -r scraper/requirements-nfl.txt`
+  then `python scraper/nfl_ingest.py --backfill`.
+- **Weekly in-season update:** the `update-nfl.yml` cron runs every **Tuesday 18:00
+  UTC** (after the weekend + Monday games) and runs `nfl_ingest.py` (current season
+  only), committing any changes. It's separate from the lottery workflow.
+- Note: in the offseason the data reflects the **most recent completed season**; the
+  weekly job takes over once the new season starts in September.
+
+The NFL tab (`nfl.html`) is intentionally **not linked from the nav/sitemap yet** —
+it goes live once the AdSense review clears.

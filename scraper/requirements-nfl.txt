@@ -1,0 +1,5 @@
+# NFL analytics ingest (nfl_ingest.py). Kept separate from the lottery scraper's
+# requirements so the heavier data-science deps only install in the NFL workflow.
+nflreadpy>=0.1      # CC-BY nflverse loader (successor to nfl_data_py); pulls polars
+pandas>=2.0
+pyarrow>=14.0       # needed for polars -> pandas (.to_pandas())

@@ -1,0 +1,63 @@
+name: Update NFL data
+
+# Separate from the lottery workflow so the heavier nflverse deps and the NFL
+# schedule never interfere with the lottery updates.
+on:
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Backfill the last 6 seasons (run once to seed the data)"
+        type: boolean
+        default: false
+  schedule:
+    # Tuesday 18:00 UTC (~1pm ET) — after the weekend + Monday games, once weekly
+    # stats finalize. Idempotent: out of season it just re-confirms the last season.
+    - cron: '0 18 * * 2'
+
+permissions:
+  contents: write
+
+jobs:
+  update-nfl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scraper/requirements-nfl.txt
+
+      - name: Run NFL ingest
+        run: |
+          set +e
+          if [ "${{ github.event.inputs.backfill }}" = "true" ]; then
+            python scraper/nfl_ingest.py --backfill
+          else
+            python scraper/nfl_ingest.py
+          fi
+          echo "exit: $?"
+          exit 0   # always reach the commit step; a failure just leaves prior JSON
+
+      - name: Commit updated NFL data
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add nfl/
+          if git diff --staged --quiet; then
+            echo "No NFL changes to commit."
+            exit 0
+          fi
+          git commit -m "Update NFL data [skip ci]"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push origin main; then
+              echo "pushed on attempt $i"; exit 0
+            fi
+            echo "push attempt $i failed; retrying in 5s..."; sleep 5
+          done
+          echo "push failed after 5 attempts"; exit 1
