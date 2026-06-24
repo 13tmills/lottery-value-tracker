@@ -11925,6 +11925,26 @@
       "draw_time": "Night",
       "top_prize_winners": 0,
       "draw_number": 595
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        2,
+        5,
+        7,
+        9,
+        11,
+        12,
+        14,
+        15,
+        18,
+        20,
+        21,
+        24
+      ],
+      "draw_time": "Morning",
+      "top_prize_winners": 0,
+      "draw_number": 596
     }
   ]
 }
