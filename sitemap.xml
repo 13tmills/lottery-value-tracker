@@ -406,6 +406,11 @@
 
   <url><loc>https://numbersintel.com/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://numbersintel.com/methodology.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/guides/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/guides/how-lottery-winnings-are-taxed/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/guides/lump-sum-vs-annuity/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/guides/lottery-odds-explained/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/guides/do-hot-numbers-win/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://numbersintel.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>

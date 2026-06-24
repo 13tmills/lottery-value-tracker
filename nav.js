@@ -22,6 +22,7 @@
           link("Draw Game Tools", "tools.html") +
         `</div>` +
       `</div>` +
+      link("Guides", "guides/") +
       link("Tools", "tools.html") +
     `</div>`;
   document.body.insertBefore(nav, document.body.firstChild);
@@ -59,7 +60,7 @@
     foot.insertBefore(fnav, foot.firstChild);
   }
   if (fnav) {
-    [["Methodology", "methodology.html"], ["About", "about.html"], ["Privacy", "privacy.html"]].forEach(function (l) {
+    [["Guides", "guides/"], ["Methodology", "methodology.html"], ["About", "about.html"], ["Privacy", "privacy.html"]].forEach(function (l) {
       if (![...fnav.querySelectorAll("a")].some(function (a) { return a.getAttribute("href") === l[1]; })) {
         const a = document.createElement("a");
         a.href = l[1]; a.textContent = l[0];

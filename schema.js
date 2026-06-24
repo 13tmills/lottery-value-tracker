@@ -59,7 +59,16 @@
 
   // ---- breadcrumb (visible + schema) --------------------------------------
   var crumbs = [["Home", "index.html"]];
-  if ((page === "game.html" || page === "numbers.html" || page === "history.html") && gameKey) {
+  var guideMatch = location.pathname.match(/\/guides\/([^/?#]*)/);
+  if (guideMatch) {
+    if (guideMatch[1] && guideMatch[1] !== "index.html") {
+      var gh1 = document.querySelector("h1");
+      crumbs.push(["Guides", "guides/"]);
+      crumbs.push([(gh1 && gh1.textContent.trim()) || "Guide", null]);
+    } else {
+      crumbs.push(["Guides", null]);
+    }
+  } else if ((page === "game.html" || page === "numbers.html" || page === "history.html") && gameKey) {
     var sec = section(gameKey);
     crumbs.push([sec[0], sec[1]]);
     var suffix = page === "numbers.html" ? " — Number Frequency" : page === "history.html" ? " — Results" : "";
