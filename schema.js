@@ -130,6 +130,7 @@
         }
         ld(ds);
         if (page === "game.html") buildFaq(gameKey, h);
+        renderRelated(relatedFor(page, gameKey));
       }).catch(function () {});
   }
 
@@ -142,6 +143,49 @@
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       publisher: { "@id": SITE + "/#org" } });
   }
+
+  // ---- "Related guides" cross-link module (stats/game/tool pages -> guides) -
+  var GUIDES = {
+    "how-lottery-winnings-are-taxed": "How are lottery winnings taxed?",
+    "lump-sum-vs-annuity": "Lump sum vs annuity: which pays more?",
+    "lottery-odds-explained": "What are the odds of winning?",
+    "do-hot-numbers-win": "Do hot or overdue numbers win more often?",
+    "what-is-lottery-expected-value": "What is expected value in the lottery?",
+    "power-play-and-megaplier": "How do Power Play & the Megaplier work?",
+    "quick-pick-vs-self-pick": "Quick pick vs self-pick: does it matter?",
+  };
+  function relatedFor(pg, key) {
+    var m = key ? gmeta(key) : null;
+    var hasJp = !!(m && (m.oddsJackpot || (m.ev && m.ev.odds_jackpot) || NATIONAL[key]));
+    if (pg === "game.html" && key) {
+      var r = ["lottery-odds-explained", "what-is-lottery-expected-value", "do-hot-numbers-win"];
+      if (NATIONAL[key]) r = ["lottery-odds-explained", "power-play-and-megaplier", "how-lottery-winnings-are-taxed", "lump-sum-vs-annuity"];
+      else if (hasJp) r.push("how-lottery-winnings-are-taxed");
+      return r;
+    }
+    if (pg === "numbers.html") return ["do-hot-numbers-win", "lottery-odds-explained", "quick-pick-vs-self-pick"];
+    if (pg === "history.html") return ["lottery-odds-explained", "what-is-lottery-expected-value"];
+    if (pg === "statetax.html") return ["how-lottery-winnings-are-taxed", "lump-sum-vs-annuity"];
+    if (pg === "lifecalc.html") return ["lump-sum-vs-annuity", "how-lottery-winnings-are-taxed"];
+    if (pg === "visualizer.html") return ["lottery-odds-explained", "do-hot-numbers-win"];
+    if (pg === "breakeven.html" || pg === "montecarlo.html" || pg === "jackpotstats.html") return ["what-is-lottery-expected-value", "lottery-odds-explained"];
+    if (pg === "check.html") return ["do-hot-numbers-win", "quick-pick-vs-self-pick"];
+    return [];
+  }
+  function renderRelated(slugs) {
+    slugs = (slugs || []).filter(function (s) { return GUIDES[s]; }).slice(0, 4);
+    if (!slugs.length || document.querySelector(".related-guides")) return;
+    var box = document.createElement("section");
+    box.className = "panel related-guides";
+    box.innerHTML = "<h2>Related guides</h2><ul class=\"related-list\">" + slugs.map(function (s) {
+      return '<li><a href="guides/' + s + '/">' + esc(GUIDES[s]) + "</a></li>";
+    }).join("") + "</ul>";
+    var detail = document.getElementById("detail");
+    var host = (detail && detail.parentNode) || document.querySelector("main");
+    if (host) host.appendChild(box);
+  }
+  // tool pages (no async data) get their related block immediately
+  if (TOOLS[page] && page !== "tools.html") renderRelated(relatedFor(page, null));
 
   // ---- visible, data-driven FAQ on game pages (+ matching FAQPage) --------
   function buildFaq(key, h) {

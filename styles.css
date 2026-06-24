@@ -1123,3 +1123,9 @@ a.state-cell:hover { border-color: var(--accent); }
 .faq-item summary { cursor: pointer; font-weight: 600; color: var(--text); list-style: revert; }
 .faq-item summary:hover { color: var(--accent); }
 .faq-item p { color: var(--text-dim); margin: 0.5rem 0 0.2rem; max-width: 78ch; }
+
+/* ---- related guides cross-link block (schema.js) ---- */
+.related-guides h2 { margin-top: 0; }
+.related-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.related-list a { color: var(--accent); text-decoration: none; }
+.related-list a:hover { text-decoration: underline; }
