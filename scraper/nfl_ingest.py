@@ -195,7 +195,9 @@ def build_players(seasons, current_season):
     meta = {}   # player_id -> {name,pos}
     for _, r in df.iterrows():
         pos = r.get(c_pos) if c_pos else None
-        if pos not in SKILL_POS:
+        # Only filter to skill positions if a position column actually exists —
+        # otherwise keep everyone rather than silently dropping all players.
+        if c_pos and pos not in SKILL_POS:
             continue
         pid = r.get(c_id)
         if not pid:
