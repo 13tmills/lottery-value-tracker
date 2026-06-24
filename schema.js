@@ -187,6 +187,27 @@
   // tool pages (no async data) get their related block immediately
   if (TOOLS[page] && page !== "tools.html") renderRelated(relatedFor(page, null));
 
+  // Insert a content block into #detail just before the first tool/guide CTA
+  // panel, so it reads as part of the main content. game.js renders #detail
+  // asynchronously, so if the CTAs aren't there yet we observe until they are
+  // (and only insert then — which means game.js has finished, so we're not wiped).
+  function placeWithContent(box) {
+    var detail = document.getElementById("detail");
+    if (!detail) { (document.querySelector("main") || document.body).appendChild(box); return; }
+    function tryInsert() {
+      var cta = detail.querySelector(".viz-cta, .hist-cta");
+      if (cta) { detail.insertBefore(box, cta); return true; }
+      return false;
+    }
+    if (tryInsert()) return;
+    var obs = new MutationObserver(function () {
+      if (box.isConnected) { obs.disconnect(); return; }
+      if (tryInsert()) obs.disconnect();
+    });
+    obs.observe(detail, { childList: true, subtree: true });
+    setTimeout(function () { if (!box.isConnected) { obs.disconnect(); detail.appendChild(box); } }, 4000);
+  }
+
   // ---- visible, data-driven FAQ on game pages (+ matching FAQPage) --------
   function buildFaq(key, h) {
     var m = gmeta(key); if (!m) return;
@@ -211,11 +232,10 @@
       qa.map(function (x) {
         return '<details class="faq-item"><summary>' + esc(x[0]) + "</summary><p>" + esc(x[1]) + "</p></details>";
       }).join("");
-    // Append into <main> (after #detail) — not inside #detail, which game.js may
-    // re-render and wipe.
-    var detail = document.getElementById("detail");
-    var host = (detail && detail.parentNode) || document.querySelector("main");
-    if (host) host.appendChild(box);
+    // Place the FAQ with the main content — just before the first tool/guide CTA
+    // panel inside #detail, so it sits above the CTAs, related guides and footer
+    // disclaimers (not dangling at the very bottom of the page).
+    placeWithContent(box);
 
     ld({ "@context": "https://schema.org", "@type": "FAQPage",
       mainEntity: qa.map(function (x) { return { "@type": "Question", name: x[0], acceptedAnswer: { "@type": "Answer", text: x[1] } }; }) });
