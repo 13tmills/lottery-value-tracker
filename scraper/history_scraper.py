@@ -591,34 +591,67 @@ def amount(soup, selector, label, text):
     return parse_money(m.group(1)) if m else None
 
 
+LUSA_URL = {
+    "powerball": "https://www.lotteryusa.com/powerball/",
+    "lotto-america": "https://www.lotteryusa.com/lotto-america/",
+}
+_LUSA_MON3 = {m: i for i, m in enumerate(
+    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
 def scrape_powerball_site(d, cfg):
-    soup = fetch_page(DRAW_URL.format(gc=cfg["gc"], d=d.isoformat()))
+    """Powerball / Lotto America latest draw from lotteryusa.com — powerball.com went
+    JavaScript-only (its per-date pages ship no jackpot/numbers), which silently froze
+    these histories. lotteryusa has no per-date URL, so we read the latest result off
+    the game page and return it ONLY when d matches that result's own draw date (parsed
+    from .c-draw-card__date). Other missing dates get None — the deep seed already
+    covers history, and the next CI run keeps the newest draw flowing. Returns None on
+    any parse miss so the main loop never writes a wrong/blank draw."""
+    url = LUSA_URL.get(cfg["gc"])
+    if not url:
+        return None
+    # lotteryusa only exposes the latest result — don't fetch for old missing dates
+    # (the deep seed covers those); only the last ~10 days can match the live page.
+    if (date.today() - d).days > 10:
+        return None
+    soup = fetch_page(url)
     if soup is None:
         return None
+    html = str(soup)
     text = soup.get_text(" ", strip=True)
-    jackpot = amount(soup, ".estimated-jackpot", r"Estimated\s+Jackpot", text)
-    cash = amount(soup, ".cash-value", r"Cash\s+Value", text)
-    whites, star = parse_balls(soup, cfg)
-    if not whites or jackpot is None:
+
+    # Latest result's own draw date (e.g. "Monday, Jun 22, 2026" in .c-draw-card__date),
+    # NOT the next-draw countdown timer.
+    mi = html.find("c-draw-card__date")
+    if mi < 0:
+        return None
+    seg = re.sub(r"<[^>]+>", " ", html[mi:mi + 200])
+    dm = re.search(r"([A-Za-z]{3})[a-z]*\s+(\d{1,2}),?\s+(\d{4})", seg)
+    if not dm:
+        return None
+    mon = _LUSA_MON3.get(dm.group(1).lower())
+    if not mon:
+        return None
+    iso = f"{int(dm.group(3)):04d}-{mon:02d}-{int(dm.group(2)):02d}"
+    if iso != d.isoformat():
+        return None  # the page's latest result isn't the date being requested
+
+    whites = [int(x) for x in re.findall(r'c-ball c-ball--sm">\s*(\d+)', html)][:5]
+    sm = re.search(r'c-ball[^"]*--(?:red|gold|star|blue|green)[^"]*">\s*(\d+)', html)
+    if len(whites) != 5 or not sm:
         return None
 
-    draw = {
+    jm = re.search(r"\$\s*[\d.,]+\s*(?:billion|million)", text, re.IGNORECASE)
+    jackpot = _lc_money(jm.group(0)) if jm else None
+    if jackpot is None:
+        return None
+
+    return {
         "date": d.isoformat(),
         "jackpot": jackpot,
-        "cash_value": cash,
         "numbers": whites,
-        cfg["special_key"]: star,
+        cfg["special_key"]: int(sm.group(1)),
     }
-    bm = re.search(cfg["bonus_regex"], text, re.IGNORECASE)
-    if bm:
-        draw[cfg["bonus_key"]] = int(bm.group(1))
-
-    if d >= cfg["prizes_from"]:
-        prizes = parse_prize_table(soup, cfg, jackpot)
-        if prizes:
-            draw["prizes"] = prizes
-            draw["total_winners"] = sum(p["winners"] for p in prizes)
-    return draw
 
 
 # --------------------------------------------------------------------------- #
