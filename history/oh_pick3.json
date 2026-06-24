@@ -2,7 +2,7 @@
   "game": "oh_pick3",
   "source": "ohiolottery.com",
   "earliest_available": "2011-01-01",
-  "last_updated": "2026-06-23",
+  "last_updated": "2026-06-24",
   "complete": true,
   "draws": [
     {
@@ -45429,6 +45429,89 @@
         }
       ],
       "total_winners": 1348
+    },
+    {
+      "date": "2026-06-23",
+      "numbers": [
+        8,
+        8,
+        0
+      ],
+      "prizes": [
+        {
+          "level": "3 Way - Box",
+          "label": "3 Way - Box",
+          "amount": 84,
+          "winners": 223
+        },
+        {
+          "level": "6 Way - Box",
+          "label": "6 Way - Box",
+          "amount": 42,
+          "winners": 0
+        },
+        {
+          "level": "3 Way Back-up STR",
+          "label": "3 Way Back-up STR",
+          "amount": 334,
+          "winners": 59
+        },
+        {
+          "level": "3 Way Back-up BOX",
+          "label": "3 Way Back-up BOX",
+          "amount": 84,
+          "winners": 244
+        },
+        {
+          "level": "6 Way Back-up STR",
+          "label": "6 Way Back-up STR",
+          "amount": 292,
+          "winners": 0
+        },
+        {
+          "level": "6 Way Back-up BOX",
+          "label": "6 Way Back-up BOX",
+          "amount": 42,
+          "winners": 0
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": 25,
+          "winners": 14
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": 25,
+          "winners": 0
+        },
+        {
+          "level": "Split Pair",
+          "label": "Split Pair",
+          "amount": 25,
+          "winners": 0
+        },
+        {
+          "level": "3 Way Wheel",
+          "label": "3 Way Wheel",
+          "amount": 250,
+          "winners": 438
+        },
+        {
+          "level": "6 Way Wheel",
+          "label": "6 Way Wheel",
+          "amount": 250,
+          "winners": 0
+        },
+        {
+          "level": "Straight",
+          "label": "Straight",
+          "amount": 250,
+          "winners": 66
+        }
+      ],
+      "total_winners": 1044
     }
   ]
 }

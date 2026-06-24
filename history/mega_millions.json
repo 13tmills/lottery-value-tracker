@@ -2,7 +2,7 @@
   "game": "mega_millions",
   "source": "megamillions.com",
   "earliest_available": "2017-10-31",
-  "last_updated": "2026-06-23",
+  "last_updated": "2026-06-24",
   "complete": true,
   "draws": [
     {
@@ -12506,6 +12506,19 @@
         50
       ],
       "mega_ball": 12
+    },
+    {
+      "date": "2026-06-23",
+      "jackpot": 467000000,
+      "cash_value": 211000000,
+      "numbers": [
+        48,
+        51,
+        60,
+        63,
+        66
+      ],
+      "mega_ball": 20
     }
   ]
 }

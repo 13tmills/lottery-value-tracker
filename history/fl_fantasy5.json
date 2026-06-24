@@ -2,7 +2,7 @@
   "game": "fl_fantasy5",
   "source": "floridalottery.com",
   "earliest_available": "1995-01-02",
-  "last_updated": "2026-06-23",
+  "last_updated": "2026-06-24",
   "complete": true,
   "draws": [
     {
@@ -102883,30 +102883,7 @@
         13,
         18,
         28
-      ],
-      "prizes": [
-        {
-          "level": "Match 5",
-          "amount": 0,
-          "winners": 0
-        },
-        {
-          "level": "Match 4",
-          "amount": 555,
-          "winners": 209
-        },
-        {
-          "level": "Match 3",
-          "amount": 14,
-          "winners": 6169
-        },
-        {
-          "level": "Match 2",
-          "amount": "Free Ticket",
-          "winners": 56085
-        }
-      ],
-      "total_winners": 62463
+      ]
     },
     {
       "date": "2024-05-25",
@@ -127954,6 +127931,39 @@
         }
       ],
       "total_winners": 53916
+    },
+    {
+      "date": "2026-06-23",
+      "numbers": [
+        2,
+        23,
+        24,
+        26,
+        33
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 555,
+          "winners": 122
+        },
+        {
+          "level": "Match 3",
+          "amount": 22,
+          "winners": 4345
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Ticket",
+          "winners": 43027
+        }
+      ],
+      "total_winners": 47494
     }
   ]
 }

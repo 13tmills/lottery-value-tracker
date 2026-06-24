@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-06-23",
+  "last_updated": "2026-06-24",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-23",
-    "jackpot": 131000,
+    "date": "2026-06-24",
+    "jackpot": 136000,
     "cash": 0
   },
   "draws": [
@@ -11479,6 +11479,68 @@
       ],
       "total_winners": 2901,
       "jackpot": 131258
+    },
+    {
+      "date": "2026-06-23",
+      "numbers": [
+        5,
+        8,
+        11
+      ],
+      "horses": [
+        {
+          "num": 5,
+          "name": "California Classic"
+        },
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        },
+        {
+          "num": 11,
+          "name": "Money Bags"
+        }
+      ],
+      "race_time": "1:44.64",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 2592
+        },
+        {
+          "level": "Exacta",
+          "amount": 22,
+          "winners": 225
+        },
+        {
+          "level": "Trifecta",
+          "amount": 332,
+          "winners": 35
+        },
+        {
+          "level": "Race Time",
+          "amount": 59,
+          "winners": 24
+        },
+        {
+          "level": "Win / RT",
+          "amount": 62,
+          "winners": 3
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 81,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 136363,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2879,
+      "jackpot": 136363
     }
   ]
 }
