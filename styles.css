@@ -1129,3 +1129,26 @@ a.state-cell:hover { border-color: var(--accent); }
 .related-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
 .related-list a { color: var(--accent); text-decoration: none; }
 .related-list a:hover { text-decoration: underline; }
+
+/* ---- homepage (Option A — authority) ---- */
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.15rem; }
+.btn--ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.btn--ghost:hover { background: var(--surface-2); filter: none; }
+
+.jackpot-strip { max-width: var(--maxw); margin: 0 auto 1.25rem; padding: 0 1.25rem; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 0.75rem; }
+.jackpot-card { display: flex; flex-direction: column; gap: 0.1rem; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1.05rem;
+  text-decoration: none; color: inherit; }
+.jackpot-card:hover { border-color: var(--accent-2); }
+.jackpot-card__game { font-size: 0.78rem; color: var(--text-dim); }
+.jackpot-card__amt { font-size: 1.35rem; font-weight: 700; color: var(--accent); letter-spacing: -0.01em; }
+.jackpot-card__draw { font-size: 0.74rem; color: var(--text-dim); }
+
+.home-section-h { max-width: var(--maxw); margin: 2.1rem auto 0.8rem; padding: 0 1.25rem; font-size: 1.15rem; }
+.link-row { max-width: var(--maxw); margin: 0 auto; padding: 0 1.25rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.link-chip { display: inline-block; background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 999px; padding: 0.4rem 0.85rem; font-size: 0.85rem; color: var(--text); text-decoration: none; }
+.link-chip:hover { border-color: var(--accent-2); color: var(--accent-2); }
+
+.home-intro, .home-trust { margin-top: 1.6rem; }

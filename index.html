@@ -9,8 +9,8 @@
   <script src="analytics.js"></script>
   <script defer src="nav.js"></script>
   <script defer src="schema.js"></script>
-  <title>NumbersIntel — Lottery Expected Value, Jackpots &amp; Odds</title>
-  <meta name="description" content="NumbersIntel runs the real expected-value math on US lotteries. Explore the national drawings ranked by value per dollar, or dive into any state's games, payouts and odds." />
+  <title>NumbersIntel — Lottery Analytics: Expected Value, Odds &amp; Number Stats</title>
+  <meta name="description" content="NumbersIntel runs the real expected-value math on the lottery — live jackpots, exact odds and number-frequency stats for ~150 US games and the UK National Lottery, updated after every draw. See which game is the least-bad bet tonight." />
   <link rel="canonical" href="https://numbersintel.com/" />
 
   <meta property="og:type" content="website" />
@@ -19,32 +19,63 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
-  <meta property="og:title" content="NumbersIntel — The Real Expected Value of Every Lottery" />
-  <meta property="og:description" content="National drawings ranked by value per dollar, plus payouts, odds and number frequency state by state." />
+  <meta property="og:title" content="NumbersIntel — Lottery Analytics, Not Just Results" />
+  <meta property="og:description" content="Live jackpots, real expected value, exact odds and number-frequency stats for ~150 US games plus the UK National Lottery." />
   <meta property="og:url" content="https://numbersintel.com/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NumbersIntel — The Real Expected Value of Every Lottery" />
-  <meta name="twitter:description" content="National drawings ranked by value per dollar, plus payouts, odds and number frequency state by state." />
+  <meta name="twitter:title" content="NumbersIntel — Lottery Analytics, Not Just Results" />
+  <meta name="twitter:description" content="Live jackpots, real expected value, exact odds and number-frequency stats for ~150 US games plus the UK National Lottery." />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <h1>NumbersIntel</h1>
-    <p class="tagline">The real expected value of every lottery — and a lot more to come.</p>
+    <h1>Lottery analytics, not just results</h1>
+    <p class="tagline">The real expected value, odds and number statistics for every major US lottery
+      and the UK National Lottery — updated automatically after each draw.</p>
+    <div class="hero-cta">
+      <a class="btn" href="national.html">See tonight's best value &rarr;</a>
+      <a class="btn btn--ghost" href="states.html">Browse your state</a>
+    </div>
   </header>
 
   <main>
+    <!-- live national jackpots (populated by landing.js from data.json) -->
+    <div id="jackpot-strip" class="jackpot-strip" aria-label="Current national jackpots"></div>
+
+    <!-- live "best value in America right now" hero -->
     <div id="national-best-value"></div>
 
+    <section class="prose home-intro">
+      <h2>What NumbersIntel does</h2>
+      <p>Most lottery sites stop at the winning numbers. NumbersIntel goes further: we run the real
+        expected-value math on every major draw game, so you can see what a ticket is actually worth —
+        not just what was drawn.</p>
+      <p>For each game we publish the live jackpot and cash value, the exact odds straight from the
+        game's number matrix, and — the figure nobody else makes clear — the <strong>expected value
+        per dollar</strong>: how many cents a $1 ticket returns once every prize tier and taxes are
+        counted. It's the single number that tells you which game is the least-bad bet on any given
+        night. They are all negative-expected-value by design; some are simply far less bad than
+        others.</p>
+      <p>Beyond value, we compute the number statistics players actually look for — most and least
+        common numbers, hot and cold trends, overdue numbers and full draw-frequency history — with an
+        honest caveat: draws are random, and these statistics describe the past. They do not predict
+        the next draw, and no number is ever "due."</p>
+      <p>Coverage spans roughly <strong>150 draw games across 47 US jurisdictions</strong> — every
+        state that runs a lottery, plus Washington, D.C. and Puerto Rico — and the
+        <strong>UK National Lottery</strong>, all refreshed automatically after each drawing. Free
+        calculators, an odds visualizer and plain-English <a href="guides/">guides</a> round it out.</p>
+    </section>
+
+    <h2 class="home-section-h">Explore</h2>
     <div class="landing-grid">
       <a class="widget" href="national.html">
         <div class="widget__head">
           <h2 class="widget__title">US National Drawings</h2>
           <span class="widget__go">Open &rarr;</span>
         </div>
-        <p class="widget__desc">Powerball, Mega Millions, Lotto America &amp; Millionaire For Life —
-          ranked by real expected value per $1, with live jackpots and odds.</p>
+        <p class="widget__desc">Powerball, Mega Millions and Lotto America — ranked by real expected
+          value per $1, with live jackpots, cash values and odds.</p>
         <p class="widget__stat" id="nat-stat">Loading live values&hellip;</p>
       </a>
 
@@ -78,6 +109,55 @@
         <p class="widget__stat">Taxes &middot; payouts &middot; odds &middot; the truth about numbers.</p>
       </a>
     </div>
+
+    <h2 class="home-section-h">Guides &amp; explainers</h2>
+    <div class="link-row">
+      <a class="link-chip" href="guides/how-lottery-winnings-are-taxed/">How are lottery winnings taxed?</a>
+      <a class="link-chip" href="guides/lump-sum-vs-annuity/">Lump sum vs annuity</a>
+      <a class="link-chip" href="guides/lottery-odds-explained/">What are the odds of winning?</a>
+      <a class="link-chip" href="guides/what-is-lottery-expected-value/">What is expected value?</a>
+      <a class="link-chip" href="guides/do-hot-numbers-win/">Do hot numbers win more often?</a>
+      <a class="link-chip" href="guides/power-play-and-megaplier/">How Power Play &amp; the Megaplier work</a>
+      <a class="link-chip" href="guides/quick-pick-vs-self-pick/">Quick pick vs self-pick</a>
+    </div>
+
+    <h2 class="home-section-h">Popular games</h2>
+    <div class="link-row">
+      <a class="link-chip" href="game.html?game=powerball">Powerball</a>
+      <a class="link-chip" href="game.html?game=mega_millions">Mega Millions</a>
+      <a class="link-chip" href="game.html?game=lotto_america">Lotto America</a>
+      <a class="link-chip" href="game.html?game=ny_lotto">New York Lotto</a>
+      <a class="link-chip" href="game.html?game=ca_superlotto">California SuperLotto</a>
+      <a class="link-chip" href="game.html?game=tx_lotto">Lotto Texas</a>
+      <a class="link-chip" href="game.html?game=fl_lotto">Florida Lotto</a>
+      <a class="link-chip" href="game.html?game=uk_lotto">UK Lotto</a>
+      <a class="link-chip" href="game.html?game=uk_euromillions">EuroMillions</a>
+    </div>
+
+    <h2 class="home-section-h">Free tools</h2>
+    <div class="link-row">
+      <a class="link-chip" href="statetax.html">Lottery tax &amp; payout calculator</a>
+      <a class="link-chip" href="visualizer.html">Odds visualizer</a>
+      <a class="link-chip" href="check.html">Check my numbers</a>
+      <a class="link-chip" href="breakeven.html">Break-even jackpot</a>
+      <a class="link-chip" href="lifecalc.html">Lump sum vs annuity</a>
+      <a class="link-chip" href="jackpotstats.html">Jackpot growth stats</a>
+      <a class="link-chip" href="tools.html">All tools &rarr;</a>
+    </div>
+
+    <section class="prose home-trust">
+      <h2>How we compute it — and why you can trust the numbers</h2>
+      <p>Every figure comes from official lottery sources, refreshed automatically by a scheduled
+        data pipeline after each drawing, with a full historical archive behind it. Odds are computed
+        combinatorially from each game's published matrix; expected value sums every prize tier after
+        an assumed post-tax take. We document exactly how each statistic is derived on our
+        <a href="methodology.html">methodology page</a>, and the underlying draw data for every game is
+        downloadable as JSON.</p>
+      <p class="note">NumbersIntel is independent and informational only — not financial, legal or
+        gambling advice. The lottery is a negative-expected-value game; play for entertainment, never
+        as an investment. You must be 18+ (21+ in some states). If gambling is a problem for you or
+        someone you know, call <strong>1-800-GAMBLER</strong>.</p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -85,6 +165,9 @@
       <a href="national.html">US National Drawings</a>
       <a href="states.html">US State Drawings</a>
       <a href="uk.html">UK Drawings</a>
+      <a href="guides/">Guides</a>
+      <a href="tools.html">Tools</a>
+      <a href="methodology.html">Methodology</a>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
