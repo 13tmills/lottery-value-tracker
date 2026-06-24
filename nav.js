@@ -49,4 +49,22 @@
     "<strong>1-800-GAMBLER</strong> (<a href=\"tel:18004262537\">1-800-426-2537</a>).";
   const foot = document.querySelector(".site-footer");
   (foot || document.body).appendChild(rg);
+
+  // Ensure Methodology + About are linked from every footer (E-E-A-T / trust signal).
+  // Use the existing .footer-nav, or synthesise one for minimal footers (game/history).
+  let fnav = document.querySelector(".footer-nav");
+  if (!fnav && foot) {
+    fnav = document.createElement("nav");
+    fnav.className = "footer-nav";
+    foot.insertBefore(fnav, foot.firstChild);
+  }
+  if (fnav) {
+    [["Methodology", "methodology.html"], ["About", "about.html"], ["Privacy", "privacy.html"]].forEach(function (l) {
+      if (![...fnav.querySelectorAll("a")].some(function (a) { return a.getAttribute("href") === l[1]; })) {
+        const a = document.createElement("a");
+        a.href = l[1]; a.textContent = l[0];
+        fnav.appendChild(a);
+      }
+    });
+  }
 })();

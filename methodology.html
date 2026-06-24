@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Methodology — How NumbersIntel Computes Lottery Statistics</title>
+  <meta name="description" content="Exactly how NumbersIntel computes every lottery statistic — data sources, update cadence, the windows behind hot/cold and overdue numbers, frequency, odds and expected value." />
+  <link rel="canonical" href="https://numbersintel.com/methodology.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="NumbersIntel Methodology" />
+  <meta property="og:description" content="How every lottery statistic on NumbersIntel is computed — sources, windows, and formulas." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="index.html">&larr; Home</a>
+    <h1>Methodology</h1>
+    <p class="tagline">Exactly how every number on this site is computed.</p>
+  </header>
+
+  <main class="prose">
+    <p class="lead">NumbersIntel is an independent lottery-analytics site. We don't predict winning
+      numbers — nobody can. We compute transparent, reproducible statistics from the official draw
+      record so you can see what has actually happened. This page documents every source, window
+      and formula behind the figures.</p>
+
+    <h2>Where the data comes from</h2>
+    <p>Winning numbers, jackpots and cash values come from official lottery sources — each game's
+      state or national lottery, or the multi-state operators (powerball.com / Mega Millions' data
+      service) for the national games, supplemented by official state results and well-established
+      public archives where an official feed isn't machine-readable. Every game's data file records
+      its <em>source</em> and an <em>earliest-available</em> date. We currently track roughly 150
+      draw games across 47 US jurisdictions (all 50 states that run a lottery, plus Washington D.C.
+      and Puerto Rico) and the UK National Lottery.</p>
+
+    <h2>How often it updates</h2>
+    <p>An automated pipeline (a Python scraper run on a GitHub Actions schedule) refreshes results
+      after each drawing and commits the new data, which deploys automatically. Each game page shows
+      the date of its latest draw, and our sitemaps carry real <code>lastmod</code> timestamps so
+      search engines see the freshness. When a source changes or a scrape fails, the pipeline keeps
+      the last known-good values rather than publishing blanks.</p>
+
+    <h2>Number-frequency statistics</h2>
+    <p>For each game we count how often every number has been drawn across the available history,
+      then derive:</p>
+    <ul>
+      <li><strong>Most / least common numbers</strong> — raw draw counts over the selected window
+        (all-time by default; date-range filters narrow it).</li>
+      <li><strong>Hot &amp; cold numbers</strong> — the most- and least-drawn numbers within the
+        chosen window. "Hot" simply means drawn more often recently; it carries no predictive power.</li>
+      <li><strong>Overdue numbers</strong> — the number of draws since each number last appeared
+        (its current gap). The "most overdue" number is the one with the longest current gap.</li>
+      <li><strong>Frequency by pool</strong> — main balls and any special ball (Powerball, Mega Ball,
+        Lucky Stars, Cash Ball, etc.) are counted separately, since they're drawn from different pools.</li>
+    </ul>
+    <p>Digit games (Pick 3/4/5-style) are analysed by digit (0–9), and the same windows apply.</p>
+
+    <h2>Odds</h2>
+    <p>Jackpot and prize-tier odds are computed combinatorially from each game's published matrix —
+      e.g. a 5-of-69 + 1-of-26 game has jackpot odds of C(69,5) × 26 = 1 in 292,201,338. We show the
+      exact matrix on each game page. Odds are mathematical constants of the game; they don't change
+      from draw to draw, and no number, hot or cold, is more or less likely than any other.</p>
+
+    <h2>Expected value (where shown)</h2>
+    <p>For games with a fully published, fixed prize structure we compute <strong>value per $1
+      spent</strong>: the cash-option jackpot plus every fixed lower-tier prize, each divided by its
+      odds, summed, multiplied by an assumed 63% post-tax take (about 37% federal plus a blended
+      state estimate), and divided by the ticket price. The result is in cents returned per dollar.
+      Games whose lower tiers are pari-mutuel (they vary every draw) are shown with odds only, not a
+      single value-per-dollar, because a fixed EV would be invented. UK games are shown in pounds and
+      are excluded from the US-tax value rankings.</p>
+
+    <h2>What these statistics are not</h2>
+    <p>Lottery draws are independent random events. Frequency, hot/cold and overdue statistics are
+      <em>descriptive</em> — they summarise the past. They do <strong>not</strong> predict future
+      draws, and no pattern in past results changes the odds of the next one. We publish these
+      figures because they're interesting and verifiable, not because they offer an edge. There is
+      no system that beats a game of chance.</p>
+
+    <h2>Corrections &amp; transparency</h2>
+    <p>Every game's underlying data file is downloadable as JSON, linked from its results page, so
+      anyone can audit our numbers. If you spot an error, email
+      <a href="mailto:contact@numbersintel.com">contact@numbersintel.com</a> and we'll fix it.</p>
+
+    <p class="note"><strong>Responsible play:</strong> the lottery is a negative-expected-value game
+      by design — for entertainment only, never an investment. You must be 18+ (21+ in some states).
+      If gambling is a problem for you or someone you know, call <strong>1-800-GAMBLER</strong>
+      (<a href="tel:18004262537">1-800-426-2537</a>). This site is information and entertainment only,
+      not financial, legal or gambling advice.</p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>NumbersIntel — for information and entertainment only. Not affiliated with any lottery.</p>
+  </footer>
+</body>
+</html>

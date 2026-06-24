@@ -1108,3 +1108,18 @@ a.state-cell:hover { border-color: var(--accent); }
 .best-natl__note { color: var(--text-dim); font-size: 0.78rem; margin: 0.3rem 0 0; max-width: 78ch; }
 .best-natl--loading { color: var(--text-dim); border: 1px dashed var(--border); border-radius: var(--radius); background: var(--surface); padding: 1.1rem 1.3rem; }
 .best-natl__spark { color: var(--accent); }
+
+/* ---- breadcrumbs (schema.js) ---- */
+.crumbs { max-width: var(--maxw, 1100px); margin: 0.75rem auto 0; padding: 0 1.1rem; font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
+.crumbs a { color: var(--text-dim); text-decoration: none; }
+.crumbs a:hover { color: var(--text); text-decoration: underline; }
+.crumbs__sep { margin: 0 0.45rem; opacity: 0.5; }
+.crumbs [aria-current="page"] { color: var(--text); }
+
+/* ---- data-driven FAQ block (schema.js) ---- */
+.faq-block h2 { margin-top: 0; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 0.6rem 0; }
+.faq-item:last-child { border-bottom: 0; }
+.faq-item summary { cursor: pointer; font-weight: 600; color: var(--text); list-style: revert; }
+.faq-item summary:hover { color: var(--accent); }
+.faq-item p { color: var(--text-dim); margin: 0.5rem 0 0.2rem; max-width: 78ch; }
