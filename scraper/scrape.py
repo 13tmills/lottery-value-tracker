@@ -44,8 +44,8 @@ USER_AGENT = (
 
 CONFIG = {
     "powerball": {
-        "source": "powerball",          # powerball.com ?gc= slug
-        "url": "https://www.powerball.com/draw-result?gc=powerball",
+        "source": "powerball",          # lotteryusa.com (powerball.com went JS-only)
+        "url": "https://www.lotteryusa.com/powerball/",
         "ticket_price": 2,
         "odds_jackpot": 292201338,
         "draw_days": [MON, WED, SAT],
@@ -74,7 +74,7 @@ CONFIG = {
     },
     "lotto_america": {
         "source": "powerball",
-        "url": "https://www.powerball.com/draw-result?gc=lotto-america",
+        "url": "https://www.lotteryusa.com/lotto-america/",
         "ticket_price": 1,
         "odds_jackpot": 25989600,
         "draw_days": [MON, WED, SAT],
@@ -222,25 +222,33 @@ def fetch(url: str) -> BeautifulSoup:
 # --------------------------------------------------------------------------- #
 
 def scrape_powerball_site(cfg: dict) -> dict:
-    """Handles both Powerball and Lotto America (same site/markup)."""
+    """Powerball and Lotto America — sourced from lotteryusa.com. powerball.com went
+    JavaScript-only in 2026 (its draw-result page ships no jackpot/numbers in the
+    HTML), so we read lotteryusa's server-rendered game page: the headline annuity
+    jackpot, the cash value, and the latest winning numbers (5 white .c-ball--sm
+    balls + the coloured special ball). Returns {} on any miss so build_game keeps
+    the last-known-good values rather than clobbering them."""
     soup = fetch(cfg["url"])
-    page_text = soup.get_text(" ", strip=True)
+    text = soup.get_text(" ", strip=True)
+    html = str(soup)
     out: dict = {}
 
-    jm = re.search(r"Estimated\s+Jackpot[:\s]*([^/]+)", page_text, re.IGNORECASE)
-    if jm:
-        out["jackpot"] = parse_money(jm.group(1))
-
-    cm = re.search(r"Cash\s+Value[:\s]*([^/<]+)", page_text, re.IGNORECASE)
+    cm = re.search(r"Cash\s*value:?\s*\$\s*[\d.,]+\s*(?:billion|million|thousand)?", text, re.IGNORECASE)
     if cm:
-        out["cash_value"] = parse_money(cm.group(1))
+        out["cash_value"] = parse_money(cm.group(0))
 
-    # Best-effort winning numbers: powerball.com renders the latest result as a
-    # set of ball elements. Pull single/double-digit numbers from any element
-    # whose class mentions "ball", then split into 5 whites + 1 special.
-    balls = extract_balls(soup)
-    if balls:
-        out["_balls"] = balls
+    # Headline annuity jackpot = the first $-amount on the page; sanity-check it is
+    # at least the cash value (annuity is always >= the cash option).
+    jm = re.search(r"\$\s*[\d.,]+\s*(?:billion|million)", text, re.IGNORECASE)
+    if jm:
+        jv = parse_money(jm.group(0))
+        if jv and jv >= out.get("cash_value", 0):
+            out["jackpot"] = jv
+
+    whites = [int(x) for x in re.findall(r'c-ball c-ball--sm">\s*(\d+)', html)][:5]
+    sm = re.search(r'c-ball[^"]*--(?:red|gold|star|blue|green)[^"]*">\s*(\d+)', html)
+    if len(whites) == 5 and sm:
+        out["_balls"] = whites + [int(sm.group(1))]
 
     return out
 
