@@ -42,11 +42,13 @@
       night (they're all negative, but some are far less bad than others).</p>
 
     <h2>How the data works</h2>
-    <p>Our numbers come straight from official sources — powerball.com for Powerball and Lotto
-      America, and megamillions.com's own data service for Mega Millions. An automated pipeline
-      (a scraper run by GitHub Actions) refreshes the figures after every drawing, so the site
-      stays current with zero manual work. We also maintain a full historical archive of past
-      draws, jackpots, and cash values.</p>
+    <p>Our numbers come from official sources — each game's state or national lottery, plus the
+      multi-state operators for the national games — supplemented by well-established public
+      archives where an official feed isn't machine-readable. An automated pipeline (a scraper run
+      by GitHub Actions) refreshes the figures after every drawing, so the site stays current with
+      zero manual work. We maintain a full historical archive of past draws, jackpots and cash
+      values — tens of thousands of draws per game in some cases. Exactly how every statistic is
+      computed is documented on our <a href="methodology.html">methodology page</a>.</p>
 
     <h2>How we calculate expected value</h2>
     <p>For each game we sum the cash-option jackpot and every fixed lower-tier prize, each divided
@@ -57,10 +59,17 @@
 
     <h2>What we cover</h2>
     <ul>
-      <li><strong>Now:</strong> Powerball, Mega Millions, and Lotto America — jackpots, EV,
-        odds visualizer, and a full historical archive.</li>
-      <li><strong>Next:</strong> state lotteries, scratch-ticket EV rankings, and eventually
-        house-edge data across casino games and sports betting.</li>
+      <li><strong>National:</strong> Powerball, Mega Millions, Lotto America — live jackpots,
+        expected value per dollar, odds visualizer and the full draw archive.</li>
+      <li><strong>States:</strong> roughly 150 draw games across 47 US jurisdictions — every state
+        that runs a lottery, plus Washington D.C. and Puerto Rico — with results, odds, per-tier
+        prizes and number-frequency statistics.</li>
+      <li><strong>International:</strong> the UK National Lottery (Lotto, EuroMillions, Thunderball,
+        Set For Life and HotPicks), with live jackpots shown in pounds.</li>
+      <li><strong>Tools:</strong> a tax/payout calculator, break-even and Monte Carlo simulators,
+        a "check my numbers" tool, an odds visualizer and jackpot-growth stats.</li>
+      <li><strong>Next:</strong> scratch-ticket EV rankings, and eventually house-edge data across
+        casino games and sports betting.</li>
     </ul>
 
     <h2>A word on responsible play</h2>
