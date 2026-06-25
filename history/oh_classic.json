@@ -2,12 +2,12 @@
   "game": "oh_classic",
   "source": "ohiolottery.com",
   "earliest_available": "2011-01-01",
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-06-25",
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 6900000,
-    "cash": 3450000
+    "jackpot": 7000000,
+    "cash": 3500000
   },
   "draws": [
     {
@@ -29138,6 +29138,45 @@
       ],
       "total_winners": 2283,
       "jackpot": 6800000
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        8,
+        10,
+        13,
+        24,
+        27,
+        47
+      ],
+      "prizes": [
+        {
+          "level": "Match 6 of 6",
+          "label": "Match 6 of 6",
+          "amount": 6900000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5 of 6",
+          "label": "Match 5 of 6",
+          "amount": 1500,
+          "winners": 2
+        },
+        {
+          "level": "Match 4 of 6",
+          "label": "Match 4 of 6",
+          "amount": 70,
+          "winners": 164
+        },
+        {
+          "level": "Match 3 of 6",
+          "label": "Match 3 of 6",
+          "amount": 2,
+          "winners": 2706
+        }
+      ],
+      "total_winners": 2872,
+      "jackpot": 6900000
     }
   ]
 }

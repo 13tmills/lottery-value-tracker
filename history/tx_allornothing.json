@@ -2,7 +2,7 @@
   "game": "tx_allornothing",
   "source": "texaslottery.com",
   "earliest_available": "2026-01-01",
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-06-25",
   "complete": true,
   "recent_window": true,
   "draws": [
@@ -11945,6 +11945,66 @@
       "draw_time": "Morning",
       "top_prize_winners": 0,
       "draw_number": 596
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        1,
+        4,
+        7,
+        8,
+        10,
+        12,
+        13,
+        14,
+        15,
+        18,
+        22,
+        23
+      ],
+      "draw_time": "Day",
+      "top_prize_winners": 0,
+      "draw_number": 597
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        1,
+        4,
+        5,
+        11,
+        12,
+        15,
+        16,
+        18,
+        20,
+        22,
+        23,
+        24
+      ],
+      "draw_time": "Evening",
+      "top_prize_winners": 0,
+      "draw_number": 598
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24
+      ],
+      "draw_time": "Night",
+      "top_prize_winners": 0,
+      "draw_number": 599
     }
   ]
 }

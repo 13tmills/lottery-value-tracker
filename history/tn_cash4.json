@@ -2,7 +2,7 @@
   "game": "tn_cash4",
   "source": "lotterycorner.com",
   "earliest_available": "2005-04-18",
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-06-25",
   "complete": true,
   "draws": [
     {
@@ -69636,6 +69636,15 @@
         4,
         9,
         8
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        2,
+        1,
+        1,
+        0
       ]
     }
   ]

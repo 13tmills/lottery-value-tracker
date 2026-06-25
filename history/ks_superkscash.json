@@ -2,12 +2,12 @@
   "game": "ks_superkscash",
   "source": "lotterycorner.com",
   "earliest_available": "2002-02-18",
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-06-25",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-22",
-    "jackpot": 400000,
-    "cash": 400000
+    "date": "2026-06-24",
+    "jackpot": 410000,
+    "cash": 410000
   },
   "draws": [
     {
@@ -42717,6 +42717,18 @@
       ],
       "jackpot": 400000,
       "cash": 400000
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        5,
+        17,
+        18,
+        22,
+        28
+      ],
+      "jackpot": 410000,
+      "cash": 410000
     }
   ]
 }

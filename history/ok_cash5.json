@@ -2,7 +2,7 @@
   "game": "ok_cash5",
   "source": "lotterycorner.com",
   "earliest_available": "2006-09-05",
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-06-25",
   "complete": true,
   "current_jackpot": {
     "date": "2026-06-22",
@@ -66009,6 +66009,16 @@
         20,
         23,
         24
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        2,
+        9,
+        16,
+        22,
+        23
       ]
     }
   ]

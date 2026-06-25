@@ -2,12 +2,12 @@
   "game": "ms_match5",
   "source": "lotterycorner.com",
   "earliest_available": "2021-04-29",
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-06-25",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-23",
-    "jackpot": 160000,
-    "cash": 160000
+    "date": "2026-06-24",
+    "jackpot": 175000,
+    "cash": 175000
   },
   "draws": [
     {
@@ -15647,6 +15647,18 @@
       ],
       "jackpot": 160000,
       "cash": 160000
+    },
+    {
+      "date": "2026-06-24",
+      "numbers": [
+        2,
+        18,
+        25,
+        32,
+        34
+      ],
+      "jackpot": 175000,
+      "cash": 175000
     }
   ]
 }

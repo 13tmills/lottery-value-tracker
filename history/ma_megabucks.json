@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-06-24",
+  "last_updated": "2026-06-25",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-24",
+    "date": "2026-06-27",
     "jackpot": 21150000,
-    "cash": 14320000
+    "cash": 14350000
   },
   "draws": [
     {
@@ -41972,35 +41972,7 @@
         19,
         23,
         39
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 15500000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 4
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 218
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 3572
-        }
-      ],
-      "jackpot": 15500000,
-      "total_winners": 3794
+      ]
     },
     {
       "date": "2026-04-18",
@@ -43161,6 +43133,46 @@
       ],
       "jackpot": 20950000,
       "total_winners": 6769
+    },
+    {
+      "date": "2026-06-24",
+      "draw_number": 4600,
+      "numbers": [
+        3,
+        5,
+        11,
+        18,
+        22,
+        30
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 21150000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 22
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 567
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 7003
+        }
+      ],
+      "jackpot": 21150000,
+      "total_winners": 7592
     }
   ]
 }
