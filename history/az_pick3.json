@@ -2,7 +2,7 @@
   "game": "az_pick3",
   "source": "lotterycorner.com",
   "earliest_available": "1998-05-04",
-  "last_updated": "2026-06-25",
+  "last_updated": "2026-06-27",
   "complete": true,
   "draws": [
     {
@@ -55523,6 +55523,22 @@
         9,
         4,
         7
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "numbers": [
+        1,
+        4,
+        2
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "numbers": [
+        9,
+        6,
+        1
       ]
     }
   ]

@@ -19,9 +19,15 @@
       "numbers": [
         4
       ]
+    },
+    {
+      "date": "2026-06-26",
+      "numbers": [
+        14
+      ]
     }
   ],
   "source": "galottery.com",
-  "last_updated": "2026-06-25",
+  "last_updated": "2026-06-27",
   "complete": true
 }

@@ -2,12 +2,12 @@
   "game": "nj_pick6",
   "source": "lotterycorner.com",
   "earliest_available": "2023-01-02",
-  "last_updated": "2026-06-25",
+  "last_updated": "2026-06-27",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-22",
-    "jackpot": 5100000,
-    "cash": 5100000
+    "date": "2026-06-25",
+    "jackpot": 5500000,
+    "cash": 5500000
   },
   "draws": [
     {
@@ -4741,6 +4741,19 @@
       ],
       "jackpot": 5100000,
       "cash": 5100000
+    },
+    {
+      "date": "2026-06-25",
+      "numbers": [
+        8,
+        13,
+        19,
+        24,
+        31,
+        34
+      ],
+      "jackpot": 5500000,
+      "cash": 5500000
     }
   ]
 }

@@ -2,12 +2,12 @@
   "game": "mo_showmecash",
   "source": "molottery.com",
   "earliest_available": "2008-09-08",
-  "last_updated": "2026-06-25",
+  "last_updated": "2026-06-27",
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 223000,
-    "cash": 223000
+    "jackpot": 50000,
+    "cash": 50000
   },
   "draws": [
     {
@@ -73623,6 +73623,30 @@
       ],
       "jackpot": 201000,
       "cash": 201000
+    },
+    {
+      "date": "2026-06-25",
+      "numbers": [
+        5,
+        13,
+        14,
+        22,
+        37
+      ],
+      "jackpot": 223000,
+      "cash": 223000
+    },
+    {
+      "date": "2026-06-26",
+      "numbers": [
+        5,
+        13,
+        14,
+        26,
+        34
+      ],
+      "jackpot": 246000,
+      "cash": 246000
     }
   ]
 }

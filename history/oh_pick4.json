@@ -2,7 +2,7 @@
   "game": "oh_pick4",
   "source": "ohiolottery.com",
   "earliest_available": "2011-01-01",
-  "last_updated": "2026-06-25",
+  "last_updated": "2026-06-27",
   "complete": true,
   "draws": [
     {
@@ -51277,6 +51277,96 @@
         }
       ],
       "total_winners": 299
+    },
+    {
+      "date": "2026-06-26",
+      "numbers": [
+        6,
+        3,
+        1,
+        7
+      ],
+      "prizes": [
+        {
+          "level": "Straight Bet",
+          "label": "Straight Bet",
+          "amount": 2500,
+          "winners": 20
+        },
+        {
+          "level": "4 Way - Box",
+          "label": "4 Way - Box",
+          "amount": 599,
+          "winners": 0
+        },
+        {
+          "level": "6 Way - Box",
+          "label": "6 Way - Box",
+          "amount": 400,
+          "winners": 0
+        },
+        {
+          "level": "12 Way - Box",
+          "label": "12 Way - Box",
+          "amount": 200,
+          "winners": 0
+        },
+        {
+          "level": "24 Way - Box",
+          "label": "24 Way - Box",
+          "amount": 100,
+          "winners": 366
+        },
+        {
+          "level": "4 Way - Back-up STR",
+          "label": "4 Way - Back-up STR",
+          "amount": 3099,
+          "winners": 0
+        },
+        {
+          "level": "4 Way - Back-up BOX",
+          "label": "4 Way - Back-up BOX",
+          "amount": 599,
+          "winners": 0
+        },
+        {
+          "level": "6 Way - Back-up STR",
+          "label": "6 Way - Back-up STR",
+          "amount": 2900,
+          "winners": 0
+        },
+        {
+          "level": "6 Way - Back-up BOX",
+          "label": "6 Way - Back-up BOX",
+          "amount": 400,
+          "winners": 0
+        },
+        {
+          "level": "12 Way - Back-up STR",
+          "label": "12 Way - Back-up STR",
+          "amount": 2700,
+          "winners": 0
+        },
+        {
+          "level": "12 Way - Back-up BOX",
+          "label": "12 Way - Back-up BOX",
+          "amount": 200,
+          "winners": 0
+        },
+        {
+          "level": "24 Way - Back-up STR",
+          "label": "24 Way - Back-up STR",
+          "amount": 2600,
+          "winners": 11
+        },
+        {
+          "level": "24 Way - Back-up BOX",
+          "label": "24 Way - Back-up BOX",
+          "amount": 100,
+          "winners": 249
+        }
+      ],
+      "total_winners": 646
     }
   ]
 }

@@ -2,7 +2,7 @@
   "game": "ma_masscash",
   "source": "masslottery.com",
   "earliest_available": "2006-01-03",
-  "last_updated": "2026-06-25",
+  "last_updated": "2026-06-27",
   "complete": true,
   "draws": [
     {
@@ -67818,6 +67818,28 @@
         31,
         32,
         34
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "draw_number": 8020,
+      "numbers": [
+        12,
+        14,
+        16,
+        31,
+        35
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "draw_number": 8022,
+      "numbers": [
+        10,
+        17,
+        22,
+        30,
+        33
       ]
     }
   ]
