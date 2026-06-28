@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Will the Jackpot Be Split? Lottery Participation &amp; Split-Risk Tracker | NumbersIntel</title>
+  <meta name="description" content="How many people play Powerball and Lotto America — estimated from real per-tier winner counts — and the probability the jackpot is won, or split between multiple winners, at any jackpot size. Honest, data-driven, no gambler's fallacy." />
+  <link rel="canonical" href="https://numbersintel.com/splitrisk.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="Will the Jackpot Be Split? Lottery Participation Tracker" />
+  <meta property="og:description" content="Estimated tickets in play and the odds a jackpot is won or split — from real winner counts." />
+  <meta property="og:url" content="https://numbersintel.com/splitrisk.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Will the Jackpot Be Split? | NumbersIntel" />
+  <meta name="twitter:description" content="Estimated tickets in play and the odds a jackpot is won or split — from real winner counts." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="tools.html">&larr; Tools</a>
+    <h1>Will the jackpot be split?</h1>
+    <p class="tagline">How many people are playing — and the odds tonight's jackpot is won, or shared between
+      multiple winners — estimated from real lottery winner counts.</p>
+  </header>
+
+  <main class="detail">
+    <p class="calc-notice">
+      <span class="calc-notice__icon" aria-hidden="true">&#9888;</span>
+      <span><strong>These are estimates, and they don't change your odds of winning.</strong> Every draw is
+        independent — no number is "due," and nothing here predicts the result. Split risk is about
+        <em>prize dilution</em>: when more people play, a jackpot is more likely to be shared, which lowers
+        what a winning ticket is actually worth. That's an expected-value point, not a way to beat the game.</span>
+    </p>
+
+    <!-- Upcoming projection cards (filled by splitrisk.js) -->
+    <section class="panel">
+      <h2>Tonight's draws — projected participation</h2>
+      <p class="section-note">The figures below are the historical <strong>median</strong> for past draws in
+        the same jackpot range — a descriptive benchmark for the upcoming draw, not a forecast of it.</p>
+      <div id="sr-upcoming" class="sr-cards"><p class="section-note">Loading latest jackpots&hellip;</p></div>
+    </section>
+
+    <!-- Participation vs jackpot -->
+    <section class="panel">
+      <h2>More people play as the jackpot grows</h2>
+      <p class="section-note">Each dot is one real past draw: its advertised jackpot (across) against our
+        estimate of how many tickets were in play (up). Gold dots are draws where the jackpot was actually won.
+        Participation is roughly flat for small jackpots, then climbs steeply once a jackpot makes national news.</p>
+      <div class="sr-game-toggle" id="sr-toggle"></div>
+      <div class="sr-chart-wrap"><canvas id="sr-scatter" height="300" aria-label="Tickets in play vs jackpot size"></canvas></div>
+    </section>
+
+    <!-- Bands table -->
+    <section class="panel">
+      <h2 id="sr-band-title">Win &amp; split odds by jackpot size</h2>
+      <p class="section-note">For each jackpot range, the typical (median) tickets in play across past draws,
+        and the resulting odds that <em>someone</em> wins the jackpot and that it gets <em>split</em> if won.</p>
+      <div id="sr-bands"></div>
+    </section>
+
+    <!-- Recent draws -->
+    <section class="panel">
+      <h2 id="sr-recent-title">Recent draws</h2>
+      <p class="section-note">Estimated tickets in play and win/split odds for the most recent draws, with
+        whether the jackpot was actually won.</p>
+      <div id="sr-recent"></div>
+    </section>
+
+    <!-- Method / honest explainer -->
+    <section class="prose">
+      <h2>How we estimate the number of people playing</h2>
+      <p>Lotteries don't publish national ticket sales before a draw, but Powerball and Lotto America
+        <em>do</em> publish how many people won at every prize tier afterward. Those lower tiers have fixed,
+        published odds — for example, matching just the Powerball pays $4 at odds of 1 in 38.3. So if a draw
+        produced about 200,000 of those winners, roughly 200,000 &times; 38.3 &approx; 7.7 million tickets were
+        in play. We compute that estimate from several stable tiers and take the median, which keeps the figure
+        steady even when any single tier is noisy.</p>
+      <p>From the estimated tickets in play, the math is standard probability. With <em>L</em> tickets and
+        jackpot odds of 1 in <em>N</em>, the expected number of jackpot winners is <em>L / N</em>. A
+        Poisson model then gives the chance that <em>at least one</em> ticket hits the jackpot, and — given a
+        winner — the chance that <em>two or more</em> hit it and split the prize. For the upcoming draw we
+        can't know sales in advance, so we report the median tickets from past draws at a similar jackpot size.
+        It is a benchmark, not a prediction.</p>
+      <p>Two honest caveats. First, these are <strong>estimates</strong>, not official sales figures, and they
+        carry real uncertainty — especially at record jackpots, where only a handful of past draws exist to
+        learn from. Second, and most important: none of this changes your odds of winning. The lottery is a
+        negative-expected-value game by design, and each draw is independent of the last. The one thing
+        participation genuinely affects is how likely you'd be to <em>share</em> a jackpot if you won — which is
+        why choosing less-popular numbers (avoiding birthdays, dates and visual patterns) doesn't help you win,
+        but can reduce the chance you'd split a prize.</p>
+      <p>Want the underlying ideas? See our guides on
+        <a href="guides/what-is-lottery-expected-value/">expected value</a>,
+        <a href="guides/lottery-odds-explained/">how the odds work</a>, and
+        <a href="guides/quick-pick-vs-self-pick/">quick pick vs self-pick</a>, or the
+        <a href="methodology.html">methodology page</a> for how all our numbers are derived.</p>
+    </section>
+
+    <p class="disclaimer">
+      Participation is estimated by inverting each game's published fixed-tier odds against the reported number
+      of lower-tier winners; win and split probabilities use a Poisson model on those estimates. Figures cover
+      Powerball and Lotto America — the games that publish per-tier winner counts — and update after each draw.
+      They are descriptive statistics with inherent uncertainty, not official sales data and not predictions of
+      any future draw. For information and entertainment only; not financial or gambling advice.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="national.html">US National Drawings</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="splitrisk.js"></script>
+</body>
+</html>

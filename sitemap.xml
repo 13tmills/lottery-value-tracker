@@ -30,6 +30,7 @@
   <url><loc>https://numbersintel.com/statetax.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/montecarlo.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/jackpotstats.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/splitrisk.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/calculator.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/lifecalc.html?game=ny_m4l</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/states.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>

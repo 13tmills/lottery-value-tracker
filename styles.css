@@ -1223,3 +1223,37 @@ a.state-cell:hover { border-color: var(--accent); }
   .nfl-hot-grid { grid-template-columns: 1fr; }
   .nfl-matchup-controls select, .nfl-player-controls input { min-width: 150px; }
 }
+
+/* ===================== Split-risk / participation page ===================== */
+.sr-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.sr-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; }
+.sr-card__game { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 700; }
+.sr-card__jackpot { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin: 0.15rem 0 0.2rem; }
+.sr-card__sub { font-size: 0.78rem; font-weight: 400; color: var(--text-dim); letter-spacing: 0; }
+.sr-card__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin: 0.8rem 0 0.6rem; }
+.sr-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.sr-stat__v { font-size: 1.15rem; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.sr-stat__l { font-size: 0.72rem; color: var(--text-dim); line-height: 1.2; }
+.sr-card__interp { font-size: 0.88rem; margin: 0.4rem 0 0.3rem; }
+.sr-card__base { font-size: 0.74rem; color: var(--text-dim); margin: 0; }
+
+.sr-game-toggle { display: flex; gap: 0.5rem; margin-bottom: 0.6rem; }
+.sr-tog { background: var(--surface-2); color: var(--text-dim); border: 1px solid var(--border);
+  border-radius: 999px; padding: 0.35rem 0.9rem; font-size: 0.85rem; cursor: pointer; }
+.sr-tog.is-active { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 600; }
+
+.sr-chart-wrap { position: relative; width: 100%; height: 300px; }
+
+.sr-table-wrap { overflow-x: auto; }
+.sr-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.sr-table th, .sr-table td { padding: 0.45rem 0.6rem; text-align: right; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+.sr-table th[scope="col"]:first-child, .sr-table th[scope="row"] { text-align: left; }
+.sr-table thead th { color: var(--text-dim); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.sr-table tbody th { font-weight: 600; color: var(--text); }
+.sr-muted { color: var(--text-dim); }
+.sr-won { color: var(--good); font-weight: 700; }
+
+@media (max-width: 620px) {
+  .sr-cards { grid-template-columns: 1fr; }
+  .sr-card__stats { grid-template-columns: 1fr 1fr 1fr; }
+}
