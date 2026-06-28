@@ -2,12 +2,12 @@
   "game": "ne_pick5",
   "source": "nelottery.com",
   "earliest_available": "2010-01-01",
-  "last_updated": "2026-06-27",
+  "last_updated": "2026-06-28",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-27",
-    "jackpot": 150000,
-    "cash": 150000
+    "date": "2026-06-28",
+    "jackpot": 50000,
+    "cash": 50000
   },
   "draws": [
     {
@@ -64079,6 +64079,17 @@
         14,
         19
       ]
+    },
+    {
+      "date": "2026-06-27",
+      "numbers": [
+        4,
+        7,
+        11,
+        19,
+        22
+      ],
+      "jackpot": 150000
     }
   ]
 }

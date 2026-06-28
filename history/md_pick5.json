@@ -1871,9 +1871,19 @@
         2,
         0
       ]
+    },
+    {
+      "date": "2026-06-27",
+      "numbers": [
+        7,
+        3,
+        7,
+        8,
+        1
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-06-27",
+  "last_updated": "2026-06-28",
   "complete": true
 }

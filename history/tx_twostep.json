@@ -2,12 +2,12 @@
   "game": "tx_twostep",
   "source": "texaslottery.com",
   "earliest_available": "2001-05-18",
-  "last_updated": "2026-06-27",
+  "last_updated": "2026-06-28",
   "complete": true,
   "current_jackpot": {
     "date": "2026-06-25",
     "jackpot": 650000,
-    "cash": 8119999
+    "cash": 8240000
   },
   "draws": [
     {

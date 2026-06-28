@@ -2,7 +2,7 @@
   "game": "nm_pick4",
   "source": "lotterycorner.com",
   "earliest_available": "2019-02-03",
-  "last_updated": "2026-06-27",
+  "last_updated": "2026-06-28",
   "complete": true,
   "draws": [
     {
@@ -24303,6 +24303,15 @@
         3,
         0,
         1
+      ]
+    },
+    {
+      "date": "2026-06-27",
+      "numbers": [
+        9,
+        9,
+        9,
+        6
       ]
     }
   ]
