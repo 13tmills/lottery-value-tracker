@@ -44,7 +44,7 @@ fetch("split_risk.json", { cache: "no-store" })
 // ---- upcoming projection cards (both games) ------------------------------
 function renderUpcoming() {
   const games = SR.data.games;
-  const order = ["powerball", "lotto_america"].filter((k) => games[k]);
+  const order = ["powerball", "mega_millions", "lotto_america"].filter((k) => games[k]);
   const cards = order.map((k) => {
     const g = games[k];
     const u = g.upcoming;
@@ -85,7 +85,7 @@ function splitInterp(pSplit, pWin) {
 // ---- game toggle ---------------------------------------------------------
 function renderToggle() {
   const games = SR.data.games;
-  const order = ["powerball", "lotto_america"].filter((k) => games[k]);
+  const order = ["powerball", "mega_millions", "lotto_america"].filter((k) => games[k]);
   document.getElementById("sr-toggle").innerHTML = order.map((k) =>
     `<button type="button" class="sr-tog${k === SR.game ? " is-active" : ""}" data-game="${k}">${games[k].label}</button>`
   ).join("");

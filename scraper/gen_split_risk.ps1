@@ -11,6 +11,15 @@ $GAMES = @{
     stable = @("PB","1+PB","3","2+PB","3+PB","4")
     edges = @(0,50,100,150,200,300,400,600,800,1000,1500,999999)  # $M
   }
+  mega_millions = @{
+    # CURRENT matrix only ($5 ticket, 5/70 + 1/24, since 2025-04-04). Earlier draws
+    # carry no `prizes` so they're naturally excluded; mixing the $2 era would distort
+    # participation-per-jackpot. Odds are the current matrix's published tier odds.
+    label = "Mega Millions"; jackpot_odds = 290472336; ticket_price = 5; jackpot_match = "5+MB"
+    odds = @{ "5"=12629232.0;"4+MB"=893761.0;"4"=38859.0;"3+MB"=13965.0;"3"=607.0;"2+MB"=665.0;"1+MB"=86.0;"MB"=35.0 }
+    stable = @("MB","1+MB","3","2+MB","3+MB","4")
+    edges = @(0,100,150,200,300,400,600,800,1200)  # $M
+  }
   lotto_america = @{
     label = "Lotto America"; jackpot_odds = 25989600; ticket_price = 1; jackpot_match = "5+SB"
     odds = @{ "5"=2887733.0;"4+SB"=110594.0;"4"=12288.0;"3+SB"=2404.0;"3"=267.0;"2+SB"=160.0;"1+SB"=29.0;"SB"=17.0 }
@@ -31,7 +40,7 @@ $out = [ordered]@{
   games   = [ordered]@{}
 }
 
-foreach ($key in @("powerball","lotto_america")) {
+foreach ($key in @("powerball","mega_millions","lotto_america")) {
   $cfg = $GAMES[$key]
   $hist = Get-Content "$root\history\$key.json" -Raw | ConvertFrom-Json
   $Jodds = [double]$cfg.jackpot_odds

@@ -10,7 +10,7 @@
   <script defer src="nav.js"></script>
   <script defer src="schema.js"></script>
   <title>Will the Jackpot Be Split? Lottery Participation &amp; Split-Risk Tracker | NumbersIntel</title>
-  <meta name="description" content="How many people play Powerball and Lotto America — estimated from real per-tier winner counts — and the probability the jackpot is won, or split between multiple winners, at any jackpot size. Honest, data-driven, no gambler's fallacy." />
+  <meta name="description" content="How many people play Powerball, Mega Millions and Lotto America — estimated from real per-tier winner counts — and the probability the jackpot is won, or split between multiple winners, at any jackpot size. Honest, data-driven, no gambler's fallacy." />
   <link rel="canonical" href="https://numbersintel.com/splitrisk.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="NumbersIntel" />
@@ -81,12 +81,16 @@
     <!-- Method / honest explainer -->
     <section class="prose">
       <h2>How we estimate the number of people playing</h2>
-      <p>Lotteries don't publish national ticket sales before a draw, but Powerball and Lotto America
-        <em>do</em> publish how many people won at every prize tier afterward. Those lower tiers have fixed,
-        published odds — for example, matching just the Powerball pays $4 at odds of 1 in 38.3. So if a draw
-        produced about 200,000 of those winners, roughly 200,000 &times; 38.3 &approx; 7.7 million tickets were
-        in play. We compute that estimate from several stable tiers and take the median, which keeps the figure
-        steady even when any single tier is noisy.</p>
+      <p>Lotteries don't publish national ticket sales before a draw, but Powerball, Mega Millions and Lotto
+        America <em>do</em> publish how many people won at every prize tier afterward. Those lower tiers have
+        fixed, published odds — for example, matching just the Powerball pays $4 at odds of 1 in 38.3. So if a
+        draw produced about 200,000 of those winners, roughly 200,000 &times; 38.3 &approx; 7.7 million tickets
+        were in play. We compute that estimate from several stable tiers and take the median, which keeps the
+        figure steady even when any single tier is noisy.</p>
+      <p><strong>A note on Mega Millions:</strong> its ticket price rose from $2 to $5 in April 2025, which
+        changed how many people play at any given jackpot. To keep the comparison fair, Mega Millions here
+        covers only its current ($5) game from April 2025 onward — so its history is shorter than Powerball's,
+        and its bands rest on fewer draws (shown in the "Draws" column).</p>
       <p>From the estimated tickets in play, the math is standard probability. With <em>L</em> tickets and
         jackpot odds of 1 in <em>N</em>, the expected number of jackpot winners is <em>L / N</em>. A
         Poisson model then gives the chance that <em>at least one</em> ticket hits the jackpot, and — given a
@@ -110,7 +114,8 @@
     <p class="disclaimer">
       Participation is estimated by inverting each game's published fixed-tier odds against the reported number
       of lower-tier winners; win and split probabilities use a Poisson model on those estimates. Figures cover
-      Powerball and Lotto America — the games that publish per-tier winner counts — and update after each draw.
+      Powerball, Mega Millions and Lotto America — the games that publish per-tier winner counts (Mega Millions
+      since its current $5 matrix began in April 2025) — and update after each draw.
       They are descriptive statistics with inherent uncertainty, not official sales data and not predictions of
       any future draw. For information and entertainment only; not financial or gambling advice.
     </p>

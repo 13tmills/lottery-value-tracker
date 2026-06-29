@@ -207,6 +207,7 @@ jobs:
           python scraper/history_scraper.py --game uk_lotto_hotpicks
           python scraper/history_scraper.py --game uk_em_hotpicks
           python scraper/build_index.py || echo "::warning::build_index failed (continuing)"
+          python scraper/mm_winners.py || echo "::warning::mm_winners failed (continuing)"
           python scraper/split_risk.py || echo "::warning::split_risk failed (continuing)"
           exit 0   # always succeed so the commit step runs with whatever updated
 
