@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-28",
+  "generated": "2026-06-30",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 148,
     "az_fantasy5": 158,
     "az_thepick": 38,
-    "az_tripletwist": 22,
+    "az_tripletwist": 23,
     "ca_derby": 7,
     "ca_fantasy5": 58,
     "ca_superlotto": 4,
@@ -14,10 +14,10 @@
     "de_multiwin": 32,
     "fl_lotto": 21,
     "fl_triple": 21,
-    "ga_fantasy5": 192,
+    "ga_fantasy5": 193,
     "id_cash": 14,
     "il_lotto": 47,
-    "il_luckyday": 830,
+    "il_luckyday": 831,
     "in_cash5": 154,
     "in_hoosier": 30,
     "ks_superkscash": 58,
@@ -52,7 +52,7 @@
     "wa_hit5": 419,
     "wa_lotto": 88,
     "wi_badger5": 864,
-    "wi_megabucks": 64,
+    "wi_megabucks": 65,
     "wy_cowboydraw": 26
   }
 }

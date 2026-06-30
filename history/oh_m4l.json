@@ -2,7 +2,7 @@
   "game": "oh_m4l",
   "source": "ohiolottery.com",
   "earliest_available": "2026-02-22",
-  "last_updated": "2026-06-28",
+  "last_updated": "2026-06-30",
   "complete": true,
   "draws": [
     {
@@ -1710,6 +1710,17 @@
         }
       ],
       "total_winners": 2674
+    },
+    {
+      "date": "2026-06-29",
+      "numbers": [
+        4,
+        25,
+        26,
+        31,
+        36
+      ],
+      "bonus": 4
     }
   ]
 }

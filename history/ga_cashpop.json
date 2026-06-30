@@ -37,9 +37,15 @@
       "numbers": [
         10
       ]
+    },
+    {
+      "date": "2026-06-30",
+      "numbers": [
+        8
+      ]
     }
   ],
   "source": "galottery.com",
-  "last_updated": "2026-06-28",
+  "last_updated": "2026-06-30",
   "complete": true
 }

@@ -2,7 +2,7 @@
   "game": "ne_pick3",
   "source": "nelottery.com",
   "earliest_available": "2005-05-23",
-  "last_updated": "2026-06-28",
+  "last_updated": "2026-06-30",
   "complete": true,
   "draws": [
     {
@@ -56859,6 +56859,22 @@
         5,
         3,
         3
+      ]
+    },
+    {
+      "date": "2026-06-28",
+      "numbers": [
+        2,
+        4,
+        9
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "numbers": [
+        0,
+        0,
+        2
       ]
     }
   ]

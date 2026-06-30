@@ -1,7 +1,7 @@
 {
   "game": "lotto_america",
   "source": "powerball.com",
-  "last_updated": "2026-06-28",
+  "last_updated": "2026-06-30",
   "complete": true,
   "earliest_available": "2017-11-15",
   "note": "Seeded with a few real draws. Full history (~1,090 draws back to 2017-11-15) is backfilled by scraper/history_scraper.py in CI.",
