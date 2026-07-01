@@ -2,7 +2,7 @@
   "game": "ok_pick3",
   "source": "lotterycorner.com",
   "earliest_available": "2005-11-10",
-  "last_updated": "2026-06-30",
+  "last_updated": "2026-07-01",
   "complete": true,
   "draws": [
     {
@@ -60299,6 +60299,14 @@
         2,
         4,
         1
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "numbers": [
+        6,
+        5,
+        2
       ]
     }
   ]

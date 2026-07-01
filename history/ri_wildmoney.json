@@ -2,12 +2,12 @@
   "game": "ri_wildmoney",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-06-30",
+  "last_updated": "2026-07-01",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-29",
-    "jackpot": 42000,
-    "cash": 42000
+    "date": "2026-06-30",
+    "jackpot": 46000,
+    "cash": 46000
   },
   "draws": [
     {
@@ -44217,6 +44217,18 @@
       ],
       "jackpot": 42000,
       "cash": 42000
+    },
+    {
+      "date": "2026-06-30",
+      "numbers": [
+        2,
+        4,
+        21,
+        22,
+        35
+      ],
+      "jackpot": 46000,
+      "cash": 46000
     }
   ]
 }

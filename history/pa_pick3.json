@@ -2,7 +2,7 @@
   "game": "pa_pick3",
   "source": "palottery.pa.gov",
   "earliest_available": "2015-01-27",
-  "last_updated": "2026-06-30",
+  "last_updated": "2026-07-01",
   "complete": true,
   "draws": [
     {
@@ -33378,6 +33378,14 @@
       "numbers": [
         1,
         1,
+        7
+      ]
+    },
+    {
+      "date": "2026-06-30",
+      "numbers": [
+        4,
+        2,
         7
       ]
     }

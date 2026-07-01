@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-06-30",
+  "last_updated": "2026-07-01",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-30",
-    "jackpot": 50000,
+    "date": "2026-07-01",
+    "jackpot": 55000,
     "cash": 0
   },
   "draws": [
@@ -11913,6 +11913,68 @@
       ],
       "total_winners": 3071,
       "jackpot": 172375
+    },
+    {
+      "date": "2026-06-30",
+      "numbers": [
+        11,
+        5,
+        9
+      ],
+      "horses": [
+        {
+          "num": 11,
+          "name": "Money Bags"
+        },
+        {
+          "num": 5,
+          "name": "California Classic"
+        },
+        {
+          "num": 9,
+          "name": "Winning Spirit"
+        }
+      ],
+      "race_time": "1:45.82",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 1705
+        },
+        {
+          "level": "Exacta",
+          "amount": 27,
+          "winners": 144
+        },
+        {
+          "level": "Trifecta",
+          "amount": 681,
+          "winners": 13
+        },
+        {
+          "level": "Race Time",
+          "amount": 49,
+          "winners": 23
+        },
+        {
+          "level": "Win / RT",
+          "amount": 52,
+          "winners": 2
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 76,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 54433,
+          "winners": 0
+        }
+      ],
+      "total_winners": 1887,
+      "jackpot": 54433
     }
   ]
 }
