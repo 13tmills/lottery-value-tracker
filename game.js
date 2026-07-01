@@ -199,6 +199,12 @@ function render(key, g, data) {
         positive-value bet.</p>
     </section>
 
+    ${["powerball", "mega_millions", "lotto_america"].includes(key) ? `
+    <section class="panel" id="sr-inline">
+      <h2>Will this jackpot be split?</h2>
+      <div id="sr-inline-body"><p class="section-note">Estimating how many people are playing&hellip;</p></div>
+    </section>` : ""}
+
     <section class="panel viz-cta">
       <div>
         <h2>See your odds as dots</h2>
@@ -254,6 +260,37 @@ function render(key, g, data) {
   `;
 
   renderCharts(items, jackpotCents, secondaryCents);
+  if (["powerball", "mega_millions", "lotto_america"].includes(key)) renderSplitRiskInline(key);
+}
+
+// Compact split-risk projection on the national game pages (data from split_risk.json,
+// computed in CI by scraper/split_risk.py). Honest framing: an estimate, not a prediction.
+function renderSplitRiskInline(key) {
+  const sec = document.getElementById("sr-inline");
+  if (!sec) return;
+  const M = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + " million" : n >= 1e3 ? Math.round(n / 1e3) + ",000" : String(Math.round(n)));
+  const P = (p) => (p == null ? "—" : (p * 100 >= 10 ? Math.round(p * 100) : (p * 100).toFixed(1)) + "%");
+  fetch("split_risk.json", { cache: "no-store" })
+    .then((r) => r.json())
+    .then((sr) => {
+      const g = sr.games && sr.games[key];
+      if (!g || !g.upcoming) { sec.remove(); return; }
+      const u = g.upcoming;
+      document.getElementById("sr-inline-body").innerHTML = `
+        <p class="section-note">Estimated from how many lower-tier winners recent draws of this size produced —
+          not a prediction. Every draw is independent, and this doesn't change your odds of winning; more
+          players just means a jackpot is likelier to be shared.</p>
+        <div class="sr-cards"><div class="sr-card">
+          <div class="sr-card__jackpot">${fmtMoney(u.jackpot)}<span class="sr-card__sub"> current jackpot</span></div>
+          <div class="sr-card__stats">
+            <div class="sr-stat"><span class="sr-stat__v">~${M(u.est_lines)}</span><span class="sr-stat__l">est. tickets in play</span></div>
+            <div class="sr-stat"><span class="sr-stat__v">${P(u.p_win)}</span><span class="sr-stat__l">chance someone wins</span></div>
+            <div class="sr-stat"><span class="sr-stat__v">${P(u.p_split_if_won)}</span><span class="sr-stat__l">chance it's split, if won</span></div>
+          </div>
+        </div></div>
+        <a class="btn" href="splitrisk.html">See the full split-risk breakdown &rarr;</a>`;
+    })
+    .catch(() => sec.remove());
 }
 
 function renderCharts(items, jackpotCents, secondaryCents) {

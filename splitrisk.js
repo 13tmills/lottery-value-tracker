@@ -105,8 +105,17 @@ function renderGame() {
 // ---- scatter: tickets vs jackpot -----------------------------------------
 function renderScatter() {
   const g = SR.data.games[SR.game];
+  const pts = g.scatter || [];
+  // Scatter tickets are stored in millions. For low-volume games (Lotto America
+  // tops out well under 1M) that squashes every dot near zero — switch to thousands.
+  const maxY = pts.reduce((m, p) => Math.max(m, p[1]), 0);
+  const useK = maxY > 0 && maxY < 1;      // under 1 million tickets → show thousands
+  const yMul = useK ? 1000 : 1;
+  const yLabel = useK ? "Estimated tickets in play (thousands)" : "Estimated tickets in play (millions)";
+  const tip = (v) => (useK ? `~${Math.round(v)},000 tickets` : `~${v}M tickets`);
+
   const won = [], lost = [];
-  (g.scatter || []).forEach(([jM, lM, w]) => ((w ? won : lost).push({ x: jM, y: lM })));
+  pts.forEach(([jM, lM, w]) => ((w ? won : lost).push({ x: jM, y: lM * yMul })));
   const ctx = document.getElementById("sr-scatter").getContext("2d");
   if (SR.chart) SR.chart.destroy();
   SR.chart = new Chart(ctx, {
@@ -121,12 +130,12 @@ function renderScatter() {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { labels: { color: C.text } },
-        tooltip: { callbacks: { label: (i) => `$${i.parsed.x}M jackpot · ~${i.parsed.y}M tickets` } },
+        tooltip: { callbacks: { label: (i) => `$${i.parsed.x}M jackpot · ${tip(i.parsed.y)}` } },
       },
       scales: {
         x: { title: { display: true, text: "Advertised jackpot ($M)", color: C.dim },
           ticks: { color: C.dim }, grid: { color: C.border } },
-        y: { title: { display: true, text: "Estimated tickets in play (millions)", color: C.dim },
+        y: { title: { display: true, text: yLabel, color: C.dim },
           ticks: { color: C.dim }, grid: { color: C.border }, beginAtZero: true },
       },
     },
