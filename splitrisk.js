@@ -116,6 +116,14 @@ function renderScatter() {
 
   const won = [], lost = [];
   pts.forEach(([jM, lM, w]) => ((w ? won : lost).push({ x: jM, y: lM * yMul })));
+
+  // Median trend line from the jackpot bands — traces typical turnout by jackpot size.
+  const maxX = pts.reduce((m, p) => Math.max(m, p[0]), 0);
+  const trend = (g.bands || []).filter((b) => b.n > 0).map((b) => {
+    const hi = b.hi_m >= 999999 ? Math.max(b.lo_m, maxX) : b.hi_m;
+    return { x: (b.lo_m + hi) / 2, y: (b.median_lines / 1e6) * yMul };
+  }).sort((a, b) => a.x - b.x);
+
   const ctx = document.getElementById("sr-scatter").getContext("2d");
   if (SR.chart) SR.chart.destroy();
   SR.chart = new Chart(ctx, {
@@ -124,13 +132,17 @@ function renderScatter() {
       datasets: [
         { label: "Rolled over", data: lost, backgroundColor: C.accent2 + "99", pointRadius: 3, pointHoverRadius: 5 },
         { label: "Jackpot won", data: won, backgroundColor: C.accent, pointRadius: 4, pointHoverRadius: 6 },
+        { type: "line", label: "Typical (median)", data: trend, borderColor: C.text, borderDash: [6, 4],
+          borderWidth: 2, pointRadius: 0, pointHoverRadius: 0, fill: false, tension: 0.2, order: 0 },
       ],
     },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { labels: { color: C.text } },
-        tooltip: { callbacks: { label: (i) => `$${i.parsed.x}M jackpot · ${tip(i.parsed.y)}` } },
+        tooltip: { callbacks: { label: (i) => (i.dataset.type === "line"
+          ? `Typical for this range: ${tip(i.parsed.y)}`
+          : `$${i.parsed.x}M jackpot · ${tip(i.parsed.y)}`) } },
       },
       scales: {
         x: { title: { display: true, text: "Advertised jackpot ($M)", color: C.dim },
@@ -140,6 +152,14 @@ function renderScatter() {
       },
     },
   });
+
+  const note = document.getElementById("sr-scatter-note");
+  if (note) {
+    note.innerHTML = `The dashed line traces the typical (median) tickets in play for each jackpot range. ` +
+      `Each draw's estimate is precise to about &plusmn;${g.typical_se_pct}% (from the law of large numbers on ` +
+      `tens of thousands of prize winners), so the spread of dots is <strong>real draw-to-draw variation</strong> ` +
+      `in how many people play — not measurement error.`;
+  }
 }
 
 // ---- bands table ---------------------------------------------------------
