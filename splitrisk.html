@@ -85,8 +85,16 @@
         America <em>do</em> publish how many people won at every prize tier afterward. Those lower tiers have
         fixed, published odds — for example, matching just the Powerball pays $4 at odds of 1 in 38.3. So if a
         draw produced about 200,000 of those winners, roughly 200,000 &times; 38.3 &approx; 7.7 million tickets
-        were in play. We compute that estimate from several stable tiers and take the median, which keeps the
-        figure steady even when any single tier is noisy.</p>
+        were in play.</p>
+      <p>Rather than rely on any one tier, we combine them all in the statistically best way. Each tier's winner
+        count follows the <strong>law of large numbers</strong>, so the maximum-likelihood estimate of tickets
+        sold is simply the <strong>total number of prize winners divided by the overall odds of winning any
+        prize</strong> — which automatically weights every tier by how many winners it had, letting the big,
+        reliable tiers dominate and the rare, noisy ones barely register. For Lotto America, whose overall odds
+        of any prize are about 1 in 9.6, a draw with 37,000 winners implies roughly 37,000 &times; 9.6 &approx;
+        355,000 tickets in play. With tens of thousands of winners to lean on, that figure is typically accurate
+        to within a fraction of a percent — the relative error shrinks as one over the square root of the number
+        of winners, so more players means a <em>sharper</em> estimate, not a fuzzier one.</p>
       <p><strong>A note on Mega Millions:</strong> its ticket price rose from $2 to $5 in April 2025, which
         changed how many people play at any given jackpot. To keep the comparison fair, Mega Millions here
         covers only its current ($5) game from April 2025 onward — so its history is shorter than Powerball's,

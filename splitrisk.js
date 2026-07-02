@@ -179,6 +179,8 @@ function renderRecent() {
         <th scope="col">Someone won</th><th scope="col">Split odds</th><th scope="col">Result</th>
       </tr></thead><tbody>${rows}</tbody>
     </table></div>
-    <p class="section-note sr-muted">Estimated tickets are derived from each draw's reported lower-tier winner
-      counts. "Split odds" is the modeled chance the jackpot would have been shared if won.</p>`;
+    <p class="section-note sr-muted">Estimated tickets = total prize winners &divide; overall win odds
+      (about 1 in ${g.overall_win_odds}), pooling every tier by its winner count. With that many winners the
+      estimate is typically accurate to about &plusmn;${g.typical_se_pct}%. "Split odds" is the modeled chance
+      the jackpot would have been shared if won.</p>`;
 }

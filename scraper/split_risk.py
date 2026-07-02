@@ -84,19 +84,29 @@ def median(vals: list[float]) -> float:
     return float(s[len(s) // 2])
 
 
-def estimate_lines(draw: dict, cfg: dict) -> tuple[float | None, bool]:
-    """Return (median tickets estimate, jackpot_won) for a draw, or (None, _)."""
-    ests = []
+MIN_WINNERS = 20  # need enough winners for the law-of-large-numbers estimate to be meaningful
+
+
+def estimate_lines(draw: dict, cfg: dict) -> tuple[float | None, bool, float | None]:
+    """Maximum-likelihood tickets-in-play from ALL non-jackpot tiers (the `odds` dict
+    excludes the jackpot). Under a Poisson model each tier's winners w_i ~ Poisson(L/O_i),
+    so the MLE pools them: L_hat = (sum of winners) / (sum of 1/O_i). This inverse-variance
+    weighting lets the high-count tiers dominate (law of large numbers) instead of the plain
+    median of per-tier estimates. Relative std. error = 1/sqrt(total winners).
+    Returns (L_hat, jackpot_won, rel_se) or (None, jwon, None)."""
+    sum_w = 0.0
     jwon = False
     for t in draw.get("prizes", []) or []:
-        m, w = t.get("match"), t.get("winners")
-        if m == cfg["jackpot_match"] and (w or 0) > 0:
+        m, w = t.get("match"), (t.get("winners") or 0)
+        if m == cfg["jackpot_match"] and w > 0:
             jwon = True
-        if m in cfg["stable"] and m in cfg["odds"] and (w or 0) > 0:
-            ests.append(float(w) * float(cfg["odds"][m]))
-    if len(ests) < 3:
-        return None, jwon
-    return median(ests), jwon
+        if m in cfg["odds"]:
+            sum_w += float(w)
+    if sum_w < MIN_WINNERS:
+        return None, jwon, None
+    L = sum_w / cfg["_pwin"]           # _pwin = sum of 1/O_i over the non-jackpot tiers
+    rel_se = 1.0 / math.sqrt(sum_w)
+    return L, jwon, rel_se
 
 
 def build_game(key: str, cfg: dict, data: dict) -> dict | None:
@@ -106,18 +116,20 @@ def build_game(key: str, cfg: dict, data: dict) -> dict | None:
         return None
     hist = load_json(hist_path)
     jodds = float(cfg["jackpot_odds"])
+    cfg["_pwin"] = sum(1.0 / float(o) for o in cfg["odds"].values())  # overall P(win a listed tier)
 
     series = []
     for d in hist.get("draws", []):
         if not d.get("total_winners"):
             continue
-        L, jwon = estimate_lines(d, cfg)
+        L, jwon, rel_se = estimate_lines(d, cfg)
         if L is None or not d.get("jackpot") or d["jackpot"] <= 0 or L <= 0:
             continue
         lam = L / jodds
         series.append({
             "date": d["date"], "jackpot": int(d["jackpot"]), "est_lines": round_lines(L),
             "p_win": round(p_win(lam), 4), "p_split": round(p_split(lam), 4), "won": int(jwon),
+            "se_pct": round(rel_se * 100, 2),
         })
     if not series:
         print(f"[split_risk] no winner-bearing draws for {key}; skipping")
@@ -157,14 +169,18 @@ def build_game(key: str, cfg: dict, data: dict) -> dict | None:
     latest = series[-1]
     scatter = [[round(r["jackpot"] / 1e6, 1), round(r["est_lines"] / 1e6, 2), r["won"]] for r in series]
     recent = list(reversed(series[-30:]))
+    typical_se = median([r["se_pct"] for r in series])  # representative per-draw precision
 
     return {
         "label": cfg["label"], "jackpot_odds": int(cfg["jackpot_odds"]), "ticket_price": cfg["ticket_price"],
+        "overall_win_odds": round(1.0 / cfg["_pwin"], 2),  # 1 in N of winning any listed tier
         "draws_analyzed": len(series),
+        "typical_se_pct": round(typical_se, 2),
         "upcoming": upcoming,
         "latest_actual": {
             "date": latest["date"], "jackpot": latest["jackpot"], "est_lines": latest["est_lines"],
             "p_win": latest["p_win"], "p_split_if_won": latest["p_split"], "jackpot_won": bool(latest["won"]),
+            "se_pct": latest["se_pct"],
         },
         "bands": bands, "scatter": scatter, "recent": recent,
     }

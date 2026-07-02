@@ -45,26 +45,28 @@ foreach ($key in @("powerball","mega_millions","lotto_america")) {
   $hist = Get-Content "$root\history\$key.json" -Raw | ConvertFrom-Json
   $Jodds = [double]$cfg.jackpot_odds
 
+  # Overall probability of winning any listed (non-jackpot) tier — the odds dict
+  # excludes the jackpot. MLE: tickets = (sum of non-jackpot winners) / Pwin.
+  $Pwin = 0.0; foreach ($o in $cfg.odds.Values) { $Pwin += 1.0 / [double]$o }
+
   $series = New-Object System.Collections.ArrayList
   foreach ($d in $hist.draws) {
     if (-not $d.total_winners) { continue }
-    $ests = @()
+    $sumW = 0.0
     $jwon = $false
     foreach ($t in $d.prizes) {
       if ($t.match -eq $cfg.jackpot_match -and $t.winners -gt 0) { $jwon = $true }
-      if (($cfg.stable -contains $t.match) -and $cfg.odds.ContainsKey($t.match) -and $t.winners -gt 0) {
-        $ests += [double]$t.winners * [double]$cfg.odds[$t.match]
-      }
+      if ($cfg.odds.ContainsKey($t.match)) { $sumW += [double]$t.winners }
     }
-    if ($ests.Count -lt 3) { continue }
-    $s = $ests | Sort-Object
-    $L = [double]$s[[int][math]::Floor($s.Count / 2)]
+    if ($sumW -lt 20) { continue }   # law-of-large-numbers estimate needs enough winners
+    $L = $sumW / $Pwin
     if ($d.jackpot -le 0 -or $L -le 0) { continue }
+    $relSE = 1.0 / [math]::Sqrt($sumW)
     $lam = $L / $Jodds
     [void]$series.Add([pscustomobject]@{
       date = $d.date; jackpot = [long]$d.jackpot; est_lines = [long](Round-Lines $L)
       p_win = [math]::Round((Poisson-Win $lam), 4); p_split = [math]::Round((Poisson-Split $lam), 4)
-      won = [int]$jwon
+      won = [int]$jwon; se_pct = [math]::Round($relSE * 100, 2)
     })
   }
   $series = $series | Sort-Object date
@@ -105,14 +107,20 @@ foreach ($key in @("powerball","mega_millions","lotto_america")) {
   }
   # recent draws (newest first) for the table
   $recent = $series | Select-Object -Last 30 | Sort-Object date -Descending
+  # representative per-draw precision (median relative standard error)
+  $sePcts = @($series.se_pct | Sort-Object)
+  $typicalSE = if ($sePcts.Count) { $sePcts[[int][math]::Floor($sePcts.Count / 2)] } else { $null }
 
   $out.games[$key] = [ordered]@{
     label = $cfg.label; jackpot_odds = [long]$cfg.jackpot_odds; ticket_price = $cfg.ticket_price
+    overall_win_odds = [math]::Round(1.0 / $Pwin, 2)
     draws_analyzed = @($series).Count
+    typical_se_pct = $typicalSE
     upcoming = $upcoming
     latest_actual = [ordered]@{
       date = $latest.date; jackpot = $latest.jackpot; est_lines = $latest.est_lines
       p_win = $latest.p_win; p_split_if_won = $latest.p_split; jackpot_won = [bool]$latest.won
+      se_pct = $latest.se_pct
     }
     bands = $bands
     scatter = @($scatter)
