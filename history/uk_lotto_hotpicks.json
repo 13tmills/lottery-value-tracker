@@ -3,7 +3,7 @@
   "source": "lottery.co.uk",
   "currency": "GBP",
   "earliest_available": "2015-10-10",
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-07-02",
   "complete": true,
   "draws": [
     {
@@ -12313,6 +12313,17 @@
         43,
         54,
         56
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "numbers": [
+        13,
+        33,
+        35,
+        40,
+        43,
+        54
       ]
     }
   ]

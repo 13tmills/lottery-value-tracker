@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-01",
+  "generated": "2026-07-02",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 148,
@@ -51,7 +51,7 @@
     "tx_twostep": 8,
     "wa_hit5": 419,
     "wa_lotto": 88,
-    "wi_badger5": 864,
+    "wi_badger5": 865,
     "wi_megabucks": 65,
     "wy_cowboydraw": 26
   }

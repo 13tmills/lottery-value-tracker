@@ -2,12 +2,12 @@
   "game": "nm_roadrunner",
   "source": "lotterycorner.com",
   "earliest_available": "2009-01-01",
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-07-02",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-06-30",
-    "jackpot": 62000,
-    "cash": 62000
+    "date": "2026-07-01",
+    "jackpot": 67000,
+    "cash": 67000
   },
   "draws": [
     {
@@ -68835,6 +68835,18 @@
       ],
       "jackpot": 62000,
       "cash": 62000
+    },
+    {
+      "date": "2026-07-01",
+      "numbers": [
+        6,
+        14,
+        16,
+        22,
+        23
+      ],
+      "jackpot": 67000,
+      "cash": 67000
     }
   ]
 }

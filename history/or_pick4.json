@@ -2,7 +2,7 @@
   "game": "or_pick4",
   "source": "lotterycorner.com",
   "earliest_available": "2000-04-24",
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-07-02",
   "complete": true,
   "draws": [
     {
@@ -86079,6 +86079,15 @@
         6,
         5,
         6
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "numbers": [
+        3,
+        5,
+        5,
+        3
       ]
     }
   ]

@@ -2,12 +2,12 @@
   "game": "mo_showmecash",
   "source": "molottery.com",
   "earliest_available": "2008-09-08",
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-07-02",
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 99000,
-    "cash": 99000
+    "jackpot": 116000,
+    "cash": 116000
   },
   "draws": [
     {
@@ -73683,6 +73683,18 @@
       ],
       "jackpot": 73000,
       "cash": 73000
+    },
+    {
+      "date": "2026-07-01",
+      "numbers": [
+        5,
+        7,
+        18,
+        25,
+        33
+      ],
+      "jackpot": 99000,
+      "cash": 99000
     }
   ]
 }

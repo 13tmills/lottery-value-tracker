@@ -2,7 +2,7 @@
   "game": "wa_lotto",
   "source": "walottery.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-07-02",
   "complete": true,
   "draws": [
     {
@@ -100702,6 +100702,45 @@
       ],
       "total_winners": 8711,
       "jackpot": 3400000
+    },
+    {
+      "date": "2026-07-01",
+      "numbers": [
+        16,
+        23,
+        33,
+        34,
+        40,
+        45
+      ],
+      "prizes": [
+        {
+          "level": "6 of 6",
+          "label": "6 of 6",
+          "amount": 3500000,
+          "winners": 0
+        },
+        {
+          "level": "5 of 6",
+          "label": "5 of 6",
+          "amount": 1000,
+          "winners": 9
+        },
+        {
+          "level": "4 of 6",
+          "label": "4 of 6",
+          "amount": 30,
+          "winners": 484
+        },
+        {
+          "level": "3 of 6",
+          "label": "3 of 6",
+          "amount": 3,
+          "winners": 8772
+        }
+      ],
+      "total_winners": 9265,
+      "jackpot": 3500000
     }
   ]
 }

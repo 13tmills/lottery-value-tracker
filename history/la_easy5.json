@@ -2,7 +2,7 @@
   "game": "la_easy5",
   "source": "louisianalottery.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-07-02",
   "complete": true,
   "current_jackpot": {
     "date": null,
@@ -20592,6 +20592,16 @@
         21,
         29,
         31
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "numbers": [
+        6,
+        7,
+        12,
+        17,
+        23
       ]
     }
   ]
