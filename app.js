@@ -125,7 +125,8 @@ function renderCards(entries) {
         ${balls}${specialBall}
       </div>
 
-      <a class="card__link" href="game.html?game=${key}&back=national">More details &rarr;</a>
+      <a class="card__link" href="${["powerball", "mega_millions", "lotto_america"].includes(key)
+        ? `game/${key}.html` : `game.html?game=${key}&back=national`}">More details &rarr;</a>
     `;
     cards.appendChild(card);
   });
