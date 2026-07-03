@@ -37,132 +37,132 @@
   <url><loc>https://numbersintel.com/state.html?state=NY</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=TX</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=CA</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ca_superlotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ca_superlotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ca_superlotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ca_superlotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/visualizer.html?game=ca_superlotto</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ca_fantasy5</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/ca_fantasy5.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ca_fantasy5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ca_fantasy5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ca_daily4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ca_daily3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ca_derby</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ca_daily4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ca_daily3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ca_derby.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=ID</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=id_cash</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/id_cash.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=id_cash</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=id_cash</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/visualizer.html?game=id_cash</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=id_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=id_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/id_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/id_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=PA</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=pa_pick3</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=pa_pick4</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=pa_pick5</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/pa_pick3.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/pa_pick4.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/pa_pick5.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=pa_pick3</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=pa_pick4</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=pa_pick5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=FL</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=fl_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=fl_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/visualizer.html?game=fl_lotto</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_triple</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_fantasy5</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_pick2</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_pick5</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_triple.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_fantasy5.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_pick2.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_pick5.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=fl_fantasy5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=fl_pick3</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_cashpop</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=fl_cash4life</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_cashpop.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/fl_cash4life.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=WA</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wa_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/wa_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=wa_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=wa_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/visualizer.html?game=wa_lotto</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wa_hit5</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/wa_hit5.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=wa_hit5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=wa_hit5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wa_match4</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/wa_match4.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=wa_match4</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wa_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wa_cashpop</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wa_keno</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/wa_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/wa_cashpop.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/wa_keno.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=OH</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=oh_classic</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/oh_classic.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=oh_classic</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=oh_classic</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/visualizer.html?game=oh_classic</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=oh_cash5</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/oh_cash5.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=oh_cash5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=oh_cash5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=oh_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=oh_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=oh_pick5</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=oh_m4l</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/oh_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/oh_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/oh_pick5.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/oh_m4l.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=oh_m4l</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=oh_luckylife</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=oh_kicker</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/oh_luckylife.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://numbersintel.com/game/oh_kicker.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=oh_kicker</loc><changefreq>weekly</changefreq><priority>0.4</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=MI</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mi_lotto47</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/mi_lotto47.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=mi_lotto47</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=mi_lotto47</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/visualizer.html?game=mi_lotto47</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mi_fantasy5</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/mi_fantasy5.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=mi_fantasy5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mi_daily3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mi_daily4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mi_m4l</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mi_lucky</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mi_keno</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/mi_daily3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/mi_daily4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/mi_m4l.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/mi_lucky.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://numbersintel.com/game/mi_keno.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=mi_keno</loc><changefreq>weekly</changefreq><priority>0.4</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=NH</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nh_megabucks</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/nh_megabucks.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=nh_megabucks</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=nh_megabucks</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/visualizer.html?game=nh_megabucks</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nh_gimme5</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/nh_gimme5.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=nh_gimme5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nh_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nh_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nh_m4l</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nh_lucky</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://numbersintel.com/game/nh_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/nh_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/nh_m4l.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/nh_lucky.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=NC</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nc_cash5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/nc_cash5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=nc_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nc_pick3</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/nc_pick3.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=nc_pick3</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nc_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/nc_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=VA</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=va_bank</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/va_bank.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=va_bank</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=va_bank</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=va_cash5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/va_cash5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=va_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=va_pick3</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/va_pick3.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=va_pick3</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=va_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=va_cashpop</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/va_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/va_cashpop.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=MA</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ma_megabucks</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ma_megabucks.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ma_megabucks</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ma_megabucks</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ma_masscash</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ma_masscash.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ma_masscash</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ma_masscash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ma_numbers</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/ma_numbers.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ma_numbers</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=MD</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=md_multimatch</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/md_multimatch.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=md_multimatch</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=md_multimatch</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=md_bonus5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/md_bonus5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=md_bonus5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=md_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=md_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=md_pick5</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/md_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/md_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/md_pick5.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=CO</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=TN</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=AZ</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -180,227 +180,227 @@
   <url><loc>https://numbersintel.com/state.html?state=VT</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=ND</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=PR</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=co_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/co_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=co_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=co_lotto</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=co_cash5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/co_cash5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=co_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=co_cash5</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=co_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/co_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=GA</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ga_fantasy5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ga_fantasy5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ga_fantasy5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ga_fantasy5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ga_cash3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ga_cash4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ga_five</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ga_cashpop</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ga_cash3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ga_cash4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ga_five.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ga_cashpop.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=LA</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=la_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/la_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=la_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=la_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=la_easy5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/la_easy5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=la_easy5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=la_easy5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=la_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=la_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=la_pick5</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/la_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/la_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/la_pick5.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=MO</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mo_showmecash</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/mo_showmecash.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=mo_showmecash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=mo_showmecash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mo_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mo_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mo_lotto</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/mo_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/mo_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/mo_lotto.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=WI</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wi_megabucks</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/wi_megabucks.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=wi_megabucks</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=wi_megabucks</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wi_supercash</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wi_badger5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/wi_supercash.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/wi_badger5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=wi_badger5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wi_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wi_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/wi_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/wi_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=MN</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mn_gopher5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/mn_gopher5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=mn_gopher5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mn_north5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/mn_north5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=mn_north5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mn_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/mn_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=AR</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ar_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ar_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ar_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ar_nsj</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ar_nsj.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ar_nsj</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ar_nsj</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ar_cash3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ar_cash4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ar_cash3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ar_cash4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=NE</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ne_pick5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ne_pick5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ne_pick5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ne_pick5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ne_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ne_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ne_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ne_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=SC</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=sc_palmetto5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/sc_palmetto5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=sc_palmetto5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=sc_palmetto5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=sc_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=sc_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/sc_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/sc_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=CT</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ct_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ct_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ct_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ct_cash5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ct_cash5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ct_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ct_play3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ct_play4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ct_play3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ct_play4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=NM</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nm_roadrunner</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/nm_roadrunner.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=nm_roadrunner</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=nm_roadrunner</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nm_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nm_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/nm_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/nm_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=OR</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=or_megabucks</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/or_megabucks.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=or_megabucks</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=or_megabucks</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=or_winforlife</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=or_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/or_winforlife.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/or_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=IN</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=in_hoosier</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/in_hoosier.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=in_hoosier</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=in_cash5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/in_cash5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=in_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=in_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=in_daily3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=in_daily4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/in_daily3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/in_daily4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=DE</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=de_multiwin</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/de_multiwin.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=de_multiwin</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=de_multiwin</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=de_play3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=de_play4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=de_play5</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/de_play3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/de_play4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/de_play5.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=WV</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wv_cash25</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/wv_cash25.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=wv_cash25</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=wv_cash25</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wv_daily3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wv_daily4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/wv_daily3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/wv_daily4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=IL</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=il_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/il_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=il_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=il_luckyday</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/il_luckyday.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=il_luckyday</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=il_luckyday</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=il_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=il_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/il_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/il_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/state.html?state=NJ</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nj_pick6</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/nj_pick6.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=nj_pick6</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nj_cash5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/nj_cash5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=nj_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=nj_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nj_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=nj_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tn_cash</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/nj_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/nj_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/tn_cash.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tn_cash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tn_cash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tn_dailyjp</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/tn_dailyjp.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tn_dailyjp</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tn_dailyjp</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tn_cash3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tn_cash4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=az_thepick</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/tn_cash3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/tn_cash4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/az_thepick.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=az_thepick</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=az_thepick</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=az_fantasy5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/az_fantasy5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=az_fantasy5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=az_fantasy5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=az_tripletwist</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/az_tripletwist.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=az_tripletwist</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=az_tripletwist</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=az_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ks_superkscash</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/az_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ks_superkscash.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ks_superkscash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ks_superkscash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ks_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ok_cash5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ks_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ok_cash5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ok_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ok_cash5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ok_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ri_wildmoney</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ok_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ri_wildmoney.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ri_wildmoney</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ri_wildmoney</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mt_montanacash</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/mt_montanacash.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=mt_montanacash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=mt_montanacash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=mt_bigsky</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/mt_bigsky.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=mt_bigsky</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=sd_dakotacash</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/sd_dakotacash.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=sd_dakotacash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=sd_dakotacash</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ms_match5</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ms_match5.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ms_match5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ms_match5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=wy_cowboydraw</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/wy_cowboydraw.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=wy_cowboydraw</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=wy_cowboydraw</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ia_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ia_pick4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ky_cashball</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ia_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ia_pick4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ky_cashball.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ky_cashball</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ky_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=dc_dc3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=dc_dc4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=dc_dc5</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=pr_loto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/ky_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/dc_dc3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/dc_dc4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/dc_dc5.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/pr_loto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=pr_loto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=pr_loto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/uk.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=uk_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/uk_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=uk_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=uk_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=uk_euromillions</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/uk_euromillions.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=uk_euromillions</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=uk_euromillions</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=uk_thunderball</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/uk_thunderball.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=uk_thunderball</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=uk_thunderball</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=uk_setforlife</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/uk_setforlife.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=uk_setforlife</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=uk_setforlife</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=uk_lotto_hotpicks</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/uk_lotto_hotpicks.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=uk_lotto_hotpicks</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=uk_lotto_hotpicks</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=uk_em_hotpicks</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/uk_em_hotpicks.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=uk_em_hotpicks</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=uk_em_hotpicks</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tx_lotto</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://numbersintel.com/game/tx_lotto.html</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tx_twostep</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tx_cashfive</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/tx_twostep.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/tx_cashfive.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_twostep</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_twostep</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=tx_cashfive</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=tx_cashfive</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tx_pick3</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tx_daily4</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=tx_allornothing</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ny_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ny_take5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ny_pick10</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/tx_pick3.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/tx_daily4.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/tx_allornothing.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ny_lotto.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/ny_take5.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/ny_pick10.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ny_lotto</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ny_lotto</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ny_take5</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ny_pick10</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
 
-  <url><loc>https://numbersintel.com/game.html?game=ny_m4l</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ny_win4</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ny_numbers</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ny_quickdraw</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
-  <url><loc>https://numbersintel.com/game.html?game=ny_cash4life</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://numbersintel.com/game/ny_m4l.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/ny_win4.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/ny_numbers.html</loc><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://numbersintel.com/game/ny_quickdraw.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>
+  <url><loc>https://numbersintel.com/game/ny_cash4life.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ny_m4l</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/history.html?game=ny_win4</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://numbersintel.com/numbers.html?game=ny_win4</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>

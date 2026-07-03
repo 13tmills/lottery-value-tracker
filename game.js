@@ -80,8 +80,7 @@ function render(key, g, data) {
   setMeta({
     title: `Is ${meta.label} Worth Playing? EV & Odds | NumbersIntel`,
     description: `${meta.label}: live jackpot, cash value, and the real expected value per $1 across every prize tier — plus odds and the latest winning numbers.`,
-    url: ["powerball", "mega_millions", "lotto_america"].includes(key)
-      ? `${SITE}/game/${key}.html` : `${SITE}/game.html?game=${key}`,
+    url: `${SITE}/game/${key}.html`,  // every game now has a pre-rendered static page; canonical there
   });
   document.getElementById("game-title").textContent = meta.label;
   document.getElementById("game-sub").textContent =
@@ -536,8 +535,7 @@ function renderStateGame(key, meta, data) {
       : hasJackpotStat
       ? `${meta.label} (${sn}): the estimated jackpot, latest winning numbers, jackpot odds, and number frequency across ${total.toLocaleString()} past draws since ${sinceYear}.`
       : `${meta.label} (${sn}): latest winning numbers, the most and least drawn numbers, and ${total.toLocaleString()} past draws since ${sinceYear}.`,
-    url: ["powerball", "mega_millions", "lotto_america"].includes(key)
-      ? `${SITE}/game/${key}.html` : `${SITE}/game.html?game=${key}`,
+    url: `${SITE}/game/${key}.html`,  // every game now has a pre-rendered static page; canonical there
   });
   titleEl.textContent = meta.label;
   document.getElementById("game-sub").textContent = (hasJackpot
