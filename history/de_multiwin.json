@@ -2,12 +2,12 @@
   "game": "de_multiwin",
   "source": "lotterycorner.com",
   "earliest_available": "2005-01-28",
-  "last_updated": "2026-07-02",
+  "last_updated": "2026-07-04",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-01",
-    "jackpot": 96000,
-    "cash": 96000
+    "date": "2026-07-03",
+    "jackpot": 97000,
+    "cash": 97000
   },
   "draws": [
     {
@@ -46905,6 +46905,32 @@
       ],
       "jackpot": 96000,
       "cash": 96000
+    },
+    {
+      "date": "2026-07-02",
+      "numbers": [
+        5,
+        11,
+        14,
+        21,
+        27,
+        31
+      ],
+      "jackpot": 96500,
+      "cash": 96500
+    },
+    {
+      "date": "2026-07-03",
+      "numbers": [
+        3,
+        7,
+        20,
+        22,
+        23,
+        25
+      ],
+      "jackpot": 97000,
+      "cash": 97000
     }
   ]
 }

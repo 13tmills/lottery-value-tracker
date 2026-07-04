@@ -2,7 +2,7 @@
   "game": "mn_pick3",
   "source": "mnlottery.com",
   "earliest_available": "1995-01-01",
-  "last_updated": "2026-07-02",
+  "last_updated": "2026-07-04",
   "complete": true,
   "draws": [
     {
@@ -80355,6 +80355,22 @@
         8,
         6,
         1
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "numbers": [
+        6,
+        9,
+        1
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "numbers": [
+        0,
+        2,
+        5
       ]
     }
   ]

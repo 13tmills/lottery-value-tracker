@@ -2,11 +2,11 @@
   "game": "ca_fantasy5",
   "source": "calottery.com",
   "earliest_available": "2020-07-20",
-  "last_updated": "2026-07-02",
+  "last_updated": "2026-07-04",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-02",
-    "jackpot": 68000,
+    "date": "2026-07-04",
+    "jackpot": 185000,
     "cash": 0
   },
   "draws": [
@@ -26395,6 +26395,74 @@
       ],
       "total_winners": 42350,
       "jackpot": 71040
+    },
+    {
+      "date": "2026-07-02",
+      "numbers": [
+        4,
+        9,
+        28,
+        35,
+        36
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 69293,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 409,
+          "winners": 103
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 3402
+        },
+        {
+          "level": "Match 2",
+          "amount": 0,
+          "winners": 37018
+        }
+      ],
+      "total_winners": 40524,
+      "jackpot": 69293
+    },
+    {
+      "date": "2026-07-03",
+      "numbers": [
+        4,
+        6,
+        15,
+        26,
+        29
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 78000,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 394,
+          "winners": 117
+        },
+        {
+          "level": "Match 3",
+          "amount": 13,
+          "winners": 4177
+        },
+        {
+          "level": "Match 2",
+          "amount": 0,
+          "winners": 43466
+        }
+      ],
+      "total_winners": 47760,
+      "jackpot": 78000
     }
   ]
 }

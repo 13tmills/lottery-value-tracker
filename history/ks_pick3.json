@@ -2,7 +2,7 @@
   "game": "ks_pick3",
   "source": "lotterycorner.com",
   "earliest_available": "2001-01-01",
-  "last_updated": "2026-07-02",
+  "last_updated": "2026-07-04",
   "complete": true,
   "draws": [
     {
@@ -74507,6 +74507,22 @@
         3,
         5,
         2
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "numbers": [
+        8,
+        3,
+        6
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "numbers": [
+        8,
+        9,
+        1
       ]
     }
   ]

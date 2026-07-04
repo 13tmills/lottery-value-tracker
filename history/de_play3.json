@@ -2,7 +2,7 @@
   "game": "de_play3",
   "source": "lotterycorner.com",
   "earliest_available": "1995-01-01",
-  "last_updated": "2026-07-02",
+  "last_updated": "2026-07-04",
   "complete": true,
   "draws": [
     {
@@ -91731,6 +91731,22 @@
         8,
         6,
         6
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "numbers": [
+        5,
+        4,
+        4
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "numbers": [
+        5,
+        0,
+        3
       ]
     }
   ]
