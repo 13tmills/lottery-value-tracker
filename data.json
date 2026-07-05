@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-04T11:57:22",
+  "last_updated": "2026-07-05T11:17:18",
   "assumptions": {
     "tax_factor": 0.63
   },
@@ -8,19 +8,19 @@
       "ticket_price": 2,
       "odds_jackpot": 292201338,
       "next_draw": "2026-07-06",
-      "jackpot": 396000000,
-      "cash_value": 180200000,
+      "jackpot": 416000000,
+      "cash_value": 186600000,
       "winning_numbers": [
-        2,
-        6,
-        26,
-        39,
-        68
+        17,
+        38,
+        46,
+        50,
+        69
       ],
-      "powerball": 6,
-      "expected_value": 0.2951,
+      "powerball": 20,
+      "expected_value": 0.302,
       "ev_breakdown": {
-        "jackpot": 0.1943,
+        "jackpot": 0.2012,
         "secondary": 0.1008
       },
       "prize_multiplier": 1.0,
@@ -84,19 +84,19 @@
       "ticket_price": 1,
       "odds_jackpot": 25989600,
       "next_draw": "2026-07-06",
-      "jackpot": 31490000,
-      "cash_value": 14320000,
+      "jackpot": 32210000,
+      "cash_value": 14450000,
       "winning_numbers": [
-        10,
-        20,
+        9,
+        17,
+        22,
         35,
-        38,
-        46
+        37
       ],
-      "star_ball": 8,
-      "expected_value": 0.5166,
+      "star_ball": 5,
+      "expected_value": 0.5198,
       "ev_breakdown": {
-        "jackpot": 0.3471,
+        "jackpot": 0.3503,
         "secondary": 0.1695
       },
       "prize_multiplier": 1.0,

@@ -2,12 +2,12 @@
   "game": "ar_nsj",
   "source": "myarkansaslottery.com",
   "earliest_available": "2013-01-01",
-  "last_updated": "2026-07-04",
+  "last_updated": "2026-07-05",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-03",
-    "jackpot": 160000,
-    "cash": 160000
+    "date": "2026-07-04",
+    "jackpot": 170000,
+    "cash": 170000
   },
   "draws": [
     {
@@ -50709,6 +50709,18 @@
       ],
       "jackpot": 160000,
       "cash": 160000
+    },
+    {
+      "date": "2026-07-04",
+      "numbers": [
+        2,
+        11,
+        17,
+        27,
+        39
+      ],
+      "jackpot": 170000,
+      "cash": 170000
     }
   ]
 }
