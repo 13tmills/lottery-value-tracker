@@ -2,7 +2,7 @@
   "game": "nc_cash5",
   "source": "nclottery.com",
   "earliest_available": "2006-10-27",
-  "last_updated": "2026-07-05",
+  "last_updated": "2026-07-07",
   "complete": true,
   "draws": [
     {
@@ -71913,6 +71913,26 @@
         28,
         32,
         43
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "numbers": [
+        5,
+        7,
+        31,
+        36,
+        38
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "numbers": [
+        10,
+        12,
+        24,
+        38,
+        39
       ]
     }
   ]

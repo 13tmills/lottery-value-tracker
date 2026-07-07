@@ -2,7 +2,7 @@
   "game": "ia_pick3",
   "source": "lotterycorner.com",
   "earliest_available": "1998-07-13",
-  "last_updated": "2026-07-05",
+  "last_updated": "2026-07-07",
   "complete": true,
   "draws": [
     {
@@ -81443,6 +81443,22 @@
         0,
         2,
         5
+      ]
+    },
+    {
+      "date": "2026-07-05",
+      "numbers": [
+        4,
+        6,
+        2
+      ]
+    },
+    {
+      "date": "2026-07-06",
+      "numbers": [
+        1,
+        1,
+        3
       ]
     }
   ]
