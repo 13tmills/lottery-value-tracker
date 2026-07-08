@@ -2,7 +2,7 @@
   "game": "ar_cash3",
   "source": "myarkansaslottery.com",
   "earliest_available": "2009-12-14",
-  "last_updated": "2026-07-07",
+  "last_updated": "2026-07-08",
   "complete": true,
   "draws": [
     {
@@ -39587,6 +39587,14 @@
         6,
         5,
         7
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "numbers": [
+        0,
+        0,
+        8
       ]
     }
   ]

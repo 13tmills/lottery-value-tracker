@@ -190,9 +190,18 @@
         2,
         8
       ]
+    },
+    {
+      "date": "2026-07-07",
+      "numbers": [
+        4,
+        9,
+        4,
+        3
+      ]
     }
   ],
   "source": "nelottery.com",
-  "last_updated": "2026-07-07",
+  "last_updated": "2026-07-08",
   "complete": true
 }
