@@ -2,7 +2,7 @@
   "game": "ny_m4l",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "2026-02-22",
-  "last_updated": "2026-07-08",
+  "last_updated": "2026-07-09",
   "complete": true,
   "draws": [
     {
@@ -9252,6 +9252,17 @@
         }
       ],
       "total_winners": 6510
+    },
+    {
+      "date": "2026-07-08",
+      "numbers": [
+        16,
+        18,
+        43,
+        48,
+        50
+      ],
+      "mill_ball": 1
     }
   ]
 }

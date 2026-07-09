@@ -2,7 +2,7 @@
   "game": "ny_lotto",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "2001-09-12",
-  "last_updated": "2026-07-08",
+  "last_updated": "2026-07-09",
   "complete": true,
   "draws": [
     {
@@ -34947,11 +34947,24 @@
       "total_winners": 8458,
       "jackpot": 2500000,
       "cash": 1298984
+    },
+    {
+      "date": "2026-07-08",
+      "numbers": [
+        12,
+        15,
+        26,
+        27,
+        34,
+        43
+      ],
+      "bonus": 54,
+      "jackpot": 2600000
     }
   ],
   "current_jackpot": {
-    "date": "2026-07-08",
-    "jackpot": 2600000,
-    "cash": 1339068
+    "date": "2026-07-11",
+    "jackpot": 2700000,
+    "cash": 1388753
   }
 }

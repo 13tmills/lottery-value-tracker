@@ -1981,9 +1981,19 @@
         6,
         7
       ]
+    },
+    {
+      "date": "2026-07-08",
+      "numbers": [
+        0,
+        0,
+        6,
+        4,
+        3
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-07-08",
+  "last_updated": "2026-07-09",
   "complete": true
 }

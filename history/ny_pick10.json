@@ -2,7 +2,7 @@
   "game": "ny_pick10",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1987-01-12",
-  "last_updated": "2026-07-08",
+  "last_updated": "2026-07-09",
   "complete": true,
   "draws": [
     {
@@ -374341,6 +374341,31 @@
         }
       ],
       "total_winners": 5542
+    },
+    {
+      "date": "2026-07-08",
+      "numbers": [
+        1,
+        10,
+        11,
+        17,
+        21,
+        27,
+        33,
+        34,
+        38,
+        42,
+        44,
+        46,
+        47,
+        48,
+        50,
+        52,
+        57,
+        61,
+        63,
+        78
+      ]
     }
   ]
 }

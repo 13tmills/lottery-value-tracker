@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-07-08",
+  "last_updated": "2026-07-09",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-08",
-    "jackpot": 87000,
+    "date": "2026-07-09",
+    "jackpot": 92000,
     "cash": 0
   },
   "draws": [
@@ -12409,6 +12409,68 @@
       ],
       "total_winners": 2111,
       "jackpot": 86315
+    },
+    {
+      "date": "2026-07-08",
+      "numbers": [
+        11,
+        4,
+        5
+      ],
+      "horses": [
+        {
+          "num": 11,
+          "name": "Money Bags"
+        },
+        {
+          "num": 4,
+          "name": "Big Ben"
+        },
+        {
+          "num": 5,
+          "name": "California Classic"
+        }
+      ],
+      "race_time": "1:45.68",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 1835
+        },
+        {
+          "level": "Exacta",
+          "amount": 24,
+          "winners": 174
+        },
+        {
+          "level": "Trifecta",
+          "amount": 400,
+          "winners": 24
+        },
+        {
+          "level": "Race Time",
+          "amount": 60,
+          "winners": 19
+        },
+        {
+          "level": "Win / RT",
+          "amount": 63,
+          "winners": 3
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 84,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 90929,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2055,
+      "jackpot": 90929
     }
   ]
 }

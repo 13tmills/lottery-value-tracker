@@ -2,7 +2,7 @@
   "game": "ny_numbers",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1980-09-02",
-  "last_updated": "2026-07-08",
+  "last_updated": "2026-07-09",
   "complete": true,
   "draws": [
     {
@@ -148250,6 +148250,14 @@
         }
       ],
       "total_winners": 1784
+    },
+    {
+      "date": "2026-07-08",
+      "numbers": [
+        6,
+        8,
+        6
+      ]
     }
   ]
 }

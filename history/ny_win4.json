@@ -2,7 +2,7 @@
   "game": "ny_win4",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1981-07-21",
-  "last_updated": "2026-07-08",
+  "last_updated": "2026-07-09",
   "complete": true,
   "draws": [
     {
@@ -155157,6 +155157,15 @@
         }
       ],
       "total_winners": 702
+    },
+    {
+      "date": "2026-07-08",
+      "numbers": [
+        4,
+        7,
+        9,
+        5
+      ]
     }
   ]
 }
