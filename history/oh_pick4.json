@@ -52091,17 +52091,17 @@
     {
       "date": "2026-07-08",
       "numbers": [
-        5,
-        5,
-        1,
-        7
+        2,
+        4,
+        7,
+        3
       ],
       "prizes": [
         {
           "level": "Straight Bet",
           "label": "Straight Bet",
           "amount": 2500,
-          "winners": 4
+          "winners": 7
         },
         {
           "level": "4 Way - Box",
@@ -52119,13 +52119,13 @@
           "level": "12 Way - Box",
           "label": "12 Way - Box",
           "amount": 200,
-          "winners": 222
+          "winners": 0
         },
         {
           "level": "24 Way - Box",
           "label": "24 Way - Box",
           "amount": 100,
-          "winners": 0
+          "winners": 440
         },
         {
           "level": "4 Way - Back-up STR",
@@ -52161,22 +52161,112 @@
           "level": "12 Way - Back-up BOX",
           "label": "12 Way - Back-up BOX",
           "amount": 200,
-          "winners": 52
+          "winners": 0
         },
         {
           "level": "24 Way - Back-up STR",
           "label": "24 Way - Back-up STR",
           "amount": 2600,
-          "winners": 0
+          "winners": 11
         },
         {
           "level": "24 Way - Back-up BOX",
           "label": "24 Way - Back-up BOX",
           "amount": 100,
-          "winners": 0
+          "winners": 209
         }
       ],
-      "total_winners": 278
+      "total_winners": 667
+    },
+    {
+      "date": "2026-07-09",
+      "numbers": [
+        3,
+        7,
+        0,
+        6
+      ],
+      "prizes": [
+        {
+          "level": "Straight Bet",
+          "label": "Straight Bet",
+          "amount": 2500,
+          "winners": 8
+        },
+        {
+          "level": "4 Way - Box",
+          "label": "4 Way - Box",
+          "amount": 599,
+          "winners": 0
+        },
+        {
+          "level": "6 Way - Box",
+          "label": "6 Way - Box",
+          "amount": 400,
+          "winners": 0
+        },
+        {
+          "level": "12 Way - Box",
+          "label": "12 Way - Box",
+          "amount": 200,
+          "winners": 0
+        },
+        {
+          "level": "24 Way - Box",
+          "label": "24 Way - Box",
+          "amount": 100,
+          "winners": 100
+        },
+        {
+          "level": "4 Way - Back-up STR",
+          "label": "4 Way - Back-up STR",
+          "amount": 3099,
+          "winners": 0
+        },
+        {
+          "level": "4 Way - Back-up BOX",
+          "label": "4 Way - Back-up BOX",
+          "amount": 599,
+          "winners": 0
+        },
+        {
+          "level": "6 Way - Back-up STR",
+          "label": "6 Way - Back-up STR",
+          "amount": 2900,
+          "winners": 0
+        },
+        {
+          "level": "6 Way - Back-up BOX",
+          "label": "6 Way - Back-up BOX",
+          "amount": 400,
+          "winners": 0
+        },
+        {
+          "level": "12 Way - Back-up STR",
+          "label": "12 Way - Back-up STR",
+          "amount": 2700,
+          "winners": 0
+        },
+        {
+          "level": "12 Way - Back-up BOX",
+          "label": "12 Way - Back-up BOX",
+          "amount": 200,
+          "winners": 0
+        },
+        {
+          "level": "24 Way - Back-up STR",
+          "label": "24 Way - Back-up STR",
+          "amount": 2600,
+          "winners": 2
+        },
+        {
+          "level": "24 Way - Back-up BOX",
+          "label": "24 Way - Back-up BOX",
+          "amount": 100,
+          "winners": 64
+        }
+      ],
+      "total_winners": 174
     }
   ]
 }

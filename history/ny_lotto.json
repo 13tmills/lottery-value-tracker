@@ -34959,7 +34959,41 @@
         43
       ],
       "bonus": 54,
-      "jackpot": 2600000
+      "jackpot": 2600000,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Jackpot",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 11730,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 4449,
+          "winners": 2
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": 25,
+          "winners": 396
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": 1,
+          "winners": 9058
+        }
+      ],
+      "total_winners": 9456,
+      "cash": 1339068
     }
   ],
   "current_jackpot": {
