@@ -2,7 +2,7 @@
   "game": "mt_bigsky",
   "source": "lotterycorner.com",
   "earliest_available": "2018-01-01",
-  "last_updated": "2026-07-09",
+  "last_updated": "2026-07-11",
   "complete": true,
   "current_jackpot": {
     "date": "2026-06-22",
@@ -28008,6 +28008,24 @@
         13,
         16,
         17
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "numbers": [
+        8,
+        21,
+        24,
+        29
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "numbers": [
+        10,
+        13,
+        23,
+        30
       ]
     }
   ]

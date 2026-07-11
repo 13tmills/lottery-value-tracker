@@ -2,7 +2,7 @@
   "game": "nh_pick4",
   "source": "nhlottery.com",
   "earliest_available": "2021-01-01",
-  "last_updated": "2026-07-09",
+  "last_updated": "2026-07-11",
   "complete": true,
   "draws": [
     {
@@ -18138,6 +18138,24 @@
         2,
         0,
         9
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "numbers": [
+        2,
+        6,
+        7,
+        6
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "numbers": [
+        7,
+        4,
+        8,
+        8
       ]
     }
   ]

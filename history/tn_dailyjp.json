@@ -2,12 +2,12 @@
   "game": "tn_dailyjp",
   "source": "lotterycorner.com",
   "earliest_available": "2023-01-18",
-  "last_updated": "2026-07-09",
+  "last_updated": "2026-07-11",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-08",
-    "jackpot": 40000,
-    "cash": 40000
+    "date": "2026-07-10",
+    "jackpot": 60000,
+    "cash": 60000
   },
   "draws": [
     {
@@ -15209,6 +15209,30 @@
       ],
       "jackpot": 40000,
       "cash": 40000
+    },
+    {
+      "date": "2026-07-09",
+      "numbers": [
+        2,
+        14,
+        22,
+        25,
+        30
+      ],
+      "jackpot": 50000,
+      "cash": 50000
+    },
+    {
+      "date": "2026-07-10",
+      "numbers": [
+        1,
+        6,
+        8,
+        10,
+        22
+      ],
+      "jackpot": 60000,
+      "cash": 60000
     }
   ]
 }

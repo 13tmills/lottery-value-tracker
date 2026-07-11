@@ -2,7 +2,7 @@
   "game": "wi_pick4",
   "source": "wilottery.com",
   "earliest_available": "1997-09-15",
-  "last_updated": "2026-07-09",
+  "last_updated": "2026-07-11",
   "complete": true,
   "draws": [
     {
@@ -81390,6 +81390,24 @@
         5,
         0,
         3
+      ]
+    },
+    {
+      "date": "2026-07-09",
+      "numbers": [
+        8,
+        4,
+        2,
+        4
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "numbers": [
+        2,
+        0,
+        0,
+        2
       ]
     }
   ]
