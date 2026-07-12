@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-07-11",
+  "last_updated": "2026-07-12",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-11",
-    "jackpot": 50000,
+    "date": "2026-07-12",
+    "jackpot": 56000,
     "cash": 0
   },
   "draws": [
@@ -12595,6 +12595,68 @@
       ],
       "total_winners": 2491,
       "jackpot": 101163
+    },
+    {
+      "date": "2026-07-11",
+      "numbers": [
+        7,
+        5,
+        1
+      ],
+      "horses": [
+        {
+          "num": 7,
+          "name": "Eureka"
+        },
+        {
+          "num": 5,
+          "name": "California Classic"
+        },
+        {
+          "num": 1,
+          "name": "Gold Rush"
+        }
+      ],
+      "race_time": "1:42.66",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 2,
+          "winners": 2079
+        },
+        {
+          "level": "Exacta",
+          "amount": 23,
+          "winners": 166
+        },
+        {
+          "level": "Trifecta",
+          "amount": 423,
+          "winners": 21
+        },
+        {
+          "level": "Race Time",
+          "amount": 45,
+          "winners": 25
+        },
+        {
+          "level": "Win / RT",
+          "amount": 47,
+          "winners": 2
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 68,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 54372,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2293,
+      "jackpot": 54372
     }
   ]
 }

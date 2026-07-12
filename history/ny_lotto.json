@@ -2,7 +2,7 @@
   "game": "ny_lotto",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "2001-09-12",
-  "last_updated": "2026-07-11",
+  "last_updated": "2026-07-12",
   "complete": true,
   "draws": [
     {
@@ -34994,11 +34994,58 @@
       ],
       "total_winners": 9456,
       "cash": 1339068
+    },
+    {
+      "date": "2026-07-11",
+      "numbers": [
+        15,
+        22,
+        35,
+        37,
+        51,
+        57
+      ],
+      "bonus": 36,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Jackpot",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 23937,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 9261,
+          "winners": 1
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": 30,
+          "winners": 350
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": 1,
+          "winners": 8128
+        }
+      ],
+      "total_winners": 8479,
+      "jackpot": 2700000,
+      "cash": 1388753
     }
   ],
   "current_jackpot": {
-    "date": "2026-07-11",
-    "jackpot": 2700000,
-    "cash": 1388753
+    "date": "2026-07-15",
+    "jackpot": 2800000,
+    "cash": 1437055
   }
 }

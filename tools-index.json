@@ -1,12 +1,12 @@
 {
-  "generated": "2026-07-11",
+  "generated": "2026-07-12",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 148,
     "az_fantasy5": 158,
     "az_thepick": 38,
     "az_tripletwist": 23,
-    "ca_derby": 8,
+    "ca_derby": 9,
     "ca_fantasy5": 61,
     "ca_superlotto": 4,
     "co_lotto": 1,
@@ -50,7 +50,7 @@
     "tx_lotto": 1,
     "tx_twostep": 9,
     "wa_hit5": 420,
-    "wa_lotto": 88,
+    "wa_lotto": 89,
     "wi_badger5": 867,
     "wi_megabucks": 65,
     "wy_cowboydraw": 26

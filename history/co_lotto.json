@@ -2,12 +2,12 @@
   "game": "co_lotto",
   "source": "coloradolottery.com",
   "earliest_available": "2022-01-01",
-  "last_updated": "2026-07-11",
+  "last_updated": "2026-07-12",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-08",
-    "jackpot": 6024005,
-    "cash": 3012002
+    "date": "2026-07-11",
+    "jackpot": 6225662,
+    "cash": 3112831
   },
   "draws": [
     {
@@ -6879,6 +6879,19 @@
       ],
       "jackpot": 6024005,
       "cash": 3012002
+    },
+    {
+      "date": "2026-07-11",
+      "numbers": [
+        11,
+        20,
+        29,
+        33,
+        34,
+        35
+      ],
+      "jackpot": 6225662,
+      "cash": 3112831
     }
   ]
 }

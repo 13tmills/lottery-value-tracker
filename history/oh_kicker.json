@@ -2,7 +2,7 @@
   "game": "oh_kicker",
   "source": "ohiolottery.com",
   "earliest_available": "2012-04-02",
-  "last_updated": "2026-07-11",
+  "last_updated": "2026-07-12",
   "complete": true,
   "draws": [
     {
@@ -24511,6 +24511,17 @@
         7,
         4,
         5
+      ]
+    },
+    {
+      "date": "2026-07-11",
+      "numbers": [
+        8,
+        7,
+        8,
+        6,
+        4,
+        1
       ]
     }
   ]
