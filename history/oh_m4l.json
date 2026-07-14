@@ -2,7 +2,7 @@
   "game": "oh_m4l",
   "source": "ohiolottery.com",
   "earliest_available": "2026-02-22",
-  "last_updated": "2026-07-12",
+  "last_updated": "2026-07-14",
   "complete": true,
   "draws": [
     {
@@ -2333,6 +2333,74 @@
         }
       ],
       "total_winners": 3164
+    },
+    {
+      "date": "2026-07-13",
+      "numbers": [
+        19,
+        36,
+        38,
+        43,
+        48
+      ],
+      "bonus": 3,
+      "prizes": [
+        {
+          "level": "5/5 + Bonus Ball",
+          "label": "5/5 + Bonus Ball",
+          "amount": 20000000,
+          "winners": 0
+        },
+        {
+          "level": "5/5",
+          "label": "5/5",
+          "amount": 2000000,
+          "winners": 0
+        },
+        {
+          "level": "4/5 + Bonus Ball",
+          "label": "4/5 + Bonus Ball",
+          "amount": 7500,
+          "winners": 0
+        },
+        {
+          "level": "4/5",
+          "label": "4/5",
+          "amount": 500,
+          "winners": 1
+        },
+        {
+          "level": "3/5 + Bonus Ball",
+          "label": "3/5 + Bonus Ball",
+          "amount": 250,
+          "winners": 16
+        },
+        {
+          "level": "3/5",
+          "label": "3/5",
+          "amount": 50,
+          "winners": 51
+        },
+        {
+          "level": "2/5 + Bonus Ball",
+          "label": "2/5 + Bonus Ball",
+          "amount": 25,
+          "winners": 242
+        },
+        {
+          "level": "2/5",
+          "label": "2/5",
+          "amount": 8,
+          "winners": 871
+        },
+        {
+          "level": "1/5 + Bonus Ball",
+          "label": "1/5 + Bonus Ball",
+          "amount": 8,
+          "winners": 1583
+        }
+      ],
+      "total_winners": 2764
     }
   ]
 }

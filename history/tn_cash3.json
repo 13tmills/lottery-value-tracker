@@ -2,7 +2,7 @@
   "game": "tn_cash3",
   "source": "lotterycorner.com",
   "earliest_available": "2004-03-01",
-  "last_updated": "2026-07-12",
+  "last_updated": "2026-07-14",
   "complete": true,
   "draws": [
     {
@@ -65346,6 +65346,22 @@
       "numbers": [
         2,
         5,
+        2
+      ]
+    },
+    {
+      "date": "2026-07-12",
+      "numbers": [
+        6,
+        5,
+        7
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "numbers": [
+        3,
+        0,
         2
       ]
     }

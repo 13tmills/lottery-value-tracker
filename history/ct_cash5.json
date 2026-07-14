@@ -2,10 +2,10 @@
   "game": "ct_cash5",
   "source": "lotterycorner.com",
   "earliest_available": "1999-01-28",
-  "last_updated": "2026-07-12",
+  "last_updated": "2026-07-14",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-11",
+    "date": "2026-07-13",
     "jackpot": 100000,
     "cash": 100000
   },
@@ -120270,6 +120270,30 @@
         18,
         26,
         33
+      ],
+      "jackpot": 100000,
+      "cash": 100000
+    },
+    {
+      "date": "2026-07-12",
+      "numbers": [
+        2,
+        4,
+        14,
+        23,
+        25
+      ],
+      "jackpot": 100000,
+      "cash": 100000
+    },
+    {
+      "date": "2026-07-13",
+      "numbers": [
+        2,
+        5,
+        7,
+        12,
+        25
       ],
       "jackpot": 100000,
       "cash": 100000
