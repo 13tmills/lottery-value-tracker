@@ -2,7 +2,7 @@
   "game": "il_pick3",
   "source": "lotterycorner.com",
   "earliest_available": "1995-01-01",
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-15",
   "complete": true,
   "draws": [
     {
@@ -92115,6 +92115,14 @@
         0,
         6,
         1
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "numbers": [
+        2,
+        4,
+        2
       ]
     }
   ]

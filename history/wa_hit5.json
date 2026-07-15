@@ -2,7 +2,7 @@
   "game": "wa_hit5",
   "source": "walottery.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-15",
   "complete": true,
   "draws": [
     {
@@ -147042,6 +147042,45 @@
       ],
       "total_winners": 13238,
       "jackpot": 365000
+    },
+    {
+      "date": "2026-07-14",
+      "numbers": [
+        3,
+        6,
+        10,
+        24,
+        38
+      ],
+      "prizes": [
+        {
+          "level": "5 of 5",
+          "label": "5 of 5",
+          "amount": 420000,
+          "winners": 0
+        },
+        {
+          "level": "4 of 5",
+          "label": "4 of 5",
+          "amount": 150,
+          "winners": 33
+        },
+        {
+          "level": "3 of 5",
+          "label": "3 of 5",
+          "amount": 15,
+          "winners": 1198
+        },
+        {
+          "level": "2 of 5",
+          "label": "2 of 5",
+          "amount": 0,
+          "winners": 13436,
+          "free": true
+        }
+      ],
+      "total_winners": 14667,
+      "jackpot": 420000
     }
   ]
 }
