@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-07-15",
+  "last_updated": "2026-07-16",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-15",
-    "jackpot": 67000,
+    "date": "2026-07-16",
+    "jackpot": 71000,
     "cash": 0
   },
   "draws": [
@@ -12843,6 +12843,68 @@
       ],
       "total_winners": 1902,
       "jackpot": 66733
+    },
+    {
+      "date": "2026-07-15",
+      "numbers": [
+        11,
+        4,
+        6
+      ],
+      "horses": [
+        {
+          "num": 11,
+          "name": "Money Bags"
+        },
+        {
+          "num": 4,
+          "name": "Big Ben"
+        },
+        {
+          "num": 6,
+          "name": "Whirl Win"
+        }
+      ],
+      "race_time": "1:40.25",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 1716
+        },
+        {
+          "level": "Exacta",
+          "amount": 24,
+          "winners": 159
+        },
+        {
+          "level": "Trifecta",
+          "amount": 453,
+          "winners": 19
+        },
+        {
+          "level": "Race Time",
+          "amount": 49,
+          "winners": 21
+        },
+        {
+          "level": "Win / RT",
+          "amount": 52,
+          "winners": 3
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 73,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 70829,
+          "winners": 0
+        }
+      ],
+      "total_winners": 1918,
+      "jackpot": 70829
     }
   ]
 }

@@ -2,7 +2,7 @@
   "game": "pa_pick4",
   "source": "palottery.pa.gov",
   "earliest_available": "2015-01-27",
-  "last_updated": "2026-07-15",
+  "last_updated": "2026-07-16",
   "complete": true,
   "draws": [
     {
@@ -37686,6 +37686,15 @@
         1,
         6,
         1
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "numbers": [
+        9,
+        5,
+        8,
+        5
       ]
     }
   ]
