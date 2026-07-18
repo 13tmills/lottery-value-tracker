@@ -2,7 +2,7 @@
   "game": "ny_lotto",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "2001-09-12",
-  "last_updated": "2026-07-16",
+  "last_updated": "2026-07-18",
   "complete": true,
   "draws": [
     {
@@ -35093,6 +35093,6 @@
   "current_jackpot": {
     "date": "2026-07-18",
     "jackpot": 2900000,
-    "cash": 1497876
+    "cash": 1486015
   }
 }

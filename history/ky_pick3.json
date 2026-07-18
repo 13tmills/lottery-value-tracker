@@ -2,7 +2,7 @@
   "game": "ky_pick3",
   "source": "lotterycorner.com",
   "earliest_available": "1998-07-04",
-  "last_updated": "2026-07-16",
+  "last_updated": "2026-07-18",
   "complete": true,
   "draws": [
     {
@@ -81858,6 +81858,22 @@
       "numbers": [
         0,
         3,
+        5
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "numbers": [
+        5,
+        0,
+        4
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "numbers": [
+        8,
+        5,
         5
       ]
     }
