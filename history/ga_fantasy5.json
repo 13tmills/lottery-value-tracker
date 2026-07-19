@@ -2,12 +2,12 @@
   "game": "ga_fantasy5",
   "source": "galottery.com",
   "earliest_available": "2023-01-01",
-  "last_updated": "2026-07-18",
+  "last_updated": "2026-07-19",
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 150000,
-    "cash": 150000
+    "jackpot": 200000,
+    "cash": 200000
   },
   "draws": [
     {
@@ -15992,6 +15992,49 @@
       "total_winners": 19388,
       "jackpot": 150000,
       "cash": 150000
+    },
+    {
+      "date": "2026-07-18",
+      "numbers": [
+        6,
+        15,
+        22,
+        28,
+        31
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "5/5",
+          "amount": 204188,
+          "winners": 1,
+          "free": false
+        },
+        {
+          "level": "4/5",
+          "label": "4/5",
+          "amount": 182,
+          "winners": 52,
+          "free": false
+        },
+        {
+          "level": "3/5",
+          "label": "3/5",
+          "amount": 11,
+          "winners": 1742,
+          "free": false
+        },
+        {
+          "level": "2/5",
+          "label": "2/5",
+          "amount": "Free play",
+          "winners": 21225,
+          "free": true
+        }
+      ],
+      "total_winners": 23020,
+      "jackpot": 200000,
+      "cash": 200000
     }
   ]
 }

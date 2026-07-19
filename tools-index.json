@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-18",
+  "generated": "2026-07-19",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 149,
@@ -7,7 +7,7 @@
     "az_thepick": 38,
     "az_tripletwist": 23,
     "ca_derby": 9,
-    "ca_fantasy5": 63,
+    "ca_fantasy5": 64,
     "ca_superlotto": 4,
     "co_lotto": 1,
     "ct_lotto": 27,
@@ -44,7 +44,7 @@
     "pr_loto": 23,
     "ri_wildmoney": 126,
     "sc_palmetto5": 37,
-    "sd_dakotacash": 46,
+    "sd_dakotacash": 47,
     "tn_cash": 55,
     "tn_dailyjp": 57,
     "tx_lotto": 1,

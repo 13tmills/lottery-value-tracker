@@ -2,7 +2,7 @@
   "game": "co_pick3",
   "source": "coloradolottery.com",
   "earliest_available": "2014-01-01",
-  "last_updated": "2026-07-18",
+  "last_updated": "2026-07-19",
   "complete": true,
   "draws": [
     {
@@ -36555,6 +36555,14 @@
         3,
         2,
         6
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "numbers": [
+        1,
+        5,
+        3
       ]
     }
   ]

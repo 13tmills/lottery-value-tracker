@@ -2,7 +2,7 @@
   "game": "in_daily3",
   "source": "lotterycorner.com",
   "earliest_available": "1995-01-02",
-  "last_updated": "2026-07-18",
+  "last_updated": "2026-07-19",
   "complete": true,
   "draws": [
     {
@@ -91947,6 +91947,14 @@
         3,
         5,
         6
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "numbers": [
+        8,
+        7,
+        8
       ]
     }
   ]
