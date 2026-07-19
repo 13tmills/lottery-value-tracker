@@ -52,6 +52,7 @@ CONFIG = {
         "special_key": "powerball",      # key name for the bonus ball in JSON
         "white_range": (1, 69),
         "special_range": (1, 26),
+        "cash_ratio": 0.455,  # fallback only — Powerball's real cash value is scraped
         # Fixed non-jackpot tiers (match, prize $, odds 1-in-N). Jackpot tier
         # is handled separately via the live cash value + odds_jackpot.
         "prize_tiers": [
@@ -81,6 +82,10 @@ CONFIG = {
         "special_key": "star_ball",
         "white_range": (1, 52),
         "special_range": (1, 10),
+        # lotteryusa does NOT publish a cash value for Lotto America, so derive it from
+        # the annuity every run (~45% cash:annuity, in line with recent observed values).
+        "derive_cash": True,
+        "cash_ratio": 0.45,
         # Base prizes, i.e. without the optional All Star Bonus multiplier.
         "prize_tiers": [
             {"match": "5",    "prize": 20000, "odds": 2887733},
@@ -110,6 +115,7 @@ CONFIG = {
         "special_key": "mega_ball",
         "white_range": (1, 70),
         "special_range": (1, 24),
+        "cash_ratio": 0.452,  # fallback only — MM's real cash value comes from its API
         # Mega Millions always applies a random 2x-10x multiplier to every
         # non-jackpot prize. Expected value of that multiplier ~= 3.0
         # (2x@1/2.13, 3x@1/3.2, 4x@1/8, 5x@1/16, 10x@1/32), so secondary EV is
@@ -338,6 +344,17 @@ def build_game(key: str, cfg: dict, previous: dict) -> dict:
         game["jackpot"] = scraped["jackpot"]
     if scraped.get("cash_value"):
         game["cash_value"] = scraped["cash_value"]
+
+    # Cash value can never exceed the annuity jackpot (it's the present value of it).
+    # Two failure modes this guards against:
+    #   * lotteryusa publishes NO cash value for Lotto America, so it must be derived
+    #     (cfg["derive_cash"]) from the jackpot every run — otherwise it goes stale.
+    #   * when a jackpot is WON the annuity resets to its floor while the last-known-good
+    #     cash stays high, leaving cash > jackpot (impossible). Re-derive in that case.
+    jp = game.get("jackpot")
+    ratio = cfg.get("cash_ratio", 0.46)
+    if jp and (cfg.get("derive_cash") or not game.get("cash_value") or game["cash_value"] > jp):
+        game["cash_value"] = int(round(jp * ratio))
 
     balls = scraped.get("_balls")
     if balls and len(balls) >= 6:
