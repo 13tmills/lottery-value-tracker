@@ -2,7 +2,7 @@
   "game": "ky_cashball",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-01",
-  "last_updated": "2026-07-19",
+  "last_updated": "2026-07-21",
   "complete": true,
   "current_jackpot": {
     "date": "2026-06-22",
@@ -50669,6 +50669,24 @@
         8,
         26,
         28,
+        32
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "numbers": [
+        1,
+        8,
+        21,
+        24
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "numbers": [
+        8,
+        9,
+        22,
         32
       ]
     }
