@@ -375173,6 +375173,70 @@
         }
       ],
       "total_winners": 4575
+    },
+    {
+      "date": "2026-07-21",
+      "numbers": [
+        1,
+        7,
+        14,
+        15,
+        19,
+        30,
+        33,
+        34,
+        41,
+        42,
+        45,
+        46,
+        49,
+        55,
+        60,
+        67,
+        69,
+        71,
+        74,
+        75
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": null,
+          "winners": 5
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": null,
+          "winners": 99
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": null,
+          "winners": 791
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": null,
+          "winners": 3874
+        }
+      ],
+      "total_winners": 4769
     }
   ]
 }
