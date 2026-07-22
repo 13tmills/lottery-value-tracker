@@ -2,7 +2,7 @@
   "game": "fl_pick2",
   "source": "floridalottery.com",
   "earliest_available": "2016-08-01",
-  "last_updated": "2026-07-21",
+  "last_updated": "2026-07-22",
   "complete": true,
   "draws": [
     {
@@ -25490,6 +25490,13 @@
       "numbers": [
         0,
         5
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "numbers": [
+        6,
+        0
       ]
     }
   ]

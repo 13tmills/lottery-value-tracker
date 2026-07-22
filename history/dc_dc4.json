@@ -2,7 +2,7 @@
   "game": "dc_dc4",
   "source": "lotterycorner.com",
   "earliest_available": "1995-01-01",
-  "last_updated": "2026-07-21",
+  "last_updated": "2026-07-22",
   "complete": true,
   "draws": [
     {
@@ -103683,6 +103683,15 @@
         4,
         6,
         4
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "numbers": [
+        3,
+        7,
+        9,
+        1
       ]
     }
   ]
