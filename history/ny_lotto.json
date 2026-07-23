@@ -35135,6 +35135,53 @@
       "total_winners": 9552,
       "jackpot": 2900000,
       "cash": 1486015
+    },
+    {
+      "date": "2026-07-22",
+      "numbers": [
+        1,
+        22,
+        30,
+        41,
+        43,
+        46
+      ],
+      "bonus": 2,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Jackpot",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 60944,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 945,
+          "winners": 10
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": 28,
+          "winners": 380
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": 1,
+          "winners": 8671
+        }
+      ],
+      "total_winners": 9061,
+      "jackpot": 3000000,
+      "cash": 1533692
     }
   ],
   "current_jackpot": {
