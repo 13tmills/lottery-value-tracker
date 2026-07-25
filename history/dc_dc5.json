@@ -2,7 +2,7 @@
   "game": "dc_dc5",
   "source": "lotterycorner.com",
   "earliest_available": "2009-07-19",
-  "last_updated": "2026-07-23",
+  "last_updated": "2026-07-25",
   "complete": true,
   "draws": [
     {
@@ -62133,6 +62133,26 @@
         4,
         1,
         3
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "numbers": [
+        9,
+        6,
+        0,
+        5,
+        8
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "numbers": [
+        6,
+        5,
+        5,
+        9,
+        7
       ]
     }
   ]

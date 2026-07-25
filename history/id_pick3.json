@@ -2,7 +2,7 @@
   "game": "id_pick3",
   "source": "idaholottery.com",
   "earliest_available": "2014-01-01",
-  "last_updated": "2026-07-23",
+  "last_updated": "2026-07-25",
   "complete": true,
   "draws": [
     {
@@ -36682,6 +36682,22 @@
       "numbers": [
         8,
         9,
+        0
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "numbers": [
+        8,
+        6,
+        4
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "numbers": [
+        3,
+        0,
         0
       ]
     }
