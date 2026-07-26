@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-07-25",
+  "last_updated": "2026-07-26",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-25",
-    "jackpot": 112000,
+    "date": "2026-07-26",
+    "jackpot": 118000,
     "cash": 0
   },
   "draws": [
@@ -13463,6 +13463,68 @@
       ],
       "total_winners": 2852,
       "jackpot": 112091
+    },
+    {
+      "date": "2026-07-25",
+      "numbers": [
+        11,
+        6,
+        8
+      ],
+      "horses": [
+        {
+          "num": 11,
+          "name": "Money Bags"
+        },
+        {
+          "num": 6,
+          "name": "Whirl Win"
+        },
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        }
+      ],
+      "race_time": "1:41.49",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 2255
+        },
+        {
+          "level": "Exacta",
+          "amount": 25,
+          "winners": 202
+        },
+        {
+          "level": "Trifecta",
+          "amount": 822,
+          "winners": 14
+        },
+        {
+          "level": "Race Time",
+          "amount": 32,
+          "winners": 45
+        },
+        {
+          "level": "Win / RT",
+          "amount": 35,
+          "winners": 5
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 57,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 116829,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2521,
+      "jackpot": 116829
     }
   ]
 }

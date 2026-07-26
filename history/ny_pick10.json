@@ -2,7 +2,7 @@
   "game": "ny_pick10",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1987-01-12",
-  "last_updated": "2026-07-25",
+  "last_updated": "2026-07-26",
   "complete": true,
   "draws": [
     {
