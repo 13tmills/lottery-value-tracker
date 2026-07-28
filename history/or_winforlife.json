@@ -2,7 +2,7 @@
   "game": "or_winforlife",
   "source": "lotterycorner.com",
   "earliest_available": "2001-02-19",
-  "last_updated": "2026-07-26",
+  "last_updated": "2026-07-28",
   "complete": true,
   "draws": [
     {
@@ -35832,6 +35832,15 @@
         41,
         60,
         77
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "numbers": [
+        8,
+        11,
+        40,
+        46
       ]
     }
   ]

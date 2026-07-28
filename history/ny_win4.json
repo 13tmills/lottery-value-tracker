@@ -2,7 +2,7 @@
   "game": "ny_win4",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1981-07-21",
-  "last_updated": "2026-07-26",
+  "last_updated": "2026-07-28",
   "complete": true,
   "draws": [
     {
@@ -155913,6 +155913,48 @@
         }
       ],
       "total_winners": 3621
+    },
+    {
+      "date": "2026-07-26",
+      "numbers": [
+        9,
+        9,
+        3,
+        4
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": null,
+          "winners": 19
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": null,
+          "winners": 320
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": null,
+          "winners": 17
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": null,
+          "winners": 12
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": null,
+          "winners": 0
+        }
+      ],
+      "total_winners": 368
     }
   ]
 }

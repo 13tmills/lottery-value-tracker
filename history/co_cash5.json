@@ -2,10 +2,10 @@
   "game": "co_cash5",
   "source": "coloradolottery.com",
   "earliest_available": "2022-10-17",
-  "last_updated": "2026-07-26",
+  "last_updated": "2026-07-28",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-25",
+    "date": "2026-07-27",
     "jackpot": 20000,
     "cash": 20000
   },
@@ -17374,6 +17374,84 @@
         }
       ],
       "total_winners": 5529
+    },
+    {
+      "date": "2026-07-26",
+      "numbers": [
+        2,
+        3,
+        15,
+        20,
+        30
+      ],
+      "jackpot": 20000,
+      "cash": 20000,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Jackpot",
+          "amount": 20000,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 15
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 10,
+          "winners": 482
+        },
+        {
+          "level": "Match 2",
+          "label": "Match 2",
+          "amount": 1,
+          "winners": 4243
+        }
+      ],
+      "total_winners": 4740
+    },
+    {
+      "date": "2026-07-27",
+      "numbers": [
+        10,
+        12,
+        15,
+        20,
+        24
+      ],
+      "jackpot": 20000,
+      "cash": 20000,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Jackpot",
+          "amount": 20000,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 30
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 10,
+          "winners": 687
+        },
+        {
+          "level": "Match 2",
+          "label": "Match 2",
+          "amount": 1,
+          "winners": 4466
+        }
+      ],
+      "total_winners": 5183
     }
   ]
 }
