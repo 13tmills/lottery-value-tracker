@@ -2,11 +2,11 @@
   "game": "oh_cash5",
   "source": "ohiolottery.com",
   "earliest_available": "2011-01-01",
-  "last_updated": "2026-07-28",
+  "last_updated": "2026-07-29",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-28",
-    "jackpot": 161000,
+    "date": "2026-07-29",
+    "jackpot": 180000,
     "cash": null
   },
   "draws": [
@@ -65166,6 +65166,44 @@
       ],
       "total_winners": 15200,
       "jackpot": 150000
+    },
+    {
+      "date": "2026-07-28",
+      "numbers": [
+        1,
+        3,
+        8,
+        13,
+        29
+      ],
+      "prizes": [
+        {
+          "level": "Match 5 of 5",
+          "label": "Match 5 of 5",
+          "amount": 161000,
+          "winners": 0
+        },
+        {
+          "level": "Match 4 of 5",
+          "label": "Match 4 of 5",
+          "amount": 300,
+          "winners": 53
+        },
+        {
+          "level": "Match 3 of 5",
+          "label": "Match 3 of 5",
+          "amount": 10,
+          "winners": 1650
+        },
+        {
+          "level": "Match 2 of 5",
+          "label": "Match 2 of 5",
+          "amount": 1,
+          "winners": 14853
+        }
+      ],
+      "total_winners": 16556,
+      "jackpot": 161000
     }
   ]
 }
