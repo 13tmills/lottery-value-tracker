@@ -155997,6 +155997,48 @@
         }
       ],
       "total_winners": 870
+    },
+    {
+      "date": "2026-07-28",
+      "numbers": [
+        7,
+        4,
+        4,
+        4
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": null,
+          "winners": 34
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": null,
+          "winners": 344
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": null,
+          "winners": 15
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": null,
+          "winners": 71
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": null,
+          "winners": 25
+        }
+      ],
+      "total_winners": 489
     }
   ]
 }
