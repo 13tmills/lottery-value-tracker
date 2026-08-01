@@ -117856,6 +117856,43 @@
         }
       ],
       "total_winners": 38425
+    },
+    {
+      "date": "2026-07-31",
+      "numbers": [
+        4,
+        7,
+        13,
+        15,
+        31
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 672,
+          "winners": 130
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 19.5,
+          "winners": 4431
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": "FREE PLAY",
+          "winners": 44614
+        }
+      ],
+      "total_winners": 49175
     }
   ]
 }
