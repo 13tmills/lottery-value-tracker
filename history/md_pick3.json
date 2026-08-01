@@ -1761,9 +1761,25 @@
         1,
         4
       ]
+    },
+    {
+      "date": "2026-07-30",
+      "numbers": [
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "numbers": [
+        4,
+        2,
+        6
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-07-30",
+  "last_updated": "2026-08-01",
   "complete": true
 }

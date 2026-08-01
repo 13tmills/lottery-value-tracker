@@ -1981,9 +1981,27 @@
         9,
         3
       ]
+    },
+    {
+      "date": "2026-07-30",
+      "numbers": [
+        0,
+        6,
+        0,
+        1
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "numbers": [
+        4,
+        0,
+        9,
+        4
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-07-30",
+  "last_updated": "2026-08-01",
   "complete": true
 }
