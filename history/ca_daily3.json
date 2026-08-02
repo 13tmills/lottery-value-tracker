@@ -2,7 +2,7 @@
   "game": "ca_daily3",
   "source": "calottery.com",
   "earliest_available": "2025-12-21",
-  "last_updated": "2026-08-01",
+  "last_updated": "2026-08-02",
   "complete": true,
   "draws": [
     {
@@ -6917,6 +6917,37 @@
         }
       ],
       "total_winners": 1142
+    },
+    {
+      "date": "2026-08-01",
+      "numbers": [
+        5,
+        4,
+        9
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "amount": 553,
+          "winners": 46
+        },
+        {
+          "level": "Box",
+          "amount": 88,
+          "winners": 97
+        },
+        {
+          "level": "Straight and Box",
+          "amount": 320,
+          "winners": 170
+        },
+        {
+          "level": "Box Only",
+          "amount": 44,
+          "winners": 864
+        }
+      ],
+      "total_winners": 1177
     }
   ]
 }

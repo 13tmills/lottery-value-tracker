@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-08-01",
+  "last_updated": "2026-08-02",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-01",
-    "jackpot": 151000,
+    "date": "2026-08-02",
+    "jackpot": 157000,
     "cash": 0
   },
   "draws": [
@@ -13897,6 +13897,68 @@
       ],
       "total_winners": 3490,
       "jackpot": 150844
+    },
+    {
+      "date": "2026-08-01",
+      "numbers": [
+        9,
+        7,
+        8
+      ],
+      "horses": [
+        {
+          "num": 9,
+          "name": "Winning Spirit"
+        },
+        {
+          "num": 7,
+          "name": "Eureka"
+        },
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        }
+      ],
+      "race_time": "1:45.86",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 2975
+        },
+        {
+          "level": "Exacta",
+          "amount": 23,
+          "winners": 265
+        },
+        {
+          "level": "Trifecta",
+          "amount": 427,
+          "winners": 33
+        },
+        {
+          "level": "Race Time",
+          "amount": 59,
+          "winners": 30
+        },
+        {
+          "level": "Win / RT",
+          "amount": 62,
+          "winners": 3
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 82,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 156889,
+          "winners": 0
+        }
+      ],
+      "total_winners": 3306,
+      "jackpot": 156889
     }
   ]
 }

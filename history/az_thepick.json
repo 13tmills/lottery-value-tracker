@@ -2,12 +2,12 @@
   "game": "az_thepick",
   "source": "lotterycorner.com",
   "earliest_available": "2007-01-03",
-  "last_updated": "2026-08-01",
+  "last_updated": "2026-08-02",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-07-29",
-    "jackpot": 1600000,
-    "cash": 1600000
+    "date": "2026-08-01",
+    "jackpot": 1700000,
+    "cash": 1700000
   },
   "draws": [
     {
@@ -27966,6 +27966,19 @@
       ],
       "jackpot": 1600000,
       "cash": 1600000
+    },
+    {
+      "date": "2026-08-01",
+      "numbers": [
+        3,
+        5,
+        6,
+        14,
+        18,
+        39
+      ],
+      "jackpot": 1700000,
+      "cash": 1700000
     }
   ]
 }
