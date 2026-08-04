@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-02",
+  "generated": "2026-08-04",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 149,
@@ -16,8 +16,8 @@
     "fl_triple": 22,
     "ga_fantasy5": 197,
     "id_cash": 14,
-    "il_lotto": 47,
-    "il_luckyday": 836,
+    "il_lotto": 48,
+    "il_luckyday": 837,
     "in_cash5": 155,
     "in_hoosier": 30,
     "ks_superkscash": 58,
@@ -51,7 +51,7 @@
     "tx_twostep": 9,
     "wa_hit5": 421,
     "wa_lotto": 89,
-    "wi_badger5": 870,
+    "wi_badger5": 871,
     "wi_megabucks": 65,
     "wy_cowboydraw": 26
   }
