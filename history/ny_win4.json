@@ -156291,6 +156291,48 @@
         }
       ],
       "total_winners": 1509
+    },
+    {
+      "date": "2026-08-04",
+      "numbers": [
+        9,
+        2,
+        2,
+        6
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": null,
+          "winners": 66
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": null,
+          "winners": 985
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": null,
+          "winners": 5
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": null,
+          "winners": 21
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": null,
+          "winners": 3
+        }
+      ],
+      "total_winners": 1080
     }
   ]
 }
