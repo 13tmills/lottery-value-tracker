@@ -2,10 +2,10 @@
   "game": "co_cash5",
   "source": "coloradolottery.com",
   "earliest_available": "2022-10-17",
-  "last_updated": "2026-08-04",
+  "last_updated": "2026-08-05",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-03",
+    "date": "2026-08-04",
     "jackpot": 20000,
     "cash": 20000
   },
@@ -17725,6 +17725,45 @@
         }
       ],
       "total_winners": 5386
+    },
+    {
+      "date": "2026-08-04",
+      "numbers": [
+        12,
+        19,
+        21,
+        26,
+        27
+      ],
+      "jackpot": 20000,
+      "cash": 20000,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Jackpot",
+          "amount": 20000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 12
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 10,
+          "winners": 525
+        },
+        {
+          "level": "Match 2",
+          "label": "Match 2",
+          "amount": 1,
+          "winners": 4530
+        }
+      ],
+      "total_winners": 5068
     }
   ]
 }
