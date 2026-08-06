@@ -35323,6 +35323,53 @@
       "total_winners": 9490,
       "jackpot": 3300000,
       "cash": 1687351
+    },
+    {
+      "date": "2026-08-05",
+      "numbers": [
+        2,
+        9,
+        30,
+        38,
+        42,
+        53
+      ],
+      "bonus": 10,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Jackpot",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 114000,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 2532,
+          "winners": 4
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": 30,
+          "winners": 377
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": 1,
+          "winners": 9702
+        }
+      ],
+      "total_winners": 10083,
+      "jackpot": 3400000,
+      "cash": 1718671
     }
   ],
   "current_jackpot": {

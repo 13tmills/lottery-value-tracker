@@ -43786,7 +43786,30 @@
         33,
         42
       ],
-      "jackpot": 25500000
+      "jackpot": 25500000,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 25500000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 1875,
+          "winners": 10
+        },
+        {
+          "level": "Match 4",
+          "amount": 54,
+          "winners": 515
+        },
+        {
+          "level": "Match 3",
+          "amount": 3,
+          "winners": 11238
+        }
+      ],
+      "total_winners": 11763
     }
   ]
 }
