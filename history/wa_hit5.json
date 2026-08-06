@@ -2,7 +2,7 @@
   "game": "wa_hit5",
   "source": "walottery.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-08-05",
+  "last_updated": "2026-08-06",
   "complete": true,
   "draws": [
     {
@@ -147900,6 +147900,45 @@
       ],
       "total_winners": 8806,
       "jackpot": 195000
+    },
+    {
+      "date": "2026-08-05",
+      "numbers": [
+        11,
+        12,
+        20,
+        29,
+        39
+      ],
+      "prizes": [
+        {
+          "level": "5 of 5",
+          "label": "5 of 5",
+          "amount": 230000,
+          "winners": 0
+        },
+        {
+          "level": "4 of 5",
+          "label": "4 of 5",
+          "amount": 150,
+          "winners": 20
+        },
+        {
+          "level": "3 of 5",
+          "label": "3 of 5",
+          "amount": 15,
+          "winners": 881
+        },
+        {
+          "level": "2 of 5",
+          "label": "2 of 5",
+          "amount": 0,
+          "winners": 10334,
+          "free": true
+        }
+      ],
+      "total_winners": 11235,
+      "jackpot": 230000
     }
   ]
 }

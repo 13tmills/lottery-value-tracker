@@ -2,7 +2,7 @@
   "game": "mi_m4l",
   "source": "michiganlottery.com",
   "earliest_available": "2026-02-22",
-  "last_updated": "2026-08-05",
+  "last_updated": "2026-08-06",
   "complete": true,
   "draws": [
     {
@@ -1806,6 +1806,17 @@
         46,
         49,
         52
+      ],
+      "bonus": 3
+    },
+    {
+      "date": "2026-08-05",
+      "numbers": [
+        25,
+        27,
+        32,
+        38,
+        54
       ],
       "bonus": 3
     }

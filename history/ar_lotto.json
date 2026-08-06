@@ -2,7 +2,7 @@
   "game": "ar_lotto",
   "source": "myarkansaslottery.com",
   "earliest_available": "2024-01-03",
-  "last_updated": "2026-08-05",
+  "last_updated": "2026-08-06",
   "complete": true,
   "current_jackpot": {
     "date": "2026-06-20",
@@ -3507,6 +3507,18 @@
         32
       ],
       "bonus": 40
+    },
+    {
+      "date": "2026-08-05",
+      "numbers": [
+        2,
+        8,
+        14,
+        16,
+        24,
+        35
+      ],
+      "bonus": 34
     }
   ]
 }

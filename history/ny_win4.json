@@ -2,7 +2,7 @@
   "game": "ny_win4",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1981-07-21",
-  "last_updated": "2026-08-05",
+  "last_updated": "2026-08-06",
   "complete": true,
   "draws": [
     {
