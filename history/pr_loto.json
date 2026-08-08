@@ -2,12 +2,12 @@
   "game": "pr_loto",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-08-06",
+  "last_updated": "2026-08-08",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-05",
-    "jackpot": 570000,
-    "cash": 570000
+    "date": "2026-08-07",
+    "jackpot": 580000,
+    "cash": 580000
   },
   "draws": [
     {
@@ -15743,6 +15743,18 @@
       ],
       "jackpot": 570000,
       "cash": 570000
+    },
+    {
+      "date": "2026-08-07",
+      "numbers": [
+        10,
+        11,
+        13,
+        18,
+        20
+      ],
+      "jackpot": 580000,
+      "cash": 580000
     }
   ]
 }
