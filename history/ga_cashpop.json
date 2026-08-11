@@ -229,9 +229,15 @@
       "numbers": [
         6
       ]
+    },
+    {
+      "date": "2026-08-10",
+      "numbers": [
+        7
+      ]
     }
   ],
   "source": "galottery.com",
-  "last_updated": "2026-08-09",
+  "last_updated": "2026-08-11",
   "complete": true
 }
