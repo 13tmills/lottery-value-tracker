@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Best California Scratchers: Prizes Remaining &amp; Real Value | NumbersIntel</title>
+  <meta name="description" content="Which California Scratchers still have their big prizes? We compute what every active California Lottery Scratcher returns per dollar right now from unclaimed prize data — plus why $1 Scratchers pay back far less than $20 ones." />
+  <link rel="canonical" href="https://numbersintel.com/scratch/california.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="Best California Scratchers by Prizes Remaining" />
+  <meta property="og:description" content="Every active California Scratcher ranked by what it returns per dollar today." />
+  <meta property="og:url" content="https://numbersintel.com/scratch/california.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"California Scratchers remaining prize value","description":"For each active California Lottery Scratcher: ticket price, prizes cashed and still pending by tier, and the resulting value returned per dollar spent at the current point in the print run.","creator":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"url":"https://numbersintel.com/scratch/california.html","license":"https://numbersintel.com/terms.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Which California Scratchers have the best odds?","acceptedAnswer":{"@type":"Answer","text":"Value depends far more on ticket price than on which game you pick. Across every active California Scratcher, $1 games return an average of about 61 cents per dollar while $20 to $40 games return 80 to 83 cents. Within a price band, the best games are those that still have most of their large prizes unclaimed."}},
+    {"@type":"Question","name":"How can I tell if a Scratcher still has its top prize?","acceptedAnswer":{"@type":"Answer","text":"The California Lottery publishes, for every prize tier of every game, how many prizes were printed, how many have been cashed and how many are still pending. Pending prizes are the ones not yet claimed — so a game whose top tier shows zero pending has no top prizes left, even though it still sells at the same price."}},
+    {"@type":"Question","name":"Are expensive Scratchers a better bet?","acceptedAnswer":{"@type":"Answer","text":"They return more per dollar — the pattern holds in California and Texas alike — but they are not a good bet. Every Scratcher returns less than it costs across all players, so a $20 ticket is simply a smaller loss per dollar staked than a $1 ticket, while putting far more money at risk per ticket."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="scratch/">&larr; Scratch games</a>
+    <h1>California Scratchers: what's actually left</h1>
+    <p class="tagline">Every active California Scratcher ranked by what it returns per dollar <em>right now</em> —
+      not what it was worth the day it was printed.</p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead">A Scratcher whose top prizes have all been claimed still sells at the same price, with
+        the same headline number on the front. Nothing on the rack tells you the prize you're chasing is
+        already gone.</p>
+      <p>The California Lottery publishes, for every prize tier of every game, how many prizes were printed,
+        how many have been cashed and how many are <em>still pending</em>. That is enough to work out exactly
+        what each game has left &mdash; so we do it for every active Scratcher.</p>
+    </section>
+
+    <div id="sc-summary"></div>
+
+    <section class="panel">
+      <h2>Cheap Scratchers pay back the least</h2>
+      <p class="section-note">Average value returned per dollar, grouped by ticket price, across every active
+        California Scratcher.</p>
+      <div id="sc-byprice"></div>
+      <p class="section-note">The pattern is strong and it is not a California quirk &mdash; the same steady
+        climb shows up in our <a href="scratch/texas.html">Texas data</a>, where $1 tickets average 55% and $50
+        tickets 79%. Two independent state lotteries, same design decision: the cheap tickets on the rack are
+        the worst value. That does not make an expensive Scratcher a good bet &mdash; it is still a guaranteed
+        average loss, just a smaller one per dollar, with far more money at risk per ticket.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Every California Scratcher, ranked</h2>
+      <div class="sc-controls">
+        <label>Sort by
+          <select id="sc-sort" class="aw-select">
+            <option value="ev_now">Value per $1 now</option>
+            <option value="price">Ticket price</option>
+            <option value="pct_sold">Percent sold</option>
+            <option value="top_prize">Top prize size</option>
+          </select>
+        </label>
+        <label class="sc-check"><input type="checkbox" id="sc-hide" checked /> Hide games over 90% sold</label>
+      </div>
+      <div id="sc-table" data-src="scratch_ca.json"></div>
+    </section>
+
+    <section class="prose">
+      <h2>How to read this</h2>
+      <p><strong>"Value per $1 now"</strong> is the unclaimed prize money divided by what it would cost to buy
+        every remaining ticket. A game showing 70% means players will get back about 70 cents per dollar across
+        the tickets still out there. <strong>"At launch"</strong> is the same figure for the full print run
+        &mdash; what the game was designed to pay.</p>
+      <p>The gap between those columns is the point: a game well <em>below</em> its launch figure has had its
+        big prizes claimed and is now a worse deal than designed. The <strong>"riding on top prize"</strong>
+        column is the health warning &mdash; where much of the remaining value sits in one tier, the rating
+        hangs on a couple of tickets that may already be sold.</p>
+      <p>Every California Scratcher launches returning roughly <strong>63% to 83%</strong> of sales as prizes.
+        That is the house edge, and no game escapes it &mdash; this table shows which are currently least bad,
+        never which are good. See <a href="guides/what-is-lottery-expected-value/">what expected value means</a>
+        and <a href="guides/where-your-lottery-dollar-goes/">where your lottery dollar goes</a>.</p>
+
+      <h2>How we calculate it</h2>
+      <p>California publishes the cleanest scratch data of any state we track. Its public game feed lists, for
+        every prize tier, the odds, the total number of prizes printed, how many have been cashed and how many
+        remain pending &mdash; so nothing has to be estimated. Multiplying any tier's total prizes by its odds
+        gives the size of the print run, and we check that every tier agrees before trusting it.</p>
+      <p>Two honest limitations. California does not publish a percent-sold figure, so we infer it from the
+        share of prizes already cashed; because small prizes often go unredeemed, that understates sales and
+        makes these figures slightly conservative. And <strong>"pending" means unclaimed, not unsold</strong>
+        &mdash; a top prize counted as pending may already sit in a ticket someone bought and hasn't cashed.
+        Late in a print run that gap dominates, so games over 90% sold are flagged and hidden by default.</p>
+      <p>Compare states: <a href="scratch/texas.html">Texas scratch offs</a>,
+        <a href="scratch/idaho.html">Idaho scratch tickets</a>, or see how draw games differ on the
+        <a href="bestodds.html">most winnable game map</a>.</p>
+    </section>
+
+    <p class="disclaimer">
+      Estimates derived from California Lottery published prize data — not official figures, and not a
+      prediction about any individual ticket. Scratchers are negative-expected-value by design: every game
+      listed returns less than it costs across all players. For information and entertainment only — not
+      financial or gambling advice. You must be 18+ to play. If gambling is a problem for you or someone you
+      know, call <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="scratch/">Scratch games</a>
+      <a href="state.html?state=CA">California lottery</a>
+      <a href="guides/">Guides</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="scratch.js"></script>
+</body>
+</html>

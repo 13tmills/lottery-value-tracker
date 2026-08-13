@@ -9,6 +9,11 @@
     "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html", "texas.html"];
   const groupActive = drawPages.includes(here);
 
+  // Scratch pages live under /scratch/, so match on the path rather than the filename.
+  const scratchActive = location.pathname.indexOf("/scratch/") === 0 || location.pathname === "/scratch";
+  const scratchLink = (t, h) =>
+    `<a href="${h}"${location.pathname === "/" + h ? ' class="is-active"' : ""}>${t}</a>`;
+
   const nav = document.createElement("nav");
   nav.className = "topnav";
   nav.innerHTML =
@@ -24,23 +29,39 @@
           link("Draw Game Tools", "tools.html") +
         `</div>` +
       `</div>` +
+      `<div class="topnav__group">` +
+        `<button class="topnav__trigger${scratchActive ? " is-active" : ""}" type="button" aria-haspopup="true" aria-expanded="false">` +
+          `Scratch Games <span class="topnav__caret">&#9662;</span></button>` +
+        `<div class="topnav__menu">` +
+          scratchLink("All Scratch Games", "scratch/") +
+          scratchLink("California Scratchers", "scratch/california.html") +
+          scratchLink("Texas Scratch Offs", "scratch/texas.html") +
+          scratchLink("Idaho Scratch Tickets", "scratch/idaho.html") +
+        `</div>` +
+      `</div>` +
       link("Guides", "guides/") +
       link("Tools", "tools.html") +
     `</div>`;
   document.body.insertBefore(nav, document.body.firstChild);
 
   // Click-to-toggle for touch / no-hover devices (desktop also gets the CSS :hover).
-  const group = nav.querySelector(".topnav__group");
-  const trigger = group.querySelector(".topnav__trigger");
-  trigger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const open = group.classList.toggle("is-open");
-    trigger.setAttribute("aria-expanded", open ? "true" : "false");
+  // Two dropdowns now (Draw Games, Scratch Games) — opening one closes the other.
+  const groups = [...nav.querySelectorAll(".topnav__group")];
+  const closeAll = (except) => groups.forEach((g) => {
+    if (g === except) return;
+    g.classList.remove("is-open");
+    g.querySelector(".topnav__trigger").setAttribute("aria-expanded", "false");
   });
-  document.addEventListener("click", () => {
-    group.classList.remove("is-open");
-    trigger.setAttribute("aria-expanded", "false");
+  groups.forEach((group) => {
+    const trigger = group.querySelector(".topnav__trigger");
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeAll(group);
+      const open = group.classList.toggle("is-open");
+      trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
   });
+  document.addEventListener("click", () => closeAll(null));
 
   // Responsible-gambling notice — appended to the footer on every page.
   const rg = document.createElement("p");
