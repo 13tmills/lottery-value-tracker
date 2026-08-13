@@ -376581,6 +376581,70 @@
         }
       ],
       "total_winners": 4516
+    },
+    {
+      "date": "2026-08-12",
+      "numbers": [
+        4,
+        5,
+        23,
+        25,
+        26,
+        30,
+        34,
+        43,
+        46,
+        51,
+        56,
+        57,
+        58,
+        63,
+        64,
+        65,
+        67,
+        69,
+        75,
+        79
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": null,
+          "winners": 2
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": null,
+          "winners": 33
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": null,
+          "winners": 129
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": null,
+          "winners": 966
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": null,
+          "winners": 5006
+        }
+      ],
+      "total_winners": 6136
     }
   ]
 }
