@@ -6,7 +6,7 @@
   const link = (t, h) => `<a href="${h}"${h === here ? ' class="is-active"' : ""}>${t}</a>`;
   const drawPages = ["national.html", "states.html", "uk.html", "tools.html", "state.html", "game.html",
     "breakeven.html", "statetax.html", "visualizer.html", "check.html", "lifecalc.html",
-    "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html", "texas.html", "california.html", "new-york.html", "florida.html"];
+    "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html", "texas.html", "california.html", "new-york.html", "florida.html", "michigan.html"];
   const groupActive = drawPages.includes(here);
 
   // Scratch pages live under /scratch/, so match on the path rather than the filename.
@@ -36,6 +36,7 @@
           scratchLink("All Scratch Games", "scratch/") +
           scratchLink("California Scratchers", "scratch/california.html") +
           scratchLink("Florida Scratch-Offs", "scratch/florida.html") +
+          scratchLink("Michigan Instant Games", "scratch/michigan.html") +
           scratchLink("New York Scratch-Offs", "scratch/new-york.html") +
           scratchLink("Texas Scratch Offs", "scratch/texas.html") +
           scratchLink("Idaho Scratch Tickets", "scratch/idaho.html") +

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Michigan Instant Games: Prizes Remaining by Game | NumbersIntel</title>
+  <meta name="description" content="Which Michigan instant games still hold their prize money? All 115 games ranked by how much of their prize value is genuinely unclaimed, from the Michigan Lottery's own prizes-remaining data, updated daily." />
+  <link rel="canonical" href="https://numbersintel.com/scratch/michigan.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="Michigan Instant Games by Prizes Remaining" />
+  <meta property="og:description" content="All 115 Michigan instant games ranked by how much prize money is genuinely left." />
+  <meta property="og:url" content="https://numbersintel.com/scratch/michigan.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"Michigan instant game prizes remaining analysis","description":"For each Michigan Lottery instant game: prizes printed and unclaimed by tier, the share of prize money still available, and a price-independent value index.","creator":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"url":"https://numbersintel.com/scratch/michigan.html","license":"https://numbersintel.com/terms.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do I know which Michigan instant games still have prizes left?","acceptedAnswer":{"@type":"Answer","text":"The Michigan Lottery publishes, for every prize tier of every instant game, how many prizes were printed and how many remain unclaimed. This page turns that into a ranking of which games still hold their prize money and which have had the large prizes claimed already, refreshed daily."}},
+    {"@type":"Question","name":"What does the value index mean?","acceptedAnswer":{"@type":"Answer","text":"It compares the share of prize money still unclaimed against the share of prizes still unclaimed. A value of 1.00 means the game holds the same mix of prize money it launched with. Above 1.00 means unusually much of the big money is still out there; below 1.00 means the large prizes have gone while smaller ones remain."}},
+    {"@type":"Question","name":"Does a prize showing as remaining mean it is still in a shop?","acceptedAnswer":{"@type":"Answer","text":"No, and the Michigan Lottery says so directly: remaining prizes are unclaimed prizes, and include tickets that may or may not have already been sold. A top prize counted as remaining could already be sitting in someone's wallet unscratched, so a game showing prizes left is not a guarantee any are still on a shelf."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="scratch/">&larr; Scratch games</a>
+    <h1>Michigan instant games: what's actually left</h1>
+    <p class="tagline">All 115 Michigan instant games ranked by how much of their prize money is genuinely
+      still unclaimed.</p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead">An instant game whose big prizes have already been claimed keeps selling at the same
+        price, with the same headline number on the ticket. Michigan publishes the data to see through that
+        &mdash; every tier of every game, printed against unclaimed.</p>
+      <p>We pull it daily and rank all 115 games on sale, so you can tell which ones still hold their prize
+        money and which have been hollowed out.</p>
+    </section>
+
+    <div id="sc-summary"></div>
+
+    <section class="panel">
+      <h2>Every Michigan instant game, ranked</h2>
+      <div class="sc-controls">
+        <label>Sort by
+          <select id="sc-sort" class="aw-select">
+            <option value="ev_now">Value index</option>
+            <option value="pct_sold">Prizes claimed</option>
+            <option value="top_prize">Top prize size</option>
+          </select>
+        </label>
+        <label class="sc-check"><input type="checkbox" id="sc-hide" checked /> Hide games over 90% claimed</label>
+      </div>
+      <div id="sc-table" data-src="scratch_mi.json"></div>
+    </section>
+
+    <section class="prose">
+      <h2>How to read the value index</h2>
+      <p>The <strong>value index</strong> compares how much of a game's <em>prize money</em> is still unclaimed
+        against how many of its <em>prizes</em> are still unclaimed &mdash; in other words, has this game kept
+        its big money or spent it?</p>
+      <ul>
+        <li><strong>1.00</strong> &mdash; the game still holds exactly the mix of prize money it launched with.</li>
+        <li><strong>Above 1.00</strong> &mdash; unusually much of the large prize money is still out there.</li>
+        <li><strong>Below 1.00</strong> &mdash; the big prizes have been claimed and mostly small ones remain,
+          while the ticket costs the same and still advertises the top prize.</li>
+      </ul>
+      <p>The <strong>top prize</strong> column is the blunter signal: a game reading "all claimed" is still on
+        sale with its headline prize entirely gone.</p>
+
+      <h2>Why there's no "value per dollar" here</h2>
+      <p>Our <a href="scratch/texas.html">Texas</a>, <a href="scratch/california.html">California</a> and
+        <a href="scratch/idaho.html">Idaho</a> pages show what each game returns in cents per dollar. That needs
+        the ticket price and the overall odds, and <strong>Michigan publishes neither</strong> alongside its
+        prize data. Rather than guess a price and present the result as fact, Michigan uses the same
+        price-independent index as our <a href="scratch/new-york.html">New York</a> page, which measures the same
+        underlying thing using only what the state actually publishes.</p>
+
+      <h2>How we calculate it</h2>
+      <p>Figures come from the Michigan Lottery's own prizes-remaining data for in-store instant games, covering
+        every prize tier: how many were printed and how many are still unclaimed. We sum the cash value of both
+        and compare the shares.</p>
+      <p>The Michigan Lottery states the key caveat itself: <em>remaining prizes represent unclaimed prizes and
+        include tickets that may or may not have already been sold.</em> A top prize counted as remaining may
+        already sit in a bought, unscratched ticket. Late in a game's life that gap dominates, so games with more
+        than 90% of prizes claimed are flagged and hidden by default &mdash; with few prizes left the index
+        swings on very small numbers.</p>
+      <p>Compare other states on the <a href="scratch/">scratch games hub</a>, or see how draw games differ on
+        the <a href="bestodds.html">most winnable game map</a>.</p>
+    </section>
+
+    <p class="disclaimer">
+      Derived from Michigan Lottery published prize data — descriptive statistics, not official guidance, and not
+      a prediction about any individual ticket. Instant games are negative-expected-value by design: across all
+      players they return less than they cost. For information and entertainment only — not financial or gambling
+      advice. You must be 18+ to play. If gambling is a problem for you or someone you know, call
+      <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="scratch/">Scratch games</a>
+      <a href="state.html?state=MI">Michigan lottery</a>
+      <a href="guides/">Guides</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="scratch.js"></script>
+</body>
+</html>
