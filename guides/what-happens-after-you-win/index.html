@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>What Actually Happens After You Win the Lottery? | NumbersIntel</title>
+  <meta name="description" content="Signing the ticket, claim deadlines, lump sum vs annuity, the 24% withholding trap and how much your state takes — with an interactive map of state tax on lottery winnings for all 50 states." />
+  <link rel="canonical" href="https://numbersintel.com/guides/what-happens-after-you-win/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="What Actually Happens After You Win the Lottery?" />
+  <meta property="og:description" content="The claim process, the withholding trap, and an interactive map of what your state takes." />
+  <meta property="og:url" content="https://numbersintel.com/guides/what-happens-after-you-win/" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"What Actually Happens After You Win the Lottery?","description":"A practical walkthrough of claiming a lottery jackpot: securing the ticket, claim deadlines, lump sum vs annuity, federal withholding vs the real tax bill, state tax by state, and the documented pitfalls winners hit.","author":{"@id":"https://numbersintel.com/#org"},"publisher":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"mainEntityOfPage":"https://numbersintel.com/guides/what-happens-after-you-win/","about":["claiming a lottery prize","lottery taxes by state","lump sum vs annuity"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How much tax is withheld from a lottery jackpot?","acceptedAnswer":{"@type":"Answer","text":"US lotteries withhold 24% for federal tax on large prizes, but a jackpot lands in the top federal bracket of 37% — so the withholding is only a down payment and the rest is due at tax time. Your state may take more on top, from 0% in states like Florida and Texas to over 10% in New York."}},
+    {"@type":"Question","name":"How long do I have to claim a lottery prize?","acceptedAnswer":{"@type":"Answer","text":"It varies by state and by game — commonly somewhere between 90 days and one year from the draw date. Because the deadline is set by the jurisdiction that sold the ticket, always check the official rules of the lottery you played; unclaimed prizes are forfeited once the window closes."}},
+    {"@type":"Question","name":"Can I stay anonymous if I win the lottery?","acceptedAnswer":{"@type":"Answer","text":"It depends entirely on where you bought the ticket. Some states allow winners to remain anonymous or to claim through a trust or legal entity, while others require the winner's name and city to be released as public record. Check your state lottery's official rules before you claim, because the decision is usually irreversible once you come forward."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="guides/">&larr; All guides</a>
+    <h1>What Actually Happens After You Win?</h1>
+    <p class="tagline">The claim process, the withholding trap, and what your state takes.</p>
+  </header>
+
+  <main class="prose">
+    <p class="lead">Winning is the easy part to imagine. What follows is a set of deadlines, tax rules and
+      irreversible decisions that most people have never thought about &mdash; and several of them depend
+      entirely on <strong>which state sold you the ticket</strong>. Here's the sequence, and an interactive
+      map of what each state takes.</p>
+
+    <h2>First: secure the ticket</h2>
+    <p>A lottery ticket is a <strong>bearer instrument</strong>. Whoever holds it generally owns it, which
+      makes an unsigned winning ticket one of the riskiest things you can carry. The standard advice is to
+      sign the back immediately, photograph both sides, and store it somewhere secure &mdash; a safe or a
+      bank deposit box &mdash; until you claim. There is no rush to come forward on day one; there is every
+      reason not to lose the ticket on day one.</p>
+    <p>The other near-universal advice: <strong>tell almost nobody</strong> until you have professional
+      advice in place. Announcements are impossible to take back, and they arrive long before you have a plan.</p>
+
+    <h2>Claim deadlines are real &mdash; and they vary</h2>
+    <p>Every prize has an expiry. The window is set by the jurisdiction that sold the ticket and is commonly
+      somewhere between <strong>90 days and one year</strong> from the draw date, differing by state and
+      sometimes by game. Once it closes the prize is forfeited &mdash; every year, genuinely large prizes go
+      unclaimed this way. Because the rules differ, check the official rules of the lottery you actually
+      played rather than assuming a national standard.</p>
+
+    <h2>The 24% withholding trap</h2>
+    <p>Here is the detail that catches winners out. US lotteries withhold <strong>24% for federal tax</strong>
+      on large prizes, and many people treat that as the tax bill settled. It isn't. A jackpot drops you
+      squarely into the <strong>top federal bracket of 37%</strong>, so the withholding is only a down payment
+      &mdash; the remaining ~13% comes due when you file. On an eight-figure prize that gap is millions of
+      dollars that must not be spent in the meantime.</p>
+    <p>Then your state takes its share, and that varies enormously.</p>
+
+    <h2>What your state takes: the map</h2>
+    <p>Select a state to see its tax rate on lottery winnings and a rough take-home estimate on a
+      $100 million jackpot taken as cash. States shown in the darkest shade tax winnings most heavily;
+      the palest keep none at all.</p>
+
+    <div class="us-map-wrap" id="aw-map"></div>
+    <p class="aw-select-row">
+      <label for="aw-select">Or choose a state: </label>
+      <select id="aw-select" class="aw-select"></select>
+    </p>
+    <div id="aw-detail" class="panel aw-detail">
+      <p class="section-note">Select a state on the map above to see its tax on winnings and an estimated
+        take-home.</p>
+    </div>
+    <p class="section-note">Rates are state tax on lottery winnings and exclude local taxes. A handful of
+      states &mdash; Alabama, Alaska, Hawaii, Nevada and Utah &mdash; run no lottery at all. For a full
+      calculation with your own numbers, use the <a href="statetax.html">tax &amp; payout calculator</a>.</p>
+
+    <h2>Lump sum or annuity?</h2>
+    <p>Nearly every jackpot offers a choice: a single discounted cash payment now, or the full advertised
+      amount spread over decades (typically 30 graduated annual payments). The cash option is usually around
+      45&ndash;50% of the advertised jackpot &mdash; that headline number is the <em>annuity</em> total, not
+      what you would receive today.</p>
+    <p>Neither choice is universally right. The cash option gives you control and the chance to invest, but
+      exposes the whole sum to tax at once and to your own decisions. The annuity spreads the tax, provides a
+      guaranteed income for decades, and is a structural guard against overspending &mdash; but it locks up
+      the money and bets on future tax rates. We work through the maths in
+      <a href="guides/lump-sum-vs-annuity/">lump sum vs annuity</a> and the
+      <a href="calculator.html">annuity vs cash calculator</a>.</p>
+
+    <h2>Anonymity depends on where you bought the ticket</h2>
+    <p>Whether you can stay private is <strong>entirely a state-level question</strong>. Some states allow
+      winners to remain anonymous, or to claim through a trust or legal entity; others treat the winner's name
+      and city as public record and will release it. This matters more than it sounds: publicity is the trigger
+      for the wave of solicitations, "investment opportunities" and outright scams that follow a big win.</p>
+    <p>Because these rules change and differ by state and prize size, check your lottery's official claim rules
+      &mdash; ideally <em>before</em> you come forward, since the decision is usually irreversible once you do.
+      This is one of the specific questions to put to a lawyer in the first meeting.</p>
+
+    <h2>Build the team before you claim</h2>
+    <p>The consistent recommendation from people who advise winners is to assemble a small professional team
+      first: an attorney (claiming structure, anonymity options, estate planning), a tax professional (the
+      withholding gap, estimated payments) and a fee-only fiduciary financial adviser &mdash; one paid a flat
+      fee rather than commission on what they sell you. Doing this <em>before</em> claiming is what keeps the
+      decisions reversible.</p>
+
+    <h2>What tends to go wrong</h2>
+    <p>The recurring failure patterns are well documented and boringly consistent: spending against money not
+      yet received, discovering the 24%-vs-37% gap after the money is committed, an inability to say no to
+      family and acquaintances who now know, unvetted "sure thing" investments, and lifestyle costs that scale
+      to the windfall and then outlive it. Almost none of these are exotic &mdash; they are ordinary financial
+      mistakes at a scale that removes any margin for error.</p>
+    <p>The protective habits are equally unglamorous: park the money somewhere boring while you decide, set a
+      fixed budget for gifts and stick to it, and make no irreversible decisions for several months.</p>
+
+    <h2>Before that, the odds</h2>
+    <p>All of this is planning for an outcome that, statistically, will not happen &mdash; jackpot odds run to
+      roughly 1 in 292 million on <a href="game/powerball.html">Powerball</a>. If you play, play for
+      entertainment with money you can afford to lose. For what a ticket is actually worth, see
+      <a href="guides/what-is-lottery-expected-value/">expected value explained</a>, and for how often jackpots
+      genuinely fall, our analysis of <a href="guides/how-often-are-jackpots-won/">how often jackpots are won</a>.</p>
+
+    <p class="disclaimer">General information only &mdash; <strong>not legal, tax or financial advice</strong>.
+      Claim deadlines, anonymity rules and tax treatment vary by state and change over time; always confirm the
+      current official rules with the lottery that sold the ticket and consult qualified professionals. Tax
+      figures are simplified estimates for comparison. You must be 18+ (21+ in some states). If gambling is a
+      problem for you or someone you know, call <strong>1-800-GAMBLER</strong>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="guides/">All guides</a>
+      <a href="statetax.html">Tax calculator</a>
+      <a href="guides/lump-sum-vs-annuity/">Lump sum vs annuity</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="usmap.js"></script>
+  <script src="statetax.js"></script>
+  <script src="afterwin.js"></script>
+</body>
+</html>

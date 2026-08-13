@@ -34,6 +34,9 @@ function fill(ab) {
 
 async function init() {
   ["cash", "fed", "verdict", "map", "table", "back"].forEach((id) => (els[id] = document.getElementById(id)));
+  // This file is also loaded elsewhere purely for its STATE_TAX table (e.g. the
+  // "after you win" guide's map). Bail out when the calculator UI isn't present.
+  if (!els.cash) return;
   setMeta({
     title: "Lottery Tax by State — How Much of a Jackpot You Keep | NumbersIntel",
     description: "A heat map and calculator of state tax on lottery winnings. See which states don't tax the lottery at all, and how much of a Powerball or Mega Millions jackpot you take home in each state.",

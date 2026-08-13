@@ -1257,3 +1257,27 @@ a.state-cell:hover { border-color: var(--accent); }
   .sr-cards { grid-template-columns: 1fr; }
   .sr-card__stats { grid-template-columns: 1fr 1fr 1fr; }
 }
+
+/* ===== "After you win" state tax choropleth ===== */
+.aw-state { stroke: var(--bg); stroke-width: 1; transition: filter .12s ease; }
+.aw-state[data-abbr] { cursor: pointer; }
+.aw-state[data-abbr]:hover, .aw-state[data-abbr]:focus { filter: brightness(1.35); outline: none; }
+.aw-state--r0   { fill: #1d4f3f; }   /* no state tax — keep the most */
+.aw-state--r1   { fill: #2f6b4a; }
+.aw-state--r2   { fill: #6b7a3a; }
+.aw-state--r3   { fill: #9c6b2f; }
+.aw-state--r4   { fill: #b4462f; }   /* 8%+ — taxed hardest */
+.aw-state--none { fill: #2a3240; }   /* no lottery */
+.aw-state--sel  { stroke: var(--accent); stroke-width: 2.5; filter: brightness(1.35); }
+
+.aw-legend { flex-wrap: wrap; gap: 0.5rem 1rem; }
+.aw-dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 3px; margin-right: 0.35rem; vertical-align: middle; }
+.aw-dot--r0 { background: #1d4f3f; } .aw-dot--r1 { background: #2f6b4a; }
+.aw-dot--r2 { background: #6b7a3a; } .aw-dot--r3 { background: #9c6b2f; }
+.aw-dot--r4 { background: #b4462f; } .aw-dot--none { background: #2a3240; }
+
+.aw-select-row { margin: 0.75rem 0; font-size: 0.9rem; color: var(--text-dim); }
+.aw-select { background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.45rem 0.6rem; font-size: 0.95rem; min-width: 200px; }
+.aw-detail { margin-top: 0.5rem; }
+.aw-detail h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
