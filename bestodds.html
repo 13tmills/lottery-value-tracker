@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>The Most Winnable Lottery Game in Every State | NumbersIntel</title>
+  <meta name="description" content="Your state's own lottery games have far better odds than Powerball — but how much better depends on where you live. An interactive map of the most winnable top prize in all 41 tracked jurisdictions, from 1 in 10,626 to 1 in 6.1 million." />
+  <link rel="canonical" href="https://numbersintel.com/bestodds.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="The Most Winnable Lottery Game in Every State" />
+  <meta property="og:description" content="From 1 in 10,626 to 1 in 6.1 million — how winnable your state's best lottery game is, mapped." />
+  <meta property="og:url" content="https://numbersintel.com/bestodds.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Most Winnable Lottery Game in Every State" />
+  <meta name="twitter:description" content="From 1 in 10,626 to 1 in 6.1 million — mapped." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="states.html">&larr; US State Drawings</a>
+    <h1>The most winnable lottery game in every state</h1>
+    <p class="tagline">Your state's own games have far shorter odds than Powerball — but how much shorter
+      depends entirely on where you live.</p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead">Everyone knows the national games are close to unwinnable: <strong>1 in 292 million</strong>
+        for <a href="game/powerball.html">Powerball</a>. Far fewer people know that their own state runs games
+        with top prizes <strong>hundreds or even thousands of times more winnable</strong> — and that the best
+        game available to you swings enormously depending on which side of a state line you live on.</p>
+      <p>We took every state-run draw game we track, computed each one's top-prize odds directly from its
+        published number matrix, and mapped the most winnable game in each jurisdiction. The spread is
+        dramatic: from <strong>1 in 10,626</strong> at the best end to <strong>1 in 6.1 million</strong> at the
+        worst — a difference of more than 500&times; in how likely you are to hit your state's top prize.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Pick your state</h2>
+      <p class="section-note">Darker green means a more winnable top prize. Select any state to see its games
+        ranked by how winnable their top prize is.</p>
+      <div class="us-map-wrap" id="so-map"></div>
+      <p class="aw-select-row">
+        <label for="so-select">Or choose a state: </label>
+        <select id="so-select" class="aw-select"></select>
+      </p>
+      <div id="so-detail" class="panel so-detail">
+        <p class="section-note">Select a state on the map above to see its most winnable games.</p>
+      </div>
+    </section>
+
+    <section class="prose">
+      <h2>Why the gap is so large</h2>
+      <p>The difference comes down to the <strong>number matrix</strong> — how many balls you pick, from how
+        large a pool. A game asking you to match 5 numbers out of 52 has vastly longer odds than one asking for
+        4 out of 24, and states design their games very differently. Smaller states often run modest "cash"
+        games with short odds and five- or six-figure top prizes, while bigger states tend to run headline
+        jackpot games with long odds and prizes that roll into the millions.</p>
+      <p>That is the real trade-off: <strong>a winnable prize or a life-changing one</strong>, rarely both. A
+        state whose best game is 1 in 170,000 is offering you a genuinely reachable prize that will not change
+        your life; a state whose best game is 1 in 6 million is offering the reverse. Neither is "better" — but
+        knowing which one your state sells is worth more than knowing this week's jackpot.</p>
+      <p>One thing the map does <em>not</em> say is that any of these games are a good bet. Every one of them is
+        <a href="guides/what-is-lottery-expected-value/">negative expected value</a>; shorter odds on the top
+        prize do not change that. What they change is how often something actually happens when you play.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Every state ranked by its most winnable game</h2>
+      <p class="section-note">Ranked by the top-prize odds of each jurisdiction's most winnable state-run draw
+        game. National multi-state games are excluded — they are identical everywhere.</p>
+      <div id="so-rank"></div>
+    </section>
+
+    <section class="prose">
+      <h2>How we calculated this</h2>
+      <p>For every state game we track, we take the odds of its rarest (top) prize tier straight from the game's
+        published rules and number matrix, then pick the lowest 1-in-N figure available in each jurisdiction. No
+        estimates are involved — these are the games' own published odds. Games are excluded only where a
+        jurisdiction runs no state-level draw game of its own, or where we don't yet track one.</p>
+      <p>See the full method on our <a href="methodology.html">methodology page</a>, compare the national games
+        on <a href="guides/powerball-vs-mega-millions-vs-lotto-america/">value per dollar</a>, or browse every
+        game in your state from the <a href="states.html">state drawings</a> map.</p>
+    </section>
+
+    <p class="disclaimer">
+      Odds are computed from each game's published number matrix and describe the top prize only; overall odds of
+      winning any prize are shorter. For information and entertainment only — not financial or gambling advice.
+      Every lottery game is negative-expected-value; play for entertainment, never as an investment. You must be
+      18+ (21+ in some states). If gambling is a problem for you or someone you know, call
+      <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="states.html">US State Drawings</a>
+      <a href="national.html">US National Drawings</a>
+      <a href="guides/">Guides</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="usmap.js"></script>
+  <script src="bestodds.js"></script>
+</body>
+</html>

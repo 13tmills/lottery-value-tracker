@@ -1281,3 +1281,25 @@ a.state-cell:hover { border-color: var(--accent); }
   border-radius: 8px; padding: 0.45rem 0.6rem; font-size: 0.95rem; min-width: 200px; }
 .aw-detail { margin-top: 0.5rem; }
 .aw-detail h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+
+/* ===== "Most winnable game by state" choropleth ===== */
+.so-state { stroke: var(--bg); stroke-width: 1; transition: filter .12s ease; }
+.so-state[data-abbr] { cursor: pointer; }
+.so-state[data-abbr]:hover, .so-state[data-abbr]:focus { filter: brightness(1.35); outline: none; }
+.so-state--b0   { fill: #1a5c40; }  /* most winnable */
+.so-state--b1   { fill: #2f7d4e; }
+.so-state--b2   { fill: #5d8c42; }
+.so-state--b3   { fill: #94733a; }
+.so-state--b4   { fill: #a8503a; }  /* least winnable */
+.so-state--none { fill: #2a3240; }
+.so-state--sel  { stroke: var(--accent); stroke-width: 2.5; filter: brightness(1.35); }
+
+.so-legend { flex-wrap: wrap; gap: 0.5rem 1rem; }
+.so-dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 3px; margin-right: 0.35rem; vertical-align: middle; }
+.so-dot--b0 { background: #1a5c40; } .so-dot--b1 { background: #2f7d4e; }
+.so-dot--b2 { background: #5d8c42; } .so-dot--b3 { background: #94733a; }
+.so-dot--b4 { background: #a8503a; } .so-dot--none { background: #2a3240; }
+
+.so-detail { margin-top: 0.5rem; }
+.so-detail h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.so-best th, .so-best td { color: var(--accent); font-weight: 600; }
