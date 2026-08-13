@@ -2,12 +2,12 @@
   "game": "in_hoosier",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-08-13",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-08",
-    "jackpot": 31900000,
-    "cash": 31900000
+    "date": "2026-08-12",
+    "jackpot": 32400000,
+    "cash": 32400000
   },
   "draws": [
     {
@@ -19668,6 +19668,19 @@
       ],
       "jackpot": 31900000,
       "cash": 31900000
+    },
+    {
+      "date": "2026-08-12",
+      "numbers": [
+        11,
+        28,
+        34,
+        35,
+        36,
+        42
+      ],
+      "jackpot": 32400000,
+      "cash": 32400000
     }
   ]
 }

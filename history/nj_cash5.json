@@ -2,12 +2,12 @@
   "game": "nj_cash5",
   "source": "lotterycorner.com",
   "earliest_available": "2018-01-01",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-08-13",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-11",
-    "jackpot": 162000,
-    "cash": 162000
+    "date": "2026-08-12",
+    "jackpot": 236000,
+    "cash": 236000
   },
   "draws": [
     {
@@ -37633,6 +37633,18 @@
       ],
       "jackpot": 162000,
       "cash": 162000
+    },
+    {
+      "date": "2026-08-12",
+      "numbers": [
+        2,
+        7,
+        10,
+        34,
+        42
+      ],
+      "jackpot": 236000,
+      "cash": 236000
     }
   ]
 }

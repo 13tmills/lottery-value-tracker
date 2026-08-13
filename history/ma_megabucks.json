@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-08-13",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-12",
-    "jackpot": 26650000,
-    "cash": 17620000
+    "date": "2026-08-15",
+    "jackpot": 26950000,
+    "cash": 17840000
   },
   "draws": [
     {
@@ -42224,35 +42224,7 @@
         32,
         38,
         39
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 19350000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 1
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 259
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 4187
-        }
-      ],
-      "jackpot": 19350000,
-      "total_winners": 4447
+      ]
     },
     {
       "date": "2026-06-06",
@@ -43413,6 +43385,46 @@
       ],
       "jackpot": 26250000,
       "total_winners": 6208
+    },
+    {
+      "date": "2026-08-12",
+      "draw_number": 4621,
+      "numbers": [
+        3,
+        16,
+        18,
+        32,
+        39,
+        40
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 26650000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 6
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 321
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 5432
+        }
+      ],
+      "jackpot": 26650000,
+      "total_winners": 5759
     }
   ]
 }

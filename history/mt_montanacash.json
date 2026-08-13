@@ -2,12 +2,12 @@
   "game": "mt_montanacash",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-08-13",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-08",
-    "jackpot": 70000,
-    "cash": 70000
+    "date": "2026-08-12",
+    "jackpot": 80000,
+    "cash": 80000
   },
   "draws": [
     {
@@ -20743,6 +20743,18 @@
       ],
       "jackpot": 70000,
       "cash": 70000
+    },
+    {
+      "date": "2026-08-12",
+      "numbers": [
+        1,
+        21,
+        35,
+        42,
+        44
+      ],
+      "jackpot": 80000,
+      "cash": 80000
     }
   ]
 }
