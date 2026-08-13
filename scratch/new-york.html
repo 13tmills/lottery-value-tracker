@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>New York Scratch-Off Games: Prizes Remaining by Game | NumbersIntel</title>
+  <meta name="description" content="Which New York scratch-off games still have their big prizes? Every game ranked from the state's own daily prize report — how much prize money is unclaimed, which games have zero top prizes left, and which still hold their launch mix." />
+  <link rel="canonical" href="https://numbersintel.com/scratch/new-york.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="New York Scratch-Off Games by Prizes Remaining" />
+  <meta property="og:description" content="Every NY scratch-off ranked by how much prize money is genuinely left — from the state's official daily report." />
+  <meta property="og:url" content="https://numbersintel.com/scratch/new-york.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"New York scratch-off prizes remaining analysis","description":"For each New York Lottery scratch-off game: prizes printed, paid and unpaid by tier, the share of prize money still unclaimed, and a price-independent value index.","creator":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"url":"https://numbersintel.com/scratch/new-york.html","isBasedOn":"https://data.ny.gov/d/nzqa-7unk","license":"https://numbersintel.com/terms.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do I know if a New York scratch-off still has its top prize?","acceptedAnswer":{"@type":"Answer","text":"The New York Lottery publishes a daily prize status report showing, for every prize tier of every scratch-off game, how many prizes were printed, how many have been paid and how many are still unpaid. A game whose top tier shows zero unpaid prizes has no top prizes left — even though it remains on sale at the same price."}},
+    {"@type":"Question","name":"What does the value index mean?","acceptedAnswer":{"@type":"Answer","text":"It compares the share of prize money still unclaimed against the share of prizes still unclaimed. A value of 1.00 means the game still holds the same mix of prize money it launched with. Above 1.00 means unusually much of the big money is still out there; below 1.00 means the large prizes have been claimed while smaller ones remain."}},
+    {"@type":"Question","name":"Why is there no value per dollar for New York?","acceptedAnswer":{"@type":"Answer","text":"New York does not publish scratch-off ticket prices or overall odds in any machine-readable form, and those are both required to compute a cents-per-dollar figure. Rather than guess a price, we use a price-independent index. Our Texas, California and Idaho pages do show value per dollar, because those states publish the necessary data."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="scratch/">&larr; Scratch games</a>
+    <h1>New York scratch-offs: what's actually left</h1>
+    <p class="tagline">Every New York scratch-off game ranked by how much of its prize money is genuinely
+      still unclaimed — straight from the state's own daily report.</p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead">A scratch-off whose top prizes have all been claimed stays on the rack at the same price,
+        advertising the same headline number. New York publishes the data to see through that &mdash; it just
+        never puts it in front of players.</p>
+      <p>The New York Lottery releases a <strong>daily prize status report</strong> covering every scratch-off
+        game: for each prize tier, how many were printed, how many have been paid, and how many are still
+        unpaid. We turn that into a ranking of which games still hold their prize money and which have been
+        hollowed out.</p>
+    </section>
+
+    <div id="sc-summary"></div>
+
+    <section class="panel">
+      <h2>Every New York scratch-off, ranked</h2>
+      <div class="sc-controls">
+        <label>Sort by
+          <select id="sc-sort" class="aw-select">
+            <option value="ev_now">Value index</option>
+            <option value="pct_sold">Prizes claimed</option>
+            <option value="top_prize">Top prize size</option>
+          </select>
+        </label>
+        <label class="sc-check"><input type="checkbox" id="sc-hide" checked /> Hide games over 90% claimed</label>
+      </div>
+      <div id="sc-table" data-src="scratch_ny.json"></div>
+    </section>
+
+    <section class="prose">
+      <h2>How to read the value index</h2>
+      <p>The <strong>value index</strong> compares how much of a game's <em>prize money</em> is still unclaimed
+        against how many of its <em>prizes</em> are still unclaimed. It answers one question: has this game kept
+        its big money, or spent it?</p>
+      <ul>
+        <li><strong>1.00</strong> &mdash; the game still holds exactly the mix of prize money it launched with.</li>
+        <li><strong>Above 1.00</strong> &mdash; unusually much of the large prize money is still out there.</li>
+        <li><strong>Below 1.00</strong> &mdash; the big prizes have been claimed and mostly small ones remain,
+          even though the ticket still costs the same and still advertises the top prize.</li>
+      </ul>
+      <p>Also watch the <strong>top prize</strong> column. Games showing "all claimed" are still on sale with
+        their headline prize entirely gone &mdash; the single most useful thing this data reveals.</p>
+
+      <h2>Why New York has no "value per dollar" figure</h2>
+      <p>Our <a href="scratch/texas.html">Texas</a>, <a href="scratch/california.html">California</a> and
+        <a href="scratch/idaho.html">Idaho</a> pages show what each game returns in cents per dollar spent.
+        That calculation needs the ticket price and the overall odds, and <strong>New York publishes
+        neither</strong> in any machine-readable form. Rather than guess a price and present the result as fact,
+        we use the price-independent index above, which measures the same underlying thing &mdash; whether a
+        game is better or worse than when it started &mdash; using only data the state actually publishes.</p>
+      <p>If New York begins publishing prices, we'll add the full calculation here too.</p>
+
+      <h2>How we calculate it</h2>
+      <p>Every figure comes from the New York Lottery's <em>Scratch-Off Game Daily Prize Status Report</em>,
+        published as open data by the state and refreshed daily. For each game we sum the cash value of prizes
+        printed and prizes still unpaid, and compare the two shares. Annuity prizes &mdash; paid per week or per
+        year for life &mdash; have no single cash value, so they are excluded from the value maths, though they
+        still appear as top prizes.</p>
+      <p>One limitation carries across every state we cover: <strong>"unpaid" means unclaimed, not unsold.</strong>
+        A top prize counted as unpaid may already sit in a ticket someone bought and hasn't redeemed. Late in a
+        game's life that gap dominates, so games with more than 90% of prizes claimed are flagged and hidden by
+        default &mdash; with few prizes left, the index swings on very small numbers.</p>
+      <p>Compare with other states on the <a href="scratch/">scratch games hub</a>, or see how draw games differ
+        on the <a href="bestodds.html">most winnable game map</a>.</p>
+    </section>
+
+    <p class="disclaimer">
+      Derived from New York Lottery data published via data.ny.gov — descriptive statistics, not official
+      guidance, and not a prediction about any individual ticket. Scratch-off games are negative-expected-value
+      by design: across all players they return less than they cost. For information and entertainment only —
+      not financial or gambling advice. You must be 18+ to play. If gambling is a problem for you or someone you
+      know, call <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="scratch/">Scratch games</a>
+      <a href="state.html?state=NY">New York lottery</a>
+      <a href="guides/">Guides</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="scratch.js"></script>
+</body>
+</html>
