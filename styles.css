@@ -1320,3 +1320,4 @@ a.state-cell:hover { border-color: var(--accent); }
   background: var(--surface-2); border: 1px solid var(--warn); color: var(--warn); vertical-align: middle; }
 .sc-barcell { width: 40%; min-width: 90px; }
 .sc-bar { display: block; height: 0.6rem; border-radius: 3px; background: linear-gradient(90deg, var(--accent-2), var(--good)); }
+.sc-dead th, .sc-dead td { opacity: 0.72; }

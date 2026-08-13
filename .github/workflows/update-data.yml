@@ -214,6 +214,7 @@ jobs:
           pwsh -File scraper/gen_scratch_tx.ps1 || echo "::warning::gen_scratch_tx failed (continuing)"
           pwsh -File scraper/gen_scratch_ca.ps1 || echo "::warning::gen_scratch_ca failed (continuing)"
           pwsh -File scraper/gen_scratch_ny.ps1 || echo "::warning::gen_scratch_ny failed (continuing)"
+          pwsh -File scraper/gen_scratch_fl.ps1 || echo "::warning::gen_scratch_fl failed (continuing)"
           pwsh -File scraper/gen_game_pages.ps1 || echo "::warning::gen_game_pages failed (continuing)"
           exit 0   # always succeed so the commit step runs with whatever updated
 
@@ -222,7 +223,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json
+          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0

@@ -19,6 +19,27 @@ function scValueClass(ev) {
 // cents-per-dollar figure. Those datasets carry metric:"index" and are rendered
 // against a price-independent value index instead.
 const scIsIndex = () => SC.data && SC.data.metric === "index";
+// Florida publishes only top-prize counts, so it gets a third, narrower view.
+const scIsTopPrize = () => SC.data && SC.data.metric === "topprize";
+
+function scRenderTopPrize(host, games) {
+  const rows = games.map((g, i) => `<tr${g.top_prize_gone ? ' class="sc-dead"' : ""}>
+      <td>${i + 1}</td>
+      <th scope="row">${g.name}</th>
+      <td>$${g.price}</td>
+      <td>${scMoney(g.top_prize)}</td>
+      <td>${g.top_prize_gone
+        ? '<span class="sc-gone">none left</span>'
+        : `<strong>${g.top_left}</strong> of ${g.top_original}`}</td>
+      <td class="${g.top_pct_left >= 50 ? "sc-v--best" : g.top_pct_left >= 20 ? "sc-v--mid" : "sc-v--low"}">${g.top_pct_left}%</td>
+    </tr>`).join("");
+  host.innerHTML = `<div class="sr-table-wrap"><table class="sr-table sc-table">
+      <thead><tr>
+        <th scope="col">#</th><th scope="col">Game</th><th scope="col">Price</th>
+        <th scope="col">Top prize</th><th scope="col">Still unclaimed</th><th scope="col">% left</th>
+      </tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="section-note">Showing all ${games.length} games on sale. Updated ${SC.data.updated}.</p>`;
+}
 
 function scIndexClass(v) {
   if (v >= 1.05) return "sc-v--best";
@@ -66,6 +87,14 @@ function scRender() {
     return;
   }
 
+  if (scIsTopPrize()) {
+    games.sort((a, b) => (key === "price" ? a.price - b.price
+      : key === "top_prize" ? b.top_prize - a.top_prize
+      : b.top_pct_left - a.top_pct_left));
+    scRenderTopPrize(host, games);
+    return;
+  }
+
   games.sort((a, b) => (key === "price" ? a.price - b.price
     : key === "pct_sold" ? a.pct_sold - b.pct_sold
     : key === "top_prize" ? b.top_prize - a.top_prize
@@ -105,6 +134,25 @@ function scSummary() {
   const best = solid[0];
   const worst = solid[solid.length - 1];
   const drained = SC.data.games.filter((g) => g.top_left === 0).length;
+
+  if (scIsTopPrize()) {
+    const gone = SC.data.games.filter((g) => g.top_prize_gone);
+    const intact = SC.data.games.filter((g) => g.top_pct_left === 100);
+    el.innerHTML = `<div class="sr-cards">
+        <div class="sr-card">
+          <div class="sr-card__game">Top prize already gone</div>
+          <div class="sr-card__jackpot">${gone.length} games</div>
+          <p class="sr-card__interp">Still on sale at full price with none of the headline prize left.</p>
+        </div>
+        <div class="sr-card">
+          <div class="sr-card__game">Completely untouched</div>
+          <div class="sr-card__jackpot">${intact.length} games</div>
+          <p class="sr-card__interp">Every top prize still unclaimed.</p>
+        </div>
+      </div>
+      <p class="section-note">${SC.data.games.length} games on sale. Updated ${SC.data.updated}.</p>`;
+    return;
+  }
 
   if (scIsIndex()) {
     const card = (label, g) => `<div class="sr-card">
@@ -155,7 +203,7 @@ function scInit() {
 function scByPrice() {
   const host = document.getElementById("sc-byprice");
   if (!host || !SC.data) return;
-  if (scIsIndex()) { host.remove(); return; }   // no ticket price in this dataset
+  if (scIsIndex() || scIsTopPrize()) { host.remove(); return; }  // not applicable to these datasets
   const buckets = {};
   SC.data.games.filter((g) => !g.low_confidence).forEach((g) => {
     (buckets[g.price] = buckets[g.price] || []).push(g.ev_now);
