@@ -625,7 +625,9 @@ def scrape_powerball_site(d, cfg):
     mi = html.find("c-draw-card__date")
     if mi < 0:
         return None
-    seg = re.sub(r"<[^>]+>", " ", html[mi:mi + 200])
+    # lotteryusa moved the month/day/year into a nested span, so the date now spans
+    # more markup — read a wider window ("Wednesday, <span...>Aug 12, 2026</span>").
+    seg = re.sub(r"<[^>]+>", " ", html[mi:mi + 600])
     dm = re.search(r"([A-Za-z]{3})[a-z]*\s+(\d{1,2}),?\s+(\d{4})", seg)
     if not dm:
         return None
