@@ -6,7 +6,7 @@
   const link = (t, h) => `<a href="${h}"${h === here ? ' class="is-active"' : ""}>${t}</a>`;
   const drawPages = ["national.html", "states.html", "uk.html", "tools.html", "state.html", "game.html",
     "breakeven.html", "statetax.html", "visualizer.html", "check.html", "lifecalc.html",
-    "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html"];
+    "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html"];
   const groupActive = drawPages.includes(here);
 
   const nav = document.createElement("nav");

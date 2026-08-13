@@ -113,6 +113,10 @@ foreach ($p in $paths) {
     top_left = [long]$topTier.remaining
     top_original = [long]$topTier.original
     est_tiers = $estimatedTiers
+    # Share of the remaining value riding on the single top tier. When one or two
+    # unclaimed big prizes carry much of the number, the estimate is fragile: those
+    # prizes may already sit in sold-but-unredeemed tickets.
+    top_share = $(if ($valueLeft -gt 0) { [math]::Round(($topTier.remaining * $topTier.prize) / $valueLeft, 3) } else { 0 })
     # Late in a print run, "unclaimed" and "still on the shelf" diverge badly: a big
     # prize may already sit in a sold ticket. Flag those so they are never presented
     # as a live opportunity.

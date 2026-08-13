@@ -210,6 +210,7 @@ jobs:
           python scraper/mm_winners.py || echo "::warning::mm_winners failed (continuing)"
           python scraper/split_risk.py || echo "::warning::split_risk failed (continuing)"
           pwsh -File scraper/gen_state_odds.ps1 || echo "::warning::gen_state_odds failed (continuing)"
+          pwsh -File scraper/gen_scratch_id.ps1 || echo "::warning::gen_scratch_id failed (continuing)"
           pwsh -File scraper/gen_game_pages.ps1 || echo "::warning::gen_game_pages failed (continuing)"
           exit 0   # always succeed so the commit step runs with whatever updated
 
@@ -218,7 +219,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json
+          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0

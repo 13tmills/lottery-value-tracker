@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Best Idaho Scratch Tickets: Prizes Remaining &amp; Real Value | NumbersIntel</title>
+  <meta name="description" content="Which Idaho scratch tickets still have their big prizes? We compute what every Idaho Lottery scratch game is worth per dollar right now — using unclaimed prizes and percent sold — not what it was worth at launch." />
+  <link rel="canonical" href="https://numbersintel.com/scratch/idaho.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="Best Idaho Scratch Tickets by Prizes Remaining" />
+  <meta property="og:description" content="What every Idaho scratch game is worth per dollar right now — from unclaimed prizes and percent sold." />
+  <meta property="og:url" content="https://numbersintel.com/scratch/idaho.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"Idaho scratch ticket remaining prize value","description":"For each Idaho Lottery scratch game: ticket price, percent sold, unclaimed prizes by tier, and the resulting value returned per dollar spent at the current point in the print run.","creator":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"url":"https://numbersintel.com/scratch/idaho.html","license":"https://numbersintel.com/terms.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do you know which scratch tickets are best?","acceptedAnswer":{"@type":"Answer","text":"The Idaho Lottery publishes, for every scratch game, how many of each prize remain unclaimed and what percentage of tickets have sold. From the original prize counts and their published odds you can derive how many tickets were printed, and therefore how many are left — which gives the unclaimed prize value per remaining dollar spent. A game whose top prizes are already claimed returns less than it did at launch, at the same ticket price."}},
+    {"@type":"Question","name":"Can a scratch ticket ever be a good bet?","acceptedAnswer":{"@type":"Answer","text":"No. Every Idaho scratch game returns between about 62% and 78% of sales as prizes at launch, so the house edge is built in from the first ticket. This analysis only shows which games are least bad at this moment — it never makes any of them a positive-expected-value purchase."}},
+    {"@type":"Question","name":"Why are games over 90% sold unreliable?","acceptedAnswer":{"@type":"Answer","text":"Because 'remaining' means unclaimed, not unsold. A large prize counted as remaining may already sit in a ticket someone has bought and not yet redeemed. Late in a print run that gap dominates, which can make a nearly exhausted game look far better than it is, so we flag and hide those games by default."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="state.html?state=ID">&larr; Idaho lottery</a>
+    <h1>Idaho scratch tickets: what's actually left</h1>
+    <p class="tagline">Every Idaho scratch game ranked by what it returns per dollar <em>right now</em> —
+      not what it was worth the day it was printed.</p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead">Here is something the ticket rack will never tell you: a scratch game whose top prizes
+        have already been claimed still sells for exactly the same price. The $20 ticket advertising a
+        $200,000 jackpot may have no $200,000 prizes left at all &mdash; and nothing on the packaging changes.</p>
+      <p>The Idaho Lottery publishes enough data to fix that, so we do the arithmetic: for every game on sale,
+        how much unclaimed prize money remains, how many tickets are left to buy, and therefore
+        <strong>what a dollar spent on that game actually buys today</strong>.</p>
+    </section>
+
+    <div id="sc-summary"></div>
+
+    <section class="panel">
+      <h2>Every Idaho scratch game, ranked</h2>
+      <div class="sc-controls">
+        <label>Sort by
+          <select id="sc-sort" class="aw-select">
+            <option value="ev_now">Value per $1 now</option>
+            <option value="price">Ticket price</option>
+            <option value="pct_sold">Percent sold</option>
+            <option value="top_prize">Top prize size</option>
+          </select>
+        </label>
+        <label class="sc-check"><input type="checkbox" id="sc-hide" checked /> Hide games over 90% sold</label>
+      </div>
+      <div id="sc-table"></div>
+    </section>
+
+    <section class="prose">
+      <h2>How to read this</h2>
+      <p><strong>"Value per $1 now"</strong> is the unclaimed prize money divided by what it would cost to buy
+        every remaining ticket. If a game shows 68%, then across all the tickets still out there, players will
+        get back about 68 cents for each dollar they spend. <strong>"At launch"</strong> is the same figure for
+        the full print run &mdash; what the game was designed to pay.</p>
+      <p>Comparing the two columns is the whole point. A game sitting well <em>below</em> its launch figure has
+        had its big prizes claimed and is now a worse deal than it was designed to be. A game <em>above</em> it
+        still has unusually much of its prize money outstanding.</p>
+      <p>The last column, <strong>"riding on top prize,"</strong> is a health warning on that figure: it shows
+        how much of the remaining value sits in the single largest prize tier. Where that share is high, the
+        whole number depends on one or two tickets that may already have been sold &mdash; so treat a strong
+        rating there as far more fragile than one built on thousands of mid-size prizes still outstanding.</p>
+      <p>Every Idaho scratch game starts life returning roughly <strong>62% to 78%</strong> of sales as prizes.
+        That range is the house edge, and no game escapes it &mdash; this table only shows which are currently
+        least bad, never which are good. For the underlying idea see
+        <a href="guides/what-is-lottery-expected-value/">what expected value means</a> and
+        <a href="guides/where-your-lottery-dollar-goes/">where your lottery dollar goes</a>.</p>
+
+      <h2>How we calculate it</h2>
+      <p>For each game the Idaho Lottery publishes the ticket price, the overall odds, the percentage of tickets
+        sold, and a prize table listing every tier's original count, unclaimed count and odds. From any tier,
+        <em>original count &times; that tier's odds</em> gives the size of the print run &mdash; and we check
+        that every tier agrees before trusting it. Multiplying by the unsold percentage gives tickets remaining;
+        summing unclaimed prizes gives the money still in play.</p>
+      <p>Two honest limitations. First, Idaho withholds remaining counts for prizes under $25, so those tiers are
+        estimated as their original count times the unsold share &mdash; they are numerous enough that they
+        deplete very close to proportionally, and the large prizes that actually move the number carry published
+        exact figures. Second, and more important: <strong>"remaining" means unclaimed, not unsold.</strong> A
+        top prize counted as remaining may already sit in a ticket someone bought and hasn't scratched or
+        redeemed. Late in a print run that gap dominates, which is why games over 90% sold are flagged and hidden
+        by default &mdash; their apparent value is an artefact, not an opportunity.</p>
+      <p>Figures update daily from the Idaho Lottery's published data. See our
+        <a href="methodology.html">methodology page</a> for how we handle data across the site.</p>
+    </section>
+
+    <p class="disclaimer">
+      Estimates derived from Idaho Lottery published prize and sales data — not official figures, and not a
+      prediction of any individual ticket. Scratch games are negative-expected-value by design: every game listed
+      returns less than it costs across all players. For information and entertainment only — not financial or
+      gambling advice. You must be 18+ to play. If gambling is a problem for you or someone you know, call
+      <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="state.html?state=ID">Idaho lottery</a>
+      <a href="states.html">US State Drawings</a>
+      <a href="guides/">Guides</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="scratch.js"></script>
+</body>
+</html>
