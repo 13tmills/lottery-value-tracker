@@ -1318,3 +1318,5 @@ a.state-cell:hover { border-color: var(--accent); }
 .sc-gone { color: var(--bad); font-weight: 600; }
 .sc-flag { display: inline-block; font-size: 0.65rem; padding: 0.05rem 0.35rem; border-radius: 999px;
   background: var(--surface-2); border: 1px solid var(--warn); color: var(--warn); vertical-align: middle; }
+.sc-barcell { width: 40%; min-width: 90px; }
+.sc-bar { display: block; height: 0.6rem; border-radius: 3px; background: linear-gradient(90deg, var(--accent-2), var(--good)); }

@@ -92,9 +92,36 @@ function scInit() {
   if (chk) chk.addEventListener("change", () => { SC.hideLow = chk.checked; scRender(); });
 }
 
-fetch("scratch_id.json", { cache: "no-store" })
+// Per-price averages — the clearest finding in the data: cheap tickets pay back least.
+function scByPrice() {
+  const host = document.getElementById("sc-byprice");
+  if (!host || !SC.data) return;
+  const buckets = {};
+  SC.data.games.filter((g) => !g.low_confidence).forEach((g) => {
+    (buckets[g.price] = buckets[g.price] || []).push(g.ev_now);
+  });
+  const prices = Object.keys(buckets).map(Number).sort((a, b) => a - b);
+  if (prices.length < 3) { host.remove(); return; }
+  const rows = prices.map((p) => {
+    const arr = buckets[p];
+    const avg = arr.reduce((s, v) => s + v, 0) / arr.length;
+    const bar = Math.round(avg * 100);
+    return `<tr>
+      <th scope="row">$${p}</th>
+      <td>${arr.length}</td>
+      <td class="${scValueClass(avg)}"><strong>${scPct(avg)}</strong></td>
+      <td class="sc-barcell"><span class="sc-bar" style="width:${bar}%"></span></td></tr>`;
+  }).join("");
+  host.innerHTML = `<div class="sr-table-wrap"><table class="sr-table">
+      <thead><tr><th scope="col">Ticket price</th><th scope="col">Games</th><th scope="col">Avg value per $1</th><th scope="col"></th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
+}
+
+// Which dataset to load is set per page: <div id="sc-table" data-src="scratch_tx.json">
+const scSrc = (document.getElementById("sc-table") || {}).dataset?.src || "scratch_id.json";
+fetch(scSrc, { cache: "no-store" })
   .then((r) => r.json())
-  .then((d) => { SC.data = d; scInit(); scSummary(); scRender(); })
+  .then((d) => { SC.data = d; scInit(); scSummary(); scRender(); scByPrice(); })
   .catch(() => {
     const h = document.getElementById("sc-table");
     if (h) h.innerHTML = '<p class="section-note">Scratch data is loading or temporarily unavailable.</p>';

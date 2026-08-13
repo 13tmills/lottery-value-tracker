@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Best Texas Scratch Off Tickets: Prizes Remaining &amp; Real Value | NumbersIntel</title>
+  <meta name="description" content="Which Texas scratch offs still have their big prizes? We compute what all 75 Texas Lottery scratch games return per dollar right now from unclaimed prizes — plus the clear pattern that $1 tickets pay back far less than $50 ones." />
+  <link rel="canonical" href="https://numbersintel.com/scratch/texas.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="Best Texas Scratch Off Tickets by Prizes Remaining" />
+  <meta property="og:description" content="All 75 Texas scratch games ranked by what they return per dollar today — and why cheap tickets are the worst value." />
+  <meta property="og:url" content="https://numbersintel.com/scratch/texas.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"Texas scratch ticket remaining prize value","description":"For each Texas Lottery scratch game: ticket price, tickets printed, prizes claimed and unclaimed by tier, and the resulting value returned per dollar spent at the current point in the print run.","creator":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"url":"https://numbersintel.com/scratch/texas.html","license":"https://numbersintel.com/terms.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Which Texas scratch off tickets have the best odds?","acceptedAnswer":{"@type":"Answer","text":"Value varies far more by ticket price than by game. Across all 75 Texas scratch games on sale, $1 tickets return an average of about 55 cents per dollar while $50 and $100 tickets return closer to 78-79 cents. Within a price band, the best games are those that still have most of their large prizes unclaimed."}},
+    {"@type":"Question","name":"Do more expensive scratch tickets really pay back more?","acceptedAnswer":{"@type":"Answer","text":"Yes, consistently. In the Texas data the average payout rises steadily with ticket price: about 55% at $1, 63% at $2, 66% at $5, 69% at $10, 74% at $20 and 78-79% at $50 and $100. A more expensive ticket is still a losing bet, but it loses less per dollar staked."}},
+    {"@type":"Question","name":"How do you know how many prizes are left?","acceptedAnswer":{"@type":"Answer","text":"The Texas Lottery publishes each game's total tickets printed and a full prize table showing how many of every prize were printed and how many have been claimed. The difference is what remains, and comparing claims against the print run shows roughly how far through the game is — enough to compute the value still in play per remaining ticket."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="state.html?state=TX">&larr; Texas lottery</a>
+    <h1>Texas scratch offs: what's actually left</h1>
+    <p class="tagline">All 75 Texas scratch games ranked by what they return per dollar <em>right now</em> —
+      not what they were worth the day they were printed.</p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead">A Texas scratch game whose top prizes have all been claimed still sells at exactly the
+        same price, with the same big number printed on the front. Nothing on the rack tells you the prize
+        you're chasing is already gone.</p>
+      <p>The Texas Lottery publishes enough to work it out &mdash; every game's print run, and how many of each
+        prize have been claimed &mdash; so we do the arithmetic for all 75 games on sale: how much prize money
+        is still unclaimed, how many tickets are left, and therefore
+        <strong>what a dollar spent on that game actually buys today</strong>.</p>
+    </section>
+
+    <div id="sc-summary"></div>
+
+    <section class="panel">
+      <h2>The clearest pattern: cheap tickets pay back least</h2>
+      <p class="section-note">Average value returned per dollar, grouped by ticket price, across every Texas
+        game currently on sale.</p>
+      <div id="sc-byprice"></div>
+      <p class="section-note">This is the most reliable finding in the data, and it is remarkably consistent:
+        the more a ticket costs, the larger the share of sales that comes back as prizes. A $1 ticket is the
+        worst value on the rack by a wide margin. That does <em>not</em> make a $50 ticket a good bet &mdash; it
+        is still a guaranteed loss on average, just a smaller one per dollar staked, and it puts far more money
+        at risk per ticket.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Every Texas scratch game, ranked</h2>
+      <div class="sc-controls">
+        <label>Sort by
+          <select id="sc-sort" class="aw-select">
+            <option value="ev_now">Value per $1 now</option>
+            <option value="price">Ticket price</option>
+            <option value="pct_sold">Percent sold</option>
+            <option value="top_prize">Top prize size</option>
+          </select>
+        </label>
+        <label class="sc-check"><input type="checkbox" id="sc-hide" checked /> Hide games over 90% sold</label>
+      </div>
+      <div id="sc-table" data-src="scratch_tx.json"></div>
+    </section>
+
+    <section class="prose">
+      <h2>How to read this</h2>
+      <p><strong>"Value per $1 now"</strong> is the unclaimed prize money divided by what it would cost to buy
+        every remaining ticket. A game showing 70% means that across all the tickets still out there, players
+        will get back about 70 cents per dollar spent. <strong>"At launch"</strong> is the same figure for the
+        full print run &mdash; what the game was designed to pay.</p>
+      <p>The gap between those two columns is the point. A game well <em>below</em> its launch figure has had its
+        big prizes claimed and is now a worse deal than designed. One <em>above</em> it still has unusually much
+        prize money outstanding. The <strong>"riding on top prize"</strong> column is the health warning: where a
+        large share of the remaining value sits in one prize tier, the rating depends on a couple of tickets that
+        may already be sold, so treat it as fragile.</p>
+      <p>Every Texas scratch game launches returning roughly <strong>60% to 80%</strong> of sales as prizes.
+        That spread is the house edge and no game escapes it &mdash; this table shows which are currently least
+        bad, never which are good. See <a href="guides/what-is-lottery-expected-value/">what expected value
+        means</a> and <a href="guides/where-your-lottery-dollar-goes/">where your lottery dollar goes</a>.</p>
+
+      <h2>How we calculate it</h2>
+      <p>Texas publishes unusually complete data. Each game's detail page states the total number of tickets
+        printed, the overall odds, and a full prize table listing every tier's printed count and how many have
+        been claimed &mdash; with no withheld rows. Subtracting claims gives what remains; comparing total claims
+        against total prizes shows roughly how far through the print run the game is, which gives the tickets
+        still available.</p>
+      <p>Two honest limitations. Texas does not publish a percent-sold figure, so we infer it from the share of
+        prizes claimed; because small prizes often go unredeemed, that <em>understates</em> sales and therefore
+        makes these value figures slightly conservative. More importantly,
+        <strong>"remaining" means unclaimed, not unsold</strong> &mdash; a top prize counted as remaining may
+        already sit in a ticket someone bought and hasn't redeemed. Late in a print run that gap dominates, so
+        games over 90% sold are flagged and hidden by default.</p>
+      <p>Comparing states? See the same analysis for
+        <a href="scratch/idaho.html">Idaho scratch tickets</a>, or how your state's draw games stack up on the
+        <a href="bestodds.html">most winnable game map</a>.</p>
+    </section>
+
+    <p class="disclaimer">
+      Estimates derived from Texas Lottery published prize and sales data — not official figures, and not a
+      prediction about any individual ticket. Scratch games are negative-expected-value by design: every game
+      listed returns less than it costs across all players. For information and entertainment only — not
+      financial or gambling advice. You must be 18+ to play. If gambling is a problem for you or someone you
+      know, call <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="state.html?state=TX">Texas lottery</a>
+      <a href="scratch/idaho.html">Idaho scratch</a>
+      <a href="guides/">Guides</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="scratch.js"></script>
+</body>
+</html>
