@@ -32,11 +32,24 @@ $STATES = @(
      sourceNote = "Connecticut publishes a full unclaimed-prize table for every game, dated to the day, and &mdash; unusually &mdash; states the <em>total number of tickets printed</em> on each game's page. That means the print run is a published fact here rather than something derived from the overall odds." }
   @{ code = 'NM'; slug = 'new-mexico'; name = 'New Mexico'; noun = 'scratchers'
      sourceNote = "New Mexico puts every game's complete prize table on a single page: prize amount, that tier's odds, the approximate number of prizes and the number still remaining. Per-tier odds mean the print run can be cross-checked across every tier of every game." }
+  @{ code = 'NJ'; slug = 'new-jersey'; name = 'New Jersey'; noun = 'scratch-offs'
+     sourceNote = "New Jersey publishes every prize tier of every game with the winning tickets printed and how many have been paid, plus <em>the exact size of the print run</em> rather than a figure we have to derive. It also handles annuities better than most states: where a game advertises a `$1,000,000 top prize paid over time, the published prize figure is already the cash value a winner could actually take &mdash; `$628,500 in that case &mdash; so nothing has to be estimated or excluded." }
+  @{ code = 'AZ'; slug = 'arizona'; name = 'Arizona'; noun = 'scratchers'
+     sourceNote = "Arizona publishes each game's price, overall odds and full prize table with per-tier odds, so the print run is cross-checked across every tier. One Arizona quirk needs care: the state is <strong>inconsistent about annuity prizes</strong>. Most games list the cash value a winner could take, but a few list the advertised total of all payments instead, with no cash value published anywhere. Those games look entirely plausible &mdash; they produce a payout figure well inside the normal range &mdash; so we detect them by comparing the top tier against the game's own advertised annuity figure, and drop them rather than publish a number we can't stand behind." }
+  @{ code = 'MD'; slug = 'maryland'; name = 'Maryland'; noun = 'scratch-offs'
+     sourceNote = "Maryland publishes, for every prize tier of every game, the number of prizes at the start and the number remaining, with the ticket price and the probability of winning, and stamps each page with the date the records were last updated. Maryland also prints the same warning we do: remaining counts may include tickets already sold but not yet cashed." }
+  @{ code = 'IL'; slug = 'illinois'; name = 'Illinois'; noun = 'instant games'
+     sourceNote = "Illinois publishes one page carrying every game's complete prize ladder &mdash; each tier's value, how many were printed and how many are still unpaid &mdash; with the overall odds on each game's own page. A caution on how we match the two: Illinois reuses game slugs across editions, so a page for '100X The Cash' may describe a retired edition of the same name. We accept a game's odds only when the game number on the detail page matches the live game, and drop the handful where it doesn't rather than attach the wrong odds to a live game." }
+  @{ code = 'IN'; slug = 'indiana'; name = 'Indiana'; noun = 'scratch-offs'; partial = $true
+     sourceNote = "Indiana is the one state where we publish only a fraction of the rack, and the reason is worth stating plainly. <strong>Indiana's prize tables are truncated:</strong> the site's own footnote says the table 'may not be inclusive of all prizes in the game', and in practice no prize below `$30 is ever listed. The missing tiers are winning tickets, so working from the published table alone understates how many tickets were printed and <em>overstates</em> what a game returns &mdash; by roughly 15-30% on cheap tickets. The clearest proof is a `$1 game called `$50 Frenzy, whose published table would imply it pays back more than ten times its price. The full prize ladder exists only inside scanned rules PDFs with no extractable text, and we will not invent the missing tiers. So this page covers only games priced at or above Indiana's `$30 publication floor, where every prize in the ladder is actually published and the arithmetic is sound. Note that a plausibility check alone would not catch this: the inflated cheaper games produce payout figures that look entirely normal." }
   @{ code = 'LA'; slug = 'louisiana'; name = 'Louisiana'; noun = 'scratch-offs'
      sourceNote = "Louisiana publishes an unusually explicit prize table: for each tier it gives the prize, that tier's odds, and the total, <em>claimed</em> and remaining counts separately &mdash; so the claimed figure is stated outright rather than inferred by subtraction." }
   @{ code = 'AR'; slug = 'arkansas'; name = 'Arkansas'; noun = 'instant games'
      sourceNote = "Arkansas publishes, per tier, the total prizes in the game, the estimated prizes remaining, and the total prize <em>value</em> both at start and remaining &mdash; giving an independent check on our own value arithmetic, since the state's dollar totals and ours have to agree." }
-  @{ code = 'WV'; slug = 'west-virginia'; name = 'West Virginia'; noun = 'scratch-offs'
+  # HELD BACK: the Next.js RSC chunk parsing is producing corrupted game names
+  # ("POWER-CAKE-VIBES-SPIN", "$$300 GRAND") and 18 of 46 games come out with no
+  # overall odds. Not publishable until the chunk reassembly is fixed.
+  @{ code = 'WV'; slug = 'west-virginia'; name = 'West Virginia'; noun = 'scratch-offs'; skip = $true
      sourceNote = "West Virginia publishes each game's price, overall odds and complete prize table with total and remaining counts per tier, embedded as structured data in its game pages rather than as a rendered table." }
 )
 
@@ -66,12 +79,20 @@ foreach ($st in $STATES) {
   $evMax = ($games.ev_start | Measure-Object -Maximum).Maximum
   $zeroTop = @($games | Where-Object { $_.top_left -eq 0 }).Count
 
-  # Price curve, computed from this state's own data.
-  $byPrice = $games | Group-Object price | Sort-Object { [double]$_.Name }
+  # Price curve, computed from this state's own data. MUST exclude low_confidence
+  # games, because the on-page widget (scByPrice in scratch.js) excludes them too -
+  # otherwise the prose quotes a number the chart beside it doesn't show. A single
+  # 96%-sold game in a thin price band is enough to move the average double digits.
+  $priceable = @($games | Where-Object { -not $_.low_confidence })
+  if ($priceable.Count -lt 5) { $priceable = $games }
+  $byPrice = $priceable | Group-Object price | Sort-Object { [double]$_.Name }
   $lowP = $byPrice[0]; $highP = $byPrice[-1]
   $lowAvg = ($lowP.Group.ev_now | Measure-Object -Average).Average
   $highAvg = ($highP.Group.ev_now | Measure-Object -Average).Average
-  $curveHolds = ($highAvg - $lowAvg) -gt 0.05
+  # Only claim a price/value curve when there are enough price points to show one.
+  # Indiana publishes usable data for two price points only - a "curve" drawn
+  # through two dots is not a finding.
+  $curveHolds = ($highAvg - $lowAvg) -gt 0.05 -and $byPrice.Count -ge 4
 
   $best = @($games | Where-Object { -not $_.low_confidence } | Sort-Object ev_now -Descending)[0]
 
@@ -98,9 +119,13 @@ foreach ($st in $STATES) {
   }
 
   $curvePara = if ($curveHolds) {
-    "<p class=`"section-note`">The same pattern turns up in every state we analyse: $($st.name) climbs from <strong>$lowPct</strong> on $lowLbl tickets to <strong>$highPct</strong> on $highLbl ones, matching the curve in our <a href=`"scratch/texas.html`">Texas</a> (55% &rarr; 79%) and <a href=`"scratch/california.html`">California</a> (61% &rarr; 83%) data. Unrelated state lotteries keep making the same design decision: the cheap tickets on the rack are the worst value in the shop. That does not make an expensive ticket a good bet &mdash; it is still a guaranteed average loss, just a smaller one per dollar, with far more money at risk per ticket.</p>"
+    "<p class=`"section-note`">The same pattern turns up in every state we analyse: $($st.name) climbs from <strong>$lowPct</strong> on $lowLbl tickets to <strong>$highPct</strong> on $highLbl ones, the same climb we find in our <a href=`"scratch/texas.html`">Texas</a>, <a href=`"scratch/california.html`">California</a> and <a href=`"scratch/`">every other state's</a> data. Eighteen unrelated state lotteries keep making the same design decision: the cheap tickets on the rack are the worst value in the shop. That does not make an expensive ticket a good bet &mdash; it is still a guaranteed average loss, just a smaller one per dollar, with far more money at risk per ticket.</p>"
   } else {
-    "<p class=`"section-note`">Across most states, value climbs steadily with ticket price &mdash; in <a href=`"scratch/texas.html`">Texas</a> from 55% on `$1 tickets to 79% on `$50 ones. $($st.name)'s current mix of games shows that less sharply, which is worth knowing in itself: the rule of thumb holds broadly, not universally.</p>"
+    $(if ($byPrice.Count -lt 4) {
+      "<p class=`"section-note`">We don't draw a price/value curve for $($st.name), because there aren't enough price points in the data we can trust to show one &mdash; only $($byPrice.Count) survive the limits described below. In states that publish complete prize tables the pattern is consistent and strong: see <a href=`"scratch/`">the eighteen states where it holds</a>.</p>"
+    } else {
+      "<p class=`"section-note`">Across most states, value climbs steadily with ticket price &mdash; see our <a href=`"scratch/texas.html`">Texas</a> and <a href=`"scratch/california.html`">California</a> data. $($st.name)'s current mix of games shows that less sharply, which is worth knowing in itself: the rule of thumb holds broadly, not universally.</p>"
+    })
   }
 
   $html = @"

@@ -225,6 +225,13 @@ jobs:
           pwsh -File scraper/gen_scratch_ok.ps1 || echo "::warning::gen_scratch_ok failed (continuing)"
           pwsh -File scraper/gen_scratch_ct.ps1 || echo "::warning::gen_scratch_ct failed (continuing)"
           pwsh -File scraper/gen_scratch_nm.ps1 || echo "::warning::gen_scratch_nm failed (continuing)"
+          pwsh -File scraper/gen_scratch_nj.ps1 || echo "::warning::gen_scratch_nj failed (continuing)"
+          pwsh -File scraper/gen_scratch_az.ps1 || echo "::warning::gen_scratch_az failed (continuing)"
+          pwsh -File scraper/gen_scratch_md.ps1 || echo "::warning::gen_scratch_md failed (continuing)"
+          pwsh -File scraper/gen_scratch_la.ps1 || echo "::warning::gen_scratch_la failed (continuing)"
+          pwsh -File scraper/gen_scratch_ar.ps1 || echo "::warning::gen_scratch_ar failed (continuing)"
+          pwsh -File scraper/gen_scratch_il.ps1 || echo "::warning::gen_scratch_il failed (continuing)"
+          pwsh -File scraper/gen_scratch_in.ps1 || echo "::warning::gen_scratch_in failed (continuing)"
           # Regenerates the per-state scratch pages so their headline numbers
           # (game counts, payout ranges, price curve) track the fresh data.
           pwsh -File scraper/gen_scratch_pages.ps1 || echo "::warning::gen_scratch_pages failed (continuing)"
@@ -236,7 +243,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json scratch_ok.json scratch_ct.json scratch_nm.json scratch/
+          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json scratch_ok.json scratch_ct.json scratch_nm.json scratch_nj.json scratch_az.json scratch_md.json scratch_la.json scratch_ar.json scratch_il.json scratch_in.json scratch/
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0

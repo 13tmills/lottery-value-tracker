@@ -8,7 +8,9 @@
     "breakeven.html", "statetax.html", "visualizer.html", "check.html", "lifecalc.html",
     "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html", "texas.html", "california.html", "new-york.html", "florida.html", "michigan.html", "georgia.html", "north-carolina.html",
     "south-carolina.html", "missouri.html", "virginia.html", "massachusetts.html", "oklahoma.html",
-    "connecticut.html", "new-mexico.html"];
+    "connecticut.html", "new-mexico.html", "new-jersey.html", "arizona.html", "maryland.html",
+    "louisiana.html", "arkansas.html",
+    "illinois.html", "indiana.html"];
   const groupActive = drawPages.includes(here);
 
   // Scratch pages live under /scratch/, so match on the path rather than the filename.
@@ -19,14 +21,21 @@
   // One entry per state we publish scratch data for, alphabetical. Every state
   // page stays linked from every page on the site; the menu scrolls if it needs to.
   const scratchStates = [
+    ["Arizona Scratchers", "arizona"],
+    ["Arkansas Instant Games", "arkansas"],
     ["California Scratchers", "california"],
     ["Connecticut Scratch Games", "connecticut"],
     ["Florida Scratch-Offs", "florida"],
     ["Georgia Scratchers", "georgia"],
     ["Idaho Scratch Tickets", "idaho"],
+    ["Illinois Instant Games", "illinois"],
+    ["Indiana Scratch-Offs", "indiana"],
+    ["Louisiana Scratch-Offs", "louisiana"],
+    ["Maryland Scratch-Offs", "maryland"],
     ["Massachusetts Instant Games", "massachusetts"],
     ["Michigan Instant Games", "michigan"],
     ["Missouri Scratchers", "missouri"],
+    ["New Jersey Scratch-Offs", "new-jersey"],
     ["New Mexico Scratchers", "new-mexico"],
     ["New York Scratch-Offs", "new-york"],
     ["North Carolina Scratch-Offs", "north-carolina"],
