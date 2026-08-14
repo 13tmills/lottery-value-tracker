@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Best Virginia Scratchers: Prizes Remaining &amp; Real Value | NumbersIntel</title>
+  <meta name="description" content="Which Virginia Scratchers still have their big prizes? We compute what all 83 active games return per dollar today from unclaimed prize data &mdash; and 12 of them have no top prize left." />
+  <link rel="canonical" href="https://numbersintel.com/scratch/virginia.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="Best Virginia Scratchers by Prizes Remaining" />
+  <meta property="og:description" content="All 83 active Virginia Scratchers ranked by what they return per dollar today." />
+  <meta property="og:url" content="https://numbersintel.com/scratch/virginia.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"Virginia Scratchers remaining prize value","description":"For each active Virginia Lottery instant game: ticket price, overall odds, prizes printed and still unclaimed by tier, and the resulting value returned per dollar at the current point in the print run.","creator":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"url":"https://numbersintel.com/scratch/virginia.html","license":"https://numbersintel.com/terms.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Which Virginia Scratchers have the best odds?","acceptedAnswer":{"@type":"Answer","text":"Ticket price matters far more than which game you pick. Across every active Virginia game, $1 tickets return an average of about 58% per dollar while $50 tickets return 81%. Within a price band, the best games are the ones that still have most of their large prizes unclaimed."}},
+    {"@type":"Question","name":"How many Virginia Scratchers have no top prize left?","acceptedAnswer":{"@type":"Answer","text":"12 of the 83 active Virginia games we track currently have zero top prizes remaining. They stay on sale at full price with the headline prize still printed on the ticket, and nothing on the packaging indicates it has already been claimed."}},
+    {"@type":"Question","name":"Does the Virginia Lottery publish prizes remaining?","acceptedAnswer":{"@type":"Answer","text":"Yes. Virginia publishes, for every prize tier of every game, how many prizes were printed and how many are still unclaimed. This page turns that into a ranking of what each game returns per dollar today, refreshed daily."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="scratch/">&larr; Scratch games</a>
+    <h1>Virginia Scratchers: what's actually left</h1>
+    <p class="tagline">All 83 active Virginia games ranked by what they return per dollar <em>right now</em> &mdash;
+      not what they were worth the day they were printed.</p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead"><strong>12</strong> Virginia Scratchers on sale today have <strong>zero top prizes left</strong>. Every one already claimed &mdash; and every one still on the rack at full price, with the headline number printed on the front.</p>
+      <p>The Virginia Lottery publishes, for every prize tier of every game, how many prizes were printed and
+        how many are still unclaimed. That is enough to work out exactly what each game has left &mdash; so we
+        pull it daily and rank every active game.</p>
+    </section>
+
+    <div id="sc-summary"></div>
+
+    <section class="panel">
+      <h2>Cheap tickets pay back the least</h2>
+      <p class="section-note">Average value returned per dollar, grouped by ticket price, across every active
+        Virginia game.</p>
+      <div id="sc-byprice"></div>
+      <p class="section-note">The same pattern turns up in every state we analyse: Virginia climbs from <strong>58%</strong> on $1 tickets to <strong>81%</strong> on $50 ones, matching the curve in our <a href="scratch/texas.html">Texas</a> (55% &rarr; 79%) and <a href="scratch/california.html">California</a> (61% &rarr; 83%) data. Unrelated state lotteries keep making the same design decision: the cheap tickets on the rack are the worst value in the shop. That does not make an expensive ticket a good bet &mdash; it is still a guaranteed average loss, just a smaller one per dollar, with far more money at risk per ticket.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Every Virginia game, ranked</h2>
+      <div class="sc-controls">
+        <label>Sort by
+          <select id="sc-sort" class="aw-select">
+            <option value="ev_now">Value per $1 now</option>
+            <option value="price">Ticket price</option>
+            <option value="pct_sold">Percent sold</option>
+            <option value="top_prize">Top prize size</option>
+          </select>
+        </label>
+        <label class="sc-check"><input type="checkbox" id="sc-hide" checked /> Hide games over 90% sold</label>
+      </div>
+      <div id="sc-table" data-src="scratch_va.json"></div>
+    </section>
+
+    <section class="prose">
+      <h2>How to read this</h2>
+      <p><strong>"Value per $1 now"</strong> is the unclaimed prize money divided by what it would cost to buy
+        every remaining ticket. A game showing 70% means players will get back about 70 cents per dollar across
+        the tickets still out there. <strong>"At launch"</strong> is the same figure for the full print run
+        &mdash; what the game was designed to pay.</p>
+      <p>The gap between those columns is the point: a game well <em>below</em> its launch figure has had its
+        big prizes claimed and is now a worse deal than designed. The <strong>"riding on top prize"</strong>
+        column is the health warning &mdash; where much of the remaining value sits in one tier, the rating
+        hangs on a couple of tickets that may already be sold.</p>
+      <p>Every Virginia game launches returning roughly <strong>61% to 81%</strong> of sales as
+        prizes. That is the house edge, and no game escapes it &mdash; this table shows which are currently
+        least bad, never which are good. See
+        <a href="guides/what-is-lottery-expected-value/">what expected value means</a> and
+        <a href="guides/where-your-lottery-dollar-goes/">where your lottery dollar goes</a>.</p>
+
+      <h2>How we calculate it</h2>
+      <p>Virginia publishes, for every prize tier of every Scratcher, the winning tickets at the start of the game and the number still unclaimed, with the ticket price and overall odds. One Virginia-specific detail matters: where a top prize is paid as an <strong>annuity</strong>, the advertised figure overstates what a winner actually receives, and Virginia states the real cash value in a footnote &mdash; a $7,000,000 headline against a $4,000,000 cash value. We use the published cash value, and skip any game whose annuity has no stated cash value rather than guess one.</p>
+      <p>Two honest limitations. Virginia does not publish a percent-sold figure, so we infer it from the
+        share of prizes already claimed; because small prizes often go unredeemed, that understates sales and
+        makes these figures slightly conservative. And <strong>"unclaimed" is not the same as "unsold"</strong>
+        &mdash; a top prize counted as remaining may already sit in a ticket someone bought and hasn't cashed.
+        Late in a print run that gap dominates, so games over 90% sold are flagged and hidden by default.</p>
+      <p>Compare states on the <a href="scratch/">scratch games hub</a>, or see how draw games differ on the
+        <a href="bestodds.html">most winnable game map</a>.</p>
+    </section>
+
+    <p class="disclaimer">
+      Estimates derived from Virginia Lottery published prize data &mdash; not official figures, and not a
+      prediction about any individual ticket. These games are negative-expected-value by design: every game
+      listed returns less than it costs across all players. For information and entertainment only &mdash; not
+      financial or gambling advice. You must be 18+ to play. If gambling is a problem for you or someone you
+      know, call <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="scratch/">Scratch games</a>
+      <a href="state.html?state=VA">Virginia lottery</a>
+      <a href="guides/">Guides</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only &mdash; not financial or gambling advice.</p>
+  </footer>
+
+  <script src="scratch.js"></script>
+</body>
+</html>
