@@ -215,6 +215,9 @@ foreach ($st in $STATES) {
         big prizes claimed and is now a worse deal than designed. The <strong>"riding on top prize"</strong>
         column is the health warning &mdash; where much of the remaining value sits in one tier, the rating
         hangs on a couple of tickets that may already be sold.</p>
+      <p>Across every state we analyse, cheaper tickets return less &mdash; we tested that on 1,275 games in
+        18 states and it held in all of them:
+        <a href="guides/cheap-vs-expensive-scratch-tickets/">read the full analysis</a>.</p>
       <p>Every $($st.name) game launches returning roughly <strong>$pctMin to $pctMax</strong> of sales as
         prizes. That is the house edge, and no game escapes it &mdash; this table shows which are currently
         least bad, never which are good. See
