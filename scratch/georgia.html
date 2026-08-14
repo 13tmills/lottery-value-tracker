@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Best Georgia Scratchers: Prizes Remaining &amp; Real Value | NumbersIntel</title>
+  <meta name="description" content="Which Georgia Lottery scratchers still have their big prizes? We compute what all 165 active games return per dollar today from unclaimed prize data — and 34 of them have no top prize left." />
+  <link rel="canonical" href="https://numbersintel.com/scratch/georgia.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="Best Georgia Scratchers by Prizes Remaining" />
+  <meta property="og:description" content="All 165 active Georgia scratchers ranked by what they return per dollar today." />
+  <meta property="og:url" content="https://numbersintel.com/scratch/georgia.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"Georgia scratchers remaining prize value","description":"For each active Georgia Lottery instant game: ticket price, overall odds, winning tickets printed and paid by prize tier, and the resulting value returned per dollar at the current point in the print run.","creator":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"url":"https://numbersintel.com/scratch/georgia.html","license":"https://numbersintel.com/terms.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Which Georgia scratchers have the best odds?","acceptedAnswer":{"@type":"Answer","text":"Ticket price matters far more than which game you pick. Across every active Georgia scratcher, $1 games return an average of about 62 cents per dollar while $20 to $50 games return 79 to 80 cents. Within a price band, the best games are the ones that still have most of their large prizes unclaimed."}},
+    {"@type":"Question","name":"How many Georgia scratchers have no top prize left?","acceptedAnswer":{"@type":"Answer","text":"Thirty-four active Georgia instant games currently have zero top prizes remaining. They stay on sale at full price with the headline prize still printed on the ticket, and nothing on the packaging indicates it has already been claimed."}},
+    {"@type":"Question","name":"Does the Georgia Lottery publish prizes remaining?","acceptedAnswer":{"@type":"Answer","text":"Yes. Georgia publishes, for every prize tier of every instant game, how many winning tickets were printed and how many have been paid out. The difference is the number still unclaimed, which is what this page ranks games by, refreshed daily."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="scratch/">&larr; Scratch games</a>
+    <h1>Georgia scratchers: what's actually left</h1>
+    <p class="tagline">All 165 active Georgia instant games ranked by what they return per dollar <em>right now</em> —
+      not what they were worth the day they were printed.</p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead">Thirty-four Georgia scratchers on sale today have <strong>zero top prizes left</strong>.
+        Every one already claimed &mdash; and every one still on the rack at full price, with the headline
+        number printed on the front.</p>
+      <p>The Georgia Lottery publishes, for every prize tier of every game, how many winning tickets were
+        printed and how many have been paid out. The difference is what's genuinely still unclaimed, so we
+        pull it daily and rank every active game.</p>
+    </section>
+
+    <div id="sc-summary"></div>
+
+    <section class="panel">
+      <h2>Cheap scratchers pay back the least</h2>
+      <p class="section-note">Average value returned per dollar, grouped by ticket price, across every active
+        Georgia instant game.</p>
+      <div id="sc-byprice"></div>
+      <p class="section-note">This is now the <strong>third state where the same pattern appears</strong>, and it
+        appears independently each time: Georgia climbs from 62% on $1 tickets to 80% on $50 ones, matching the
+        curve in our <a href="scratch/texas.html">Texas</a> (55% &rarr; 79%) and
+        <a href="scratch/california.html">California</a> (61% &rarr; 83%) data. Three unrelated state lotteries
+        making the same design decision is no longer a coincidence &mdash; the cheap tickets on the rack are the
+        worst value in the shop. That does not make an expensive scratcher a good bet: it is still a guaranteed
+        average loss, just a smaller one per dollar, with far more money at risk per ticket.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Every Georgia scratcher, ranked</h2>
+      <div class="sc-controls">
+        <label>Sort by
+          <select id="sc-sort" class="aw-select">
+            <option value="ev_now">Value per $1 now</option>
+            <option value="price">Ticket price</option>
+            <option value="pct_sold">Percent sold</option>
+            <option value="top_prize">Top prize size</option>
+          </select>
+        </label>
+        <label class="sc-check"><input type="checkbox" id="sc-hide" checked /> Hide games over 90% sold</label>
+      </div>
+      <div id="sc-table" data-src="scratch_ga.json"></div>
+    </section>
+
+    <section class="prose">
+      <h2>How to read this</h2>
+      <p><strong>"Value per $1 now"</strong> is the unclaimed prize money divided by what it would cost to buy
+        every remaining ticket. A game showing 70% means players will get back about 70 cents per dollar across
+        the tickets still out there. <strong>"At launch"</strong> is the same figure for the full print run
+        &mdash; what the game was designed to pay.</p>
+      <p>The gap between those columns is the point: a game well <em>below</em> its launch figure has had its
+        big prizes claimed and is now a worse deal than designed. The <strong>"riding on top prize"</strong>
+        column is the health warning &mdash; where much of the remaining value sits in one tier, the rating
+        hangs on a couple of tickets that may already be sold.</p>
+      <p>Every Georgia scratcher launches returning roughly <strong>66% to 81%</strong> of sales as prizes. That
+        is the house edge, and no game escapes it &mdash; this table shows which are currently least bad, never
+        which are good. See <a href="guides/what-is-lottery-expected-value/">what expected value means</a> and
+        <a href="guides/where-your-lottery-dollar-goes/">where your lottery dollar goes</a>.</p>
+
+      <h2>How we calculate it</h2>
+      <p>Georgia's public game feed lists every prize tier of every instant game with the number of winning
+        tickets printed and the number already paid out, so the unclaimed count is exact and nothing is
+        estimated. Each game's published overall odds &mdash; "1 in 3.56" and so on &mdash; turn the total
+        number of winning tickets into the size of the print run.</p>
+      <p>Two honest limitations. Georgia does not publish a percent-sold figure, so we infer it from the share
+        of prizes already claimed; because small prizes often go unredeemed, that understates sales and makes
+        these figures slightly conservative. And <strong>"unclaimed" is not the same as "unsold"</strong>
+        &mdash; a top prize counted as remaining may already sit in a ticket someone bought and hasn't cashed.
+        Late in a print run that gap dominates, so games over 90% sold are flagged and hidden by default.</p>
+      <p>Compare states: <a href="scratch/texas.html">Texas scratch offs</a>,
+        <a href="scratch/california.html">California scratchers</a>,
+        <a href="scratch/florida.html">Florida scratch-offs</a>, or see how draw games differ on the
+        <a href="bestodds.html">most winnable game map</a>.</p>
+    </section>
+
+    <p class="disclaimer">
+      Estimates derived from Georgia Lottery published prize data — not official figures, and not a prediction
+      about any individual ticket. Scratchers are negative-expected-value by design: every game listed returns
+      less than it costs across all players. For information and entertainment only — not financial or gambling
+      advice. You must be 18+ to play. If gambling is a problem for you or someone you know, call
+      <strong>1-800-GAMBLER</strong>.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="scratch/">Scratch games</a>
+      <a href="state.html?state=GA">Georgia lottery</a>
+      <a href="guides/">Guides</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="scratch.js"></script>
+</body>
+</html>
