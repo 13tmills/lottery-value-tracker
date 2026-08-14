@@ -688,6 +688,10 @@ main {
   border-radius: 10px;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
   z-index: 60;
+  /* The scratch menu carries one entry per state, so cap it and let it scroll
+     rather than run off the bottom of the viewport. */
+  max-height: min(70vh, 30rem);
+  overflow-y: auto;
 }
 /* Invisible bridge so the menu stays open while the cursor crosses the gap. */
 .topnav__menu::before {

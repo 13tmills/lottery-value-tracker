@@ -6,13 +6,30 @@
   const link = (t, h) => `<a href="${h}"${h === here ? ' class="is-active"' : ""}>${t}</a>`;
   const drawPages = ["national.html", "states.html", "uk.html", "tools.html", "state.html", "game.html",
     "breakeven.html", "statetax.html", "visualizer.html", "check.html", "lifecalc.html",
-    "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html", "texas.html", "california.html", "new-york.html", "florida.html", "michigan.html", "georgia.html"];
+    "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html", "texas.html", "california.html", "new-york.html", "florida.html", "michigan.html", "georgia.html", "north-carolina.html",
+    "south-carolina.html", "missouri.html", "virginia.html"];
   const groupActive = drawPages.includes(here);
 
   // Scratch pages live under /scratch/, so match on the path rather than the filename.
   const scratchActive = location.pathname.indexOf("/scratch/") === 0 || location.pathname === "/scratch";
   const scratchLink = (t, h) =>
     `<a href="${h}"${location.pathname === "/" + h ? ' class="is-active"' : ""}>${t}</a>`;
+
+  // One entry per state we publish scratch data for, alphabetical. Every state
+  // page stays linked from every page on the site; the menu scrolls if it needs to.
+  const scratchStates = [
+    ["California Scratchers", "california"],
+    ["Florida Scratch-Offs", "florida"],
+    ["Georgia Scratchers", "georgia"],
+    ["Idaho Scratch Tickets", "idaho"],
+    ["Michigan Instant Games", "michigan"],
+    ["Missouri Scratchers", "missouri"],
+    ["New York Scratch-Offs", "new-york"],
+    ["North Carolina Scratch-Offs", "north-carolina"],
+    ["South Carolina Instant Games", "south-carolina"],
+    ["Texas Scratch Offs", "texas"],
+    ["Virginia Scratchers", "virginia"],
+  ];
 
   const nav = document.createElement("nav");
   nav.className = "topnav";
@@ -34,13 +51,7 @@
           `Scratch Games <span class="topnav__caret">&#9662;</span></button>` +
         `<div class="topnav__menu">` +
           scratchLink("All Scratch Games", "scratch/") +
-          scratchLink("California Scratchers", "scratch/california.html") +
-          scratchLink("Florida Scratch-Offs", "scratch/florida.html") +
-          scratchLink("Georgia Scratchers", "scratch/georgia.html") +
-          scratchLink("Michigan Instant Games", "scratch/michigan.html") +
-          scratchLink("New York Scratch-Offs", "scratch/new-york.html") +
-          scratchLink("Texas Scratch Offs", "scratch/texas.html") +
-          scratchLink("Idaho Scratch Tickets", "scratch/idaho.html") +
+          scratchStates.map(([t, s]) => scratchLink(t, `scratch/${s}.html`)).join("") +
         `</div>` +
       `</div>` +
       link("Guides", "guides/") +
