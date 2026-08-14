@@ -1325,3 +1325,21 @@ a.state-cell:hover { border-color: var(--accent); }
 .sc-barcell { width: 40%; min-width: 90px; }
 .sc-bar { display: block; height: 0.6rem; border-radius: 3px; background: linear-gradient(90deg, var(--accent-2), var(--good)); }
 .sc-dead th, .sc-dead td { opacity: 0.72; }
+
+/* Compact list for the cross-state finding on the scratch hub: the point is the
+   sweep of states, so the rows should read as data, not as prose bullets. */
+.finding-list {
+  list-style: none;
+  margin: 0.75rem 0 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.finding-list li {
+  padding: 0.3rem 0;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.finding-list li + li { border-top: 1px solid var(--border); }
