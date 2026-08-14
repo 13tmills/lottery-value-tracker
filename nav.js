@@ -7,7 +7,8 @@
   const drawPages = ["national.html", "states.html", "uk.html", "tools.html", "state.html", "game.html",
     "breakeven.html", "statetax.html", "visualizer.html", "check.html", "lifecalc.html",
     "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html", "texas.html", "california.html", "new-york.html", "florida.html", "michigan.html", "georgia.html", "north-carolina.html",
-    "south-carolina.html", "missouri.html", "virginia.html"];
+    "south-carolina.html", "missouri.html", "virginia.html", "massachusetts.html", "oklahoma.html",
+    "connecticut.html", "new-mexico.html"];
   const groupActive = drawPages.includes(here);
 
   // Scratch pages live under /scratch/, so match on the path rather than the filename.
@@ -19,13 +20,17 @@
   // page stays linked from every page on the site; the menu scrolls if it needs to.
   const scratchStates = [
     ["California Scratchers", "california"],
+    ["Connecticut Scratch Games", "connecticut"],
     ["Florida Scratch-Offs", "florida"],
     ["Georgia Scratchers", "georgia"],
     ["Idaho Scratch Tickets", "idaho"],
+    ["Massachusetts Instant Games", "massachusetts"],
     ["Michigan Instant Games", "michigan"],
     ["Missouri Scratchers", "missouri"],
+    ["New Mexico Scratchers", "new-mexico"],
     ["New York Scratch-Offs", "new-york"],
     ["North Carolina Scratch-Offs", "north-carolina"],
+    ["Oklahoma Scratchers", "oklahoma"],
     ["South Carolina Instant Games", "south-carolina"],
     ["Texas Scratch Offs", "texas"],
     ["Virginia Scratchers", "virginia"],

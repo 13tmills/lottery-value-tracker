@@ -221,6 +221,10 @@ jobs:
           pwsh -File scraper/gen_scratch_sc.ps1 || echo "::warning::gen_scratch_sc failed (continuing)"
           pwsh -File scraper/gen_scratch_mo.ps1 || echo "::warning::gen_scratch_mo failed (continuing)"
           pwsh -File scraper/gen_scratch_va.ps1 || echo "::warning::gen_scratch_va failed (continuing)"
+          pwsh -File scraper/gen_scratch_ma.ps1 || echo "::warning::gen_scratch_ma failed (continuing)"
+          pwsh -File scraper/gen_scratch_ok.ps1 || echo "::warning::gen_scratch_ok failed (continuing)"
+          pwsh -File scraper/gen_scratch_ct.ps1 || echo "::warning::gen_scratch_ct failed (continuing)"
+          pwsh -File scraper/gen_scratch_nm.ps1 || echo "::warning::gen_scratch_nm failed (continuing)"
           # Regenerates the per-state scratch pages so their headline numbers
           # (game counts, payout ranges, price curve) track the fresh data.
           pwsh -File scraper/gen_scratch_pages.ps1 || echo "::warning::gen_scratch_pages failed (continuing)"
@@ -232,7 +236,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch/
+          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json scratch_ok.json scratch_ct.json scratch_nm.json scratch/
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0

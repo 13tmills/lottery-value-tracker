@@ -24,8 +24,8 @@ $STATES = @(
      sourceNote = "Missouri publishes, for every prize tier of every scratchers game, the total number of prizes and the number still unclaimed, plus the ticket price and the game's average chances of winning. Those overall odds turn the total prize count into the size of the print run." }
   @{ code = 'VA'; slug = 'virginia'; name = 'Virginia'; noun = 'scratchers'
      sourceNote = "Virginia publishes, for every prize tier of every Scratcher, the winning tickets at the start of the game and the number still unclaimed, with the ticket price and overall odds. One Virginia-specific detail matters: where a top prize is paid as an <strong>annuity</strong>, the advertised figure overstates what a winner actually receives, and Virginia states the real cash value in a footnote &mdash; a `$7,000,000 headline against a `$4,000,000 cash value. We use the published cash value, and skip any game whose annuity has no stated cash value rather than guess one." }
-  @{ code = 'MA'; slug = 'massachusetts'; name = 'Massachusetts'; noun = 'instant games'
-     sourceNote = "Massachusetts exposes its instant-game data as clean JSON, giving every prize tier's amount, that tier's odds, the total prizes printed, how many have been paid and how many remain. It is among the most complete feeds any state publishes, and Massachusetts sells more instant tickets per head than anywhere else in the country." }
+  @{ code = 'MA'; slug = 'massachusetts'; name = 'Massachusetts'; noun = 'instant games'; partial = $true
+     sourceNote = "Massachusetts publishes every prize tier's amount, that tier's odds, the total prizes printed, how many have been paid and how many remain &mdash; among the most complete feeds any state offers, from the state that sells more instant tickets per head than anywhere else in the country. <strong>One important exclusion:</strong> more than half of the Massachusetts catalogue has an annuity top prize, where the advertised figure is the sum of all payments rather than what a winner could take in cash &mdash; a prize listed at `$15,000,000 is really `$750,000 a year for 20 years. Massachusetts does not publish a cash value anywhere, and on some games that single tier is around a third of the game's entire prize pool, so including it at face value would badly overstate what the game returns. Rather than invent a cash value, those games are left out entirely: this page covers the games we can compute honestly, not the full rack." }
   @{ code = 'OK'; slug = 'oklahoma'; name = 'Oklahoma'; noun = 'scratchers'
      sourceNote = "Oklahoma publishes two machine-readable feeds &mdash; one listing every game with its price, overall odds and <em>the exact number of tickets printed</em>, and one listing every prize tier with its total and remaining counts. Because the print run is stated outright rather than derived from odds, Oklahoma's figures need one fewer assumption than most states." }
   @{ code = 'CT'; slug = 'connecticut'; name = 'Connecticut'; noun = 'scratch games'
@@ -75,12 +75,19 @@ foreach ($st in $STATES) {
 
   $best = @($games | Where-Object { -not $_.low_confidence } | Sort-Object ev_now -Descending)[0]
 
+  # Never claim "all active games": every state skips something (an unpublished
+  # cash value, a missing odds figure, a tier table that won't reconcile), so the
+  # honest phrasing is the count we actually publish.
+  $coverPhrase = "$n $($st.name) games"
+  $CoverPhrase = (Get-Culture).TextInfo.ToTitleCase($coverPhrase.Substring(0, 1)) + $coverPhrase.Substring(1)
+  $rankedHead = if ($st.partial) { "Every $($st.name) game we can price, ranked" } else { "Every $($st.name) game, ranked" }
+
   $pctMin = "{0:P0}" -f $evMin; $pctMax = "{0:P0}" -f $evMax
   $lowPct = "{0:P0}" -f $lowAvg; $highPct = "{0:P0}" -f $highAvg
   $lowLbl = "`$" + [long]([double]$lowP.Name); $highLbl = "`$" + [long]([double]$highP.Name)
 
   $title = "Best $($st.name) $Noun`: Prizes Remaining &amp; Real Value | NumbersIntel"
-  $desc = "Which $($st.name) $noun still have their big prizes? We compute what all $n active games return per dollar today from unclaimed prize data" +
+  $desc = "Which $($st.name) $noun still have their big prizes? We compute what $n games return per dollar today from unclaimed prize data" +
           $(if ($zeroTop -gt 0) { " &mdash; and $zeroTop of them have no top prize left." } else { ", updated daily." })
 
   # Lead paragraph leans on whichever fact this state's data actually supports.
@@ -116,7 +123,7 @@ foreach ($st in $STATES) {
   <meta property="og:site_name" content="NumbersIntel" />
   <meta property="og:image" content="https://numbersintel.com/og-image.png" />
   <meta property="og:title" content="Best $($st.name) $Noun by Prizes Remaining" />
-  <meta property="og:description" content="All $n active $($st.name) $noun ranked by what they return per dollar today." />
+  <meta property="og:description" content="$n $($st.name) $noun ranked by what they return per dollar today." />
   <meta property="og:url" content="https://numbersintel.com/scratch/$($st.slug).html" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="styles.css" />
@@ -126,7 +133,7 @@ foreach ($st in $STATES) {
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"Which $($st.name) $noun have the best odds?","acceptedAnswer":{"@type":"Answer","text":"Ticket price matters far more than which game you pick. Across every active $($st.name) game, $lowLbl tickets return an average of about $lowPct per dollar while $highLbl tickets return $highPct. Within a price band, the best games are the ones that still have most of their large prizes unclaimed."}},
-    {"@type":"Question","name":"How many $($st.name) $noun have no top prize left?","acceptedAnswer":{"@type":"Answer","text":"$zeroTop of the $n active $($st.name) games we track currently have zero top prizes remaining. They stay on sale at full price with the headline prize still printed on the ticket, and nothing on the packaging indicates it has already been claimed."}},
+    {"@type":"Question","name":"How many $($st.name) $noun have no top prize left?","acceptedAnswer":{"@type":"Answer","text":"$zeroTop of the $n $($st.name) games we track currently have zero top prizes remaining. They stay on sale at full price with the headline prize still printed on the ticket, and nothing on the packaging indicates it has already been claimed."}},
     {"@type":"Question","name":"Does the $($st.name) Lottery publish prizes remaining?","acceptedAnswer":{"@type":"Answer","text":"Yes. $($st.name) publishes, for every prize tier of every game, how many prizes were printed and how many are still unclaimed. This page turns that into a ranking of what each game returns per dollar today, refreshed daily."}}
   ]}
   </script>
@@ -135,7 +142,7 @@ foreach ($st in $STATES) {
   <header class="detail-header">
     <a class="back-link" href="scratch/">&larr; Scratch games</a>
     <h1>$($st.name) $noun`: what's actually left</h1>
-    <p class="tagline">All $n active $($st.name) games ranked by what they return per dollar <em>right now</em> &mdash;
+    <p class="tagline">$CoverPhrase ranked by what they return per dollar <em>right now</em> &mdash;
       not what they were worth the day they were printed.</p>
   </header>
 
@@ -158,7 +165,7 @@ foreach ($st in $STATES) {
     </section>
 
     <section class="panel">
-      <h2>Every $($st.name) game, ranked</h2>
+      <h2>$rankedHead</h2>
       <div class="sc-controls">
         <label>Sort by
           <select id="sc-sort" class="aw-select">
