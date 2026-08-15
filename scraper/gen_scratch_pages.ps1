@@ -267,3 +267,89 @@ foreach ($st in $STATES) {
     $st.slug, $n, $pctMin, $pctMax, $zeroTop, $lowPct, $highPct)
 }
 Write-Host "gen_scratch_pages: wrote $made state pages"
+
+# ---------------------------------------------------------------------------
+# scratch_summary.json - a small cross-state roll-up for the homepage module.
+# The homepage must not fetch 22 state files, so everything it needs is
+# aggregated here once at build time.
+#
+# Only states publishing a real value-per-dollar figure (metric "price") are
+# pooled; the index/top-prize states (NY, MI, FL) can't contribute a payout
+# percentage and would distort the averages. Their zero-top-prize counts DO
+# still count, since that figure is comparable everywhere it's reported.
+# ---------------------------------------------------------------------------
+$pool = New-Object System.Collections.ArrayList
+$topGone = 0; $topGoneValue = 0.0; $reporting = 0; $statesPriced = 0; $statesAll = 0
+
+foreach ($f in (Get-ChildItem -Path $root -Filter "scratch_*.json")) {
+  if ($f.Name -eq 'scratch_summary.json') { continue }
+  $code = ($f.BaseName -replace '^scratch_', '').ToUpper()
+  # West Virginia is built but held back; never let it into published figures.
+  if ($code -eq 'WV') { continue }
+  try { $d = [System.IO.File]::ReadAllText($f.FullName, [Text.Encoding]::UTF8) | ConvertFrom-Json }
+  catch { continue }
+  $games = @($d.games)
+  if ($games.Count -lt 5) { continue }
+  $statesAll++
+  $priced = (-not $d.metric) -or ($d.metric -eq 'price')
+  if ($priced) { $statesPriced++ }
+  foreach ($g in $games) {
+    if ($null -ne $g.top_left -and $null -ne $g.top_original -and [long]$g.top_original -gt 0) {
+      $reporting++
+      if ([long]$g.top_left -eq 0) { $topGone++; $topGoneValue += [double]$g.top_prize }
+    }
+    if ($priced -and -not $g.low_confidence -and [double]$g.price -gt 0) {
+      [void]$pool.Add([pscustomobject]@{
+        state = $d.state; state_name = $d.state_name; slug_state = $d.state
+        name = $g.name; price = [double]$g.price
+        ev_now = [double]$g.ev_now; ev_start = [double]$g.ev_start
+        pct_sold = [double]$g.pct_sold; url = $g.url
+      })
+    }
+  }
+}
+
+# Price bands with too few games are noise on a national roll-up.
+$byPrice = @($pool | Group-Object price | Sort-Object { [double]$_.Name } | Where-Object { $_.Count -ge 5 } |
+  ForEach-Object {
+    [pscustomobject]@{
+      price = [double]$_.Name
+      games = $_.Count
+      ev_now = [math]::Round((($_.Group.ev_now | Measure-Object -Average).Average), 4)
+      ev_start = [math]::Round((($_.Group.ev_start | Measure-Object -Average).Average), 4)
+    }
+  })
+
+$best = @($pool | Sort-Object ev_now -Descending | Select-Object -First 6 | ForEach-Object {
+  [pscustomobject]@{ name = $_.name; state = $_.state; state_name = $_.state_name
+    price = $_.price; ev_now = $_.ev_now; pct_sold = $_.pct_sold }
+})
+
+# The within-band spread: same price, very different value. Uses the band with
+# the most games so the comparison is well-populated.
+$fattest = @($pool | Group-Object price | Sort-Object Count -Descending)[0]
+$bandSorted = @($fattest.Group | Sort-Object ev_now)
+$spread = [pscustomobject]@{
+  price = [double]$fattest.Name
+  games = $fattest.Count
+  worst = [pscustomobject]@{ name = $bandSorted[0].name; state = $bandSorted[0].state; ev_now = $bandSorted[0].ev_now }
+  best = [pscustomobject]@{ name = $bandSorted[-1].name; state = $bandSorted[-1].state; ev_now = $bandSorted[-1].ev_now }
+}
+
+$summary = [ordered]@{
+  updated = (Get-Date -Format 'yyyy-MM-dd')
+  states = $statesAll
+  states_priced = $statesPriced
+  games_priced = $pool.Count
+  games_reporting_top = $reporting
+  no_top_prize = $topGone
+  no_top_prize_value = [long]$topGoneValue
+  by_price = $byPrice
+  best_now = $best
+  band_spread = $spread
+  note = "Pooled across states publishing a full prize table with ticket price and odds. Excludes games more than 90% sold, whose figures swing on very few remaining prizes. Value per `$1 is what a game returns across all players - every game returns less than it costs."
+}
+$sumPath = Join-Path $root "scratch_summary.json"
+[System.IO.File]::WriteAllText($sumPath, ($summary | ConvertTo-Json -Depth 6 -Compress), (New-Object System.Text.UTF8Encoding $false))
+Write-Host ("scratch_summary.json: {0} states ({1} priced), {2} games pooled, {3} price bands, {4} with no top prize (`${5:N0})" -f `
+  $statesAll, $statesPriced, $pool.Count, $byPrice.Count, $topGone, $topGoneValue)

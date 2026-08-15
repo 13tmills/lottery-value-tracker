@@ -243,7 +243,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json scratch_ok.json scratch_ct.json scratch_nm.json scratch_nj.json scratch_az.json scratch_md.json scratch_la.json scratch_ar.json scratch_il.json scratch_in.json scratch/
+          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json scratch_ok.json scratch_ct.json scratch_nm.json scratch_nj.json scratch_az.json scratch_md.json scratch_la.json scratch_ar.json scratch_il.json scratch_in.json scratch_summary.json scratch/
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0

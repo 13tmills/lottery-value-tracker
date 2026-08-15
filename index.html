@@ -99,6 +99,16 @@
         <p class="widget__stat">Lotto, EuroMillions, Thunderball &amp; Set For Life.</p>
       </a>
 
+      <a class="widget" href="scratch/">
+        <div class="widget__head">
+          <h2 class="widget__title">Scratch Games</h2>
+          <span class="widget__go">Open &rarr;</span>
+        </div>
+        <p class="widget__desc">Which scratch tickets still have their big prizes — every game in 22
+          states ranked by what it returns per dollar today, not at launch.</p>
+        <p class="widget__stat" id="scratch-stat">22 states &middot; ranked by prizes actually remaining.</p>
+      </a>
+
       <a class="widget" href="guides/">
         <div class="widget__head">
           <h2 class="widget__title">Guides</h2>
@@ -110,10 +120,14 @@
       </a>
     </div>
 
+    <!-- scratch value module (populated by scratch-home.js from scratch_summary.json) -->
+    <div id="scratch-home"></div>
+
     <h2 class="home-section-h">Guides &amp; explainers</h2>
     <div class="link-row">
       <a class="link-chip" href="guides/powerball-vs-mega-millions-vs-lotto-america/">Powerball vs Mega Millions vs Lotto America</a>
-      <a class="link-chip" href="guides/scratch-games-with-no-top-prize-left/">Scratch games with no top prize left</a>
+      <a class="link-chip" href="guides/scratch-games-with-no-top-prize-left/">180 scratch games with no top prize left</a>
+      <a class="link-chip" href="guides/scratch-ticket-price-vs-game-choice/">Two $5 tickets, 30 cents apart</a>
       <a class="link-chip" href="guides/cheap-vs-expensive-scratch-tickets/">Why $1 scratch tickets are the worst value</a>
       <a class="link-chip" href="guides/where-your-lottery-dollar-goes/">Where does your lottery dollar go?</a>
       <a class="link-chip" href="guides/how-long-to-win-the-lottery/">How long would it take to win?</a>
@@ -191,5 +205,6 @@
 
   <script src="common.js"></script>
   <script src="landing.js"></script>
+  <script src="scratch-home.js"></script>
 </body>
 </html>
