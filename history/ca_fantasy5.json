@@ -2,11 +2,11 @@
   "game": "ca_fantasy5",
   "source": "calottery.com",
   "earliest_available": "2020-07-20",
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-08-16",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-15",
-    "jackpot": 76000,
+    "date": "2026-08-16",
+    "jackpot": 61000,
     "cash": 0
   },
   "draws": [
@@ -27891,6 +27891,40 @@
       ],
       "total_winners": 69804,
       "jackpot": 58338
+    },
+    {
+      "date": "2026-08-15",
+      "numbers": [
+        2,
+        8,
+        10,
+        23,
+        39
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 23935,
+          "winners": 3
+        },
+        {
+          "level": "Match 4",
+          "amount": 315,
+          "winners": 139
+        },
+        {
+          "level": "Match 3",
+          "amount": 13,
+          "winners": 4181
+        },
+        {
+          "level": "Match 2",
+          "amount": 0,
+          "winners": 43376
+        }
+      ],
+      "total_winners": 47699,
+      "jackpot": 23935
     }
   ]
 }

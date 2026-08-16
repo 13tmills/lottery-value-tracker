@@ -43650,14 +43650,54 @@
       ],
       "total_winners": 146183,
       "jackpot": 1250000
+    },
+    {
+      "date": "2026-08-15",
+      "numbers": [
+        9,
+        10,
+        14,
+        21,
+        32,
+        34
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 2000000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 9800,
+          "winners": 15
+        },
+        {
+          "level": "Match 4",
+          "amount": 163,
+          "winners": 728
+        },
+        {
+          "level": "Match 3",
+          "amount": 16,
+          "winners": 15124
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Ticket",
+          "winners": 123198
+        }
+      ],
+      "total_winners": 139065,
+      "jackpot": 2000000
     }
   ],
   "current_jackpot": {
-    "date": "2026-08-15",
-    "jackpot": 2000000,
-    "cash": 2000000
+    "date": "2026-08-19",
+    "jackpot": 2500000,
+    "cash": 2500000
   },
   "source": "floridalottery.com",
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-08-16",
   "complete": true
 }
