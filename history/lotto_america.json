@@ -1,7 +1,7 @@
 {
   "game": "lotto_america",
   "source": "powerball.com",
-  "last_updated": "2026-08-16",
+  "last_updated": "2026-08-18",
   "complete": false,
   "earliest_available": "2017-11-15",
   "note": "Seeded with a few real draws. Full history (~1,090 draws back to 2017-11-15) is backfilled by scraper/history_scraper.py in CI.",
@@ -68729,6 +68729,18 @@
         41
       ],
       "star_ball": 10
+    },
+    {
+      "date": "2026-08-17",
+      "jackpot": 2650000,
+      "numbers": [
+        5,
+        8,
+        10,
+        24,
+        27
+      ],
+      "star_ball": 4
     }
   ]
 }
