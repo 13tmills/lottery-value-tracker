@@ -19,7 +19,8 @@ import json
 import os
 import re
 import sys
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, time, timedelta
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
@@ -36,6 +37,15 @@ TAX_FACTOR = 0.63
 
 # Python's date.weekday(): Monday=0 ... Sunday=6
 MON, TUE, WED, THU, FRI, SAT, SUN = range(7)
+
+# Every game here is drawn on a US Eastern evening, so "what day is it" has to be
+# asked in ET. The CI runner's clock is UTC, which is already the next day while
+# it is still draw night on the east coast.
+ET = ZoneInfo("America/New_York")
+# ET cutoff after which today's draw counts as done. Mega Millions' own API
+# states 23:00 ET (NextDrawingDate "...T23:00:00"); Powerball and Lotto America
+# draw earlier in the same evening, so this is a safe upper bound for all three.
+DEFAULT_DRAW_TIME = (23, 0)
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -164,9 +174,28 @@ def parse_money(text: str) -> int | None:
     return int(round(amount * multiplier))
 
 
-def next_draw(draw_days: list[int], today: date | None = None) -> str:
-    """Soonest draw date strictly after `today`, as an ISO date string."""
-    today = today or date.today()
+def next_draw(draw_days: list[int], draw_time: tuple[int, int] = DEFAULT_DRAW_TIME,
+              now: datetime | None = None) -> str:
+    """Soonest draw that has NOT been drawn yet, as an ISO date string.
+
+    Two things this has to get right, and the previous version got both wrong:
+
+    * **Today counts.** Searching from tomorrow skipped the current evening's
+      draw whenever the scraper ran on a draw day. Mega Millions draws Tue/Fri
+      and the workflow runs Tuesdays, so all day Tuesday the site advertised
+      Friday's draw and looked a draw behind.
+    * **The clock must be Eastern.** These games draw on ET evenings while the
+      CI runner is UTC. At 02:00 UTC it is already "tomorrow" by UTC but still
+      10pm ET on the draw day, so a UTC date rolls over too early.
+
+    `draw_time` is the ET cutoff after which today's draw is considered done.
+    Scheduled runs are at 00:30 and 03:30 ET, far from any cutoff; it only
+    matters for manual runs kicked off late in the evening.
+    """
+    now = now or datetime.now(ET)
+    today = now.date()
+    if today.weekday() in draw_days and now.time() < time(*draw_time):
+        return today.isoformat()
     for offset in range(1, 8):
         candidate = today + timedelta(days=offset)
         if candidate.weekday() in draw_days:
@@ -273,8 +302,8 @@ def scrape_megamillions(cfg: dict) -> dict:
     """megamillions.com renders its jackpot/numbers with JavaScript — the HTML
     spans (.estJackpot, .cashOpt, etc.) are empty on first load. So hit the JSON
     web service the page itself calls. A POST returns {"d": "<json string>"}.
-    Verified live 2026-06-19: returns Drawing.N1-5/MBall + Jackpot.CurrentPrizePool
-    / CurrentCashValue."""
+    Verified live 2026-08-18: returns Drawing.N1-5/MBall, Jackpot.{Current,Next}PrizePool
+    / {Current,Next}CashValue, and NextDrawingDate."""
     resp = requests.post(MEGA_API, json={}, headers=MEGA_HEADERS, timeout=20)
     resp.raise_for_status()
     payload = json.loads(resp.json()["d"])
@@ -283,10 +312,27 @@ def scrape_megamillions(cfg: dict) -> dict:
     jackpot = payload.get("Jackpot") or {}
     drawing = payload.get("Drawing") or {}
 
-    if jackpot.get("CurrentPrizePool"):
+    # "Current*" is the jackpot of the draw that has ALREADY happened (it pairs
+    # with Jackpot.PlayDate); "Next*" is the one now on sale. Reading Current
+    # left the site permanently one draw behind — advertising $90m on the day
+    # the real jackpot was $100m — and fed the stale cash value into the EV
+    # maths, understating Mega Millions' expected value. Prefer Next.
+    if jackpot.get("NextPrizePool"):
+        out["jackpot"] = int(round(jackpot["NextPrizePool"]))
+    elif jackpot.get("CurrentPrizePool"):
         out["jackpot"] = int(round(jackpot["CurrentPrizePool"]))
-    if jackpot.get("CurrentCashValue"):
+    if jackpot.get("NextCashValue"):
+        out["cash_value"] = int(round(jackpot["NextCashValue"]))
+    elif jackpot.get("CurrentCashValue"):
         out["cash_value"] = int(round(jackpot["CurrentCashValue"]))
+
+    # The API states the next drawing date outright, which beats inferring it
+    # from a weekday schedule (it also handles one-off schedule changes).
+    for src in (payload, jackpot, drawing):
+        nd = src.get("NextDrawingDate")
+        if isinstance(nd, str) and len(nd) >= 10:
+            out["next_draw"] = nd[:10]
+            break
 
     whites = [drawing.get(f"N{i}") for i in range(1, 6)]
     mball = drawing.get("MBall")
@@ -332,13 +378,17 @@ def build_game(key: str, cfg: dict, previous: dict) -> dict:
     # Static facts always refreshed.
     game["ticket_price"] = cfg["ticket_price"]
     game["odds_jackpot"] = cfg["odds_jackpot"]
-    game["next_draw"] = next_draw(cfg["draw_days"])
+    game["next_draw"] = next_draw(cfg["draw_days"], cfg.get("draw_time", DEFAULT_DRAW_TIME))
 
     try:
         scraped = SCRAPERS[cfg["source"]](cfg)
     except Exception as exc:  # network error, markup change, etc.
         print(f"  ! {key}: scrape failed ({exc}); keeping previous values")
         scraped = {}
+
+    # A date stated by the operator's own feed beats one inferred from weekdays.
+    if scraped.get("next_draw"):
+        game["next_draw"] = scraped["next_draw"]
 
     if scraped.get("jackpot"):
         game["jackpot"] = scraped["jackpot"]
