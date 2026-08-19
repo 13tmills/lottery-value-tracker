@@ -1343,3 +1343,24 @@ a.state-cell:hover { border-color: var(--accent); }
   line-height: 1.6;
 }
 .finding-list li + li { border-top: 1px solid var(--border); }
+
+/* ---- Scratch games choropleth (/scratch/) ---- */
+/* Bands are keyed to the national spread of state averages (~57%-77%), not to
+   0-100%, or every state would render the same colour. */
+.sm-state { stroke: var(--bg); stroke-width: 1; transition: filter .12s ease; }
+.sm-state[data-abbr] { cursor: pointer; }
+.sm-state[data-abbr]:hover, .sm-state[data-abbr]:focus { filter: brightness(1.35); outline: none; }
+.sm-state--b0   { fill: #1a5c40; }  /* best value */
+.sm-state--b1   { fill: #2f7d4e; }
+.sm-state--b2   { fill: #5d8c42; }
+.sm-state--b3   { fill: #94733a; }
+.sm-state--b4   { fill: #a8503a; }  /* worst value */
+.sm-state--alt  { fill: #3f5878; }  /* covered, but no ticket price published */
+.sm-state--none { fill: #2a3240; }
+.sm-state--sel  { stroke: var(--accent); stroke-width: 2.5; filter: brightness(1.35); }
+
+.sm-dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 3px; margin-right: 0.35rem; vertical-align: middle; }
+.sm-dot--b0 { background: #1a5c40; } .sm-dot--b1 { background: #2f7d4e; }
+.sm-dot--b2 { background: #5d8c42; } .sm-dot--b3 { background: #94733a; }
+.sm-dot--b4 { background: #a8503a; } .sm-dot--alt { background: #3f5878; }
+.sm-dot--none { background: #2a3240; }

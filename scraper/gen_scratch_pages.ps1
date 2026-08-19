@@ -280,6 +280,13 @@ Write-Host "gen_scratch_pages: wrote $made state pages"
 # ---------------------------------------------------------------------------
 $pool = New-Object System.Collections.ArrayList
 $topGone = 0; $topGoneValue = 0.0; $reporting = 0; $statesPriced = 0; $statesAll = 0
+$byState = [ordered]@{}
+
+# Slugs for the six hand-written pages; generated states come from $STATES above.
+$slugOf = @{}
+foreach ($s in $STATES) { $slugOf[$s.code] = $s.slug }
+$slugOf['CA'] = 'california'; $slugOf['TX'] = 'texas'; $slugOf['ID'] = 'idaho'
+$slugOf['NY'] = 'new-york'; $slugOf['FL'] = 'florida'; $slugOf['MI'] = 'michigan'
 
 foreach ($f in (Get-ChildItem -Path $root -Filter "scratch_*.json")) {
   if ($f.Name -eq 'scratch_summary.json') { continue }
@@ -293,6 +300,26 @@ foreach ($f in (Get-ChildItem -Path $root -Filter "scratch_*.json")) {
   $statesAll++
   $priced = (-not $d.metric) -or ($d.metric -eq 'price')
   if ($priced) { $statesPriced++ }
+
+  # Per-state roll-up for the choropleth on the scratch hub.
+  $solid = @($games | Where-Object { -not $_.low_confidence })
+  $stGone = @($games | Where-Object { $null -ne $_.top_left -and [long]$_.top_original -gt 0 -and [long]$_.top_left -eq 0 })
+  $stAvg = $null; $stBest = $null
+  if ($priced -and $solid.Count -ge 3) {
+    $stAvg = [math]::Round((($solid.ev_now | Measure-Object -Average).Average), 4)
+    $b = @($solid | Sort-Object ev_now -Descending)[0]
+    $stBest = [pscustomobject]@{ name = $b.name; price = [double]$b.price; ev_now = [double]$b.ev_now }
+  }
+  $byState[$code] = [pscustomobject]@{
+    name = $d.state_name
+    slug = $(if ($slugOf[$code]) { $slugOf[$code] } else { $d.state_name.ToLower() -replace '\s+', '-' })
+    games = $games.Count
+    metric = $(if ($d.metric) { $d.metric } else { 'price' })
+    avg_ev_now = $stAvg
+    no_top_prize = $stGone.Count
+    best = $stBest
+  }
+
   foreach ($g in $games) {
     if ($null -ne $g.top_left -and $null -ne $g.top_original -and [long]$g.top_original -gt 0) {
       $reporting++
@@ -347,6 +374,7 @@ $summary = [ordered]@{
   by_price = $byPrice
   best_now = $best
   band_spread = $spread
+  by_state = $byState
   note = "Pooled across states publishing a full prize table with ticket price and odds. Excludes games more than 90% sold, whose figures swing on very few remaining prizes. Value per `$1 is what a game returns across all players - every game returns less than it costs."
 }
 $sumPath = Join-Path $root "scratch_summary.json"
