@@ -81,6 +81,53 @@
       single value-per-dollar, because a fixed EV would be invented. UK games are shown in pounds and
       are excluded from the US-tax value rankings.</p>
 
+    <h2>Value vs Heat: the two dials</h2>
+    <p>The <a href="valueheat.html">Value vs Heat</a> page runs two indices that are deliberately never
+      combined into a single score, because they measure different things and routinely disagree.</p>
+    <p><strong>Value</strong> is the expected return per dollar wagered, adjusted for the chance of
+      sharing the jackpot. For each draw:</p>
+    <ul>
+      <li>The jackpot is taken at its <strong>cash value, never the advertised annuity</strong>. The
+        advertised figure is a stream of payments whose relationship to cash moves with interest rates
+        &mdash; the ratio ran roughly 0.72 in 2021 and about 0.50 by 2024 &mdash; so the same headline is
+        worth materially different amounts in different years.</li>
+      <li>It is multiplied by the expected share a winner keeps,
+        <strong>(1 &minus; e<sup>&minus;&lambda;</sup>) / &lambda;</strong>, where &lambda; is estimated
+        tickets in play divided by the jackpot odds. This is the exact expectation of 1/(1+K) when the
+        number of <em>other</em> winners K is Poisson-distributed.</li>
+      <li>Every fixed lower tier's expected value is added, the total divided by the ticket price, and the
+        same 63% post-tax factor applied as elsewhere on this site.</li>
+      <li>The result is reported as a <strong>percentile against that game's own history</strong>, because
+        a raw figure in cents is hard to place. "6th percentile" says more than "12.3&cent;".</li>
+    </ul>
+    <p><strong>Estimated tickets</strong> are derived, not assumed. For every past draw we invert the
+      lottery's published per-tier winner counts against those tiers' odds &mdash; if 700,000 tickets
+      matched a tier whose odds are 1 in 38, roughly 27 million tickets were in play. Pooling all tiers
+      gives a maximum-likelihood estimate of participation. The relationship between jackpot size and
+      tickets sold is then read from the game's own record, not modelled.</p>
+    <p><strong>Heat</strong> is a separate attention index from three parts, each converted to a
+      percentile and averaged: consecutive rollovers, sales velocity against the game's trailing median,
+      and advertised-jackpot percentile. It is a measure of mania, not of worth.</p>
+    <p><strong>Value is not increasing in jackpot size.</strong> Past a peak, a growing jackpot sells
+      tickets faster than it grows, so the expected share falls faster than the prize rises and value per
+      dollar declines while the headline climbs. On Powerball's record since 2015 that turn currently sits
+      near $1.8bn advertised. The shape is robust; the exact turning point rests on very few observations,
+      since only a handful of draws have ever passed $1bn.</p>
+    <p><strong>Percentiles are matrix-aware.</strong> A prize-matrix change makes earlier draws a
+      different game, so each is ranked only within its current matrix &mdash; Powerball from its October
+      2015 change, Mega Millions from its April 2025 relaunch to a $5 ticket with a built-in multiplier.</p>
+    <p><strong>What we do not compute.</strong> The cross-game leaderboard includes only games whose prize
+      structure is published in full. Games with pari-mutuel tiers, whose prizes depend on sales we cannot
+      observe, are omitted rather than estimated. Games with published fixed tiers but an unpublished
+      rolling jackpot are shown as a <em>lower bound</em> and labelled "at least". Where per-tier winner
+      counts lag the live jackpot and the jackpot has since been won, the rollover count is reported as
+      unknown rather than as a stale number.</p>
+    <p>One figure deserves a warning. <strong>Before tax</strong>, split-adjusted value per dollar
+      genuinely exceeds $1 at extreme jackpots &mdash; our own sweep peaks near 142&cent; per dollar. That
+      is a real, long-documented result, but it is not an argument for buying a ticket: winnings are
+      taxable, the advertised prize is an annuity, and expected value says nothing about a roughly
+      1-in-292-million chance. We therefore display the post-tax figure.</p>
+
     <h2>What these statistics are not</h2>
     <p>Lottery draws are independent random events. Frequency, hot/cold and overdue statistics are
       <em>descriptive</em> — they summarise the past. They do <strong>not</strong> predict future

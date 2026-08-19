@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
+     crossorigin="anonymous"></script>
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <script defer src="schema.js"></script>
+  <title>Value vs Heat: Is Tonight's Jackpot Actually Worth Playing? | NumbersIntel</title>
+  <meta name="description" content="Two separate dials for every national lottery draw: Value, the real expected return per dollar adjusted for split risk, and Heat, how much attention the jackpot is getting. The gap between them is the story." />
+  <link rel="canonical" href="https://numbersintel.com/valueheat.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NumbersIntel" />
+  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
+  <meta property="og:title" content="Value vs Heat: Is Tonight's Jackpot Actually Worth Playing?" />
+  <meta property="og:description" content="A big jackpot and a good jackpot are not the same thing — and past a point they move in opposite directions." />
+  <meta property="og:url" content="https://numbersintel.com/valueheat.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"Lottery value and attention dials","description":"For each national lottery draw: expected value per dollar adjusted for jackpot split risk and expressed as a percentile of that game's own history, alongside a separate public-attention index built from rollovers, sales velocity and jackpot percentile.","creator":{"@id":"https://numbersintel.com/#org"},"isPartOf":{"@id":"https://numbersintel.com/#site"},"url":"https://numbersintel.com/valueheat.html","license":"https://numbersintel.com/terms.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does a bigger lottery jackpot mean better value?","acceptedAnswer":{"@type":"Answer","text":"Not beyond a point. As a jackpot grows it sells more tickets, which raises the chance the prize is split between several winners. Past a peak, sales rise faster than the prize does, so the expected value of a ticket actually falls as the advertised jackpot keeps climbing. On Powerball's own record that peak sits somewhere near $1.8 billion advertised."}},
+    {"@type":"Question","name":"Why use the cash value instead of the advertised jackpot?","acceptedAnswer":{"@type":"Answer","text":"The advertised figure is an annuity paid over decades, and its relationship to the cash you could take moves with interest rates — the cash-to-annuity ratio ran about 0.72 in 2021 and about 0.50 by 2024. The same headline is worth materially different amounts in different years, so the cash value is the honest basis for any value calculation."}},
+    {"@type":"Question","name":"What is the difference between Value and Heat?","acceptedAnswer":{"@type":"Answer","text":"Value is a maths index: what a ticket returns per dollar, adjusted for the chance of sharing the jackpot, ranked against that game's own history. Heat is a mania index: how much attention the draw is getting, from consecutive rollovers, sales velocity and jackpot size. They are deliberately never combined, because a draw can be extremely hot and poor value at the same time."}},
+    {"@type":"Question","name":"Can a small state lottery game be better value than Powerball?","acceptedAnswer":{"@type":"Answer","text":"Frequently, yes. Games with fixed prizes and no rolling jackpot carry no split risk at all, so none of their value leaks away to shared prizes. Several state games return two to three times what Powerball does per dollar. They are still losing bets — just less bad ones, with far smaller prizes."}}
+  ]}
+  </script>
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="national.html">&larr; National drawings</a>
+    <h1>Value vs Heat</h1>
+    <p class="tagline">A big jackpot and a good jackpot are not the same thing &mdash; and past a point
+      they move in opposite directions.</p>
+    <p class="updated" id="vh-updated"></p>
+  </header>
+
+  <main class="detail">
+    <section class="prose">
+      <p class="lead">Every lottery site shows you the jackpot. That number is the worst available guide to
+        whether a ticket is worth buying, for two reasons: it is an <strong>annuity</strong> figure that
+        drifts with interest rates, and it says nothing about <strong>how many other people are buying</strong>
+        &mdash; which is what decides whether you'd keep the prize or split it.</p>
+      <p>So we run two dials instead, and deliberately never blend them into one score.</p>
+      <ul>
+        <li><strong>Value</strong> is a maths index &mdash; what a ticket actually returns per dollar once
+          the jackpot is taken at its cash value and discounted for the chance of sharing it, ranked against
+          that game's own draw history.</li>
+        <li><strong>Heat</strong> is a mania index &mdash; how much attention this draw is getting, from the
+          rollover run, how fast tickets are selling against normal, and how big the advertised prize is.</li>
+      </ul>
+      <p>When a jackpot run pushes Heat toward 100 while Value sinks, that is not a contradiction. It is the
+        model telling you the draw is getting <em>bigger and worse at the same time</em>.</p>
+    </section>
+
+    <h2 class="home-section-h">Tonight's draws</h2>
+    <div id="vh-games"></div>
+
+    <section class="panel">
+      <h2>Best value in the country tonight</h2>
+      <p class="section-note">Every game whose expected value we can compute honestly, on one axis, after
+        tax. Rows marked <em>at least</em> are lower bounds: their fixed prize tiers are published but a
+        rolling jackpot is not, so the true figure is higher.</p>
+      <div id="vh-board"></div>
+      <p class="section-note">The pattern that keeps showing up: <strong>small fixed-prize state games beat
+        the national games</strong>, often by a factor of two or three. They have no rolling jackpot, so they
+        carry <em>no split risk at all</em> &mdash; none of their value leaks away to shared prizes. The
+        trade-off is obvious: the top prize is thousands, not hundreds of millions.</p>
+    </section>
+
+    <section class="prose">
+      <h2>Why value falls as the jackpot grows</h2>
+      <p>This is the counterintuitive part, and it is the most useful thing on this page.</p>
+      <p>A bigger jackpot sells more tickets. More tickets mean more ways for two people to hold the same
+        numbers, so the prize you'd actually receive is the jackpot <em>divided by however many others also
+        won it</em>. The expected share of a jackpot you win is
+        <strong>(1 &minus; e<sup>&minus;&lambda;</sup>) / &lambda;</strong>, where &lambda; is the number of
+        tickets in play divided by the jackpot odds.</p>
+      <p>At small jackpots &lambda; is tiny and you'd keep essentially all of it. At a billion-dollar jackpot,
+        &lambda; passes 1 and your expected share drops below two thirds. Past a certain point each extra
+        dollar of advertised jackpot pulls in more than a dollar's worth of new tickets, and value per dollar
+        <strong>declines even as the headline number climbs</strong>. Swept against Powerball's own record
+        since 2015, that turning point currently sits near <strong>$1.8 billion advertised</strong>.</p>
+      <p>Treat that figure as soft. Only a handful of draws in history have ever exceeded $1 billion, so the
+        top of the sales curve rests on very few observations. The <em>shape</em> &mdash; rise, turn, decline
+        &mdash; is robust; the precise turning point is not.</p>
+
+      <h2>How the numbers are built</h2>
+      <p><strong>Value per dollar</strong> is the summed expected value of every fixed prize tier, plus the
+        jackpot's cash value divided by the jackpot odds and multiplied by the expected share you would keep,
+        all divided by the ticket price. It is shown <strong>after tax</strong>, using the same flat factor as
+        the rest of this site.</p>
+      <p><strong>Estimated tickets</strong> are not a guess. For every past draw we invert the lottery's own
+        published per-tier winner counts against that tier's odds: if 700,000 people matched a prize whose
+        odds are 1 in 38, roughly 27 million tickets were in play. Pooling every tier gives a maximum-likelihood
+        estimate of participation, and the relationship between jackpot size and tickets sold is then read off
+        the game's own history.</p>
+      <p><strong>Percentiles are matrix-aware.</strong> A prize matrix change makes earlier draws a different
+        game, so each game is ranked only within its current matrix &mdash; Powerball since its 2015 change,
+        Mega Millions since its April 2025 relaunch to a $5 ticket. Comparing across those dates would be
+        comparing two different products.</p>
+      <p>Full detail, including what we deliberately do not compute, is on the
+        <a href="methodology.html">methodology page</a>. The participation model behind these figures has its
+        own page: <a href="splitrisk.html">will the jackpot be split?</a></p>
+
+      <h2>What this is not</h2>
+      <p>It is not a tip, and a high Value reading is not a signal to buy. <strong>Every game here returns
+        less than it costs</strong>; the dial measures which draw is least bad, never which is good. Expected
+        value also says nothing about your actual chance of winning, which stays around 1 in 292 million for
+        Powerball whatever the dial reads. Play for entertainment or not at all.</p>
+    </section>
+
+    <p class="disclaimer">
+      Derived from published lottery data and a documented participation model &mdash; estimates, not official
+      figures, and not a prediction about any draw. Every draw is independent. The lottery is a
+      negative-expected-value game by design. For information and entertainment only &mdash; not financial or
+      gambling advice. You must be 18+ to play (21+ in some states). If gambling is a problem for you or
+      someone you know, call <strong>1-800-GAMBLER</strong> (<a href="tel:18004262537">1-800-426-2537</a>).
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="national.html">US National Drawings</a>
+      <a href="splitrisk.html">Split risk</a>
+      <a href="tools.html">Tools</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script src="valueheat.js"></script>
+</body>
+</html>

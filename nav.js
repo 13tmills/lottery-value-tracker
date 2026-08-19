@@ -6,7 +6,7 @@
   const link = (t, h) => `<a href="${h}"${h === here ? ' class="is-active"' : ""}>${t}</a>`;
   const drawPages = ["national.html", "states.html", "uk.html", "tools.html", "state.html", "game.html",
     "breakeven.html", "statetax.html", "visualizer.html", "check.html", "lifecalc.html",
-    "jackpotstats.html", "montecarlo.html", "splitrisk.html", "bestodds.html", "idaho.html", "texas.html", "california.html", "new-york.html", "florida.html", "michigan.html", "georgia.html", "north-carolina.html",
+    "jackpotstats.html", "montecarlo.html", "splitrisk.html", "valueheat.html", "bestodds.html", "idaho.html", "texas.html", "california.html", "new-york.html", "florida.html", "michigan.html", "georgia.html", "north-carolina.html",
     "south-carolina.html", "missouri.html", "virginia.html", "massachusetts.html", "oklahoma.html",
     "connecticut.html", "new-mexico.html", "new-jersey.html", "arizona.html", "maryland.html",
     "louisiana.html", "arkansas.html",
