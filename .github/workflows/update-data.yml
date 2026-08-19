@@ -29,6 +29,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r scraper/requirements.txt
 
+      - name: Run model tests
+        continue-on-error: true   # visible red on failure, but must not block the data refresh
+        run: pytest scraper/ -q
+
       - name: Run scraper
         run: python scraper/scrape.py || echo "::warning::national scrape.py failed (continuing)"
 
@@ -209,6 +213,9 @@ jobs:
           python scraper/build_index.py || echo "::warning::build_index failed (continuing)"
           python scraper/mm_winners.py || echo "::warning::mm_winners failed (continuing)"
           python scraper/split_risk.py || echo "::warning::split_risk failed (continuing)"
+          # Gate the model artifact on its own tests: a wrong model must not publish,
+          # but it also must not stop jackpots and history from updating.
+          pytest scraper/test_value_heat.py -q && python scraper/value_heat.py || echo "::warning::value_heat tests or generator failed; value_heat.json left unchanged"
           pwsh -File scraper/gen_state_odds.ps1 || echo "::warning::gen_state_odds failed (continuing)"
           pwsh -File scraper/gen_scratch_id.ps1 || echo "::warning::gen_scratch_id failed (continuing)"
           pwsh -File scraper/gen_scratch_tx.ps1 || echo "::warning::gen_scratch_tx failed (continuing)"
@@ -243,7 +250,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json history/ tools-index.json split_risk.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json scratch_ok.json scratch_ct.json scratch_nm.json scratch_nj.json scratch_az.json scratch_md.json scratch_la.json scratch_ar.json scratch_il.json scratch_in.json scratch_summary.json scratch/
+          git add data.json history/ tools-index.json split_risk.json value_heat.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json scratch_ok.json scratch_ct.json scratch_nm.json scratch_nj.json scratch_az.json scratch_md.json scratch_la.json scratch_ar.json scratch_il.json scratch_in.json scratch_summary.json scratch/
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0
