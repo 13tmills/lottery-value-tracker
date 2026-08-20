@@ -2,7 +2,7 @@
   "game": "nh_m4l",
   "source": "nhlottery.com",
   "earliest_available": "2026-02-23",
-  "last_updated": "2026-08-18",
+  "last_updated": "2026-08-20",
   "complete": true,
   "draws": [
     {
@@ -1949,6 +1949,28 @@
         33,
         42,
         48
+      ],
+      "bonus": 4
+    },
+    {
+      "date": "2026-08-19",
+      "numbers": [
+        4,
+        18,
+        29,
+        32,
+        37
+      ],
+      "bonus": 4
+    },
+    {
+      "date": "2026-08-20",
+      "numbers": [
+        10,
+        12,
+        26,
+        44,
+        57
       ],
       "bonus": 4
     }

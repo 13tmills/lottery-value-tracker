@@ -1,7 +1,7 @@
 {
   "game": "powerball",
   "source": "powerball.com",
-  "last_updated": "2026-08-18",
+  "last_updated": "2026-08-20",
   "complete": false,
   "earliest_available": "2010-01-09",
   "note": "Seeded with a few real draws. Full history (2010-01-01 onward) is backfilled by scraper/history_scraper.py in CI; the prize breakdowns fill in then.",
@@ -91094,6 +91094,18 @@
         65
       ],
       "powerball": 22
+    },
+    {
+      "date": "2026-08-19",
+      "jackpot": 68000000,
+      "numbers": [
+        10,
+        21,
+        58,
+        61,
+        64
+      ],
+      "powerball": 17
     }
   ]
 }
