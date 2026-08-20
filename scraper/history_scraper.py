@@ -71,6 +71,8 @@ GAMES = {
         "gc": "lotto-america",
         "start": date(2017, 11, 15),
         "draw_weekdays": {MON, WED, SAT},
+        # Lotto America added Mondays on 2022-07-18; earlier Mondays never drew.
+        "weekday_from": {MON: date(2022, 7, 18)},
         "white_range": (1, 52), "special_range": (1, 10),
         "number_group": "number-group-lotto-america",
         "white_class": "red-balls", "special_class": "star-ball",
@@ -84,7 +86,10 @@ GAMES = {
         "kind": "powerball_site",
         "gc": "powerball",
         "start": date(2010, 1, 1),
-        "draw_weekdays": {MON, WED, SAT},  # Monday draws only since 2021-08; pre-2021 Mondays 404 and are skipped
+        "draw_weekdays": {MON, WED, SAT},
+        # Powerball added a third weekly draw on 2021-08-23. Earlier Mondays never
+        # happened, so they must not be generated as dates to fetch.
+        "weekday_from": {MON: date(2021, 8, 23)},
         "white_range": (1, 69), "special_range": (1, 26),
         "number_group": "number-group-powerball",
         "white_class": "white-balls", "special_class": "powerball",
@@ -523,11 +528,23 @@ def parse_money(text):
     return int(round(amount * mult))
 
 
-def draw_dates(start, end, weekdays):
+def draw_dates(start, end, weekdays, weekday_from=None):
+    """Every date in range on which the game actually drew.
+
+    `weekday_from` maps a weekday to the date it was ADDED to the schedule, for
+    games that changed their draw days: Powerball added Mondays on 2021-08-23,
+    Lotto America on 2022-07-18. Without it, this yields hundreds of Mondays the
+    game never drew on, which then look permanently "missing" and are re-fetched
+    on every single run - 607 doomed requests for Powerball alone, ahead of the
+    handful of recent draws that genuinely need repairing.
+    """
+    weekday_from = weekday_from or {}
     d = start
     while d <= end:
         if d.weekday() in weekdays:
-            yield d
+            added = weekday_from.get(d.weekday())
+            if added is None or d >= added:
+                yield d
         d += timedelta(days=1)
 
 
@@ -2663,16 +2680,25 @@ def main():
         scrape = SCRAPERS[cfg["kind"]]
         has_prizes = cfg["kind"] == "powerball_site"
         today = date.today()
-        missing = []
-        for d in draw_dates(cfg["start"], today, cfg["draw_weekdays"]):
+        # Two separate queues. Repairs (a draw we already have, but with no prize
+        # breakdown) come FIRST, because they are few, always fetchable, and feed
+        # the participation and value models. Backfill of entirely absent dates
+        # comes second: that queue can contain dates the source will never serve,
+        # and when the two were merged chronologically it starved the repairs —
+        # the prize gap sat behind hundreds of doomed requests and never healed.
+        repairs, backfill = [], []
+        for d in draw_dates(cfg["start"], today, cfg["draw_weekdays"], cfg.get("weekday_from")):
             key = d.isoformat()
             if key not in by_date:
-                missing.append(d)
+                backfill.append(d)
             elif has_prizes and d >= cfg["prizes_from"] and not by_date[key].get("prizes"):
-                missing.append(d)  # should carry a prize breakdown but doesn't — self-heal
+                repairs.append(d)
+        repairs.reverse()   # newest gaps first — those are the ones models read
+        missing = repairs + backfill
         if args.limit:
             missing = missing[:args.limit]
-        print(f"[{args.game}] {len(by_date)} on file; {len(missing)} date(s) to (re)fetch.")
+        print(f"[{args.game}] {len(by_date)} on file; {len(repairs)} missing-prize repair(s), "
+              f"{len(backfill)} absent date(s); {len(missing)} to (re)fetch.")
         for d in missing:
             try:
                 draw = scrape(d, cfg)
@@ -2687,7 +2713,8 @@ def main():
         last = max(by_date) if by_date else None
         complete = bool(by_date) and last is not None and not any(
             dd.isoformat() not in by_date
-            for dd in draw_dates(cfg["start"], date.fromisoformat(last), cfg["draw_weekdays"])
+            for dd in draw_dates(cfg["start"], date.fromisoformat(last), cfg["draw_weekdays"],
+                                 cfg.get("weekday_from"))
         )
 
     # Saw-tooth forward-fill: sources that expose only the upcoming jackpot (Michigan,
