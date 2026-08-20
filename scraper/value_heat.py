@@ -67,6 +67,7 @@ import json
 import math
 import os
 import sys
+import traceback
 from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -206,7 +207,12 @@ def sweep_ev_curve(knots: list[tuple[float, float]], odds_jackpot: float, tiers:
                    price: float, cash_ratio: float, multiplier: float = 1.0,
                    max_jackpot: float = 3.0e9, step: float = 25e6) -> list[dict]:
     """EV per dollar across a synthetic range of advertised jackpots, holding the
-    sales curve fixed. This is what exposes the non-monotonic peak."""
+    sales curve fixed. This is what exposes the non-monotonic peak.
+
+    `max_jackpot` should be set relative to what the game has actually reached -
+    see sweep_ceiling(). Sweeping every game to a fixed $3bn extrapolated Lotto
+    America's sales curve 75x beyond any observed draw and reported a meaningless
+    "peak" at the ceiling."""
     out = []
     j = step
     while j <= max_jackpot:
@@ -222,6 +228,18 @@ def curve_peak(curve: list[dict]) -> dict | None:
     if not curve:
         return None
     return max(curve, key=lambda r: r["ev"])
+
+
+def sweep_ceiling(series: list[dict]) -> tuple[float, float]:
+    """(max_jackpot, step) for the EV sweep, scaled to what this game has actually
+    reached. Twice the largest observed jackpot is enough headroom to show a turn
+    without inventing a sales curve for jackpots the game has never had - Lotto
+    America tops out near $40m, so sweeping it to $3bn says nothing about Lotto
+    America. Returns a step that keeps the curve to a sane number of points."""
+    top = max((r["jackpot"] for r in series), default=0) or 100e6
+    ceiling = 2.0 * top
+    step = max(1e5, round(ceiling / 120.0 / 1e5) * 1e5)
+    return ceiling, step
 
 
 # --------------------------------------------------------------------------
@@ -308,12 +326,27 @@ def build_game(key: str, live: dict) -> dict | None:
 
     # --- the EV curve and where tonight sits on it
     cash_ratio = (cash / jackpot) if jackpot > 0 else 0.5
-    curve = sweep_ev_curve(knots, odds_jp, tiers, price, cash_ratio, mult)
+    ceiling, sweep_step = sweep_ceiling(series)
+    curve = sweep_ev_curve(knots, odds_jp, tiers, price, cash_ratio, mult,
+                           max_jackpot=ceiling, step=sweep_step)
     peak = curve_peak(curve)
-    past_peak = bool(peak and jackpot > peak["jackpot"])
+    # A "peak" sitting on the last swept point is the ceiling, not a turning point.
+    peak_is_interior = bool(peak and curve and peak["jackpot"] < curve[-1]["jackpot"])
+    past_peak = bool(peak_is_interior and jackpot > peak["jackpot"])
 
     # --- HEAT: rollovers, sales velocity, advertised-jackpot percentile
-    rollovers = rollover_run(series)
+    #
+    # STALENESS GUARD. Per-tier winner counts can lag the live jackpot (our
+    # Powerball and Lotto America archives currently stop two months short,
+    # because the backfilled source publishes no tier breakdown). If the jackpot
+    # has since been WON, the run counted here is nonsense: Lotto America read
+    # 137 rollovers on a $2.65m jackpot, having actually reset from $30m in the
+    # gap. A live jackpot well below the last one we observed is proof of a win
+    # we cannot see, so the run is reported as unknown rather than as a number
+    # that happens to be wrong.
+    last_seen_jackpot = series[-1]["jackpot"]
+    won_in_gap = bool(jackpot > 0 and last_seen_jackpot > 0 and jackpot < 0.6 * last_seen_jackpot)
+    rollovers = None if won_in_gap else rollover_run(series)
     roll_hist = []
     run = 0
     for r in series:
@@ -322,7 +355,8 @@ def build_game(key: str, live: dict) -> dict | None:
             run = 0
         else:
             run += 1
-    roll_pct = percentile_of(rollovers, roll_hist) if len(roll_hist) >= 10 else None
+    roll_pct = (percentile_of(rollovers, roll_hist)
+                if (rollovers is not None and len(roll_hist) >= 10) else None)
 
     recent = [r["est_lines"] for r in series[-VELOCITY_WINDOW:]]
     trailing = median(recent) if recent else 0.0
@@ -398,10 +432,14 @@ def build_game(key: str, live: dict) -> dict | None:
             "components": parts,
             "rollovers": rollovers,
             "sales_velocity": round(velocity, 3) if velocity is not None else None,
+            "stale_winner_data": won_in_gap,
+            "data_through": series[-1]["date"],
         },
         "ev_curve": {
-            "peak_jackpot": peak["jackpot"] if peak else None,
-            "peak_ev": peak["ev"] if peak else None,
+            "peak_jackpot": peak["jackpot"] if peak_is_interior else None,
+            "peak_ev": peak["ev"] if peak_is_interior else None,
+            "peak_is_interior": peak_is_interior,
+            "swept_to": int(ceiling),
             "past_peak": past_peak,
             "points": curve[::4],   # thin for transport; full curve is reproducible
         },
@@ -491,7 +529,15 @@ def main() -> None:
             continue
         live = dict(live)
         live.setdefault("label", SR_GAMES[key]["label"])
-        g = build_game(key, live)
+        # One game's bad data must not cost us the whole file. When the output is
+        # missing entirely the publish step has nothing to stage, and a missing
+        # artifact used to break the commit for every other dataset too.
+        try:
+            g = build_game(key, live)
+        except Exception:
+            print(f"[value_heat] ! {key}: build failed, skipping this game")
+            traceback.print_exc()
+            continue
         if g:
             out_games[key] = g
             v, h = g["value"], g["heat"]
@@ -499,7 +545,14 @@ def main() -> None:
                   f"(pct {v['ev_percentile']}, {v['basis_draws']} draws), heat {h['score']}"
                   + (f", FLAG {g['divergence']['flag']}" if g["divergence"] else ""))
 
-    board = leaderboard(out_games, meta)
+    # Same reasoning as build_game: the leaderboard walks 176 third-party game
+    # configs, so one malformed entry must not cost us the whole artifact.
+    try:
+        board = leaderboard(out_games, meta)
+    except Exception:
+        print("[value_heat] ! leaderboard failed; publishing dials without it")
+        traceback.print_exc()
+        board = []
     out = {
         "updated": date.today().isoformat(),
         "method": (

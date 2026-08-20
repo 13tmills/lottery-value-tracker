@@ -250,7 +250,29 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json history/ tools-index.json split_risk.json value_heat.json game/ game_meta.json state_odds.json scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json scratch_ok.json scratch_ct.json scratch_nm.json scratch_nj.json scratch_az.json scratch_md.json scratch_la.json scratch_ar.json scratch_il.json scratch_in.json scratch_summary.json scratch/
+          # Stage only paths that exist. A single missing file used to make
+          # `git add` fatal, which failed this step and blocked the ENTIRE data
+          # commit - jackpots, history and all - because one new generator had
+          # not produced its output yet. Every other step is deliberately
+          # non-fatal; this one must be too.
+          MISSING=""
+          for p in data.json history/ tools-index.json split_risk.json value_heat.json \
+                   game/ game_meta.json state_odds.json scratch_summary.json scratch/ \
+                   scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json \
+                   scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json \
+                   scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json \
+                   scratch_ok.json scratch_ct.json scratch_nm.json scratch_nj.json \
+                   scratch_az.json scratch_md.json scratch_la.json scratch_ar.json \
+                   scratch_il.json scratch_in.json; do
+            if [ -e "$p" ]; then
+              git add "$p"
+            else
+              MISSING="$MISSING $p"
+            fi
+          done
+          if [ -n "$MISSING" ]; then
+            echo "::warning::not staged (never generated):$MISSING"
+          fi
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0
