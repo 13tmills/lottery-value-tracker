@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-20",
+  "generated": "2026-08-22",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 150,
@@ -7,7 +7,7 @@
     "az_thepick": 38,
     "az_tripletwist": 23,
     "ca_derby": 10,
-    "ca_fantasy5": 73,
+    "ca_fantasy5": 74,
     "ca_superlotto": 4,
     "co_lotto": 1,
     "ct_lotto": 27,
@@ -28,7 +28,7 @@
     "mega_millions": 46,
     "mn_gopher5": 95,
     "mn_north5": 44,
-    "mo_showmecash": 408,
+    "mo_showmecash": 409,
     "ms_match5": 74,
     "mt_montanacash": 117,
     "ne_pick5": 231,
@@ -49,7 +49,7 @@
     "tn_dailyjp": 57,
     "tx_lotto": 2,
     "tx_twostep": 11,
-    "wa_hit5": 422,
+    "wa_hit5": 423,
     "wa_lotto": 90,
     "wi_badger5": 875,
     "wi_megabucks": 65,
