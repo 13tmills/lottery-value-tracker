@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-08-22",
+  "last_updated": "2026-08-23",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-22",
-    "jackpot": 27750000,
-    "cash": 18380000
+    "date": "2026-08-24",
+    "jackpot": 28050000,
+    "cash": 18560000
   },
   "draws": [
     {
@@ -42272,35 +42272,7 @@
         19,
         30,
         31
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 20400000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 8
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 395
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 6433
-        }
-      ],
-      "jackpot": 20400000,
-      "total_winners": 6836
+      ]
     },
     {
       "date": "2026-06-15",
@@ -43461,6 +43433,46 @@
       ],
       "jackpot": 27600000,
       "total_winners": 5705
+    },
+    {
+      "date": "2026-08-22",
+      "draw_number": 4625,
+      "numbers": [
+        2,
+        22,
+        25,
+        29,
+        41,
+        44
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 27750000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 12
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 327
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 5998
+        }
+      ],
+      "jackpot": 27750000,
+      "total_winners": 6337
     }
   ]
 }

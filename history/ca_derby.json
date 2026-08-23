@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-08-22",
+  "last_updated": "2026-08-23",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-22",
-    "jackpot": 79000,
+    "date": "2026-08-23",
+    "jackpot": 83000,
     "cash": 0
   },
   "draws": [
@@ -15199,6 +15199,68 @@
       ],
       "total_winners": 2258,
       "jackpot": 78176
+    },
+    {
+      "date": "2026-08-22",
+      "numbers": [
+        3,
+        6,
+        1
+      ],
+      "horses": [
+        {
+          "num": 3,
+          "name": "Hot Shot"
+        },
+        {
+          "num": 6,
+          "name": "Whirl Win"
+        },
+        {
+          "num": 1,
+          "name": "Gold Rush"
+        }
+      ],
+      "race_time": "1:46.13",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 2030
+        },
+        {
+          "level": "Exacta",
+          "amount": 21,
+          "winners": 205
+        },
+        {
+          "level": "Trifecta",
+          "amount": 423,
+          "winners": 23
+        },
+        {
+          "level": "Race Time",
+          "amount": 39,
+          "winners": 31
+        },
+        {
+          "level": "Win / RT",
+          "amount": 42,
+          "winners": 3
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 60,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 82824,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2292,
+      "jackpot": 82824
     }
   ]
 }

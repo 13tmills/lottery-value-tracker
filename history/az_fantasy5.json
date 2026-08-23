@@ -2,12 +2,12 @@
   "game": "az_fantasy5",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-01",
-  "last_updated": "2026-08-22",
+  "last_updated": "2026-08-23",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-17",
-    "jackpot": 387000,
-    "cash": 387000
+    "date": "2026-08-22",
+    "jackpot": 52000,
+    "cash": 52000
   },
   "draws": [
     {
@@ -64119,6 +64119,18 @@
         27,
         34
       ]
+    },
+    {
+      "date": "2026-08-22",
+      "numbers": [
+        5,
+        10,
+        12,
+        25,
+        40
+      ],
+      "jackpot": 52000,
+      "cash": 52000
     }
   ]
 }

@@ -2,7 +2,7 @@
   "game": "nc_pick4",
   "source": "nclottery.com",
   "earliest_available": "2009-04-17",
-  "last_updated": "2026-08-22",
+  "last_updated": "2026-08-23",
   "complete": true,
   "draws": [
     {
@@ -57027,6 +57027,15 @@
         5,
         0,
         1
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "numbers": [
+        5,
+        4,
+        5,
+        9
       ]
     }
   ]
