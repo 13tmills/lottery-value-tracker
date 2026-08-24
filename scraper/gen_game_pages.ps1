@@ -255,7 +255,7 @@ $tblBlock
   $extra = (Describe $m $hist $latest) + $extra
   $title = "$label ($(Esc $state)) &mdash; Odds, Prizes &amp; Results | NumbersIntel"
   $desc = "$label ($state): full odds and prize structure, the latest winning numbers and recent results, plus number-frequency history from NumbersIntel."
-  $html = PageShell -key $key -title $title -desc $desc -label $label -back "state.html?state=$($m.state)" -backLabel "$state lottery" -intro $intro -lastNums $lastNums -lastSp $lastSp -nextDraw "" -extra $extra -recent $rr -matrix ""
+  $html = PageShell -key $key -title $title -desc $desc -label $label -back "state/$($m.state.ToLower()).html" -backLabel "$state lottery" -intro $intro -lastNums $lastNums -lastSp $lastSp -nextDraw "" -extra $extra -recent $rr -matrix ""
   return (WritePage $key $html)
 }
 

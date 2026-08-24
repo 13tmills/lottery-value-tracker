@@ -248,7 +248,7 @@ foreach ($st in $STATES) {
     <nav class="footer-nav">
       <a href="index.html">Home</a>
       <a href="scratch/">Scratch games</a>
-      <a href="state.html?state=$($st.code)">$($st.name) lottery</a>
+      <a href="state/$($st.code.ToLower()).html">$($st.name) lottery</a>
       <a href="guides/">Guides</a>
       <a href="methodology.html">Methodology</a>
     </nav>

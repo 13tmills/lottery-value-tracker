@@ -242,6 +242,7 @@ jobs:
           # Regenerates the per-state scratch pages so their headline numbers
           # (game counts, payout ranges, price curve) track the fresh data.
           pwsh -File scraper/gen_scratch_pages.ps1 || echo "::warning::gen_scratch_pages failed (continuing)"
+          pwsh -File scraper/gen_state_pages.ps1 || echo "::warning::gen_state_pages failed (continuing)"
           pwsh -File scraper/gen_game_pages.ps1 || echo "::warning::gen_game_pages failed (continuing)"
           exit 0   # always succeed so the commit step runs with whatever updated
 
@@ -257,7 +258,7 @@ jobs:
           # non-fatal; this one must be too.
           MISSING=""
           for p in data.json history/ tools-index.json split_risk.json value_heat.json \
-                   game/ game_meta.json state_odds.json scratch_summary.json scratch/ \
+                   state/ game/ game_meta.json state_odds.json scratch_summary.json scratch/ \
                    scratch_id.json scratch_tx.json scratch_ca.json scratch_ny.json \
                    scratch_fl.json scratch_mi.json scratch_ga.json scratch_nc.json \
                    scratch_sc.json scratch_mo.json scratch_va.json scratch_ma.json \

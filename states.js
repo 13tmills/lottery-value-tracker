@@ -1,5 +1,5 @@
 // US lottery jurisdictions registry + rendering for the states hub (states.html)
-// and the per-state scaffold (state.html?state=XX). Data coverage is rolling out;
+// and the per-state pages (state/<abbr>.html, pre-rendered by gen_state_pages.ps1). Data coverage is rolling out;
 // these pages establish the structure, URLs, and SEO now.
 
 const STATES = [
@@ -968,7 +968,7 @@ function renderHub() {
   });
   grid.innerHTML = STATES.map((s) =>
     s.lottery
-      ? `<a class="state-cell" href="state.html?state=${s.abbr}"><span class="state-cell__abbr">${s.abbr}</span><span>${s.name}</span></a>`
+      ? `<a class="state-cell" href="state/${s.abbr.toLowerCase()}.html"><span class="state-cell__abbr">${s.abbr}</span><span>${s.name}</span></a>`
       : `<div class="state-cell state-cell--off"><span class="state-cell__abbr">${s.abbr}</span><span>${s.name}</span><span class="state-cell__note">No lottery</span></div>`
   ).join("");
 
@@ -1004,7 +1004,7 @@ function renderMap() {
       `<span><i class="us-dot us-dot--off"></i>No lottery</span>` +
     `</div>`;
 
-  const go = (p) => { const a = p.getAttribute("data-abbr"); if (a) location.href = `state.html?state=${a}`; };
+  const go = (p) => { const a = p.getAttribute("data-abbr"); if (a) location.href = `state/${a.toLowerCase()}.html`; };
   const svg = host.querySelector(".us-map");
   svg.addEventListener("click", (e) => {
     const p = e.target.closest("path[data-abbr]");
@@ -1101,7 +1101,7 @@ function renderState() {
   setMeta({
     title: `${s.name} Lottery — Results, Numbers & Frequency | NumbersIntel`,
     description: `${s.name} lottery results and hot & cold number frequency — plus the national games. The NumbersIntel analytics treatment for ${s.name}.`,
-    url: s.abbr === "UK" ? `${SITE}/uk.html` : `${SITE}/state.html?state=${s.abbr}`,
+    url: s.abbr === "UK" ? `${SITE}/uk.html` : `${SITE}/state/${s.abbr.toLowerCase()}.html`,
   });
 
   const cfg = STATE_GAMES[s.abbr];

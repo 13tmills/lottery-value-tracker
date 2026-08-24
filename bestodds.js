@@ -88,7 +88,7 @@ function soShow(abbr) {
       <thead><tr><th scope="col">Game</th><th scope="col">Top-prize odds</th><th scope="col">Ticket</th></tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
-    <p class="section-note">${st.count > st.games.length ? `Showing the ${st.games.length} most winnable of ${st.count} games. ` : ""}<a href="state.html?state=${abbr}">See all ${st.name} games &rarr;</a></p>`;
+    <p class="section-note">${st.count > st.games.length ? `Showing the ${st.games.length} most winnable of ${st.count} games. ` : ""}<a href="state/${abbr.toLowerCase()}.html">See all ${st.name} games &rarr;</a></p>`;
 }
 
 function soRankTable() {
@@ -99,7 +99,7 @@ function soRankTable() {
     .sort((x, y) => x.s.best.odds - y.s.best.odds)
     .map((r, i) => `<tr>
       <td>${i + 1}</td>
-      <th scope="row"><a href="state.html?state=${r.a}">${r.s.name}</a></th>
+      <th scope="row"><a href="state/${r.a.toLowerCase()}.html">${r.s.name}</a></th>
       <td><a href="game/${r.s.best.key}.html">${r.s.best.label}</a></td>
       <td>${soOdds(r.s.best.odds)}</td></tr>`).join("");
   host.innerHTML = `<div class="sr-table-wrap"><table class="sr-table">

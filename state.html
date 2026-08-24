@@ -4,48 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281838483505325"
-     crossorigin="anonymous"></script>
-  <script src="analytics.js"></script>
-  <script defer src="nav.js"></script>
-  <script defer src="schema.js"></script>
+  <!-- Legacy URL. Every jurisdiction now has a pre-rendered page at state/<abbr>.html.
+       This shell only ever held ~23 words of HTML and every ?state=XX variant was
+       byte-identical to a crawler, so it must not be indexed: noindex here, and the
+       47 old URLs are out of the sitemap. It stays alive purely to forward old
+       inbound links and bookmarks. -->
+  <meta name="robots" content="noindex, follow" />
   <title>State Lottery — NumbersIntel</title>
-  <meta name="description" id="meta-desc" content="State lottery results, odds, expected value, and number frequency from NumbersIntel." />
-  <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/state.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="NumbersIntel" />
-  <meta property="og:image" content="https://numbersintel.com/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:image" content="https://numbersintel.com/og-image.png" />
-  <meta property="og:title" id="og-title" content="State Lottery | NumbersIntel" />
-  <meta property="og:description" id="og-desc" content="State lottery results, odds, and expected value." />
-  <meta property="og:url" id="og-url" content="https://numbersintel.com/state.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" id="tw-title" content="State Lottery | NumbersIntel" />
-  <meta name="twitter:description" id="tw-desc" content="State lottery results, odds, and expected value." />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Forward before anything renders, preserving the requested state.
+    (function () {
+      var m = /[?&]state=([A-Za-z]{2})/.exec(location.search);
+      var target = m ? "state/" + m[1].toLowerCase() + ".html" : "states.html";
+      location.replace(target);
+    })();
+  </script>
 </head>
 <body>
-  <header class="detail-header">
-    <a class="back-link" href="states.html">&larr; All states</a>
-    <h1 id="state-title">Loading&hellip;</h1>
-    <p class="tagline" id="state-sub"></p>
-  </header>
-
-  <main class="prose" id="state-detail"></main>
-
-  <footer class="site-footer">
-    <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="states.html">States</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-    </nav>
-    <p>For information and entertainment only — not affiliated with any lottery.</p>
-  </footer>
-
-  <script src="common.js"></script>
-  <script src="states.js"></script>
+  <main class="prose" style="max-width:640px;margin:4rem auto;padding:0 1.25rem">
+    <h1>Taking you to the state page&hellip;</h1>
+    <p>State lottery pages have moved. If you are not redirected automatically,
+      <a href="states.html">choose your state here</a>.</p>
+  </main>
 </body>
 </html>

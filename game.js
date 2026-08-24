@@ -38,10 +38,10 @@ async function init() {
       back.href = "national.html";
       back.innerHTML = "&larr; National drawings";
     } else if (from) {
-      back.href = `state.html?state=${from}`;
+      back.href = `state/${String(from).toLowerCase()}.html`;
       back.innerHTML = `&larr; Back to ${STATE_NAMES[from] || meta.stateName || from}`;
     } else if (meta.state) {
-      back.href = `state.html?state=${meta.state}`;
+      back.href = `state/${String(meta.state).toLowerCase()}.html`;
       back.innerHTML = `&larr; Back to ${meta.stateName || meta.state}`;
     }
   }

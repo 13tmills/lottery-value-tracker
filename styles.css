@@ -1396,3 +1396,11 @@ a.state-cell:hover { border-color: var(--accent); }
 
 .vh-floor td, .vh-floor th { opacity: 0.82; }
 .vh-basis { color: var(--text-dim); font-size: 0.82rem; }
+
+/* Links inside detail-page panels and data tables sit OUTSIDE .prose, so they were
+   falling through to the browser default blue - close to unreadable on this dark
+   background. Scoped tightly so buttons and the footer keep their own styling. */
+.detail .panel a:not(.btn),
+.sr-table a { color: var(--accent); }
+.detail .panel a:not(.btn):hover,
+.sr-table a:hover { text-decoration: underline; }
