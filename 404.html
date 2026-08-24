@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script src="analytics.js"></script>
+  <script defer src="nav.js"></script>
+  <!-- A 404 must never be indexed, and must never be in the sitemap. GitHub Pages
+       serves this file for any unmatched path, including on the custom domain. -->
+  <meta name="robots" content="noindex, follow" />
+  <title>Page not found | NumbersIntel</title>
+  <meta name="description" content="That page doesn't exist on NumbersIntel. Find lottery results, odds, expected value and scratch-ticket analysis from here." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="detail-header">
+    <a class="back-link" href="index.html">&larr; Home</a>
+    <h1>That page isn't here</h1>
+    <p class="tagline">The link may be old, or the address may have a typo. Everything below still works.</p>
+  </header>
+
+  <main class="detail">
+    <!-- Filled by the script below when the attempted URL is recognisably an old
+         one. Several page types moved when they were pre-rendered, so a good
+         guess is usually possible rather than dumping the visitor at a dead end. -->
+    <div id="nf-suggest"></div>
+
+    <section class="panel">
+      <h2>Start here</h2>
+      <div class="link-row">
+        <a class="link-chip" href="national.html">Powerball, Mega Millions &amp; Lotto America</a>
+        <a class="link-chip" href="states.html">Your state's games</a>
+        <a class="link-chip" href="scratch/">Scratch tickets by state</a>
+        <a class="link-chip" href="valueheat.html">Is tonight's jackpot worth it?</a>
+        <a class="link-chip" href="guides/">Guides</a>
+        <a class="link-chip" href="tools.html">Calculators &amp; tools</a>
+      </div>
+    </section>
+
+    <section class="prose">
+      <h2>Looking for something specific?</h2>
+      <ul>
+        <li><strong>A state's lottery</strong> &mdash; every jurisdiction we cover has its own page with
+          odds, prices and latest results: <a href="states.html">pick a state</a>.</li>
+        <li><strong>A single game</strong> &mdash; jackpot, full prize table, recent draws and number
+          frequency: browse from <a href="national.html">national</a> or
+          <a href="states.html">state</a> listings.</li>
+        <li><strong>Scratch-off analysis</strong> &mdash; which games still have their top prize, and what
+          each returns per dollar: <a href="scratch/">22 states covered</a>.</li>
+        <li><strong>How we calculate things</strong> &mdash; every formula and its assumptions are on the
+          <a href="methodology.html">methodology page</a>.</li>
+      </ul>
+      <p>If you followed a link from somewhere on this site, that's our mistake and we'd like to fix it
+        &mdash; <a href="contact.html">tell us where it was</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="states.html">States</a>
+      <a href="scratch/">Scratch games</a>
+      <a href="guides/">Guides</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p>For information and entertainment only — not financial or gambling advice.</p>
+  </footer>
+
+  <script>
+    // Recognise the URL shapes that moved when those pages were pre-rendered, and
+    // offer the real destination instead of a generic dead end. We suggest rather
+    // than auto-redirect: a wrong guess that hijacks the page is worse than a
+    // visible link the visitor can judge.
+    (function () {
+      var path = location.pathname || "";
+      var qs = new URLSearchParams(location.search);
+      var suggestion = null;
+
+      var state = (qs.get("state") || "").toLowerCase();
+      var game = (qs.get("game") || "").toLowerCase();
+
+      // /state.html?state=XX  ->  /state/xx.html
+      if (/state\.html$/i.test(path) && /^[a-z]{2}$/.test(state)) {
+        suggestion = { href: "state/" + state + ".html", label: "the " + state.toUpperCase() + " lottery page" };
+      }
+      // numbers/history/game/visualizer ?game=key  ->  /game/<key>.html
+      else if (game && /^[a-z0-9_]+$/.test(game)) {
+        suggestion = { href: "game/" + game + ".html", label: "that game's page" };
+      }
+      // /state/xx  (missing .html)  ->  /state/xx.html
+      else if (/^\/state\/[a-z]{2}$/i.test(path)) {
+        suggestion = { href: path.slice(1) + ".html", label: "that state's page" };
+      }
+      // /scratch/<state>  (missing .html)
+      else if (/^\/scratch\/[a-z-]+$/i.test(path) && !/\/scratch\/?$/i.test(path)) {
+        suggestion = { href: path.slice(1) + ".html", label: "that state's scratch page" };
+      }
+
+      if (!suggestion) return;
+      var host = document.getElementById("nf-suggest");
+      if (!host) return;
+
+      // Only offer the link if the target actually exists. A bad ?game= key would
+      // otherwise send someone from one dead end straight to another.
+      fetch(suggestion.href, { method: "GET" })
+        .then(function (r) {
+          if (!r.ok) return;
+          host.innerHTML =
+            '<section class="panel"><h2>You probably wanted this</h2>' +
+            '<p>That address has moved. Try <a href="' + suggestion.href + '"><strong>' +
+            suggestion.label + '</strong></a>.</p></section>';
+        })
+        .catch(function () { /* stay on the generic 404 */ });
+    })();
+  </script>
+</body>
+</html>
