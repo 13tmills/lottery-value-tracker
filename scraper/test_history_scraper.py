@@ -72,6 +72,44 @@ def test_monday_era_start_matches_a_real_monday():
             assert start.weekday() == weekday, f"{key}: {start} is not weekday {weekday}"
 
 
+def test_recent_draws_carry_a_prize_breakdown():
+    """The regression that actually bit us, as a data assertion.
+
+    When the Powerball/Lotto America scraper was repointed at lotteryusa.com it
+    kept adding draws but silently stopped adding `prizes`, because lotteryusa
+    publishes no per-tier winner counts. Nothing failed; the archives just went
+    quietly hollow from 2026-06-22 and starved the participation and Value/Heat
+    models for two months.
+
+    So: for any game whose source is supposed to carry a prize breakdown, the
+    most recent draws must actually have one. This needs no network and would
+    have caught it the week it started.
+    """
+    import json
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    stale = []
+    for key, cfg in GAMES.items():
+        if cfg.get("kind") != "powerball_site":
+            continue
+        path = os.path.join(root, "history", f"{key}.json")
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8-sig") as fh:
+            draws = json.load(fh).get("draws", [])
+        eligible = sorted(
+            (d for d in draws if d.get("date", "") >= cfg["prizes_from"].isoformat()),
+            key=lambda d: d["date"],
+        )
+        if len(eligible) < 10:
+            continue
+        recent = eligible[-10:]
+        with_prizes = sum(1 for d in recent if d.get("prizes"))
+        if with_prizes < 5:
+            stale.append(f"{key}: only {with_prizes}/10 recent draws have prizes "
+                         f"(newest {recent[-1]['date']})")
+    assert not stale, "prize breakdown has stopped flowing: " + "; ".join(stale)
+
+
 def test_games_with_prizes_declare_a_prizes_from_date():
     """Anything parsed from powerball.com carries a per-tier breakdown, and the
     self-heal path needs to know from when to expect one."""

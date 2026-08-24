@@ -617,13 +617,53 @@ _LUSA_MON3 = {m: i for i, m in enumerate(
 
 
 def scrape_powerball_site(d, cfg):
-    """Powerball / Lotto America latest draw from lotteryusa.com — powerball.com went
-    JavaScript-only (its per-date pages ship no jackpot/numbers), which silently froze
-    these histories. lotteryusa has no per-date URL, so we read the latest result off
-    the game page and return it ONLY when d matches that result's own draw date (parsed
-    from .c-draw-card__date). Other missing dates get None — the deep seed already
-    covers history, and the next CI run keeps the newest draw flowing. Returns None on
-    any parse miss so the main loop never writes a wrong/blank draw."""
+    """Powerball / Lotto America for a specific date, from powerball.com.
+
+    Primary source is powerball.com's per-date draw-result page, which serves the
+    balls, the estimated jackpot and cash value, AND the nine-row per-tier prize
+    table — server-rendered, for any historical date.
+
+    This was previously repointed at lotteryusa.com after powerball.com appeared to
+    go JavaScript-only. That cost us the prize breakdown entirely: lotteryusa
+    publishes no per-tier winner counts and exposes only its newest result, so from
+    2026-06-22 onward these two games gained draws with NO `prizes`, silently
+    starving the participation estimator and the Value/Heat model. Re-verified on
+    2026-08-24: powerball.com serves complete markup for arbitrary past dates
+    (checked 2026-06-24, 2026-07-15 and 2026-08-22 for both games).
+
+    lotteryusa stays as a FALLBACK for the newest draw only, so a future
+    powerball.com outage degrades to numbers-without-prizes instead of nothing.
+    """
+    soup = fetch_page(DRAW_URL.format(gc=cfg["gc"], d=d.isoformat()))
+    if soup is not None:
+        text = soup.get_text(" ", strip=True)
+        jackpot = amount(soup, ".estimated-jackpot", r"Estimated\s+Jackpot", text)
+        cash = amount(soup, ".cash-value", r"Cash\s+Value", text)
+        whites, star = parse_balls(soup, cfg)
+        if whites and jackpot is not None:
+            draw = {
+                "date": d.isoformat(),
+                "jackpot": jackpot,
+                "cash_value": cash,
+                "numbers": whites,
+                cfg["special_key"]: star,
+            }
+            bm = re.search(cfg["bonus_regex"], text, re.IGNORECASE)
+            if bm:
+                draw[cfg["bonus_key"]] = int(bm.group(1))
+            if d >= cfg["prizes_from"]:
+                prizes = parse_prize_table(soup, cfg, jackpot)
+                if prizes:
+                    draw["prizes"] = prizes
+                    draw["total_winners"] = sum(p["winners"] for p in prizes)
+            return draw
+    return _scrape_lotteryusa_latest(d, cfg)
+
+
+def _scrape_lotteryusa_latest(d, cfg):
+    """Fallback: lotteryusa.com exposes only its newest result and no prize table,
+    so this can serve the last few days' numbers and nothing older. Returns None on
+    any parse miss so the caller never writes a wrong or blank draw."""
     url = LUSA_URL.get(cfg["gc"])
     if not url:
         return None
