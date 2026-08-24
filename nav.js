@@ -112,7 +112,7 @@
     foot.insertBefore(fnav, foot.firstChild);
   }
   if (fnav) {
-    [["Guides", "guides/"], ["Methodology", "methodology.html"], ["About", "about.html"], ["Privacy", "privacy.html"]].forEach(function (l) {
+    [["Guides", "guides/"], ["Methodology", "methodology.html"], ["About", "about.html"], ["Contact", "contact.html"], ["Privacy", "privacy.html"]].forEach(function (l) {
       if (![...fnav.querySelectorAll("a")].some(function (a) { return a.getAttribute("href") === l[1]; })) {
         const a = document.createElement("a");
         a.href = l[1]; a.textContent = l[0];

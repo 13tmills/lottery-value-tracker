@@ -53,6 +53,68 @@ function RecentRows($key, $skey, $sabbr) {
   return @{ rows = $rows; n = @($rd).Count; hasJp = [bool](@($rd) | Where-Object { $_.jackpot }) }
 }
 
+# Number-frequency block, straight from the game's own archive.
+#
+# This lives here rather than on a separate page because numbers.html was a JS
+# shell whose ?game=X variants were byte-identical to a crawler - 78 duplicate
+# near-empty URLs. Folding the content into the game page gives it a real
+# indexable home AND makes these pages differ from one another, which matters:
+# sibling game pages ran up to 97% word-identical when everything on them was
+# boilerplate.
+#
+# MATRIX-AWARE, and it has to be. Ball pools change - Texas Cash Five's shrank -
+# so counting a whole archive stacks two different games together and invents a
+# "gap" that was never there. Infer the current pool from recent draws, count
+# only draws that fit it, and stay silent if an implausible spread survives.
+function FreqBlock($key, $label) {
+  $hp = Join-Path $root "history\$key.json"
+  if (-not (Test-Path $hp)) { return "" }
+  try { $hist = Get-Content $hp -Raw -Encoding UTF8 | ConvertFrom-Json } catch { return "" }
+  $sorted = @($hist.draws | Sort-Object date)
+  if ($sorted.Count -lt 200) { return "" }
+
+  $curMax = 0
+  foreach ($dr in @($sorted | Select-Object -Last 100)) {
+    foreach ($n in @($dr.numbers)) { if ([int]$n -gt $curMax) { $curMax = [int]$n } }
+  }
+  if ($curMax -lt 5) { return "" }
+
+  $freq = @{}; $eraCount = 0; $eraFirst = $null; $curMin = 1
+  foreach ($dr in $sorted) {
+    $nums = @($dr.numbers)
+    if (-not $nums.Count) { continue }
+    $fits = $true
+    foreach ($n in $nums) { if ([int]$n -gt $curMax) { $fits = $false; break } }
+    if (-not $fits) { continue }
+    if (-not $eraFirst) { $eraFirst = $dr.date }
+    $eraCount++
+    foreach ($n in $nums) { $k = [int]$n; if ($k -eq 0) { $curMin = 0 }; $freq[$k] = 1 + [int]$freq[$k] }
+  }
+  if ($eraCount -lt 200) { return "" }
+  for ($i = $curMin; $i -le $curMax; $i++) { if (-not $freq.ContainsKey($i)) { $freq[$i] = 0 } }
+
+  $ranked = @($freq.GetEnumerator() | Sort-Object -Property @{Expression={$_.Value};Descending=$true}, @{Expression={$_.Key}})
+  $hot = @($ranked | Select-Object -First 6)
+  $cold = @($ranked | Select-Object -Last 6)
+  $lowest = [double]$cold[$cold.Count-1].Value
+  if ($lowest -le 0) { return "" }
+  $span = [math]::Round(100.0 * ($hot[0].Value - $lowest) / $lowest)
+  if ($span -gt 40) { return "" }   # something else is going on; say nothing
+
+  $hotTxt = ($hot | ForEach-Object { "<b>$($_.Key)</b> ($($_.Value))" }) -join ", "
+  $coldTxt = ($cold | ForEach-Object { "<b>$($_.Key)</b> ($($_.Value))" }) -join ", "
+  return "    <section class=""panel""><h2>Most and least common $label numbers</h2>" +
+    "<p>Across <strong>$("{0:N0}" -f $eraCount)</strong> draws on the current $curMin&ndash;$curMax number pool " +
+    "(since $(([datetime]$eraFirst).Year)), the numbers drawn most often are $hotTxt. " +
+    "The least often: $coldTxt.</p>" +
+    "<p class=""section-note"">The commonest leads the rarest by about <strong>$span%</strong>, and that means " +
+    "nothing at all. Over this many draws ordinary random variation produces spreads of roughly this size &mdash; " +
+    "a fair game would almost never land every number on an identical count. No number is &quot;due&quot;, and " +
+    "none of this predicts the next draw. We count only draws from the game's current number pool, because " +
+    "earlier draws used a different one and mixing them manufactures a pattern that was never there. " +
+    "<a href=""guides/do-hot-numbers-win/"">We tested whether hot numbers actually win</a>.</p></section>`n"
+}
+
 # Build an odds / prize-tier table from whichever treatment the game carries.
 function OddsTable($m) {
   if ($m.ev -and $m.ev.levels) {
@@ -203,7 +265,7 @@ $srBlock
   }
   $p2 = "Below the jackpot, several fixed prize tiers hit far more often for smaller amounts &mdash; all listed in the prize table above. NumbersIntel ranks $label against the other national games by expected value per dollar: the cash value times its jackpot probability, plus every lower tier, after an assumed tax, divided by the ticket price. That figure is always well under a dollar &mdash; the lottery is negative-expected-value by design &mdash; but it shows how much of each dollar tends to come back, and how the three national games compare."
   $natAbout = "    <section class=""prose""><h2>How $label works</h2>`n      <p>$p1</p>`n      <p>$p2</p>`n" + $(if ($archN) { "      <p>$archN</p>`n" } else { "" }) + "    </section>`n"
-  $extra = $natAbout + $extra
+  $extra = $natAbout + $extra + (FreqBlock $key $label)
   $html = PageShell -key $key -title $title -desc $desc -label $label -back "national.html" -backLabel "US National Drawings" -intro $intro -lastNums $lastNums -lastSp $lastSp -nextDraw (DateLong $g.next_draw) -extra $extra -recent $rr -matrix $n.matrix
   return (WritePage $key $html)
 }
@@ -252,7 +314,7 @@ function Build-State($key) {
     </section>
 $tblBlock
 "@
-  $extra = (Describe $m $hist $latest) + $extra
+  $extra = (Describe $m $hist $latest) + $extra + (FreqBlock $key $label)
   $title = "$label ($(Esc $state)) &mdash; Odds, Prizes &amp; Results | NumbersIntel"
   $desc = "$label ($state): full odds and prize structure, the latest winning numbers and recent results, plus number-frequency history from NumbersIntel."
   $html = PageShell -key $key -title $title -desc $desc -label $label -back "state/$($m.state.ToLower()).html" -backLabel "$state lottery" -intro $intro -lastNums $lastNums -lastSp $lastSp -nextDraw "" -extra $extra -recent $rr -matrix ""
@@ -269,7 +331,7 @@ function PageShell($key, $title, $desc, $label, $back, $backLabel, $intro, $last
   } else { "" }
   $jpHead = if ($recent.hasJp) { "<th scope=""col"">Jackpot</th>" } else { "" }
   $recentBlock = if ($recent.n -gt 0) {
-    "    <section class=""panel""><h2>Recent $label results</h2><div class=""sr-table-wrap""><table class=""sr-table""><thead><tr><th scope=""col"">Draw date</th><th scope=""col"">Numbers</th>$jpHead</tr></thead><tbody>`n$($recent.rows)</tbody></table></div><p class=""section-note"">A rolling window of recent draws. Number-frequency charts are on the <a href=""game.html?game=$key"">interactive $label page</a>.</p></section>`n"
+    "    <section class=""panel""><h2>Recent $label results</h2><div class=""sr-table-wrap""><table class=""sr-table""><thead><tr><th scope=""col"">Draw date</th><th scope=""col"">Numbers</th>$jpHead</tr></thead><tbody>`n$($recent.rows)</tbody></table></div><p class=""section-note"">A rolling window of recent draws. Full draw archive and interactive charts: <a href=""game.html?game=$key"">explore $label</a>.</p></section>`n"
   } else { "" }
   $matrixNote = if ($matrix) { " (the number matrix is $matrix)" } else { "" }
   return @"

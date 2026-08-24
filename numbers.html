@@ -9,6 +9,11 @@
   <script src="analytics.js"></script>
   <script defer src="nav.js"></script>
   <script defer src="schema.js"></script>
+  <!-- Interactive tool, not a document. Every ?game= variant of this page is
+       byte-identical to a crawler, so indexing them submitted dozens of duplicate
+       near-empty URLs - the "low value content" pattern. The CONTENT now lives on
+       the pre-rendered game/<key>.html pages; this stays as the interactive view. -->
+  <meta name="robots" content="noindex, follow" />
   <title>Hot &amp; Cold Numbers — NumbersIntel</title>
   <meta name="description" id="meta-desc" content="The most and least drawn lottery numbers, with full frequency charts. From NumbersIntel." />
   <link rel="canonical" id="meta-canonical" href="https://numbersintel.com/numbers.html" />
