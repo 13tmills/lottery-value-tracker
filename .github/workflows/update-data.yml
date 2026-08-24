@@ -213,9 +213,9 @@ jobs:
           python scraper/build_index.py || echo "::warning::build_index failed (continuing)"
           python scraper/mm_winners.py || echo "::warning::mm_winners failed (continuing)"
           python scraper/split_risk.py || echo "::warning::split_risk failed (continuing)"
-          # Gate the model artifact on its own tests: a wrong model must not publish,
-          # but it also must not stop jackpots and history from updating.
-          pytest scraper/test_value_heat.py -q && python scraper/value_heat.py || echo "::warning::value_heat tests or generator failed; value_heat.json left unchanged"
+          # Gate the model artifact on its own self-check: a wrong model must not
+          # publish, but it also must not stop jackpots and history from updating.
+          pwsh -File scraper/test_value_heat.ps1 && pwsh -File scraper/gen_value_heat.ps1 || echo "::warning::value_heat self-check or generator failed; value_heat.json left unchanged"
           pwsh -File scraper/gen_state_odds.ps1 || echo "::warning::gen_state_odds failed (continuing)"
           pwsh -File scraper/gen_scratch_id.ps1 || echo "::warning::gen_scratch_id failed (continuing)"
           pwsh -File scraper/gen_scratch_tx.ps1 || echo "::warning::gen_scratch_tx failed (continuing)"
