@@ -1,7 +1,7 @@
 {
   "game": "lotto_america",
   "source": "powerball.com",
-  "last_updated": "2026-08-23",
+  "last_updated": "2026-08-25",
   "complete": true,
   "earliest_available": "2017-11-15",
   "note": "Seeded with a few real draws. Full history (~1,090 draws back to 2017-11-15) is backfilled by scraper/history_scraper.py in CI.",
@@ -68456,6 +68456,8 @@
     },
     {
       "date": "2026-06-24",
+      "jackpot": 30470000,
+      "cash_value": 13790000,
       "numbers": [
         26,
         39,
@@ -68464,10 +68466,60 @@
         51
       ],
       "star_ball": 2,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 30470000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 0
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 27
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 150
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1353
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 2105
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 12257
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 21916
+        }
+      ],
+      "total_winners": 37808
     },
     {
       "date": "2026-06-27",
+      "jackpot": 30660000,
+      "cash_value": 13950000,
       "numbers": [
         3,
         8,
@@ -68476,10 +68528,60 @@
         39
       ],
       "star_ball": 6,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 30660000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 3
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 49
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 212
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1855
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 3045
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 16815
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 28773
+        }
+      ],
+      "total_winners": 50752
     },
     {
       "date": "2026-06-29",
+      "jackpot": 30910000,
+      "cash_value": 14060000,
       "numbers": [
         8,
         13,
@@ -68488,10 +68590,60 @@
         31
       ],
       "star_ball": 4,
-      "all_star_bonus": 3
+      "all_star_bonus": 3,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 30910000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 23
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 144
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1352
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 2466
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 13186
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 22096
+        }
+      ],
+      "total_winners": 39269
     },
     {
       "date": "2026-07-01",
+      "jackpot": 31190000,
+      "cash_value": 14190000,
       "numbers": [
         10,
         20,
@@ -68500,10 +68652,60 @@
         46
       ],
       "star_ball": 8,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 31190000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 1
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 46
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 135
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1407
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 2349
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 13138
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 23104
+        }
+      ],
+      "total_winners": 40180
     },
     {
       "date": "2026-07-04",
+      "jackpot": 31980000,
+      "cash_value": 14350000,
       "numbers": [
         9,
         17,
@@ -68512,10 +68714,60 @@
         37
       ],
       "star_ball": 5,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 31980000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 1
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 4
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 43
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 209
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1956
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 3231
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 17220
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 29622
+        }
+      ],
+      "total_winners": 52286
     },
     {
       "date": "2026-07-06",
+      "jackpot": 32240000,
+      "cash_value": 14460000,
       "numbers": [
         12,
         16,
@@ -68524,10 +68776,60 @@
         23
       ],
       "star_ball": 10,
-      "all_star_bonus": 3
+      "all_star_bonus": 3,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 32240000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 5
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 37
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 150
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1539
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 2400
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 13029
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 21819
+        }
+      ],
+      "total_winners": 38979
     },
     {
       "date": "2026-07-08",
+      "jackpot": 32520000,
+      "cash_value": 14590000,
       "numbers": [
         17,
         26,
@@ -68536,10 +68838,60 @@
         37
       ],
       "star_ball": 1,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 32520000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 4
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 28
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 137
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1461
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 2259
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 12410
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 21782
+        }
+      ],
+      "total_winners": 38081
     },
     {
       "date": "2026-07-11",
+      "jackpot": 33230000,
+      "cash_value": 14750000,
       "numbers": [
         15,
         17,
@@ -68548,10 +68900,60 @@
         46
       ],
       "star_ball": 4,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 33230000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 1
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 5
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 38
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 255
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1753
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 3196
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 18086
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 31276
+        }
+      ],
+      "total_winners": 54610
     },
     {
       "date": "2026-07-13",
+      "jackpot": 33500000,
+      "cash_value": 14870000,
       "numbers": [
         6,
         7,
@@ -68560,10 +68962,60 @@
         51
       ],
       "star_ball": 4,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 33500000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 4
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 30
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 152
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1494
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 2468
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 13862
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 22577
+        }
+      ],
+      "total_winners": 40587
     },
     {
       "date": "2026-07-15",
+      "jackpot": 33780000,
+      "cash_value": 14990000,
       "numbers": [
         26,
         29,
@@ -68572,10 +69024,60 @@
         47
       ],
       "star_ball": 9,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 33780000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 4
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 24
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 153
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1378
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 2343
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 13167
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 23379
+        }
+      ],
+      "total_winners": 40448
     },
     {
       "date": "2026-07-18",
+      "jackpot": 34120000,
+      "cash_value": 15150000,
       "numbers": [
         13,
         17,
@@ -68584,10 +69086,60 @@
         40
       ],
       "star_ball": 3,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 34120000,
+          "winners": 1
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 1
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 41
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 236
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1907
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 3451
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 18187
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 31120
+        }
+      ],
+      "total_winners": 54946
     },
     {
       "date": "2026-07-20",
+      "jackpot": 2000000,
+      "cash_value": 880000,
       "numbers": [
         23,
         31,
@@ -68596,7 +69148,55 @@
         52
       ],
       "star_ball": 7,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 20
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 78
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 782
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1368
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 7586
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 13528
+        }
+      ],
+      "total_winners": 23364
     },
     {
       "date": "2026-07-22",
@@ -68612,6 +69212,8 @@
     },
     {
       "date": "2026-07-25",
+      "jackpot": 2100000,
+      "cash_value": 910000,
       "numbers": [
         2,
         6,
@@ -68620,10 +69222,60 @@
         52
       ],
       "star_ball": 3,
-      "all_star_bonus": 4
+      "all_star_bonus": 4,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2100000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 4
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 18
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 95
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 914
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1586
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 9031
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 16018
+        }
+      ],
+      "total_winners": 27666
     },
     {
       "date": "2026-07-27",
+      "jackpot": 2150000,
+      "cash_value": 940000,
       "numbers": [
         15,
         20,
@@ -68632,10 +69284,60 @@
         46
       ],
       "star_ball": 3,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2150000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 1
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 13
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 73
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 624
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1137
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 6476
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 11170
+        }
+      ],
+      "total_winners": 19494
     },
     {
       "date": "2026-07-29",
+      "jackpot": 2200000,
+      "cash_value": 960000,
       "numbers": [
         11,
         12,
@@ -68644,10 +69346,60 @@
         33
       ],
       "star_ball": 8,
-      "all_star_bonus": 4
+      "all_star_bonus": 4,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2200000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 5
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 20
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 63
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 787
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1325
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 7106
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 11565
+        }
+      ],
+      "total_winners": 20871
     },
     {
       "date": "2026-08-01",
+      "jackpot": 2250000,
+      "cash_value": 970000,
       "numbers": [
         14,
         17,
@@ -68656,10 +69408,60 @@
         36
       ],
       "star_ball": 10,
-      "all_star_bonus": 5
+      "all_star_bonus": 5,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2250000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 3
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 16
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 106
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 947
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1657
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 9089
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 15623
+        }
+      ],
+      "total_winners": 27441
     },
     {
       "date": "2026-08-03",
+      "jackpot": 2300000,
+      "cash_value": 990000,
       "numbers": [
         3,
         11,
@@ -68668,10 +69470,60 @@
         48
       ],
       "star_ball": 7,
-      "all_star_bonus": 5
+      "all_star_bonus": 5,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2300000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 4
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 15
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 101
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 755
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1249
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 7052
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 11435
+        }
+      ],
+      "total_winners": 20611
     },
     {
       "date": "2026-08-05",
+      "jackpot": 2350000,
+      "cash_value": 1020000,
       "numbers": [
         1,
         19,
@@ -68680,10 +69532,60 @@
         51
       ],
       "star_ball": 5,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2350000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 3
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 17
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 58
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 701
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1308
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 7094
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 12241
+        }
+      ],
+      "total_winners": 21422
     },
     {
       "date": "2026-08-08",
+      "jackpot": 2400000,
+      "cash_value": 1030000,
       "numbers": [
         3,
         30,
@@ -68692,10 +69594,60 @@
         50
       ],
       "star_ball": 3,
-      "all_star_bonus": 4
+      "all_star_bonus": 4,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2400000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 0
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 18
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 82
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 836
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1751
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 9352
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 16019
+        }
+      ],
+      "total_winners": 28058
     },
     {
       "date": "2026-08-10",
+      "jackpot": 2450000,
+      "cash_value": 1060000,
       "numbers": [
         16,
         19,
@@ -68704,11 +69656,60 @@
         41
       ],
       "star_ball": 10,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2450000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 0
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 18
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 71
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 696
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1178
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 6629
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 11672
+        }
+      ],
+      "total_winners": 20264
     },
     {
       "date": "2026-08-12",
-      "jackpot": 2550000,
+      "jackpot": 2500000,
+      "cash_value": 1080000,
       "numbers": [
         1,
         9,
@@ -68716,11 +69717,61 @@
         32,
         36
       ],
-      "star_ball": 2
+      "star_ball": 2,
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2500000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 4
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 17
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 93
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 844
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1357
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 7461
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 12829
+        }
+      ],
+      "total_winners": 22605
     },
     {
       "date": "2026-08-15",
-      "jackpot": 2600000,
+      "jackpot": 2550000,
+      "cash_value": 1100000,
       "numbers": [
         8,
         18,
@@ -68728,11 +69779,61 @@
         40,
         41
       ],
-      "star_ball": 10
+      "star_ball": 10,
+      "all_star_bonus": 4,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2550000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 1
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 18
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 100
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 1068
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1658
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 9007
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 15419
+        }
+      ],
+      "total_winners": 27271
     },
     {
       "date": "2026-08-17",
-      "jackpot": 2650000,
+      "jackpot": 2600000,
+      "cash_value": 1120000,
       "numbers": [
         5,
         8,
@@ -68740,11 +69841,61 @@
         24,
         27
       ],
-      "star_ball": 4
+      "star_ball": 4,
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2600000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 1
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 5
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 26
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 95
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 806
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1409
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 7055
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 11127
+        }
+      ],
+      "total_winners": 20524
     },
     {
       "date": "2026-08-19",
-      "jackpot": 2700000,
+      "jackpot": 2650000,
+      "cash_value": 1140000,
       "numbers": [
         23,
         31,
@@ -68752,11 +69903,61 @@
         41,
         45
       ],
-      "star_ball": 1
+      "star_ball": 1,
+      "all_star_bonus": 5,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2650000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 12
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 74
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 712
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1138
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 6610
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 11397
+        }
+      ],
+      "total_winners": 19945
     },
     {
       "date": "2026-08-22",
-      "jackpot": 2750000,
+      "jackpot": 2700000,
+      "cash_value": 1150000,
       "numbers": [
         20,
         23,
@@ -68764,7 +69965,118 @@
         42,
         50
       ],
-      "star_ball": 4
+      "star_ball": 4,
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2700000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 16
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 110
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 920
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1587
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 9212
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 16804
+        }
+      ],
+      "total_winners": 28651
+    },
+    {
+      "date": "2026-08-24",
+      "jackpot": 2770000,
+      "cash_value": 1190000,
+      "numbers": [
+        7,
+        13,
+        23,
+        35,
+        44
+      ],
+      "star_ball": 3,
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2770000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 14
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 92
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 741
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1245
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 6647
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 11013
+        }
+      ],
+      "total_winners": 19754
     }
   ]
 }

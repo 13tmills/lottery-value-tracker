@@ -2,12 +2,12 @@
   "game": "ri_wildmoney",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-08-23",
+  "last_updated": "2026-08-25",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-17",
-    "jackpot": 80000,
-    "cash": 80000
+    "date": "2026-08-24",
+    "jackpot": 124000,
+    "cash": 124000
   },
   "draws": [
     {
@@ -44805,6 +44805,86 @@
       ],
       "jackpot": 80000,
       "cash": 80000
+    },
+    {
+      "date": "2026-08-18",
+      "numbers": [
+        7,
+        10,
+        18,
+        35,
+        36
+      ],
+      "jackpot": 86000,
+      "cash": 86000
+    },
+    {
+      "date": "2026-08-19",
+      "numbers": [
+        11,
+        18,
+        24,
+        31,
+        34
+      ],
+      "jackpot": 91000,
+      "cash": 91000
+    },
+    {
+      "date": "2026-08-20",
+      "numbers": [
+        5,
+        14,
+        16,
+        23,
+        24
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "numbers": [
+        6,
+        8,
+        9,
+        16,
+        18
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "numbers": [
+        13,
+        16,
+        18,
+        31,
+        33
+      ],
+      "jackpot": 110000,
+      "cash": 110000
+    },
+    {
+      "date": "2026-08-23",
+      "numbers": [
+        3,
+        6,
+        9,
+        11,
+        24
+      ],
+      "jackpot": 118000,
+      "cash": 118000
+    },
+    {
+      "date": "2026-08-24",
+      "numbers": [
+        15,
+        19,
+        23,
+        26,
+        29
+      ],
+      "jackpot": 124000,
+      "cash": 124000
     }
   ]
 }

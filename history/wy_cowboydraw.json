@@ -2,12 +2,12 @@
   "game": "wy_cowboydraw",
   "source": "lotterycorner.com",
   "earliest_available": "2015-04-16",
-  "last_updated": "2026-08-23",
+  "last_updated": "2026-08-25",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-17",
-    "jackpot": 590000,
-    "cash": 590000
+    "date": "2026-08-24",
+    "jackpot": 630000,
+    "cash": 630000
   },
   "draws": [
     {
@@ -13633,6 +13633,30 @@
       ],
       "jackpot": 590000,
       "cash": 590000
+    },
+    {
+      "date": "2026-08-20",
+      "numbers": [
+        2,
+        11,
+        35,
+        41,
+        42
+      ],
+      "jackpot": 590000,
+      "cash": 590000
+    },
+    {
+      "date": "2026-08-24",
+      "numbers": [
+        7,
+        11,
+        25,
+        30,
+        37
+      ],
+      "jackpot": 630000,
+      "cash": 630000
     }
   ]
 }

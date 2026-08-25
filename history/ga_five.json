@@ -2,7 +2,7 @@
   "game": "ga_five",
   "source": "galottery.com",
   "earliest_available": "2026-05-03",
-  "last_updated": "2026-08-23",
+  "last_updated": "2026-08-25",
   "complete": true,
   "draws": [
     {
@@ -953,6 +953,16 @@
         2,
         0,
         0
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "numbers": [
+        2,
+        0,
+        0,
+        3,
+        4
       ]
     }
   ]

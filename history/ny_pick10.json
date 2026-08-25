@@ -2,7 +2,7 @@
   "game": "ny_pick10",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1987-01-12",
-  "last_updated": "2026-08-23",
+  "last_updated": "2026-08-25",
   "complete": true,
   "draws": [
     {
@@ -377285,6 +377285,70 @@
         }
       ],
       "total_winners": 4884
+    },
+    {
+      "date": "2026-08-23",
+      "numbers": [
+        4,
+        5,
+        7,
+        8,
+        14,
+        20,
+        32,
+        36,
+        38,
+        41,
+        46,
+        49,
+        59,
+        61,
+        62,
+        65,
+        66,
+        69,
+        74,
+        77
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": null,
+          "winners": 7
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": null,
+          "winners": 102
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": null,
+          "winners": 852
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": null,
+          "winners": 3433
+        }
+      ],
+      "total_winners": 4394
     }
   ]
 }
