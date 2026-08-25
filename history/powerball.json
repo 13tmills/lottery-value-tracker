@@ -90995,6 +90995,8 @@
     },
     {
       "date": "2026-07-01",
+      "jackpot": 375000000,
+      "cash_value": 170800000,
       "numbers": [
         2,
         6,
@@ -91003,7 +91005,55 @@
         68
       ],
       "powerball": 6,
-      "power_play": 2
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 375000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 1
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 6
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 224
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 680
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 15810
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 13368
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 97934
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 226766
+        }
+      ],
+      "total_winners": 354789
     },
     {
       "date": "2026-07-04",
@@ -91317,6 +91367,8 @@
     },
     {
       "date": "2026-07-15",
+      "jackpot": 499000000,
+      "cash_value": 221600000,
       "numbers": [
         2,
         7,
@@ -91325,7 +91377,55 @@
         38
       ],
       "powerball": 16,
-      "power_play": 2
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 499000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 0
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 16
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 380
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 911
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 23718
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 15720
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 112604
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 258933
+        }
+      ],
+      "total_winners": 412282
     },
     {
       "date": "2026-07-18",
@@ -92147,7 +92247,8 @@
     },
     {
       "date": "2026-08-19",
-      "jackpot": 68000000,
+      "jackpot": 48000000,
+      "cash_value": 21000000,
       "numbers": [
         10,
         21,
@@ -92155,7 +92256,56 @@
         61,
         64
       ],
-      "powerball": 17
+      "powerball": 17,
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 48000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 0
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 8
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 165
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 415
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 13354
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 8700
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 69990
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 175315
+        }
+      ],
+      "total_winners": 267947
     },
     {
       "date": "2026-08-22",
@@ -92221,7 +92371,8 @@
     },
     {
       "date": "2026-08-24",
-      "jackpot": 96000000,
+      "jackpot": 83000000,
+      "cash_value": 35500000,
       "numbers": [
         3,
         16,
@@ -92229,7 +92380,56 @@
         38,
         68
       ],
-      "powerball": 2
+      "powerball": 2,
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 83000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 0
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 5
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 197
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 427
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 10925
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 8300
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 65009
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 155054
+        }
+      ],
+      "total_winners": 239917
     }
   ]
 }

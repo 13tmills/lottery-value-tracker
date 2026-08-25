@@ -69200,6 +69200,8 @@
     },
     {
       "date": "2026-07-22",
+      "jackpot": 2050000,
+      "cash_value": 910000,
       "numbers": [
         1,
         12,
@@ -69208,7 +69210,55 @@
         33
       ],
       "star_ball": 6,
-      "all_star_bonus": 2
+      "all_star_bonus": 2,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2050000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 3
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 19
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 88
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 806
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1296
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 7134
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 12157
+        }
+      ],
+      "total_winners": 21503
     },
     {
       "date": "2026-07-25",
