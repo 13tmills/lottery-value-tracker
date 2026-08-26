@@ -2,12 +2,12 @@
   "game": "tn_dailyjp",
   "source": "lotterycorner.com",
   "earliest_available": "2023-01-18",
-  "last_updated": "2026-08-25",
+  "last_updated": "2026-08-26",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-24",
-    "jackpot": 510000,
-    "cash": 510000
+    "date": "2026-08-25",
+    "jackpot": 520000,
+    "cash": 520000
   },
   "draws": [
     {
@@ -15769,6 +15769,18 @@
       ],
       "jackpot": 510000,
       "cash": 510000
+    },
+    {
+      "date": "2026-08-25",
+      "numbers": [
+        9,
+        13,
+        15,
+        16,
+        29
+      ],
+      "jackpot": 520000,
+      "cash": 520000
     }
   ]
 }

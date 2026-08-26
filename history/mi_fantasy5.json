@@ -60781,14 +60781,25 @@
         22,
         34
       ]
+    },
+    {
+      "date": "2026-08-25",
+      "numbers": [
+        9,
+        11,
+        17,
+        30,
+        31
+      ],
+      "jackpot": 100000
     }
   ],
   "current_jackpot": {
-    "date": "2026-08-25",
-    "jackpot": 100000,
-    "cash": 100000
+    "date": "2026-08-26",
+    "jackpot": 105000,
+    "cash": 105000
   },
   "source": "michiganlottery.com",
-  "last_updated": "2026-08-25",
+  "last_updated": "2026-08-26",
   "complete": true
 }

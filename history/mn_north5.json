@@ -2,12 +2,12 @@
   "game": "mn_north5",
   "source": "mnlottery.com",
   "earliest_available": "2025-01-01",
-  "last_updated": "2026-08-25",
+  "last_updated": "2026-08-26",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-24",
-    "jackpot": 87000,
-    "cash": 87000
+    "date": "2026-08-25",
+    "jackpot": 25000,
+    "cash": 25000
   },
   "draws": [
     {
@@ -7169,6 +7169,18 @@
       ],
       "jackpot": 87000,
       "cash": 87000
+    },
+    {
+      "date": "2026-08-25",
+      "numbers": [
+        3,
+        9,
+        21,
+        25,
+        33
+      ],
+      "jackpot": 25000,
+      "cash": 25000
     }
   ]
 }
