@@ -1,7 +1,7 @@
 {
   "game": "powerball",
   "source": "powerball.com",
-  "last_updated": "2026-08-26",
+  "last_updated": "2026-08-27",
   "complete": false,
   "earliest_available": "2010-01-09",
   "note": "Seeded with a few real draws. Full history (2010-01-01 onward) is backfilled by scraper/history_scraper.py in CI; the prize breakdowns fill in then.",
@@ -91491,6 +91491,8 @@
     },
     {
       "date": "2026-07-20",
+      "jackpot": 545000000,
+      "cash_value": 242000000,
       "numbers": [
         2,
         9,
@@ -91499,7 +91501,55 @@
         59
       ],
       "powerball": 8,
-      "power_play": 2
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 545000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 2
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 7
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 243
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 718
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 16994
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 15545
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 117325
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 280998
+        }
+      ],
+      "total_winners": 431832
     },
     {
       "date": "2026-07-22",

@@ -2,7 +2,7 @@
   "game": "de_play5",
   "source": "lotterycorner.com",
   "earliest_available": "2024-09-22",
-  "last_updated": "2026-08-26",
+  "last_updated": "2026-08-27",
   "complete": true,
   "draws": [
     {
@@ -7013,6 +7013,16 @@
         5,
         7,
         1
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "numbers": [
+        5,
+        9,
+        7,
+        4,
+        6
       ]
     }
   ]
