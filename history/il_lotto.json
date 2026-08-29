@@ -2,12 +2,12 @@
   "game": "il_lotto",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-08-27",
+  "last_updated": "2026-08-29",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-24",
-    "jackpot": 3350000,
-    "cash": 3350000
+    "date": "2026-08-27",
+    "jackpot": 3500000,
+    "cash": 3500000
   },
   "draws": [
     {
@@ -27525,6 +27525,19 @@
       ],
       "jackpot": 3350000,
       "cash": 3350000
+    },
+    {
+      "date": "2026-08-27",
+      "numbers": [
+        19,
+        24,
+        31,
+        37,
+        45,
+        48
+      ],
+      "jackpot": 3500000,
+      "cash": 3500000
     }
   ]
 }
