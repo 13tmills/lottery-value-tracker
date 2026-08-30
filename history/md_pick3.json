@@ -2001,9 +2001,17 @@
         3,
         3
       ]
+    },
+    {
+      "date": "2026-08-29",
+      "numbers": [
+        9,
+        9,
+        9
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-08-29",
+  "last_updated": "2026-08-30",
   "complete": true
 }
