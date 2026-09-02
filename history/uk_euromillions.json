@@ -3,12 +3,12 @@
   "source": "lottery.co.uk",
   "currency": "GBP",
   "earliest_available": "2016-09-27",
-  "last_updated": "2026-09-01",
+  "last_updated": "2026-09-02",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-08-28",
-    "jackpot": 59621948,
-    "cash": 59621948
+    "date": "2026-09-01",
+    "jackpot": 67100796,
+    "cash": 67100796
   },
   "draws": [
     {
@@ -16578,6 +16578,22 @@
       ],
       "jackpot": 59621948,
       "cash": 59621948
+    },
+    {
+      "date": "2026-09-01",
+      "numbers": [
+        2,
+        10,
+        23,
+        37,
+        47
+      ],
+      "special": [
+        3,
+        5
+      ],
+      "jackpot": 67100796,
+      "cash": 67100796
     }
   ]
 }

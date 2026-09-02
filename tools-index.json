@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-01",
+  "generated": "2026-09-02",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 150,
-    "az_fantasy5": 160,
+    "az_fantasy5": 161,
     "az_thepick": 39,
     "az_tripletwist": 24,
     "ca_derby": 10,
@@ -28,8 +28,8 @@
     "mega_millions": 46,
     "mn_gopher5": 95,
     "mn_north5": 45,
-    "mo_showmecash": 409,
-    "ms_match5": 74,
+    "mo_showmecash": 410,
+    "ms_match5": 75,
     "mt_montanacash": 117,
     "ne_pick5": 231,
     "nh_megabucks": 18,
@@ -42,7 +42,7 @@
     "or_megabucks": 46,
     "powerball": 133,
     "pr_loto": 23,
-    "ri_wildmoney": 127,
+    "ri_wildmoney": 128,
     "sc_palmetto5": 37,
     "sd_dakotacash": 47,
     "tn_cash": 56,
@@ -51,7 +51,7 @@
     "tx_twostep": 12,
     "wa_hit5": 423,
     "wa_lotto": 90,
-    "wi_badger5": 876,
+    "wi_badger5": 877,
     "wi_megabucks": 65,
     "wy_cowboydraw": 26
   }

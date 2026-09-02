@@ -2,7 +2,7 @@
   "game": "nc_pick3",
   "source": "nclottery.com",
   "earliest_available": "2006-10-06",
-  "last_updated": "2026-09-01",
+  "last_updated": "2026-09-02",
   "complete": true,
   "draws": [
     {
@@ -58163,6 +58163,14 @@
         8,
         0,
         1
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "numbers": [
+        5,
+        7,
+        2
       ]
     }
   ]
