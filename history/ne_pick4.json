@@ -703,9 +703,18 @@
         4,
         7
       ]
+    },
+    {
+      "date": "2026-09-02",
+      "numbers": [
+        2,
+        4,
+        1,
+        0
+      ]
     }
   ],
   "source": "nelottery.com",
-  "last_updated": "2026-09-02",
+  "last_updated": "2026-09-03",
   "complete": true
 }

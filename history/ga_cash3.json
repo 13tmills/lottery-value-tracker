@@ -2,7 +2,7 @@
   "game": "ga_cash3",
   "source": "galottery.com",
   "earliest_available": "2026-05-02",
-  "last_updated": "2026-09-02",
+  "last_updated": "2026-09-03",
   "complete": true,
   "draws": [
     {
@@ -827,6 +827,14 @@
         4,
         3,
         7
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "numbers": [
+        3,
+        1,
+        8
       ]
     }
   ]

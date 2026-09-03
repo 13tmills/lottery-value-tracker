@@ -2,7 +2,7 @@
   "game": "nh_gimme5",
   "source": "nhlottery.com",
   "earliest_available": "2021-01-01",
-  "last_updated": "2026-09-02",
+  "last_updated": "2026-09-03",
   "complete": true,
   "draws": [
     {
@@ -14782,6 +14782,16 @@
         13,
         19,
         28,
+        35
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "numbers": [
+        9,
+        22,
+        27,
+        32,
         35
       ]
     }

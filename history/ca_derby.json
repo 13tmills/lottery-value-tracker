@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-09-02",
+  "last_updated": "2026-09-03",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-02",
-    "jackpot": 133000,
+    "date": "2026-09-03",
+    "jackpot": 139000,
     "cash": 0
   },
   "draws": [
@@ -15881,6 +15881,68 @@
       ],
       "total_winners": 3082,
       "jackpot": 133288
+    },
+    {
+      "date": "2026-09-02",
+      "numbers": [
+        7,
+        3,
+        8
+      ],
+      "horses": [
+        {
+          "num": 7,
+          "name": "Eureka"
+        },
+        {
+          "num": 3,
+          "name": "Hot Shot"
+        },
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        }
+      ],
+      "race_time": "1:42.30",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 2987
+        },
+        {
+          "level": "Exacta",
+          "amount": 23,
+          "winners": 259
+        },
+        {
+          "level": "Trifecta",
+          "amount": 590,
+          "winners": 23
+        },
+        {
+          "level": "Race Time",
+          "amount": 36,
+          "winners": 49
+        },
+        {
+          "level": "Win / RT",
+          "amount": 39,
+          "winners": 2
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 59,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 139268,
+          "winners": 0
+        }
+      ],
+      "total_winners": 3320,
+      "jackpot": 139268
     }
   ]
 }
