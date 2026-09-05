@@ -2,7 +2,7 @@
   "game": "wa_match4",
   "source": "walottery.com",
   "earliest_available": "2010-01-01",
-  "last_updated": "2026-09-03",
+  "last_updated": "2026-09-05",
   "complete": true,
   "draws": [
     {
@@ -182674,6 +182674,66 @@
         }
       ],
       "total_winners": 2963
+    },
+    {
+      "date": "2026-09-03",
+      "numbers": [
+        11,
+        12,
+        16,
+        19
+      ],
+      "prizes": [
+        {
+          "level": "4 of 4",
+          "label": "4 of 4",
+          "amount": 10000,
+          "winners": 2
+        },
+        {
+          "level": "3 of 4",
+          "label": "3 of 4",
+          "amount": 20,
+          "winners": 154
+        },
+        {
+          "level": "2 of 4",
+          "label": "2 of 4",
+          "amount": 2,
+          "winners": 2536
+        }
+      ],
+      "total_winners": 2692
+    },
+    {
+      "date": "2026-09-04",
+      "numbers": [
+        10,
+        16,
+        20,
+        21
+      ],
+      "prizes": [
+        {
+          "level": "4 of 4",
+          "label": "4 of 4",
+          "amount": 10000,
+          "winners": 2
+        },
+        {
+          "level": "3 of 4",
+          "label": "3 of 4",
+          "amount": 20,
+          "winners": 185
+        },
+        {
+          "level": "2 of 4",
+          "label": "2 of 4",
+          "amount": 2,
+          "winners": 2382
+        }
+      ],
+      "total_winners": 2569
     }
   ]
 }
