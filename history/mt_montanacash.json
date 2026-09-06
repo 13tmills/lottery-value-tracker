@@ -2,12 +2,12 @@
   "game": "mt_montanacash",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-09-05",
+  "last_updated": "2026-09-06",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-02",
-    "jackpot": 90000,
-    "cash": 90000
+    "date": "2026-09-05",
+    "jackpot": 100000,
+    "cash": 100000
   },
   "draws": [
     {
@@ -20827,6 +20827,18 @@
       ],
       "jackpot": 90000,
       "cash": 90000
+    },
+    {
+      "date": "2026-09-05",
+      "numbers": [
+        19,
+        33,
+        35,
+        36,
+        44
+      ],
+      "jackpot": 100000,
+      "cash": 100000
     }
   ]
 }
