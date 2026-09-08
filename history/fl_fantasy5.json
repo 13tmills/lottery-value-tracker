@@ -2,7 +2,7 @@
   "game": "fl_fantasy5",
   "source": "floridalottery.com",
   "earliest_available": "1995-01-02",
-  "last_updated": "2026-09-06",
+  "last_updated": "2026-09-08",
   "complete": true,
   "draws": [
     {
@@ -103633,30 +103633,7 @@
         10,
         20,
         30
-      ],
-      "prizes": [
-        {
-          "level": "Match 5",
-          "amount": 118266,
-          "winners": 1
-        },
-        {
-          "level": "Match 4",
-          "amount": 81,
-          "winners": 235
-        },
-        {
-          "level": "Match 3",
-          "amount": 8,
-          "winners": 6080
-        },
-        {
-          "level": "Match 2",
-          "amount": "Free Ticket",
-          "winners": 52760
-        }
-      ],
-      "total_winners": 59076
+      ]
     },
     {
       "date": "2024-08-08",
@@ -103666,30 +103643,7 @@
         25,
         26,
         33
-      ],
-      "prizes": [
-        {
-          "level": "Match 5",
-          "amount": 117381,
-          "winners": 1
-        },
-        {
-          "level": "Match 4",
-          "amount": 133,
-          "winners": 142
-        },
-        {
-          "level": "Match 3",
-          "amount": 10,
-          "winners": 5111
-        },
-        {
-          "level": "Match 2",
-          "amount": "Free Ticket",
-          "winners": 49110
-        }
-      ],
-      "total_winners": 54364
+      ]
     },
     {
       "date": "2024-08-09",
@@ -128704,6 +128658,72 @@
         }
       ],
       "total_winners": 59574
+    },
+    {
+      "date": "2026-09-06",
+      "numbers": [
+        6,
+        12,
+        14,
+        23,
+        27
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 50228,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "amount": 94,
+          "winners": 171
+        },
+        {
+          "level": "Match 3",
+          "amount": 9,
+          "winners": 4608
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Ticket",
+          "winners": 44142
+        }
+      ],
+      "total_winners": 48923
+    },
+    {
+      "date": "2026-09-07",
+      "numbers": [
+        6,
+        7,
+        23,
+        30,
+        36
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 98068,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 117,
+          "winners": 135
+        },
+        {
+          "level": "Match 3",
+          "amount": 10,
+          "winners": 4107
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Ticket",
+          "winners": 42643
+        }
+      ],
+      "total_winners": 46886
     }
   ]
 }

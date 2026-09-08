@@ -2,10 +2,10 @@
   "game": "wv_cash25",
   "source": "lotterycorner.com",
   "earliest_available": "2001-01-01",
-  "last_updated": "2026-09-06",
+  "last_updated": "2026-09-08",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-04",
+    "date": "2026-09-07",
     "jackpot": 25000,
     "cash": 25000
   },
@@ -65915,6 +65915,19 @@
         12,
         15,
         20
+      ],
+      "jackpot": 25000,
+      "cash": 25000
+    },
+    {
+      "date": "2026-09-07",
+      "numbers": [
+        4,
+        12,
+        16,
+        17,
+        19,
+        22
       ],
       "jackpot": 25000,
       "cash": 25000
