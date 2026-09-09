@@ -2,7 +2,7 @@
   "game": "mi_daily3",
   "source": "michiganlottery.com",
   "earliest_available": "2009-12-31",
-  "last_updated": "2026-09-08",
+  "last_updated": "2026-09-09",
   "complete": true,
   "draws": [
     {
@@ -48387,76 +48387,7 @@
         2,
         0,
         9
-      ],
-      "prizes": [
-        {
-          "level": "2-Way 6-Way Straight",
-          "label": "2-Way 6-Way Straight",
-          "amount": 291,
-          "winners": 75
-        },
-        {
-          "level": "2-Way 3-Way Straight",
-          "label": "2-Way 3-Way Straight",
-          "amount": 333,
-          "winners": 0
-        },
-        {
-          "level": "Straight",
-          "label": "Straight",
-          "amount": 500,
-          "winners": 105
-        },
-        {
-          "level": "Box 6-Way",
-          "label": "Box 6-Way",
-          "amount": 83,
-          "winners": 146
-        },
-        {
-          "level": "Box 3-Way",
-          "label": "Box 3-Way",
-          "amount": 166,
-          "winners": 0
-        },
-        {
-          "level": "Wheel 6-Way",
-          "label": "Wheel 6-Way",
-          "amount": 500,
-          "winners": 37
-        },
-        {
-          "level": "Wheel 3-Way",
-          "label": "Wheel 3-Way",
-          "amount": 500,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 6-Way Box",
-          "label": "2-Way 6-Way Box",
-          "amount": 41,
-          "winners": 472
-        },
-        {
-          "level": "2-Way 3-Way Box",
-          "label": "2-Way 3-Way Box",
-          "amount": 83,
-          "winners": 0
-        },
-        {
-          "level": "1-Off Straight",
-          "label": "1-Off Straight",
-          "amount": 284,
-          "winners": 3
-        },
-        {
-          "level": "1-Off",
-          "label": "1-Off",
-          "amount": 36,
-          "winners": 19
-        }
-      ],
-      "total_winners": 857
+      ]
     },
     {
       "date": "2026-07-26",
@@ -51911,6 +51842,83 @@
         }
       ],
       "total_winners": 1010
+    },
+    {
+      "date": "2026-09-08",
+      "numbers": [
+        5,
+        3,
+        2
+      ],
+      "prizes": [
+        {
+          "level": "2-Way 6-Way Straight",
+          "label": "2-Way 6-Way Straight",
+          "amount": 291,
+          "winners": 97
+        },
+        {
+          "level": "2-Way 3-Way Straight",
+          "label": "2-Way 3-Way Straight",
+          "amount": 333,
+          "winners": 0
+        },
+        {
+          "level": "Straight",
+          "label": "Straight",
+          "amount": 500,
+          "winners": 58
+        },
+        {
+          "level": "Box 6-Way",
+          "label": "Box 6-Way",
+          "amount": 83,
+          "winners": 150
+        },
+        {
+          "level": "Box 3-Way",
+          "label": "Box 3-Way",
+          "amount": 166,
+          "winners": 0
+        },
+        {
+          "level": "Wheel 6-Way",
+          "label": "Wheel 6-Way",
+          "amount": 500,
+          "winners": 31
+        },
+        {
+          "level": "Wheel 3-Way",
+          "label": "Wheel 3-Way",
+          "amount": 500,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 6-Way Box",
+          "label": "2-Way 6-Way Box",
+          "amount": 41,
+          "winners": 362
+        },
+        {
+          "level": "2-Way 3-Way Box",
+          "label": "2-Way 3-Way Box",
+          "amount": 83,
+          "winners": 0
+        },
+        {
+          "level": "1-Off Straight",
+          "label": "1-Off Straight",
+          "amount": 284,
+          "winners": 1
+        },
+        {
+          "level": "1-Off",
+          "label": "1-Off",
+          "amount": 36,
+          "winners": 6
+        }
+      ],
+      "total_winners": 705
     }
   ]
 }

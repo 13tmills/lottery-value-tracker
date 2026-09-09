@@ -2,7 +2,7 @@
   "game": "mega_millions",
   "source": "megamillions.com",
   "earliest_available": "2017-10-31",
-  "last_updated": "2026-09-08",
+  "last_updated": "2026-09-09",
   "complete": true,
   "draws": [
     {
@@ -19944,6 +19944,67 @@
         }
       ],
       "total_winners": 223301
+    },
+    {
+      "date": "2026-09-08",
+      "jackpot": 193000000,
+      "cash_value": 82800000,
+      "numbers": [
+        17,
+        30,
+        43,
+        58,
+        66
+      ],
+      "mega_ball": 20,
+      "prizes": [
+        {
+          "match": "5+MB",
+          "prize": 0,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 0
+        },
+        {
+          "match": "4+MB",
+          "prize": 10000,
+          "winners": 8
+        },
+        {
+          "match": "4",
+          "prize": 599,
+          "winners": 109
+        },
+        {
+          "match": "3+MB",
+          "prize": 200,
+          "winners": 288
+        },
+        {
+          "match": "3",
+          "prize": 10,
+          "winners": 6996
+        },
+        {
+          "match": "2+MB",
+          "prize": 10,
+          "winners": 6258
+        },
+        {
+          "match": "1+MB",
+          "prize": 4,
+          "winners": 50523
+        },
+        {
+          "match": "MB",
+          "prize": 2,
+          "winners": 125746
+        }
+      ],
+      "total_winners": 189928
     }
   ]
 }
