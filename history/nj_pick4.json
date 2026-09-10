@@ -2,7 +2,7 @@
   "game": "nj_pick4",
   "source": "lotterycorner.com",
   "earliest_available": "1995-01-01",
-  "last_updated": "2026-09-09",
+  "last_updated": "2026-09-10",
   "complete": true,
   "draws": [
     {
@@ -103890,6 +103890,15 @@
         5,
         1,
         5
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "numbers": [
+        9,
+        4,
+        2,
+        2
       ]
     }
   ]

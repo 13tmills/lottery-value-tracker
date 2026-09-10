@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-09-09",
+  "last_updated": "2026-09-10",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-09",
-    "jackpot": 180000,
+    "date": "2026-09-10",
+    "jackpot": 187000,
     "cash": 0
   },
   "draws": [
@@ -16315,6 +16315,68 @@
       ],
       "total_winners": 3156,
       "jackpot": 179524
+    },
+    {
+      "date": "2026-09-09",
+      "numbers": [
+        2,
+        12,
+        5
+      ],
+      "horses": [
+        {
+          "num": 2,
+          "name": "Lucky Star"
+        },
+        {
+          "num": 12,
+          "name": "Lucky Charms"
+        },
+        {
+          "num": 5,
+          "name": "California Classic"
+        }
+      ],
+      "race_time": "1:45.82",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 3350
+        },
+        {
+          "level": "Exacta",
+          "amount": 24,
+          "winners": 266
+        },
+        {
+          "level": "Trifecta",
+          "amount": 782,
+          "winners": 19
+        },
+        {
+          "level": "Race Time",
+          "amount": 57,
+          "winners": 34
+        },
+        {
+          "level": "Win / RT",
+          "amount": 60,
+          "winners": 2
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 81,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 186721,
+          "winners": 0
+        }
+      ],
+      "total_winners": 3671,
+      "jackpot": 186721
     }
   ]
 }

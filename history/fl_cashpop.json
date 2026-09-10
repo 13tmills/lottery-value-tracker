@@ -2,7 +2,7 @@
   "game": "fl_cashpop",
   "source": "floridalottery.com",
   "earliest_available": "2022-01-03",
-  "last_updated": "2026-09-09",
+  "last_updated": "2026-09-10",
   "complete": true,
   "draws": [
     {
@@ -10263,6 +10263,12 @@
       "date": "2026-09-08",
       "numbers": [
         7
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "numbers": [
+        2
       ]
     }
   ]

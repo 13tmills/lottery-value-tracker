@@ -2,10 +2,10 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-09-09",
+  "last_updated": "2026-09-10",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-09",
+    "date": "2026-09-12",
     "jackpot": 500000,
     "cash": 360000
   },
@@ -42368,35 +42368,7 @@
         24,
         35,
         40
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 21600000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 4
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 270
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 4531
-        }
-      ],
-      "jackpot": 21600000,
-      "total_winners": 4805
+      ]
     },
     {
       "date": "2026-07-04",
@@ -43557,6 +43529,46 @@
       ],
       "jackpot": 29710000,
       "total_winners": 4410
+    },
+    {
+      "date": "2026-09-09",
+      "draw_number": 4633,
+      "numbers": [
+        11,
+        23,
+        25,
+        33,
+        35,
+        39
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 500000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 99
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 2041
+        }
+      ],
+      "jackpot": 500000,
+      "total_winners": 2142
     }
   ]
 }
