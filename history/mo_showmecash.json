@@ -6,8 +6,8 @@
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 65000,
-    "cash": 65000
+    "jackpot": 70000,
+    "cash": 70000
   },
   "draws": [
     {
@@ -74475,6 +74475,18 @@
       ],
       "jackpot": 60000,
       "cash": 60000
+    },
+    {
+      "date": "2026-09-09",
+      "numbers": [
+        2,
+        4,
+        6,
+        13,
+        33
+      ],
+      "jackpot": 65000,
+      "cash": 65000
     }
   ]
 }
