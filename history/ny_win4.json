@@ -157887,6 +157887,48 @@
         }
       ],
       "total_winners": 773
+    },
+    {
+      "date": "2026-09-11",
+      "numbers": [
+        9,
+        9,
+        1,
+        4
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": null,
+          "winners": 69
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": null,
+          "winners": 3346
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": null,
+          "winners": 2
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": null,
+          "winners": 18
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": null,
+          "winners": 14
+        }
+      ],
+      "total_winners": 3449
     }
   ]
 }
