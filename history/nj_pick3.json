@@ -2,7 +2,7 @@
   "game": "nj_pick3",
   "source": "lotterycorner.com",
   "earliest_available": "1995-01-01",
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-12",
   "complete": true,
   "draws": [
     {
@@ -92355,6 +92355,22 @@
         2,
         7,
         4
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "numbers": [
+        7,
+        9,
+        4
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "numbers": [
+        1,
+        2,
+        2
       ]
     }
   ]

@@ -2,7 +2,7 @@
   "game": "mi_daily4",
   "source": "michiganlottery.com",
   "earliest_available": "2009-12-31",
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-12",
   "complete": true,
   "draws": [
     {
@@ -54453,124 +54453,7 @@
         8,
         1,
         7
-      ],
-      "prizes": [
-        {
-          "level": "Straight",
-          "label": "Straight",
-          "amount": 5000,
-          "winners": 6
-        },
-        {
-          "level": "Box 24-Way",
-          "label": "Box 24-Way",
-          "amount": 208,
-          "winners": 176
-        },
-        {
-          "level": "Box 12-Way",
-          "label": "Box 12-Way",
-          "amount": 416,
-          "winners": 0
-        },
-        {
-          "level": "Box 6-Way",
-          "label": "Box 6-Way",
-          "amount": 833,
-          "winners": 0
-        },
-        {
-          "level": "Box 4-Way",
-          "label": "Box 4-Way",
-          "amount": 1250,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 24-Way Straight",
-          "label": "2-Way 24-Way Straight",
-          "amount": 2604,
-          "winners": 11
-        },
-        {
-          "level": "2-Way 12-Way Straight",
-          "label": "2-Way 12-Way Straight",
-          "amount": 2708,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 6-Way Straight",
-          "label": "2-Way 6-Way Straight",
-          "amount": 2916,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 4-Way Straight",
-          "label": "2-Way 4-Way Straight",
-          "amount": 3200,
-          "winners": 0
-        },
-        {
-          "level": "Wheel 24-Way",
-          "label": "Wheel 24-Way",
-          "amount": 5000,
-          "winners": 0
-        },
-        {
-          "level": "Wheel 12-Way",
-          "label": "Wheel 12-Way",
-          "amount": 5000,
-          "winners": 0
-        },
-        {
-          "level": "Wheel 6-Way",
-          "label": "Wheel 6-Way",
-          "amount": 5000,
-          "winners": 0
-        },
-        {
-          "level": "Wheel 4-Way",
-          "label": "Wheel 4-Way",
-          "amount": 5000,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 24-Way Box",
-          "label": "2-Way 24-Way Box",
-          "amount": 104,
-          "winners": 426
-        },
-        {
-          "level": "2-Way 12-Way Box",
-          "label": "2-Way 12-Way Box",
-          "amount": 208,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 6-Way Box",
-          "label": "2-Way 6-Way Box",
-          "amount": 416,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 4-Way Box",
-          "label": "2-Way 4-Way Box",
-          "amount": 600,
-          "winners": 0
-        },
-        {
-          "level": "1-Off Straight",
-          "label": "1-Off Straight",
-          "amount": 2800,
-          "winners": 2
-        },
-        {
-          "level": "1-Off",
-          "label": "1-Off",
-          "amount": 275,
-          "winners": 8
-        }
-      ],
-      "total_winners": 629
+      ]
     },
     {
       "date": "2026-07-28",
@@ -54579,124 +54462,7 @@
         7,
         1,
         6
-      ],
-      "prizes": [
-        {
-          "level": "Straight",
-          "label": "Straight",
-          "amount": 5000,
-          "winners": 0
-        },
-        {
-          "level": "Box 24-Way",
-          "label": "Box 24-Way",
-          "amount": 208,
-          "winners": 0
-        },
-        {
-          "level": "Box 12-Way",
-          "label": "Box 12-Way",
-          "amount": 416,
-          "winners": 118
-        },
-        {
-          "level": "Box 6-Way",
-          "label": "Box 6-Way",
-          "amount": 833,
-          "winners": 0
-        },
-        {
-          "level": "Box 4-Way",
-          "label": "Box 4-Way",
-          "amount": 1250,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 24-Way Straight",
-          "label": "2-Way 24-Way Straight",
-          "amount": 2604,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 12-Way Straight",
-          "label": "2-Way 12-Way Straight",
-          "amount": 2708,
-          "winners": 8
-        },
-        {
-          "level": "2-Way 6-Way Straight",
-          "label": "2-Way 6-Way Straight",
-          "amount": 2916,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 4-Way Straight",
-          "label": "2-Way 4-Way Straight",
-          "amount": 3200,
-          "winners": 0
-        },
-        {
-          "level": "Wheel 24-Way",
-          "label": "Wheel 24-Way",
-          "amount": 5000,
-          "winners": 0
-        },
-        {
-          "level": "Wheel 12-Way",
-          "label": "Wheel 12-Way",
-          "amount": 5000,
-          "winners": 1
-        },
-        {
-          "level": "Wheel 6-Way",
-          "label": "Wheel 6-Way",
-          "amount": 5000,
-          "winners": 0
-        },
-        {
-          "level": "Wheel 4-Way",
-          "label": "Wheel 4-Way",
-          "amount": 5000,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 24-Way Box",
-          "label": "2-Way 24-Way Box",
-          "amount": 104,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 12-Way Box",
-          "label": "2-Way 12-Way Box",
-          "amount": 208,
-          "winners": 126
-        },
-        {
-          "level": "2-Way 6-Way Box",
-          "label": "2-Way 6-Way Box",
-          "amount": 416,
-          "winners": 0
-        },
-        {
-          "level": "2-Way 4-Way Box",
-          "label": "2-Way 4-Way Box",
-          "amount": 600,
-          "winners": 0
-        },
-        {
-          "level": "1-Off Straight",
-          "label": "1-Off Straight",
-          "amount": 2800,
-          "winners": 0
-        },
-        {
-          "level": "1-Off",
-          "label": "1-Off",
-          "amount": 275,
-          "winners": 16
-        }
-      ],
-      "total_winners": 269
+      ]
     },
     {
       "date": "2026-07-29",
@@ -60115,6 +59881,258 @@
         }
       ],
       "total_winners": 1666
+    },
+    {
+      "date": "2026-09-10",
+      "numbers": [
+        8,
+        3,
+        1,
+        3
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "label": "Straight",
+          "amount": 5000,
+          "winners": 7
+        },
+        {
+          "level": "Box 24-Way",
+          "label": "Box 24-Way",
+          "amount": 208,
+          "winners": 0
+        },
+        {
+          "level": "Box 12-Way",
+          "label": "Box 12-Way",
+          "amount": 416,
+          "winners": 217
+        },
+        {
+          "level": "Box 6-Way",
+          "label": "Box 6-Way",
+          "amount": 833,
+          "winners": 0
+        },
+        {
+          "level": "Box 4-Way",
+          "label": "Box 4-Way",
+          "amount": 1250,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 24-Way Straight",
+          "label": "2-Way 24-Way Straight",
+          "amount": 2604,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 12-Way Straight",
+          "label": "2-Way 12-Way Straight",
+          "amount": 2708,
+          "winners": 24
+        },
+        {
+          "level": "2-Way 6-Way Straight",
+          "label": "2-Way 6-Way Straight",
+          "amount": 2916,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 4-Way Straight",
+          "label": "2-Way 4-Way Straight",
+          "amount": 3200,
+          "winners": 0
+        },
+        {
+          "level": "Wheel 24-Way",
+          "label": "Wheel 24-Way",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "Wheel 12-Way",
+          "label": "Wheel 12-Way",
+          "amount": 5000,
+          "winners": 1
+        },
+        {
+          "level": "Wheel 6-Way",
+          "label": "Wheel 6-Way",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "Wheel 4-Way",
+          "label": "Wheel 4-Way",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 24-Way Box",
+          "label": "2-Way 24-Way Box",
+          "amount": 104,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 12-Way Box",
+          "label": "2-Way 12-Way Box",
+          "amount": 208,
+          "winners": 235
+        },
+        {
+          "level": "2-Way 6-Way Box",
+          "label": "2-Way 6-Way Box",
+          "amount": 416,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 4-Way Box",
+          "label": "2-Way 4-Way Box",
+          "amount": 600,
+          "winners": 0
+        },
+        {
+          "level": "1-Off Straight",
+          "label": "1-Off Straight",
+          "amount": 2800,
+          "winners": 0
+        },
+        {
+          "level": "1-Off",
+          "label": "1-Off",
+          "amount": 275,
+          "winners": 37
+        }
+      ],
+      "total_winners": 521
+    },
+    {
+      "date": "2026-09-11",
+      "numbers": [
+        2,
+        0,
+        8,
+        6
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "label": "Straight",
+          "amount": 5000,
+          "winners": 9
+        },
+        {
+          "level": "Box 24-Way",
+          "label": "Box 24-Way",
+          "amount": 208,
+          "winners": 0
+        },
+        {
+          "level": "Box 12-Way",
+          "label": "Box 12-Way",
+          "amount": 416,
+          "winners": 130
+        },
+        {
+          "level": "Box 6-Way",
+          "label": "Box 6-Way",
+          "amount": 833,
+          "winners": 0
+        },
+        {
+          "level": "Box 4-Way",
+          "label": "Box 4-Way",
+          "amount": 1250,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 24-Way Straight",
+          "label": "2-Way 24-Way Straight",
+          "amount": 2604,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 12-Way Straight",
+          "label": "2-Way 12-Way Straight",
+          "amount": 2708,
+          "winners": 21
+        },
+        {
+          "level": "2-Way 6-Way Straight",
+          "label": "2-Way 6-Way Straight",
+          "amount": 2916,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 4-Way Straight",
+          "label": "2-Way 4-Way Straight",
+          "amount": 3200,
+          "winners": 0
+        },
+        {
+          "level": "Wheel 24-Way",
+          "label": "Wheel 24-Way",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "Wheel 12-Way",
+          "label": "Wheel 12-Way",
+          "amount": 5000,
+          "winners": 1
+        },
+        {
+          "level": "Wheel 6-Way",
+          "label": "Wheel 6-Way",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "Wheel 4-Way",
+          "label": "Wheel 4-Way",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 24-Way Box",
+          "label": "2-Way 24-Way Box",
+          "amount": 104,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 12-Way Box",
+          "label": "2-Way 12-Way Box",
+          "amount": 208,
+          "winners": 238
+        },
+        {
+          "level": "2-Way 6-Way Box",
+          "label": "2-Way 6-Way Box",
+          "amount": 416,
+          "winners": 0
+        },
+        {
+          "level": "2-Way 4-Way Box",
+          "label": "2-Way 4-Way Box",
+          "amount": 600,
+          "winners": 0
+        },
+        {
+          "level": "1-Off Straight",
+          "label": "1-Off Straight",
+          "amount": 2800,
+          "winners": 1
+        },
+        {
+          "level": "1-Off",
+          "label": "1-Off",
+          "amount": 275,
+          "winners": 16
+        }
+      ],
+      "total_winners": 416
     }
   ]
 }

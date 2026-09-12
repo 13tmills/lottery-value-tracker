@@ -2,12 +2,12 @@
   "game": "wi_badger5",
   "source": "wilottery.com",
   "earliest_available": "2003-02-17",
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-12",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-09",
-    "jackpot": 10000,
-    "cash": 10000
+    "date": "2026-09-11",
+    "jackpot": 35000,
+    "cash": 35000
   },
   "draws": [
     {
@@ -93749,6 +93749,30 @@
       ],
       "jackpot": 10000,
       "cash": 10000
+    },
+    {
+      "date": "2026-09-10",
+      "numbers": [
+        3,
+        4,
+        18,
+        21,
+        30
+      ],
+      "jackpot": 21000,
+      "cash": 21000
+    },
+    {
+      "date": "2026-09-11",
+      "numbers": [
+        4,
+        6,
+        7,
+        23,
+        27
+      ],
+      "jackpot": 35000,
+      "cash": 35000
     }
   ]
 }

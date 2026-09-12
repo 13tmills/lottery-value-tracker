@@ -2,7 +2,7 @@
   "game": "va_pick4",
   "source": "valottery.com",
   "earliest_available": "1991-09-30",
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-12",
   "complete": true,
   "draws": [
     {
@@ -107454,6 +107454,15 @@
         9,
         9,
         2
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "numbers": [
+        1,
+        4,
+        3,
+        1
       ]
     }
   ]

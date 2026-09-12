@@ -2,7 +2,7 @@
   "game": "ny_m4l",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "2026-02-22",
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-12",
   "complete": true,
   "draws": [
     {
@@ -13604,6 +13604,142 @@
         }
       ],
       "total_winners": 6620
+    },
+    {
+      "date": "2026-09-10",
+      "numbers": [
+        7,
+        16,
+        43,
+        50,
+        58
+      ],
+      "mill_ball": 1,
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": "$1 Million a Year for Life",
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": "$100,000 a Year for Life",
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 7500,
+          "winners": 1
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": 500,
+          "winners": 3
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": 250,
+          "winners": 39
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": 50,
+          "winners": 145
+        },
+        {
+          "level": "Seventh",
+          "label": "Seventh",
+          "amount": 25,
+          "winners": 573
+        },
+        {
+          "level": "Eighth",
+          "label": "Eighth",
+          "amount": 8,
+          "winners": 2722
+        },
+        {
+          "level": "Ninth",
+          "label": "Ninth",
+          "amount": 8,
+          "winners": 4242
+        }
+      ],
+      "total_winners": 7725
+    },
+    {
+      "date": "2026-09-11",
+      "numbers": [
+        5,
+        8,
+        20,
+        50,
+        52
+      ],
+      "mill_ball": 2,
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": "$1 Million a Year for Life",
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": "$100,000 a Year for Life",
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 7500,
+          "winners": 2
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": 500,
+          "winners": 3
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": 250,
+          "winners": 30
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": 50,
+          "winners": 184
+        },
+        {
+          "level": "Seventh",
+          "label": "Seventh",
+          "amount": 25,
+          "winners": 642
+        },
+        {
+          "level": "Eighth",
+          "label": "Eighth",
+          "amount": 8,
+          "winners": 2932
+        },
+        {
+          "level": "Ninth",
+          "label": "Ninth",
+          "amount": 8,
+          "winners": 4158
+        }
+      ],
+      "total_winners": 7951
     }
   ]
 }
