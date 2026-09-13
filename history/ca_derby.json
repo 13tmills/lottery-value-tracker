@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-13",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-12",
-    "jackpot": 201000,
+    "date": "2026-09-13",
+    "jackpot": 208000,
     "cash": 0
   },
   "draws": [
@@ -16501,6 +16501,68 @@
       ],
       "total_winners": 4097,
       "jackpot": 200747
+    },
+    {
+      "date": "2026-09-12",
+      "numbers": [
+        7,
+        4,
+        12
+      ],
+      "horses": [
+        {
+          "num": 7,
+          "name": "Eureka"
+        },
+        {
+          "num": 4,
+          "name": "Big Ben"
+        },
+        {
+          "num": 12,
+          "name": "Lucky Charms"
+        }
+      ],
+      "race_time": "1:43.85",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 3827
+        },
+        {
+          "level": "Exacta",
+          "amount": 20,
+          "winners": 371
+        },
+        {
+          "level": "Trifecta",
+          "amount": 503,
+          "winners": 34
+        },
+        {
+          "level": "Race Time",
+          "amount": 60,
+          "winners": 33
+        },
+        {
+          "level": "Win / RT",
+          "amount": 63,
+          "winners": 6
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 80,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 207955,
+          "winners": 0
+        }
+      ],
+      "total_winners": 4271,
+      "jackpot": 207955
     }
   ]
 }

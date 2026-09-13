@@ -2,7 +2,7 @@
   "game": "wv_daily4",
   "source": "lotterycorner.com",
   "earliest_available": "2001-01-01",
-  "last_updated": "2026-09-12",
+  "last_updated": "2026-09-13",
   "complete": true,
   "draws": [
     {
@@ -72381,6 +72381,15 @@
         6,
         0,
         4
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "numbers": [
+        5,
+        8,
+        5,
+        1
       ]
     }
   ]
