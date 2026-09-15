@@ -5,8 +5,8 @@
   "last_updated": "2026-09-15",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-12",
-    "jackpot": 5500000,
+    "date": "2026-09-14",
+    "jackpot": 5750000,
     "cash": 3110000
   },
   "draws": [
@@ -44370,6 +44370,41 @@
         }
       ],
       "total_winners": 12765
+    },
+    {
+      "date": "2026-09-14",
+      "numbers": [
+        3,
+        17,
+        25,
+        31,
+        41,
+        43
+      ],
+      "jackpot": 5750000,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 5750000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 2845,
+          "winners": 4
+        },
+        {
+          "level": "Match 4",
+          "amount": 56,
+          "winners": 303
+        },
+        {
+          "level": "Match 3",
+          "amount": 3,
+          "winners": 6892
+        }
+      ],
+      "total_winners": 7199
     }
   ]
 }
