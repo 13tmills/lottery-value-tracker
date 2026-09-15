@@ -2,7 +2,7 @@
   "game": "fl_pick3",
   "source": "floridalottery.com",
   "earliest_available": "2022-05-23",
-  "last_updated": "2026-09-13",
+  "last_updated": "2026-09-15",
   "complete": true,
   "draws": [
     {
@@ -12595,6 +12595,22 @@
         9,
         1,
         8
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "numbers": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "numbers": [
+        2,
+        0,
+        0
       ]
     }
   ]

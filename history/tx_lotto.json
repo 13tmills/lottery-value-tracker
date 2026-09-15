@@ -2,12 +2,12 @@
   "game": "tx_lotto",
   "source": "texaslottery.com",
   "earliest_available": "1992-11-14",
-  "last_updated": "2026-09-13",
+  "last_updated": "2026-09-15",
   "complete": true,
   "current_jackpot": {
     "date": "2026-09-12",
     "jackpot": 5500000,
-    "cash": 3000000
+    "cash": 3110000
   },
   "draws": [
     {

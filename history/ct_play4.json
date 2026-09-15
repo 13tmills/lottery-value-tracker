@@ -2,7 +2,7 @@
   "game": "ct_play4",
   "source": "lotterycorner.com",
   "earliest_available": "1998-07-03",
-  "last_updated": "2026-09-13",
+  "last_updated": "2026-09-15",
   "complete": true,
   "draws": [
     {
@@ -92613,6 +92613,24 @@
         2,
         6,
         7
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "numbers": [
+        7,
+        1,
+        5,
+        3
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "numbers": [
+        9,
+        8,
+        2,
+        3
       ]
     }
   ]

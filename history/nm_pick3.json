@@ -2,7 +2,7 @@
   "game": "nm_pick3",
   "source": "lotterycorner.com",
   "earliest_available": "2000-09-25",
-  "last_updated": "2026-09-13",
+  "last_updated": "2026-09-15",
   "complete": true,
   "draws": [
     {
@@ -69259,6 +69259,22 @@
         8,
         0,
         4
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "numbers": [
+        1,
+        7,
+        9
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "numbers": [
+        9,
+        9,
+        2
       ]
     }
   ]
