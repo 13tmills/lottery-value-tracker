@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-09-16",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-15",
-    "jackpot": 224000,
+    "date": "2026-09-16",
+    "jackpot": 233000,
     "cash": 0
   },
   "draws": [
@@ -16687,6 +16687,68 @@
       ],
       "total_winners": 4067,
       "jackpot": 222973
+    },
+    {
+      "date": "2026-09-15",
+      "numbers": [
+        11,
+        9,
+        12
+      ],
+      "horses": [
+        {
+          "num": 11,
+          "name": "Money Bags"
+        },
+        {
+          "num": 9,
+          "name": "Winning Spirit"
+        },
+        {
+          "num": 12,
+          "name": "Lucky Charms"
+        }
+      ],
+      "race_time": "1:41.68",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 3313
+        },
+        {
+          "level": "Exacta",
+          "amount": 23,
+          "winners": 317
+        },
+        {
+          "level": "Trifecta",
+          "amount": 515,
+          "winners": 33
+        },
+        {
+          "level": "Race Time",
+          "amount": 47,
+          "winners": 45
+        },
+        {
+          "level": "Win / RT",
+          "amount": 50,
+          "winners": 4
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 70,
+          "winners": 1
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 231175,
+          "winners": 0
+        }
+      ],
+      "total_winners": 3713,
+      "jackpot": 231175
     }
   ]
 }

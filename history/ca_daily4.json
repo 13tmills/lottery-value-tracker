@@ -2,7 +2,7 @@
   "game": "ca_daily4",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-09-15",
+  "last_updated": "2026-09-16",
   "complete": true,
   "draws": [
     {
@@ -8612,6 +8612,38 @@
         }
       ],
       "total_winners": 151
+    },
+    {
+      "date": "2026-09-15",
+      "numbers": [
+        5,
+        8,
+        4,
+        9
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "amount": 6738,
+          "winners": 1
+        },
+        {
+          "level": "Box",
+          "amount": 268,
+          "winners": 26
+        },
+        {
+          "level": "Straight and Box",
+          "amount": 3503,
+          "winners": 3
+        },
+        {
+          "level": "Box Only",
+          "amount": 134,
+          "winners": 138
+        }
+      ],
+      "total_winners": 168
     }
   ]
 }
