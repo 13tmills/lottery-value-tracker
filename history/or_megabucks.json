@@ -2,12 +2,12 @@
   "game": "or_megabucks",
   "source": "lotterycorner.com",
   "earliest_available": "2001-01-03",
-  "last_updated": "2026-09-16",
+  "last_updated": "2026-09-17",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-14",
-    "jackpot": 3100000,
-    "cash": 3100000
+    "date": "2026-09-16",
+    "jackpot": 3200000,
+    "cash": 3200000
   },
   "draws": [
     {
@@ -48019,6 +48019,19 @@
       ],
       "jackpot": 3100000,
       "cash": 3100000
+    },
+    {
+      "date": "2026-09-16",
+      "numbers": [
+        6,
+        16,
+        26,
+        35,
+        43,
+        44
+      ],
+      "jackpot": 3200000,
+      "cash": 3200000
     }
   ]
 }

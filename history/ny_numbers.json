@@ -2,7 +2,7 @@
   "game": "ny_numbers",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1980-09-02",
-  "last_updated": "2026-09-16",
+  "last_updated": "2026-09-17",
   "complete": true,
   "draws": [
     {
@@ -151540,6 +151540,53 @@
         }
       ],
       "total_winners": 4969
+    },
+    {
+      "date": "2026-09-16",
+      "numbers": [
+        7,
+        3,
+        0
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": 0,
+          "winners": 1579
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": 0,
+          "winners": 2591
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": 0,
+          "winners": 20
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": 0,
+          "winners": 50
+        },
+        {
+          "level": "N/A",
+          "label": "Straight/Box",
+          "amount": 0,
+          "winners": 371
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": 0,
+          "winners": 167
+        }
+      ],
+      "total_winners": 4778
     }
   ]
 }

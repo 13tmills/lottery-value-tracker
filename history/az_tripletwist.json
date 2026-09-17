@@ -2,12 +2,12 @@
   "game": "az_tripletwist",
   "source": "lotterycorner.com",
   "earliest_available": "2022-01-01",
-  "last_updated": "2026-09-16",
+  "last_updated": "2026-09-17",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-15",
-    "jackpot": 275000,
-    "cash": 275000
+    "date": "2026-09-16",
+    "jackpot": 280000,
+    "cash": 280000
   },
   "draws": [
     {
@@ -22334,6 +22334,19 @@
       ],
       "jackpot": 275000,
       "cash": 275000
+    },
+    {
+      "date": "2026-09-16",
+      "numbers": [
+        8,
+        13,
+        21,
+        23,
+        24,
+        38
+      ],
+      "jackpot": 280000,
+      "cash": 280000
     }
   ]
 }

@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-09-16",
+  "last_updated": "2026-09-17",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-16",
-    "jackpot": 500000,
-    "cash": 360000
+    "date": "2026-09-19",
+    "jackpot": 550000,
+    "cash": 350000
   },
   "draws": [
     {
@@ -42404,35 +42404,7 @@
         19,
         20,
         31
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 22800000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 16
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 469
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 6491
-        }
-      ],
-      "jackpot": 22800000,
-      "total_winners": 6976
+      ]
     },
     {
       "date": "2026-07-11",
@@ -43593,6 +43565,46 @@
       ],
       "jackpot": 500000,
       "total_winners": 1539
+    },
+    {
+      "date": "2026-09-16",
+      "draw_number": 4636,
+      "numbers": [
+        12,
+        15,
+        23,
+        31,
+        38,
+        43
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 500000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 79
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1449
+        }
+      ],
+      "jackpot": 500000,
+      "total_winners": 1528
     }
   ]
 }

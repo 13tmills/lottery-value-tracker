@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-09-16",
+  "last_updated": "2026-09-17",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-16",
-    "jackpot": 233000,
+    "date": "2026-09-17",
+    "jackpot": 241000,
     "cash": 0
   },
   "draws": [
@@ -16749,6 +16749,68 @@
       ],
       "total_winners": 3713,
       "jackpot": 231175
+    },
+    {
+      "date": "2026-09-16",
+      "numbers": [
+        1,
+        4,
+        10
+      ],
+      "horses": [
+        {
+          "num": 1,
+          "name": "Gold Rush"
+        },
+        {
+          "num": 4,
+          "name": "Big Ben"
+        },
+        {
+          "num": 10,
+          "name": "Solid Gold"
+        }
+      ],
+      "race_time": "1:40.83",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 3963
+        },
+        {
+          "level": "Exacta",
+          "amount": 21,
+          "winners": 380
+        },
+        {
+          "level": "Trifecta",
+          "amount": 326,
+          "winners": 56
+        },
+        {
+          "level": "Race Time",
+          "amount": 65,
+          "winners": 38
+        },
+        {
+          "level": "Win / RT",
+          "amount": 68,
+          "winners": 0
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 86,
+          "winners": 1
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 240402,
+          "winners": 0
+        }
+      ],
+      "total_winners": 4438,
+      "jackpot": 240402
     }
   ]
 }
