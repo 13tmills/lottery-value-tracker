@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-09-19",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-17",
-    "jackpot": 241000,
+    "date": "2026-09-19",
+    "jackpot": 258000,
     "cash": 0
   },
   "draws": [
@@ -16811,6 +16811,130 @@
       ],
       "total_winners": 4438,
       "jackpot": 240402
+    },
+    {
+      "date": "2026-09-17",
+      "numbers": [
+        1,
+        12,
+        5
+      ],
+      "horses": [
+        {
+          "num": 1,
+          "name": "Gold Rush"
+        },
+        {
+          "num": 12,
+          "name": "Lucky Charms"
+        },
+        {
+          "num": 5,
+          "name": "California Classic"
+        }
+      ],
+      "race_time": "1:43.16",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 4146
+        },
+        {
+          "level": "Exacta",
+          "amount": 25,
+          "winners": 333
+        },
+        {
+          "level": "Trifecta",
+          "amount": 561,
+          "winners": 34
+        },
+        {
+          "level": "Race Time",
+          "amount": 42,
+          "winners": 56
+        },
+        {
+          "level": "Win / RT",
+          "amount": 45,
+          "winners": 6
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 67,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 248807,
+          "winners": 0
+        }
+      ],
+      "total_winners": 4575,
+      "jackpot": 248807
+    },
+    {
+      "date": "2026-09-18",
+      "numbers": [
+        1,
+        6,
+        9
+      ],
+      "horses": [
+        {
+          "num": 1,
+          "name": "Gold Rush"
+        },
+        {
+          "num": 6,
+          "name": "Whirl Win"
+        },
+        {
+          "num": 9,
+          "name": "Winning Spirit"
+        }
+      ],
+      "race_time": "1:40.96",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 4307
+        },
+        {
+          "level": "Exacta",
+          "amount": 24,
+          "winners": 361
+        },
+        {
+          "level": "Trifecta",
+          "amount": 445,
+          "winners": 45
+        },
+        {
+          "level": "Race Time",
+          "amount": 75,
+          "winners": 34
+        },
+        {
+          "level": "Win / RT",
+          "amount": 78,
+          "winners": 2
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 99,
+          "winners": 1
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 257649,
+          "winners": 0
+        }
+      ],
+      "total_winners": 4750,
+      "jackpot": 257649
     }
   ]
 }

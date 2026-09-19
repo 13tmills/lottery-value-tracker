@@ -2,7 +2,7 @@
   "game": "tx_cashfive",
   "source": "texaslottery.com",
   "earliest_available": "1995-10-13",
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-09-19",
   "complete": true,
   "draws": [
     {
@@ -93690,6 +93690,72 @@
         }
       ],
       "total_winners": 25303
+    },
+    {
+      "date": "2026-09-17",
+      "numbers": [
+        5,
+        6,
+        24,
+        30,
+        33
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 76
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2009
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 19992
+        }
+      ],
+      "total_winners": 22077
+    },
+    {
+      "date": "2026-09-18",
+      "numbers": [
+        4,
+        5,
+        6,
+        25,
+        29
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 70
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2288
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21802
+        }
+      ],
+      "total_winners": 24160
     }
   ]
 }

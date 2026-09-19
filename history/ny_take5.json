@@ -2,7 +2,7 @@
   "game": "ny_take5",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1992-01-17",
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-09-19",
   "complete": true,
   "draws": [
     {
@@ -119632,6 +119632,80 @@
         }
       ],
       "total_winners": 41759
+    },
+    {
+      "date": "2026-09-17",
+      "numbers": [
+        6,
+        12,
+        16,
+        21,
+        23
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 626,
+          "winners": 122
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 20.5,
+          "winners": 3659
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": "FREE PLAY",
+          "winners": 37184
+        }
+      ],
+      "total_winners": 40965
+    },
+    {
+      "date": "2026-09-18",
+      "numbers": [
+        2,
+        14,
+        24,
+        35,
+        38
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 812.5,
+          "winners": 102
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 27,
+          "winners": 3065
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": "FREE PLAY",
+          "winners": 35828
+        }
+      ],
+      "total_winners": 38995
     }
   ]
 }

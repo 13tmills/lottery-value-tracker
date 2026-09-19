@@ -2,12 +2,12 @@
   "game": "tn_cash",
   "source": "lotterycorner.com",
   "earliest_available": "2017-01-02",
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-09-19",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-16",
-    "jackpot": 680000,
-    "cash": 680000
+    "date": "2026-09-18",
+    "jackpot": 700000,
+    "cash": 700000
   },
   "draws": [
     {
@@ -17885,6 +17885,18 @@
       ],
       "jackpot": 680000,
       "cash": 680000
+    },
+    {
+      "date": "2026-09-18",
+      "numbers": [
+        7,
+        9,
+        13,
+        17,
+        23
+      ],
+      "jackpot": 700000,
+      "cash": 700000
     }
   ]
 }

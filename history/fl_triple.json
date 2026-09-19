@@ -13965,14 +13965,49 @@
       ],
       "total_winners": 18802,
       "jackpot": 325000
+    },
+    {
+      "date": "2026-09-18",
+      "numbers": [
+        5,
+        10,
+        18,
+        25,
+        32,
+        41
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 425000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 437,
+          "winners": 21
+        },
+        {
+          "level": "Match 4",
+          "amount": 22,
+          "winners": 1003
+        },
+        {
+          "level": "Match 3",
+          "amount": 1,
+          "winners": 17983
+        }
+      ],
+      "total_winners": 19007,
+      "jackpot": 425000
     }
   ],
   "current_jackpot": {
-    "date": "2026-09-18",
-    "jackpot": 425,
-    "cash": 425
+    "date": "2026-09-22",
+    "jackpot": 500,
+    "cash": 500
   },
   "source": "floridalottery.com",
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-09-19",
   "complete": true
 }
