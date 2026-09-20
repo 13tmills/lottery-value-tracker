@@ -379013,6 +379013,70 @@
         }
       ],
       "total_winners": 5179
+    },
+    {
+      "date": "2026-09-19",
+      "numbers": [
+        2,
+        9,
+        12,
+        13,
+        17,
+        20,
+        26,
+        28,
+        34,
+        35,
+        38,
+        39,
+        43,
+        45,
+        61,
+        62,
+        63,
+        64,
+        72,
+        75
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": null,
+          "winners": 9
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": null,
+          "winners": 109
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": null,
+          "winners": 889
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": null,
+          "winners": 3817
+        }
+      ],
+      "total_winners": 4824
     }
   ]
 }
