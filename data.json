@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-19T12:00:25",
+  "last_updated": "2026-09-20T09:22:48",
   "assumptions": {
     "tax_factor": 0.63
   },
@@ -7,20 +7,20 @@
     "powerball": {
       "ticket_price": 2,
       "odds_jackpot": 292201338,
-      "next_draw": "2026-09-19",
-      "jackpot": 298000000,
-      "cash_value": 126600000,
+      "next_draw": "2026-09-21",
+      "jackpot": 313000000,
+      "cash_value": 133600000,
       "winning_numbers": [
-        2,
-        21,
-        24,
-        25,
-        64
+        18,
+        30,
+        41,
+        45,
+        68
       ],
-      "powerball": 7,
-      "expected_value": 0.2373,
+      "powerball": 10,
+      "expected_value": 0.2448,
       "ev_breakdown": {
-        "jackpot": 0.1365,
+        "jackpot": 0.144,
         "secondary": 0.1008
       },
       "prize_multiplier": 1.0,
@@ -83,20 +83,20 @@
     "lotto_america": {
       "ticket_price": 1,
       "odds_jackpot": 25989600,
-      "next_draw": "2026-09-19",
-      "jackpot": 4780000,
-      "cash_value": 2151000,
+      "next_draw": "2026-09-21",
+      "jackpot": 4920000,
+      "cash_value": 2214000,
       "winning_numbers": [
-        5,
-        22,
-        30,
-        33,
-        50
+        14,
+        21,
+        24,
+        27,
+        44
       ],
-      "star_ball": 9,
-      "expected_value": 0.2216,
+      "star_ball": 7,
+      "expected_value": 0.2232,
       "ev_breakdown": {
-        "jackpot": 0.0521,
+        "jackpot": 0.0537,
         "secondary": 0.1695
       },
       "prize_multiplier": 1.0,

@@ -2,12 +2,12 @@
   "game": "il_luckyday",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-01",
-  "last_updated": "2026-09-19",
+  "last_updated": "2026-09-20",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-18",
-    "jackpot": 450000,
-    "cash": 450000
+    "date": "2026-09-19",
+    "jackpot": 550000,
+    "cash": 550000
   },
   "draws": [
     {
@@ -69911,6 +69911,18 @@
       ],
       "jackpot": 450000,
       "cash": 450000
+    },
+    {
+      "date": "2026-09-19",
+      "numbers": [
+        10,
+        15,
+        30,
+        33,
+        36
+      ],
+      "jackpot": 550000,
+      "cash": 550000
     }
   ]
 }

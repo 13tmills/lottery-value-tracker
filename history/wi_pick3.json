@@ -2,7 +2,7 @@
   "game": "wi_pick3",
   "source": "wilottery.com",
   "earliest_available": "1995-01-02",
-  "last_updated": "2026-09-19",
+  "last_updated": "2026-09-20",
   "complete": true,
   "draws": [
     {
@@ -80803,6 +80803,14 @@
         0,
         1,
         2
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "numbers": [
+        2,
+        3,
+        9
       ]
     }
   ]
