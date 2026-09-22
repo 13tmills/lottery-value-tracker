@@ -2,7 +2,7 @@
   "game": "ma_numbers",
   "source": "masslottery.com",
   "earliest_available": "2012-01-01",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-22",
   "complete": true,
   "draws": [
     {
@@ -53763,6 +53763,26 @@
         3,
         6,
         0
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "draw_number": 24392,
+      "numbers": [
+        0,
+        8,
+        5,
+        6
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "draw_number": 24394,
+      "numbers": [
+        0,
+        4,
+        8,
+        7
       ]
     }
   ]

@@ -1,7 +1,7 @@
 {
   "game": "powerball",
   "source": "powerball.com",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-22",
   "complete": false,
   "earliest_available": "2010-01-09",
   "note": "Seeded with a few real draws. Full history (2010-01-01 onward) is backfilled by scraper/history_scraper.py in CI; the prize breakdowns fill in then.",
@@ -93162,6 +93162,18 @@
         }
       ],
       "total_winners": 401353
+    },
+    {
+      "date": "2026-09-21",
+      "jackpot": 332000000,
+      "numbers": [
+        2,
+        7,
+        9,
+        17,
+        58
+      ],
+      "powerball": 20
     }
   ]
 }

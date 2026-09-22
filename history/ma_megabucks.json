@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-09-20",
+  "last_updated": "2026-09-22",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-21",
-    "jackpot": 650000,
-    "cash": 420000
+    "date": "2026-09-23",
+    "jackpot": 750000,
+    "cash": 490000
   },
   "draws": [
     {
@@ -42428,35 +42428,7 @@
         21,
         27,
         28
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 23300000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 8
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 410
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 6200
-        }
-      ],
-      "jackpot": 23300000,
-      "total_winners": 6618
+      ]
     },
     {
       "date": "2026-07-15",
@@ -43617,6 +43589,46 @@
       ],
       "jackpot": 550000,
       "total_winners": 1954
+    },
+    {
+      "date": "2026-09-21",
+      "draw_number": 4638,
+      "numbers": [
+        7,
+        10,
+        18,
+        19,
+        39,
+        44
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 650000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 3
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 101
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1788
+        }
+      ],
+      "jackpot": 650000,
+      "total_winners": 1892
     }
   ]
 }
