@@ -6,7 +6,8 @@
   "complete": true,
   "current_jackpot": {
     "date": "2026-09-21",
-    "jackpot": 6500000
+    "jackpot": 6500000,
+    "cash": 3530000
   },
   "draws": [
     {
@@ -44065,7 +44066,7 @@
         50,
         51
       ],
-      "jackpot": 81000000,
+      "jackpot": 6250000,
       "prizes": [
         {
           "level": "Jackpot",

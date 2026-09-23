@@ -93831,7 +93831,30 @@
         9,
         23,
         30
-      ]
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "amount": 350,
+          "winners": 82
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 2363
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Cash Five QP",
+          "winners": 21031
+        }
+      ],
+      "total_winners": 23476
     }
   ]
 }
