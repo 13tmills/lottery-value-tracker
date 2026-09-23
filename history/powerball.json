@@ -1,7 +1,7 @@
 {
   "game": "powerball",
   "source": "powerball.com",
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-09-23",
   "complete": false,
   "earliest_available": "2010-01-09",
   "note": "Seeded with a few real draws. Full history (2010-01-01 onward) is backfilled by scraper/history_scraper.py in CI; the prize breakdowns fill in then.",
@@ -93165,7 +93165,8 @@
     },
     {
       "date": "2026-09-21",
-      "jackpot": 332000000,
+      "jackpot": 314000000,
+      "cash_value": 133800000,
       "numbers": [
         2,
         7,
@@ -93173,7 +93174,118 @@
         17,
         58
       ],
-      "powerball": 20
+      "powerball": 20,
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 314000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 1
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 8
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 382
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 781
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 22091
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 13255
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 89501
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 199682
+        }
+      ],
+      "total_winners": 325701
+    },
+    {
+      "date": "2026-09-23",
+      "jackpot": 314000000,
+      "cash_value": 133800000,
+      "numbers": [
+        2,
+        7,
+        9,
+        17,
+        58
+      ],
+      "powerball": 20,
+      "power_play": 2,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 314000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 1
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 8
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 382
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 781
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 22091
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 13255
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 89501
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 199682
+        }
+      ],
+      "total_winners": 325701
     }
   ]
 }

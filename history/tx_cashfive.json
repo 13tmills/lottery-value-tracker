@@ -2,7 +2,7 @@
   "game": "tx_cashfive",
   "source": "texaslottery.com",
   "earliest_available": "1995-10-13",
-  "last_updated": "2026-09-22",
+  "last_updated": "2026-09-23",
   "complete": true,
   "draws": [
     {
@@ -93822,6 +93822,16 @@
         }
       ],
       "total_winners": 27418
+    },
+    {
+      "date": "2026-09-22",
+      "numbers": [
+        1,
+        7,
+        9,
+        23,
+        30
+      ]
     }
   ]
 }
