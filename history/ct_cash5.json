@@ -2,10 +2,10 @@
   "game": "ct_cash5",
   "source": "lotterycorner.com",
   "earliest_available": "1999-01-28",
-  "last_updated": "2026-09-23",
+  "last_updated": "2026-09-24",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-22",
+    "date": "2026-09-23",
     "jackpot": 100000,
     "cash": 100000
   },
@@ -121146,6 +121146,18 @@
         23,
         24,
         29
+      ],
+      "jackpot": 100000,
+      "cash": 100000
+    },
+    {
+      "date": "2026-09-23",
+      "numbers": [
+        1,
+        6,
+        20,
+        23,
+        27
       ],
       "jackpot": 100000,
       "cash": 100000
