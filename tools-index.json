@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24",
+  "generated": "2026-09-26",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 150,
@@ -17,7 +17,7 @@
     "ga_fantasy5": 206,
     "id_cash": 16,
     "il_lotto": 48,
-    "il_luckyday": 850,
+    "il_luckyday": 851,
     "in_cash5": 156,
     "in_hoosier": 31,
     "ks_superkscash": 58,
@@ -28,7 +28,7 @@
     "md_multimatch": 11,
     "mega_millions": 46,
     "mn_gopher5": 96,
-    "mn_north5": 46,
+    "mn_north5": 47,
     "mo_showmecash": 411,
     "ms_match5": 76,
     "mt_montanacash": 118,
@@ -50,7 +50,7 @@
     "tn_dailyjp": 58,
     "tx_lotto": 3,
     "tx_twostep": 12,
-    "wa_hit5": 424,
+    "wa_hit5": 425,
     "wa_lotto": 90,
     "wi_badger5": 881,
     "wi_megabucks": 65,
