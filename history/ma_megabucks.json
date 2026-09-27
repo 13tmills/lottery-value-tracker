@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-09-26",
+  "last_updated": "2026-09-27",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-26",
-    "jackpot": 850000,
-    "cash": 550000
+    "date": "2026-09-28",
+    "jackpot": 1000000,
+    "cash": 640000
   },
   "draws": [
     {
@@ -42452,35 +42452,7 @@
         26,
         30,
         38
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 23800000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 9
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 380
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 6671
-        }
-      ],
-      "jackpot": 23800000,
-      "total_winners": 7060
+      ]
     },
     {
       "date": "2026-07-20",
@@ -43641,6 +43613,46 @@
       ],
       "jackpot": 750000,
       "total_winners": 1847
+    },
+    {
+      "date": "2026-09-26",
+      "draw_number": 4640,
+      "numbers": [
+        17,
+        20,
+        22,
+        28,
+        34,
+        43
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 850000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 118
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1894
+        }
+      ],
+      "jackpot": 850000,
+      "total_winners": 2013
     }
   ]
 }

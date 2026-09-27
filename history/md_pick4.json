@@ -2503,9 +2503,18 @@
         8,
         7
       ]
+    },
+    {
+      "date": "2026-09-26",
+      "numbers": [
+        9,
+        7,
+        3,
+        6
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-09-26",
+  "last_updated": "2026-09-27",
   "complete": true
 }

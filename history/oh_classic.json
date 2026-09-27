@@ -2,12 +2,12 @@
   "game": "oh_classic",
   "source": "ohiolottery.com",
   "earliest_available": "2011-01-01",
-  "last_updated": "2026-09-26",
+  "last_updated": "2026-09-27",
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 3400000,
-    "cash": 1700000
+    "jackpot": 3500000,
+    "cash": 1750000
   },
   "draws": [
     {
@@ -30698,6 +30698,18 @@
       ],
       "total_winners": 2529,
       "jackpot": 3300000
+    },
+    {
+      "date": "2026-09-26",
+      "numbers": [
+        4,
+        10,
+        14,
+        16,
+        21,
+        36
+      ],
+      "jackpot": 3400000
     }
   ]
 }
