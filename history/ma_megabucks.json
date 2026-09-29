@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-09-27",
+  "last_updated": "2026-09-29",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-28",
-    "jackpot": 1000000,
-    "cash": 640000
+    "date": "2026-09-30",
+    "jackpot": 1100000,
+    "cash": 700000
   },
   "draws": [
     {
@@ -42464,35 +42464,7 @@
         31,
         32,
         43
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 23900000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 2
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 286
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 4796
-        }
-      ],
-      "jackpot": 23900000,
-      "total_winners": 5084
+      ]
     },
     {
       "date": "2026-07-22",
@@ -43653,6 +43625,46 @@
       ],
       "jackpot": 850000,
       "total_winners": 2013
+    },
+    {
+      "date": "2026-09-28",
+      "draw_number": 4641,
+      "numbers": [
+        20,
+        21,
+        26,
+        32,
+        39,
+        44
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 1000000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 55
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1186
+        }
+      ],
+      "jackpot": 1000000,
+      "total_winners": 1243
     }
   ]
 }
