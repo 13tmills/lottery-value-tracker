@@ -2,7 +2,7 @@
   "game": "ia_pick4",
   "source": "lotterycorner.com",
   "earliest_available": "2003-09-21",
-  "last_updated": "2026-09-29",
+  "last_updated": "2026-09-30",
   "complete": true,
   "draws": [
     {
@@ -75297,6 +75297,15 @@
         8,
         8,
         0
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "numbers": [
+        7,
+        9,
+        9,
+        1
       ]
     }
   ]

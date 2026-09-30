@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29T14:16:32",
+  "last_updated": "2026-09-30T10:40:09",
   "assumptions": {
     "tax_factor": 0.63
   },
@@ -158,20 +158,20 @@
     "mega_millions": {
       "ticket_price": 5,
       "odds_jackpot": 290472336,
-      "next_draw": "2026-09-29",
-      "jackpot": 300000000,
-      "cash_value": 124100000,
+      "next_draw": "2026-10-02",
+      "jackpot": 321000000,
+      "cash_value": 131100000,
       "winning_numbers": [
-        25,
-        57,
-        58,
-        67,
-        68
+        10,
+        15,
+        16,
+        27,
+        64
       ],
-      "mega_ball": 16,
-      "expected_value": 0.1949,
+      "mega_ball": 23,
+      "expected_value": 0.198,
       "ev_breakdown": {
-        "jackpot": 0.0538,
+        "jackpot": 0.0569,
         "secondary": 0.1411
       },
       "prize_multiplier": 3.0,

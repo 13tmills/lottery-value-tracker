@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-09-29",
+  "last_updated": "2026-09-30",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-29",
-    "jackpot": 359000,
+    "date": "2026-09-30",
+    "jackpot": 371000,
     "cash": 0
   },
   "draws": [
@@ -17555,6 +17555,68 @@
       ],
       "total_winners": 5729,
       "jackpot": 357407
+    },
+    {
+      "date": "2026-09-29",
+      "numbers": [
+        2,
+        7,
+        11
+      ],
+      "horses": [
+        {
+          "num": 2,
+          "name": "Lucky Star"
+        },
+        {
+          "num": 7,
+          "name": "Eureka"
+        },
+        {
+          "num": 11,
+          "name": "Money Bags"
+        }
+      ],
+      "race_time": "1:44.51",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 5443
+        },
+        {
+          "level": "Exacta",
+          "amount": 24,
+          "winners": 470
+        },
+        {
+          "level": "Trifecta",
+          "amount": 407,
+          "winners": 63
+        },
+        {
+          "level": "Race Time",
+          "amount": 60,
+          "winners": 51
+        },
+        {
+          "level": "Win / RT",
+          "amount": 63,
+          "winners": 7
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 84,
+          "winners": 1
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 369705,
+          "winners": 0
+        }
+      ],
+      "total_winners": 6035,
+      "jackpot": 369705
     }
   ]
 }
