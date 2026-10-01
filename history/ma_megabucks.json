@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-09-30",
+  "last_updated": "2026-10-01",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-30",
-    "jackpot": 1100000,
-    "cash": 700000
+    "date": "2026-10-03",
+    "jackpot": 1200000,
+    "cash": 760000
   },
   "draws": [
     {
@@ -42476,35 +42476,7 @@
         15,
         35,
         43
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 24000000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 6
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 291
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 4892
-        }
-      ],
-      "jackpot": 24000000,
-      "total_winners": 5189
+      ]
     },
     {
       "date": "2026-07-25",
@@ -43665,6 +43637,46 @@
       ],
       "jackpot": 1000000,
       "total_winners": 1243
+    },
+    {
+      "date": "2026-09-30",
+      "draw_number": 4642,
+      "numbers": [
+        10,
+        19,
+        23,
+        31,
+        41,
+        42
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 1100000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 2
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 79
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1727
+        }
+      ],
+      "jackpot": 1100000,
+      "total_winners": 1808
     }
   ]
 }

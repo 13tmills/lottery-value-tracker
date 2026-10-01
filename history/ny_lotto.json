@@ -2,7 +2,7 @@
   "game": "ny_lotto",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "2001-09-12",
-  "last_updated": "2026-09-30",
+  "last_updated": "2026-10-01",
   "complete": true,
   "draws": [
     {
@@ -36075,11 +36075,58 @@
       "total_winners": 11913,
       "jackpot": 8100000,
       "cash": 3999657
+    },
+    {
+      "date": "2026-09-30",
+      "numbers": [
+        17,
+        27,
+        31,
+        40,
+        46,
+        57
+      ],
+      "bonus": 29,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Jackpot",
+          "amount": 0,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 206757,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 10842,
+          "winners": 1
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": 28,
+          "winners": 431
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": 1,
+          "winners": 10380
+        }
+      ],
+      "total_winners": 10812,
+      "jackpot": 8500000,
+      "cash": 4112966
     }
   ],
   "current_jackpot": {
-    "date": "2026-09-30",
-    "jackpot": 8500000,
-    "cash": 4112966
+    "date": "2026-10-03",
+    "jackpot": 8900000,
+    "cash": 4250060
   }
 }

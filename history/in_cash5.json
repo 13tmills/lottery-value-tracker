@@ -2,12 +2,12 @@
   "game": "in_cash5",
   "source": "lotterycorner.com",
   "earliest_available": "2012-11-04",
-  "last_updated": "2026-09-30",
+  "last_updated": "2026-10-01",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-29",
-    "jackpot": 379500,
-    "cash": 379500
+    "date": "2026-09-30",
+    "jackpot": 401500,
+    "cash": 401500
   },
   "draws": [
     {
@@ -59575,6 +59575,18 @@
       ],
       "jackpot": 379500,
       "cash": 379500
+    },
+    {
+      "date": "2026-09-30",
+      "numbers": [
+        1,
+        2,
+        18,
+        19,
+        33
+      ],
+      "jackpot": 401500,
+      "cash": 401500
     }
   ]
 }

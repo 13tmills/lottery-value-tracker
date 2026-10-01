@@ -2,12 +2,12 @@
   "game": "sd_dakotacash",
   "source": "lotterycorner.com",
   "earliest_available": "1998-07-04",
-  "last_updated": "2026-09-30",
+  "last_updated": "2026-10-01",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-26",
-    "jackpot": 66000,
-    "cash": 66000
+    "date": "2026-09-30",
+    "jackpot": 70000,
+    "cash": 70000
   },
   "draws": [
     {
@@ -32131,6 +32131,18 @@
       ],
       "jackpot": 66000,
       "cash": 66000
+    },
+    {
+      "date": "2026-09-30",
+      "numbers": [
+        8,
+        11,
+        19,
+        21,
+        33
+      ],
+      "jackpot": 70000,
+      "cash": 70000
     }
   ]
 }
