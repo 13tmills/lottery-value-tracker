@@ -14964,6 +14964,74 @@
         }
       ],
       "total_winners": 7016
+    },
+    {
+      "date": "2026-09-30",
+      "numbers": [
+        13,
+        18,
+        22,
+        23,
+        51
+      ],
+      "mill_ball": 2,
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": "$1 Million a Year for Life",
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": "$100,000 a Year for Life",
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 7500,
+          "winners": 1
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": 500,
+          "winners": 3
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": 250,
+          "winners": 40
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": 50,
+          "winners": 171
+        },
+        {
+          "level": "Seventh",
+          "label": "Seventh",
+          "amount": 25,
+          "winners": 575
+        },
+        {
+          "level": "Eighth",
+          "label": "Eighth",
+          "amount": 8,
+          "winners": 2628
+        },
+        {
+          "level": "Ninth",
+          "label": "Ninth",
+          "amount": 8,
+          "winners": 3631
+        }
+      ],
+      "total_winners": 7049
     }
   ]
 }
