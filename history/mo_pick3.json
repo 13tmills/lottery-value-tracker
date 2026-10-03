@@ -2,7 +2,7 @@
   "game": "mo_pick3",
   "source": "molottery.com",
   "earliest_available": "1998-07-04",
-  "last_updated": "2026-10-01",
+  "last_updated": "2026-10-03",
   "complete": true,
   "draws": [
     {
@@ -70763,6 +70763,22 @@
         0,
         3,
         1
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "numbers": [
+        0,
+        8,
+        1
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "numbers": [
+        2,
+        7,
+        0
       ]
     }
   ]

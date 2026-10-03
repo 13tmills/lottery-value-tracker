@@ -2,12 +2,12 @@
   "game": "mn_gopher5",
   "source": "mnlottery.com",
   "earliest_available": "2005-09-23",
-  "last_updated": "2026-10-01",
+  "last_updated": "2026-10-03",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-09-30",
-    "jackpot": 220000,
-    "cash": 220000
+    "date": "2026-10-02",
+    "jackpot": 245000,
+    "cash": 245000
   },
   "draws": [
     {
@@ -35219,6 +35219,18 @@
       ],
       "jackpot": 220000,
       "cash": 220000
+    },
+    {
+      "date": "2026-10-02",
+      "numbers": [
+        5,
+        10,
+        22,
+        29,
+        46
+      ],
+      "jackpot": 245000,
+      "cash": 245000
     }
   ]
 }

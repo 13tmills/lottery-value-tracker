@@ -2,7 +2,7 @@
   "game": "pa_pick4",
   "source": "palottery.pa.gov",
   "earliest_available": "2015-01-27",
-  "last_updated": "2026-10-01",
+  "last_updated": "2026-10-03",
   "complete": true,
   "draws": [
     {
@@ -38388,6 +38388,24 @@
         8,
         0,
         1
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "numbers": [
+        0,
+        5,
+        0,
+        8
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "numbers": [
+        0,
+        9,
+        7,
+        4
       ]
     }
   ]
