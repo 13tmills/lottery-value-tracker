@@ -19218,13 +19218,25 @@
         46,
         47
       ]
+    },
+    {
+      "date": "2026-10-03",
+      "numbers": [
+        10,
+        15,
+        19,
+        22,
+        30,
+        45
+      ],
+      "jackpot": 1300000
     }
   ],
   "current_jackpot": {
-    "date": "2026-10-03",
-    "jackpot": 1300000
+    "date": "2026-10-07",
+    "jackpot": 1350000
   },
   "source": "michiganlottery.com",
-  "last_updated": "2026-10-03",
+  "last_updated": "2026-10-04",
   "complete": true
 }

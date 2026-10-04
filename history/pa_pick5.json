@@ -2,7 +2,7 @@
   "game": "pa_pick5",
   "source": "palottery.pa.gov",
   "earliest_available": "2015-01-27",
-  "last_updated": "2026-10-03",
+  "last_updated": "2026-10-04",
   "complete": true,
   "draws": [
     {
@@ -42672,6 +42672,16 @@
         2,
         9,
         8,
+        9
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "numbers": [
+        1,
+        5,
+        9,
+        6,
         9
       ]
     }

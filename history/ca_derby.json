@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-10-03",
+  "last_updated": "2026-10-04",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-03",
-    "jackpot": 409000,
+    "date": "2026-10-04",
+    "jackpot": 423000,
     "cash": 0
   },
   "draws": [
@@ -17803,6 +17803,68 @@
       ],
       "total_winners": 7592,
       "jackpot": 408273
+    },
+    {
+      "date": "2026-10-03",
+      "numbers": [
+        8,
+        3,
+        12
+      ],
+      "horses": [
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        },
+        {
+          "num": 3,
+          "name": "Hot Shot"
+        },
+        {
+          "num": 12,
+          "name": "Lucky Charms"
+        }
+      ],
+      "race_time": "1:48.24",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 6980
+        },
+        {
+          "level": "Exacta",
+          "amount": 21,
+          "winners": 678
+        },
+        {
+          "level": "Trifecta",
+          "amount": 510,
+          "winners": 63
+        },
+        {
+          "level": "Race Time",
+          "amount": 45,
+          "winners": 89
+        },
+        {
+          "level": "Win / RT",
+          "amount": 48,
+          "winners": 8
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 66,
+          "winners": 1
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 422110,
+          "winners": 0
+        }
+      ],
+      "total_winners": 7819,
+      "jackpot": 422110
     }
   ]
 }
