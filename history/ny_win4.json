@@ -2,7 +2,7 @@
   "game": "ny_win4",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1981-07-21",
-  "last_updated": "2026-10-04",
+  "last_updated": "2026-10-06",
   "complete": true,
   "draws": [
     {
@@ -158853,6 +158853,90 @@
         }
       ],
       "total_winners": 2398
+    },
+    {
+      "date": "2026-10-04",
+      "numbers": [
+        5,
+        3,
+        4,
+        5
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": null,
+          "winners": 20
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": null,
+          "winners": 582
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": null,
+          "winners": 14
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": null,
+          "winners": 18
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": null,
+          "winners": 1
+        }
+      ],
+      "total_winners": 635
+    },
+    {
+      "date": "2026-10-05",
+      "numbers": [
+        9,
+        5,
+        9,
+        4
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": null,
+          "winners": 22
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": null,
+          "winners": 530
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": null,
+          "winners": 10
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": null,
+          "winners": 4
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": null,
+          "winners": 2
+        }
+      ],
+      "total_winners": 568
     }
   ]
 }

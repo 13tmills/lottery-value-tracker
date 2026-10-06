@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-10-04",
+  "last_updated": "2026-10-06",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-05",
-    "jackpot": 1300000,
-    "cash": 820000
+    "date": "2026-10-07",
+    "jackpot": 1450000,
+    "cash": 910000
   },
   "draws": [
     {
@@ -42500,35 +42500,7 @@
         16,
         34,
         39
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 24850000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 9
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 283
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 5096
-        }
-      ],
-      "jackpot": 24850000,
-      "total_winners": 5388
+      ]
     },
     {
       "date": "2026-07-29",
@@ -43689,6 +43661,46 @@
       ],
       "jackpot": 1200000,
       "total_winners": 2368
+    },
+    {
+      "date": "2026-10-05",
+      "draw_number": 4644,
+      "numbers": [
+        5,
+        15,
+        29,
+        32,
+        33,
+        38
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 1300000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 83
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1600
+        }
+      ],
+      "jackpot": 1300000,
+      "total_winners": 1683
     }
   ]
 }

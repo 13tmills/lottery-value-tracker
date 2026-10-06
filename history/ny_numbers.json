@@ -2,7 +2,7 @@
   "game": "ny_numbers",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1980-09-02",
-  "last_updated": "2026-10-04",
+  "last_updated": "2026-10-06",
   "complete": true,
   "draws": [
     {
@@ -152386,6 +152386,100 @@
         }
       ],
       "total_winners": 4412
+    },
+    {
+      "date": "2026-10-04",
+      "numbers": [
+        9,
+        9,
+        1
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": 0,
+          "winners": 286
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": 0,
+          "winners": 2027
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": 0,
+          "winners": 43
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": 0,
+          "winners": 9
+        },
+        {
+          "level": "N/A",
+          "label": "Straight/Box",
+          "amount": 0,
+          "winners": 130
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": 0,
+          "winners": 776
+        }
+      ],
+      "total_winners": 3271
+    },
+    {
+      "date": "2026-10-05",
+      "numbers": [
+        5,
+        4,
+        6
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": 0,
+          "winners": 423
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": 0,
+          "winners": 2967
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": 0,
+          "winners": 60
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": 0,
+          "winners": 18
+        },
+        {
+          "level": "N/A",
+          "label": "Straight/Box",
+          "amount": 0,
+          "winners": 162
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": 0,
+          "winners": 228
+        }
+      ],
+      "total_winners": 3858
     }
   ]
 }

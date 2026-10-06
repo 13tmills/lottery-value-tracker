@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-04",
+  "generated": "2026-10-06",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 150,
@@ -23,18 +23,18 @@
     "ks_superkscash": 58,
     "la_easy5": 161,
     "la_lotto": 21,
-    "lotto_america": 16,
+    "lotto_america": 17,
     "ma_megabucks": 1,
     "md_multimatch": 11,
     "mega_millions": 46,
     "mn_gopher5": 96,
     "mn_north5": 47,
-    "mo_showmecash": 411,
+    "mo_showmecash": 412,
     "ms_match5": 76,
     "mt_montanacash": 118,
     "ne_pick5": 231,
     "nh_megabucks": 18,
-    "nj_cash5": 559,
+    "nj_cash5": 560,
     "nj_pick6": 14,
     "nm_roadrunner": 154,
     "ny_lotto": 4,
@@ -52,7 +52,7 @@
     "tx_twostep": 13,
     "wa_hit5": 425,
     "wa_lotto": 90,
-    "wi_badger5": 883,
+    "wi_badger5": 884,
     "wi_megabucks": 65,
     "wy_cowboydraw": 27
   }
