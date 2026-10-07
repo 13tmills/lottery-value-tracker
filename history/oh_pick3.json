@@ -2,7 +2,7 @@
   "game": "oh_pick3",
   "source": "ohiolottery.com",
   "earliest_available": "2011-01-01",
-  "last_updated": "2026-10-06",
+  "last_updated": "2026-10-07",
   "complete": true,
   "draws": [
     {
@@ -51737,6 +51737,89 @@
         }
       ],
       "total_winners": 1264
+    },
+    {
+      "date": "2026-10-06",
+      "numbers": [
+        0,
+        5,
+        3
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "label": "Straight",
+          "amount": 250,
+          "winners": 104
+        },
+        {
+          "level": "3 Way - Box",
+          "label": "3 Way - Box",
+          "amount": 84,
+          "winners": 0
+        },
+        {
+          "level": "6 Way - Box",
+          "label": "6 Way - Box",
+          "amount": 42,
+          "winners": 366
+        },
+        {
+          "level": "3 Way Back-up STR",
+          "label": "3 Way Back-up STR",
+          "amount": 334,
+          "winners": 0
+        },
+        {
+          "level": "3 Way Back-up BOX",
+          "label": "3 Way Back-up BOX",
+          "amount": 84,
+          "winners": 0
+        },
+        {
+          "level": "6 Way Back-up STR",
+          "label": "6 Way Back-up STR",
+          "amount": 292,
+          "winners": 34
+        },
+        {
+          "level": "6 Way Back-up BOX",
+          "label": "6 Way Back-up BOX",
+          "amount": 42,
+          "winners": 933
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": 25,
+          "winners": 6
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": 25,
+          "winners": 24
+        },
+        {
+          "level": "Split Pair",
+          "label": "Split Pair",
+          "amount": 25,
+          "winners": 0
+        },
+        {
+          "level": "3 Way Wheel",
+          "label": "3 Way Wheel",
+          "amount": 250,
+          "winners": 0
+        },
+        {
+          "level": "6 Way Wheel",
+          "label": "6 Way Wheel",
+          "amount": 250,
+          "winners": 105
+        }
+      ],
+      "total_winners": 1572
     }
   ]
 }
