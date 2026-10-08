@@ -2,12 +2,12 @@
   "game": "ks_superkscash",
   "source": "lotterycorner.com",
   "earliest_available": "2002-02-18",
-  "last_updated": "2026-10-07",
+  "last_updated": "2026-10-08",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-05",
-    "jackpot": 1280000,
-    "cash": 1280000
+    "date": "2026-10-07",
+    "jackpot": 1300000,
+    "cash": 1300000
   },
   "draws": [
     {
@@ -43257,6 +43257,18 @@
       ],
       "jackpot": 1280000,
       "cash": 1280000
+    },
+    {
+      "date": "2026-10-07",
+      "numbers": [
+        1,
+        9,
+        10,
+        15,
+        26
+      ],
+      "jackpot": 1300000,
+      "cash": 1300000
     }
   ]
 }
