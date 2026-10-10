@@ -2,12 +2,12 @@
   "game": "ri_wildmoney",
   "source": "lotterycorner.com",
   "earliest_available": "2010-01-02",
-  "last_updated": "2026-10-08",
+  "last_updated": "2026-10-10",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-07",
-    "jackpot": 69000,
-    "cash": 69000
+    "date": "2026-10-09",
+    "jackpot": 79000,
+    "cash": 79000
   },
   "draws": [
     {
@@ -45413,6 +45413,30 @@
       ],
       "jackpot": 69000,
       "cash": 69000
+    },
+    {
+      "date": "2026-10-08",
+      "numbers": [
+        5,
+        10,
+        25,
+        26,
+        28
+      ],
+      "jackpot": 74000,
+      "cash": 74000
+    },
+    {
+      "date": "2026-10-09",
+      "numbers": [
+        10,
+        11,
+        19,
+        20,
+        34
+      ],
+      "jackpot": 79000,
+      "cash": 79000
     }
   ]
 }
