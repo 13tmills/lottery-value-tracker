@@ -2,7 +2,7 @@
   "game": "dc_dc5",
   "source": "lotterycorner.com",
   "earliest_available": "2009-07-19",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-11",
   "complete": true,
   "draws": [
     {
@@ -62923,6 +62923,16 @@
         8,
         5,
         2
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "numbers": [
+        5,
+        8,
+        3,
+        5,
+        6
       ]
     }
   ]

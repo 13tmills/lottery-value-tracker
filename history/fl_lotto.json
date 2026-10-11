@@ -43826,14 +43826,54 @@
       ],
       "total_winners": 114571,
       "jackpot": 2750000
+    },
+    {
+      "date": "2026-10-10",
+      "numbers": [
+        5,
+        23,
+        29,
+        32,
+        46,
+        49
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 3500000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 9833,
+          "winners": 18
+        },
+        {
+          "level": "Match 4",
+          "amount": 163,
+          "winners": 669
+        },
+        {
+          "level": "Match 3",
+          "amount": 16,
+          "winners": 13219
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Ticket",
+          "winners": 113493
+        }
+      ],
+      "total_winners": 127399,
+      "jackpot": 3500000
     }
   ],
   "current_jackpot": {
-    "date": "2026-10-10",
-    "jackpot": 3500000,
-    "cash": 3500000
+    "date": "2026-10-14",
+    "jackpot": 4250000,
+    "cash": 4250000
   },
   "source": "floridalottery.com",
-  "last_updated": "2026-10-10",
+  "last_updated": "2026-10-11",
   "complete": true
 }
