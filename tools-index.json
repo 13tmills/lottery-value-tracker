@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11",
+  "generated": "2026-10-13",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 150,
@@ -7,7 +7,7 @@
     "az_thepick": 39,
     "az_tripletwist": 24,
     "ca_derby": 11,
-    "ca_fantasy5": 89,
+    "ca_fantasy5": 90,
     "ca_superlotto": 4,
     "co_lotto": 2,
     "ct_lotto": 27,
@@ -38,9 +38,9 @@
     "nj_pick6": 14,
     "nm_roadrunner": 154,
     "ny_lotto": 4,
-    "oh_cash5": 298,
+    "oh_cash5": 299,
     "oh_classic": 26,
-    "or_megabucks": 46,
+    "or_megabucks": 47,
     "powerball": 133,
     "pr_loto": 23,
     "ri_wildmoney": 130,

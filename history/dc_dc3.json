@@ -2,7 +2,7 @@
   "game": "dc_dc3",
   "source": "lotterycorner.com",
   "earliest_available": "1995-01-01",
-  "last_updated": "2026-10-11",
+  "last_updated": "2026-10-13",
   "complete": true,
   "draws": [
     {
@@ -92818,6 +92818,22 @@
       "numbers": [
         4,
         2,
+        4
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "numbers": [
+        6,
+        4,
+        8
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "numbers": [
+        9,
+        5,
         4
       ]
     }
