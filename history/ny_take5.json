@@ -2,7 +2,7 @@
   "game": "ny_take5",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1992-01-17",
-  "last_updated": "2026-10-13",
+  "last_updated": "2026-10-14",
   "complete": true,
   "draws": [
     {
@@ -120594,6 +120594,43 @@
         }
       ],
       "total_winners": 36417
+    },
+    {
+      "date": "2026-10-13",
+      "numbers": [
+        5,
+        15,
+        20,
+        30,
+        31
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": 29482,
+          "winners": 1
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": 387.5,
+          "winners": 114
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": 21,
+          "winners": 3431
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": "FREE PLAY",
+          "winners": 34074
+        }
+      ],
+      "total_winners": 37620
     }
   ]
 }

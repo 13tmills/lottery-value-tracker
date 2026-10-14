@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 150,
@@ -17,7 +17,7 @@
     "ga_fantasy5": 206,
     "id_cash": 17,
     "il_lotto": 48,
-    "il_luckyday": 854,
+    "il_luckyday": 855,
     "in_cash5": 157,
     "in_hoosier": 32,
     "ks_superkscash": 58,
@@ -47,7 +47,7 @@
     "sc_palmetto5": 37,
     "sd_dakotacash": 47,
     "tn_cash": 56,
-    "tn_dailyjp": 58,
+    "tn_dailyjp": 59,
     "tx_lotto": 3,
     "tx_twostep": 13,
     "wa_hit5": 426,

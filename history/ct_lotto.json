@@ -2,12 +2,12 @@
   "game": "ct_lotto",
   "source": "lotterycorner.com",
   "earliest_available": "2000-01-04",
-  "last_updated": "2026-10-13",
+  "last_updated": "2026-10-14",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-09",
-    "jackpot": 3600000,
-    "cash": 3600000
+    "date": "2026-10-13",
+    "jackpot": 3700000,
+    "cash": 3700000
   },
   "draws": [
     {
@@ -33326,6 +33326,19 @@
       ],
       "jackpot": 3600000,
       "cash": 3600000
+    },
+    {
+      "date": "2026-10-13",
+      "numbers": [
+        1,
+        3,
+        7,
+        10,
+        14,
+        44
+      ],
+      "jackpot": 3700000,
+      "cash": 3700000
     }
   ]
 }
