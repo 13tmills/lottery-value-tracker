@@ -2,12 +2,12 @@
   "game": "ca_superlotto",
   "source": "calottery.com",
   "earliest_available": "2018-01-03",
-  "last_updated": "2026-10-14",
+  "last_updated": "2026-10-15",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-14",
-    "jackpot": 63000000,
-    "cash": 25700000
+    "date": "2026-10-17",
+    "jackpot": 64000000,
+    "cash": 26400000
   },
   "draws": [
     {
@@ -16896,6 +16896,66 @@
       ],
       "total_winners": 115701,
       "jackpot": 62000000
+    },
+    {
+      "date": "2026-10-14",
+      "numbers": [
+        7,
+        18,
+        23,
+        46,
+        47
+      ],
+      "mega": 12,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 63000000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 41962,
+          "winners": 1
+        },
+        {
+          "level": "Match 4 + Mega",
+          "amount": 1613,
+          "winners": 13
+        },
+        {
+          "level": "Match 4",
+          "amount": 101,
+          "winners": 344
+        },
+        {
+          "level": "Match 3 + Mega",
+          "amount": 49,
+          "winners": 639
+        },
+        {
+          "level": "Match 3",
+          "amount": 10,
+          "winners": 14804
+        },
+        {
+          "level": "Match 2 + Mega",
+          "amount": 10,
+          "winners": 7974
+        },
+        {
+          "level": "Match 1 + Mega",
+          "amount": 2,
+          "winners": 39031
+        },
+        {
+          "level": "Mega only",
+          "amount": 1,
+          "winners": 59761
+        }
+      ],
+      "total_winners": 122567,
+      "jackpot": 63000000
     }
   ]
 }

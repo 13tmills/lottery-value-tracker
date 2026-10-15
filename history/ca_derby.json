@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-10-14",
+  "last_updated": "2026-10-15",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-14",
-    "jackpot": 71000,
+    "date": "2026-10-15",
+    "jackpot": 76000,
     "cash": 0
   },
   "draws": [
@@ -18485,6 +18485,68 @@
       ],
       "total_winners": 2234,
       "jackpot": 71610
+    },
+    {
+      "date": "2026-10-14",
+      "numbers": [
+        8,
+        11,
+        1
+      ],
+      "horses": [
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        },
+        {
+          "num": 11,
+          "name": "Money Bags"
+        },
+        {
+          "num": 1,
+          "name": "Gold Rush"
+        }
+      ],
+      "race_time": "1:45.87",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 1945
+        },
+        {
+          "level": "Exacta",
+          "amount": 25,
+          "winners": 164
+        },
+        {
+          "level": "Trifecta",
+          "amount": 490,
+          "winners": 19
+        },
+        {
+          "level": "Race Time",
+          "amount": 76,
+          "winners": 16
+        },
+        {
+          "level": "Win / RT",
+          "amount": 79,
+          "winners": 1
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 101,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 75496,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2145,
+      "jackpot": 75496
     }
   ]
 }

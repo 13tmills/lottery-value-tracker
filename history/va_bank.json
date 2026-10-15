@@ -2,7 +2,7 @@
   "game": "va_bank",
   "source": "valottery.com",
   "earliest_available": "2015-09-02",
-  "last_updated": "2026-10-14",
+  "last_updated": "2026-10-15",
   "complete": true,
   "draws": [
     {
@@ -13924,6 +13924,18 @@
         37
       ],
       "bonus": 39
+    },
+    {
+      "date": "2026-10-14",
+      "numbers": [
+        1,
+        5,
+        20,
+        24,
+        26,
+        36
+      ],
+      "bonus": 2
     }
   ]
 }
