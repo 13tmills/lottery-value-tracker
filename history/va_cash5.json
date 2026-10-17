@@ -2,7 +2,7 @@
   "game": "va_cash5",
   "source": "valottery.com",
   "earliest_available": "2020-10-26",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-17",
   "complete": true,
   "draws": [
     {
@@ -21473,6 +21473,16 @@
         30,
         33,
         37
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "numbers": [
+        5,
+        23,
+        26,
+        27,
+        36
       ]
     }
   ]

@@ -2,7 +2,7 @@
   "game": "il_pick4",
   "source": "lotterycorner.com",
   "earliest_available": "1995-01-01",
-  "last_updated": "2026-10-15",
+  "last_updated": "2026-10-17",
   "complete": true,
   "draws": [
     {
@@ -104457,6 +104457,24 @@
         0,
         1,
         3
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "numbers": [
+        4,
+        0,
+        7,
+        3
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "numbers": [
+        4,
+        8,
+        6,
+        1
       ]
     }
   ]
