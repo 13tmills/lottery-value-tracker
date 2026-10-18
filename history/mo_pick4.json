@@ -2,7 +2,7 @@
   "game": "mo_pick4",
   "source": "molottery.com",
   "earliest_available": "1998-11-09",
-  "last_updated": "2026-10-17",
+  "last_updated": "2026-10-18",
   "complete": true,
   "draws": [
     {
@@ -78609,6 +78609,15 @@
         3,
         8,
         6
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "numbers": [
+        2,
+        4,
+        7,
+        8
       ]
     }
   ]

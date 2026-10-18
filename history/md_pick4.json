@@ -2692,9 +2692,18 @@
         1,
         2
       ]
+    },
+    {
+      "date": "2026-10-17",
+      "numbers": [
+        3,
+        1,
+        7,
+        9
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-10-17",
+  "last_updated": "2026-10-18",
   "complete": true
 }

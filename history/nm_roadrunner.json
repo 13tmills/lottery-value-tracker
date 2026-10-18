@@ -2,12 +2,12 @@
   "game": "nm_roadrunner",
   "source": "lotterycorner.com",
   "earliest_available": "2009-01-01",
-  "last_updated": "2026-10-17",
+  "last_updated": "2026-10-18",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-16",
-    "jackpot": 56000,
-    "cash": 56000
+    "date": "2026-10-17",
+    "jackpot": 60000,
+    "cash": 60000
   },
   "draws": [
     {
@@ -70127,6 +70127,18 @@
       ],
       "jackpot": 56000,
       "cash": 56000
+    },
+    {
+      "date": "2026-10-17",
+      "numbers": [
+        3,
+        11,
+        12,
+        34,
+        37
+      ],
+      "jackpot": 60000,
+      "cash": 60000
     }
   ]
 }
