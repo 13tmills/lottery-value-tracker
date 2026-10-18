@@ -159399,6 +159399,48 @@
         }
       ],
       "total_winners": 1267
+    },
+    {
+      "date": "2026-10-17",
+      "numbers": [
+        3,
+        0,
+        6,
+        6
+      ],
+      "prizes": [
+        {
+          "level": "N/A",
+          "label": "Straight Play",
+          "amount": null,
+          "winners": 53
+        },
+        {
+          "level": "N/A",
+          "label": "Box Play",
+          "amount": null,
+          "winners": 549
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": null,
+          "winners": 17
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": null,
+          "winners": 10
+        },
+        {
+          "level": "N/A",
+          "label": "Combination",
+          "amount": null,
+          "winners": 4
+        }
+      ],
+      "total_winners": 633
     }
   ]
 }
