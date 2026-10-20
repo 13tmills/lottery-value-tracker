@@ -2,10 +2,10 @@
   "game": "az_thepick",
   "source": "lotterycorner.com",
   "earliest_available": "2007-01-03",
-  "last_updated": "2026-10-18",
+  "last_updated": "2026-10-20",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-17",
+    "date": "2026-10-19",
     "jackpot": 3700000,
     "cash": 3700000
   },
@@ -28405,6 +28405,19 @@
         28,
         30,
         35
+      ],
+      "jackpot": 3700000,
+      "cash": 3700000
+    },
+    {
+      "date": "2026-10-19",
+      "numbers": [
+        13,
+        23,
+        27,
+        30,
+        34,
+        37
       ],
       "jackpot": 3700000,
       "cash": 3700000
