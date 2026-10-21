@@ -2,7 +2,7 @@
   "game": "id_pick4",
   "source": "idaholottery.com",
   "earliest_available": "2021-01-10",
-  "last_updated": "2026-10-20",
+  "last_updated": "2026-10-21",
   "complete": true,
   "draws": [
     {
@@ -18975,6 +18975,15 @@
         1,
         1,
         9
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "numbers": [
+        0,
+        5,
+        6,
+        1
       ]
     }
   ]

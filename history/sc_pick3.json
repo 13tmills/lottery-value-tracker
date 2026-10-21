@@ -2,7 +2,7 @@
   "game": "sc_pick3",
   "source": "sceducationlottery.com",
   "earliest_available": "2002-03-07",
-  "last_updated": "2026-10-20",
+  "last_updated": "2026-10-21",
   "complete": true,
   "draws": [
     {
@@ -71683,6 +71683,14 @@
         8,
         5,
         0
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "numbers": [
+        6,
+        2,
+        3
       ]
     }
   ]
