@@ -3,7 +3,7 @@
   "source": "lottery.co.uk",
   "currency": "GBP",
   "earliest_available": "2010-05-12",
-  "last_updated": "2026-10-21",
+  "last_updated": "2026-10-22",
   "complete": true,
   "draws": [
     {
@@ -39394,6 +39394,19 @@
       ],
       "special": [
         12
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "numbers": [
+        4,
+        9,
+        15,
+        33,
+        37
+      ],
+      "special": [
+        2
       ]
     }
   ]

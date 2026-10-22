@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-10-21",
+  "last_updated": "2026-10-22",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-21",
-    "jackpot": 102000,
+    "date": "2026-10-22",
+    "jackpot": 108000,
     "cash": 0
   },
   "draws": [
@@ -18919,6 +18919,68 @@
       ],
       "total_winners": 2401,
       "jackpot": 102327
+    },
+    {
+      "date": "2026-10-21",
+      "numbers": [
+        11,
+        2,
+        6
+      ],
+      "horses": [
+        {
+          "num": 11,
+          "name": "Money Bags"
+        },
+        {
+          "num": 2,
+          "name": "Lucky Star"
+        },
+        {
+          "num": 6,
+          "name": "Whirl Win"
+        }
+      ],
+      "race_time": "1:49.73",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 2221
+        },
+        {
+          "level": "Exacta",
+          "amount": 24,
+          "winners": 202
+        },
+        {
+          "level": "Trifecta",
+          "amount": 537,
+          "winners": 21
+        },
+        {
+          "level": "Race Time",
+          "amount": 65,
+          "winners": 21
+        },
+        {
+          "level": "Win / RT",
+          "amount": 68,
+          "winners": 3
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 89,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 107194,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2468,
+      "jackpot": 107194
     }
   ]
 }
