@@ -2,11 +2,11 @@
   "game": "ca_fantasy5",
   "source": "calottery.com",
   "earliest_available": "2020-07-20",
-  "last_updated": "2026-10-22",
+  "last_updated": "2026-10-24",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-22",
-    "jackpot": 166000,
+    "date": "2026-10-24",
+    "jackpot": 75000,
     "cash": 0
   },
   "draws": [
@@ -30203,6 +30203,74 @@
       ],
       "total_winners": 38877,
       "jackpot": 73000
+    },
+    {
+      "date": "2026-10-22",
+      "numbers": [
+        13,
+        15,
+        18,
+        28,
+        36
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 161217,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 366,
+          "winners": 161
+        },
+        {
+          "level": "Match 3",
+          "amount": 15,
+          "winners": 4710
+        },
+        {
+          "level": "Match 2",
+          "amount": 0,
+          "winners": 52444
+        }
+      ],
+      "total_winners": 57316,
+      "jackpot": 161217
+    },
+    {
+      "date": "2026-10-23",
+      "numbers": [
+        11,
+        17,
+        19,
+        24,
+        34
+      ],
+      "prizes": [
+        {
+          "level": "Match 5",
+          "amount": 68817,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "amount": 344,
+          "winners": 120
+        },
+        {
+          "level": "Match 3",
+          "amount": 13,
+          "winners": 3881
+        },
+        {
+          "level": "Match 2",
+          "amount": 0,
+          "winners": 40296
+        }
+      ],
+      "total_winners": 44298,
+      "jackpot": 68817
     }
   ]
 }

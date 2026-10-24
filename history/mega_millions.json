@@ -2,7 +2,7 @@
   "game": "mega_millions",
   "source": "megamillions.com",
   "earliest_available": "2017-10-31",
-  "last_updated": "2026-10-22",
+  "last_updated": "2026-10-24",
   "complete": true,
   "draws": [
     {
@@ -20737,6 +20737,67 @@
         }
       ],
       "total_winners": 255122
+    },
+    {
+      "date": "2026-10-23",
+      "jackpot": 433000000,
+      "cash_value": 178600000,
+      "numbers": [
+        3,
+        7,
+        46,
+        49,
+        51
+      ],
+      "mega_ball": 5,
+      "prizes": [
+        {
+          "match": "5+MB",
+          "prize": 0,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 0
+        },
+        {
+          "match": "4+MB",
+          "prize": 10000,
+          "winners": 3
+        },
+        {
+          "match": "4",
+          "prize": 599,
+          "winners": 172
+        },
+        {
+          "match": "3+MB",
+          "prize": 200,
+          "winners": 420
+        },
+        {
+          "match": "3",
+          "prize": 10,
+          "winners": 9470
+        },
+        {
+          "match": "2+MB",
+          "prize": 10,
+          "winners": 9484
+        },
+        {
+          "match": "1+MB",
+          "prize": 4,
+          "winners": 73905
+        },
+        {
+          "match": "MB",
+          "prize": 2,
+          "winners": 174789
+        }
+      ],
+      "total_winners": 268243
     }
   ]
 }

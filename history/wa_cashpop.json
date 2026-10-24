@@ -2,7 +2,7 @@
   "game": "wa_cashpop",
   "source": "walottery.com",
   "earliest_available": "2023-10-23",
-  "last_updated": "2026-10-22",
+  "last_updated": "2026-10-24",
   "complete": true,
   "draws": [
     {
@@ -6573,6 +6573,18 @@
       "date": "2026-10-21",
       "numbers": [
         2
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "numbers": [
+        12
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "numbers": [
+        1
       ]
     }
   ]
