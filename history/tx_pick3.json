@@ -2,7 +2,7 @@
   "game": "tx_pick3",
   "source": "texaslottery.com",
   "earliest_available": "2014-01-01",
-  "last_updated": "2026-10-24",
+  "last_updated": "2026-10-25",
   "complete": true,
   "draws": [
     {
@@ -32075,6 +32075,14 @@
         8,
         9,
         8
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "numbers": [
+        3,
+        9,
+        3
       ]
     }
   ]

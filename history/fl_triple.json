@@ -6490,31 +6490,7 @@
         15,
         17,
         40
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "amount": 1400000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "amount": 429,
-          "winners": 25
-        },
-        {
-          "level": "Match 4",
-          "amount": 21,
-          "winners": 1246
-        },
-        {
-          "level": "Match 3",
-          "amount": 1,
-          "winners": 21356
-        }
-      ],
-      "total_winners": 22627,
-      "jackpot": 1400000
+      ]
     },
     {
       "date": "2024-09-27",
@@ -14118,6 +14094,6 @@
     "cash": 1000000
   },
   "source": "floridalottery.com",
-  "last_updated": "2026-10-24",
+  "last_updated": "2026-10-25",
   "complete": true
 }
