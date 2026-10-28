@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-10-27",
+  "last_updated": "2026-10-28",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-27",
-    "jackpot": 137000,
+    "date": "2026-10-28",
+    "jackpot": 142000,
     "cash": 0
   },
   "draws": [
@@ -19291,6 +19291,68 @@
       ],
       "total_winners": 2797,
       "jackpot": 135939
+    },
+    {
+      "date": "2026-10-27",
+      "numbers": [
+        5,
+        9,
+        8
+      ],
+      "horses": [
+        {
+          "num": 5,
+          "name": "California Classic"
+        },
+        {
+          "num": 9,
+          "name": "Winning Spirit"
+        },
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        }
+      ],
+      "race_time": "1:42.06",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 2872
+        },
+        {
+          "level": "Exacta",
+          "amount": 22,
+          "winners": 252
+        },
+        {
+          "level": "Trifecta",
+          "amount": 470,
+          "winners": 27
+        },
+        {
+          "level": "Race Time",
+          "amount": 63,
+          "winners": 26
+        },
+        {
+          "level": "Win / RT",
+          "amount": 66,
+          "winners": 2
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 85,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 142326,
+          "winners": 0
+        }
+      ],
+      "total_winners": 3179,
+      "jackpot": 142326
     }
   ]
 }
