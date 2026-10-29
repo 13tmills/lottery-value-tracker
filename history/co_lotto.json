@@ -2,12 +2,12 @@
   "game": "co_lotto",
   "source": "coloradolottery.com",
   "earliest_available": "2022-01-01",
-  "last_updated": "2026-10-28",
+  "last_updated": "2026-10-29",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-26",
-    "jackpot": 3632422,
-    "cash": 1816211
+    "date": "2026-10-28",
+    "jackpot": 3745908,
+    "cash": 1872954
   },
   "draws": [
     {
@@ -7490,6 +7490,19 @@
       ],
       "jackpot": 3632422,
       "cash": 1816211
+    },
+    {
+      "date": "2026-10-28",
+      "numbers": [
+        19,
+        20,
+        27,
+        34,
+        35,
+        36
+      ],
+      "jackpot": 3745908,
+      "cash": 1872954
     }
   ]
 }
