@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-10-31",
+  "last_updated": "2026-11-01",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-31",
-    "jackpot": 2550000,
-    "cash": 1650000
+    "date": "2026-11-02",
+    "jackpot": 2650000,
+    "cash": 1720000
   },
   "draws": [
     {
@@ -42632,35 +42632,7 @@
         29,
         41,
         44
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 27750000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 12
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 327
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 5998
-        }
-      ],
-      "jackpot": 27750000,
-      "total_winners": 6337
+      ]
     },
     {
       "date": "2026-08-24",
@@ -43821,6 +43793,46 @@
       ],
       "jackpot": 2400000,
       "total_winners": 2132
+    },
+    {
+      "date": "2026-10-31",
+      "draw_number": 4655,
+      "numbers": [
+        2,
+        13,
+        16,
+        20,
+        30,
+        34
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 2550000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 3
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 150
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 2566
+        }
+      ],
+      "jackpot": 2550000,
+      "total_winners": 2719
     }
   ]
 }

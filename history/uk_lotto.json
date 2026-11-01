@@ -3,12 +3,12 @@
   "source": "lottery.co.uk",
   "currency": "GBP",
   "earliest_available": "2015-10-10",
-  "last_updated": "2026-10-31",
+  "last_updated": "2026-11-01",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-28",
-    "jackpot": 2832772,
-    "cash": 2832772
+    "date": "2026-10-31",
+    "jackpot": 2000000,
+    "cash": 2000000
   },
   "draws": [
     {
@@ -18468,6 +18468,22 @@
       ],
       "jackpot": 2832772,
       "cash": 2832772
+    },
+    {
+      "date": "2026-10-31",
+      "numbers": [
+        1,
+        3,
+        18,
+        25,
+        38,
+        43
+      ],
+      "special": [
+        45
+      ],
+      "jackpot": 2000000,
+      "cash": 2000000
     }
   ]
 }
