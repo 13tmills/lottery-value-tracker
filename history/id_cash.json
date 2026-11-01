@@ -5,9 +5,9 @@
   "last_updated": "2026-11-01",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-10-30",
-    "jackpot": 78100,
-    "cash": 78100
+    "date": "2026-10-31",
+    "jackpot": 80100,
+    "cash": 80100
   },
   "draws": [
     {
@@ -16627,6 +16627,17 @@
         44
       ],
       "jackpot": 78100
+    },
+    {
+      "date": "2026-10-30",
+      "numbers": [
+        18,
+        20,
+        23,
+        28,
+        41
+      ],
+      "jackpot": 80100
     }
   ]
 }
