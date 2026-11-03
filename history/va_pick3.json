@@ -2,7 +2,7 @@
   "game": "va_pick3",
   "source": "valottery.com",
   "earliest_available": "1989-05-22",
-  "last_updated": "2026-11-01",
+  "last_updated": "2026-11-03",
   "complete": true,
   "draws": [
     {
@@ -101699,6 +101699,14 @@
         6,
         0,
         8
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "numbers": [
+        5,
+        5,
+        3
       ]
     }
   ]
