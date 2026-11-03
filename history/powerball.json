@@ -94281,7 +94281,8 @@
     },
     {
       "date": "2026-11-02",
-      "jackpot": 835000000,
+      "jackpot": 804000000,
+      "cash_value": 344600000,
       "numbers": [
         7,
         23,
@@ -94289,7 +94290,56 @@
         64,
         66
       ],
-      "powerball": 23
+      "powerball": 23,
+      "power_play": 4,
+      "prizes": [
+        {
+          "match": "5+PB",
+          "prize": 804000000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 1000000,
+          "winners": 1
+        },
+        {
+          "match": "4+PB",
+          "prize": 50000,
+          "winners": 16
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 410
+        },
+        {
+          "match": "3+PB",
+          "prize": 100,
+          "winners": 1144
+        },
+        {
+          "match": "3",
+          "prize": 7,
+          "winners": 28334
+        },
+        {
+          "match": "2+PB",
+          "prize": 7,
+          "winners": 23833
+        },
+        {
+          "match": "1+PB",
+          "prize": 4,
+          "winners": 180378
+        },
+        {
+          "match": "PB",
+          "prize": 4,
+          "winners": 416790
+        }
+      ],
+      "total_winners": 650906
     }
   ]
 }
