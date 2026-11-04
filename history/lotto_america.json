@@ -1,7 +1,7 @@
 {
   "game": "lotto_america",
   "source": "powerball.com",
-  "last_updated": "2026-11-03",
+  "last_updated": "2026-11-04",
   "complete": true,
   "earliest_available": "2017-11-15",
   "note": "Seeded with a few real draws. Full history (~1,090 draws back to 2017-11-15) is backfilled by scraper/history_scraper.py in CI.",
@@ -71928,6 +71928,68 @@
     },
     {
       "date": "2026-11-02",
+      "jackpot": 2600000,
+      "cash_value": 1110000,
+      "numbers": [
+        4,
+        20,
+        47,
+        48,
+        50
+      ],
+      "star_ball": 9,
+      "all_star_bonus": 4,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2600000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 17
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 72
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 565
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1095
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 5976
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 10669
+        }
+      ],
+      "total_winners": 18396
+    },
+    {
+      "date": "2026-11-04",
       "jackpot": 2600000,
       "cash_value": 1110000,
       "numbers": [
