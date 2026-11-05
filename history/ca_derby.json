@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-11-04",
+  "last_updated": "2026-11-05",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-04",
-    "jackpot": 193000,
+    "date": "2026-11-05",
+    "jackpot": 200000,
     "cash": 0
   },
   "draws": [
@@ -19787,6 +19787,68 @@
       ],
       "total_winners": 3357,
       "jackpot": 191438
+    },
+    {
+      "date": "2026-11-04",
+      "numbers": [
+        7,
+        5,
+        8
+      ],
+      "horses": [
+        {
+          "num": 7,
+          "name": "Eureka"
+        },
+        {
+          "num": 5,
+          "name": "California Classic"
+        },
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        }
+      ],
+      "race_time": "1:43.01",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 3816
+        },
+        {
+          "level": "Exacta",
+          "amount": 19,
+          "winners": 384
+        },
+        {
+          "level": "Trifecta",
+          "amount": 385,
+          "winners": 44
+        },
+        {
+          "level": "Race Time",
+          "amount": 49,
+          "winners": 46
+        },
+        {
+          "level": "Win / RT",
+          "amount": 52,
+          "winners": 2
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 68,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 200044,
+          "winners": 0
+        }
+      ],
+      "total_winners": 4292,
+      "jackpot": 200044
     }
   ]
 }

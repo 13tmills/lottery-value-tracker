@@ -2,7 +2,7 @@
   "game": "fl_pick5",
   "source": "floridalottery.com",
   "earliest_available": "2022-05-23",
-  "last_updated": "2026-11-04",
+  "last_updated": "2026-11-05",
   "complete": true,
   "draws": [
     {
@@ -16262,6 +16262,16 @@
         4,
         4,
         1,
+        8
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "numbers": [
+        8,
+        3,
+        8,
+        8,
         8
       ]
     }

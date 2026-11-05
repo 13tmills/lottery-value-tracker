@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-11-04",
+  "last_updated": "2026-11-05",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-04",
-    "jackpot": 2750000,
-    "cash": 1790000
+    "date": "2026-11-07",
+    "jackpot": 2850000,
+    "cash": 1850000
   },
   "draws": [
     {
@@ -42656,35 +42656,7 @@
         28,
         31,
         32
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 28300000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 7
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 360
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 5980
-        }
-      ],
-      "jackpot": 28300000,
-      "total_winners": 6347
+      ]
     },
     {
       "date": "2026-08-29",
@@ -43845,6 +43817,46 @@
       ],
       "jackpot": 2650000,
       "total_winners": 2480
+    },
+    {
+      "date": "2026-11-04",
+      "draw_number": 4657,
+      "numbers": [
+        7,
+        10,
+        14,
+        23,
+        31,
+        39
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 2750000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 189
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 2559
+        }
+      ],
+      "jackpot": 2750000,
+      "total_winners": 2749
     }
   ]
 }
