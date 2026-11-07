@@ -5,8 +5,8 @@
   "last_updated": "2026-11-07",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-05",
-    "jackpot": 130000,
+    "date": "2026-11-07",
+    "jackpot": 150000,
     "cash": null
   },
   "draws": [
@@ -67837,6 +67837,44 @@
       ],
       "total_winners": 11630,
       "jackpot": 120000
+    },
+    {
+      "date": "2026-11-06",
+      "numbers": [
+        1,
+        12,
+        18,
+        24,
+        36
+      ],
+      "prizes": [
+        {
+          "level": "Match 5 of 5",
+          "label": "Match 5 of 5",
+          "amount": 140000,
+          "winners": 0
+        },
+        {
+          "level": "Match 4 of 5",
+          "label": "Match 4 of 5",
+          "amount": 300,
+          "winners": 40
+        },
+        {
+          "level": "Match 3 of 5",
+          "label": "Match 3 of 5",
+          "amount": 10,
+          "winners": 1274
+        },
+        {
+          "level": "Match 2 of 5",
+          "label": "Match 2 of 5",
+          "amount": 1,
+          "winners": 13057
+        }
+      ],
+      "total_winners": 14371,
+      "jackpot": 140000
     }
   ]
 }

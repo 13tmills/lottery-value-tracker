@@ -7909,6 +7909,74 @@
         }
       ],
       "total_winners": 2431
+    },
+    {
+      "date": "2026-11-06",
+      "numbers": [
+        10,
+        27,
+        28,
+        33,
+        35
+      ],
+      "bonus": 3,
+      "prizes": [
+        {
+          "level": "5/5 + Bonus Ball",
+          "label": "5/5 + Bonus Ball",
+          "amount": 20000000,
+          "winners": 0
+        },
+        {
+          "level": "5/5",
+          "label": "5/5",
+          "amount": 2000000,
+          "winners": 0
+        },
+        {
+          "level": "4/5 + Bonus Ball",
+          "label": "4/5 + Bonus Ball",
+          "amount": 7500,
+          "winners": 0
+        },
+        {
+          "level": "4/5",
+          "label": "4/5",
+          "amount": 500,
+          "winners": 0
+        },
+        {
+          "level": "3/5 + Bonus Ball",
+          "label": "3/5 + Bonus Ball",
+          "amount": 250,
+          "winners": 10
+        },
+        {
+          "level": "3/5",
+          "label": "3/5",
+          "amount": 50,
+          "winners": 72
+        },
+        {
+          "level": "2/5 + Bonus Ball",
+          "label": "2/5 + Bonus Ball",
+          "amount": 25,
+          "winners": 312
+        },
+        {
+          "level": "2/5",
+          "label": "2/5",
+          "amount": 8,
+          "winners": 1072
+        },
+        {
+          "level": "1/5 + Bonus Ball",
+          "label": "1/5 + Bonus Ball",
+          "amount": 8,
+          "winners": 1793
+        }
+      ],
+      "total_winners": 3259
     }
   ]
 }

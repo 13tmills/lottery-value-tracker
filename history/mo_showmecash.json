@@ -6,8 +6,8 @@
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 193000,
-    "cash": 193000
+    "jackpot": 237000,
+    "cash": 237000
   },
   "draws": [
     {
@@ -75135,6 +75135,30 @@
       ],
       "jackpot": 172000,
       "cash": 172000
+    },
+    {
+      "date": "2026-11-05",
+      "numbers": [
+        3,
+        14,
+        15,
+        18,
+        25
+      ],
+      "jackpot": 193000,
+      "cash": 193000
+    },
+    {
+      "date": "2026-11-06",
+      "numbers": [
+        8,
+        9,
+        26,
+        31,
+        33
+      ],
+      "jackpot": 214000,
+      "cash": 214000
     }
   ]
 }

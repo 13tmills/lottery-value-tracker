@@ -6,7 +6,7 @@
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 320000
+    "jackpot": 330000
   },
   "draws": [
     {
@@ -5035,6 +5035,17 @@
         25,
         35,
         39
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "numbers": [
+        5,
+        8,
+        17,
+        25,
+        29,
+        34
       ]
     }
   ]

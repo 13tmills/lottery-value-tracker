@@ -9893,6 +9893,68 @@
         }
       ],
       "total_winners": 1289
+    },
+    {
+      "date": "2026-11-05",
+      "numbers": [
+        4,
+        7,
+        0
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "amount": 626,
+          "winners": 22
+        },
+        {
+          "level": "Box",
+          "amount": 100,
+          "winners": 84
+        },
+        {
+          "level": "Straight and Box",
+          "amount": 363,
+          "winners": 151
+        },
+        {
+          "level": "Box Only",
+          "amount": 50,
+          "winners": 1003
+        }
+      ],
+      "total_winners": 1260
+    },
+    {
+      "date": "2026-11-06",
+      "numbers": [
+        7,
+        4,
+        2
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "amount": 525,
+          "winners": 65
+        },
+        {
+          "level": "Box",
+          "amount": 84,
+          "winners": 100
+        },
+        {
+          "level": "Straight and Box",
+          "amount": 304,
+          "winners": 162
+        },
+        {
+          "level": "Box Only",
+          "amount": 42,
+          "winners": 943
+        }
+      ],
+      "total_winners": 1270
     }
   ]
 }
