@@ -3201,9 +3201,19 @@
         6,
         3
       ]
+    },
+    {
+      "date": "2026-11-07",
+      "numbers": [
+        4,
+        1,
+        1,
+        7,
+        3
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-11-07",
+  "last_updated": "2026-11-08",
   "complete": true
 }

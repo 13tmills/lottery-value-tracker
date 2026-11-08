@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-11-07",
+  "last_updated": "2026-11-08",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-07",
-    "jackpot": 218000,
+    "date": "2026-11-08",
+    "jackpot": 228000,
     "cash": 0
   },
   "draws": [
@@ -19973,6 +19973,68 @@
       ],
       "total_winners": 4564,
       "jackpot": 217625
+    },
+    {
+      "date": "2026-11-07",
+      "numbers": [
+        8,
+        2,
+        4
+      ],
+      "horses": [
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        },
+        {
+          "num": 2,
+          "name": "Lucky Star"
+        },
+        {
+          "num": 4,
+          "name": "Big Ben"
+        }
+      ],
+      "race_time": "1:44.56",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 4069
+        },
+        {
+          "level": "Exacta",
+          "amount": 24,
+          "winners": 350
+        },
+        {
+          "level": "Trifecta",
+          "amount": 443,
+          "winners": 44
+        },
+        {
+          "level": "Race Time",
+          "amount": 35,
+          "winners": 69
+        },
+        {
+          "level": "Win / RT",
+          "amount": 38,
+          "winners": 7
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 59,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 226579,
+          "winners": 0
+        }
+      ],
+      "total_winners": 4539,
+      "jackpot": 226579
     }
   ]
 }

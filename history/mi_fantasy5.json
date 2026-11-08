@@ -61521,14 +61521,24 @@
         25,
         29
       ]
+    },
+    {
+      "date": "2026-11-07",
+      "numbers": [
+        6,
+        9,
+        15,
+        20,
+        28
+      ]
     }
   ],
   "current_jackpot": {
-    "date": "2026-11-08",
-    "jackpot": 100000,
-    "cash": 100000
+    "date": "2026-11-09",
+    "jackpot": 105000,
+    "cash": 105000
   },
   "source": "michiganlottery.com",
-  "last_updated": "2026-11-07",
+  "last_updated": "2026-11-08",
   "complete": true
 }
