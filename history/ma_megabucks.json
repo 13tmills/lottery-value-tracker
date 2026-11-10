@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-11-08",
+  "last_updated": "2026-11-10",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-09",
-    "jackpot": 3000000,
-    "cash": 1950000
+    "date": "2026-11-11",
+    "jackpot": 3100000,
+    "cash": 2010000
   },
   "draws": [
     {
@@ -42680,35 +42680,7 @@
         14,
         18,
         38
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 28850000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 8
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 353
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 5787
-        }
-      ],
-      "jackpot": 28850000,
-      "total_winners": 6148
+      ]
     },
     {
       "date": "2026-09-02",
@@ -43869,6 +43841,46 @@
       ],
       "jackpot": 2850000,
       "total_winners": 2719
+    },
+    {
+      "date": "2026-11-09",
+      "draw_number": 4659,
+      "numbers": [
+        4,
+        16,
+        18,
+        31,
+        35,
+        43
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 3000000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 3
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 93
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1682
+        }
+      ],
+      "jackpot": 3000000,
+      "total_winners": 1778
     }
   ]
 }
