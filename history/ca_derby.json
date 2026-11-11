@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-11-10",
+  "last_updated": "2026-11-11",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-10",
-    "jackpot": 247000,
+    "date": "2026-11-11",
+    "jackpot": 52000,
     "cash": 0
   },
   "draws": [
@@ -20159,6 +20159,68 @@
       ],
       "total_winners": 4408,
       "jackpot": 245207
+    },
+    {
+      "date": "2026-11-10",
+      "numbers": [
+        12,
+        7,
+        3
+      ],
+      "horses": [
+        {
+          "num": 12,
+          "name": "Lucky Charms"
+        },
+        {
+          "num": 7,
+          "name": "Eureka"
+        },
+        {
+          "num": 3,
+          "name": "Hot Shot"
+        }
+      ],
+      "race_time": "1:47.98",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 4035
+        },
+        {
+          "level": "Exacta",
+          "amount": 26,
+          "winners": 333
+        },
+        {
+          "level": "Trifecta",
+          "amount": 477,
+          "winners": 42
+        },
+        {
+          "level": "Race Time",
+          "amount": 61,
+          "winners": 37
+        },
+        {
+          "level": "Win / RT",
+          "amount": 64,
+          "winners": 8
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 87,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 127660,
+          "winners": 2
+        }
+      ],
+      "total_winners": 4457,
+      "jackpot": 127660
     }
   ]
 }
