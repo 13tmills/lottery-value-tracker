@@ -6,9 +6,9 @@
   "last_updated": "2026-11-12",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-07",
-    "jackpot": 4273856,
-    "cash": 4273856
+    "date": "2026-11-11",
+    "jackpot": 5181752,
+    "cash": 5181752
   },
   "draws": [
     {
@@ -18516,6 +18516,22 @@
       ],
       "jackpot": 4273856,
       "cash": 4273856
+    },
+    {
+      "date": "2026-11-11",
+      "numbers": [
+        4,
+        5,
+        13,
+        18,
+        25,
+        29
+      ],
+      "special": [
+        16
+      ],
+      "jackpot": 5181752,
+      "cash": 5181752
     }
   ]
 }
