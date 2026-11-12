@@ -2593,9 +2593,17 @@
         5,
         1
       ]
+    },
+    {
+      "date": "2026-11-11",
+      "numbers": [
+        6,
+        6,
+        0
+      ]
     }
   ],
   "source": "mdlottery.com",
-  "last_updated": "2026-11-11",
+  "last_updated": "2026-11-12",
   "complete": true
 }

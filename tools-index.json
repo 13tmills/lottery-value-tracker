@@ -1,12 +1,12 @@
 {
-  "generated": "2026-11-11",
+  "generated": "2026-11-12",
   "jackpot_cycles": {
     "ar_lotto": 3,
     "ar_nsj": 150,
     "az_fantasy5": 164,
     "az_thepick": 39,
     "az_tripletwist": 24,
-    "ca_derby": 12,
+    "ca_derby": 13,
     "ca_fantasy5": 96,
     "ca_superlotto": 5,
     "co_lotto": 2,
@@ -29,7 +29,7 @@
     "mega_millions": 46,
     "mn_gopher5": 96,
     "mn_north5": 49,
-    "mo_showmecash": 414,
+    "mo_showmecash": 415,
     "ms_match5": 78,
     "mt_montanacash": 118,
     "ne_pick5": 231,
