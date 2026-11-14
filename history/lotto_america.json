@@ -1,7 +1,7 @@
 {
   "game": "lotto_america",
   "source": "powerball.com",
-  "last_updated": "2026-11-12",
+  "last_updated": "2026-11-14",
   "complete": true,
   "earliest_available": "2017-11-15",
   "note": "Seeded with a few real draws. Full history (~1,090 draws back to 2017-11-15) is backfilled by scraper/history_scraper.py in CI.",
@@ -72235,6 +72235,68 @@
         }
       ],
       "total_winners": 18343
+    },
+    {
+      "date": "2026-11-14",
+      "jackpot": 2800000,
+      "cash_value": 1200000,
+      "numbers": [
+        27,
+        32,
+        39,
+        44,
+        47
+      ],
+      "star_ball": 3,
+      "all_star_bonus": 3,
+      "prizes": [
+        {
+          "match": "5+SB",
+          "prize": 2800000,
+          "winners": 0
+        },
+        {
+          "match": "5",
+          "prize": 20000,
+          "winners": 0
+        },
+        {
+          "match": "4+SB",
+          "prize": 1000,
+          "winners": 2
+        },
+        {
+          "match": "4",
+          "prize": 100,
+          "winners": 16
+        },
+        {
+          "match": "3+SB",
+          "prize": 20,
+          "winners": 89
+        },
+        {
+          "match": "3",
+          "prize": 5,
+          "winners": 678
+        },
+        {
+          "match": "2+SB",
+          "prize": 5,
+          "winners": 1206
+        },
+        {
+          "match": "1+SB",
+          "prize": 2,
+          "winners": 6703
+        },
+        {
+          "match": "SB",
+          "prize": 2,
+          "winners": 12185
+        }
+      ],
+      "total_winners": 20879
     }
   ]
 }
