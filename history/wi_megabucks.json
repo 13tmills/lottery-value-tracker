@@ -2,10 +2,10 @@
   "game": "wi_megabucks",
   "source": "wilottery.com",
   "earliest_available": "1995-01-04",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-15",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-11",
+    "date": "2026-11-14",
     "jackpot": 3,
     "cash": null
   },
@@ -42796,6 +42796,18 @@
         33,
         39,
         44
+      ],
+      "jackpot": 3
+    },
+    {
+      "date": "2026-11-14",
+      "numbers": [
+        1,
+        5,
+        20,
+        27,
+        35,
+        40
       ],
       "jackpot": 3
     }

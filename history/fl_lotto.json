@@ -43936,14 +43936,54 @@
       ],
       "total_winners": 154842,
       "jackpot": 11000000
+    },
+    {
+      "date": "2026-11-14",
+      "numbers": [
+        1,
+        21,
+        26,
+        27,
+        34,
+        44
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 11750000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 10235,
+          "winners": 17
+        },
+        {
+          "level": "Match 4",
+          "amount": 161,
+          "winners": 789
+        },
+        {
+          "level": "Match 3",
+          "amount": 16,
+          "winners": 16783
+        },
+        {
+          "level": "Match 2",
+          "amount": "Free Ticket",
+          "winners": 146960
+        }
+      ],
+      "total_winners": 164549,
+      "jackpot": 11750000
     }
   ],
   "current_jackpot": {
-    "date": "2026-11-14",
-    "jackpot": 11750000,
-    "cash": 11750000
+    "date": "2026-11-18",
+    "jackpot": 13000000,
+    "cash": 13000000
   },
   "source": "floridalottery.com",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-15",
   "complete": true
 }

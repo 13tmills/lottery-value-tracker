@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-15",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-14",
-    "jackpot": 66000,
+    "date": "2026-11-15",
+    "jackpot": 71000,
     "cash": 0
   },
   "draws": [
@@ -20407,6 +20407,68 @@
       ],
       "total_winners": 2238,
       "jackpot": 65599
+    },
+    {
+      "date": "2026-11-14",
+      "numbers": [
+        6,
+        12,
+        9
+      ],
+      "horses": [
+        {
+          "num": 6,
+          "name": "Whirl Win"
+        },
+        {
+          "num": 12,
+          "name": "Lucky Charms"
+        },
+        {
+          "num": 9,
+          "name": "Winning Spirit"
+        }
+      ],
+      "race_time": "1:48.93",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 1917
+        },
+        {
+          "level": "Exacta",
+          "amount": 34,
+          "winners": 124
+        },
+        {
+          "level": "Trifecta",
+          "amount": 801,
+          "winners": 12
+        },
+        {
+          "level": "Race Time",
+          "amount": 53,
+          "winners": 24
+        },
+        {
+          "level": "Win / RT",
+          "amount": 56,
+          "winners": 1
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 87,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 70355,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2078,
+      "jackpot": 70355
     }
   ]
 }

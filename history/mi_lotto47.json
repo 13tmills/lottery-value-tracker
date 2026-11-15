@@ -19350,13 +19350,24 @@
         40,
         42
       ]
+    },
+    {
+      "date": "2026-11-14",
+      "numbers": [
+        15,
+        18,
+        22,
+        29,
+        30,
+        33
+      ]
     }
   ],
   "current_jackpot": {
-    "date": "2026-11-15",
-    "jackpot": 3250000
+    "date": "2026-11-19",
+    "jackpot": 3450000
   },
   "source": "michiganlottery.com",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-15",
   "complete": true
 }

@@ -2,12 +2,12 @@
   "game": "tx_lotto",
   "source": "texaslottery.com",
   "earliest_available": "1992-11-14",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-15",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-11",
-    "jackpot": 15500000,
-    "cash": 8450000
+    "date": "2026-11-14",
+    "jackpot": 16250000,
+    "cash": 8820000
   },
   "draws": [
     {
@@ -45280,6 +45280,41 @@
         }
       ],
       "total_winners": 10659
+    },
+    {
+      "date": "2026-11-14",
+      "numbers": [
+        4,
+        6,
+        25,
+        37,
+        38,
+        48
+      ],
+      "jackpot": 16250000,
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 16250000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 2425,
+          "winners": 10
+        },
+        {
+          "level": "Match 4",
+          "amount": 54,
+          "winners": 667
+        },
+        {
+          "level": "Match 3",
+          "amount": 3,
+          "winners": 13910
+        }
+      ],
+      "total_winners": 14587
     }
   ]
 }

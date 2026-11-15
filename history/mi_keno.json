@@ -2,7 +2,7 @@
   "game": "mi_keno",
   "source": "michiganlottery.com",
   "earliest_available": "2009-12-31",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-15",
   "complete": true,
   "draws": [
     {
@@ -166296,6 +166296,33 @@
         74,
         75,
         80
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "numbers": [
+        1,
+        5,
+        6,
+        7,
+        10,
+        14,
+        22,
+        27,
+        37,
+        40,
+        41,
+        44,
+        50,
+        54,
+        62,
+        65,
+        66,
+        70,
+        73,
+        77,
+        78,
+        79
       ]
     }
   ]

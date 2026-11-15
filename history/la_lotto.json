@@ -2,7 +2,7 @@
   "game": "la_lotto",
   "source": "louisianalottery.com",
   "earliest_available": "2020-01-04",
-  "last_updated": "2026-11-14",
+  "last_updated": "2026-11-15",
   "complete": true,
   "current_jackpot": {
     "date": null,
@@ -9202,6 +9202,17 @@
         17,
         18,
         37
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "numbers": [
+        1,
+        7,
+        21,
+        25,
+        27,
+        33
       ]
     }
   ]
