@@ -2,11 +2,11 @@
   "game": "md_multimatch",
   "source": "mdlottery.com",
   "earliest_available": "2022-10-03",
-  "last_updated": "2026-11-15",
+  "last_updated": "2026-11-17",
   "complete": true,
   "current_jackpot": {
     "date": null,
-    "jackpot": 370000
+    "jackpot": 600
   },
   "draws": [
     {
@@ -5068,6 +5068,17 @@
         16,
         38,
         39
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "numbers": [
+        7,
+        11,
+        21,
+        23,
+        35,
+        36
       ]
     }
   ]

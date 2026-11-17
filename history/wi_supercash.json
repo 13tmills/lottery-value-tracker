@@ -2,7 +2,7 @@
   "game": "wi_supercash",
   "source": "wilottery.com",
   "earliest_available": "2005-01-01",
-  "last_updated": "2026-11-15",
+  "last_updated": "2026-11-17",
   "complete": true,
   "current_jackpot": {
     "date": "2026-06-21",
@@ -99891,6 +99891,28 @@
         26,
         36,
         38
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "numbers": [
+        8,
+        12,
+        18,
+        24,
+        35,
+        39
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "numbers": [
+        6,
+        8,
+        9,
+        10,
+        12,
+        16
       ]
     }
   ]

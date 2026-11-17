@@ -2,7 +2,7 @@
   "game": "sc_pick4",
   "source": "sceducationlottery.com",
   "earliest_available": "2003-01-27",
-  "last_updated": "2026-11-15",
+  "last_updated": "2026-11-17",
   "complete": true,
   "draws": [
     {
@@ -77880,6 +77880,15 @@
         4,
         9,
         4
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "numbers": [
+        5,
+        6,
+        4,
+        6
       ]
     }
   ]
