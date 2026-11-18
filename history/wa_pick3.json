@@ -2,7 +2,7 @@
   "game": "wa_pick3",
   "source": "walottery.com",
   "earliest_available": "2022-01-01",
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "complete": true,
   "draws": [
     {
@@ -14251,6 +14251,14 @@
         0,
         0,
         4
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "numbers": [
+        4,
+        4,
+        2
       ]
     }
   ]

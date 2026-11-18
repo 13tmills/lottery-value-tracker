@@ -2,7 +2,7 @@
   "game": "nh_pick3",
   "source": "nhlottery.com",
   "earliest_available": "2021-01-01",
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "complete": true,
   "draws": [
     {
@@ -17171,6 +17171,14 @@
         9,
         5,
         6
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "numbers": [
+        1,
+        8,
+        5
       ]
     }
   ]

@@ -2,11 +2,11 @@
   "game": "ca_derby",
   "source": "calottery.com",
   "earliest_available": "2025-12-20",
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-17",
-    "jackpot": 79000,
+    "date": "2026-11-18",
+    "jackpot": 83000,
     "cash": 0
   },
   "draws": [
@@ -20593,6 +20593,68 @@
       ],
       "total_winners": 2277,
       "jackpot": 79009
+    },
+    {
+      "date": "2026-11-17",
+      "numbers": [
+        2,
+        8,
+        9
+      ],
+      "horses": [
+        {
+          "num": 2,
+          "name": "Lucky Star"
+        },
+        {
+          "num": 8,
+          "name": "Gorgeous George"
+        },
+        {
+          "num": 9,
+          "name": "Winning Spirit"
+        }
+      ],
+      "race_time": "1:45.48",
+      "prizes": [
+        {
+          "level": "Win",
+          "amount": 3,
+          "winners": 1942
+        },
+        {
+          "level": "Exacta",
+          "amount": 21,
+          "winners": 185
+        },
+        {
+          "level": "Trifecta",
+          "amount": 605,
+          "winners": 15
+        },
+        {
+          "level": "Race Time",
+          "amount": 74,
+          "winners": 17
+        },
+        {
+          "level": "Win / RT",
+          "amount": 77,
+          "winners": 0
+        },
+        {
+          "level": "Exacta / RT",
+          "amount": 95,
+          "winners": 0
+        },
+        {
+          "level": "Grand Prize",
+          "amount": 82659,
+          "winners": 0
+        }
+      ],
+      "total_winners": 2159,
+      "jackpot": 82659
     }
   ]
 }

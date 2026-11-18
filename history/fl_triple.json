@@ -6567,31 +6567,7 @@
         34,
         36,
         44
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "amount": 2000000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "amount": 1682,
-          "winners": 19
-        },
-        {
-          "level": "Match 4",
-          "amount": 58,
-          "winners": 1324
-        },
-        {
-          "level": "Match 3",
-          "amount": 2,
-          "winners": 22205
-        }
-      ],
-      "total_winners": 23548,
-      "jackpot": 2000000
+      ]
     },
     {
       "date": "2024-10-22",
@@ -14152,14 +14128,49 @@
       ],
       "total_winners": 25194,
       "jackpot": 1850000
+    },
+    {
+      "date": "2026-11-17",
+      "numbers": [
+        14,
+        22,
+        23,
+        27,
+        30,
+        31
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "amount": 250000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "amount": 539,
+          "winners": 15
+        },
+        {
+          "level": "Match 4",
+          "amount": 19,
+          "winners": 997
+        },
+        {
+          "level": "Match 3",
+          "amount": 1,
+          "winners": 17006
+        }
+      ],
+      "total_winners": 18018,
+      "jackpot": 250000
     }
   ],
   "current_jackpot": {
-    "date": "2026-11-17",
-    "jackpot": 250,
-    "cash": 250
+    "date": "2026-11-20",
+    "jackpot": 275,
+    "cash": 275
   },
   "source": "floridalottery.com",
-  "last_updated": "2026-11-17",
+  "last_updated": "2026-11-18",
   "complete": true
 }
