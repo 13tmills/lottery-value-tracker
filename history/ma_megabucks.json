@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-19",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-18",
-    "jackpot": 3400000,
-    "cash": 2190000
+    "date": "2026-11-21",
+    "jackpot": 3550000,
+    "cash": 2280000
   },
   "draws": [
     {
@@ -42728,35 +42728,7 @@
         33,
         35,
         39
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 500000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 2
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 99
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 2041
-        }
-      ],
-      "jackpot": 500000,
-      "total_winners": 2142
+      ]
     },
     {
       "date": "2026-09-12",
@@ -43917,6 +43889,46 @@
       ],
       "jackpot": 3400000,
       "total_winners": 3932
+    },
+    {
+      "date": "2026-11-18",
+      "draw_number": 4663,
+      "numbers": [
+        1,
+        4,
+        20,
+        31,
+        33,
+        39
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 3400000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 119
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1898
+        }
+      ],
+      "jackpot": 3400000,
+      "total_winners": 2018
     }
   ]
 }

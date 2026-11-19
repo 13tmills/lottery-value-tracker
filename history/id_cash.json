@@ -2,12 +2,12 @@
   "game": "id_cash",
   "source": "idaholottery.com",
   "earliest_available": "2023-01-01",
-  "last_updated": "2026-11-18",
+  "last_updated": "2026-11-19",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-17",
-    "jackpot": 117700,
-    "cash": 117700
+    "date": "2026-11-18",
+    "jackpot": 120000,
+    "cash": 120000
   },
   "draws": [
     {
@@ -16825,6 +16825,17 @@
         34
       ],
       "jackpot": 117700
+    },
+    {
+      "date": "2026-11-17",
+      "numbers": [
+        5,
+        7,
+        22,
+        39,
+        42
+      ],
+      "jackpot": 120000
     }
   ]
 }
