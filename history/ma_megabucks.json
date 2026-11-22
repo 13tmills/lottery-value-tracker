@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-11-21",
+  "last_updated": "2026-11-22",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-21",
-    "jackpot": 3550000,
-    "cash": 2280000
+    "date": "2026-11-23",
+    "jackpot": 3650000,
+    "cash": 2360000
   },
   "draws": [
     {
@@ -42740,35 +42740,7 @@
         22,
         41,
         43
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 500000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 3
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 120
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 1967
-        }
-      ],
-      "jackpot": 500000,
-      "total_winners": 2090
+      ]
     },
     {
       "date": "2026-09-14",
@@ -43929,6 +43901,46 @@
       ],
       "jackpot": 3400000,
       "total_winners": 2018
+    },
+    {
+      "date": "2026-11-21",
+      "draw_number": 4664,
+      "numbers": [
+        14,
+        15,
+        16,
+        27,
+        39,
+        44
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 3550000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 3
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 117
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 2269
+        }
+      ],
+      "jackpot": 3550000,
+      "total_winners": 2389
     }
   ]
 }

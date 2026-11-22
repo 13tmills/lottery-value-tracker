@@ -2,7 +2,7 @@
   "game": "fl_pick4",
   "source": "floridalottery.com",
   "earliest_available": "2022-05-23",
-  "last_updated": "2026-11-21",
+  "last_updated": "2026-11-22",
   "complete": true,
   "draws": [
     {
@@ -14790,6 +14790,15 @@
         5,
         2,
         7
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "numbers": [
+        5,
+        5,
+        1,
+        4
       ]
     }
   ]
