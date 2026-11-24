@@ -2,7 +2,7 @@
   "game": "ny_pick10",
   "source": "data.ny.gov + nylottery.ny.gov",
   "earliest_available": "1987-01-12",
-  "last_updated": "2026-11-22",
+  "last_updated": "2026-11-24",
   "complete": true,
   "draws": [
     {
@@ -383109,6 +383109,134 @@
         }
       ],
       "total_winners": 5516
+    },
+    {
+      "date": "2026-11-22",
+      "numbers": [
+        2,
+        4,
+        5,
+        11,
+        17,
+        20,
+        28,
+        30,
+        31,
+        36,
+        41,
+        46,
+        49,
+        56,
+        61,
+        68,
+        72,
+        76,
+        77,
+        78
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": null,
+          "winners": 7
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": null,
+          "winners": 122
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": null,
+          "winners": 890
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": null,
+          "winners": 3224
+        }
+      ],
+      "total_winners": 4243
+    },
+    {
+      "date": "2026-11-23",
+      "numbers": [
+        3,
+        16,
+        24,
+        27,
+        30,
+        41,
+        42,
+        48,
+        49,
+        53,
+        57,
+        59,
+        60,
+        62,
+        63,
+        65,
+        68,
+        73,
+        74,
+        78
+      ],
+      "prizes": [
+        {
+          "level": "First",
+          "label": "First",
+          "amount": null,
+          "winners": 0
+        },
+        {
+          "level": "Second",
+          "label": "Second",
+          "amount": null,
+          "winners": 1
+        },
+        {
+          "level": "Third",
+          "label": "Third",
+          "amount": null,
+          "winners": 4
+        },
+        {
+          "level": "Fourth",
+          "label": "Fourth",
+          "amount": null,
+          "winners": 89
+        },
+        {
+          "level": "Fifth",
+          "label": "Fifth",
+          "amount": null,
+          "winners": 783
+        },
+        {
+          "level": "Sixth",
+          "label": "Sixth",
+          "amount": null,
+          "winners": 4835
+        }
+      ],
+      "total_winners": 5712
     }
   ]
 }

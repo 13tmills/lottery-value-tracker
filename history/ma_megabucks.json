@@ -2,12 +2,12 @@
   "game": "ma_megabucks",
   "source": "masslottery.com",
   "earliest_available": "1994-01-01",
-  "last_updated": "2026-11-22",
+  "last_updated": "2026-11-24",
   "complete": true,
   "current_jackpot": {
-    "date": "2026-11-23",
-    "jackpot": 3650000,
-    "cash": 2360000
+    "date": "2026-11-25",
+    "jackpot": 3800000,
+    "cash": 2470000
   },
   "draws": [
     {
@@ -42752,35 +42752,7 @@
         34,
         39,
         43
-      ],
-      "prizes": [
-        {
-          "level": "Jackpot",
-          "label": "Match 6",
-          "amount": 500000,
-          "winners": 0
-        },
-        {
-          "level": "Match 5",
-          "label": "Match 5",
-          "amount": 5000,
-          "winners": 2
-        },
-        {
-          "level": "Match 4",
-          "label": "Match 4",
-          "amount": 200,
-          "winners": 85
-        },
-        {
-          "level": "Match 3",
-          "label": "Match 3",
-          "amount": 4,
-          "winners": 1452
-        }
-      ],
-      "jackpot": 500000,
-      "total_winners": 1539
+      ]
     },
     {
       "date": "2026-09-16",
@@ -43941,6 +43913,46 @@
       ],
       "jackpot": 3550000,
       "total_winners": 2389
+    },
+    {
+      "date": "2026-11-23",
+      "draw_number": 4665,
+      "numbers": [
+        11,
+        13,
+        30,
+        32,
+        35,
+        39
+      ],
+      "prizes": [
+        {
+          "level": "Jackpot",
+          "label": "Match 6",
+          "amount": 3650000,
+          "winners": 0
+        },
+        {
+          "level": "Match 5",
+          "label": "Match 5",
+          "amount": 5000,
+          "winners": 1
+        },
+        {
+          "level": "Match 4",
+          "label": "Match 4",
+          "amount": 200,
+          "winners": 106
+        },
+        {
+          "level": "Match 3",
+          "label": "Match 3",
+          "amount": 4,
+          "winners": 1675
+        }
+      ],
+      "jackpot": 3650000,
+      "total_winners": 1782
     }
   ]
 }
