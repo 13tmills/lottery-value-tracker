@@ -2,7 +2,7 @@
   "game": "md_bonus5",
   "source": "mdlottery.com",
   "earliest_available": "2023-10-19",
-  "last_updated": "2026-11-24",
+  "last_updated": "2026-11-25",
   "complete": true,
   "draws": [
     {
@@ -12456,6 +12456,17 @@
         39
       ],
       "bonus": 17
+    },
+    {
+      "date": "2026-11-24",
+      "numbers": [
+        11,
+        22,
+        26,
+        32,
+        34
+      ],
+      "bonus": 31
     }
   ]
 }
