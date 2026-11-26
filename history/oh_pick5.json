@@ -69181,18 +69181,12 @@
       "date": "2026-11-25",
       "numbers": [
         9,
-        4,
         2,
-        5,
-        3
+        8,
+        0,
+        0
       ],
       "prizes": [
-        {
-          "level": "5 Way Backup (BOX)",
-          "label": "5 Way Backup (BOX)",
-          "amount": 5000,
-          "winners": 0
-        },
         {
           "level": "Straight",
           "label": "Straight",
@@ -69209,6 +69203,12 @@
           "level": "5 Way Backup (STR)",
           "label": "5 Way Backup (STR)",
           "amount": 30000,
+          "winners": 0
+        },
+        {
+          "level": "5 Way Backup (BOX)",
+          "label": "5 Way Backup (BOX)",
+          "amount": 5000,
           "winners": 0
         },
         {
@@ -69269,6 +69269,169 @@
           "level": "60 Way Box",
           "label": "60 Way Box",
           "amount": 417,
+          "winners": 47
+        },
+        {
+          "level": "60 Way Backup (STR)",
+          "label": "60 Way Backup (STR)",
+          "amount": 25417,
+          "winners": 0
+        },
+        {
+          "level": "60 Way Backup (BOX)",
+          "label": "60 Way Backup (BOX)",
+          "amount": 417,
+          "winners": 25
+        },
+        {
+          "level": "120 Way Box",
+          "label": "120 Way Box",
+          "amount": 208,
+          "winners": 0
+        },
+        {
+          "level": "120 Way Backup (STR)",
+          "label": "120 Way Backup (STR)",
+          "amount": 25208,
+          "winners": 0
+        },
+        {
+          "level": "120 Way Backup (BOX)",
+          "label": "120 Way Backup (BOX)",
+          "amount": 208,
+          "winners": 0
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": 25,
+          "winners": 7
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": 25,
+          "winners": 7
+        },
+        {
+          "level": "Front 3",
+          "label": "Front 3",
+          "amount": 250,
+          "winners": 0
+        },
+        {
+          "level": "Back 3",
+          "label": "Back 3",
+          "amount": 250,
+          "winners": 0
+        },
+        {
+          "level": "Front 4",
+          "label": "Front 4",
+          "amount": 2500,
+          "winners": 1
+        },
+        {
+          "level": "Back 4",
+          "label": "Back 4",
+          "amount": 2500,
+          "winners": 0
+        }
+      ],
+      "total_winners": 87
+    },
+    {
+      "date": "2026-11-26",
+      "numbers": [
+        2,
+        5,
+        5,
+        2,
+        8
+      ],
+      "prizes": [
+        {
+          "level": "Straight",
+          "label": "Straight",
+          "amount": 25000,
+          "winners": 0
+        },
+        {
+          "level": "5 Way Box",
+          "label": "5 Way Box",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "5 Way Backup (STR)",
+          "label": "5 Way Backup (STR)",
+          "amount": 30000,
+          "winners": 0
+        },
+        {
+          "level": "5 Way Backup (BOX)",
+          "label": "5 Way Backup (BOX)",
+          "amount": 5000,
+          "winners": 0
+        },
+        {
+          "level": "10 Way Box",
+          "label": "10 Way Box",
+          "amount": 2500,
+          "winners": 0
+        },
+        {
+          "level": "10 Way Backup (STR)",
+          "label": "10 Way Backup (STR)",
+          "amount": 27500,
+          "winners": 0
+        },
+        {
+          "level": "10 Way Backup (BOX)",
+          "label": "10 Way Backup (BOX)",
+          "amount": 2500,
+          "winners": 0
+        },
+        {
+          "level": "20 Way Box",
+          "label": "20 Way Box",
+          "amount": 1250,
+          "winners": 0
+        },
+        {
+          "level": "20 Way Backup (STR)",
+          "label": "20 Way Backup (STR)",
+          "amount": 26250,
+          "winners": 0
+        },
+        {
+          "level": "20 Way Backup (BOX)",
+          "label": "20 Way Backup (BOX)",
+          "amount": 1250,
+          "winners": 0
+        },
+        {
+          "level": "30 Way Box",
+          "label": "30 Way Box",
+          "amount": 834,
+          "winners": 17
+        },
+        {
+          "level": "30 Way Backup (STR)",
+          "label": "30 Way Backup (STR)",
+          "amount": 25834,
+          "winners": 0
+        },
+        {
+          "level": "30 Way Backup (BOX)",
+          "label": "30 Way Backup (BOX)",
+          "amount": 834,
+          "winners": 7
+        },
+        {
+          "level": "60 Way Box",
+          "label": "60 Way Box",
+          "amount": 417,
           "winners": 0
         },
         {
@@ -69287,7 +69450,7 @@
           "level": "120 Way Box",
           "label": "120 Way Box",
           "amount": 208,
-          "winners": 47
+          "winners": 0
         },
         {
           "level": "120 Way Backup (STR)",
@@ -69299,19 +69462,19 @@
           "level": "120 Way Backup (BOX)",
           "label": "120 Way Backup (BOX)",
           "amount": 208,
-          "winners": 22
+          "winners": 0
         },
         {
           "level": "Front Pair",
           "label": "Front Pair",
           "amount": 25,
-          "winners": 0
+          "winners": 4
         },
         {
           "level": "Back Pair",
           "label": "Back Pair",
           "amount": 25,
-          "winners": 4
+          "winners": 28
         },
         {
           "level": "Front 3",
@@ -69323,7 +69486,7 @@
           "level": "Back 3",
           "label": "Back 3",
           "amount": 250,
-          "winners": 0
+          "winners": 1
         },
         {
           "level": "Front 4",
@@ -69338,7 +69501,7 @@
           "winners": 0
         }
       ],
-      "total_winners": 73
+      "total_winners": 57
     }
   ]
 }

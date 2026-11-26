@@ -54729,8 +54729,8 @@
     {
       "date": "2026-11-25",
       "numbers": [
-        2,
-        3,
+        8,
+        0,
         9
       ],
       "prizes": [
@@ -54738,7 +54738,7 @@
           "level": "Straight",
           "label": "Straight",
           "amount": 250,
-          "winners": 345
+          "winners": 483
         },
         {
           "level": "3 Way - Box",
@@ -54750,7 +54750,7 @@
           "level": "6 Way - Box",
           "label": "6 Way - Box",
           "amount": 42,
-          "winners": 371
+          "winners": 604
         },
         {
           "level": "3 Way Back-up STR",
@@ -54768,19 +54768,96 @@
           "level": "6 Way Back-up STR",
           "label": "6 Way Back-up STR",
           "amount": 292,
-          "winners": 190
+          "winners": 411
         },
         {
           "level": "6 Way Back-up BOX",
           "label": "6 Way Back-up BOX",
           "amount": 42,
-          "winners": 892
+          "winners": 1006
         },
         {
           "level": "Front Pair",
           "label": "Front Pair",
           "amount": 25,
-          "winners": 11
+          "winners": 6
+        },
+        {
+          "level": "Back Pair",
+          "label": "Back Pair",
+          "amount": 25,
+          "winners": 2
+        },
+        {
+          "level": "Split Pair",
+          "label": "Split Pair",
+          "amount": 25,
+          "winners": 2
+        },
+        {
+          "level": "3 Way Wheel",
+          "label": "3 Way Wheel",
+          "amount": 250,
+          "winners": 0
+        },
+        {
+          "level": "6 Way Wheel",
+          "label": "6 Way Wheel",
+          "amount": 250,
+          "winners": 364
+        }
+      ],
+      "total_winners": 2878
+    },
+    {
+      "date": "2026-11-26",
+      "numbers": [
+        7,
+        1,
+        8
+      ],
+      "prizes": [
+        {
+          "level": "3 Way - Box",
+          "label": "3 Way - Box",
+          "amount": 84,
+          "winners": 0
+        },
+        {
+          "level": "6 Way - Box",
+          "label": "6 Way - Box",
+          "amount": 42,
+          "winners": 570
+        },
+        {
+          "level": "3 Way Back-up STR",
+          "label": "3 Way Back-up STR",
+          "amount": 334,
+          "winners": 0
+        },
+        {
+          "level": "3 Way Back-up BOX",
+          "label": "3 Way Back-up BOX",
+          "amount": 84,
+          "winners": 0
+        },
+        {
+          "level": "6 Way Back-up STR",
+          "label": "6 Way Back-up STR",
+          "amount": 292,
+          "winners": 409
+        },
+        {
+          "level": "6 Way Back-up BOX",
+          "label": "6 Way Back-up BOX",
+          "amount": 42,
+          "winners": 877
+        },
+        {
+          "level": "Front Pair",
+          "label": "Front Pair",
+          "amount": 25,
+          "winners": 9
         },
         {
           "level": "Back Pair",
@@ -54804,10 +54881,16 @@
           "level": "6 Way Wheel",
           "label": "6 Way Wheel",
           "amount": 250,
-          "winners": 134
+          "winners": 277
+        },
+        {
+          "level": "Straight",
+          "label": "Straight",
+          "amount": 250,
+          "winners": 599
         }
       ],
-      "total_winners": 1946
+      "total_winners": 2744
     }
   ]
 }
