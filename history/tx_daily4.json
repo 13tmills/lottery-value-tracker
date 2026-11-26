@@ -2,7 +2,7 @@
   "game": "tx_daily4",
   "source": "texaslottery.com",
   "earliest_available": "2014-01-01",
-  "last_updated": "2026-11-25",
+  "last_updated": "2026-11-26",
   "complete": true,
   "draws": [
     {
@@ -36341,10 +36341,10 @@
     {
       "date": "2026-11-25",
       "numbers": [
-        7,
-        7,
+        3,
         8,
-        7
+        9,
+        8
       ]
     }
   ]
